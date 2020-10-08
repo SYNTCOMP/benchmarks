@@ -18,7 +18,7 @@ To submit a new benchmark
 - the archive should also contain `readme.md` or `readme.pdf`
   describing the benchmarks, relevant papers, etc.
 
-We will then check everything is ok, then add to the repository.
+We will check if everything is ok, and then add to the repository.
 Alternatively, you can create a pull request with your benchmarks.
 
 ## Downloading benchmarks
