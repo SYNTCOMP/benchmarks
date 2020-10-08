@@ -1,4 +1,4 @@
-# SYNTCOMP benchmarks
+## SYNTCOMP benchmarks
 
 This repository contains all benchmarks collected over the years by [SYNTCOMP](http://www.syntcomp.org/) community.
 There are three kinds of benchmarks describing three different formats:
@@ -9,7 +9,7 @@ There are three kinds of benchmarks describing three different formats:
 
 Their folders contain more descriptions.
 
-# To submit a new benchmark
+## To submit a new benchmark
 
 - create a new issue
 - attach an archive with your new benchmarks with a sensible name
@@ -19,7 +19,7 @@ Their folders contain more descriptions.
 We will then check everything is ok, then add to the repository.
 Alternatively, you can create a pull request with your benchmarks.
 
-# To download benchmarks for specific tracks
+## To download benchmarks for specific tracks
 
 [Releases](https://github.com/5nizza/syntcomp_benchmarks/releases) contain the benchmarks used in specific years.
 
