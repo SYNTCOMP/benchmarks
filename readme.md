@@ -23,7 +23,9 @@ Alternatively, you can create a pull request with your benchmarks.
 
 ## Downloading benchmarks
 
-[Releases](https://github.com/5nizza/syntcomp_benchmarks/releases) contain the benchmarks used in specific years.
+- year 2019: [aiger](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2019/AIGER_2019.zip), [tlsf](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2019/TLSF_2019.zip)
+- year 2020: [aiger](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2020/AIGER_2020.zip), [tlsf](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2020/TLSF_2020.zip), for parity, see the repository.
+
 
 If you find bugs in benchmarks, please create an issue describing the problem.
 
