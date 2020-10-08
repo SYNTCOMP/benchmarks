@@ -7,5 +7,5 @@ See [here](https://arxiv.org/pdf/1405.5793.pdf) for more description of the form
 
 Some relevant references:
 - original [AIGER](http://fmv.jku.at/aiger/) format used in the hardware model checking competition
-- modified [`aiger.h`](https://github.com/5nizza/aisy/blob/master/aiger_swig/aiger.h) and [`aiger.c`](https://github.com/5nizza/aisy/blob/master/aiger_swig/aiger.c) whose functon `aiger_redefine_input_as_and` be useful for writing the found model back into AIGER.
+- modified [`aiger.h`](https://github.com/5nizza/aisy/blob/master/aiger_swig/aiger.h) and [`aiger.c`](https://github.com/5nizza/aisy/blob/master/aiger_swig/aiger.c) whose functon `aiger_redefine_input_as_and` can be useful for writing the found model back into AIGER.
 
