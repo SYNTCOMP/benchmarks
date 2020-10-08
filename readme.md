@@ -30,11 +30,3 @@ Alternatively, you can create a pull request with your benchmarks.
 
 If you find bugs in benchmarks, please create an issue describing the problem.
 
-<!--# Related repositories
-
-- This repository by XXX collects the smallest models realising the benchmarks.
-- This repository contains useful tools for X and Y.
-- This repository contains Z and Q.
-- [syfco](https://github.com/reactive-systems/syfco)
--->
-
