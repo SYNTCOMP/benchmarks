@@ -1,0 +1,69 @@
+HOA: v1
+name: "G(!req | (X(grant & X(grant & Xgrant)) & (!grant | X!grant) & (!cancel | X(!grant U go)))) | F(cancel & X!go)"
+States: 11
+Start: 0
+AP: 4 "cancel" "req" "go" "grant"
+controllable-AP: 3
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic weak
+--BODY--
+State: 0 {2}
+[!0&!1] 0
+[0&!1] 1
+[!0&1&3] 2
+[0&1&3] 3
+[0&1&!3] 5
+[!0&1&!3] 9
+State: 1 {2}
+[!0&!1&2] 0
+[0&!1&2] 1
+[!0&1&2&3] 2
+[0&1&2&3] 3
+[0&1&2&!3] 5
+[!0&1&2&!3] 9
+[!2] 10
+State: 2 {1}
+[!0] 2
+[0] 3
+State: 3 {1}
+[!0&2] 2
+[0&2] 3
+[!2] 10
+State: 4 {2}
+[!0&!1&3] 0
+[0&!1&3] 1
+[!0&1 | !0&!3] 2
+[0&1 | 0&!3] 3
+State: 5 {2}
+[!0&1&2 | !0&2&!3] 2
+[0&1&2 | 0&2&!3] 3
+[0&!1&2&3] 6
+[!0&!1&2&3] 8
+[!2] 10
+State: 6 {2}
+[!0&1&2 | !0&2&!3] 2
+[0&1&2 | 0&2&!3] 3
+[!0&!1&2&3] 4
+[0&!1&2&3] 7
+[!2] 10
+State: 7 {2}
+[!0&!1&2&3] 0
+[0&!1&2&3] 1
+[!0&1&2 | !0&2&!3] 2
+[0&1&2 | 0&2&!3] 3
+[!2] 10
+State: 8 {2}
+[!0&1 | !0&!3] 2
+[0&1 | 0&!3] 3
+[!0&!1&3] 4
+[0&!1&3] 7
+State: 9 {2}
+[!0&1 | !0&!3] 2
+[0&1 | 0&!3] 3
+[0&!1&3] 6
+[!0&!1&3] 8
+State: 10 {2}
+[t] 10
+--END--

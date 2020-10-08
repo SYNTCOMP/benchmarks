@@ -1,0 +1,20 @@
+HOA: v1
+name: "(Fa & G(b&Xc)) | c"
+States: 4
+Start: 0&2
+Start: 3
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+AP: 3 "a" "b" "c"
+controllable-AP: 1
+--BODY--
+State: 0 "Fa"
+[t] 0 {0}
+[0] 1
+State: 1 "true"
+[t] 1
+State: 2 "G(b&Xc)"
+[1] 2&3
+State: 3 "c"
+[2] 1
+--END--

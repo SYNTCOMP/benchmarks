@@ -1,0 +1,249 @@
+aag 177 2 26 1 149
+2
+4
+6 1
+8 161
+10 169
+12 177
+14 185
+16 193
+18 201
+20 209
+22 217
+24 225
+26 233
+28 241
+30 249
+32 257
+34 265
+36 273
+38 281
+40 289
+42 297
+44 305
+46 313
+48 321
+50 329
+52 337
+54 345
+56 354
+154
+58 56 6
+60 54 6
+62 52 6
+64 50 6
+66 48 6
+68 46 6
+70 44 6
+72 42 6
+74 40 6
+76 38 6
+78 36 6
+80 34 6
+82 32 6
+84 30 6
+86 28 6
+88 26 6
+90 24 6
+92 22 6
+94 20 6
+96 18 6
+98 16 6
+100 14 6
+102 12 6
+104 8 6
+106 10 6
+108 106 104
+110 108 102
+112 110 100
+114 112 98
+116 114 96
+118 116 94
+120 118 92
+122 120 90
+124 122 88
+126 124 86
+128 126 84
+130 128 82
+132 130 80
+134 132 78
+136 134 76
+138 136 74
+140 138 72
+142 140 70
+144 142 68
+146 144 66
+148 146 64
+150 148 62
+152 150 60
+154 152 58
+156 104 2
+158 105 3
+160 159 157
+162 104 3
+164 163 106
+166 162 107
+168 167 165
+170 108 3
+172 171 102
+174 170 103
+176 175 173
+178 110 3
+180 179 100
+182 178 101
+184 183 181
+186 112 3
+188 187 98
+190 186 99
+192 191 189
+194 114 3
+196 195 96
+198 194 97
+200 199 197
+202 116 3
+204 203 94
+206 202 95
+208 207 205
+210 118 3
+212 211 92
+214 210 93
+216 215 213
+218 120 3
+220 219 90
+222 218 91
+224 223 221
+226 122 3
+228 227 88
+230 226 89
+232 231 229
+234 124 3
+236 235 86
+238 234 87
+240 239 237
+242 126 3
+244 243 84
+246 242 85
+248 247 245
+250 128 3
+252 251 82
+254 250 83
+256 255 253
+258 130 3
+260 259 80
+262 258 81
+264 263 261
+266 132 3
+268 267 78
+270 266 79
+272 271 269
+274 134 3
+276 275 76
+278 274 77
+280 279 277
+282 136 3
+284 283 74
+286 282 75
+288 287 285
+290 138 3
+292 291 72
+294 290 73
+296 295 293
+298 140 3
+300 299 70
+302 298 71
+304 303 301
+306 142 3
+308 307 68
+310 306 69
+312 311 309
+314 144 3
+316 315 66
+318 314 67
+320 319 317
+322 146 3
+324 323 64
+326 322 65
+328 327 325
+330 148 3
+332 331 62
+334 330 63
+336 335 333
+338 150 3
+340 339 60
+342 338 61
+344 343 341
+346 59 5
+348 152 3
+350 348 347
+352 349 59
+354 353 351
+i0 stay
+i1 controllable_reset
+l0 n7
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+l9 counter<8>_out
+l10 counter<9>_out
+l11 counter<10>_out
+l12 counter<11>_out
+l13 counter<12>_out
+l14 counter<13>_out
+l15 counter<14>_out
+l16 counter<15>_out
+l17 counter<16>_out
+l18 counter<17>_out
+l19 counter<18>_out
+l20 counter<19>_out
+l21 counter<20>_out
+l22 counter<21>_out
+l23 counter<22>_out
+l24 counter<23>_out
+l25 counter<24>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:37 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv cnt25.v   ---gives--> cnt25.mv
+> abc -c "read_blif_mv cnt25.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s cnt25y.aig"   ---gives--> cnt25y.aig
+> aigtoaig cnt25y.aig cnt25y.aag   ---gives--> cnt25y.aag (this file)
+Content of cnt25.v:
+// realizable
+module bench(clk, stay, controllable_reset, err);
+  input clk;
+  input stay;
+  input controllable_reset;
+  output err;
+  reg [24:0] counter;
+
+  assign err = (counter == 25'b1111111111111111111111111) ? 1 : 0;
+
+  initial
+  begin
+    counter = 25'b0;
+  end
+  always @ (posedge clk)
+  begin
+    if(stay)
+      counter = counter;
+    else if(counter == 25'b0111111111111111111111111 && controllable_reset)
+      counter = 0;
+    else
+      counter = counter + 1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+SOLVED_BY : 3/8 [SYNTCOMP2014-RealSeq], 3/4 [SYNTCOMP2015-SyntSeq], 3/3 [SYNTCOMP2015-SyntPar], 6/7 [SYNTCOMP2015-RealSeq], 4/4 [SYNTCOMP2015-RealPar], 6/7 [SYNTCOMP2016-SyntSeq], 4/4 [SYNTCOMP2016-SyntPar], 10/11 [SYNTCOMP2016-RealSeq], 6/6 [SYNTCOMP2016-RealPar], 9/10 [SYNTCOMP2017-RealSeq], 6/6 [SYNTCOMP2017-RealPar], 5/6 [SYNTCOMP2017-SyntSeq], 4/4 [SYNTCOMP2017-SyntPar]
+SOLVED_IN : 311.767 [SYNTCOMP2014-RealSeq], 142.227 [SYNTCOMP2015-RealSeq], 0.066297 [SYNTCOMP2015-RealPar], 1.196 [SYNTCOMP2016-RealSeq], 0.063468 [SYNTCOMP2016-RealPar], 1.216 [SYNTCOMP2017-RealSeq], 0.067207 [SYNTCOMP2017-RealPar]
+REF_SIZE : 150
+STATUS : realizable
+#.

@@ -1,0 +1,202 @@
+aag 147 2 10 1 135
+2
+4
+6 1
+8 247
+10 253
+12 259
+14 265
+16 271
+18 277
+20 283
+22 289
+24 295
+94
+26 9 6
+28 8 6
+30 27 6
+32 11 6
+34 10 6
+36 33 6
+38 13 6
+40 12 6
+42 39 6
+44 15 6
+46 14 6
+48 45 6
+50 17 6
+52 16 6
+54 51 6
+56 19 6
+58 18 6
+60 57 6
+62 21 6
+64 20 6
+66 63 6
+68 23 6
+70 22 6
+72 69 6
+74 25 6
+76 24 6
+78 75 6
+80 36 30
+82 80 42
+84 82 48
+86 84 54
+88 86 60
+90 88 66
+92 90 72
+94 92 78
+96 92 77
+98 96 4
+100 98 3
+102 101 3
+104 99 3
+106 105 102
+108 99 31
+110 28 2
+112 108 3
+114 113 111
+116 37 28
+118 34 29
+120 119 117
+122 121 99
+124 34 2
+126 122 3
+128 127 125
+130 34 28
+132 130 43
+134 131 40
+136 135 133
+138 137 99
+140 40 2
+142 138 3
+144 143 141
+146 130 40
+148 146 49
+150 147 46
+152 151 149
+154 153 99
+156 46 2
+158 154 3
+160 159 157
+162 146 46
+164 162 55
+166 163 52
+168 167 165
+170 169 99
+172 52 2
+174 170 3
+176 175 173
+178 162 52
+180 178 61
+182 179 58
+184 183 181
+186 185 99
+188 58 2
+190 186 3
+192 191 189
+194 178 58
+196 194 67
+198 195 64
+200 199 197
+202 201 99
+204 64 2
+206 202 3
+208 207 205
+210 194 64
+212 210 73
+214 211 70
+216 215 213
+218 217 99
+220 70 2
+222 218 3
+224 223 221
+226 210 70
+228 226 79
+230 227 76
+232 231 229
+234 233 99
+236 76 2
+238 234 3
+240 239 237
+242 115 107
+244 106 28
+246 245 243
+248 129 107
+250 106 34
+252 251 249
+254 145 107
+256 106 40
+258 257 255
+260 161 107
+262 106 46
+264 263 261
+266 177 107
+268 106 52
+270 269 267
+272 193 107
+274 106 58
+276 275 273
+278 209 107
+280 106 64
+282 281 279
+284 225 107
+286 106 70
+288 287 285
+290 241 107
+292 106 76
+294 293 291
+i0 stay
+i1 controllable_reset
+l0 n7
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+l9 counter<8>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:25:04 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv cnt9.v   ---gives--> cnt9.mv
+> abc -c "read_blif_mv cnt9.mv; write_aiger -s cnt9n.aig"   ---gives--> cnt9n.aig
+> aigtoaig cnt9n.aig cnt9n.aag   ---gives--> cnt9n.aag (this file)
+Content of cnt9.v:
+// realizable
+module bench(clk, stay, controllable_reset, err);
+  input clk;
+  input stay;
+  input controllable_reset;
+  output err;
+  reg [8:0] counter;
+
+  assign err = (counter == 9'b111111111) ? 1 : 0;
+  
+  initial
+  begin
+    counter = 9'b0;
+  end
+  always @ (posedge clk)
+  begin
+    if(stay)
+      counter = counter;
+    else if(counter == 9'b011111111 && controllable_reset)
+      counter = 0;
+    else
+      counter = counter + 1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.012 [SYNTCOMP2014-RealSeq]
+#.

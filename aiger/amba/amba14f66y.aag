@@ -1,0 +1,2478 @@
+aag 949 54 97 1 798
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+80
+82
+84
+86
+88
+90
+92
+94
+96
+98
+100
+102
+104
+106
+108
+110 1
+112 68
+114 1656
+116 18
+118 92
+120 90
+122 64
+124 20
+126 1658
+128 96
+130 86
+132 60
+134 1660
+136 1676
+138 22
+140 1678
+142 82
+144 54
+146 24
+148 1680
+150 1682
+152 26
+154 1684
+156 104
+158 28
+160 30
+162 1686
+164 1688
+166 32
+168 1711
+170 1712
+172 1714
+174 1718
+176 1737
+178 1740
+180 1747
+182 1748
+184 10
+186 48
+188 1759
+190 1762
+192 1764
+194 8
+196 1768
+198 1778
+200 1786
+202 1798
+204 1810
+206 1822
+208 1834
+210 1844
+212 6
+214 1846
+216 70
+218 1850
+220 4
+222 66
+224 1861
+226 1864
+228 2
+230 62
+232 1868
+234 1870
+236 108
+238 56
+240 1874
+242 36
+244 106
+246 46
+248 34
+250 38
+252 1878
+254 102
+256 72
+258 44
+260 1880
+262 1884
+264 100
+266 42
+268 74
+270 1888
+272 98
+274 40
+276 50
+278 76
+280 1892
+282 361
+284 78
+286 1896
+288 80
+290 14
+292 84
+294 1898
+296 12
+298 16
+300 88
+302 94
+1532
+304 98 15
+306 100 17
+308 307 305
+310 102 19
+312 311 308
+314 106 21
+316 315 312
+318 108 23
+320 319 316
+322 25 2
+324 323 320
+326 27 4
+328 327 324
+330 29 6
+332 331 328
+334 31 8
+336 335 332
+338 33 10
+340 339 336
+342 95 46
+344 343 340
+346 91 44
+348 347 344
+350 87 42
+352 351 348
+354 83 40
+356 355 352
+358 282 110
+360 359 356
+362 242 110
+364 71 67
+366 364 63
+368 366 57
+370 276 110
+372 370 368
+374 371 369
+376 375 373
+378 377 362
+380 39 14
+382 38 15
+384 383 381
+386 385 368
+388 70 67
+390 388 63
+392 390 57
+394 39 16
+396 38 17
+398 397 395
+400 399 392
+402 401 387
+404 71 66
+406 404 63
+408 406 57
+410 39 18
+412 38 19
+414 413 411
+416 415 408
+418 417 402
+420 70 66
+422 420 63
+424 422 57
+426 39 20
+428 38 21
+430 429 427
+432 431 424
+434 433 418
+436 364 62
+438 436 57
+440 39 22
+442 38 23
+444 443 441
+446 445 438
+448 447 434
+450 388 62
+452 450 57
+454 39 24
+456 38 25
+458 457 455
+460 459 452
+462 461 448
+464 404 62
+466 464 57
+468 39 26
+470 38 27
+472 471 469
+474 473 466
+476 475 462
+478 420 62
+480 478 57
+482 39 28
+484 38 29
+486 485 483
+488 487 480
+490 489 476
+492 366 56
+494 39 30
+496 38 31
+498 497 495
+500 499 492
+502 501 490
+504 390 56
+506 39 32
+508 38 33
+510 509 507
+512 511 504
+514 513 502
+516 406 56
+518 94 39
+520 95 38
+522 521 519
+524 523 516
+526 525 514
+528 422 56
+530 90 39
+532 91 38
+534 533 531
+536 535 528
+538 537 526
+540 436 56
+542 86 39
+544 87 38
+546 545 543
+548 547 540
+550 549 538
+552 450 56
+554 82 39
+556 83 38
+558 557 555
+560 559 552
+562 561 550
+564 168 110
+566 176 110
+568 567 565
+570 180 110
+572 571 568
+574 224 110
+576 575 362
+578 576 572
+580 579 105
+582 581 562
+584 582 379
+586 256 110
+588 587 392
+590 586 393
+592 591 589
+594 593 362
+596 595 584
+598 268 110
+600 599 408
+602 598 409
+604 603 601
+606 605 362
+608 607 596
+610 278 110
+612 611 424
+614 610 425
+616 615 613
+618 617 362
+620 619 608
+622 284 110
+624 623 438
+626 622 439
+628 627 625
+630 629 362
+632 631 620
+634 288 110
+636 635 452
+638 634 453
+640 639 637
+642 641 362
+644 643 632
+646 292 110
+648 647 466
+650 646 467
+652 651 649
+654 653 362
+656 655 644
+658 300 110
+660 659 480
+662 658 481
+664 663 661
+666 665 362
+668 667 656
+670 118 110
+672 671 492
+674 670 493
+676 675 673
+678 677 362
+680 679 668
+682 128 110
+684 683 504
+686 682 505
+688 687 685
+690 689 362
+692 691 680
+694 144 110
+696 695 516
+698 694 517
+700 699 697
+702 701 362
+704 703 692
+706 132 110
+708 707 528
+710 706 529
+712 711 709
+714 713 362
+716 715 704
+718 122 110
+720 719 540
+722 718 541
+724 723 721
+726 725 362
+728 727 716
+730 112 110
+732 731 552
+734 730 553
+736 735 733
+738 737 362
+740 739 728
+742 296 110
+744 742 49
+746 743 48
+748 747 745
+750 749 362
+752 751 740
+754 216 110
+756 222 110
+758 757 755
+760 230 110
+762 761 758
+764 238 110
+766 765 762
+768 767 368
+770 766 369
+772 771 769
+774 773 104
+776 775 752
+778 757 754
+780 778 761
+782 780 765
+784 783 392
+786 782 393
+788 787 785
+790 789 104
+792 791 776
+794 756 755
+796 794 761
+798 796 765
+800 799 408
+802 798 409
+804 803 801
+806 805 104
+808 807 792
+810 756 754
+812 810 761
+814 812 765
+816 815 424
+818 814 425
+820 819 817
+822 821 104
+824 823 808
+826 760 758
+828 826 765
+830 829 438
+832 828 439
+834 833 831
+836 835 104
+838 837 824
+840 778 760
+842 840 765
+844 843 452
+846 842 453
+848 847 845
+850 849 104
+852 851 838
+854 794 760
+856 854 765
+858 857 466
+860 856 467
+862 861 859
+864 863 104
+866 865 852
+868 810 760
+870 868 765
+872 871 480
+874 870 481
+876 875 873
+878 877 104
+880 879 866
+882 764 762
+884 883 492
+886 882 493
+888 887 885
+890 889 104
+892 891 880
+894 780 764
+896 895 504
+898 894 505
+900 899 897
+902 901 104
+904 903 892
+906 796 764
+908 907 516
+910 906 517
+912 911 909
+914 913 104
+916 915 904
+918 812 764
+920 919 528
+922 918 529
+924 923 921
+926 925 104
+928 927 916
+930 826 764
+932 931 540
+934 930 541
+936 935 933
+938 937 104
+940 939 928
+942 840 764
+944 943 552
+946 942 553
+948 947 945
+950 949 104
+952 951 940
+954 186 110
+956 955 48
+958 954 49
+960 959 957
+962 961 104
+964 963 952
+966 272 110
+968 248 110
+970 969 966
+972 970 51
+974 972 13
+976 975 964
+978 969 967
+980 978 51
+982 980 12
+984 983 976
+986 264 110
+988 986 969
+990 988 72
+992 990 13
+994 993 984
+996 987 969
+998 996 72
+1000 998 12
+1002 1001 994
+1004 254 110
+1006 1004 969
+1008 1006 74
+1010 1008 13
+1012 1011 1002
+1014 1005 969
+1016 1014 74
+1018 1016 12
+1020 1019 1012
+1022 244 110
+1024 1022 969
+1026 1024 76
+1028 1026 13
+1030 1029 1020
+1032 1023 969
+1034 1032 76
+1036 1034 12
+1038 1037 1030
+1040 236 110
+1042 1040 969
+1044 1042 78
+1046 1044 13
+1048 1047 1038
+1050 1041 969
+1052 1050 78
+1054 1052 12
+1056 1055 1048
+1058 228 110
+1060 1058 969
+1062 1060 80
+1064 1062 13
+1066 1065 1056
+1068 1059 969
+1070 1068 80
+1072 1070 12
+1074 1073 1066
+1076 220 110
+1078 1076 969
+1080 1078 84
+1082 1080 13
+1084 1083 1074
+1086 1077 969
+1088 1086 84
+1090 1088 12
+1092 1091 1084
+1094 212 110
+1096 1094 969
+1098 1096 88
+1100 1098 13
+1102 1101 1092
+1104 1095 969
+1106 1104 88
+1108 1106 12
+1110 1109 1102
+1112 194 110
+1114 1112 969
+1116 1114 92
+1118 1116 13
+1120 1119 1110
+1122 1113 969
+1124 1122 92
+1126 1124 12
+1128 1127 1120
+1130 184 110
+1132 1130 969
+1134 1132 96
+1136 1134 13
+1138 1137 1128
+1140 1131 969
+1142 1140 96
+1144 1142 12
+1146 1145 1138
+1148 246 110
+1150 1148 969
+1152 1150 54
+1154 1152 13
+1156 1155 1146
+1158 1149 969
+1160 1158 54
+1162 1160 12
+1164 1163 1156
+1166 258 110
+1168 1166 969
+1170 1168 60
+1172 1170 13
+1174 1173 1164
+1176 1167 969
+1178 1176 60
+1180 1178 12
+1182 1181 1174
+1184 266 110
+1186 1184 969
+1188 1186 64
+1190 1188 13
+1192 1191 1182
+1194 1185 969
+1196 1194 64
+1198 1196 12
+1200 1199 1192
+1202 274 110
+1204 1202 969
+1206 1204 68
+1208 1206 13
+1210 1209 1200
+1212 1203 969
+1214 1212 68
+1216 1214 12
+1218 1217 1210
+1220 371 50
+1222 370 51
+1224 1223 1221
+1226 1225 968
+1228 1227 1218
+1230 586 73
+1232 587 72
+1234 1233 1231
+1236 1235 968
+1238 1237 1228
+1240 598 75
+1242 599 74
+1244 1243 1241
+1246 1245 968
+1248 1247 1238
+1250 610 77
+1252 611 76
+1254 1253 1251
+1256 1255 968
+1258 1257 1248
+1260 622 79
+1262 623 78
+1264 1263 1261
+1266 1265 968
+1268 1267 1258
+1270 634 81
+1272 635 80
+1274 1273 1271
+1276 1275 968
+1278 1277 1268
+1280 646 85
+1282 647 84
+1284 1283 1281
+1286 1285 968
+1288 1287 1278
+1290 658 89
+1292 659 88
+1294 1293 1291
+1296 1295 968
+1298 1297 1288
+1300 670 93
+1302 671 92
+1304 1303 1301
+1306 1305 968
+1308 1307 1298
+1310 682 97
+1312 683 96
+1314 1313 1311
+1316 1315 968
+1318 1317 1308
+1320 694 55
+1322 695 54
+1324 1323 1321
+1326 1325 968
+1328 1327 1318
+1330 706 61
+1332 707 60
+1334 1333 1331
+1336 1335 968
+1338 1337 1328
+1340 718 65
+1342 719 64
+1344 1343 1341
+1346 1345 968
+1348 1347 1338
+1350 730 69
+1352 731 68
+1354 1353 1351
+1356 1355 968
+1358 1357 1348
+1360 742 13
+1362 743 12
+1364 1363 1361
+1366 1365 968
+1368 1367 1358
+1370 218 110
+1372 72 17
+1374 1372 1370
+1376 1375 1368
+1378 226 110
+1380 74 19
+1382 1380 1378
+1384 1383 1376
+1386 232 110
+1388 76 21
+1390 1388 1386
+1392 1391 1384
+1394 240 110
+1396 78 23
+1398 1396 1394
+1400 1399 1392
+1402 252 110
+1404 80 25
+1406 1404 1402
+1408 1407 1400
+1410 262 110
+1412 84 27
+1414 1412 1410
+1416 1415 1408
+1418 270 110
+1420 88 29
+1422 1420 1418
+1424 1423 1416
+1426 280 110
+1428 92 31
+1430 1428 1426
+1432 1431 1424
+1434 286 110
+1436 96 33
+1438 1436 1434
+1440 1439 1432
+1442 196 110
+1444 95 54
+1446 1444 1442
+1448 1447 1440
+1450 190 110
+1452 91 60
+1454 1452 1450
+1456 1455 1448
+1458 178 110
+1460 87 64
+1462 1460 1458
+1464 1463 1456
+1466 174 110
+1468 83 68
+1470 1468 1466
+1472 1471 1464
+1474 291 143
+1476 159 153
+1478 139 125
+1480 1478 1476
+1482 1480 1474
+1484 299 117
+1486 303 147
+1488 1486 1484
+1490 161 121
+1492 167 131
+1494 1492 1490
+1496 1494 1488
+1498 1496 1482
+1500 1499 110
+1502 1501 969
+1504 1502 50
+1506 1505 1472
+1508 210 110
+1510 202 110
+1512 200 110
+1514 1513 1511
+1516 204 110
+1518 1517 1514
+1520 208 110
+1522 206 110
+1524 1523 1521
+1526 1524 1518
+1528 1527 1508
+1530 1529 1506
+1532 1531 360
+1534 467 26
+1536 114 110
+1538 1537 1534
+1540 260 110
+1542 1541 574
+1544 234 110
+1546 1545 573
+1548 1547 1543
+1550 369 14
+1552 214 110
+1554 1553 1550
+1556 1555 1548
+1558 393 16
+1560 192 110
+1562 1561 1558
+1564 1563 1556
+1566 409 18
+1568 170 110
+1570 1569 1566
+1572 1571 1564
+1574 425 20
+1576 162 110
+1578 1577 1574
+1580 1579 1572
+1582 439 22
+1584 150 110
+1586 1585 1582
+1588 1587 1580
+1590 453 24
+1592 140 110
+1594 1593 1590
+1596 1595 1588
+1598 1596 1539
+1600 481 28
+1602 134 110
+1604 1603 1600
+1606 1605 1598
+1608 493 30
+1610 148 110
+1612 1611 1608
+1614 1613 1606
+1616 505 32
+1618 154 110
+1620 1619 1616
+1622 1621 1614
+1624 517 94
+1626 164 110
+1628 1627 1624
+1630 1629 1622
+1632 529 90
+1634 182 110
+1636 1635 1632
+1638 1637 1630
+1640 541 86
+1642 126 110
+1644 1643 1640
+1646 1645 1638
+1648 553 82
+1650 294 110
+1652 1651 1648
+1654 1653 1646
+1656 1655 1539
+1658 1655 1645
+1660 1655 1605
+1662 136 110
+1664 1663 37
+1666 188 110
+1668 172 110
+1670 1669 1666
+1672 1671 1665
+1674 1673 1655
+1676 1674 1665
+1678 1655 1595
+1680 1655 1613
+1682 1655 1587
+1684 1655 1621
+1686 1655 1579
+1688 1655 1629
+1690 572 48
+1692 1690 105
+1694 1692 59
+1696 1694 52
+1698 1696 37
+1700 571 36
+1702 1701 565
+1704 1700 564
+1706 1705 1703
+1708 1706 569
+1710 1709 1699
+1712 1655 1571
+1714 1674 1671
+1716 1467 68
+1718 1717 83
+1720 1696 36
+1722 566 564
+1724 1722 571
+1726 1724 36
+1728 1727 566
+1730 567 564
+1732 1730 1700
+1734 1733 1729
+1736 1734 1721
+1738 1459 64
+1740 1739 87
+1742 568 36
+1744 1743 570
+1746 1745 1727
+1748 1655 1637
+1750 1667 48
+1752 59 53
+1754 1752 1750
+1756 1666 38
+1758 1757 1755
+1760 1451 60
+1762 1761 91
+1764 1655 1563
+1766 1443 54
+1768 1767 95
+1770 198 110
+1772 1770 1672
+1774 1771 1673
+1776 1775 1773
+1778 1776 1655
+1780 1773 1512
+1782 1772 1513
+1784 1783 1781
+1786 1785 1655
+1788 1770 1512
+1790 1788 1672
+1792 1791 1510
+1794 1790 1511
+1796 1795 1793
+1798 1797 1655
+1800 1788 1510
+1802 1800 1672
+1804 1803 1516
+1806 1802 1517
+1808 1807 1805
+1810 1809 1655
+1812 1800 1516
+1814 1812 1672
+1816 1815 1522
+1818 1814 1523
+1820 1819 1817
+1822 1821 1655
+1824 1812 1522
+1826 1824 1672
+1828 1827 1520
+1830 1826 1521
+1832 1831 1829
+1834 1833 1655
+1836 1826 1520
+1838 1837 1509
+1840 1836 1508
+1842 1841 1839
+1844 1842 1655
+1846 1655 1555
+1848 1371 72
+1850 1849 17
+1852 574 38
+1854 575 48
+1856 1752 105
+1858 1856 1854
+1860 1859 1853
+1862 1379 74
+1864 1863 19
+1866 1387 76
+1868 1867 21
+1870 1655 1547
+1872 1395 78
+1874 1873 23
+1876 1403 80
+1878 1877 25
+1880 1655 1543
+1882 1411 84
+1884 1883 27
+1886 1419 88
+1888 1887 29
+1890 1427 92
+1892 1891 31
+1894 1435 96
+1896 1895 33
+1898 1655 1653
+i0 i_hlock5
+i1 i_hlock6
+i2 i_hlock7
+i3 i_hlock8
+i4 i_hlock9
+i5 controllable_locked
+i6 i_hbusreq0
+i7 i_hbusreq1
+i8 i_hbusreq2
+i9 i_hbusreq3
+i10 i_hbusreq4
+i11 i_hbusreq5
+i12 i_hbusreq6
+i13 i_hbusreq7
+i14 i_hbusreq8
+i15 i_hbusreq9
+i16 controllable_ndecide
+i17 i_hready
+i18 controllable_busreq
+i19 i_hlock13
+i20 i_hlock12
+i21 i_hlock11
+i22 i_hlock10
+i23 controllable_hmastlock
+i24 controllable_nhgrant0
+i25 i_hburst1
+i26 controllable_hgrant10
+i27 controllable_hmaster3
+i28 i_hburst0
+i29 controllable_hgrant11
+i30 controllable_hmaster2
+i31 controllable_hgrant12
+i32 controllable_hmaster1
+i33 controllable_hgrant13
+i34 controllable_hmaster0
+i35 controllable_hgrant1
+i36 controllable_hgrant2
+i37 controllable_hgrant3
+i38 controllable_hgrant4
+i39 controllable_hgrant5
+i40 i_hbusreq13
+i41 controllable_hgrant6
+i42 i_hbusreq12
+i43 controllable_hgrant7
+i44 i_hbusreq11
+i45 controllable_hgrant8
+i46 i_hbusreq10
+i47 controllable_hgrant9
+i48 i_hlock0
+i49 i_hlock1
+i50 i_hlock2
+i51 controllable_nstart
+i52 i_hlock3
+i53 i_hlock4
+l0 n111
+l1 reg_controllable_hgrant13_out
+l2 sys_fair8done_out
+l3 reg_i_hbusreq2_out
+l4 reg_controllable_hgrant8_out
+l5 reg_i_hbusreq11_out
+l6 reg_controllable_hgrant12_out
+l7 reg_i_hbusreq3_out
+l8 sys_fair14done_out
+l9 reg_controllable_hgrant9_out
+l10 reg_i_hbusreq12_out
+l11 reg_controllable_hgrant11_out
+l12 sys_fair9done_out
+l13 env_fair1done_out
+l14 reg_i_hbusreq4_out
+l15 sys_fair7done_out
+l16 reg_i_hbusreq13_out
+l17 reg_controllable_hgrant10_out
+l18 reg_i_hbusreq5_out
+l19 sys_fair10done_out
+l20 sys_fair6done_out
+l21 reg_i_hbusreq6_out
+l22 sys_fair11done_out
+l23 reg_controllable_nstart_out
+l24 reg_i_hbusreq7_out
+l25 reg_i_hbusreq8_out
+l26 sys_fair5done_out
+l27 sys_fair12done_out
+l28 reg_i_hbusreq9_out
+l29 reg_stateG3_0_out
+l30 sys_fair4done_out
+l31 env_fair0done_out
+l32 reg_stateG10_13_out
+l33 reg_stateG3_1_out
+l34 reg_stateG10_12_out
+l35 reg_stateG3_2_out
+l36 sys_fair13done_out
+l37 reg_i_hlock9_out
+l38 reg_controllable_hmastlock_out
+l39 reg_stateA1_out
+l40 reg_stateG10_11_out
+l41 sys_fair3done_out
+l42 reg_i_hlock8_out
+l43 reg_stateG10_10_out
+l44 fair_cnt<0>_out
+l45 fair_cnt<1>_out
+l46 fair_cnt<2>_out
+l47 fair_cnt<3>_out
+l48 fair_cnt<4>_out
+l49 fair_cnt<5>_out
+l50 fair_cnt<6>_out
+l51 reg_i_hlock7_out
+l52 sys_fair2done_out
+l53 reg_controllable_hmaster0_out
+l54 reg_stateG10_1_out
+l55 reg_i_hlock6_out
+l56 reg_controllable_hmaster1_out
+l57 reg_stateG2_out
+l58 reg_stateG10_2_out
+l59 reg_i_hlock5_out
+l60 reg_controllable_hmaster2_out
+l61 reg_stateG10_3_out
+l62 sys_fair1done_out
+l63 reg_i_hlock4_out
+l64 reg_controllable_hmaster3_out
+l65 reg_stateG10_4_out
+l66 reg_i_hready_out
+l67 reg_i_hlock3_out
+l68 reg_i_hlock10_out
+l69 reg_controllable_ndecide_out
+l70 reg_controllable_busreq_out
+l71 reg_stateG10_5_out
+l72 reg_i_hlock2_out
+l73 reg_controllable_hgrant1_out
+l74 reg_i_hlock11_out
+l75 sys_fair0done_out
+l76 reg_stateG10_6_out
+l77 reg_i_hlock1_out
+l78 reg_i_hlock12_out
+l79 reg_controllable_hgrant2_out
+l80 reg_stateG10_7_out
+l81 reg_i_hlock0_out
+l82 reg_i_hlock13_out
+l83 reg_controllable_nhgrant0_out
+l84 reg_controllable_hgrant3_out
+l85 reg_stateG10_8_out
+l86 env_safe_err_happened_out
+l87 reg_controllable_hgrant4_out
+l88 reg_stateG10_9_out
+l89 reg_controllable_hgrant5_out
+l90 reg_i_hbusreq0_out
+l91 reg_controllable_hgrant6_out
+l92 sys_fair15done_out
+l93 reg_controllable_locked_out
+l94 reg_i_hbusreq1_out
+l95 reg_controllable_hgrant7_out
+l96 reg_i_hbusreq10_out
+o0 o_err
+c
+amba_14_new_66
+This file was written by ABC on Thu May  7 17:03:34 2015
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv amba14f66.v   ---gives--> amba14f66.mv
+> abc -c "read_blif_mv amba14f66.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s amba14f66y.aig"   ---gives--> amba14f66y.aig
+> aigtoaig amba14f66y.aig amba14f66y.aag   ---gives--> amba14f66y.aag (this file)
+Content of amba14f66.v:
+module amba_14_new_66(
+        o_err,
+        i_clk,
+        i_hready,
+        i_hbusreq0,
+        i_hlock0,
+        i_hbusreq1,
+        i_hlock1,
+        i_hbusreq2,
+        i_hlock2,
+        i_hbusreq3,
+        i_hlock3,
+        i_hbusreq4,
+        i_hlock4,
+        i_hbusreq5,
+        i_hlock5,
+        i_hbusreq6,
+        i_hlock6,
+        i_hbusreq7,
+        i_hlock7,
+        i_hbusreq8,
+        i_hlock8,
+        i_hbusreq9,
+        i_hlock9,
+        i_hbusreq10,
+        i_hlock10,
+        i_hbusreq11,
+        i_hlock11,
+        i_hbusreq12,
+        i_hlock12,
+        i_hbusreq13,
+        i_hlock13,
+        i_hburst0,
+        i_hburst1,
+        controllable_hmaster0,
+        controllable_hmaster1,
+        controllable_hmaster2,
+        controllable_hmaster3,
+        controllable_hmastlock,
+        controllable_nstart,
+        controllable_ndecide,
+        controllable_locked,
+        controllable_nhgrant0,
+        controllable_hgrant1,
+        controllable_hgrant2,
+        controllable_hgrant3,
+        controllable_hgrant4,
+        controllable_hgrant5,
+        controllable_hgrant6,
+        controllable_hgrant7,
+        controllable_hgrant8,
+        controllable_hgrant9,
+        controllable_hgrant10,
+        controllable_hgrant11,
+        controllable_hgrant12,
+        controllable_hgrant13,
+        controllable_busreq);
+
+input i_clk;
+input i_hready;
+input i_hbusreq0;
+input i_hlock0;
+input i_hbusreq1;
+input i_hlock1;
+input i_hbusreq2;
+input i_hlock2;
+input i_hbusreq3;
+input i_hlock3;
+input i_hbusreq4;
+input i_hlock4;
+input i_hbusreq5;
+input i_hlock5;
+input i_hbusreq6;
+input i_hlock6;
+input i_hbusreq7;
+input i_hlock7;
+input i_hbusreq8;
+input i_hlock8;
+input i_hbusreq9;
+input i_hlock9;
+input i_hbusreq10;
+input i_hlock10;
+input i_hbusreq11;
+input i_hlock11;
+input i_hbusreq12;
+input i_hlock12;
+input i_hbusreq13;
+input i_hlock13;
+input i_hburst0;
+input i_hburst1;
+input controllable_hmaster0;
+input controllable_hmaster1;
+input controllable_hmaster2;
+input controllable_hmaster3;
+input controllable_hmastlock;
+input controllable_nstart;
+input controllable_ndecide;
+input controllable_locked;
+input controllable_nhgrant0;
+input controllable_hgrant1;
+input controllable_hgrant2;
+input controllable_hgrant3;
+input controllable_hgrant4;
+input controllable_hgrant5;
+input controllable_hgrant6;
+input controllable_hgrant7;
+input controllable_hgrant8;
+input controllable_hgrant9;
+input controllable_hgrant10;
+input controllable_hgrant11;
+input controllable_hgrant12;
+input controllable_hgrant13;
+input controllable_busreq;
+output o_err;
+
+reg reg_i_hready;
+reg reg_i_hbusreq0;
+reg reg_i_hlock0;
+reg reg_i_hbusreq1;
+reg reg_i_hlock1;
+reg reg_i_hbusreq2;
+reg reg_i_hlock2;
+reg reg_i_hbusreq3;
+reg reg_i_hlock3;
+reg reg_i_hbusreq4;
+reg reg_i_hlock4;
+reg reg_i_hbusreq5;
+reg reg_i_hlock5;
+reg reg_i_hbusreq6;
+reg reg_i_hlock6;
+reg reg_i_hbusreq7;
+reg reg_i_hlock7;
+reg reg_i_hbusreq8;
+reg reg_i_hlock8;
+reg reg_i_hbusreq9;
+reg reg_i_hlock9;
+reg reg_i_hbusreq10;
+reg reg_i_hlock10;
+reg reg_i_hbusreq11;
+reg reg_i_hlock11;
+reg reg_i_hbusreq12;
+reg reg_i_hlock12;
+reg reg_i_hbusreq13;
+reg reg_i_hlock13;
+reg reg_controllable_hmaster0;
+reg reg_controllable_hmaster1;
+reg reg_controllable_hmaster2;
+reg reg_controllable_hmaster3;
+reg reg_controllable_hmastlock;
+reg reg_controllable_nstart;
+reg reg_controllable_ndecide;
+reg reg_controllable_locked;
+reg reg_controllable_nhgrant0;
+reg reg_controllable_hgrant1;
+reg reg_controllable_hgrant2;
+reg reg_controllable_hgrant3;
+reg reg_controllable_hgrant4;
+reg reg_controllable_hgrant5;
+reg reg_controllable_hgrant6;
+reg reg_controllable_hgrant7;
+reg reg_controllable_hgrant8;
+reg reg_controllable_hgrant9;
+reg reg_controllable_hgrant10;
+reg reg_controllable_hgrant11;
+reg reg_controllable_hgrant12;
+reg reg_controllable_hgrant13;
+reg reg_controllable_busreq;
+reg reg_stateA1;
+reg reg_stateG2;
+reg reg_stateG3_0;
+reg reg_stateG3_1;
+reg reg_stateG3_2;
+reg reg_stateG10_1;
+reg reg_stateG10_2;
+reg reg_stateG10_3;
+reg reg_stateG10_4;
+reg reg_stateG10_5;
+reg reg_stateG10_6;
+reg reg_stateG10_7;
+reg reg_stateG10_8;
+reg reg_stateG10_9;
+reg reg_stateG10_10;
+reg reg_stateG10_11;
+reg reg_stateG10_12;
+reg reg_stateG10_13;
+reg env_safe_err_happened;
+reg env_fair0done;
+reg env_fair1done;
+reg sys_fair0done;
+reg sys_fair1done;
+reg sys_fair2done;
+reg sys_fair3done;
+reg sys_fair4done;
+reg sys_fair5done;
+reg sys_fair6done;
+reg sys_fair7done;
+reg sys_fair8done;
+reg sys_fair9done;
+reg sys_fair10done;
+reg sys_fair11done;
+reg sys_fair12done;
+reg sys_fair13done;
+reg sys_fair14done;
+reg sys_fair15done;
+reg [6:0] fair_cnt;
+
+wire env_safe_err0;
+wire env_safe_err1;
+wire env_safe_err2;
+wire env_safe_err3;
+wire env_safe_err4;
+wire env_safe_err5;
+wire env_safe_err6;
+wire env_safe_err7;
+wire env_safe_err8;
+wire env_safe_err9;
+wire env_safe_err10;
+wire env_safe_err11;
+wire env_safe_err12;
+wire env_safe_err13;
+wire env_safe_err;
+
+wire sys_safe_err0;
+wire sys_safe_err1;
+wire sys_safe_err2;
+wire sys_safe_err3;
+wire sys_safe_err4;
+wire sys_safe_err5;
+wire sys_safe_err6;
+wire sys_safe_err7;
+wire sys_safe_err8;
+wire sys_safe_err9;
+wire sys_safe_err10;
+wire sys_safe_err11;
+wire sys_safe_err12;
+wire sys_safe_err13;
+wire sys_safe_err14;
+wire sys_safe_err15;
+wire sys_safe_err16;
+wire sys_safe_err17;
+wire sys_safe_err18;
+wire sys_safe_err19;
+wire sys_safe_err20;
+wire sys_safe_err21;
+wire sys_safe_err22;
+wire sys_safe_err23;
+wire sys_safe_err24;
+wire sys_safe_err25;
+wire sys_safe_err26;
+wire sys_safe_err27;
+wire sys_safe_err28;
+wire sys_safe_err29;
+wire sys_safe_err30;
+wire sys_safe_err31;
+wire sys_safe_err32;
+wire sys_safe_err33;
+wire sys_safe_err34;
+wire sys_safe_err35;
+wire sys_safe_err36;
+wire sys_safe_err37;
+wire sys_safe_err38;
+wire sys_safe_err39;
+wire sys_safe_err40;
+wire sys_safe_err41;
+wire sys_safe_err42;
+wire sys_safe_err43;
+wire sys_safe_err44;
+wire sys_safe_err45;
+wire sys_safe_err46;
+wire sys_safe_err47;
+wire sys_safe_err48;
+wire sys_safe_err49;
+wire sys_safe_err50;
+wire sys_safe_err51;
+wire sys_safe_err52;
+wire sys_safe_err53;
+wire sys_safe_err54;
+wire sys_safe_err55;
+wire sys_safe_err56;
+wire sys_safe_err57;
+wire sys_safe_err58;
+wire sys_safe_err59;
+wire sys_safe_err60;
+wire sys_safe_err61;
+wire sys_safe_err62;
+wire sys_safe_err63;
+wire sys_safe_err64;
+wire sys_safe_err65;
+wire sys_safe_err66;
+wire sys_safe_err67;
+wire sys_safe_err68;
+wire sys_safe_err69;
+wire sys_safe_err70;
+wire sys_safe_err71;
+wire sys_safe_err72;
+wire sys_safe_err73;
+wire sys_safe_err74;
+wire sys_safe_err75;
+wire sys_safe_err76;
+wire sys_safe_err77;
+wire sys_safe_err78;
+wire sys_safe_err79;
+wire sys_safe_err80;
+wire sys_safe_err81;
+wire sys_safe_err82;
+wire sys_safe_err83;
+wire sys_safe_err84;
+wire sys_safe_err85;
+wire sys_safe_err86;
+wire sys_safe_err87;
+wire sys_safe_err88;
+wire sys_safe_err89;
+wire sys_safe_err90;
+wire sys_safe_err91;
+wire sys_safe_err92;
+wire sys_safe_err93;
+wire sys_safe_err94;
+wire sys_safe_err95;
+wire sys_safe_err96;
+wire sys_safe_err97;
+wire sys_safe_err98;
+wire sys_safe_err99;
+wire sys_safe_err100;
+wire sys_safe_err101;
+wire sys_safe_err102;
+wire sys_safe_err103;
+wire sys_safe_err;
+
+wire env_fair0;
+wire env_fair1;
+
+wire sys_fair0;
+wire sys_fair1;
+wire sys_fair2;
+wire sys_fair3;
+wire sys_fair4;
+wire sys_fair5;
+wire sys_fair6;
+wire sys_fair7;
+wire sys_fair8;
+wire sys_fair9;
+wire sys_fair10;
+wire sys_fair11;
+wire sys_fair12;
+wire sys_fair13;
+wire sys_fair14;
+wire sys_fair15;
+wire all_env_fair_fulfilled;
+wire all_sys_fair_fulfilled;
+wire fair_err;
+wire o_err;
+
+// =============================================================
+//                        ENV_TRANSITION:
+// =============================================================
+// Assumption 3:
+// G( hlock0=1 -> hbusreq0=1 );
+assign env_safe_err0 =  ~(~ i_hlock0 | i_hbusreq0);
+
+// Assumption 3:
+// G( hlock1=1 -> hbusreq1=1 );
+assign env_safe_err1 =  ~(~ i_hlock1 | i_hbusreq1);
+
+// Assumption 3:
+// G( hlock2=1 -> hbusreq2=1 );
+assign env_safe_err2 =  ~(~ i_hlock2 | i_hbusreq2);
+
+// Assumption 3:
+// G( hlock3=1 -> hbusreq3=1 );
+assign env_safe_err3 =  ~(~ i_hlock3 | i_hbusreq3);
+
+// Assumption 3:
+// G( hlock4=1 -> hbusreq4=1 );
+assign env_safe_err4 =  ~(~ i_hlock4 | i_hbusreq4);
+
+// Assumption 3:
+// G( hlock5=1 -> hbusreq5=1 );
+assign env_safe_err5 =  ~(~ i_hlock5 | i_hbusreq5);
+
+// Assumption 3:
+// G( hlock6=1 -> hbusreq6=1 );
+assign env_safe_err6 =  ~(~ i_hlock6 | i_hbusreq6);
+
+// Assumption 3:
+// G( hlock7=1 -> hbusreq7=1 );
+assign env_safe_err7 =  ~(~ i_hlock7 | i_hbusreq7);
+
+// Assumption 3:
+// G( hlock8=1 -> hbusreq8=1 );
+assign env_safe_err8 =  ~(~ i_hlock8 | i_hbusreq8);
+
+// Assumption 3:
+// G( hlock9=1 -> hbusreq9=1 );
+assign env_safe_err9 =  ~(~ i_hlock9 | i_hbusreq9);
+
+// Assumption 3:
+// G( hlock10=1 -> hbusreq10=1 );
+assign env_safe_err10 =  ~(~ i_hlock10 | i_hbusreq10);
+
+// Assumption 3:
+// G( hlock11=1 -> hbusreq11=1 );
+assign env_safe_err11 =  ~(~ i_hlock11 | i_hbusreq11);
+
+// Assumption 3:
+// G( hlock12=1 -> hbusreq12=1 );
+assign env_safe_err12 =  ~(~ i_hlock12 | i_hbusreq12);
+
+// Assumption 3:
+// G( hlock13=1 -> hbusreq13=1 );
+assign env_safe_err13 =  ~(~ i_hlock13 | i_hbusreq13);
+
+// collecting together the safety error bits:
+assign env_safe_err = env_safe_err0 |
+                      env_safe_err1 |
+                      env_safe_err2 |
+                      env_safe_err3 |
+                      env_safe_err4 |
+                      env_safe_err5 |
+                      env_safe_err6 |
+                      env_safe_err7 |
+                      env_safe_err8 |
+                      env_safe_err9 |
+                      env_safe_err10 |
+                      env_safe_err11 |
+                      env_safe_err12 |
+                      env_safe_err13;
+
+// =============================================================
+//                        SYS_TRANSITION:
+// =============================================================
+// G((hmaster0=0) * (hmaster1=0) * (hmaster2=0) * (hmaster3=0) -> (hbusreq0=0 <-> busreq=0));
+assign sys_safe_err0 =  ~( ~( ~(controllable_hmaster0) & ~(controllable_hmaster1) & ~(controllable_hmaster2) & ~(controllable_hmaster3) )|(~i_hbusreq0 ^~ (~controllable_busreq)));
+
+// G((hmaster0=1) * (hmaster1=0) * (hmaster2=0) * (hmaster3=0) -> (hbusreq1=0 <-> busreq=0));
+assign sys_safe_err1 =  ~( ~( controllable_hmaster0 & ~(controllable_hmaster1) & ~(controllable_hmaster2) & ~(controllable_hmaster3) )|(~i_hbusreq1 ^~ (~controllable_busreq)));
+
+// G((hmaster0=0) * (hmaster1=1) * (hmaster2=0) * (hmaster3=0) -> (hbusreq2=0 <-> busreq=0));
+assign sys_safe_err2 =  ~( ~( ~(controllable_hmaster0) & controllable_hmaster1 & ~(controllable_hmaster2) & ~(controllable_hmaster3) )|(~i_hbusreq2 ^~ (~controllable_busreq)));
+
+// G((hmaster0=1) * (hmaster1=1) * (hmaster2=0) * (hmaster3=0) -> (hbusreq3=0 <-> busreq=0));
+assign sys_safe_err3 =  ~( ~( controllable_hmaster0 & controllable_hmaster1 & ~(controllable_hmaster2) & ~(controllable_hmaster3) )|(~i_hbusreq3 ^~ (~controllable_busreq)));
+
+// G((hmaster0=0) * (hmaster1=0) * (hmaster2=1) * (hmaster3=0) -> (hbusreq4=0 <-> busreq=0));
+assign sys_safe_err4 =  ~( ~( ~(controllable_hmaster0) & ~(controllable_hmaster1) & controllable_hmaster2 & ~(controllable_hmaster3) )|(~i_hbusreq4 ^~ (~controllable_busreq)));
+
+// G((hmaster0=1) * (hmaster1=0) * (hmaster2=1) * (hmaster3=0) -> (hbusreq5=0 <-> busreq=0));
+assign sys_safe_err5 =  ~( ~( controllable_hmaster0 & ~(controllable_hmaster1) & controllable_hmaster2 & ~(controllable_hmaster3) )|(~i_hbusreq5 ^~ (~controllable_busreq)));
+
+// G((hmaster0=0) * (hmaster1=1) * (hmaster2=1) * (hmaster3=0) -> (hbusreq6=0 <-> busreq=0));
+assign sys_safe_err6 =  ~( ~( ~(controllable_hmaster0) & controllable_hmaster1 & controllable_hmaster2 & ~(controllable_hmaster3) )|(~i_hbusreq6 ^~ (~controllable_busreq)));
+
+// G((hmaster0=1) * (hmaster1=1) * (hmaster2=1) * (hmaster3=0) -> (hbusreq7=0 <-> busreq=0));
+assign sys_safe_err7 =  ~( ~( controllable_hmaster0 & controllable_hmaster1 & controllable_hmaster2 & ~(controllable_hmaster3) )|(~i_hbusreq7 ^~ (~controllable_busreq)));
+
+// G((hmaster0=0) * (hmaster1=0) * (hmaster2=0) * (hmaster3=1) -> (hbusreq8=0 <-> busreq=0));
+assign sys_safe_err8 =  ~( ~( ~(controllable_hmaster0) & ~(controllable_hmaster1) & ~(controllable_hmaster2) & controllable_hmaster3 )|(~i_hbusreq8 ^~ (~controllable_busreq)));
+
+// G((hmaster0=1) * (hmaster1=0) * (hmaster2=0) * (hmaster3=1) -> (hbusreq9=0 <-> busreq=0));
+assign sys_safe_err9 =  ~( ~( controllable_hmaster0 & ~(controllable_hmaster1) & ~(controllable_hmaster2) & controllable_hmaster3 )|(~i_hbusreq9 ^~ (~controllable_busreq)));
+
+// G((hmaster0=0) * (hmaster1=1) * (hmaster2=0) * (hmaster3=1) -> (hbusreq10=0 <-> busreq=0));
+assign sys_safe_err10 =  ~( ~( ~(controllable_hmaster0) & controllable_hmaster1 & ~(controllable_hmaster2) & controllable_hmaster3 )|(~i_hbusreq10 ^~ (~controllable_busreq)));
+
+// G((hmaster0=1) * (hmaster1=1) * (hmaster2=0) * (hmaster3=1) -> (hbusreq11=0 <-> busreq=0));
+assign sys_safe_err11 =  ~( ~( controllable_hmaster0 & controllable_hmaster1 & ~(controllable_hmaster2) & controllable_hmaster3 )|(~i_hbusreq11 ^~ (~controllable_busreq)));
+
+// G((hmaster0=0) * (hmaster1=0) * (hmaster2=1) * (hmaster3=1) -> (hbusreq12=0 <-> busreq=0));
+assign sys_safe_err12 =  ~( ~( ~(controllable_hmaster0) & ~(controllable_hmaster1) & controllable_hmaster2 & controllable_hmaster3 )|(~i_hbusreq12 ^~ (~controllable_busreq)));
+
+// G((hmaster0=1) * (hmaster1=0) * (hmaster2=1) * (hmaster3=1) -> (hbusreq13=0 <-> busreq=0));
+assign sys_safe_err13 =  ~( ~( controllable_hmaster0 & ~(controllable_hmaster1) & controllable_hmaster2 & controllable_hmaster3 )|(~i_hbusreq13 ^~ (~controllable_busreq)));
+
+// Guarantee 1:
+// G((hready=0) -> X(start=0));
+assign sys_safe_err14 =  ~( reg_i_hready | controllable_nstart );
+
+// G(((stateG2=1) * (start=1)) -> FALSE;
+assign sys_safe_err15 =  ~( ~(reg_stateG2 & ~controllable_nstart) | 0 );
+
+// G(((stateG3_0=1) * (stateG3_1=0) * (stateG3_2=0) * ((start=1))) -> FALSE);
+// G(((stateG3_0=0) * (stateG3_1=1) * (stateG3_2=0) * ((start=1))) -> FALSE);
+// G(((stateG3_0=1) * (stateG3_1=1) * (stateG3_2=0) * ((start=1))) -> FALSE);
+// G(((stateG3_0=0) * (stateG3_1=0) * (stateG3_2=1) * ((start=1))) -> FALSE);
+// all these rules can be summarized as: only in state 000, start=1 is allowed:
+assign sys_safe_err16 =  (reg_stateG3_0 | reg_stateG3_1 | reg_stateG3_2) & ~controllable_nstart;
+
+// G( (hready=1) -> (   (hgrant0=1) <-> (X(hmaster0=0) * X(hmaster1=0) * X(hmaster2=0) * X(hmaster3=0))  ) );
+assign sys_safe_err17 =  ~( ~(reg_i_hready) | ( ~reg_controllable_nhgrant0 ^~ ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & ~(controllable_hmaster2) & ~(controllable_hmaster3) ) ) );
+
+// G( (hready=1) -> (   (hgrant1=1) <-> (X(hmaster0=1) * X(hmaster1=0) * X(hmaster2=0) * X(hmaster3=0))  ) );
+assign sys_safe_err18 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant1 ^~ ( controllable_hmaster0 & ~(controllable_hmaster1) & ~(controllable_hmaster2) & ~(controllable_hmaster3) ) ) );
+
+// G( (hready=1) -> (   (hgrant2=1) <-> (X(hmaster0=0) * X(hmaster1=1) * X(hmaster2=0) * X(hmaster3=0))  ) );
+assign sys_safe_err19 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant2 ^~ ( ~(controllable_hmaster0) & controllable_hmaster1 & ~(controllable_hmaster2) & ~(controllable_hmaster3) ) ) );
+
+// G( (hready=1) -> (   (hgrant3=1) <-> (X(hmaster0=1) * X(hmaster1=1) * X(hmaster2=0) * X(hmaster3=0))  ) );
+assign sys_safe_err20 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant3 ^~ ( controllable_hmaster0 & controllable_hmaster1 & ~(controllable_hmaster2) & ~(controllable_hmaster3) ) ) );
+
+// G( (hready=1) -> (   (hgrant4=1) <-> (X(hmaster0=0) * X(hmaster1=0) * X(hmaster2=1) * X(hmaster3=0))  ) );
+assign sys_safe_err21 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant4 ^~ ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & controllable_hmaster2 & ~(controllable_hmaster3) ) ) );
+
+// G( (hready=1) -> (   (hgrant5=1) <-> (X(hmaster0=1) * X(hmaster1=0) * X(hmaster2=1) * X(hmaster3=0))  ) );
+assign sys_safe_err22 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant5 ^~ ( controllable_hmaster0 & ~(controllable_hmaster1) & controllable_hmaster2 & ~(controllable_hmaster3) ) ) );
+
+// G( (hready=1) -> (   (hgrant6=1) <-> (X(hmaster0=0) * X(hmaster1=1) * X(hmaster2=1) * X(hmaster3=0))  ) );
+assign sys_safe_err23 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant6 ^~ ( ~(controllable_hmaster0) & controllable_hmaster1 & controllable_hmaster2 & ~(controllable_hmaster3) ) ) );
+
+// G( (hready=1) -> (   (hgrant7=1) <-> (X(hmaster0=1) * X(hmaster1=1) * X(hmaster2=1) * X(hmaster3=0))  ) );
+assign sys_safe_err24 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant7 ^~ ( controllable_hmaster0 & controllable_hmaster1 & controllable_hmaster2 & ~(controllable_hmaster3) ) ) );
+
+// G( (hready=1) -> (   (hgrant8=1) <-> (X(hmaster0=0) * X(hmaster1=0) * X(hmaster2=0) * X(hmaster3=1))  ) );
+assign sys_safe_err25 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant8 ^~ ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & ~(controllable_hmaster2) & controllable_hmaster3 ) ) );
+
+// G( (hready=1) -> (   (hgrant9=1) <-> (X(hmaster0=1) * X(hmaster1=0) * X(hmaster2=0) * X(hmaster3=1))  ) );
+assign sys_safe_err26 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant9 ^~ ( controllable_hmaster0 & ~(controllable_hmaster1) & ~(controllable_hmaster2) & controllable_hmaster3 ) ) );
+
+// G( (hready=1) -> (   (hgrant10=1) <-> (X(hmaster0=0) * X(hmaster1=1) * X(hmaster2=0) * X(hmaster3=1))  ) );
+assign sys_safe_err27 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant10 ^~ ( ~(controllable_hmaster0) & controllable_hmaster1 & ~(controllable_hmaster2) & controllable_hmaster3 ) ) );
+
+// G( (hready=1) -> (   (hgrant11=1) <-> (X(hmaster0=1) * X(hmaster1=1) * X(hmaster2=0) * X(hmaster3=1))  ) );
+assign sys_safe_err28 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant11 ^~ ( controllable_hmaster0 & controllable_hmaster1 & ~(controllable_hmaster2) & controllable_hmaster3 ) ) );
+
+// G( (hready=1) -> (   (hgrant12=1) <-> (X(hmaster0=0) * X(hmaster1=0) * X(hmaster2=1) * X(hmaster3=1))  ) );
+assign sys_safe_err29 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant12 ^~ ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & controllable_hmaster2 & controllable_hmaster3 ) ) );
+
+// G( (hready=1) -> (   (hgrant13=1) <-> (X(hmaster0=1) * X(hmaster1=0) * X(hmaster2=1) * X(hmaster3=1))  ) );
+assign sys_safe_err30 =  ~( ~(reg_i_hready) | ( reg_controllable_hgrant13 ^~ ( controllable_hmaster0 & ~(controllable_hmaster1) & controllable_hmaster2 & controllable_hmaster3 ) ) );
+
+// HMASTLOCK:
+// G(  (hready=1) -> (locked=0 <-> X(hmastlock=0) ) );
+assign sys_safe_err31 =  ~( ~(reg_i_hready) | (~reg_controllable_locked ^~ ~controllable_hmastlock) );
+
+// Master 0:
+// G( X(start=0) -> ( ((hmaster0=0) * (hmaster1=0) * (hmaster2=0) * (hmaster3=0)) <-> (X(hmaster0=0) * X(hmaster1=0) * X(hmaster2=0) * X(hmaster3=0)) ) );
+assign sys_safe_err32 =  ~( ~(controllable_nstart) | ( ( ~(reg_controllable_hmaster0) & ~(reg_controllable_hmaster1) & ~(reg_controllable_hmaster2) & ~(reg_controllable_hmaster3) ) ^~ ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & ~(controllable_hmaster2) & ~(controllable_hmaster3) )) );
+
+// Master 1:
+// G( X(start=0) -> ( ((hmaster0=1) * (hmaster1=0) * (hmaster2=0) * (hmaster3=0)) <-> (X(hmaster0=1) * X(hmaster1=0) * X(hmaster2=0) * X(hmaster3=0)) ) );
+assign sys_safe_err33 =  ~( ~(controllable_nstart) | ( ( reg_controllable_hmaster0 & ~(reg_controllable_hmaster1) & ~(reg_controllable_hmaster2) & ~(reg_controllable_hmaster3) ) ^~ ( controllable_hmaster0 & ~(controllable_hmaster1) & ~(controllable_hmaster2) & ~(controllable_hmaster3) )) );
+
+// Master 2:
+// G( X(start=0) -> ( ((hmaster0=0) * (hmaster1=1) * (hmaster2=0) * (hmaster3=0)) <-> (X(hmaster0=0) * X(hmaster1=1) * X(hmaster2=0) * X(hmaster3=0)) ) );
+assign sys_safe_err34 =  ~( ~(controllable_nstart) | ( ( ~(reg_controllable_hmaster0) & reg_controllable_hmaster1 & ~(reg_controllable_hmaster2) & ~(reg_controllable_hmaster3) ) ^~ ( ~(controllable_hmaster0) & controllable_hmaster1 & ~(controllable_hmaster2) & ~(controllable_hmaster3) )) );
+
+// Master 3:
+// G( X(start=0) -> ( ((hmaster0=1) * (hmaster1=1) * (hmaster2=0) * (hmaster3=0)) <-> (X(hmaster0=1) * X(hmaster1=1) * X(hmaster2=0) * X(hmaster3=0)) ) );
+assign sys_safe_err35 =  ~( ~(controllable_nstart) | ( ( reg_controllable_hmaster0 & reg_controllable_hmaster1 & ~(reg_controllable_hmaster2) & ~(reg_controllable_hmaster3) ) ^~ ( controllable_hmaster0 & controllable_hmaster1 & ~(controllable_hmaster2) & ~(controllable_hmaster3) )) );
+
+// Master 4:
+// G( X(start=0) -> ( ((hmaster0=0) * (hmaster1=0) * (hmaster2=1) * (hmaster3=0)) <-> (X(hmaster0=0) * X(hmaster1=0) * X(hmaster2=1) * X(hmaster3=0)) ) );
+assign sys_safe_err36 =  ~( ~(controllable_nstart) | ( ( ~(reg_controllable_hmaster0) & ~(reg_controllable_hmaster1) & reg_controllable_hmaster2 & ~(reg_controllable_hmaster3) ) ^~ ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & controllable_hmaster2 & ~(controllable_hmaster3) )) );
+
+// Master 5:
+// G( X(start=0) -> ( ((hmaster0=1) * (hmaster1=0) * (hmaster2=1) * (hmaster3=0)) <-> (X(hmaster0=1) * X(hmaster1=0) * X(hmaster2=1) * X(hmaster3=0)) ) );
+assign sys_safe_err37 =  ~( ~(controllable_nstart) | ( ( reg_controllable_hmaster0 & ~(reg_controllable_hmaster1) & reg_controllable_hmaster2 & ~(reg_controllable_hmaster3) ) ^~ ( controllable_hmaster0 & ~(controllable_hmaster1) & controllable_hmaster2 & ~(controllable_hmaster3) )) );
+
+// Master 6:
+// G( X(start=0) -> ( ((hmaster0=0) * (hmaster1=1) * (hmaster2=1) * (hmaster3=0)) <-> (X(hmaster0=0) * X(hmaster1=1) * X(hmaster2=1) * X(hmaster3=0)) ) );
+assign sys_safe_err38 =  ~( ~(controllable_nstart) | ( ( ~(reg_controllable_hmaster0) & reg_controllable_hmaster1 & reg_controllable_hmaster2 & ~(reg_controllable_hmaster3) ) ^~ ( ~(controllable_hmaster0) & controllable_hmaster1 & controllable_hmaster2 & ~(controllable_hmaster3) )) );
+
+// Master 7:
+// G( X(start=0) -> ( ((hmaster0=1) * (hmaster1=1) * (hmaster2=1) * (hmaster3=0)) <-> (X(hmaster0=1) * X(hmaster1=1) * X(hmaster2=1) * X(hmaster3=0)) ) );
+assign sys_safe_err39 =  ~( ~(controllable_nstart) | ( ( reg_controllable_hmaster0 & reg_controllable_hmaster1 & reg_controllable_hmaster2 & ~(reg_controllable_hmaster3) ) ^~ ( controllable_hmaster0 & controllable_hmaster1 & controllable_hmaster2 & ~(controllable_hmaster3) )) );
+
+// Master 8:
+// G( X(start=0) -> ( ((hmaster0=0) * (hmaster1=0) * (hmaster2=0) * (hmaster3=1)) <-> (X(hmaster0=0) * X(hmaster1=0) * X(hmaster2=0) * X(hmaster3=1)) ) );
+assign sys_safe_err40 =  ~( ~(controllable_nstart) | ( ( ~(reg_controllable_hmaster0) & ~(reg_controllable_hmaster1) & ~(reg_controllable_hmaster2) & reg_controllable_hmaster3 ) ^~ ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & ~(controllable_hmaster2) & controllable_hmaster3 )) );
+
+// Master 9:
+// G( X(start=0) -> ( ((hmaster0=1) * (hmaster1=0) * (hmaster2=0) * (hmaster3=1)) <-> (X(hmaster0=1) * X(hmaster1=0) * X(hmaster2=0) * X(hmaster3=1)) ) );
+assign sys_safe_err41 =  ~( ~(controllable_nstart) | ( ( reg_controllable_hmaster0 & ~(reg_controllable_hmaster1) & ~(reg_controllable_hmaster2) & reg_controllable_hmaster3 ) ^~ ( controllable_hmaster0 & ~(controllable_hmaster1) & ~(controllable_hmaster2) & controllable_hmaster3 )) );
+
+// Master 10:
+// G( X(start=0) -> ( ((hmaster0=0) * (hmaster1=1) * (hmaster2=0) * (hmaster3=1)) <-> (X(hmaster0=0) * X(hmaster1=1) * X(hmaster2=0) * X(hmaster3=1)) ) );
+assign sys_safe_err42 =  ~( ~(controllable_nstart) | ( ( ~(reg_controllable_hmaster0) & reg_controllable_hmaster1 & ~(reg_controllable_hmaster2) & reg_controllable_hmaster3 ) ^~ ( ~(controllable_hmaster0) & controllable_hmaster1 & ~(controllable_hmaster2) & controllable_hmaster3 )) );
+
+// Master 11:
+// G( X(start=0) -> ( ((hmaster0=1) * (hmaster1=1) * (hmaster2=0) * (hmaster3=1)) <-> (X(hmaster0=1) * X(hmaster1=1) * X(hmaster2=0) * X(hmaster3=1)) ) );
+assign sys_safe_err43 =  ~( ~(controllable_nstart) | ( ( reg_controllable_hmaster0 & reg_controllable_hmaster1 & ~(reg_controllable_hmaster2) & reg_controllable_hmaster3 ) ^~ ( controllable_hmaster0 & controllable_hmaster1 & ~(controllable_hmaster2) & controllable_hmaster3 )) );
+
+// Master 12:
+// G( X(start=0) -> ( ((hmaster0=0) * (hmaster1=0) * (hmaster2=1) * (hmaster3=1)) <-> (X(hmaster0=0) * X(hmaster1=0) * X(hmaster2=1) * X(hmaster3=1)) ) );
+assign sys_safe_err44 =  ~( ~(controllable_nstart) | ( ( ~(reg_controllable_hmaster0) & ~(reg_controllable_hmaster1) & reg_controllable_hmaster2 & reg_controllable_hmaster3 ) ^~ ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & controllable_hmaster2 & controllable_hmaster3 )) );
+
+// Master 13:
+// G( X(start=0) -> ( ((hmaster0=1) * (hmaster1=0) * (hmaster2=1) * (hmaster3=1)) <-> (X(hmaster0=1) * X(hmaster1=0) * X(hmaster2=1) * X(hmaster3=1)) ) );
+assign sys_safe_err45 =  ~( ~(controllable_nstart) | ( ( reg_controllable_hmaster0 & ~(reg_controllable_hmaster1) & reg_controllable_hmaster2 & reg_controllable_hmaster3 ) ^~ ( controllable_hmaster0 & ~(controllable_hmaster1) & controllable_hmaster2 & controllable_hmaster3 )) );
+
+// Guarantee 6.2:
+// G( ((X(start=0))) -> ( (hmastlock=1) <-> X(hmastlock=1)) );
+assign sys_safe_err46 =  ~( ~(controllable_nstart) | ( reg_controllable_hmastlock ^~ controllable_hmastlock) );
+
+// G( (decide=1  *  hlock0=1  *  X(hgrant0=1) )->X(locked=1));
+assign sys_safe_err47 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock0 & ~controllable_nhgrant0) | (controllable_locked) );
+
+// G((decide=1  *  hlock0=0  *  X(hgrant0=1))->X(locked=0));
+assign sys_safe_err48 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock0 & ~controllable_nhgrant0) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock1=1  *  X(hgrant1=1) )->X(locked=1));
+assign sys_safe_err49 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock1 & controllable_hgrant1) | (controllable_locked) );
+
+// G((decide=1  *  hlock1=0  *  X(hgrant1=1))->X(locked=0));
+assign sys_safe_err50 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock1 & controllable_hgrant1) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock2=1  *  X(hgrant2=1) )->X(locked=1));
+assign sys_safe_err51 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock2 & controllable_hgrant2) | (controllable_locked) );
+
+// G((decide=1  *  hlock2=0  *  X(hgrant2=1))->X(locked=0));
+assign sys_safe_err52 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock2 & controllable_hgrant2) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock3=1  *  X(hgrant3=1) )->X(locked=1));
+assign sys_safe_err53 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock3 & controllable_hgrant3) | (controllable_locked) );
+
+// G((decide=1  *  hlock3=0  *  X(hgrant3=1))->X(locked=0));
+assign sys_safe_err54 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock3 & controllable_hgrant3) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock4=1  *  X(hgrant4=1) )->X(locked=1));
+assign sys_safe_err55 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock4 & controllable_hgrant4) | (controllable_locked) );
+
+// G((decide=1  *  hlock4=0  *  X(hgrant4=1))->X(locked=0));
+assign sys_safe_err56 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock4 & controllable_hgrant4) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock5=1  *  X(hgrant5=1) )->X(locked=1));
+assign sys_safe_err57 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock5 & controllable_hgrant5) | (controllable_locked) );
+
+// G((decide=1  *  hlock5=0  *  X(hgrant5=1))->X(locked=0));
+assign sys_safe_err58 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock5 & controllable_hgrant5) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock6=1  *  X(hgrant6=1) )->X(locked=1));
+assign sys_safe_err59 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock6 & controllable_hgrant6) | (controllable_locked) );
+
+// G((decide=1  *  hlock6=0  *  X(hgrant6=1))->X(locked=0));
+assign sys_safe_err60 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock6 & controllable_hgrant6) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock7=1  *  X(hgrant7=1) )->X(locked=1));
+assign sys_safe_err61 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock7 & controllable_hgrant7) | (controllable_locked) );
+
+// G((decide=1  *  hlock7=0  *  X(hgrant7=1))->X(locked=0));
+assign sys_safe_err62 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock7 & controllable_hgrant7) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock8=1  *  X(hgrant8=1) )->X(locked=1));
+assign sys_safe_err63 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock8 & controllable_hgrant8) | (controllable_locked) );
+
+// G((decide=1  *  hlock8=0  *  X(hgrant8=1))->X(locked=0));
+assign sys_safe_err64 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock8 & controllable_hgrant8) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock9=1  *  X(hgrant9=1) )->X(locked=1));
+assign sys_safe_err65 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock9 & controllable_hgrant9) | (controllable_locked) );
+
+// G((decide=1  *  hlock9=0  *  X(hgrant9=1))->X(locked=0));
+assign sys_safe_err66 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock9 & controllable_hgrant9) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock10=1  *  X(hgrant10=1) )->X(locked=1));
+assign sys_safe_err67 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock10 & controllable_hgrant10) | (controllable_locked) );
+
+// G((decide=1  *  hlock10=0  *  X(hgrant10=1))->X(locked=0));
+assign sys_safe_err68 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock10 & controllable_hgrant10) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock11=1  *  X(hgrant11=1) )->X(locked=1));
+assign sys_safe_err69 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock11 & controllable_hgrant11) | (controllable_locked) );
+
+// G((decide=1  *  hlock11=0  *  X(hgrant11=1))->X(locked=0));
+assign sys_safe_err70 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock11 & controllable_hgrant11) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock12=1  *  X(hgrant12=1) )->X(locked=1));
+assign sys_safe_err71 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock12 & controllable_hgrant12) | (controllable_locked) );
+
+// G((decide=1  *  hlock12=0  *  X(hgrant12=1))->X(locked=0));
+assign sys_safe_err72 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock12 & controllable_hgrant12) | (~controllable_locked) );
+
+// G( (decide=1  *  hlock13=1  *  X(hgrant13=1) )->X(locked=1));
+assign sys_safe_err73 =  ~( ~(~reg_controllable_ndecide & reg_i_hlock13 & controllable_hgrant13) | (controllable_locked) );
+
+// G((decide=1  *  hlock13=0  *  X(hgrant13=1))->X(locked=0));
+assign sys_safe_err74 =  ~( ~(~reg_controllable_ndecide & ~reg_i_hlock13 & controllable_hgrant13) | (~controllable_locked) );
+
+// G( (decide=0) -> (  ((hgrant0=0)<->X(hgrant0=0))  ));
+assign sys_safe_err75 =  ~( ~(reg_controllable_ndecide) | (reg_controllable_nhgrant0 ^~ controllable_nhgrant0) );
+
+// G( (decide=0) -> (  ((hgrant1=0)<->X(hgrant1=0))  ));
+assign sys_safe_err76 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant1 ^~ ~controllable_hgrant1) );
+
+// G( (decide=0) -> (  ((hgrant2=0)<->X(hgrant2=0))  ));
+assign sys_safe_err77 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant2 ^~ ~controllable_hgrant2) );
+
+// G( (decide=0) -> (  ((hgrant3=0)<->X(hgrant3=0))  ));
+assign sys_safe_err78 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant3 ^~ ~controllable_hgrant3) );
+
+// G( (decide=0) -> (  ((hgrant4=0)<->X(hgrant4=0))  ));
+assign sys_safe_err79 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant4 ^~ ~controllable_hgrant4) );
+
+// G( (decide=0) -> (  ((hgrant5=0)<->X(hgrant5=0))  ));
+assign sys_safe_err80 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant5 ^~ ~controllable_hgrant5) );
+
+// G( (decide=0) -> (  ((hgrant6=0)<->X(hgrant6=0))  ));
+assign sys_safe_err81 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant6 ^~ ~controllable_hgrant6) );
+
+// G( (decide=0) -> (  ((hgrant7=0)<->X(hgrant7=0))  ));
+assign sys_safe_err82 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant7 ^~ ~controllable_hgrant7) );
+
+// G( (decide=0) -> (  ((hgrant8=0)<->X(hgrant8=0))  ));
+assign sys_safe_err83 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant8 ^~ ~controllable_hgrant8) );
+
+// G( (decide=0) -> (  ((hgrant9=0)<->X(hgrant9=0))  ));
+assign sys_safe_err84 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant9 ^~ ~controllable_hgrant9) );
+
+// G( (decide=0) -> (  ((hgrant10=0)<->X(hgrant10=0))  ));
+assign sys_safe_err85 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant10 ^~ ~controllable_hgrant10) );
+
+// G( (decide=0) -> (  ((hgrant11=0)<->X(hgrant11=0))  ));
+assign sys_safe_err86 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant11 ^~ ~controllable_hgrant11) );
+
+// G( (decide=0) -> (  ((hgrant12=0)<->X(hgrant12=0))  ));
+assign sys_safe_err87 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant12 ^~ ~controllable_hgrant12) );
+
+// G( (decide=0) -> (  ((hgrant13=0)<->X(hgrant13=0))  ));
+assign sys_safe_err88 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_hgrant13 ^~ ~controllable_hgrant13) );
+
+// G((decide=0)->(locked=0 <-> X(locked=0)));
+assign sys_safe_err89 =  ~( ~(reg_controllable_ndecide) | (~reg_controllable_locked ^~ ~controllable_locked) );
+
+// G(((stateG10_1=1) * (((hgrant1=1)) * (hbusreq1=0)))->FALSE);
+assign sys_safe_err90 =  ~( ~(reg_stateG10_1 & (controllable_hgrant1 & ~i_hbusreq1)) | 0 );
+
+// G(((stateG10_2=1) * (((hgrant2=1)) * (hbusreq2=0)))->FALSE);
+assign sys_safe_err91 =  ~( ~(reg_stateG10_2 & (controllable_hgrant2 & ~i_hbusreq2)) | 0 );
+
+// G(((stateG10_3=1) * (((hgrant3=1)) * (hbusreq3=0)))->FALSE);
+assign sys_safe_err92 =  ~( ~(reg_stateG10_3 & (controllable_hgrant3 & ~i_hbusreq3)) | 0 );
+
+// G(((stateG10_4=1) * (((hgrant4=1)) * (hbusreq4=0)))->FALSE);
+assign sys_safe_err93 =  ~( ~(reg_stateG10_4 & (controllable_hgrant4 & ~i_hbusreq4)) | 0 );
+
+// G(((stateG10_5=1) * (((hgrant5=1)) * (hbusreq5=0)))->FALSE);
+assign sys_safe_err94 =  ~( ~(reg_stateG10_5 & (controllable_hgrant5 & ~i_hbusreq5)) | 0 );
+
+// G(((stateG10_6=1) * (((hgrant6=1)) * (hbusreq6=0)))->FALSE);
+assign sys_safe_err95 =  ~( ~(reg_stateG10_6 & (controllable_hgrant6 & ~i_hbusreq6)) | 0 );
+
+// G(((stateG10_7=1) * (((hgrant7=1)) * (hbusreq7=0)))->FALSE);
+assign sys_safe_err96 =  ~( ~(reg_stateG10_7 & (controllable_hgrant7 & ~i_hbusreq7)) | 0 );
+
+// G(((stateG10_8=1) * (((hgrant8=1)) * (hbusreq8=0)))->FALSE);
+assign sys_safe_err97 =  ~( ~(reg_stateG10_8 & (controllable_hgrant8 & ~i_hbusreq8)) | 0 );
+
+// G(((stateG10_9=1) * (((hgrant9=1)) * (hbusreq9=0)))->FALSE);
+assign sys_safe_err98 =  ~( ~(reg_stateG10_9 & (controllable_hgrant9 & ~i_hbusreq9)) | 0 );
+
+// G(((stateG10_10=1) * (((hgrant10=1)) * (hbusreq10=0)))->FALSE);
+assign sys_safe_err99 =  ~( ~(reg_stateG10_10 & (controllable_hgrant10 & ~i_hbusreq10)) | 0 );
+
+// G(((stateG10_11=1) * (((hgrant11=1)) * (hbusreq11=0)))->FALSE);
+assign sys_safe_err100 =  ~( ~(reg_stateG10_11 & (controllable_hgrant11 & ~i_hbusreq11)) | 0 );
+
+// G(((stateG10_12=1) * (((hgrant12=1)) * (hbusreq12=0)))->FALSE);
+assign sys_safe_err101 =  ~( ~(reg_stateG10_12 & (controllable_hgrant12 & ~i_hbusreq12)) | 0 );
+
+// G(((stateG10_13=1) * (((hgrant13=1)) * (hbusreq13=0)))->FALSE);
+assign sys_safe_err102 =  ~( ~(reg_stateG10_13 & (controllable_hgrant13 & ~i_hbusreq13)) | 0 );
+
+// default master
+// G((decide=1  *  hbusreq0=0  *  hbusreq1=0  *  hbusreq2=0  *  hbusreq3=0  *  hbusreq4=0  *  hbusreq5=0  *  hbusreq6=0  *  hbusreq7=0  *  hbusreq8=0  *  hbusreq9=0  *  hbusreq10=0  *  hbusreq11=0  *  hbusreq12=0  *  hbusreq13=0) -> X(hgrant0=1));
+assign sys_safe_err103 =  ~( ~(~reg_controllable_ndecide & (~reg_i_hbusreq0 & ~reg_i_hbusreq1 & ~reg_i_hbusreq2 & ~reg_i_hbusreq3 & ~reg_i_hbusreq4 & ~reg_i_hbusreq5 & ~reg_i_hbusreq6 & ~reg_i_hbusreq7 & ~reg_i_hbusreq8 & ~reg_i_hbusreq9 & ~reg_i_hbusreq10 & ~reg_i_hbusreq11 & ~reg_i_hbusreq12 & ~reg_i_hbusreq13)) | (~controllable_nhgrant0) );
+
+// collecting together the safety error bits:
+assign sys_safe_err = sys_safe_err0 |
+                      sys_safe_err1 |
+                      sys_safe_err2 |
+                      sys_safe_err3 |
+                      sys_safe_err4 |
+                      sys_safe_err5 |
+                      sys_safe_err6 |
+                      sys_safe_err7 |
+                      sys_safe_err8 |
+                      sys_safe_err9 |
+                      sys_safe_err10 |
+                      sys_safe_err11 |
+                      sys_safe_err12 |
+                      sys_safe_err13 |
+                      sys_safe_err14 |
+                      sys_safe_err15 |
+                      sys_safe_err16 |
+                      sys_safe_err17 |
+                      sys_safe_err18 |
+                      sys_safe_err19 |
+                      sys_safe_err20 |
+                      sys_safe_err21 |
+                      sys_safe_err22 |
+                      sys_safe_err23 |
+                      sys_safe_err24 |
+                      sys_safe_err25 |
+                      sys_safe_err26 |
+                      sys_safe_err27 |
+                      sys_safe_err28 |
+                      sys_safe_err29 |
+                      sys_safe_err30 |
+                      sys_safe_err31 |
+                      sys_safe_err32 |
+                      sys_safe_err33 |
+                      sys_safe_err34 |
+                      sys_safe_err35 |
+                      sys_safe_err36 |
+                      sys_safe_err37 |
+                      sys_safe_err38 |
+                      sys_safe_err39 |
+                      sys_safe_err40 |
+                      sys_safe_err41 |
+                      sys_safe_err42 |
+                      sys_safe_err43 |
+                      sys_safe_err44 |
+                      sys_safe_err45 |
+                      sys_safe_err46 |
+                      sys_safe_err47 |
+                      sys_safe_err48 |
+                      sys_safe_err49 |
+                      sys_safe_err50 |
+                      sys_safe_err51 |
+                      sys_safe_err52 |
+                      sys_safe_err53 |
+                      sys_safe_err54 |
+                      sys_safe_err55 |
+                      sys_safe_err56 |
+                      sys_safe_err57 |
+                      sys_safe_err58 |
+                      sys_safe_err59 |
+                      sys_safe_err60 |
+                      sys_safe_err61 |
+                      sys_safe_err62 |
+                      sys_safe_err63 |
+                      sys_safe_err64 |
+                      sys_safe_err65 |
+                      sys_safe_err66 |
+                      sys_safe_err67 |
+                      sys_safe_err68 |
+                      sys_safe_err69 |
+                      sys_safe_err70 |
+                      sys_safe_err71 |
+                      sys_safe_err72 |
+                      sys_safe_err73 |
+                      sys_safe_err74 |
+                      sys_safe_err75 |
+                      sys_safe_err76 |
+                      sys_safe_err77 |
+                      sys_safe_err78 |
+                      sys_safe_err79 |
+                      sys_safe_err80 |
+                      sys_safe_err81 |
+                      sys_safe_err82 |
+                      sys_safe_err83 |
+                      sys_safe_err84 |
+                      sys_safe_err85 |
+                      sys_safe_err86 |
+                      sys_safe_err87 |
+                      sys_safe_err88 |
+                      sys_safe_err89 |
+                      sys_safe_err90 |
+                      sys_safe_err91 |
+                      sys_safe_err92 |
+                      sys_safe_err93 |
+                      sys_safe_err94 |
+                      sys_safe_err95 |
+                      sys_safe_err96 |
+                      sys_safe_err97 |
+                      sys_safe_err98 |
+                      sys_safe_err99 |
+                      sys_safe_err100 |
+                      sys_safe_err101 |
+                      sys_safe_err102 |
+                      sys_safe_err103;
+
+// =============================================================
+//                          ENV_FAIRNESS:
+// =============================================================
+// Assumption 1: 
+// G(F(stateA1=0));
+assign env_fair0 =  ~reg_stateA1;
+
+// Assumption 2:
+// G(F(hready=1));
+assign env_fair1 =  i_hready;
+
+assign all_env_fair_fulfilled = (env_fair0done | env_fair0) &
+                                (env_fair1done | env_fair1);
+
+// =============================================================
+//                          SYS_FAIRNESS:
+// =============================================================
+// Guarantee 2:
+// G(F(stateG2=0));
+assign sys_fair0 = ~reg_stateG2;
+
+// Guarantee 3:
+// G(F((stateG3_0=0)  *  (stateG3_1=0)  *  (stateG3_2=0)));
+assign sys_fair1 =  (~reg_stateG3_0 & ~reg_stateG3_1 & ~reg_stateG3_2);
+
+// G(F(((hmaster0=0) * (hmaster1=0) * (hmaster2=0) * (hmaster3=0))  |  hbusreq0=0));
+assign sys_fair2 =  ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & ~(controllable_hmaster2) & ~(controllable_hmaster3) ) | ~i_hbusreq0;
+
+// G(F(((hmaster0=1) * (hmaster1=0) * (hmaster2=0) * (hmaster3=0))  |  hbusreq1=0));
+assign sys_fair3 =  ( controllable_hmaster0 & ~(controllable_hmaster1) & ~(controllable_hmaster2) & ~(controllable_hmaster3) ) | ~i_hbusreq1;
+
+// G(F(((hmaster0=0) * (hmaster1=1) * (hmaster2=0) * (hmaster3=0))  |  hbusreq2=0));
+assign sys_fair4 =  ( ~(controllable_hmaster0) & controllable_hmaster1 & ~(controllable_hmaster2) & ~(controllable_hmaster3) ) | ~i_hbusreq2;
+
+// G(F(((hmaster0=1) * (hmaster1=1) * (hmaster2=0) * (hmaster3=0))  |  hbusreq3=0));
+assign sys_fair5 =  ( controllable_hmaster0 & controllable_hmaster1 & ~(controllable_hmaster2) & ~(controllable_hmaster3) ) | ~i_hbusreq3;
+
+// G(F(((hmaster0=0) * (hmaster1=0) * (hmaster2=1) * (hmaster3=0))  |  hbusreq4=0));
+assign sys_fair6 =  ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & controllable_hmaster2 & ~(controllable_hmaster3) ) | ~i_hbusreq4;
+
+// G(F(((hmaster0=1) * (hmaster1=0) * (hmaster2=1) * (hmaster3=0))  |  hbusreq5=0));
+assign sys_fair7 =  ( controllable_hmaster0 & ~(controllable_hmaster1) & controllable_hmaster2 & ~(controllable_hmaster3) ) | ~i_hbusreq5;
+
+// G(F(((hmaster0=0) * (hmaster1=1) * (hmaster2=1) * (hmaster3=0))  |  hbusreq6=0));
+assign sys_fair8 =  ( ~(controllable_hmaster0) & controllable_hmaster1 & controllable_hmaster2 & ~(controllable_hmaster3) ) | ~i_hbusreq6;
+
+// G(F(((hmaster0=1) * (hmaster1=1) * (hmaster2=1) * (hmaster3=0))  |  hbusreq7=0));
+assign sys_fair9 =  ( controllable_hmaster0 & controllable_hmaster1 & controllable_hmaster2 & ~(controllable_hmaster3) ) | ~i_hbusreq7;
+
+// G(F(((hmaster0=0) * (hmaster1=0) * (hmaster2=0) * (hmaster3=1))  |  hbusreq8=0));
+assign sys_fair10 =  ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & ~(controllable_hmaster2) & controllable_hmaster3 ) | ~i_hbusreq8;
+
+// G(F(((hmaster0=1) * (hmaster1=0) * (hmaster2=0) * (hmaster3=1))  |  hbusreq9=0));
+assign sys_fair11 =  ( controllable_hmaster0 & ~(controllable_hmaster1) & ~(controllable_hmaster2) & controllable_hmaster3 ) | ~i_hbusreq9;
+
+// G(F(((hmaster0=0) * (hmaster1=1) * (hmaster2=0) * (hmaster3=1))  |  hbusreq10=0));
+assign sys_fair12 =  ( ~(controllable_hmaster0) & controllable_hmaster1 & ~(controllable_hmaster2) & controllable_hmaster3 ) | ~i_hbusreq10;
+
+// G(F(((hmaster0=1) * (hmaster1=1) * (hmaster2=0) * (hmaster3=1))  |  hbusreq11=0));
+assign sys_fair13 =  ( controllable_hmaster0 & controllable_hmaster1 & ~(controllable_hmaster2) & controllable_hmaster3 ) | ~i_hbusreq11;
+
+// G(F(((hmaster0=0) * (hmaster1=0) * (hmaster2=1) * (hmaster3=1))  |  hbusreq12=0));
+assign sys_fair14 =  ( ~(controllable_hmaster0) & ~(controllable_hmaster1) & controllable_hmaster2 & controllable_hmaster3 ) | ~i_hbusreq12;
+
+// G(F(((hmaster0=1) * (hmaster1=0) * (hmaster2=1) * (hmaster3=1))  |  hbusreq13=0));
+assign sys_fair15 =  ( controllable_hmaster0 & ~(controllable_hmaster1) & controllable_hmaster2 & controllable_hmaster3 ) | ~i_hbusreq13;
+
+assign all_sys_fair_fulfilled = (sys_fair0done | sys_fair0) &
+                                (sys_fair1done | sys_fair1) &
+                                (sys_fair2done | sys_fair2) &
+                                (sys_fair3done | sys_fair3) &
+                                (sys_fair4done | sys_fair4) &
+                                (sys_fair5done | sys_fair5) &
+                                (sys_fair6done | sys_fair6) &
+                                (sys_fair7done | sys_fair7) &
+                                (sys_fair8done | sys_fair8) &
+                                (sys_fair9done | sys_fair9) &
+                                (sys_fair10done | sys_fair10) &
+                                (sys_fair11done | sys_fair11) &
+                                (sys_fair12done | sys_fair12) &
+                                (sys_fair13done | sys_fair13) &
+                                (sys_fair14done | sys_fair14) &
+                                (sys_fair15done | sys_fair15);
+assign fair_err = (fair_cnt >= 7'b1000010);
+
+// computing the error output bit:
+assign o_err = ~env_safe_err & ~env_safe_err_happened & (sys_safe_err | fair_err);
+
+initial
+ begin
+  reg_i_hready = 0;
+  reg_i_hbusreq0 = 0;
+  reg_i_hlock0 = 0;
+  reg_i_hbusreq1 = 0;
+  reg_i_hlock1 = 0;
+  reg_i_hbusreq2 = 0;
+  reg_i_hlock2 = 0;
+  reg_i_hbusreq3 = 0;
+  reg_i_hlock3 = 0;
+  reg_i_hbusreq4 = 0;
+  reg_i_hlock4 = 0;
+  reg_i_hbusreq5 = 0;
+  reg_i_hlock5 = 0;
+  reg_i_hbusreq6 = 0;
+  reg_i_hlock6 = 0;
+  reg_i_hbusreq7 = 0;
+  reg_i_hlock7 = 0;
+  reg_i_hbusreq8 = 0;
+  reg_i_hlock8 = 0;
+  reg_i_hbusreq9 = 0;
+  reg_i_hlock9 = 0;
+  reg_i_hbusreq10 = 0;
+  reg_i_hlock10 = 0;
+  reg_i_hbusreq11 = 0;
+  reg_i_hlock11 = 0;
+  reg_i_hbusreq12 = 0;
+  reg_i_hlock12 = 0;
+  reg_i_hbusreq13 = 0;
+  reg_i_hlock13 = 0;
+  reg_controllable_hmaster0 = 0;
+  reg_controllable_hmaster1 = 0;
+  reg_controllable_hmaster2 = 0;
+  reg_controllable_hmaster3 = 0;
+  reg_controllable_hmastlock = 0;
+  reg_controllable_nstart = 0;
+  reg_controllable_ndecide = 0;
+  reg_controllable_locked = 0;
+  reg_controllable_nhgrant0 = 0;
+  reg_controllable_hgrant1 = 0;
+  reg_controllable_hgrant2 = 0;
+  reg_controllable_hgrant3 = 0;
+  reg_controllable_hgrant4 = 0;
+  reg_controllable_hgrant5 = 0;
+  reg_controllable_hgrant6 = 0;
+  reg_controllable_hgrant7 = 0;
+  reg_controllable_hgrant8 = 0;
+  reg_controllable_hgrant9 = 0;
+  reg_controllable_hgrant10 = 0;
+  reg_controllable_hgrant11 = 0;
+  reg_controllable_hgrant12 = 0;
+  reg_controllable_hgrant13 = 0;
+  reg_controllable_busreq = 0;
+  reg_stateA1 = 0;
+  reg_stateG2 = 0;
+  reg_stateG3_0 = 0;
+  reg_stateG3_1 = 0;
+  reg_stateG3_2 = 0;
+  reg_stateG10_1 = 0;
+  reg_stateG10_2 = 0;
+  reg_stateG10_3 = 0;
+  reg_stateG10_4 = 0;
+  reg_stateG10_5 = 0;
+  reg_stateG10_6 = 0;
+  reg_stateG10_7 = 0;
+  reg_stateG10_8 = 0;
+  reg_stateG10_9 = 0;
+  reg_stateG10_10 = 0;
+  reg_stateG10_11 = 0;
+  reg_stateG10_12 = 0;
+  reg_stateG10_13 = 0;
+  env_safe_err_happened = 0;
+  env_fair0done = 0;
+  env_fair1done = 0;
+  sys_fair0done = 0;
+  sys_fair1done = 0;
+  sys_fair2done = 0;
+  sys_fair3done = 0;
+  sys_fair4done = 0;
+  sys_fair5done = 0;
+  sys_fair6done = 0;
+  sys_fair7done = 0;
+  sys_fair8done = 0;
+  sys_fair9done = 0;
+  sys_fair10done = 0;
+  sys_fair11done = 0;
+  sys_fair12done = 0;
+  sys_fair13done = 0;
+  sys_fair14done = 0;
+  sys_fair15done = 0;
+  fair_cnt = 0;
+ end
+
+
+always @(posedge i_clk)
+ begin
+   // We remember if an environment error occurred:
+   env_safe_err_happened = env_safe_err_happened | env_safe_err;
+
+   // Updating the fairness counters: 
+   if(all_sys_fair_fulfilled)
+    begin
+      env_fair0done = 0;
+      env_fair1done = 0;
+      sys_fair0done = 0;
+      sys_fair1done = 0;
+      sys_fair2done = 0;
+      sys_fair3done = 0;
+      sys_fair4done = 0;
+      sys_fair5done = 0;
+      sys_fair6done = 0;
+      sys_fair7done = 0;
+      sys_fair8done = 0;
+      sys_fair9done = 0;
+      sys_fair10done = 0;
+      sys_fair11done = 0;
+      sys_fair12done = 0;
+      sys_fair13done = 0;
+      sys_fair14done = 0;
+      sys_fair15done = 0;
+      fair_cnt = 0;
+    end
+   else
+    begin
+      sys_fair0done = sys_fair0done | sys_fair0;
+      sys_fair1done = sys_fair1done | sys_fair1;
+      sys_fair2done = sys_fair2done | sys_fair2;
+      sys_fair3done = sys_fair3done | sys_fair3;
+      sys_fair4done = sys_fair4done | sys_fair4;
+      sys_fair5done = sys_fair5done | sys_fair5;
+      sys_fair6done = sys_fair6done | sys_fair6;
+      sys_fair7done = sys_fair7done | sys_fair7;
+      sys_fair8done = sys_fair8done | sys_fair8;
+      sys_fair9done = sys_fair9done | sys_fair9;
+      sys_fair10done = sys_fair10done | sys_fair10;
+      sys_fair11done = sys_fair11done | sys_fair11;
+      sys_fair12done = sys_fair12done | sys_fair12;
+      sys_fair13done = sys_fair13done | sys_fair13;
+      sys_fair14done = sys_fair14done | sys_fair14;
+      sys_fair15done = sys_fair15done | sys_fair15;
+      if(all_env_fair_fulfilled)
+       begin
+         env_fair0done = 0;
+         env_fair1done = 0;
+         fair_cnt = fair_cnt + 1;
+       end
+      else
+       begin
+         env_fair0done = env_fair0done | env_fair0;
+         env_fair1done = env_fair1done | env_fair1;
+       end
+    end
+
+   // Updating the automata: 
+   // Automaton A1: 
+   if(~reg_stateA1 & controllable_hmastlock & ~i_hburst0 & ~i_hburst1)
+    begin
+      reg_stateA1 = 1'b1;
+    end
+   else if(reg_stateA1 & ~controllable_busreq)
+    begin
+      reg_stateA1 = 1'b0;
+    end
+
+   // Automaton G2: 
+   if(~reg_stateG2)
+    begin
+      if(controllable_hmastlock & ~controllable_nstart & ~i_hburst0 & ~i_hburst1)
+       begin
+         reg_stateG2 = 1'b1;
+       end
+    end
+   else // if(reg_stateG2)
+    begin
+      if(~controllable_busreq)
+       begin
+         reg_stateG2 = 1'b0;
+       end
+    end
+
+   // Automaton G3: 
+   if(~reg_stateG3_0 & ~reg_stateG3_1 & ~reg_stateG3_2 & controllable_hmastlock & ~controllable_nstart &  ~i_hburst0 & i_hburst1 & ~i_hready)
+    begin
+      reg_stateG3_0 = 1'b1;
+      reg_stateG3_1 = 1'b0;
+      reg_stateG3_2 = 1'b0;
+    end
+   else if(~reg_stateG3_0 & ~reg_stateG3_1 & ~reg_stateG3_2 & controllable_hmastlock & ~controllable_nstart &  ~i_hburst0 & i_hburst1 & i_hready)
+    begin
+      reg_stateG3_0 = 1'b0;
+      reg_stateG3_1 = 1'b1;
+      reg_stateG3_2 = 1'b0;
+    end
+   else if(reg_stateG3_0 & ~reg_stateG3_1 & ~reg_stateG3_2 & i_hready)
+    begin
+      reg_stateG3_0 = 1'b0;
+      reg_stateG3_1 = 1'b1;
+      reg_stateG3_2 = 1'b0;
+    end
+   else if(~reg_stateG3_0 & reg_stateG3_1 & ~reg_stateG3_2 & i_hready)
+    begin
+      reg_stateG3_0 = 1'b1;
+      reg_stateG3_1 = 1'b1;
+      reg_stateG3_2 = 1'b0;
+    end
+   else if(reg_stateG3_0 & reg_stateG3_1 & ~reg_stateG3_2 & i_hready)
+    begin
+      reg_stateG3_0 = 1'b0;
+      reg_stateG3_1 = 1'b0;
+      reg_stateG3_2 = 1'b1;
+    end
+   else if(~reg_stateG3_0 & ~reg_stateG3_1 & reg_stateG3_2 & i_hready)
+    begin
+      reg_stateG3_0 = 1'b0;
+      reg_stateG3_1 = 1'b0;
+      reg_stateG3_2 = 1'b0;
+    end
+
+   // Automaton G10_1: 
+   if(~reg_stateG10_1 & ~controllable_hgrant1 & ~i_hbusreq1)
+    begin
+      reg_stateG10_1 = 1'b1;
+    end
+   else if(reg_stateG10_1 & i_hbusreq1)
+    begin
+      reg_stateG10_1 = 1'b0;
+    end
+
+   // Automaton G10_2: 
+   if(~reg_stateG10_2 & ~controllable_hgrant2 & ~i_hbusreq2)
+    begin
+      reg_stateG10_2 = 1'b1;
+    end
+   else if(reg_stateG10_2 & i_hbusreq2)
+    begin
+      reg_stateG10_2 = 1'b0;
+    end
+
+   // Automaton G10_3: 
+   if(~reg_stateG10_3 & ~controllable_hgrant3 & ~i_hbusreq3)
+    begin
+      reg_stateG10_3 = 1'b1;
+    end
+   else if(reg_stateG10_3 & i_hbusreq3)
+    begin
+      reg_stateG10_3 = 1'b0;
+    end
+
+   // Automaton G10_4: 
+   if(~reg_stateG10_4 & ~controllable_hgrant4 & ~i_hbusreq4)
+    begin
+      reg_stateG10_4 = 1'b1;
+    end
+   else if(reg_stateG10_4 & i_hbusreq4)
+    begin
+      reg_stateG10_4 = 1'b0;
+    end
+
+   // Automaton G10_5: 
+   if(~reg_stateG10_5 & ~controllable_hgrant5 & ~i_hbusreq5)
+    begin
+      reg_stateG10_5 = 1'b1;
+    end
+   else if(reg_stateG10_5 & i_hbusreq5)
+    begin
+      reg_stateG10_5 = 1'b0;
+    end
+
+   // Automaton G10_6: 
+   if(~reg_stateG10_6 & ~controllable_hgrant6 & ~i_hbusreq6)
+    begin
+      reg_stateG10_6 = 1'b1;
+    end
+   else if(reg_stateG10_6 & i_hbusreq6)
+    begin
+      reg_stateG10_6 = 1'b0;
+    end
+
+   // Automaton G10_7: 
+   if(~reg_stateG10_7 & ~controllable_hgrant7 & ~i_hbusreq7)
+    begin
+      reg_stateG10_7 = 1'b1;
+    end
+   else if(reg_stateG10_7 & i_hbusreq7)
+    begin
+      reg_stateG10_7 = 1'b0;
+    end
+
+   // Automaton G10_8: 
+   if(~reg_stateG10_8 & ~controllable_hgrant8 & ~i_hbusreq8)
+    begin
+      reg_stateG10_8 = 1'b1;
+    end
+   else if(reg_stateG10_8 & i_hbusreq8)
+    begin
+      reg_stateG10_8 = 1'b0;
+    end
+
+   // Automaton G10_9: 
+   if(~reg_stateG10_9 & ~controllable_hgrant9 & ~i_hbusreq9)
+    begin
+      reg_stateG10_9 = 1'b1;
+    end
+   else if(reg_stateG10_9 & i_hbusreq9)
+    begin
+      reg_stateG10_9 = 1'b0;
+    end
+
+   // Automaton G10_10: 
+   if(~reg_stateG10_10 & ~controllable_hgrant10 & ~i_hbusreq10)
+    begin
+      reg_stateG10_10 = 1'b1;
+    end
+   else if(reg_stateG10_10 & i_hbusreq10)
+    begin
+      reg_stateG10_10 = 1'b0;
+    end
+
+   // Automaton G10_11: 
+   if(~reg_stateG10_11 & ~controllable_hgrant11 & ~i_hbusreq11)
+    begin
+      reg_stateG10_11 = 1'b1;
+    end
+   else if(reg_stateG10_11 & i_hbusreq11)
+    begin
+      reg_stateG10_11 = 1'b0;
+    end
+
+   // Automaton G10_12: 
+   if(~reg_stateG10_12 & ~controllable_hgrant12 & ~i_hbusreq12)
+    begin
+      reg_stateG10_12 = 1'b1;
+    end
+   else if(reg_stateG10_12 & i_hbusreq12)
+    begin
+      reg_stateG10_12 = 1'b0;
+    end
+
+   // Automaton G10_13: 
+   if(~reg_stateG10_13 & ~controllable_hgrant13 & ~i_hbusreq13)
+    begin
+      reg_stateG10_13 = 1'b1;
+    end
+   else if(reg_stateG10_13 & i_hbusreq13)
+    begin
+      reg_stateG10_13 = 1'b0;
+    end
+
+   // Latching the previous input:
+   reg_i_hready =  i_hready;
+   reg_i_hbusreq0 =  i_hbusreq0;
+   reg_i_hlock0 =  i_hlock0;
+   reg_i_hbusreq1 =  i_hbusreq1;
+   reg_i_hlock1 =  i_hlock1;
+   reg_i_hbusreq2 =  i_hbusreq2;
+   reg_i_hlock2 =  i_hlock2;
+   reg_i_hbusreq3 =  i_hbusreq3;
+   reg_i_hlock3 =  i_hlock3;
+   reg_i_hbusreq4 =  i_hbusreq4;
+   reg_i_hlock4 =  i_hlock4;
+   reg_i_hbusreq5 =  i_hbusreq5;
+   reg_i_hlock5 =  i_hlock5;
+   reg_i_hbusreq6 =  i_hbusreq6;
+   reg_i_hlock6 =  i_hlock6;
+   reg_i_hbusreq7 =  i_hbusreq7;
+   reg_i_hlock7 =  i_hlock7;
+   reg_i_hbusreq8 =  i_hbusreq8;
+   reg_i_hlock8 =  i_hlock8;
+   reg_i_hbusreq9 =  i_hbusreq9;
+   reg_i_hlock9 =  i_hlock9;
+   reg_i_hbusreq10 =  i_hbusreq10;
+   reg_i_hlock10 =  i_hlock10;
+   reg_i_hbusreq11 =  i_hbusreq11;
+   reg_i_hlock11 =  i_hlock11;
+   reg_i_hbusreq12 =  i_hbusreq12;
+   reg_i_hlock12 =  i_hlock12;
+   reg_i_hbusreq13 =  i_hbusreq13;
+   reg_i_hlock13 =  i_hlock13;
+   reg_controllable_hmaster0 =  controllable_hmaster0;
+   reg_controllable_hmaster1 =  controllable_hmaster1;
+   reg_controllable_hmaster2 =  controllable_hmaster2;
+   reg_controllable_hmaster3 =  controllable_hmaster3;
+   reg_controllable_hmastlock =  controllable_hmastlock;
+   reg_controllable_nstart =  controllable_nstart;
+   reg_controllable_ndecide =  controllable_ndecide;
+   reg_controllable_locked =  controllable_locked;
+   reg_controllable_nhgrant0 =  controllable_nhgrant0;
+   reg_controllable_hgrant1 =  controllable_hgrant1;
+   reg_controllable_hgrant2 =  controllable_hgrant2;
+   reg_controllable_hgrant3 =  controllable_hgrant3;
+   reg_controllable_hgrant4 =  controllable_hgrant4;
+   reg_controllable_hgrant5 =  controllable_hgrant5;
+   reg_controllable_hgrant6 =  controllable_hgrant6;
+   reg_controllable_hgrant7 =  controllable_hgrant7;
+   reg_controllable_hgrant8 =  controllable_hgrant8;
+   reg_controllable_hgrant9 =  controllable_hgrant9;
+   reg_controllable_hgrant10 =  controllable_hgrant10;
+   reg_controllable_hgrant11 =  controllable_hgrant11;
+   reg_controllable_hgrant12 =  controllable_hgrant12;
+   reg_controllable_hgrant13 =  controllable_hgrant13;
+   reg_controllable_busreq =  controllable_busreq;
+
+ end
+endmodule
+
+-------------------------------

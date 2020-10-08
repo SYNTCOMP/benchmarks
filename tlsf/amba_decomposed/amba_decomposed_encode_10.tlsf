@@ -1,0 +1,91 @@
+INFO {
+  TITLE:       "Amba AHB - Decomposed - Encode"
+  DESCRIPTION: "Encode component of the decomposed Amba AHB Arbiter"
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 10;
+  }
+
+  DEFINITIONS {
+    /* Checks whether a bus of size log(n) currently represents 
+     * the numerical value v (encoded in binary).
+     */
+    value(bus,v) = value'(bus,v,0,SIZEOF bus);
+    value'(bus,v,i,j) =
+      i >= j        : true
+      bit(v,i) == 1 : value'(bus,v,i + 1,j) &&  bus[i]
+      otherwise    : value'(bus,v,i + 1,j) && !bus[i];
+
+    /* Returns the i-th bit of the numerical value v.
+     */
+    bit(v,i) =
+      i <= 0     : v % 2
+      otherwise : bit(v / 2,i - 1);
+
+    /* Discrete logarithm.
+     */
+    log2(x) =
+      x <= 1     : 1
+      otherwise : 1 + log2(x / 2);
+
+    // ensures mutual exclusion on an n-ary bus
+    mutual_exclusion(bus) =
+     mone(bus,0,(SIZEOF bus) - 1);
+
+    // ensures that none of the signals
+    // bus[i] - bus[j] is HIGH
+    none(bus,i,j) =
+      &&[i <= t <= j]
+        !bus[t];
+
+    // ensures that at most one of the signals
+    // bus[i] - bus[j] is HIGH
+    mone(bus,i,j) =
+    i > j : false
+    i == j : true
+    i < j :
+      // either no signal of the lower half is HIGH and at 
+      // most one signal of the upper half is HIGH
+      (none(bus, i, m(i,j)) && mone(bus, m(i,j) + 1, j)) ||
+      // or at most one signal of the lower half is HIGH
+      // and no signal in of the upper half is HIGH
+      (mone(bus, i, m(i,j)) && none(bus, m(i,j) + 1, j));
+
+    // returns the position between i and j
+    m(i,j) = (i + j) / 2;    
+  } 
+}
+
+MAIN {
+  INPUTS {
+    HREADY;
+    HGRANT[n];
+  } 
+
+  OUTPUTS {
+    HMASTER[log2(n-1)];
+  }
+
+  ASSUMPTIONS {
+    // at every time exactely one grant is HIGH
+    G mutual_exclusion(HGRANT);
+    G (||[0 <= i < n] HGRANT[i]);
+  }
+
+  INVARIANTS {
+    // the component outputs the binary encoding i of the i-th,
+    // whenever i is granted and HREADY is high
+    &&[0 <= i < n] (HREADY -> (X value(HMASTER,i) <-> HGRANT[i]));
+
+    // when HREADY is low it copies the old value
+    !HREADY -> (&&[0 <= i < log2(n-1)] (X HMASTER[i] <-> HMASTER[i]));
+  }
+}
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 1151
+//#.

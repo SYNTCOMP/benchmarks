@@ -1,0 +1,278 @@
+aag 188 22 13 1 153
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46 1
+48 187
+50 202
+52 220
+54 238
+56 256
+58 274
+60 292
+62 310
+64 328
+66 346
+68 364
+70 376
+116
+72 48 46
+74 50 46
+76 74 72
+78 52 46
+80 78 76
+82 54 46
+84 82 80
+86 56 46
+88 86 84
+90 58 46
+92 90 88
+94 60 46
+96 94 92
+98 62 46
+100 98 96
+102 64 46
+104 102 100
+106 66 46
+108 106 104
+110 68 46
+112 110 108
+114 70 46
+116 114 112
+118 4 3
+120 5 2
+122 121 119
+124 122 6
+126 123 7
+128 127 125
+130 128 8
+132 129 9
+134 133 131
+136 134 10
+138 135 11
+140 139 137
+142 140 12
+144 141 13
+146 145 143
+148 146 14
+150 147 15
+152 151 149
+154 152 16
+156 153 17
+158 157 155
+160 158 18
+162 159 19
+164 163 161
+166 164 20
+168 165 21
+170 169 167
+172 170 22
+174 171 23
+176 175 173
+178 177 114
+180 179 24
+182 181 72
+184 180 73
+186 185 183
+188 72 24
+190 188 26
+192 189 27
+194 193 191
+196 194 179
+198 197 75
+200 196 74
+202 201 199
+204 191 75
+206 205 193
+208 206 28
+210 207 29
+212 211 209
+214 212 179
+216 215 79
+218 214 78
+220 219 217
+222 209 79
+224 223 211
+226 224 30
+228 225 31
+230 229 227
+232 230 179
+234 233 83
+236 232 82
+238 237 235
+240 227 83
+242 241 229
+244 242 32
+246 243 33
+248 247 245
+250 248 179
+252 251 87
+254 250 86
+256 255 253
+258 245 87
+260 259 247
+262 260 34
+264 261 35
+266 265 263
+268 266 179
+270 269 91
+272 268 90
+274 273 271
+276 263 91
+278 277 265
+280 278 36
+282 279 37
+284 283 281
+286 284 179
+288 287 95
+290 286 94
+292 291 289
+294 281 95
+296 295 283
+298 296 38
+300 297 39
+302 301 299
+304 302 179
+306 305 99
+308 304 98
+310 309 307
+312 299 99
+314 313 301
+316 314 40
+318 315 41
+320 319 317
+322 320 179
+324 323 103
+326 322 102
+328 327 325
+330 317 103
+332 331 319
+334 332 42
+336 333 43
+338 337 335
+340 338 179
+342 341 107
+344 340 106
+346 345 343
+348 335 107
+350 349 337
+352 350 44
+354 351 45
+356 355 353
+358 356 179
+360 359 111
+362 358 110
+364 363 361
+366 353 111
+368 367 355
+370 368 115
+372 369 114
+374 373 371
+376 375 179
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 controllable_c<2>
+i3 controllable_c<3>
+i4 controllable_c<4>
+i5 controllable_c<5>
+i6 controllable_c<6>
+i7 controllable_c<7>
+i8 controllable_c<8>
+i9 controllable_c<9>
+i10 controllable_c<10>
+i11 a<0>
+i12 a<1>
+i13 a<2>
+i14 a<3>
+i15 a<4>
+i16 a<5>
+i17 a<6>
+i18 a<7>
+i19 a<8>
+i20 a<9>
+i21 a<10>
+l0 n47
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+l9 counter<8>_out
+l10 counter<9>_out
+l11 counter<10>_out
+l12 counter<11>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:25:05 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv mv12.v   ---gives--> mv12.mv
+> abc -c "read_blif_mv mv12.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s mv12y.aig"   ---gives--> mv12y.aig
+> aigtoaig mv12y.aig mv12y.aag   ---gives--> mv12y.aag (this file)
+Content of mv12.v:
+// realizable
+module bench(clk, a, controllable_c, err);
+  input clk;
+  input [10:0] a;
+  input [10:0] controllable_c;
+  reg [11:0] counter;
+  output err;
+  wire ctrl_xor;
+  
+  assign err = (counter == 12'b111111111111) ? 1 : 0;
+  assign ctrl_xor = controllable_c[0] ^ 
+                    controllable_c[1] ^
+                    controllable_c[2] ^
+                    controllable_c[3] ^
+                    controllable_c[4] ^
+                    controllable_c[5] ^
+                    controllable_c[6] ^
+                    controllable_c[7] ^
+                    controllable_c[8] ^
+                    controllable_c[9] ^
+                    controllable_c[10];
+
+  initial
+  begin
+    counter = 0;
+  end
+
+  always @ (posedge clk)
+  begin
+    if(counter[11] & ctrl_xor)
+       counter[11] = 0;
+    else
+       counter = counter + {1'b0, a};
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq], 4/4 [SYNTCOMP2015-SyntSeq], 3/3 [SYNTCOMP2015-SyntPar], 7/7 [SYNTCOMP2015-RealSeq], 4/4 [SYNTCOMP2015-RealPar], 7/7 [SYNTCOMP2016-SyntSeq], 4/4 [SYNTCOMP2016-SyntPar], 11/11 [SYNTCOMP2016-RealSeq], 6/6 [SYNTCOMP2016-RealPar], 10/10 [SYNTCOMP2017-RealSeq], 6/6 [SYNTCOMP2017-RealPar], 6/6 [SYNTCOMP2017-SyntSeq], 4/4 [SYNTCOMP2017-SyntPar]
+SOLVED_IN : 0.012 [SYNTCOMP2014-RealSeq], 0.021688 [SYNTCOMP2015-RealSeq], 0.028851 [SYNTCOMP2015-RealPar], 0.008 [SYNTCOMP2016-RealSeq], 0.02515 [SYNTCOMP2016-RealPar], 0.008 [SYNTCOMP2017-RealSeq], 0.024978 [SYNTCOMP2017-RealPar]
+REF_SIZE : 164
+STATUS : realizable
+#.

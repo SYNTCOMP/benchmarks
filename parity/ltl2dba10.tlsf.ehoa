@@ -1,0 +1,31 @@
+HOA: v1
+name: "(F(p & G!q) & FG!acc) | G(Facc & (!p | Fq))"
+States: 4
+Start: 1
+AP: 3 "p" "q" "acc"
+controllable-AP: 2
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic stutter-invariant
+--BODY--
+State: 0
+[!0&!2 | 1&!2] 0 {1}
+[!0&2 | 1&2] 1 {2}
+[0&!1&2] 2 {2}
+[0&!1&!2] 3 {0}
+State: 1
+[!0&!2 | 1&!2] 0 {0}
+[!0&2 | 1&2] 1 {2}
+[0&!1] 2 {0}
+State: 2
+[1&!2] 0 {0}
+[1&2] 1 {2}
+[!1&!2] 2 {0}
+[!1&2] 2 {1}
+State: 3
+[1&!2] 0 {1}
+[1&2] 1 {2}
+[!1&2] 2 {2}
+[!1&!2] 3 {0}
+--END--

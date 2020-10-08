@@ -1,0 +1,15 @@
+HOA: v1
+name: "GFa"
+States: 2
+Start: 0
+Start: 1
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+AP: 1 "a"
+controllable-AP: 1
+--BODY--
+State: [0] 0 {0}
+  0 1
+State: [!0] 1
+  0 1
+--END--

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Structure label-on="Transition" type="FiniteStateAutomaton">
+    <Name/>
+    <Description/>
+    <Formula>[] (deq_Fifos --&gt; () fifosDataEqual)</Formula>
+    <Alphabet type="Propositional">
+        <Proposition>deq_Fifos</Proposition>
+        <Proposition>fifosDataEqual</Proposition>
+    </Alphabet>
+    <StateSet>
+        <State sid="0">
+            <X>52</X>
+            <Description>s0:0</Description>
+            <Y>124</Y>
+            <Label>s0:0</Label>
+            <Properties/>
+        </State>
+        <State sid="1">
+            <X>230</X>
+            <Description>s1:0</Description>
+            <Y>123</Y>
+            <Label>s1:0</Label>
+            <Properties/>
+        </State>
+        <State sid="2">
+            <X>413</X>
+            <Description>s3:0</Description>
+            <Y>123</Y>
+            <Label>s3:0</Label>
+            <Properties/>
+        </State>
+    </StateSet>
+    <InitialStateSet>
+        <StateID>0</StateID>
+    </InitialStateSet>
+    <TransitionSet complete="false">
+        <Transition tid="8">
+            <From>1</From>
+            <To>1</To>
+            <Label>deq_Fifos fifosDataEqual</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="9">
+            <From>1</From>
+            <To>0</To>
+            <Label>~deq_Fifos fifosDataEqual</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="10">
+            <From>0</From>
+            <To>0</To>
+            <Label>~deq_Fifos</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="11">
+            <From>0</From>
+            <To>1</To>
+            <Label>deq_Fifos</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="12">
+            <From>1</From>
+            <To>2</To>
+            <Label>~fifosDataEqual</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="13">
+            <From>2</From>
+            <To>2</To>
+            <Label>True</Label>
+            <Properties/>
+        </Transition>
+    </TransitionSet>
+    <Acc type="Buchi">
+        <StateID>2</StateID>
+    </Acc>
+    <Properties/>
+</Structure>

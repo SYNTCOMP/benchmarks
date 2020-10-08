@@ -1,0 +1,99 @@
+aag 37 6 5 1 26
+2
+4
+6
+8
+10
+12
+14 1
+16 58
+18 64
+20 71
+22 74
+36
+24 16 14
+26 18 14
+28 26 24
+30 20 14
+32 30 28
+34 22 14
+36 34 32
+38 4 3
+40 5 2
+42 41 39
+44 42 6
+46 43 7
+48 47 45
+50 49 34
+52 51 31
+54 53 25
+56 52 9
+58 57 55
+60 53 27
+62 52 11
+64 63 61
+66 50 30
+68 52 12
+70 69 67
+72 35 31
+74 73 51
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 controllable_c<2>
+i3 a<0>
+i4 a<1>
+i5 a<2>
+l0 n15
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:55 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv mvs4.v   ---gives--> mvs4.mv
+> abc -c "read_blif_mv mvs4.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s mvs4y.aig"   ---gives--> mvs4y.aig
+> aigtoaig mvs4y.aig mvs4y.aag   ---gives--> mvs4y.aag (this file)
+Content of mvs4.v:
+// realizable
+module bench(clk, a, controllable_c, err);
+  input clk;
+  input [2:0] a;
+  input [2:0] controllable_c;
+  reg [3:0] counter;
+  output err;
+  wire ctrl_xor;
+  
+  assign err = (counter == 4'b1111) ? 1 : 0;
+  assign ctrl_xor = controllable_c[0] ^
+                    controllable_c[1] ^
+                    controllable_c[2];
+
+  initial
+  begin
+    counter = 0;
+  end
+
+  always @ (posedge clk)
+  begin
+    if(counter[3] & ctrl_xor)
+       counter[3] = 0;
+    else if(counter[2])
+      begin
+       counter[3] = 1;
+       counter[2] = 0;
+      end
+    else
+       counter[2:0] = a;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.004 [SYNTCOMP2014-RealSeq]
+#.

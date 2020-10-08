@@ -1,0 +1,955 @@
+aag 538 40 56 1 442
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+80
+82 1
+84 235
+86 243
+88 251
+90 263
+92 271
+94 285
+96 293
+98 301
+100 309
+102 317
+104 325
+106 333
+108 341
+110 411
+112 423
+114 430
+116 445
+118 453
+120 461
+122 469
+124 477
+126 485
+128 501
+130 511
+132 521
+134 12
+136 8
+138 637
+140 649
+142 655
+144 661
+146 667
+148 927
+150 947
+152 957
+154 965
+156 971
+158 977
+160 983
+162 989
+164 995
+166 10
+168 996
+170 1002
+172 1010
+174 1018
+176 1029
+178 1035
+180 1041
+182 1047
+184 1053
+186 1059
+188 1065
+190 1071
+192 1077
+213
+194 170 82
+196 168 82
+198 197 195
+200 172 82
+202 201 198
+204 174 82
+206 204 203
+208 77 75
+210 209 78
+212 211 207
+214 75 73
+216 214 77
+218 216 79
+220 218 36
+222 4 3
+224 222 7
+226 224 220
+228 226 8
+230 84 82
+232 230 227
+234 233 229
+236 226 10
+238 86 82
+240 238 227
+242 241 237
+244 226 12
+246 88 82
+248 246 227
+250 249 245
+252 214 76
+254 252 79
+256 254 14
+258 90 82
+260 258 255
+262 261 257
+264 254 16
+266 92 82
+268 266 255
+270 269 265
+272 5 2
+274 272 7
+276 274 220
+278 276 8
+280 94 82
+282 280 277
+284 283 279
+286 276 10
+288 96 82
+290 288 277
+292 291 287
+294 254 50
+296 98 82
+298 296 255
+300 299 295
+302 254 52
+304 100 82
+306 304 255
+308 307 303
+310 254 54
+312 102 82
+314 312 255
+316 315 311
+318 254 28
+320 104 82
+322 320 255
+324 323 319
+326 254 30
+328 106 82
+330 328 255
+332 331 327
+334 254 32
+336 108 82
+338 336 255
+340 339 335
+342 75 72
+344 342 77
+346 344 78
+348 114 82
+350 110 82
+352 112 82
+354 353 351
+356 354 349
+358 356 346
+360 289 280
+362 360 358
+364 288 280
+366 364 358
+368 238 230
+370 368 246
+372 370 366
+374 352 350
+376 374 349
+378 346 38
+380 378 376
+382 381 350
+384 354 348
+386 384 38
+388 352 351
+390 388 349
+392 390 80
+394 353 350
+396 394 349
+398 396 70
+400 399 393
+402 400 387
+404 403 346
+406 405 382
+408 407 373
+410 408 363
+412 405 352
+414 412 381
+416 288 281
+418 416 358
+420 419 373
+422 420 415
+424 378 354
+426 425 348
+428 427 367
+430 429 420
+432 74 73
+434 432 77
+436 434 79
+438 436 56
+440 116 82
+442 440 437
+444 443 439
+446 436 58
+448 118 82
+450 448 437
+452 451 447
+454 436 60
+456 120 82
+458 456 437
+460 459 455
+462 436 62
+464 122 82
+466 464 437
+468 467 463
+470 436 64
+472 124 82
+474 472 437
+476 475 471
+478 436 66
+480 126 82
+482 480 437
+484 483 479
+486 4 2
+488 486 7
+490 488 220
+492 188 82
+494 492 490
+496 128 82
+498 496 491
+500 499 495
+502 190 82
+504 502 490
+506 130 82
+508 506 491
+510 509 505
+512 192 82
+514 512 490
+516 132 82
+518 516 491
+520 519 515
+522 218 37
+524 5 3
+526 524 7
+528 526 522
+530 136 82
+532 531 8
+534 138 82
+536 534 533
+538 536 528
+540 140 82
+542 540 534
+544 542 68
+546 545 534
+548 540 535
+550 456 247
+552 457 246
+554 553 551
+556 440 231
+558 441 230
+560 559 557
+562 448 239
+564 449 238
+566 565 563
+568 566 560
+570 568 554
+572 180 82
+574 178 82
+576 176 82
+578 576 575
+580 166 82
+582 580 578
+584 577 574
+586 584 581
+588 587 583
+590 589 573
+592 590 570
+594 146 82
+596 595 480
+598 594 481
+600 599 597
+602 142 82
+604 603 464
+606 602 465
+608 607 605
+610 144 82
+612 611 472
+614 610 473
+616 615 613
+618 616 608
+620 618 600
+622 620 592
+624 134 82
+626 624 622
+628 626 34
+630 628 548
+632 631 547
+634 633 529
+636 635 539
+638 541 533
+640 639 528
+642 545 542
+644 643 549
+646 645 529
+648 647 641
+650 230 226
+652 602 227
+654 653 651
+656 238 226
+658 610 227
+660 659 657
+662 246 226
+664 594 227
+666 665 663
+668 154 82
+670 152 82
+672 148 82
+674 150 82
+676 675 673
+678 676 671
+680 678 669
+682 74 72
+684 682 77
+686 684 79
+688 686 680
+690 675 672
+692 690 671
+694 692 669
+696 694 392
+698 696 346
+700 674 673
+702 700 671
+704 702 669
+706 704 386
+708 706 346
+710 674 672
+712 710 671
+714 712 669
+716 714 254
+718 716 49
+720 676 670
+722 720 669
+724 722 544
+726 512 337
+728 513 336
+730 729 727
+732 492 321
+734 493 320
+736 735 733
+738 502 329
+740 503 328
+742 741 739
+744 742 736
+746 744 730
+748 186 82
+750 749 516
+752 748 517
+754 753 751
+756 182 82
+758 757 496
+760 756 497
+762 761 759
+764 184 82
+766 765 506
+768 764 507
+770 769 767
+772 770 762
+774 772 754
+776 774 746
+778 313 246
+780 312 247
+782 781 779
+784 297 230
+786 296 231
+788 787 785
+790 305 238
+792 304 239
+794 793 791
+796 794 788
+798 796 782
+800 798 776
+802 164 82
+804 803 594
+806 802 595
+808 807 805
+810 160 82
+812 811 602
+814 810 603
+816 815 813
+818 162 82
+820 819 610
+822 818 611
+824 823 821
+826 824 816
+828 826 808
+830 828 800
+832 156 82
+834 832 259
+836 833 258
+838 837 835
+840 158 82
+842 840 267
+844 841 266
+846 845 843
+848 846 838
+850 848 830
+852 850 581
+854 853 724
+856 854 346
+858 724 41
+860 858 346
+862 690 670
+864 862 669
+866 864 544
+868 850 580
+870 869 866
+872 870 346
+874 866 40
+876 874 346
+878 700 670
+880 878 669
+882 342 76
+884 882 79
+886 884 880
+888 710 670
+890 888 669
+892 432 76
+894 892 79
+896 894 890
+898 678 668
+900 682 76
+902 900 79
+904 902 898
+906 905 897
+908 906 887
+910 908 673
+912 911 877
+914 912 873
+916 915 861
+918 917 857
+920 918 719
+922 921 709
+924 923 699
+926 925 689
+928 692 668
+930 216 78
+932 930 928
+934 933 675
+936 934 908
+938 936 873
+940 724 346
+942 941 938
+944 943 717
+946 945 699
+948 908 670
+950 866 346
+952 951 948
+954 952 857
+956 955 717
+958 933 668
+960 958 908
+962 961 951
+964 962 857
+966 436 24
+968 832 437
+970 969 967
+972 436 26
+974 840 437
+976 975 973
+978 254 42
+980 810 255
+982 981 979
+984 254 44
+986 818 255
+988 987 985
+990 254 46
+992 802 255
+994 993 991
+996 715 197
+998 196 194
+1000 999 199
+1002 1000 715
+1004 998 200
+1006 999 201
+1008 1007 1005
+1010 1008 715
+1012 1004 205
+1014 1005 204
+1016 1015 1013
+1018 1017 715
+1020 486 6
+1022 1020 220
+1024 1022 8
+1026 1023 576
+1028 1027 1025
+1030 1022 10
+1032 1023 574
+1034 1033 1031
+1036 1022 12
+1038 1023 572
+1040 1039 1037
+1042 254 18
+1044 756 255
+1046 1045 1043
+1048 254 20
+1050 764 255
+1052 1051 1049
+1054 254 22
+1056 748 255
+1058 1057 1055
+1060 490 8
+1062 492 491
+1064 1063 1061
+1066 490 10
+1068 502 491
+1070 1069 1067
+1072 490 12
+1074 512 491
+1076 1075 1073
+i0 controllable_addr_abs<0>
+i1 controllable_addr_abs<1>
+i2 controllable_addr_abs<2>
+i3 controllable_write8_val_abs<0>
+i4 controllable_write8_val_abs<1>
+i5 controllable_write8_val_abs<2>
+i6 i_reqBuf_abs<0>
+i7 i_reqBuf_abs<1>
+i8 i_reqLBA1_abs<0>
+i9 i_reqLBA1_abs<1>
+i10 i_reqLBA1_abs<2>
+i11 controllable_fillPrdAddr_abs<0>
+i12 controllable_fillPrdAddr_abs<1>
+i13 i_reqLBA0_abs<0>
+i14 i_reqLBA0_abs<1>
+i15 i_reqLBA0_abs<2>
+i16 controllable_dmaStartClass_conc
+i17 controllable_bank_abs
+i18 controllable_featXFRClass_conc
+i19 i_transSuccess_conc
+i20 i_reqSect1_abs<0>
+i21 i_reqSect1_abs<1>
+i22 i_reqSect1_abs<2>
+i23 i_osReqType_conc
+i24 i_reqSect0_abs<0>
+i25 i_reqSect0_abs<1>
+i26 i_reqSect0_abs<2>
+i27 controllable_fillPrdNSect_abs<0>
+i28 controllable_fillPrdNSect_abs<1>
+i29 controllable_fillPrdNSect_abs<2>
+i30 controllable_fillPrdNSect_abs<3>
+i31 controllable_fillPrdNSect_abs<4>
+i32 controllable_fillPrdNSect_abs<5>
+i33 controllable_busMasterClass_conc
+i34 controllable_featWCClass_conc
+i35 controllable_tag_conc<0>
+i36 controllable_tag_conc<1>
+i37 controllable_tag_conc<2>
+i38 controllable_tag_conc<3>
+i39 controllable_featNWCClass_conc
+l0 n83
+l1 state_regSectors0_abs<0>_out
+l2 state_regSectors0_abs<1>_out
+l3 state_regSectors0_abs<2>_out
+l4 state_os_buf_abs<0>_out
+l5 state_os_buf_abs<1>_out
+l6 state_regFeature0_abs<0>_out
+l7 state_regFeature0_abs<1>_out
+l8 state_os_sect0_abs<0>_out
+l9 state_os_sect0_abs<1>_out
+l10 state_os_sect0_abs<2>_out
+l11 state_os_lba0_abs<0>_out
+l12 state_os_lba0_abs<1>_out
+l13 state_os_lba0_abs<2>_out
+l14 state_setFeatState_conc<0>_out
+l15 state_setFeatState_conc<1>_out
+l16 state_setFeatState_conc<2>_out
+l17 state_bufSectors_abs<0>_out
+l18 state_bufSectors_abs<1>_out
+l19 state_bufSectors_abs<2>_out
+l20 state_bufSectors_abs<3>_out
+l21 state_bufSectors_abs<4>_out
+l22 state_bufSectors_abs<5>_out
+l23 state_regLBALow1_abs<0>_out
+l24 state_regLBALow1_abs<1>_out
+l25 state_regLBALow1_abs<2>_out
+l26 state_regDev_LBA_abs_out
+l27 state_regBMCommand_Start_abs_out
+l28 state_stDMACmd_conc<0>_out
+l29 state_stDMACmd_conc<1>_out
+l30 state_regSectors1_abs<0>_out
+l31 state_regSectors1_abs<1>_out
+l32 state_regSectors1_abs<2>_out
+l33 state_osState_conc<0>_out
+l34 state_osState_conc<1>_out
+l35 state_osState_conc<2>_out
+l36 state_osState_conc<3>_out
+l37 state_bufAddr_abs<0>_out
+l38 state_bufAddr_abs<1>_out
+l39 state_os_sect1_abs<0>_out
+l40 state_os_sect1_abs<1>_out
+l41 state_os_sect1_abs<2>_out
+l42 state_regBMCommand_RW_abs_out
+l43 fair_cnt<0>_out
+l44 fair_cnt<1>_out
+l45 fair_cnt<2>_out
+l46 fair_cnt<3>_out
+l47 state_regCommand_abs<0>_out
+l48 state_regCommand_abs<1>_out
+l49 state_regCommand_abs<2>_out
+l50 state_os_lba1_abs<0>_out
+l51 state_os_lba1_abs<1>_out
+l52 state_os_lba1_abs<2>_out
+l53 state_regLBALow0_abs<0>_out
+l54 state_regLBALow0_abs<1>_out
+l55 state_regLBALow0_abs<2>_out
+o0 o_err
+c
+ide_hard_drive_controller_2
+This file was written by ABC on Tue Mar 11 20:24:18 2014
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv driver_d9.v   ---gives--> driver_d9.mv
+> abc -c "read_blif_mv driver_d9.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s driver_d9y.aig"   ---gives--> driver_d9y.aig
+> aigtoaig driver_d9y.aig driver_d9y.aag   ---gives--> driver_d9y.aag (this file)
+Content of driver_d9.v:
+// IDE hard drive controller specification and operating system interface
+// specification for device driver synthesis.
+// This file describes a GR(1) game played by a device driver for an IDE hard
+// disk against its environment consisting of the hard disk and operating
+// system.
+
+`define WIDTH1 2
+`define WIDTH2 1
+
+`define CMD_READ_DMA_EXT  1
+`define CMD_WRITE_DMA_EXT 2
+`define FEAT_WC           1
+`define FEAT_NWC          2
+`define FEAT_XFR_MODE     3
+`define XM_ULTRA_DMA      7
+
+`define RCMD              1
+`define REG_FEATURE0      1
+`define REG_SECTORS       2
+`define REG_LBA_LOW       3
+`define REG_LBA_MID       4
+`define REG_LBA_HIGH      5
+`define REG_DEV           6
+`define REG_ERRCMD        7
+
+`define RDMA              0
+`define REG_BM_COMMAND    0
+
+//typedef enum {read=0, write=1} i_osReqType_enum;
+`define read              0
+`define write             1
+
+//typedef enum {write8, write32, fillPrd, reset, os_req, ack_read_succ, ack_read_fail, ack_write_succ, ack_write_fail, class_event} controllable_tag_enum;
+`define write8            0
+`define write32           1
+`define fillPrd           2
+`define reset             3
+`define os_req            4
+`define ack_read_succ     5
+`define ack_read_fail     6
+`define ack_write_succ    7
+`define ack_write_fail    8
+`define class_event       9
+
+//typedef enum {wait_bm_ready=0, dma_read=1, bm_read_prd=2, bm_ready=3} state_stDMACmd_enum;
+`define wait_bm_ready     0
+`define dma_read          1
+`define bm_read_prd       2
+`define bm_ready          3
+
+
+//typedef enum {setFeatIdle=0, setFeatWC=1, setFeatNWC=2, setFeatXFR0=3, setFeatXFR1=4} state_setFeatState_enum;
+`define setFeatIdle       0
+`define setFeatWC         1
+`define setFeatNWC        2
+`define setFeatXFR0       3
+`define setFeatXFR1       4
+
+//typedef enum {os_init=0, os_reset=1, os_write_cache=2, os_idle=3, os_read_pending=4, os_write_pending=5, os_read_ack_succ=6, os_read_ack_fail=7, os_write_ack_succ=8, os_write_ack_fail=9, os_error=10} state_osState_enum;
+`define os_init           0
+`define os_reset          1
+`define os_write_cache    2
+`define os_idle           3
+`define os_read_pending   4
+`define os_write_pending  5
+`define os_read_ack_succ  6
+`define os_read_ack_fail  7
+`define os_write_ack_succ 8
+`define os_write_ack_fail 9
+`define os_error          10
+
+module ide_hard_drive_controller_2(
+        o_err,
+        i_clk,
+        i_osReqType_conc,
+        i_reqLBA0_abs,
+        i_reqLBA1_abs,
+        i_reqSect0_abs,
+        i_reqSect1_abs,
+        i_reqBuf_abs,
+        i_transSuccess_conc,
+        controllable_tag_conc,
+        controllable_bank_abs,
+        controllable_addr_abs,
+        controllable_write8_val_abs,
+        controllable_fillPrdAddr_abs,
+        controllable_fillPrdNSect_abs,
+        controllable_featWCClass_conc,
+        controllable_featNWCClass_conc,
+        controllable_featXFRClass_conc,
+        controllable_busMasterClass_conc,
+        controllable_dmaStartClass_conc );
+
+input i_clk;
+input i_osReqType_conc ;
+input [`WIDTH1:0] i_reqLBA0_abs ;
+input [`WIDTH1:0] i_reqLBA1_abs ;
+input [`WIDTH1:0] i_reqSect0_abs ;
+input [`WIDTH1:0] i_reqSect1_abs ;
+input [`WIDTH2:0] i_reqBuf_abs ;
+input i_transSuccess_conc ;
+input [3:0] controllable_tag_conc ;
+input controllable_bank_abs ;
+input [2:0] controllable_addr_abs ;
+input [`WIDTH1:0] controllable_write8_val_abs ;
+input [`WIDTH2:0] controllable_fillPrdAddr_abs ;
+input [5:0] controllable_fillPrdNSect_abs ;
+input controllable_featWCClass_conc ;
+input controllable_featNWCClass_conc ;
+input controllable_featXFRClass_conc ;
+input controllable_busMasterClass_conc ;
+input controllable_dmaStartClass_conc ;
+output o_err;
+
+reg [1:0] state_stDMACmd_conc ;
+reg [2:0] state_setFeatState_conc ;
+reg [1:0] state_regFeature0_abs ;
+reg [`WIDTH1:0] state_regSectors0_abs ;
+reg [`WIDTH1:0] state_regSectors1_abs ;
+reg [`WIDTH1:0] state_regLBALow0_abs ;
+reg [`WIDTH1:0] state_regLBALow1_abs ;
+reg state_regDev_LBA_abs ;
+reg [`WIDTH1:0] state_regCommand_abs ;
+reg state_regBMCommand_Start_abs ;
+reg state_regBMCommand_RW_abs ;
+reg [`WIDTH2:0] state_bufAddr_abs ;
+reg [5:0] state_bufSectors_abs ;
+
+reg [3:0] state_osState_conc ;
+reg [`WIDTH1:0] state_os_lba0_abs ;
+reg [`WIDTH1:0] state_os_lba1_abs ;
+reg [`WIDTH1:0] state_os_sect0_abs ;
+reg [`WIDTH1:0] state_os_sect1_abs ;
+reg [`WIDTH2:0] state_os_buf_abs ;
+
+reg [3:0] fair_cnt;
+
+wire transferMode3;
+wire nwc;
+wire bm_event;
+wire transferCorrect;
+wire transferCorrect_0;
+wire transferCorrect_1;
+wire buechi_satisfied;
+wire [1:0] next_state_stDMACmd_conc ;
+wire [2:0] next_state_setFeatState_conc ;
+wire [1:0] next_state_regFeature0_abs ;
+wire [`WIDTH1:0] next_state_regSectors0_abs ;
+wire [`WIDTH1:0] next_state_regSectors1_abs ;
+wire [`WIDTH1:0] next_state_regLBALow0_abs ;
+wire [`WIDTH1:0] next_state_regLBALow1_abs ;
+wire next_state_regDev_LBA_abs ;
+wire [`WIDTH1:0] next_state_regCommand_abs ;
+wire next_state_regBMCommand_Start_abs ;
+wire next_state_regBMCommand_RW_abs ;
+wire [`WIDTH2:0] next_state_bufAddr_abs ;
+wire [5:0] next_state_bufSectors_abs ;
+
+wire [3:0] next_state_osState_conc ;
+wire [`WIDTH1:0] next_state_os_lba0_abs ;
+wire [`WIDTH1:0] next_state_os_lba1_abs ;
+wire [`WIDTH1:0] next_state_os_sect0_abs ;
+wire [`WIDTH1:0] next_state_os_sect1_abs ;
+wire [`WIDTH2:0] next_state_os_buf_abs ;
+
+// some abbreviations:
+assign transferMode3 = (state_setFeatState_conc==`setFeatXFR1 && controllable_featXFRClass_conc==1);
+assign nwc =           (state_setFeatState_conc==`setFeatNWC  && controllable_featNWCClass_conc==1);
+assign bm_event = (state_stDMACmd_conc==`bm_ready && controllable_busMasterClass_conc==1);
+assign transferCorrect = (state_os_lba0_abs==state_regLBALow0_abs    &&
+                          state_os_lba1_abs==state_regLBALow1_abs    &&
+                          state_os_sect0_abs==state_regSectors0_abs  &&
+                          state_os_sect1_abs==state_regSectors1_abs  &&
+                          state_os_buf_abs==state_bufAddr_abs);
+assign transferCorrect_0 = (transferCorrect      &&
+                            state_regBMCommand_RW_abs==0);
+assign transferCorrect_1 = (transferCorrect      &&
+                            state_regBMCommand_RW_abs==1);
+
+
+// state updates:
+  //Device state updates:
+assign next_state_regFeature0_abs  = (controllable_tag_conc==`write8 && controllable_bank_abs==`RCMD && controllable_addr_abs==`REG_FEATURE0) ? controllable_write8_val_abs  : state_regFeature0_abs;
+assign next_state_regSectors0_abs  = (controllable_tag_conc==`write8 && controllable_bank_abs==`RCMD && controllable_addr_abs==`REG_SECTORS)  ? controllable_write8_val_abs  : state_regSectors0_abs;
+assign next_state_regSectors1_abs  = (controllable_tag_conc==`write8 && controllable_bank_abs==`RCMD && controllable_addr_abs==`REG_SECTORS)  ? state_regSectors0_abs : state_regSectors1_abs;
+assign next_state_regLBALow0_abs   = (controllable_tag_conc==`write8 && controllable_bank_abs==`RCMD && controllable_addr_abs==`REG_LBA_LOW)  ? controllable_write8_val_abs  : state_regLBALow0_abs;
+assign next_state_regLBALow1_abs   = (controllable_tag_conc==`write8 && controllable_bank_abs==`RCMD && controllable_addr_abs==`REG_LBA_LOW)  ? state_regLBALow0_abs  : state_regLBALow1_abs;
+assign next_state_regDev_LBA_abs   = (controllable_tag_conc==`write8 && controllable_bank_abs==`RCMD && controllable_addr_abs==`REG_DEV)      ? controllable_write8_val_abs[2:2] : state_regDev_LBA_abs;
+assign next_state_regCommand_abs   = (controllable_tag_conc==`write8 && controllable_bank_abs==`RCMD && controllable_addr_abs==`REG_ERRCMD)   ? controllable_write8_val_abs  : state_regCommand_abs;
+assign next_state_regBMCommand_Start_abs = (controllable_tag_conc==`write8 && controllable_bank_abs==`RDMA && controllable_addr_abs==`REG_BM_COMMAND) ? controllable_write8_val_abs[0:0] : state_regBMCommand_Start_abs;
+assign next_state_regBMCommand_RW_abs = (controllable_tag_conc==`write8 && controllable_bank_abs==`RDMA && controllable_addr_abs==`REG_BM_COMMAND) ? controllable_write8_val_abs[1:1] : state_regBMCommand_RW_abs;
+assign next_state_bufAddr_abs = (controllable_tag_conc==`fillPrd) ? controllable_fillPrdAddr_abs : state_bufAddr_abs;
+assign next_state_bufSectors_abs = (controllable_tag_conc==`fillPrd) ? controllable_fillPrdNSect_abs : state_bufSectors_abs;
+
+assign next_state_setFeatState_conc = (controllable_tag_conc==`class_event && state_setFeatState_conc==`setFeatIdle && state_regFeature0_abs==`FEAT_WC) ? `setFeatWC :
+                 ((controllable_tag_conc==`class_event && state_setFeatState_conc==`setFeatIdle && state_regFeature0_abs==`FEAT_NWC) ? `setFeatNWC :
+                 ((controllable_tag_conc==`class_event && state_setFeatState_conc==`setFeatIdle && state_regFeature0_abs==`FEAT_XFR_MODE && state_regSectors0_abs==`XM_ULTRA_DMA) ? `setFeatXFR0 :
+                 ((controllable_tag_conc==`class_event && state_setFeatState_conc==`setFeatIdle && state_regFeature0_abs==`FEAT_XFR_MODE) ? `setFeatXFR1 :
+                 ((controllable_tag_conc==`class_event && state_setFeatState_conc==`setFeatWC   && controllable_featWCClass_conc==1) ? `setFeatIdle :
+                 ((controllable_tag_conc==`class_event && state_setFeatState_conc==`setFeatNWC  && controllable_featNWCClass_conc==1) ? `setFeatIdle :
+                 ((controllable_tag_conc==`class_event && state_setFeatState_conc==`setFeatXFR0 && controllable_featXFRClass_conc==1) ? `setFeatIdle :
+                 ((controllable_tag_conc==`class_event && state_setFeatState_conc==`setFeatXFR1 && controllable_featXFRClass_conc==1) ? `setFeatIdle : state_setFeatState_conc)))))));
+
+assign next_state_stDMACmd_conc = (controllable_tag_conc==`write8 && controllable_bank_abs==`RDMA && controllable_addr_abs==`REG_BM_COMMAND) ?
+               (
+                 (state_regBMCommand_Start_abs==0 && controllable_write8_val_abs[0:0]==1) ? `bm_read_prd : state_stDMACmd_conc
+               ) :
+               (
+                 (state_stDMACmd_conc==`bm_read_prd) ?
+                 (((state_regBMCommand_RW_abs == 1 && state_regCommand_abs != `CMD_READ_DMA_EXT) || (state_regBMCommand_RW_abs == 0 && state_regCommand_abs != `CMD_WRITE_DMA_EXT) || (state_regSectors0_abs != state_bufSectors_abs[`WIDTH1:0]) || (state_regSectors1_abs != state_bufSectors_abs[5:3]) || state_regDev_LBA_abs != 1) ? state_stDMACmd_conc : ((controllable_dmaStartClass_conc==1) ? `bm_ready : state_stDMACmd_conc)) :
+                 ((state_stDMACmd_conc==`bm_ready && controllable_busMasterClass_conc==1) ? `wait_bm_ready : state_stDMACmd_conc)
+               );
+
+//OS state updates
+assign next_state_os_lba0_abs = (controllable_tag_conc==`os_req) ? i_reqLBA0_abs : state_os_lba0_abs;
+assign next_state_os_lba1_abs = (controllable_tag_conc==`os_req) ? i_reqLBA1_abs : state_os_lba1_abs;
+assign next_state_os_sect0_abs = (controllable_tag_conc==`os_req) ? i_reqSect0_abs : state_os_sect0_abs;
+assign next_state_os_sect1_abs = (controllable_tag_conc==`os_req) ? i_reqSect1_abs : state_os_sect1_abs;
+assign next_state_os_buf_abs = (controllable_tag_conc==`os_req) ? i_reqBuf_abs : state_os_buf_abs;
+
+assign next_state_osState_conc = (state_osState_conc==`os_init && controllable_tag_conc==`reset) ? `os_reset :
+      ((state_osState_conc==`os_reset && nwc && controllable_tag_conc==`class_event) ? `os_write_cache :
+      ((state_osState_conc==`os_write_cache && transferMode3 && controllable_tag_conc==`class_event) ? `os_idle :
+      ((state_osState_conc==`os_idle && controllable_tag_conc==`os_req && i_osReqType_conc==`read) ? `os_read_pending :
+      ((state_osState_conc==`os_idle && controllable_tag_conc==`os_req && i_osReqType_conc==`write) ? `os_write_pending :
+      ((state_osState_conc==`os_read_pending && bm_event && !transferCorrect_0 && controllable_tag_conc==`class_event) ? `os_error :
+      ((state_osState_conc==`os_read_pending && bm_event && i_transSuccess_conc==1 && controllable_tag_conc==`class_event) ? `os_read_ack_succ :
+      ((state_osState_conc==`os_read_pending && bm_event && i_transSuccess_conc==0 && controllable_tag_conc==`class_event) ? `os_read_ack_fail :
+      ((state_osState_conc==`os_write_pending && bm_event && !transferCorrect_1 && controllable_tag_conc==`class_event) ? `os_error :
+      ((state_osState_conc==`os_write_pending && bm_event && i_transSuccess_conc==1 && controllable_tag_conc==`class_event) ? `os_write_ack_succ :
+      ((state_osState_conc==`os_write_pending && bm_event && i_transSuccess_conc==0 && controllable_tag_conc==`class_event) ? `os_write_ack_fail :
+      ((state_osState_conc==`os_read_ack_succ && controllable_tag_conc==`ack_read_succ) ? `os_idle :
+      ((state_osState_conc==`os_read_ack_fail && controllable_tag_conc==`ack_read_fail) ? `os_idle :
+      ((state_osState_conc==`os_write_ack_succ && controllable_tag_conc==`ack_write_succ) ? `os_idle :
+      ((state_osState_conc==`os_write_ack_fail && controllable_tag_conc==`ack_write_fail) ? `os_idle : state_osState_conc))))))))))))));
+
+
+// buechi-to-safety construction:                            
+assign buechi_satisfied = (state_osState_conc == `os_idle);                          
+                            
+assign o_err = (fair_cnt >= 9) || controllable_tag_conc >= 10;
+
+initial
+ begin
+  state_stDMACmd_conc = `wait_bm_ready;
+  state_setFeatState_conc = `setFeatIdle;
+  state_regFeature0_abs = 0;
+  state_regSectors0_abs = 0;
+  state_regSectors1_abs = 0;
+  state_regLBALow0_abs = 0;
+  state_regLBALow1_abs = 0;
+  state_regDev_LBA_abs = 0;
+  state_regCommand_abs = 0;
+  state_regBMCommand_Start_abs = 0;
+  state_regBMCommand_RW_abs = 0;
+  state_bufAddr_abs = 0;
+  state_bufSectors_abs = 0;
+  state_osState_conc = `os_init;
+  state_os_lba0_abs = 0;
+  state_os_lba1_abs = 0;
+  state_os_sect0_abs = 0;
+  state_os_sect1_abs = 0;
+  state_os_buf_abs = 0;
+  fair_cnt = 0;
+ end
+
+always @(posedge i_clk)
+ begin
+
+  if(buechi_satisfied)
+   begin
+    fair_cnt = 0;
+   end
+  else
+   begin
+    fair_cnt = fair_cnt + 1;
+   end
+ 
+  //Device state updates:
+  state_regFeature0_abs          = next_state_regFeature0_abs ;
+  state_regSectors0_abs          = next_state_regSectors0_abs ;
+  state_regSectors1_abs          = next_state_regSectors1_abs ;
+  state_regLBALow0_abs           = next_state_regLBALow0_abs ;
+  state_regLBALow1_abs           = next_state_regLBALow1_abs ;
+  state_regDev_LBA_abs           = next_state_regDev_LBA_abs ;
+  state_regCommand_abs           = next_state_regCommand_abs ;
+  state_regBMCommand_Start_abs   = next_state_regBMCommand_Start_abs ;
+  state_regBMCommand_RW_abs      = next_state_regBMCommand_RW_abs ;
+  state_bufAddr_abs              = next_state_bufAddr_abs ;
+  state_bufSectors_abs           = next_state_bufSectors_abs ;
+  state_setFeatState_conc        = next_state_setFeatState_conc ;
+  state_stDMACmd_conc            = next_state_stDMACmd_conc ;
+  state_os_lba0_abs              = next_state_os_lba0_abs ;
+  state_os_lba1_abs              = next_state_os_lba1_abs ;
+  state_os_sect0_abs             = next_state_os_sect0_abs ;
+  state_os_sect1_abs             = next_state_os_sect1_abs ;
+  state_os_buf_abs               = next_state_os_buf_abs ;
+  state_osState_conc             = next_state_osState_conc ;
+ end
+ 
+ 
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 3/3 [2015-pre-classification]
+SOLVED_IN : 37.3201 [2015-pre-classification]
+#.

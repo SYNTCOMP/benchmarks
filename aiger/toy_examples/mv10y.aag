@@ -1,0 +1,235 @@
+aag 154 18 11 1 125
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38 1
+40 155
+42 170
+44 188
+46 206
+48 224
+50 242
+52 260
+54 278
+56 296
+58 308
+96
+60 40 38
+62 42 38
+64 62 60
+66 44 38
+68 66 64
+70 46 38
+72 70 68
+74 48 38
+76 74 72
+78 50 38
+80 78 76
+82 52 38
+84 82 80
+86 54 38
+88 86 84
+90 56 38
+92 90 88
+94 58 38
+96 94 92
+98 4 3
+100 5 2
+102 101 99
+104 102 6
+106 103 7
+108 107 105
+110 108 8
+112 109 9
+114 113 111
+116 114 10
+118 115 11
+120 119 117
+122 120 12
+124 121 13
+126 125 123
+128 126 14
+130 127 15
+132 131 129
+134 132 16
+136 133 17
+138 137 135
+140 138 18
+142 139 19
+144 143 141
+146 145 94
+148 147 20
+150 149 60
+152 148 61
+154 153 151
+156 60 20
+158 156 22
+160 157 23
+162 161 159
+164 162 147
+166 165 63
+168 164 62
+170 169 167
+172 159 63
+174 173 161
+176 174 24
+178 175 25
+180 179 177
+182 180 147
+184 183 67
+186 182 66
+188 187 185
+190 177 67
+192 191 179
+194 192 26
+196 193 27
+198 197 195
+200 198 147
+202 201 71
+204 200 70
+206 205 203
+208 195 71
+210 209 197
+212 210 28
+214 211 29
+216 215 213
+218 216 147
+220 219 75
+222 218 74
+224 223 221
+226 213 75
+228 227 215
+230 228 30
+232 229 31
+234 233 231
+236 234 147
+238 237 79
+240 236 78
+242 241 239
+244 231 79
+246 245 233
+248 246 32
+250 247 33
+252 251 249
+254 252 147
+256 255 83
+258 254 82
+260 259 257
+262 249 83
+264 263 251
+266 264 34
+268 265 35
+270 269 267
+272 270 147
+274 273 87
+276 272 86
+278 277 275
+280 267 87
+282 281 269
+284 282 36
+286 283 37
+288 287 285
+290 288 147
+292 291 91
+294 290 90
+296 295 293
+298 285 91
+300 299 287
+302 300 95
+304 301 94
+306 305 303
+308 307 147
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 controllable_c<2>
+i3 controllable_c<3>
+i4 controllable_c<4>
+i5 controllable_c<5>
+i6 controllable_c<6>
+i7 controllable_c<7>
+i8 controllable_c<8>
+i9 a<0>
+i10 a<1>
+i11 a<2>
+i12 a<3>
+i13 a<4>
+i14 a<5>
+i15 a<6>
+i16 a<7>
+i17 a<8>
+l0 n39
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+l9 counter<8>_out
+l10 counter<9>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:53 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv mv10.v   ---gives--> mv10.mv
+> abc -c "read_blif_mv mv10.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s mv10y.aig"   ---gives--> mv10y.aig
+> aigtoaig mv10y.aig mv10y.aag   ---gives--> mv10y.aag (this file)
+Content of mv10.v:
+// realizable
+module bench(clk, a, controllable_c, err);
+  input clk;
+  input [8:0] a;
+  input [8:0] controllable_c;
+  reg [9:0] counter;
+  output err;
+  wire ctrl_xor;
+  
+  assign err = (counter == 10'b1111111111) ? 1 : 0;
+  assign ctrl_xor = controllable_c[0] ^ 
+                    controllable_c[1] ^
+                    controllable_c[2] ^
+                    controllable_c[3] ^
+                    controllable_c[4] ^
+                    controllable_c[5] ^
+                    controllable_c[6] ^
+                    controllable_c[7] ^
+                    controllable_c[8];
+
+  initial
+  begin
+    counter = 0;
+  end
+
+  always @ (posedge clk)
+  begin
+    if(counter[9] & ctrl_xor)
+       counter[9] = 0;
+    else
+       counter = counter + {1'b0, a};
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.008 [SYNTCOMP2014-RealSeq]
+#.

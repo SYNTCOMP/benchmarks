@@ -1,0 +1,34 @@
+INFO {
+  TITLE:       "LTL -> DBA  -  Example 7"
+  DESCRIPTION: "One of the Acacia+ example files"
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+MAIN {
+
+  INPUTS {
+    p;
+    q;
+    r;
+    s;
+    u;
+    v;
+    w;
+  }
+
+  OUTPUTS {
+    acc;
+  }
+
+  GUARANTEES {
+    (p U (q && X (r && F (s && X F (u && X F (v && X F w))))))
+      <-> G F acc;
+  }
+
+}
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 195
+//#.

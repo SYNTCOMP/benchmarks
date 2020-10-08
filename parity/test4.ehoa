@@ -1,0 +1,16 @@
+HOA: v1
+name: "GFa & GF(b & c)"
+States: 1
+Start: 0
+acc-name: generalized-Buchi 2
+Acceptance: 2 (Inf(0) & Inf(1))
+AP: 3 "a" "b" "c"
+Alias: @a 0
+Alias: @bc 1 & 2
+--BODY--
+State: 0
+[!@a & !@bc] 0
+[@a & !@bc]  0 {0}
+[!@a & @bc]  0 {1}
+[@a & @bc]   0 {0 1}
+--END--

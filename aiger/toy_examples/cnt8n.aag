@@ -1,0 +1,185 @@
+aag 131 2 9 1 120
+2
+4
+6 1
+8 221
+10 227
+12 233
+14 239
+16 245
+18 251
+20 257
+22 263
+84
+24 9 6
+26 8 6
+28 25 6
+30 11 6
+32 10 6
+34 31 6
+36 13 6
+38 12 6
+40 37 6
+42 15 6
+44 14 6
+46 43 6
+48 17 6
+50 16 6
+52 49 6
+54 19 6
+56 18 6
+58 55 6
+60 21 6
+62 20 6
+64 61 6
+66 23 6
+68 22 6
+70 67 6
+72 34 28
+74 72 40
+76 74 46
+78 76 52
+80 78 58
+82 80 64
+84 82 70
+86 82 69
+88 86 4
+90 88 3
+92 91 3
+94 89 3
+96 95 92
+98 89 29
+100 26 2
+102 98 3
+104 103 101
+106 35 26
+108 32 27
+110 109 107
+112 111 89
+114 32 2
+116 112 3
+118 117 115
+120 32 26
+122 120 41
+124 121 38
+126 125 123
+128 127 89
+130 38 2
+132 128 3
+134 133 131
+136 120 38
+138 136 47
+140 137 44
+142 141 139
+144 143 89
+146 44 2
+148 144 3
+150 149 147
+152 136 44
+154 152 53
+156 153 50
+158 157 155
+160 159 89
+162 50 2
+164 160 3
+166 165 163
+168 152 50
+170 168 59
+172 169 56
+174 173 171
+176 175 89
+178 56 2
+180 176 3
+182 181 179
+184 168 56
+186 184 65
+188 185 62
+190 189 187
+192 191 89
+194 62 2
+196 192 3
+198 197 195
+200 184 62
+202 200 71
+204 201 68
+206 205 203
+208 207 89
+210 68 2
+212 208 3
+214 213 211
+216 105 97
+218 96 26
+220 219 217
+222 119 97
+224 96 32
+226 225 223
+228 135 97
+230 96 38
+232 231 229
+234 151 97
+236 96 44
+238 237 235
+240 167 97
+242 96 50
+244 243 241
+246 183 97
+248 96 56
+250 249 247
+252 199 97
+254 96 62
+256 255 253
+258 215 97
+260 96 68
+262 261 259
+i0 stay
+i1 controllable_reset
+l0 n7
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:50 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv cnt8.v   ---gives--> cnt8.mv
+> abc -c "read_blif_mv cnt8.mv; write_aiger -s cnt8n.aig"   ---gives--> cnt8n.aig
+> aigtoaig cnt8n.aig cnt8n.aag   ---gives--> cnt8n.aag (this file)
+Content of cnt8.v:
+// realizable
+module bench(clk, stay, controllable_reset, err);
+  input clk;
+  input stay;
+  input controllable_reset;
+  output err;
+  reg [7:0] counter;
+
+  assign err = (counter == 8'b11111111) ? 1 : 0;
+  
+  initial
+  begin
+    counter = 8'b0;
+  end
+  always @ (posedge clk)
+  begin
+    if(stay)
+      counter = counter;
+    else if(counter == 8'b01111111 && controllable_reset)
+      counter = 0;
+    else
+      counter = counter + 1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.008 [SYNTCOMP2014-RealSeq]
+#.

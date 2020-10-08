@@ -1,0 +1,162 @@
+aag 95 4 9 1 82
+2
+4
+6
+8
+10 1
+12 63
+14 91
+16 119
+18 143
+20 155
+22 167
+24 179
+26 191
+28
+28 13 10
+30 12 10
+32 31 10
+34 18 10
+36 20 10
+38 34 4
+40 36 5
+42 41 39
+44 26 10
+46 44 4
+48 33 5
+50 49 47
+52 43 8
+54 51 9
+56 55 53
+58 57 2
+60 33 3
+62 61 59
+64 22 10
+66 36 4
+68 64 5
+70 69 67
+72 14 10
+74 33 4
+76 72 5
+78 77 75
+80 71 8
+82 79 9
+84 83 81
+86 85 2
+88 72 3
+90 89 87
+92 24 10
+94 64 4
+96 92 5
+98 97 95
+100 16 10
+102 72 4
+104 100 5
+106 105 103
+108 99 8
+110 107 9
+112 111 109
+114 113 2
+116 100 3
+118 117 115
+120 92 4
+122 44 5
+124 123 121
+126 100 4
+128 34 5
+130 129 127
+132 125 8
+134 131 9
+136 135 133
+138 137 2
+140 34 3
+142 141 139
+144 51 8
+146 43 9
+148 147 145
+150 149 2
+152 36 3
+154 153 151
+156 79 8
+158 71 9
+160 159 157
+162 161 2
+164 64 3
+166 165 163
+168 107 8
+170 99 9
+172 171 169
+174 173 2
+176 92 3
+178 177 175
+180 131 8
+182 125 9
+184 183 181
+186 185 2
+188 44 3
+190 189 187
+i0 controllable_do_shift
+i1 sh<0>
+i2 sh<1>
+i3 sh<2>
+l0 bench|n11
+l1 bench|r<0>_out
+l2 bench|r<1>_out
+l3 bench|r<2>_out
+l4 bench|r<3>_out
+l5 bench|r<4>_out
+l6 bench|r<5>_out
+l7 bench|r<6>_out
+l8 bench|r<7>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:53 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv bs8.v   ---gives--> bs8.mv
+> abc -c "read_blif_mv bs8.mv; write_aiger -s bs8n.aig"   ---gives--> bs8n.aig
+> aigtoaig bs8n.aig bs8n.aag   ---gives--> bs8n.aag (this file)
+Content of bs8.v:
+module bench(clk, sh, controllable_do_shift, err);
+  input clk;
+  input [2:0] sh;
+  input controllable_do_shift;
+  output err;
+  reg[7:0] r;
+
+  wire[7:0] shifted;
+  barrel b(r,shifted,sh);
+
+  assign err = ~r[0];
+
+  initial
+  begin
+    r = 1;
+  end
+
+  always @ (posedge clk)
+  begin
+    r = controllable_do_shift ? shifted : r;
+  end
+endmodule
+  
+module barrel(i,o,s);
+  input [7:0] i;
+  output [7:0] o;
+  input [2:0] s;
+  wire [7:0] t1;
+  wire [7:0] t2;
+  
+  assign t1 = s[0] ? {i[6:0],i[7:7]} : i;    // shift by 1 pos
+  assign t2 = s[1] ? {t1[5:0],t1[7:6]} : t1; // shift by 2 pos
+  assign o  = s[2] ? {t1[3:0],t1[7:4]} : t1; // shift by 4 pos
+endmodule
+
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.004 [SYNTCOMP2014-RealSeq]
+#.

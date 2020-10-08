@@ -1,0 +1,28 @@
+HOA: v1
+name: "G(!hready | (((locked & Xhmastlock) | (!locked & X!hmastlock)) & (hready | (hmastlock & Xhmastlock) | (!hmastlock & X!hmastlock))))"
+States: 4
+Start: 0
+AP: 3 "hready" "locked" "hmastlock"
+controllable-AP: 2
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic weak
+--BODY--
+State: 0 {2}
+[!0] 0
+[0&1] 1
+[0&!1] 2
+State: 1 {2}
+[!0&2] 0
+[0&1&2] 1
+[0&!1&2] 2
+[!2] 3
+State: 2 {2}
+[!0&!2] 0
+[0&1&!2] 1
+[0&!1&!2] 2
+[2] 3
+State: 3 {1}
+[t] 3
+--END--

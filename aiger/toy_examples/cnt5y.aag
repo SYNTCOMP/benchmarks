@@ -1,0 +1,88 @@
+aag 37 2 6 1 29
+2
+4
+6 1
+8 41
+10 49
+12 57
+14 65
+16 74
+34
+18 16 6
+20 14 6
+22 12 6
+24 8 6
+26 10 6
+28 26 24
+30 28 22
+32 30 20
+34 32 18
+36 24 2
+38 25 3
+40 39 37
+42 24 3
+44 43 26
+46 42 27
+48 47 45
+50 28 3
+52 51 22
+54 50 23
+56 55 53
+58 30 3
+60 59 20
+62 58 21
+64 63 61
+66 19 5
+68 32 3
+70 68 67
+72 69 19
+74 73 71
+i0 stay
+i1 controllable_reset
+l0 n7
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:25:09 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv cnt5.v   ---gives--> cnt5.mv
+> abc -c "read_blif_mv cnt5.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s cnt5y.aig"   ---gives--> cnt5y.aig
+> aigtoaig cnt5y.aig cnt5y.aag   ---gives--> cnt5y.aag (this file)
+Content of cnt5.v:
+// realizable
+module bench(clk, stay, controllable_reset, err);
+  input clk;
+  input stay;
+  input controllable_reset;
+  output err;
+  reg [4:0] counter;
+
+  assign err = (counter == 5'b11111) ? 1 : 0;
+  
+  initial
+  begin
+    counter = 5'b0;
+  end
+  always @ (posedge clk)
+  begin
+    if(stay)
+      counter = counter;
+    else if(counter == 5'b01111 && controllable_reset)
+      counter = 0;
+    else
+      counter = counter + 1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.008 [SYNTCOMP2014-RealSeq]
+#.

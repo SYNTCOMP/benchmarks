@@ -1,0 +1,134 @@
+aag 83 2 6 1 75
+2
+4
+6 1
+8 143
+10 149
+12 155
+14 161
+16 167
+54
+18 9 6
+20 8 6
+22 19 6
+24 11 6
+26 10 6
+28 25 6
+30 13 6
+32 12 6
+34 31 6
+36 15 6
+38 14 6
+40 37 6
+42 17 6
+44 16 6
+46 43 6
+48 28 22
+50 48 34
+52 50 40
+54 52 46
+56 52 45
+58 56 4
+60 58 3
+62 61 3
+64 59 3
+66 65 62
+68 59 23
+70 20 2
+72 68 3
+74 73 71
+76 29 20
+78 26 21
+80 79 77
+82 81 59
+84 26 2
+86 82 3
+88 87 85
+90 26 20
+92 90 35
+94 91 32
+96 95 93
+98 97 59
+100 32 2
+102 98 3
+104 103 101
+106 90 32
+108 106 41
+110 107 38
+112 111 109
+114 113 59
+116 38 2
+118 114 3
+120 119 117
+122 106 38
+124 122 47
+126 123 44
+128 127 125
+130 129 59
+132 44 2
+134 130 3
+136 135 133
+138 75 67
+140 66 20
+142 141 139
+144 89 67
+146 66 26
+148 147 145
+150 105 67
+152 66 32
+154 153 151
+156 121 67
+158 66 38
+160 159 157
+162 137 67
+164 66 44
+166 165 163
+i0 stay
+i1 controllable_reset
+l0 n7
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:25:09 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv cnt5.v   ---gives--> cnt5.mv
+> abc -c "read_blif_mv cnt5.mv; write_aiger -s cnt5n.aig"   ---gives--> cnt5n.aig
+> aigtoaig cnt5n.aig cnt5n.aag   ---gives--> cnt5n.aag (this file)
+Content of cnt5.v:
+// realizable
+module bench(clk, stay, controllable_reset, err);
+  input clk;
+  input stay;
+  input controllable_reset;
+  output err;
+  reg [4:0] counter;
+
+  assign err = (counter == 5'b11111) ? 1 : 0;
+  
+  initial
+  begin
+    counter = 5'b0;
+  end
+  always @ (posedge clk)
+  begin
+    if(stay)
+      counter = counter;
+    else if(counter == 5'b01111 && controllable_reset)
+      counter = 0;
+    else
+      counter = counter + 1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.008 [SYNTCOMP2014-RealSeq]
+#.

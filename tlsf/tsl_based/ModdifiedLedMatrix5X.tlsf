@@ -1,0 +1,58 @@
+INFO {
+  TITLE:       "Converted TSL Specification: ModdifiedLedMatrix5X"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0eqz0waitcounter;
+    p0on0write;
+    p0eq0coordx0f1ddec0f1dsizex1b1b;
+  }
+
+  OUTPUTS {
+    u0buffer2pin0buffer2pin;
+    u0buffer2pin0f1dhigh1b;
+    u0buffer2pin0f1dlow1b;
+    u0color0color;
+    u0color0ramout;
+    u0color240color24;
+    u0color240ramout;
+    u0color250color25;
+    u0color250ramout;
+    u0coordx0coordx;
+    u0coordx0f1dinc2x0coordx1b;
+    u0coordy0coordy;
+    u0coordy0f1dinc2y0coordy1b;
+    u0driver2pin0driver2pin;
+    u0driver2pin0f1dlow1b;
+    u0extclock0extclock;
+    u0extclock0f1dhigh1b;
+    u0extclock0f1dlow1b;
+    u0rampos0rampos;
+    u0rampos0f1drampos240coordx0f1dinc2y0coordy1b1b;
+    u0rampos0f1drampos250coordx0f1dinc2y0coordy1b1b;
+    u0rampos0f1drampos2r0xcoordinate0ycoordinate1b;
+    u0ramwrite0ramwrite;
+    u0ramwrite0f1dwriteramnone1b;
+    u0ramwrite0f1dwriteram0writecolor0xcoordinate0ycoordinate1b;
+  }
+
+  ASSERT {
+    ! (((u0buffer2pin0f1dhigh1b) && (! ((u0buffer2pin0f1dlow1b) || (u0buffer2pin0buffer2pin)))) <-> ((! (((u0buffer2pin0f1dlow1b) && (! (u0buffer2pin0buffer2pin))) <-> ((u0buffer2pin0buffer2pin) && (! (u0buffer2pin0f1dlow1b))))) && (! (u0buffer2pin0f1dhigh1b))));
+    ! (((u0color0color) && (! (u0color0ramout))) <-> ((u0color0ramout) && (! (u0color0color))));
+    ! (((u0color240color24) && (! (u0color240ramout))) <-> ((u0color240ramout) && (! (u0color240color24))));
+    ! (((u0color250color25) && (! (u0color250ramout))) <-> ((u0color250ramout) && (! (u0color250color25))));
+    ! (((u0coordx0coordx) && (! (u0coordx0f1dinc2x0coordx1b))) <-> ((u0coordx0f1dinc2x0coordx1b) && (! (u0coordx0coordx))));
+    ! (((u0coordy0coordy) && (! (u0coordy0f1dinc2y0coordy1b))) <-> ((u0coordy0f1dinc2y0coordy1b) && (! (u0coordy0coordy))));
+    ! (((u0driver2pin0driver2pin) && (! (u0driver2pin0f1dlow1b))) <-> ((u0driver2pin0f1dlow1b) && (! (u0driver2pin0driver2pin))));
+    ! (((u0extclock0f1dhigh1b) && (! ((u0extclock0f1dlow1b) || (u0extclock0extclock)))) <-> ((! (((u0extclock0f1dlow1b) && (! (u0extclock0extclock))) <-> ((u0extclock0extclock) && (! (u0extclock0f1dlow1b))))) && (! (u0extclock0f1dhigh1b))));
+    ! (((! (((u0rampos0f1drampos250coordx0f1dinc2y0coordy1b1b) && (! (u0rampos0rampos))) <-> ((u0rampos0rampos) && (! (u0rampos0f1drampos250coordx0f1dinc2y0coordy1b1b))))) && (! ((u0rampos0f1drampos2r0xcoordinate0ycoordinate1b) || (u0rampos0f1drampos240coordx0f1dinc2y0coordy1b1b)))) <-> ((! (((u0rampos0f1drampos2r0xcoordinate0ycoordinate1b) && (! (u0rampos0f1drampos240coordx0f1dinc2y0coordy1b1b))) <-> ((u0rampos0f1drampos240coordx0f1dinc2y0coordy1b1b) && (! (u0rampos0f1drampos2r0xcoordinate0ycoordinate1b))))) && (! ((u0rampos0f1drampos250coordx0f1dinc2y0coordy1b1b) || (u0rampos0rampos)))));
+    ! (((u0ramwrite0f1dwriteramnone1b) && (! ((u0ramwrite0f1dwriteram0writecolor0xcoordinate0ycoordinate1b) || (u0ramwrite0ramwrite)))) <-> ((! (((u0ramwrite0f1dwriteram0writecolor0xcoordinate0ycoordinate1b) && (! (u0ramwrite0ramwrite))) <-> ((u0ramwrite0ramwrite) && (! (u0ramwrite0f1dwriteram0writecolor0xcoordinate0ycoordinate1b))))) && (! (u0ramwrite0f1dwriteramnone1b))));
+  }
+
+  GUARANTEE {
+    (G (F (! (! (p0eqz0waitcounter))))) -> ((((((((((((((((((((((((! (u0color240ramout)) && (! (u0color250ramout))) && (! (u0color0ramout))) && (u0extclock0f1dlow1b)) && (G ((X (u0color240ramout)) -> (u0rampos0f1drampos240coordx0f1dinc2y0coordy1b1b)))) && (G ((X (u0color250ramout)) -> (u0rampos0f1drampos250coordx0f1dinc2y0coordy1b1b)))) && (G ((X (u0color0ramout)) -> (u0rampos0f1drampos2r0xcoordinate0ycoordinate1b)))) && (G (F (u0extclock0f1dlow1b)))) && (G ((u0extclock0f1dlow1b) -> (F (u0extclock0f1dhigh1b))))) && (G ((u0extclock0f1dhigh1b) -> ((u0extclock0f1dhigh1b) U (u0extclock0f1dlow1b))))) && (G (F (u0color0ramout)))) && (G (F (u0coordx0f1dinc2x0coordx1b)))) && (G ((u0extclock0f1dhigh1b) -> ((((u0color240color24) && (u0color250color25)) && (u0coordx0coordx)) && (u0coordy0coordy))))) && (G ((u0coordx0f1dinc2x0coordx1b) -> (X (X (X (X (X (u0coordx0f1dinc2x0coordx1b))))))))) && (G ((u0extclock0f1dlow1b) -> ((u0color240ramout) R (! (u0extclock0f1dhigh1b)))))) && (G ((u0extclock0f1dlow1b) -> ((u0color250ramout) R (! (u0extclock0f1dhigh1b)))))) && (G ((u0extclock0f1dlow1b) -> ((u0coordx0f1dinc2x0coordx1b) R (! (((((u0color240ramout) || (u0color250ramout)) || (u0extclock0f1dhigh1b)) || (u0rampos0f1drampos240coordx0f1dinc2y0coordy1b1b)) || (u0rampos0f1drampos250coordx0f1dinc2y0coordy1b1b))))))) && (G ((u0coordx0f1dinc2x0coordx1b) -> (X ((u0extclock0f1dhigh1b) R (! (u0coordx0f1dinc2x0coordx1b))))))) && (G (((u0coordx0f1dinc2x0coordx1b) && (p0eq0coordx0f1ddec0f1dsizex1b1b)) <-> (u0coordy0f1dinc2y0coordy1b)))) && (G ((p0on0write) -> (u0ramwrite0f1dwriteram0writecolor0xcoordinate0ycoordinate1b)))) && (G ((! (p0on0write)) -> (u0ramwrite0f1dwriteramnone1b)))) && (G ((u0buffer2pin0f1dhigh1b) <-> ((X (u0coordx0f1dinc2x0coordx1b)) && (p0eq0coordx0f1ddec0f1dsizex1b1b))))) && (G ((u0buffer2pin0f1dhigh1b) || (u0buffer2pin0f1dlow1b)))) && (G (u0driver2pin0f1dlow1b)));
+  }
+}

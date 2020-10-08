@@ -1,0 +1,28 @@
+INFO {
+  TITLE:       "Converted TSL Specification: TorcsSimple"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0gt0rpm0f1dcon5523231b;
+    p0p0lt0rpm0f1dcon32323231b;
+    p0p0lt0speed0f1dsub0target2speed0f1dmultp0f1dabs0steer1b0f1dcon248881b1b1b;
+  }
+
+  OUTPUTS {
+    u0accel0accel;
+    u0accel0f1dcon231b;
+    u0accel0f1dcon23p81b;
+    u0gear0gear;
+    u0gear0f1dmax0f1dcon241b0f1dsub0gear0f1dcon241b1b1b;
+    u0gear0f1dmin0f1dcon61b0f1dadd0gear0f1dcon241b1b1b;
+    u0steer0steer;
+    u0steer0f1dsteering0angle0trackpos1b;
+  }
+
+  GUARANTEE {
+    (G (((! (((u0accel0f1dcon231b) && (! ((u0accel0f1dcon23p81b) || (u0accel0accel)))) <-> ((! (((u0accel0f1dcon23p81b) && (! (u0accel0accel))) <-> ((u0accel0accel) && (! (u0accel0f1dcon23p81b))))) && (! (u0accel0f1dcon231b))))) && (! (((u0gear0f1dmax0f1dcon241b0f1dsub0gear0f1dcon241b1b1b) && (! ((u0gear0f1dmin0f1dcon61b0f1dadd0gear0f1dcon241b1b1b) || (u0gear0gear)))) <-> ((! (((u0gear0f1dmin0f1dcon61b0f1dadd0gear0f1dcon241b1b1b) && (! (u0gear0gear))) <-> ((u0gear0gear) && (! (u0gear0f1dmin0f1dcon61b0f1dadd0gear0f1dcon241b1b1b))))) && (! (u0gear0f1dmax0f1dcon241b0f1dsub0gear0f1dcon241b1b1b)))))) && (! (((u0steer0steer) && (! (u0steer0f1dsteering0angle0trackpos1b))) <-> ((u0steer0f1dsteering0angle0trackpos1b) && (! (u0steer0steer))))))) && (((G (! ((p0p0gt0rpm0f1dcon5523231b) && (p0p0lt0rpm0f1dcon32323231b)))) && (G (! ((p0p0gt0rpm0f1dcon5523231b) && (p0p0lt0rpm0f1dcon32323231b))))) -> ((((((G (u0steer0f1dsteering0angle0trackpos1b)) && (G ((p0p0lt0speed0f1dsub0target2speed0f1dmultp0f1dabs0steer1b0f1dcon248881b1b1b) -> (u0accel0f1dcon23p81b)))) && (G ((! (p0p0lt0speed0f1dsub0target2speed0f1dmultp0f1dabs0steer1b0f1dcon248881b1b1b)) -> (u0accel0f1dcon231b)))) && (G ((p0p0gt0rpm0f1dcon5523231b) -> (u0gear0f1dmin0f1dcon61b0f1dadd0gear0f1dcon241b1b1b)))) && (G ((p0p0lt0rpm0f1dcon32323231b) -> (u0gear0f1dmax0f1dcon241b0f1dsub0gear0f1dcon241b1b1b)))) && (G (((! (p0p0gt0rpm0f1dcon5523231b)) && (! (p0p0lt0rpm0f1dcon32323231b))) -> (u0gear0gear)))));
+  }
+}

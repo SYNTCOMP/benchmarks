@@ -1,0 +1,23 @@
+HOA: v1
+name: "G(F!g & (!r | Fg))"
+States: 3
+Start: 0
+AP: 2 "g" "r"
+acc-name: parity min odd 3
+Acceptance: 3 Fin(0) & (Inf(1) | Fin(2))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic stutter-invariant
+controllable-AP: 1
+--BODY--
+State: 0
+[0] 0 {2}
+[!0&!1] 1 {1}
+[!0&1] 2 {1}
+State: 1
+[0] 0 {2}
+[!0&!1] 1 {1}
+[!0&1] 2 {2}
+State: 2
+[0] 0 {2}
+[!0] 2 {2}
+--END--

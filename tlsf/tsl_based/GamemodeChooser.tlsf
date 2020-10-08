@@ -1,0 +1,37 @@
+INFO {
+  TITLE:       "Converted TSL Specification: GamemodeChooser"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0eqz2pre0prescaler;
+    p0p0eqz2rst0reseter;
+    p0p0gamemodenoise0rotation;
+    p0p0gyronoise0gyroy;
+    p0p0iscockpitmode0gamemode;
+    p0p0isradarmode0gamemode;
+    p0p0isscoremode0gamemode;
+    p0p0gt0rotation0f1dgamemodeswitch1b;
+    p0p0lt0rotation0f1dneg0f1dgamemodeswitch1b1b;
+  }
+
+  OUTPUTS {
+    u0gamemode0gamemode;
+    u0gamemode0f1dcockpitmode1b;
+    u0gamemode0f1dradarmode1b;
+    u0gamemode0f1dscoremode1b;
+    u0prescaler0prescaler;
+    u0prescaler0f1dinc2prescale0prescaler1b;
+    u0reseter0reseter;
+    u0reseter0f1dinc2reset0reseter1b;
+    u0rotation0rotation;
+    u0rotation0f1dzero1b;
+    u0rotation0f1daddrotation0rotation0f1dgyrocorrection1b0gyroy1b;
+  }
+
+  GUARANTEE {
+    (G ((((! (((! (((u0gamemode0f1dradarmode1b) && (! (u0gamemode0gamemode))) <-> ((u0gamemode0gamemode) && (! (u0gamemode0f1dradarmode1b))))) && (! ((u0gamemode0f1dscoremode1b) || (u0gamemode0f1dcockpitmode1b)))) <-> ((! (((u0gamemode0f1dscoremode1b) && (! (u0gamemode0f1dcockpitmode1b))) <-> ((u0gamemode0f1dcockpitmode1b) && (! (u0gamemode0f1dscoremode1b))))) && (! ((u0gamemode0f1dradarmode1b) || (u0gamemode0gamemode)))))) && (! (((u0prescaler0prescaler) && (! (u0prescaler0f1dinc2prescale0prescaler1b))) <-> ((u0prescaler0f1dinc2prescale0prescaler1b) && (! (u0prescaler0prescaler)))))) && (! (((u0reseter0reseter) && (! (u0reseter0f1dinc2reset0reseter1b))) <-> ((u0reseter0f1dinc2reset0reseter1b) && (! (u0reseter0reseter)))))) && (! (((u0rotation0f1dzero1b) && (! ((u0rotation0f1daddrotation0rotation0f1dgyrocorrection1b0gyroy1b) || (u0rotation0rotation)))) <-> ((! (((u0rotation0f1daddrotation0rotation0f1dgyrocorrection1b0gyroy1b) && (! (u0rotation0rotation))) <-> ((u0rotation0rotation) && (! (u0rotation0f1daddrotation0rotation0f1dgyrocorrection1b0gyroy1b))))) && (! (u0rotation0f1dzero1b))))))) && (((((G (! ((p0p0isscoremode0gamemode) && (p0p0isradarmode0gamemode)))) && (G (! ((p0p0isradarmode0gamemode) && (p0p0iscockpitmode0gamemode))))) && (G (! ((p0p0iscockpitmode0gamemode) && (p0p0isscoremode0gamemode))))) && (G (! ((p0p0lt0rotation0f1dneg0f1dgamemodeswitch1b1b) && (p0p0gt0rotation0f1dgamemodeswitch1b))))) -> (((((((G (u0prescaler0f1dinc2prescale0prescaler1b)) && (G (u0reseter0f1dinc2reset0reseter1b))) && (G ((((p0p0isscoremode0gamemode) && (p0p0lt0rotation0f1dneg0f1dgamemodeswitch1b1b)) || ((p0p0isradarmode0gamemode) && (p0p0gt0rotation0f1dgamemodeswitch1b))) <-> (u0gamemode0f1dcockpitmode1b)))) && (G (((p0p0iscockpitmode0gamemode) && (p0p0lt0rotation0f1dneg0f1dgamemodeswitch1b1b)) <-> (u0gamemode0f1dradarmode1b)))) && (G (((p0p0iscockpitmode0gamemode) && (p0p0gt0rotation0f1dgamemodeswitch1b)) <-> (u0gamemode0f1dscoremode1b)))) && (G (((((u0gamemode0f1dradarmode1b) || (u0gamemode0f1dcockpitmode1b)) || (u0gamemode0f1dscoremode1b)) || ((p0p0eqz2rst0reseter) && (p0p0gamemodenoise0rotation))) <-> (u0rotation0f1dzero1b)))) && (G ((((! ((((u0gamemode0f1dradarmode1b) || (u0gamemode0f1dcockpitmode1b)) || (u0gamemode0f1dscoremode1b)) || ((p0p0eqz2rst0reseter) && (p0p0gamemodenoise0rotation)))) && (p0p0eqz2pre0prescaler)) && (! (p0p0gyronoise0gyroy))) <-> (u0rotation0f1daddrotation0rotation0f1dgyrocorrection1b0gyroy1b)))));
+  }
+}

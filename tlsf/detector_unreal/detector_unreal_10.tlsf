@@ -1,0 +1,34 @@
+INFO {
+  TITLE:       "Parameterized Input Monitor, unrealizable variant"
+  DESCRIPTION: "Checks whether all input signals are eventually true"
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 10;
+  }
+}
+
+MAIN {
+
+  INPUTS {
+    r[n]; // request signals
+  } 
+
+  OUTPUTS {
+    g; // grant signal
+  }
+
+  GUARANTEES {
+    &&[0 <= i < n] G F r[i] <-> G F g;
+    
+    G( &&[0 <= i < n] (&&[i < j < n] ( ((r[i] && r[j]) -> G !g))));
+  }
+  
+}
+//#!SYNTCOMP
+//STATUS : unrealizable
+//REF_SIZE : 0
+//#.

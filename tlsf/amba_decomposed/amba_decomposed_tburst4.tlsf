@@ -1,0 +1,59 @@
+INFO {
+  TITLE:       "Amba AHB - Decomposed - TBURST4"
+  DESCRIPTION: "TBURST4 component of the decomposed Amba AHB Arbiter"
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+MAIN {
+  INPUTS {
+    BURST4;
+    HREADY;
+    LOCKED;
+    DECIDE;
+  } 
+
+  OUTPUTS {
+    READY2;
+  }
+
+  ASSUMPTIONS {
+    // initially no decision is taken
+    !DECIDE;
+
+    // a slave cannot block the bus
+    G F HREADY;
+
+    // decisions are only taken if the component is ready
+    G (! READY2 -> X !DECIDE);
+  }
+
+  INVARIANTS {
+    // if there is a decision and the it is a burst4, locked
+    // transmission, then the bus is locked for four time steps
+    DECIDE ->
+      X[2] (((BURST4 && LOCKED)
+                -> (!READY2 U (HREADY && !READY2 &&
+                    X (!READY2 U (HREADY && !READY2 &&
+                      X (!READY2 U (HREADY && !READY2 &&
+                        X (!READY2 U (HREADY && !READY2 &&
+                           X READY2))))))))) &&
+            (!(BURST4 && LOCKED) -> READY2));
+
+    // the component stays ready as long as there is no decision
+    READY2 && X !DECIDE -> X READY2;
+
+    // if there is a decision the component blocks the bus for at
+    // least two time steps
+    READY2 && X DECIDE -> G[1:2] ! READY2;
+  }
+
+  GUARANTEES {
+    // initially, the component is ready    
+    READY2;
+  }
+}
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 82
+//#.

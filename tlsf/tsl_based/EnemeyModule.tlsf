@@ -1,0 +1,26 @@
+INFO {
+  TITLE:       "Converted TSL Specification: EnemeyModule"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0on0clock;
+    p0p0on0reset;
+  }
+
+  OUTPUTS {
+    u0angle0angle;
+    u0angle0resetangle;
+    u0color0color;
+    u0color0incolor;
+    u0radius0radius;
+    u0radius0f1dstartradius1b;
+    u0radius0f1ddec0radius1b;
+  }
+
+  GUARANTEE {
+    (G (((! (((u0angle0angle) && (! (u0angle0resetangle))) <-> ((u0angle0resetangle) && (! (u0angle0angle))))) && (! (((u0color0color) && (! (u0color0incolor))) <-> ((u0color0incolor) && (! (u0color0color)))))) && (! (((u0radius0f1dstartradius1b) && (! ((u0radius0f1ddec0radius1b) || (u0radius0radius)))) <-> ((! (((u0radius0f1ddec0radius1b) && (! (u0radius0radius))) <-> ((u0radius0radius) && (! (u0radius0f1ddec0radius1b))))) && (! (u0radius0f1dstartradius1b))))))) && ((((G (u0color0incolor)) && (G ((p0p0on0reset) <-> (u0radius0f1dstartradius1b)))) && (G ((p0p0on0reset) <-> (u0angle0resetangle)))) && (G (((p0p0on0clock) && (! (p0p0on0reset))) <-> (u0radius0f1ddec0radius1b))));
+  }
+}

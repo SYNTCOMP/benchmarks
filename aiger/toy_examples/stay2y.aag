@@ -1,0 +1,96 @@
+aag 26 5 4 1 17
+2
+4
+6
+8
+10
+12 1
+14 31
+16 46
+18 53
+28
+20 14 12
+22 16 12
+24 18 12
+26 24 22
+28 26 20
+30 21 11
+32 4 2
+34 33 8
+36 32 9
+38 37 35
+40 38 7
+42 41 22
+44 40 23
+46 45 43
+48 42 25
+50 43 24
+52 51 49
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 in<0>
+i3 in<1>
+i4 controllable_s
+l0 bench|n13
+l1 bench|bad_out
+l2 bench|state<0>_out
+l3 bench|state<1>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:55 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv stay2.v   ---gives--> stay2.mv
+> abc -c "read_blif_mv stay2.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s stay2y.aig"   ---gives--> stay2y.aig
+> aigtoaig stay2y.aig stay2y.aag   ---gives--> stay2y.aag (this file)
+Content of stay2.v:
+// realizable
+module bench(clk, in, controllable_s, controllable_c, err);
+  input clk;
+  input [1:0] in;
+  input controllable_s;
+  input [1:0] controllable_c;
+  output err;
+  reg [1:0] state;
+  reg bad;
+  wire [1:0] mul;
+  wire [1:0] choose;
+
+  assign err = bad & (state == 2'b11);
+  mult2 m(in, controllable_c, mul);
+  assign choose = controllable_c[1] ? {controllable_c[0:0],1'b0} : {mul[0:0],1'b0};
+
+  initial
+  begin
+    state = 0;
+    bad = 0;
+  end
+
+  always @ (posedge clk)
+  begin
+    state = state + (in != choose);
+    if(bad | controllable_s)
+      begin
+        bad = 1;
+      end
+  end
+endmodule
+
+module mult2(a,b,r);
+  input [1:0] a;
+  input [1:0] b;
+  output [1:0] r;
+  wire [1:0] s0;
+  wire [1:0] s1;
+  assign s0 = b[0] ? a : 0;
+  assign s1 = b[1] ? {a[0:0],1'b0} : 0;
+  assign r  = s0+s1;
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.004 [SYNTCOMP2014-RealSeq]
+#.

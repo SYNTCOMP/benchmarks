@@ -1,0 +1,24 @@
+INFO {
+  TITLE:       "Converted TSL Specification: EscalatorSmart"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0enter2event0bottom;
+    p0p0enter2event0top;
+    p0p0exit2event0bottom;
+    p0p0exit2event0top;
+  }
+
+  OUTPUTS {
+    u0steps0steps;
+    u0steps0f1dmove2down1b;
+    u0steps0f1dmove2up1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0steps0f1dmove2down1b) && (! ((u0steps0f1dmove2up1b) || (u0steps0steps)))) <-> ((! (((u0steps0f1dmove2up1b) && (! (u0steps0steps))) <-> ((u0steps0steps) && (! (u0steps0f1dmove2up1b))))) && (! (u0steps0f1dmove2down1b)))))) && (((G ((p0p0enter2event0bottom) -> ((G (F ((u0steps0f1dmove2up1b) && ((! (u0steps0f1dmove2down1b)) W (p0p0exit2event0top))))) -> (F (p0p0exit2event0top))))) && (G ((p0p0enter2event0top) -> ((G (F ((u0steps0f1dmove2down1b) && ((! (u0steps0f1dmove2up1b)) W (p0p0exit2event0bottom))))) -> (F (p0p0exit2event0bottom)))))) -> ((G ((p0p0enter2event0bottom) -> (F ((u0steps0f1dmove2up1b) U (p0p0exit2event0top))))) && (G ((p0p0enter2event0top) -> (F ((u0steps0f1dmove2down1b) U (p0p0exit2event0bottom)))))));
+  }
+}

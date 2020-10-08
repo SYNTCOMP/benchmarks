@@ -1,0 +1,23 @@
+HOA: v1
+name: "GFa | G(b <-> Xa)"
+Start: 0
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+AP: 2 "a" "b"
+controllable-AP: 1
+properties: explicit-labels trans-labels
+--BODY--
+State: 0
+ [t] 1
+ [1] 2
+ [!1] 3
+State: 1 "GFa"
+ [0] 1 {0}
+ [!0] 1
+State: 2 "a & G(b <-> Xa)" {0}
+ [0&1] 2
+ [0&!1] 3
+State: 3 "!a & G(b <-> Xa)" {0}
+ [!0&1] 2
+ [!0&!1] 3
+--END--

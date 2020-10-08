@@ -1,0 +1,27 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Sensor"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0on0acc2finished;
+    p0p0on0gyr2finished;
+    p0p0on0init2finished;
+    p0p0on0mag2finished;
+  }
+
+  OUTPUTS {
+    u0part2control0part2control;
+    u0part2control0f1dacc2on1b;
+    u0part2control0f1dgyr2on1b;
+    u0part2control0f1dinit2on1b;
+    u0part2control0f1dmag2on1b;
+    u0part2control0f1dno2cmd1b;
+  }
+
+  GUARANTEE {
+    (G (! (((! (((u0part2control0f1dgyr2on1b) && (! ((u0part2control0part2control) || (u0part2control0f1dmag2on1b)))) <-> ((! (((u0part2control0part2control) && (! (u0part2control0f1dmag2on1b))) <-> ((u0part2control0f1dmag2on1b) && (! (u0part2control0part2control))))) && (! (u0part2control0f1dgyr2on1b))))) && (! (((u0part2control0f1dno2cmd1b) || (u0part2control0f1dinit2on1b)) || (u0part2control0f1dacc2on1b)))) <-> ((! (((u0part2control0f1dinit2on1b) && (! ((u0part2control0f1dacc2on1b) || (u0part2control0f1dno2cmd1b)))) <-> ((! (((u0part2control0f1dacc2on1b) && (! (u0part2control0f1dno2cmd1b))) <-> ((u0part2control0f1dno2cmd1b) && (! (u0part2control0f1dacc2on1b))))) && (! (u0part2control0f1dinit2on1b))))) && (! (((u0part2control0f1dmag2on1b) || (u0part2control0f1dgyr2on1b)) || (u0part2control0part2control))))))) && (((((G ((u0part2control0f1dacc2on1b) -> (X (F (p0p0on0acc2finished))))) && (G ((u0part2control0f1dgyr2on1b) -> (X (F (p0p0on0gyr2finished)))))) && (G ((u0part2control0f1dmag2on1b) -> (X (F (p0p0on0mag2finished)))))) && (G ((u0part2control0f1dinit2on1b) -> (X (F (p0p0on0init2finished)))))) -> ((((((u0part2control0f1dinit2on1b) && (G ((u0part2control0f1dinit2on1b) -> (X (G (! (u0part2control0f1dinit2on1b))))))) && (G ((! (((((u0part2control0f1dinit2on1b) || (p0p0on0acc2finished)) || (p0p0on0gyr2finished)) || (p0p0on0mag2finished)) || (p0p0on0init2finished))) -> (u0part2control0f1dno2cmd1b)))) && (G (F (u0part2control0f1dacc2on1b)))) && (G (F (u0part2control0f1dgyr2on1b)))) && (G (F (u0part2control0f1dmag2on1b)))));
+  }
+}

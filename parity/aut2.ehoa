@@ -1,0 +1,18 @@
+HOA: v1
+States: 3
+Start: 0
+acc-name: Rabin 1
+Acceptance: 2 (Fin(0) & Inf(1))
+AP: 2 "a" "b"
+controllable-AP: 1
+--BODY--
+State: 0 "a U b" { 0 }
+  2  /* !a  & !b */
+  0  /*  a  & !b */
+  1  /* !a  &  b */
+  1  /*  a  &  b */
+State: 1 { 1 }
+  1 1 1 1       /* four transitions on one line */
+State: 2 "sink state" { 0 }
+  2 2 2 2
+--END--

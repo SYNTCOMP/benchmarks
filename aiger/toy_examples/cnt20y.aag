@@ -1,0 +1,209 @@
+aag 142 2 21 1 119
+2
+4
+6 1
+8 131
+10 139
+12 147
+14 155
+16 163
+18 171
+20 179
+22 187
+24 195
+26 203
+28 211
+30 219
+32 227
+34 235
+36 243
+38 251
+40 259
+42 267
+44 275
+46 284
+124
+48 46 6
+50 44 6
+52 42 6
+54 40 6
+56 38 6
+58 36 6
+60 34 6
+62 32 6
+64 30 6
+66 28 6
+68 26 6
+70 24 6
+72 22 6
+74 20 6
+76 18 6
+78 16 6
+80 14 6
+82 12 6
+84 8 6
+86 10 6
+88 86 84
+90 88 82
+92 90 80
+94 92 78
+96 94 76
+98 96 74
+100 98 72
+102 100 70
+104 102 68
+106 104 66
+108 106 64
+110 108 62
+112 110 60
+114 112 58
+116 114 56
+118 116 54
+120 118 52
+122 120 50
+124 122 48
+126 84 2
+128 85 3
+130 129 127
+132 84 3
+134 133 86
+136 132 87
+138 137 135
+140 88 3
+142 141 82
+144 140 83
+146 145 143
+148 90 3
+150 149 80
+152 148 81
+154 153 151
+156 92 3
+158 157 78
+160 156 79
+162 161 159
+164 94 3
+166 165 76
+168 164 77
+170 169 167
+172 96 3
+174 173 74
+176 172 75
+178 177 175
+180 98 3
+182 181 72
+184 180 73
+186 185 183
+188 100 3
+190 189 70
+192 188 71
+194 193 191
+196 102 3
+198 197 68
+200 196 69
+202 201 199
+204 104 3
+206 205 66
+208 204 67
+210 209 207
+212 106 3
+214 213 64
+216 212 65
+218 217 215
+220 108 3
+222 221 62
+224 220 63
+226 225 223
+228 110 3
+230 229 60
+232 228 61
+234 233 231
+236 112 3
+238 237 58
+240 236 59
+242 241 239
+244 114 3
+246 245 56
+248 244 57
+250 249 247
+252 116 3
+254 253 54
+256 252 55
+258 257 255
+260 118 3
+262 261 52
+264 260 53
+266 265 263
+268 120 3
+270 269 50
+272 268 51
+274 273 271
+276 49 5
+278 122 3
+280 278 277
+282 279 49
+284 283 281
+i0 stay
+i1 controllable_reset
+l0 n7
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+l9 counter<8>_out
+l10 counter<9>_out
+l11 counter<10>_out
+l12 counter<11>_out
+l13 counter<12>_out
+l14 counter<13>_out
+l15 counter<14>_out
+l16 counter<15>_out
+l17 counter<16>_out
+l18 counter<17>_out
+l19 counter<18>_out
+l20 counter<19>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:39 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv cnt20.v   ---gives--> cnt20.mv
+> abc -c "read_blif_mv cnt20.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s cnt20y.aig"   ---gives--> cnt20y.aig
+> aigtoaig cnt20y.aig cnt20y.aag   ---gives--> cnt20y.aag (this file)
+Content of cnt20.v:
+// realizable
+module bench(clk, stay, controllable_reset, err);
+  input clk;
+  input stay;
+  input controllable_reset;
+  output err;
+  reg [19:0] counter;
+
+  assign err = (counter == 20'b11111111111111111111) ? 1 : 0;
+
+  initial
+  begin
+    counter = 20'b0;
+  end
+  always @ (posedge clk)
+  begin
+    if(stay)
+      counter = counter;
+    else if(counter == 20'b01111111111111111111 && controllable_reset)
+      counter = 0;
+    else
+      counter = counter + 1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+SOLVED_BY : 7/8 [SYNTCOMP2014-RealSeq], 4/4 [SYNTCOMP2015-SyntSeq], 3/3 [SYNTCOMP2015-SyntPar], 7/7 [SYNTCOMP2015-RealSeq], 4/4 [SYNTCOMP2015-RealPar]
+SOLVED_IN : 8.16051 [SYNTCOMP2014-RealSeq], 3.76504 [SYNTCOMP2015-RealSeq], 0.198482 [SYNTCOMP2015-RealPar]
+REF_SIZE : 120
+STATUS : realizable
+#.

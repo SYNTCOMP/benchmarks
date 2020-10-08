@@ -1,0 +1,17 @@
+HOA: v1
+name: "F!r1 | (Fa1 & F(!a1 | r1))"
+States: 2
+Start: 1
+AP: 2 "a1" "r1"
+controllable-AP: 0
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic stutter-invariant terminal
+--BODY--
+State: 0 {2}
+[t] 0
+State: 1 {1}
+[0 | !1] 0
+[!0&1] 1
+--END--

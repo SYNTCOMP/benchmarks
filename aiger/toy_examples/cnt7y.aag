@@ -1,0 +1,104 @@
+aag 51 2 8 1 41
+2
+4
+6 1
+8 53
+10 61
+12 69
+14 77
+16 85
+18 93
+20 102
+46
+22 20 6
+24 18 6
+26 16 6
+28 14 6
+30 12 6
+32 8 6
+34 10 6
+36 34 32
+38 36 30
+40 38 28
+42 40 26
+44 42 24
+46 44 22
+48 32 2
+50 33 3
+52 51 49
+54 32 3
+56 55 34
+58 54 35
+60 59 57
+62 36 3
+64 63 30
+66 62 31
+68 67 65
+70 38 3
+72 71 28
+74 70 29
+76 75 73
+78 40 3
+80 79 26
+82 78 27
+84 83 81
+86 42 3
+88 87 24
+90 86 25
+92 91 89
+94 23 5
+96 44 3
+98 96 95
+100 97 23
+102 101 99
+i0 stay
+i1 controllable_reset
+l0 n7
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:25:04 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv cnt7.v   ---gives--> cnt7.mv
+> abc -c "read_blif_mv cnt7.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s cnt7y.aig"   ---gives--> cnt7y.aig
+> aigtoaig cnt7y.aig cnt7y.aag   ---gives--> cnt7y.aag (this file)
+Content of cnt7.v:
+// realizable
+module bench(clk, stay, controllable_reset, err);
+  input clk;
+  input stay;
+  input controllable_reset;
+  output err;
+  reg [6:0] counter;
+
+  assign err = (counter == 7'b1111111) ? 1 : 0;
+  
+  initial
+  begin
+    counter = 7'b0;
+  end
+  always @ (posedge clk)
+  begin
+    if(stay)
+      counter = counter;
+    else if(counter == 7'b0111111 && controllable_reset)
+      counter = 0;
+    else
+      counter = counter + 1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.008 [SYNTCOMP2014-RealSeq]
+#.

@@ -1,0 +1,54 @@
+INFO {
+  TITLE:       "Amba AHB - Decomposed - SINGLE"
+  DESCRIPTION: "SINGLE component of the decomposed Amba AHB Arbiter"
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+MAIN {
+  INPUTS {
+    SINGLE;
+    HREADY;
+    LOCKED;
+    DECIDE;
+  } 
+
+  OUTPUTS {
+    READY3;
+  }
+
+  ASSUMPTIONS {
+    // initially no decision is taken
+    !DECIDE;
+
+    // a slave cannot block the bus
+    G F HREADY;
+
+    // decisions are only taken if the component is ready
+    G (! READY3 -> X !DECIDE);
+  }
+
+  INVARIANTS {
+    // if there is a decision and it is a single, locked
+    // transmission, then the bus is locked for one time step
+    DECIDE ->
+      X[2] (((SINGLE && LOCKED) -> (!READY3 U (HREADY && !READY3 && X READY3))) &&
+            (!(SINGLE && LOCKED) -> READY3));
+
+    // the component stays ready as long as there is no decision
+    READY3 && X !DECIDE -> X READY3;
+
+    // if there is a decision the component blocks the bus for at
+    // least two time steps
+    READY3 && X DECIDE -> G[1:2] ! READY3;
+  }
+
+  GUARANTEES {
+    // initially, the component is ready
+    READY3;
+  }
+}
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 21
+//#.

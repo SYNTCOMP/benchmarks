@@ -1,0 +1,25 @@
+INFO {
+  TITLE:       "Converted TSL Specification: KitchenTimerV1"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0btn2min;
+    p0b0btn2sec;
+  }
+
+  OUTPUTS {
+    u0time0time;
+    u0time0f1dzero1b;
+    u0time0f1dinc2minutes0time1b;
+    u0time0f1dinc2seconds0time1b;
+    u0time0f1dcountdown0time0dt1b;
+    u0time0f1dcountup0time0dt1b;
+  }
+
+  GUARANTEE {
+    (G (! (((! (((u0time0f1dinc2minutes0time1b) && (! ((u0time0time) || (u0time0f1dcountdown0time0dt1b)))) <-> ((! (((u0time0time) && (! (u0time0f1dcountdown0time0dt1b))) <-> ((u0time0f1dcountdown0time0dt1b) && (! (u0time0time))))) && (! (u0time0f1dinc2minutes0time1b))))) && (! (((u0time0f1dcountup0time0dt1b) || (u0time0f1dinc2seconds0time1b)) || (u0time0f1dzero1b)))) <-> ((! (((u0time0f1dinc2seconds0time1b) && (! ((u0time0f1dzero1b) || (u0time0f1dcountup0time0dt1b)))) <-> ((! (((u0time0f1dzero1b) && (! (u0time0f1dcountup0time0dt1b))) <-> ((u0time0f1dcountup0time0dt1b) && (! (u0time0f1dzero1b))))) && (! (u0time0f1dinc2seconds0time1b))))) && (! (((u0time0f1dcountdown0time0dt1b) || (u0time0f1dinc2minutes0time1b)) || (u0time0time))))))) && (((G (((p0b0btn2min) && (p0b0btn2sec)) <-> (u0time0f1dzero1b))) && (G ((((! ((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b))) && ((! (p0b0btn2min)) && (X (p0b0btn2min)))) && (X (! (p0b0btn2sec)))) <-> (X (u0time0f1dinc2minutes0time1b))))) && (G ((((! ((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b))) && ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) && (X (! (p0b0btn2min)))) <-> (X (u0time0f1dinc2seconds0time1b)))));
+  }
+}

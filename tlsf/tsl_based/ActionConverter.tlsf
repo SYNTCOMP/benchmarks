@@ -1,0 +1,28 @@
+INFO {
+  TITLE:       "Converted TSL Specification: ActionConverter"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0iscockpitmode0gamemode;
+    p0p0isscoremode0gamemode;
+    p0p0gt0accz0f1dresetthreshhold1b;
+    p0p0gt0f1dabs0accz1b0f1dshotthreshhold1b;
+    p0p0norotation0gyrox0gyroy0gyroz;
+  }
+
+  OUTPUTS {
+    u0gamestart0gamestart;
+    u0gamestart0f1dbot1b;
+    u0gamestart0f1dtop1b;
+    u0shot0shot;
+    u0shot0f1dbot1b;
+    u0shot0f1dtop1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u0gamestart0f1dbot1b) && (! ((u0gamestart0f1dtop1b) || (u0gamestart0gamestart)))) <-> ((! (((u0gamestart0f1dtop1b) && (! (u0gamestart0gamestart))) <-> ((u0gamestart0gamestart) && (! (u0gamestart0f1dtop1b))))) && (! (u0gamestart0f1dbot1b))))) && (! (((u0shot0f1dbot1b) && (! ((u0shot0f1dtop1b) || (u0shot0shot)))) <-> ((! (((u0shot0f1dtop1b) && (! (u0shot0shot))) <-> ((u0shot0shot) && (! (u0shot0f1dtop1b))))) && (! (u0shot0f1dbot1b))))))) && ((((G ((u0gamestart0f1dtop1b) || (u0gamestart0f1dbot1b))) && (G ((u0shot0f1dtop1b) || (u0shot0f1dbot1b)))) && (G ((((p0p0isscoremode0gamemode) && (p0p0gt0accz0f1dresetthreshhold1b)) && (p0p0norotation0gyrox0gyroy0gyroz)) <-> (u0gamestart0f1dtop1b)))) && (G ((((p0p0iscockpitmode0gamemode) && (p0p0gt0f1dabs0accz1b0f1dshotthreshhold1b)) && (p0p0norotation0gyrox0gyroy0gyroz)) <-> (u0shot0f1dtop1b))));
+  }
+}

@@ -1,0 +1,29 @@
+INFO {
+  TITLE:       "Converted TSL Specification: TorcsSteeringImproved"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0left2of2center0track2pos;
+    p0p0right2of2center0track2pos;
+    p0p0turning2left0angle;
+    p0p0turning2right0angle;
+  }
+
+  OUTPUTS {
+    u0mode0mode;
+    u0mode0f1dcentering1b;
+    u0mode0f1dkeep1b;
+    u0mode0f1dstraighten1b;
+    u0steer0steer;
+    u0steer0f1dsteer2straight1b;
+    u0steer0f1dsteer2left0angle1b;
+    u0steer0f1dsteer2right0angle1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((! (((u0mode0f1dkeep1b) && (! (u0mode0mode))) <-> ((u0mode0mode) && (! (u0mode0f1dkeep1b))))) && (! ((u0mode0f1dstraighten1b) || (u0mode0f1dcentering1b)))) <-> ((! (((u0mode0f1dstraighten1b) && (! (u0mode0f1dcentering1b))) <-> ((u0mode0f1dcentering1b) && (! (u0mode0f1dstraighten1b))))) && (! ((u0mode0f1dkeep1b) || (u0mode0mode)))))) && (! (((! (((u0steer0f1dsteer2left0angle1b) && (! (u0steer0steer))) <-> ((u0steer0steer) && (! (u0steer0f1dsteer2left0angle1b))))) && (! ((u0steer0f1dsteer2right0angle1b) || (u0steer0f1dsteer2straight1b)))) <-> ((! (((u0steer0f1dsteer2right0angle1b) && (! (u0steer0f1dsteer2straight1b))) <-> ((u0steer0f1dsteer2straight1b) && (! (u0steer0f1dsteer2right0angle1b))))) && (! ((u0steer0f1dsteer2left0angle1b) || (u0steer0steer)))))))) && (((((G ((p0p0right2of2center0track2pos) -> (! (p0p0left2of2center0track2pos)))) && (G ((p0p0left2of2center0track2pos) -> (! (p0p0right2of2center0track2pos))))) && (G ((p0p0turning2left0angle) -> (! (p0p0turning2right0angle))))) && (G ((p0p0turning2right0angle) -> (! (p0p0turning2left0angle))))) -> ((((G (((u0mode0f1dcentering1b) || (u0mode0f1dstraighten1b)) || (u0mode0f1dkeep1b))) && (G ((u0mode0f1dcentering1b) -> ((((((u0mode0f1dcentering1b) W ((! (p0p0right2of2center0track2pos)) && (! (p0p0left2of2center0track2pos)))) && ((p0p0right2of2center0track2pos) -> (u0steer0f1dsteer2left0angle1b))) && ((p0p0left2of2center0track2pos) -> (u0steer0f1dsteer2right0angle1b))) && ((X (! (p0p0right2of2center0track2pos))) && (X (! (p0p0left2of2center0track2pos))))) -> (X (u0mode0f1dstraighten1b)))))) && (G ((u0mode0f1dstraighten1b) -> ((((((u0mode0f1dstraighten1b) W ((! (p0p0turning2left0angle)) && (! (p0p0turning2right0angle)))) && ((p0p0turning2left0angle) -> (u0steer0f1dsteer2right0angle1b))) && ((p0p0turning2right0angle) -> (u0steer0f1dsteer2left0angle1b))) && ((X (! (p0p0turning2left0angle))) && (X (! (p0p0turning2right0angle))))) -> (X (u0mode0f1dkeep1b)))))) && (G ((u0mode0f1dkeep1b) -> ((u0steer0f1dsteer2straight1b) && (((X (p0p0left2of2center0track2pos)) || (X (p0p0right2of2center0track2pos))) -> (X (u0mode0f1dcentering1b))))))));
+  }
+}

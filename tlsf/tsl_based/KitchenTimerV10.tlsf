@@ -1,0 +1,32 @@
+INFO {
+  TITLE:       "Converted TSL Specification: KitchenTimerV10"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0btn2min;
+    p0b0btn2sec;
+    p0b0btn2start2stop;
+    p0p0eq0time0f1dzero1b;
+  }
+
+  OUTPUTS {
+    u0beep0beep;
+    u0beep0p1dbt1b;
+    u0beep0p1dbf1b;
+    u0dsp0dsp;
+    u0dsp0f1ddisplay0time1b;
+    u0time0time;
+    u0time0f1dzero1b;
+    u0time0f1dinc2minutes0time1b;
+    u0time0f1dinc2seconds0time1b;
+    u0time0f1dcountdown0time0dt1b;
+    u0time0f1dcountup0time0dt1b;
+  }
+
+  GUARANTEE {
+    (G (((! (((u0beep0p1dbt1b) && (! ((u0beep0p1dbf1b) || (u0beep0beep)))) <-> ((! (((u0beep0p1dbf1b) && (! (u0beep0beep))) <-> ((u0beep0beep) && (! (u0beep0p1dbf1b))))) && (! (u0beep0p1dbt1b))))) && (! (((u0dsp0dsp) && (! (u0dsp0f1ddisplay0time1b))) <-> ((u0dsp0f1ddisplay0time1b) && (! (u0dsp0dsp)))))) && (! (((! (((u0time0f1dinc2minutes0time1b) && (! ((u0time0time) || (u0time0f1dcountdown0time0dt1b)))) <-> ((! (((u0time0time) && (! (u0time0f1dcountdown0time0dt1b))) <-> ((u0time0f1dcountdown0time0dt1b) && (! (u0time0time))))) && (! (u0time0f1dinc2minutes0time1b))))) && (! (((u0time0f1dcountup0time0dt1b) || (u0time0f1dinc2seconds0time1b)) || (u0time0f1dzero1b)))) <-> ((! (((u0time0f1dinc2seconds0time1b) && (! ((u0time0f1dzero1b) || (u0time0f1dcountup0time0dt1b)))) <-> ((! (((u0time0f1dzero1b) && (! (u0time0f1dcountup0time0dt1b))) <-> ((u0time0f1dcountup0time0dt1b) && (! (u0time0f1dzero1b))))) && (! (u0time0f1dinc2seconds0time1b))))) && (! (((u0time0f1dcountdown0time0dt1b) || (u0time0f1dinc2minutes0time1b)) || (u0time0time)))))))) && ((((((((((((((((! ((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b))) && ((X ((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b))) -> ((((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))) && (! ((! (p0b0btn2min)) && (X (p0b0btn2min))))) && (! ((! (p0b0btn2sec)) && (X (p0b0btn2sec))))))) && (! (u0time0f1dinc2seconds0time1b))) && (! (u0time0f1dinc2minutes0time1b))) && (u0beep0p1dbf1b)) && (G (((p0b0btn2min) && (p0b0btn2sec)) <-> (u0time0f1dzero1b)))) && (G ((((! ((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b))) && ((! (p0b0btn2min)) && (X (p0b0btn2min)))) && (X (! (p0b0btn2sec)))) <-> (X (u0time0f1dinc2minutes0time1b))))) && (G ((((! ((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b))) && ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) && (X (! (p0b0btn2min)))) <-> (X (u0time0f1dinc2seconds0time1b))))) && (G ((p0p0eq0time0f1dzero1b) -> ((((u0time0time) && ((((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))) && (! ((! (p0b0btn2min)) && (X (p0b0btn2min))))) && (! ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))))) -> (X (((u0time0f1dcountup0time0dt1b) && (! ((((! (p0b0btn2min)) && (X (p0b0btn2min))) || ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) || ((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop)))))) W (((p0b0btn2min) && (p0b0btn2sec)) || ((u0time0f1dcountup0time0dt1b) && ((((! (p0b0btn2min)) && (X (p0b0btn2min))) || ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) || ((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))))))))) W ((u0time0f1dinc2minutes0time1b) || (u0time0f1dinc2seconds0time1b)))))) && (G (((u0time0f1dinc2minutes0time1b) || (u0time0f1dinc2seconds0time1b)) -> ((((! ((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b))) && ((((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))) && (! ((! (p0b0btn2min)) && (X (p0b0btn2min))))) && (! ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))))) -> (X (((u0time0f1dcountdown0time0dt1b) && (! ((((! (p0b0btn2min)) && (X (p0b0btn2min))) || ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) || ((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop)))))) W (((p0b0btn2min) && (p0b0btn2sec)) || ((u0time0f1dcountdown0time0dt1b) && ((((! (p0b0btn2min)) && (X (p0b0btn2min))) || ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) || ((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))))))))) W (X (p0p0eq0time0f1dzero1b)))))) && (G (((! ((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b))) && ((((((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))) && ((! (p0b0btn2min)) && (X (p0b0btn2min)))) && (X (! (p0b0btn2sec)))) && (X (X (! (p0b0btn2sec))))) || (((((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))) && ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) && (X (! (p0b0btn2min)))) && (X (X (! (p0b0btn2min))))))) -> (X (X (((u0time0f1dcountdown0time0dt1b) && (! ((((! (p0b0btn2min)) && (X (p0b0btn2min))) || ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) || ((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop)))))) W (((p0b0btn2min) && (p0b0btn2sec)) || ((u0time0f1dcountdown0time0dt1b) && ((((! (p0b0btn2min)) && (X (p0b0btn2min))) || ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) || ((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop)))))))))))) && (G (((((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b)) && ((((! (p0b0btn2min)) && (X (p0b0btn2min))) || ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) || ((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))))) && (X (! ((p0b0btn2min) && (p0b0btn2sec))))) -> (X (((u0time0time) && (! ((((! (p0b0btn2min)) && (X (p0b0btn2min))) || ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) || ((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop)))))) W (((p0b0btn2min) && (p0b0btn2sec)) || ((u0time0time) && ((((! (p0b0btn2min)) && (X (p0b0btn2min))) || ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) || ((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))))))))))) && (G (((X (! ((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b)))) && (X (X ((u0time0f1dcountup0time0dt1b) || (u0time0f1dcountdown0time0dt1b))))) -> (((X ((((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))) && (! ((! (p0b0btn2min)) && (X (p0b0btn2min))))) && (! ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))))) || (((((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))) && ((! (p0b0btn2min)) && (X (p0b0btn2min)))) && (X (! (p0b0btn2sec)))) && (X (X (! (p0b0btn2sec)))))) || (((((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))) && ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) && (X (! (p0b0btn2min)))) && (X (X (! (p0b0btn2min))))))))) && (G (u0dsp0f1ddisplay0time1b))) && (G (! ((u0beep0p1dbt1b) <-> (u0beep0p1dbf1b))))) && (G (((X ((u0time0f1dcountdown0time0dt1b) && (p0p0eq0time0f1dzero1b))) || ((((! (p0b0btn2min)) && (X (p0b0btn2min))) || ((! (p0b0btn2sec)) && (X (p0b0btn2sec)))) || ((! (p0b0btn2start2stop)) && (X (p0b0btn2start2stop))))) <-> (X (u0beep0p1dbt1b)))));
+  }
+}

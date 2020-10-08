@@ -1,0 +1,86 @@
+INFO {
+  TITLE:       "Amba AHB - Decomposed - Lock"
+  DESCRIPTION: "Lock component of the decomposed Amba AHB Arbiter"
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 8;
+  }
+
+  DEFINITIONS {
+    /* Checks whether a bus of size log(n) currently represents 
+     * the numerical value v (encoded in binary).
+     */
+    value(bus,v) = value'(bus,v,0,SIZEOF bus);
+    value'(bus,v,i,j) =
+      i >= j        : true
+      bit(v,i) == 1 : value'(bus,v,i + 1,j) &&  bus[i]
+      otherwise    : value'(bus,v,i + 1,j) && !bus[i];
+
+    /* Returns the i-th bit of the numerical value v.
+     */
+    bit(v,i) =
+      i <= 0     : v % 2
+      otherwise : bit(v / 2,i - 1);
+
+    // ensures mutual exclusion on an n-ary bus
+    mutual_exclusion(bus) =
+     mone(bus,0,(SIZEOF bus) - 1);
+
+    // ensures that none of the signals
+    // bus[i] - bus[j] is HIGH
+    none(bus,i,j) =
+      &&[i <= t <= j]
+        !bus[t];
+
+    // ensures that at most one of the signals
+    // bus[i] - bus[j] is HIGH
+    mone(bus,i,j) =
+    i > j : false
+    i == j : true
+    i < j :
+      // either no signal of the lower half is HIGH and at 
+      // most one signal of the upper half is HIGH
+      (none(bus, i, m(i,j)) && mone(bus, m(i,j) + 1, j)) ||
+      // or at most one signal of the lower half is HIGH
+      // and no signal in of the upper half is HIGH
+      (mone(bus, i, m(i,j)) && none(bus, m(i,j) + 1, j));
+
+    // returns the position between i and j
+    m(i,j) = (i + j) / 2;    
+  } 
+}
+
+MAIN {
+  INPUTS {
+    DECIDE;
+    HGRANT[n];
+    HLOCK[n];
+  } 
+
+  OUTPUTS {
+    LOCKED;
+  }
+
+  ASSUMPTIONS {
+    // at every time exactely one grant is HIGH
+    G mutual_exclusion(HGRANT);
+    G (||[0 <= i < n] HGRANT[i]);
+  }
+
+  INVARIANTS {
+    // whenever a decicion is taken, the LOCKED signal is updated to
+    // the HLOCK value of the granted master
+    &&[0 <= i < n] (DECIDE && X HGRANT[i] -> (X LOCKED <-> X HLOCK[i]));
+
+    // otherwise the value is copied
+    !DECIDE -> (X LOCKED <-> LOCKED)
+  }
+}
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 197
+//#.

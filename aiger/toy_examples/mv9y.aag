@@ -1,0 +1,208 @@
+aag 131 16 10 1 105
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34 1
+36 127
+38 142
+40 160
+42 178
+44 196
+46 214
+48 232
+50 250
+52 262
+86
+54 36 34
+56 38 34
+58 56 54
+60 40 34
+62 60 58
+64 42 34
+66 64 62
+68 44 34
+70 68 66
+72 46 34
+74 72 70
+76 48 34
+78 76 74
+80 50 34
+82 80 78
+84 52 34
+86 84 82
+88 4 3
+90 5 2
+92 91 89
+94 92 6
+96 93 7
+98 97 95
+100 98 8
+102 99 9
+104 103 101
+106 104 10
+108 105 11
+110 109 107
+112 110 13
+114 111 12
+116 115 113
+118 116 84
+120 119 18
+122 121 54
+124 120 55
+126 125 123
+128 54 18
+130 128 20
+132 129 21
+134 133 131
+136 134 119
+138 137 57
+140 136 56
+142 141 139
+144 131 57
+146 145 133
+148 146 22
+150 147 23
+152 151 149
+154 152 119
+156 155 61
+158 154 60
+160 159 157
+162 149 61
+164 163 151
+166 164 24
+168 165 25
+170 169 167
+172 170 119
+174 173 65
+176 172 64
+178 177 175
+180 167 65
+182 181 169
+184 182 26
+186 183 27
+188 187 185
+190 188 119
+192 191 69
+194 190 68
+196 195 193
+198 185 69
+200 199 187
+202 200 28
+204 201 29
+206 205 203
+208 206 119
+210 209 73
+212 208 72
+214 213 211
+216 203 73
+218 217 205
+220 218 30
+222 219 31
+224 223 221
+226 224 119
+228 227 77
+230 226 76
+232 231 229
+234 221 77
+236 235 223
+238 236 32
+240 237 33
+242 241 239
+244 242 119
+246 245 81
+248 244 80
+250 249 247
+252 239 81
+254 253 241
+256 254 85
+258 255 84
+260 259 257
+262 261 119
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 controllable_c<2>
+i3 controllable_c<3>
+i4 controllable_c<4>
+i5 controllable_c<5>
+i6 controllable_c<6>
+i7 controllable_c<7>
+i8 a<0>
+i9 a<1>
+i10 a<2>
+i11 a<3>
+i12 a<4>
+i13 a<5>
+i14 a<6>
+i15 a<7>
+l0 n35
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+l9 counter<8>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:25:11 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv mv9.v   ---gives--> mv9.mv
+> abc -c "read_blif_mv mv9.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s mv9y.aig"   ---gives--> mv9y.aig
+> aigtoaig mv9y.aig mv9y.aag   ---gives--> mv9y.aag (this file)
+Content of mv9.v:
+// realizable
+module bench(clk, a, controllable_c, err);
+  input clk;
+  input [7:0] a;
+  input [7:0] controllable_c;
+  reg [8:0] counter;
+  output err;
+  wire ctrl_xor;
+  
+  assign err = (counter == 9'b111111111) ? 1 : 0;
+  assign ctrl_xor = controllable_c[0] ^ 
+                    controllable_c[1] ^
+                    controllable_c[2] ^
+                    controllable_c[3] ^
+                    controllable_c[4] ^
+                    controllable_c[5] ^
+                    controllable_c[6] ^
+                    controllable_c[6];
+
+  initial
+  begin
+    counter = 0;
+  end
+
+  always @ (posedge clk)
+  begin
+    if(counter[8] & ctrl_xor)
+       counter[8] = 0;
+    else
+       counter = counter + {1'b0, a};
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.008 [SYNTCOMP2014-RealSeq]
+#.

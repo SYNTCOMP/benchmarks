@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Structure label-on="Transition" type="FiniteStateAutomaton">
+    <Name/>
+    <Description/>
+    <Formula>[] &lt;&gt; done</Formula>
+    <Alphabet type="Propositional">
+        <Proposition>done</Proposition>
+    </Alphabet>
+    <StateSet>
+        <State sid="0">
+            <X>96</X>
+            <Description>s1, 0</Description>
+            <Y>123</Y>
+            <Properties/>
+        </State>
+        <State sid="1">
+            <X>266</X>
+            <Description>s1, 1</Description>
+            <Y>123</Y>
+            <Properties/>
+        </State>
+    </StateSet>
+    <InitialStateSet>
+        <StateID>0</StateID>
+    </InitialStateSet>
+    <TransitionSet complete="false">
+        <Transition tid="0">
+            <From>0</From>
+            <To>0</To>
+            <Label>~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="1">
+            <From>0</From>
+            <To>1</To>
+            <Label>done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="2">
+            <From>1</From>
+            <To>0</To>
+            <Label>~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="3">
+            <From>1</From>
+            <To>1</To>
+            <Label>done</Label>
+            <Properties/>
+        </Transition>
+    </TransitionSet>
+    <Acc type="Buchi">
+        <StateID>1</StateID>
+    </Acc>
+    <Properties/>
+</Structure>

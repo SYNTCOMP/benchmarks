@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Structure label-on="Transition" type="FiniteStateAutomaton">
+    <Name/>
+    <Description/>
+    <Formula>[] ~ inputIsOutsideRange</Formula>
+    <Alphabet type="Propositional">
+        <Proposition>inputIsOutsideRange</Proposition>
+    </Alphabet>
+    <StateSet>
+        <State sid="0">
+            <X>96</X>
+            <Description>s0, 0</Description>
+            <Y>123</Y>
+            <Properties/>
+        </State>
+    </StateSet>
+    <InitialStateSet>
+        <StateID>0</StateID>
+    </InitialStateSet>
+    <TransitionSet complete="false">
+        <Transition tid="0">
+            <From>0</From>
+            <To>0</To>
+            <Label>~inputIsOutsideRange</Label>
+            <Properties/>
+        </Transition>
+    </TransitionSet>
+    <Acc type="Buchi">
+        <StateID>0</StateID>
+    </Acc>
+    <Properties/>
+</Structure>

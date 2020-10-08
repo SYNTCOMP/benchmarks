@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Structure label-on="Transition" type="FiniteStateAutomaton">
+    <Name/>
+    <Description/>
+    <Formula>[] ((char_in1 --&gt; char_in1 W (char_in1 /\ done)) /\ (~ char_in1 --&gt; ~ char_in1 W (~ char_in1 /\ done)) /\ (char_in2 --&gt; char_in2 W (char_in2 /\ done)) /\ (~ char_in2 --&gt; ~ char_in2 W (~ char_in2 /\ done)) /\ (char_in3 --&gt; char_in3 W (char_in3 /\ done)) /\ (~ char_in3 --&gt; ~ char_in3 W (~ char_in3 /\ done)) /\ (char_in4 --&gt; char_in4 W (char_in4 /\ done)) /\ (~ char_in4 --&gt; ~ char_in4 W (~ char_in4 /\ done)) /\ (char_in5 --&gt; char_in5 W (char_in5 /\ done)) /\ (~ char_in5 --&gt; ~ char_in5 W (~ char_in5 /\ done)))</Formula>
+    <Alphabet type="Propositional">
+        <Proposition>char_in1</Proposition>
+        <Proposition>char_in2</Proposition>
+        <Proposition>char_in3</Proposition>
+        <Proposition>char_in4</Proposition>
+        <Proposition>char_in5</Proposition>
+        <Proposition>done</Proposition>
+    </Alphabet>
+    <StateSet>
+        <State sid="0">
+            <X>123</X>
+            <Description>s0, 0</Description>
+            <Y>363</Y>
+            <Properties/>
+        </State>
+        <State sid="1">
+            <X>127</X>
+            <Description>s1, 0</Description>
+            <Y>317</Y>
+            <Properties/>
+        </State>
+        <State sid="2">
+            <X>140</X>
+            <Description>s2, 0</Description>
+            <Y>273</Y>
+            <Properties/>
+        </State>
+        <State sid="3">
+            <X>161</X>
+            <Description>s3, 0</Description>
+            <Y>233</Y>
+            <Properties/>
+        </State>
+        <State sid="4">
+            <X>189</X>
+            <Description>s4, 0</Description>
+            <Y>197</Y>
+            <Properties/>
+        </State>
+        <State sid="5">
+            <X>223</X>
+            <Description>s5, 0</Description>
+            <Y>167</Y>
+            <Properties/>
+        </State>
+        <State sid="6">
+            <X>263</X>
+            <Description>s6, 0</Description>
+            <Y>144</Y>
+            <Properties/>
+        </State>
+        <State sid="7">
+            <X>306</X>
+            <Description>s7, 0</Description>
+            <Y>129</Y>
+            <Properties/>
+        </State>
+        <State sid="8">
+            <X>351</X>
+            <Description>s8, 0</Description>
+            <Y>123</Y>
+            <Properties/>
+        </State>
+        <State sid="9">
+            <X>397</X>
+            <Description>s9, 0</Description>
+            <Y>125</Y>
+            <Properties/>
+        </State>
+        <State sid="10">
+            <X>441</X>
+            <Description>s10, 0</Description>
+            <Y>136</Y>
+            <Properties/>
+        </State>
+        <State sid="11">
+            <X>483</X>
+            <Description>s11, 0</Description>
+            <Y>155</Y>
+            <Properties/>
+        </State>
+        <State sid="12">
+            <X>520</X>
+            <Description>s12, 0</Description>
+            <Y>181</Y>
+            <Properties/>
+        </State>
+        <State sid="13">
+            <X>551</X>
+            <Description>s13, 0</Description>
+            <Y>214</Y>
+            <Properties/>
+        </State>
+        <State sid="14">
+            <X>576</X>
+            <Description>s14, 0</Description>
+            <Y>253</Y>
+            <Properties/>
+        </State>
+        <State sid="15">
+            <X>593</X>
+            <Description>s15, 0</Description>
+            <Y>295</Y>
+            <Properties/>
+        </State>
+        <State sid="16">
+            <X>601</X>
+            <Description>s16, 0</Description>
+            <Y>340</Y>
+            <Properties/>
+        </State>
+        <State sid="17">
+            <X>601</X>
+            <Description>s17, 0</Description>
+            <Y>385</Y>
+            <Properties/>
+        </State>
+        <State sid="18">
+            <X>593</X>
+            <Description>s18, 0</Description>
+            <Y>430</Y>
+            <Properties/>
+        </State>
+        <State sid="19">
+            <X>576</X>
+            <Description>s19, 0</Description>
+            <Y>472</Y>
+            <Properties/>
+        </State>
+        <State sid="20">
+            <X>551</X>
+            <Description>s20, 0</Description>
+            <Y>511</Y>
+            <Properties/>
+        </State>
+        <State sid="21">
+            <X>520</X>
+            <Description>s21, 0</Description>
+            <Y>544</Y>
+            <Properties/>
+        </State>
+        <State sid="22">
+            <X>482</X>
+            <Description>s22, 0</Description>
+            <Y>570</Y>
+            <Properties/>
+        </State>
+        <State sid="23">
+            <X>441</X>
+            <Description>s23, 0</Description>
+            <Y>589</Y>
+            <Properties/>
+        </State>
+        <State sid="24">
+            <X>397</X>
+            <Description>s24, 0</Description>
+            <Y>600</Y>
+            <Properties/>
+        </State>
+        <State sid="25">
+            <X>351</X>
+            <Description>s25, 0</Description>
+            <Y>602</Y>
+            <Properties/>
+        </State>
+        <State sid="26">
+            <X>306</X>
+            <Description>s26, 0</Description>
+            <Y>596</Y>
+            <Properties/>
+        </State>
+        <State sid="27">
+            <X>263</X>
+            <Description>s27, 0</Description>
+            <Y>581</Y>
+            <Properties/>
+        </State>
+        <State sid="28">
+            <X>223</X>
+            <Description>s28, 0</Description>
+            <Y>558</Y>
+            <Properties/>
+        </State>
+        <State sid="29">
+            <X>189</X>
+            <Description>s29, 0</Description>
+            <Y>528</Y>
+            <Properties/>
+        </State>
+        <State sid="30">
+            <X>161</X>
+            <Description>s30, 0</Description>
+            <Y>492</Y>
+            <Properties/>
+        </State>
+        <State sid="31">
+            <X>140</X>
+            <Description>s31, 0</Description>
+            <Y>452</Y>
+            <Properties/>
+        </State>
+        <State sid="32">
+            <X>127</X>
+            <Description>s32, 0</Description>
+            <Y>408</Y>
+            <Properties/>
+        </State>
+    </StateSet>
+    <InitialStateSet>
+        <StateID>0</StateID>
+    </InitialStateSet>
+    <TransitionSet complete="false">
+        <Transition tid="1">
+            <From>0</From>
+            <To>1</To>
+            <Label>char_in1 char_in2 char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="3">
+            <From>0</From>
+            <To>2</To>
+            <Label>char_in1 char_in2 char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="5">
+            <From>0</From>
+            <To>3</To>
+            <Label>char_in1 char_in2 char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="7">
+            <From>0</From>
+            <To>4</To>
+            <Label>char_in1 char_in2 char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="9">
+            <From>0</From>
+            <To>5</To>
+            <Label>char_in1 char_in2 ~char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="11">
+            <From>0</From>
+            <To>6</To>
+            <Label>char_in1 char_in2 ~char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="13">
+            <From>0</From>
+            <To>7</To>
+            <Label>char_in1 char_in2 ~char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="15">
+            <From>0</From>
+            <To>8</To>
+            <Label>char_in1 char_in2 ~char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="17">
+            <From>0</From>
+            <To>9</To>
+            <Label>char_in1 ~char_in2 char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="19">
+            <From>0</From>
+            <To>10</To>
+            <Label>char_in1 ~char_in2 char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="21">
+            <From>0</From>
+            <To>11</To>
+            <Label>char_in1 ~char_in2 char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="23">
+            <From>0</From>
+            <To>12</To>
+            <Label>char_in1 ~char_in2 char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="25">
+            <From>0</From>
+            <To>13</To>
+            <Label>char_in1 ~char_in2 ~char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="27">
+            <From>0</From>
+            <To>14</To>
+            <Label>char_in1 ~char_in2 ~char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="29">
+            <From>0</From>
+            <To>15</To>
+            <Label>char_in1 ~char_in2 ~char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="31">
+            <From>0</From>
+            <To>16</To>
+            <Label>char_in1 ~char_in2 ~char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="33">
+            <From>0</From>
+            <To>17</To>
+            <Label>~char_in1 char_in2 char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="35">
+            <From>0</From>
+            <To>18</To>
+            <Label>~char_in1 char_in2 char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="37">
+            <From>0</From>
+            <To>19</To>
+            <Label>~char_in1 char_in2 char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="39">
+            <From>0</From>
+            <To>20</To>
+            <Label>~char_in1 char_in2 char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="41">
+            <From>0</From>
+            <To>21</To>
+            <Label>~char_in1 char_in2 ~char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="43">
+            <From>0</From>
+            <To>22</To>
+            <Label>~char_in1 char_in2 ~char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="45">
+            <From>0</From>
+            <To>23</To>
+            <Label>~char_in1 char_in2 ~char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="47">
+            <From>0</From>
+            <To>24</To>
+            <Label>~char_in1 char_in2 ~char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="49">
+            <From>0</From>
+            <To>25</To>
+            <Label>~char_in1 ~char_in2 char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="51">
+            <From>0</From>
+            <To>26</To>
+            <Label>~char_in1 ~char_in2 char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="53">
+            <From>0</From>
+            <To>27</To>
+            <Label>~char_in1 ~char_in2 char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="55">
+            <From>0</From>
+            <To>28</To>
+            <Label>~char_in1 ~char_in2 char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="57">
+            <From>0</From>
+            <To>29</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="59">
+            <From>0</From>
+            <To>30</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="61">
+            <From>0</From>
+            <To>31</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="63">
+            <From>0</From>
+            <To>32</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="64">
+            <From>32</From>
+            <To>0</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 ~char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="65">
+            <From>32</From>
+            <To>32</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="66">
+            <From>31</From>
+            <To>0</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 ~char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="67">
+            <From>31</From>
+            <To>31</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="68">
+            <From>30</From>
+            <To>0</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="69">
+            <From>30</From>
+            <To>30</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="70">
+            <From>29</From>
+            <To>0</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="71">
+            <From>29</From>
+            <To>29</To>
+            <Label>~char_in1 ~char_in2 ~char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="72">
+            <From>28</From>
+            <To>0</To>
+            <Label>~char_in1 ~char_in2 char_in3 ~char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="73">
+            <From>28</From>
+            <To>28</To>
+            <Label>~char_in1 ~char_in2 char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="74">
+            <From>27</From>
+            <To>0</To>
+            <Label>~char_in1 ~char_in2 char_in3 ~char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="75">
+            <From>27</From>
+            <To>27</To>
+            <Label>~char_in1 ~char_in2 char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="76">
+            <From>26</From>
+            <To>0</To>
+            <Label>~char_in1 ~char_in2 char_in3 char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="77">
+            <From>26</From>
+            <To>26</To>
+            <Label>~char_in1 ~char_in2 char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="78">
+            <From>25</From>
+            <To>0</To>
+            <Label>~char_in1 ~char_in2 char_in3 char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="79">
+            <From>25</From>
+            <To>25</To>
+            <Label>~char_in1 ~char_in2 char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="80">
+            <From>24</From>
+            <To>0</To>
+            <Label>~char_in1 char_in2 ~char_in3 ~char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="81">
+            <From>24</From>
+            <To>24</To>
+            <Label>~char_in1 char_in2 ~char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="82">
+            <From>23</From>
+            <To>0</To>
+            <Label>~char_in1 char_in2 ~char_in3 ~char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="83">
+            <From>23</From>
+            <To>23</To>
+            <Label>~char_in1 char_in2 ~char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="84">
+            <From>22</From>
+            <To>0</To>
+            <Label>~char_in1 char_in2 ~char_in3 char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="85">
+            <From>22</From>
+            <To>22</To>
+            <Label>~char_in1 char_in2 ~char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="86">
+            <From>21</From>
+            <To>0</To>
+            <Label>~char_in1 char_in2 ~char_in3 char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="87">
+            <From>21</From>
+            <To>21</To>
+            <Label>~char_in1 char_in2 ~char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="88">
+            <From>20</From>
+            <To>0</To>
+            <Label>~char_in1 char_in2 char_in3 ~char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="89">
+            <From>20</From>
+            <To>20</To>
+            <Label>~char_in1 char_in2 char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="90">
+            <From>19</From>
+            <To>0</To>
+            <Label>~char_in1 char_in2 char_in3 ~char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="91">
+            <From>19</From>
+            <To>19</To>
+            <Label>~char_in1 char_in2 char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="92">
+            <From>18</From>
+            <To>0</To>
+            <Label>~char_in1 char_in2 char_in3 char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="93">
+            <From>18</From>
+            <To>18</To>
+            <Label>~char_in1 char_in2 char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="94">
+            <From>17</From>
+            <To>0</To>
+            <Label>~char_in1 char_in2 char_in3 char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="95">
+            <From>17</From>
+            <To>17</To>
+            <Label>~char_in1 char_in2 char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="96">
+            <From>16</From>
+            <To>0</To>
+            <Label>char_in1 ~char_in2 ~char_in3 ~char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="97">
+            <From>16</From>
+            <To>16</To>
+            <Label>char_in1 ~char_in2 ~char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="98">
+            <From>15</From>
+            <To>0</To>
+            <Label>char_in1 ~char_in2 ~char_in3 ~char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="99">
+            <From>15</From>
+            <To>15</To>
+            <Label>char_in1 ~char_in2 ~char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="100">
+            <From>14</From>
+            <To>0</To>
+            <Label>char_in1 ~char_in2 ~char_in3 char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="101">
+            <From>14</From>
+            <To>14</To>
+            <Label>char_in1 ~char_in2 ~char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="102">
+            <From>13</From>
+            <To>0</To>
+            <Label>char_in1 ~char_in2 ~char_in3 char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="103">
+            <From>13</From>
+            <To>13</To>
+            <Label>char_in1 ~char_in2 ~char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="104">
+            <From>12</From>
+            <To>0</To>
+            <Label>char_in1 ~char_in2 char_in3 ~char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="105">
+            <From>12</From>
+            <To>12</To>
+            <Label>char_in1 ~char_in2 char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="106">
+            <From>11</From>
+            <To>0</To>
+            <Label>char_in1 ~char_in2 char_in3 ~char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="107">
+            <From>11</From>
+            <To>11</To>
+            <Label>char_in1 ~char_in2 char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="108">
+            <From>10</From>
+            <To>0</To>
+            <Label>char_in1 ~char_in2 char_in3 char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="109">
+            <From>10</From>
+            <To>10</To>
+            <Label>char_in1 ~char_in2 char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="110">
+            <From>9</From>
+            <To>0</To>
+            <Label>char_in1 ~char_in2 char_in3 char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="111">
+            <From>9</From>
+            <To>9</To>
+            <Label>char_in1 ~char_in2 char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="112">
+            <From>8</From>
+            <To>0</To>
+            <Label>char_in1 char_in2 ~char_in3 ~char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="113">
+            <From>8</From>
+            <To>8</To>
+            <Label>char_in1 char_in2 ~char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="114">
+            <From>7</From>
+            <To>0</To>
+            <Label>char_in1 char_in2 ~char_in3 ~char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="115">
+            <From>7</From>
+            <To>7</To>
+            <Label>char_in1 char_in2 ~char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="116">
+            <From>6</From>
+            <To>0</To>
+            <Label>char_in1 char_in2 ~char_in3 char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="117">
+            <From>6</From>
+            <To>6</To>
+            <Label>char_in1 char_in2 ~char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="118">
+            <From>5</From>
+            <To>0</To>
+            <Label>char_in1 char_in2 ~char_in3 char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="119">
+            <From>5</From>
+            <To>5</To>
+            <Label>char_in1 char_in2 ~char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="120">
+            <From>4</From>
+            <To>0</To>
+            <Label>char_in1 char_in2 char_in3 ~char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="121">
+            <From>4</From>
+            <To>4</To>
+            <Label>char_in1 char_in2 char_in3 ~char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="122">
+            <From>3</From>
+            <To>0</To>
+            <Label>char_in1 char_in2 char_in3 ~char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="123">
+            <From>3</From>
+            <To>3</To>
+            <Label>char_in1 char_in2 char_in3 ~char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="124">
+            <From>2</From>
+            <To>0</To>
+            <Label>char_in1 char_in2 char_in3 char_in4 ~char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="125">
+            <From>2</From>
+            <To>2</To>
+            <Label>char_in1 char_in2 char_in3 char_in4 ~char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="126">
+            <From>1</From>
+            <To>0</To>
+            <Label>char_in1 char_in2 char_in3 char_in4 char_in5 done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="127">
+            <From>1</From>
+            <To>1</To>
+            <Label>char_in1 char_in2 char_in3 char_in4 char_in5 ~done</Label>
+            <Properties/>
+        </Transition>
+        <Transition tid="128">
+            <From>0</From>
+            <To>0</To>
+            <Label>done</Label>
+            <Properties/>
+        </Transition>
+    </TransitionSet>
+    <Acc type="Buchi">
+        <StateID>0</StateID>
+        <StateID>1</StateID>
+        <StateID>2</StateID>
+        <StateID>3</StateID>
+        <StateID>4</StateID>
+        <StateID>5</StateID>
+        <StateID>6</StateID>
+        <StateID>7</StateID>
+        <StateID>8</StateID>
+        <StateID>9</StateID>
+        <StateID>10</StateID>
+        <StateID>11</StateID>
+        <StateID>12</StateID>
+        <StateID>13</StateID>
+        <StateID>14</StateID>
+        <StateID>15</StateID>
+        <StateID>16</StateID>
+        <StateID>17</StateID>
+        <StateID>18</StateID>
+        <StateID>19</StateID>
+        <StateID>20</StateID>
+        <StateID>21</StateID>
+        <StateID>22</StateID>
+        <StateID>23</StateID>
+        <StateID>24</StateID>
+        <StateID>25</StateID>
+        <StateID>26</StateID>
+        <StateID>27</StateID>
+        <StateID>28</StateID>
+        <StateID>29</StateID>
+        <StateID>30</StateID>
+        <StateID>31</StateID>
+        <StateID>32</StateID>
+    </Acc>
+    <Properties/>
+</Structure>

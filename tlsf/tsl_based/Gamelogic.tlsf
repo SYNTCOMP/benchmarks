@@ -1,0 +1,47 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Gamelogic"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0gtz0shot2counter;
+    p0p0isgameover0f1dgetenemyradius0enemies0counter1b;
+    p0p0on0gamestart;
+    p0p0on0shot;
+    p0p0hitenemy0f1dgetenemyangle0enemies0counter1b0f1dgetenemyradius0enemies0counter1b0rotation;
+  }
+
+  OUTPUTS {
+    u0counter0counter;
+    u0counter0f1dincmod0counter0f1denemycount1b1b;
+    u0gameover0gameover;
+    u0gameover0f1dbot1b;
+    u0gameover0f1dtop1b;
+    u0movementclock0movementclock;
+    u0movementclock0f1dincmoveclock0movementclock0score1b;
+    u0moveticks0moveticks;
+    u0moveticks0f1dticknomove1b;
+    u0moveticks0f1dtickmove0movementclock1b;
+    u0newangle0newangle;
+    u0newangle0f1dnewrand0newangle1b;
+    u0resets0resets;
+    u0resets0f1dtriggerresetnone1b;
+    u0resets0f1dtriggerresetall0newangle1b;
+    u0resets0f1dtriggerreset0counter0newangle1b;
+    u0score0score;
+    u0score0f1dzero2score1b;
+    u0score0f1dinc0score1b;
+    u0scorecolor0scorecolor;
+    u0scorecolor0f1dfastestenemycolor0enemies1b;
+    u0shot2counter0shot2counter;
+    u0shot2counter0f1denemycount1b;
+    u0shot2counter0f1dzero1b;
+    u0shot2counter0f1ddec0shot2counter1b;
+  }
+
+  GUARANTEE {
+    (G (((((((((! (((u0counter0counter) && (! (u0counter0f1dincmod0counter0f1denemycount1b1b))) <-> ((u0counter0f1dincmod0counter0f1denemycount1b1b) && (! (u0counter0counter))))) && (! (((u0gameover0f1dbot1b) && (! ((u0gameover0f1dtop1b) || (u0gameover0gameover)))) <-> ((! (((u0gameover0f1dtop1b) && (! (u0gameover0gameover))) <-> ((u0gameover0gameover) && (! (u0gameover0f1dtop1b))))) && (! (u0gameover0f1dbot1b)))))) && (! (((u0movementclock0movementclock) && (! (u0movementclock0f1dincmoveclock0movementclock0score1b))) <-> ((u0movementclock0f1dincmoveclock0movementclock0score1b) && (! (u0movementclock0movementclock)))))) && (! (((u0moveticks0f1dticknomove1b) && (! ((u0moveticks0f1dtickmove0movementclock1b) || (u0moveticks0moveticks)))) <-> ((! (((u0moveticks0f1dtickmove0movementclock1b) && (! (u0moveticks0moveticks))) <-> ((u0moveticks0moveticks) && (! (u0moveticks0f1dtickmove0movementclock1b))))) && (! (u0moveticks0f1dticknomove1b)))))) && (! (((u0newangle0newangle) && (! (u0newangle0f1dnewrand0newangle1b))) <-> ((u0newangle0f1dnewrand0newangle1b) && (! (u0newangle0newangle)))))) && (! (((! (((u0resets0f1dtriggerresetall0newangle1b) && (! (u0resets0resets))) <-> ((u0resets0resets) && (! (u0resets0f1dtriggerresetall0newangle1b))))) && (! ((u0resets0f1dtriggerreset0counter0newangle1b) || (u0resets0f1dtriggerresetnone1b)))) <-> ((! (((u0resets0f1dtriggerreset0counter0newangle1b) && (! (u0resets0f1dtriggerresetnone1b))) <-> ((u0resets0f1dtriggerresetnone1b) && (! (u0resets0f1dtriggerreset0counter0newangle1b))))) && (! ((u0resets0f1dtriggerresetall0newangle1b) || (u0resets0resets))))))) && (! (((u0score0f1dzero2score1b) && (! ((u0score0f1dinc0score1b) || (u0score0score)))) <-> ((! (((u0score0f1dinc0score1b) && (! (u0score0score))) <-> ((u0score0score) && (! (u0score0f1dinc0score1b))))) && (! (u0score0f1dzero2score1b)))))) && (! (((u0scorecolor0scorecolor) && (! (u0scorecolor0f1dfastestenemycolor0enemies1b))) <-> ((u0scorecolor0f1dfastestenemycolor0enemies1b) && (! (u0scorecolor0scorecolor)))))) && (! (((! (((u0shot2counter0f1dzero1b) && (! (u0shot2counter0shot2counter))) <-> ((u0shot2counter0shot2counter) && (! (u0shot2counter0f1dzero1b))))) && (! ((u0shot2counter0f1ddec0shot2counter1b) || (u0shot2counter0f1denemycount1b)))) <-> ((! (((u0shot2counter0f1ddec0shot2counter1b) && (! (u0shot2counter0f1denemycount1b))) <-> ((u0shot2counter0f1denemycount1b) && (! (u0shot2counter0f1ddec0shot2counter1b))))) && (! ((u0shot2counter0f1dzero1b) || (u0shot2counter0shot2counter)))))))) && (((((((((((((((((((((u0resets0f1dtriggerresetall0newangle1b) && ((u0gameover0f1dbot1b) W (p0p0isgameover0f1dgetenemyradius0enemies0counter1b))) && (G ((u0gameover0f1dbot1b) || (u0gameover0f1dtop1b)))) && (G ((p0p0on0gamestart) -> ((u0gameover0f1dbot1b) W (p0p0isgameover0f1dgetenemyradius0enemies0counter1b))))) && (G (X ((p0p0on0gamestart) <-> (u0resets0f1dtriggerresetall0newangle1b))))) && (G ((p0p0isgameover0f1dgetenemyradius0enemies0counter1b) -> ((u0gameover0f1dtop1b) W (p0p0on0gamestart))))) && (G ((p0p0on0gamestart) <-> (u0score0f1dzero2score1b)))) && (G (X (((! (p0p0on0gamestart)) && (u0gameover0f1dbot1b)) -> ((((p0p0gtz0shot2counter) <-> (u0shot2counter0f1ddec0shot2counter1b)) && (((p0p0gtz0shot2counter) && (p0p0hitenemy0f1dgetenemyangle0enemies0counter1b0f1dgetenemyradius0enemies0counter1b0rotation)) <-> (u0score0f1dinc0score1b))) && (((p0p0gtz0shot2counter) && (p0p0hitenemy0f1dgetenemyangle0enemies0counter1b0f1dgetenemyradius0enemies0counter1b0rotation)) <-> (u0resets0f1dtriggerreset0counter0newangle1b))))))) && (G ((((u0gameover0f1dbot1b) && (p0p0on0shot)) && (! (p0p0gtz0shot2counter))) <-> (u0shot2counter0f1denemycount1b)))) && (G (u0counter0f1dincmod0counter0f1denemycount1b1b))) && (G ((u0gameover0f1dbot1b) -> (u0movementclock0f1dincmoveclock0movementclock0score1b)))) && (G ((u0gameover0f1dbot1b) -> (u0moveticks0f1dtickmove0movementclock1b)))) && (G (u0newangle0f1dnewrand0newangle1b))) && (G ((u0gameover0f1dtop1b) -> (u0shot2counter0f1dzero1b)))) && (G ((u0gameover0f1dtop1b) -> (! (u0moveticks0f1dtickmove0movementclock1b))))) && (G (((u0gameover0f1dtop1b) && (! (p0p0on0gamestart))) -> (u0score0score)))) && (G ((u0gameover0f1dtop1b) -> (! (u0resets0f1dtriggerreset0counter0newangle1b))))) && (G (X ((u0gameover0f1dtop1b) -> (! (u0resets0f1dtriggerresetall0newangle1b)))))) && (G (((u0resets0f1dtriggerreset0counter0newangle1b) || (u0resets0f1dtriggerresetall0newangle1b)) || (u0resets0f1dtriggerresetnone1b)))) && (G ((u0moveticks0f1dtickmove0movementclock1b) || (u0moveticks0f1dticknomove1b)))) && (G (u0scorecolor0f1dfastestenemycolor0enemies1b)));
+  }
+}

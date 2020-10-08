@@ -1,0 +1,53 @@
+HOA: v1
+name: "(F(p & XF(q & XF(r & XFs))) & GFacc) | (G(!p | XG(!q | XG(!r | XG!s))) & FG!acc)"
+States: 9
+Start: 0
+AP: 5 "p" "acc" "q" "r" "s"
+controllable-AP: 1
+acc-name: parity max even 4
+Acceptance: 4 Fin(3) & (Inf(2) | (Fin(1) & Inf(0)))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic
+--BODY--
+State: 0
+[!0&1] 0 {1}
+[!0&!1] 1 {1}
+[0&!1] 2 {1}
+[0&1] 3 {1}
+State: 1
+[!0&1] 0 {3}
+[!0&!1] 1 {2}
+[0&!1] 2 {1}
+[0&1] 3 {1}
+State: 2
+[!1&!2] 2 {2}
+[1&!2] 3 {3}
+[!1&2] 4 {1}
+[1&2] 5 {1}
+State: 3
+[!1&!2] 2 {1}
+[1&!2] 3 {1}
+[!1&2] 4 {1}
+[1&2] 5 {1}
+State: 4
+[!1&!3] 4 {2}
+[1&!3] 5 {3}
+[!1&3] 6 {1}
+[1&3] 7 {1}
+State: 5
+[!1&!3] 4 {1}
+[1&!3] 5 {1}
+[!1&3] 6 {1}
+[1&3] 7 {1}
+State: 6
+[!1&!4] 6 {2}
+[1&!4] 7 {3}
+[4] 8 {1}
+State: 7
+[!1&!4] 6 {1}
+[1&!4] 7 {1}
+[4] 8 {1}
+State: 8
+[!1] 8 {1}
+[1] 8 {2}
+--END--

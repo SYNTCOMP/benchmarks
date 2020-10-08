@@ -1,0 +1,17 @@
+INFO {
+  TITLE:       "Converted TSL Specification: EscalatorNonReactive"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+
+  OUTPUTS {
+    u0steps0steps;
+    u0steps0f1dmove1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0steps0steps) && (! (u0steps0f1dmove1b))) <-> ((u0steps0f1dmove1b) && (! (u0steps0steps)))))) && (G (u0steps0f1dmove1b));
+  }
+}

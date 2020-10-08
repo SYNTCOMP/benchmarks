@@ -1,0 +1,29 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Zoo0"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0activated0toggle;
+    p0p0clicked0counter2button;
+    p0p0clicked0toggle2button;
+  }
+
+  OUTPUTS {
+    u0counter2button0counter2button;
+    u0counter2button0f1dset2label0counter2button0value1b;
+    u0counter2button0f1dset2label0counter2button0f1dminus2one1b1b;
+    u0toggle0toggle;
+    u0toggle0f1doff1b;
+    u0toggle0f1don1b;
+    u0value0value;
+    u0value0f1dzero1b;
+    u0value0f1dinc0value1b;
+  }
+
+  GUARANTEE {
+    (G (((! (((u0counter2button0f1dset2label0counter2button0value1b) && (! ((u0counter2button0f1dset2label0counter2button0f1dminus2one1b1b) || (u0counter2button0counter2button)))) <-> ((! (((u0counter2button0f1dset2label0counter2button0f1dminus2one1b1b) && (! (u0counter2button0counter2button))) <-> ((u0counter2button0counter2button) && (! (u0counter2button0f1dset2label0counter2button0f1dminus2one1b1b))))) && (! (u0counter2button0f1dset2label0counter2button0value1b))))) && (! (((u0toggle0f1doff1b) && (! ((u0toggle0f1don1b) || (u0toggle0toggle)))) <-> ((! (((u0toggle0f1don1b) && (! (u0toggle0toggle))) <-> ((u0toggle0toggle) && (! (u0toggle0f1don1b))))) && (! (u0toggle0f1doff1b)))))) && (! (((u0value0f1dzero1b) && (! ((u0value0f1dinc0value1b) || (u0value0value)))) <-> ((! (((u0value0f1dinc0value1b) && (! (u0value0value))) <-> ((u0value0value) && (! (u0value0f1dinc0value1b))))) && (! (u0value0f1dzero1b))))))) && ((((((! (p0p0activated0toggle)) W (u0toggle0f1don1b)) && (G (! ((p0p0clicked0toggle2button) && (p0p0clicked0counter2button))))) && (G ((u0toggle0f1don1b) -> (X ((p0p0activated0toggle) W (u0toggle0f1doff1b)))))) && (G ((u0toggle0f1doff1b) -> (X ((! (p0p0activated0toggle)) W (u0toggle0f1don1b)))))) -> (((((G ((! (p0p0activated0toggle)) <-> (u0counter2button0f1dset2label0counter2button0value1b))) && (G ((p0p0activated0toggle) <-> (u0counter2button0f1dset2label0counter2button0f1dminus2one1b1b)))) && (G ((p0p0clicked0toggle2button) <-> ((p0p0activated0toggle) <-> (X (! (p0p0activated0toggle))))))) && (G ((p0p0clicked0counter2button) <-> (u0value0f1dinc0value1b)))) && (G (((p0p0activated0toggle) && (p0p0clicked0toggle2button)) <-> (u0value0f1dzero1b)))));
+  }
+}

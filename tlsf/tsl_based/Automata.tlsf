@@ -1,0 +1,32 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Automata"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0start;
+    p0b0wait;
+  }
+
+  OUTPUTS {
+    u0finished0finished;
+    u0finished0p1dbt1b;
+    u0finished0p1dbf1b;
+    u0out0out;
+    u0out0f1dconst241b;
+    u0out0f1dconst251b;
+    u0out0f1dconst31b;
+    u0out0f1dconst41b;
+    u0out0f1dconst51b;
+    u0out0f1dconst61b;
+    u0out0f1dconst71b;
+    u0out0f1dconst81b;
+    u0out0f1dnone1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u0finished0p1dbt1b) && (! ((u0finished0p1dbf1b) || (u0finished0finished)))) <-> ((! (((u0finished0p1dbf1b) && (! (u0finished0finished))) <-> ((u0finished0finished) && (! (u0finished0p1dbf1b))))) && (! (u0finished0p1dbt1b))))) && (! (((! (((! (((u0out0f1dconst251b) && (! (u0out0f1dconst61b))) <-> ((u0out0f1dconst61b) && (! (u0out0f1dconst251b))))) && (! (((u0out0out) || (u0out0f1dconst41b)) || (u0out0f1dconst81b)))) <-> ((! (((u0out0f1dconst41b) && (! ((u0out0f1dconst81b) || (u0out0out)))) <-> ((! (((u0out0f1dconst81b) && (! (u0out0out))) <-> ((u0out0out) && (! (u0out0f1dconst81b))))) && (! (u0out0f1dconst41b))))) && (! ((u0out0f1dconst251b) || (u0out0f1dconst61b)))))) && (! (((((u0out0f1dnone1b) || (u0out0f1dconst71b)) || (u0out0f1dconst51b)) || (u0out0f1dconst31b)) || (u0out0f1dconst241b)))) <-> ((! (((! (((u0out0f1dconst31b) && (! (u0out0f1dconst71b))) <-> ((u0out0f1dconst71b) && (! (u0out0f1dconst31b))))) && (! (((u0out0f1dconst241b) || (u0out0f1dconst51b)) || (u0out0f1dnone1b)))) <-> ((! (((u0out0f1dconst51b) && (! ((u0out0f1dnone1b) || (u0out0f1dconst241b)))) <-> ((! (((u0out0f1dnone1b) && (! (u0out0f1dconst241b))) <-> ((u0out0f1dconst241b) && (! (u0out0f1dnone1b))))) && (! (u0out0f1dconst51b))))) && (! ((u0out0f1dconst31b) || (u0out0f1dconst71b)))))) && (! (((((u0out0f1dconst81b) || (u0out0f1dconst61b)) || (u0out0f1dconst41b)) || (u0out0f1dconst251b)) || (u0out0out)))))))) && (((((((((((((p0b0start) R ((p0b0start) -> (u0out0f1dconst241b))) && ((u0out0f1dnone1b) W (p0b0start))) && ((u0out0f1dconst81b) R (u0finished0p1dbf1b))) && (G ((u0out0f1dconst241b) -> (X ((p0b0wait) R (((p0b0wait) -> (u0out0f1dconst251b)) && ((! (p0b0wait)) -> (u0out0f1dnone1b)))))))) && (G ((u0out0f1dconst251b) -> (X ((p0b0wait) R (((p0b0wait) -> (u0out0f1dconst31b)) && ((! (p0b0wait)) -> (u0out0f1dnone1b)))))))) && (G ((u0out0f1dconst31b) -> (X ((p0b0wait) R (((p0b0wait) -> (u0out0f1dconst41b)) && ((! (p0b0wait)) -> (u0out0f1dnone1b)))))))) && (G ((u0out0f1dconst41b) -> (X ((p0b0wait) R (((p0b0wait) -> (u0out0f1dconst51b)) && ((! (p0b0wait)) -> (u0out0f1dnone1b)))))))) && (G ((u0out0f1dconst51b) -> (X ((p0b0wait) R (((p0b0wait) -> (u0out0f1dconst61b)) && ((! (p0b0wait)) -> (u0out0f1dnone1b)))))))) && (G ((u0out0f1dconst61b) -> (X ((p0b0wait) R (((p0b0wait) -> (u0out0f1dconst71b)) && ((! (p0b0wait)) -> (u0out0f1dnone1b)))))))) && (G ((u0out0f1dconst71b) -> (X ((p0b0wait) R (((p0b0wait) -> (u0out0f1dconst81b)) && ((! (p0b0wait)) -> (u0out0f1dnone1b)))))))) && (G ((u0out0f1dconst81b) -> (X ((p0b0wait) R ((((p0b0wait) -> (((p0b0start) R ((p0b0start) -> (u0out0f1dconst241b))) && ((u0out0f1dnone1b) W (p0b0start)))) && ((! (p0b0wait)) -> (u0out0f1dnone1b))) && ((p0b0wait) <-> (u0finished0p1dbt1b)))))))) && (G ((u0finished0p1dbt1b) -> (X ((u0out0f1dconst81b) R (u0finished0p1dbf1b))))));
+  }
+}

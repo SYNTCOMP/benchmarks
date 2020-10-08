@@ -1,0 +1,32 @@
+INFO {
+  TITLE:       "Converted TSL Specification: EscalatorBidirectionalInit"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0enter2event0bottom;
+    p0p0enter2event0top;
+    p0p0exit2event0bottom;
+    p0p0exit2event0top;
+    p0p0moving2down0steps;
+    p0p0moving2up0steps;
+    p0p0zero0users;
+  }
+
+  OUTPUTS {
+    u0steps0steps;
+    u0steps0f1dmove2down1b;
+    u0steps0f1dmove2up1b;
+    u0steps0f1dstop1b;
+    u0users0users;
+    u0users0f1dreset2to2zero1b;
+    u0users0f1ddec0users1b;
+    u0users0f1dinc0users1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((! (((u0steps0f1dmove2up1b) && (! (u0steps0steps))) <-> ((u0steps0steps) && (! (u0steps0f1dmove2up1b))))) && (! ((u0steps0f1dstop1b) || (u0steps0f1dmove2down1b)))) <-> ((! (((u0steps0f1dstop1b) && (! (u0steps0f1dmove2down1b))) <-> ((u0steps0f1dmove2down1b) && (! (u0steps0f1dstop1b))))) && (! ((u0steps0f1dmove2up1b) || (u0steps0steps)))))) && (! (((! (((u0users0f1ddec0users1b) && (! (u0users0users))) <-> ((u0users0users) && (! (u0users0f1ddec0users1b))))) && (! ((u0users0f1dinc0users1b) || (u0users0f1dreset2to2zero1b)))) <-> ((! (((u0users0f1dinc0users1b) && (! (u0users0f1dreset2to2zero1b))) <-> ((u0users0f1dreset2to2zero1b) && (! (u0users0f1dinc0users1b))))) && (! ((u0users0f1ddec0users1b) || (u0users0users)))))))) && ((((G (! ((p0p0moving2down0steps) && (p0p0moving2up0steps)))) && (G (! ((p0p0enter2event0top) && (p0p0exit2event0top))))) && (G (! ((p0p0enter2event0bottom) && (p0p0exit2event0bottom))))) -> ((((((((((u0users0f1dreset2to2zero1b) && (X (G (! (u0users0f1dreset2to2zero1b))))) && (X (G (((((p0p0enter2event0bottom) && (! (p0p0exit2event0top))) && (! (p0p0moving2down0steps))) || (((p0p0enter2event0top) && (! (p0p0exit2event0bottom))) && (! (p0p0moving2up0steps)))) <-> (u0users0f1dinc0users1b))))) && (X (G (((((p0p0exit2event0top) && (! (p0p0enter2event0bottom))) && (! (p0p0moving2down0steps))) || (((p0p0exit2event0bottom) && (! (p0p0enter2event0top))) && (! (p0p0moving2up0steps)))) <-> (u0users0f1ddec0users1b))))) && (X (G ((u0steps0f1dmove2up1b) -> ((p0p0zero0users) && (p0p0enter2event0bottom)))))) && (X (G ((u0steps0f1dmove2down1b) -> ((p0p0zero0users) && (p0p0enter2event0top)))))) && (X (G ((((p0p0zero0users) && (p0p0enter2event0bottom)) && (! (p0p0enter2event0top))) -> (u0steps0f1dmove2up1b))))) && (X (G ((((p0p0zero0users) && (p0p0enter2event0top)) && (! (p0p0enter2event0bottom))) -> (u0steps0f1dmove2down1b))))) && (X (G ((((p0p0zero0users) && (p0p0enter2event0bottom)) && (p0p0enter2event0top)) -> ((u0steps0f1dmove2up1b) || (u0steps0f1dmove2down1b)))))) && (X (G (((((! (p0p0zero0users)) && (X (p0p0zero0users))) && (X (! (p0p0enter2event0top)))) && (X (! (p0p0enter2event0bottom)))) <-> (X (u0steps0f1dstop1b)))))));
+  }
+}

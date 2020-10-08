@@ -1,0 +1,36 @@
+INFO {
+  TITLE:       "Converted TSL Specification: SensorSubmodulChooser"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0on0start2acc;
+    p0p0on0start2gyr;
+    p0p0on0start2init;
+    p0p0on0start2mag;
+  }
+
+  OUTPUTS {
+    u0reg2manager2cmd0reg2manager2cmd;
+    u0reg2manager2cmd0reg2manager2cmd2acc;
+    u0reg2manager2cmd0reg2manager2cmd2gyr;
+    u0reg2manager2cmd0reg2manager2cmd2init;
+    u0reg2manager2cmd0reg2manager2cmd2mag;
+    u0sensor2type0sensor2type;
+    u0sensor2type0sensor2type2acc;
+    u0sensor2type0sensor2type2gyr;
+    u0sensor2type0sensor2type2init;
+    u0sensor2type0sensor2type2mag;
+    u0spi2control0spi2control;
+    u0spi2control0spi2control2acc;
+    u0spi2control0spi2control2gyr;
+    u0spi2control0spi2control2init;
+    u0spi2control0spi2control2mag;
+  }
+
+  GUARANTEE {
+    (G (((! (((! (((u0reg2manager2cmd0reg2manager2cmd2init) && (! (u0reg2manager2cmd0reg2manager2cmd2acc))) <-> ((u0reg2manager2cmd0reg2manager2cmd2acc) && (! (u0reg2manager2cmd0reg2manager2cmd2init))))) && (! (((u0reg2manager2cmd0reg2manager2cmd2mag) || (u0reg2manager2cmd0reg2manager2cmd2gyr)) || (u0reg2manager2cmd0reg2manager2cmd)))) <-> ((! (((u0reg2manager2cmd0reg2manager2cmd2gyr) && (! ((u0reg2manager2cmd0reg2manager2cmd) || (u0reg2manager2cmd0reg2manager2cmd2mag)))) <-> ((! (((u0reg2manager2cmd0reg2manager2cmd) && (! (u0reg2manager2cmd0reg2manager2cmd2mag))) <-> ((u0reg2manager2cmd0reg2manager2cmd2mag) && (! (u0reg2manager2cmd0reg2manager2cmd))))) && (! (u0reg2manager2cmd0reg2manager2cmd2gyr))))) && (! ((u0reg2manager2cmd0reg2manager2cmd2init) || (u0reg2manager2cmd0reg2manager2cmd2acc)))))) && (! (((! (((u0sensor2type0sensor2type2init) && (! (u0sensor2type0sensor2type2acc))) <-> ((u0sensor2type0sensor2type2acc) && (! (u0sensor2type0sensor2type2init))))) && (! (((u0sensor2type0sensor2type2mag) || (u0sensor2type0sensor2type2gyr)) || (u0sensor2type0sensor2type)))) <-> ((! (((u0sensor2type0sensor2type2gyr) && (! ((u0sensor2type0sensor2type) || (u0sensor2type0sensor2type2mag)))) <-> ((! (((u0sensor2type0sensor2type) && (! (u0sensor2type0sensor2type2mag))) <-> ((u0sensor2type0sensor2type2mag) && (! (u0sensor2type0sensor2type))))) && (! (u0sensor2type0sensor2type2gyr))))) && (! ((u0sensor2type0sensor2type2init) || (u0sensor2type0sensor2type2acc))))))) && (! (((! (((u0spi2control0spi2control2init) && (! (u0spi2control0spi2control2acc))) <-> ((u0spi2control0spi2control2acc) && (! (u0spi2control0spi2control2init))))) && (! (((u0spi2control0spi2control2mag) || (u0spi2control0spi2control2gyr)) || (u0spi2control0spi2control)))) <-> ((! (((u0spi2control0spi2control2gyr) && (! ((u0spi2control0spi2control) || (u0spi2control0spi2control2mag)))) <-> ((! (((u0spi2control0spi2control) && (! (u0spi2control0spi2control2mag))) <-> ((u0spi2control0spi2control2mag) && (! (u0spi2control0spi2control))))) && (! (u0spi2control0spi2control2gyr))))) && (! ((u0spi2control0spi2control2init) || (u0spi2control0spi2control2acc)))))))) && (((((((G (! ((p0p0on0start2acc) && (p0p0on0start2gyr)))) && (G (! ((p0p0on0start2acc) && (p0p0on0start2mag))))) && (G (! ((p0p0on0start2mag) && (p0p0on0start2gyr))))) && (G (! ((p0p0on0start2init) && (p0p0on0start2gyr))))) && (G (! ((p0p0on0start2init) && (p0p0on0start2acc))))) && (G (! ((p0p0on0start2init) && (p0p0on0start2mag))))) -> (((((G ((((((u0spi2control0spi2control2init) && (u0reg2manager2cmd0reg2manager2cmd2init)) && (u0sensor2type0sensor2type2init)) || (((u0spi2control0spi2control2acc) && (u0reg2manager2cmd0reg2manager2cmd2acc)) && (u0sensor2type0sensor2type2acc))) || (((u0spi2control0spi2control2gyr) && (u0reg2manager2cmd0reg2manager2cmd2gyr)) && (u0sensor2type0sensor2type2gyr))) || (((u0spi2control0spi2control2mag) && (u0reg2manager2cmd0reg2manager2cmd2mag)) && (u0sensor2type0sensor2type2mag)))) && (G ((p0p0on0start2init) -> ((((u0spi2control0spi2control2init) && (u0reg2manager2cmd0reg2manager2cmd2init)) && (u0sensor2type0sensor2type2init)) && (X ((((u0spi2control0spi2control2init) && (u0reg2manager2cmd0reg2manager2cmd2init)) && (u0sensor2type0sensor2type2init)) W ((((p0p0on0start2init) || (p0p0on0start2acc)) || (p0p0on0start2gyr)) || (p0p0on0start2mag)))))))) && (G ((p0p0on0start2acc) -> ((((u0spi2control0spi2control2acc) && (u0reg2manager2cmd0reg2manager2cmd2acc)) && (u0sensor2type0sensor2type2acc)) && (X ((((u0spi2control0spi2control2acc) && (u0reg2manager2cmd0reg2manager2cmd2acc)) && (u0sensor2type0sensor2type2acc)) W ((((p0p0on0start2init) || (p0p0on0start2acc)) || (p0p0on0start2gyr)) || (p0p0on0start2mag)))))))) && (G ((p0p0on0start2gyr) -> ((((u0spi2control0spi2control2gyr) && (u0reg2manager2cmd0reg2manager2cmd2gyr)) && (u0sensor2type0sensor2type2gyr)) && (X ((((u0spi2control0spi2control2gyr) && (u0reg2manager2cmd0reg2manager2cmd2gyr)) && (u0sensor2type0sensor2type2gyr)) W ((((p0p0on0start2init) || (p0p0on0start2acc)) || (p0p0on0start2gyr)) || (p0p0on0start2mag)))))))) && (G ((p0p0on0start2mag) -> ((((u0spi2control0spi2control2mag) && (u0reg2manager2cmd0reg2manager2cmd2mag)) && (u0sensor2type0sensor2type2mag)) && (X ((((u0spi2control0spi2control2mag) && (u0reg2manager2cmd0reg2manager2cmd2mag)) && (u0sensor2type0sensor2type2mag)) W ((((p0p0on0start2init) || (p0p0on0start2acc)) || (p0p0on0start2gyr)) || (p0p0on0start2mag)))))))));
+  }
+}

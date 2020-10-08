@@ -1,0 +1,22 @@
+INFO {
+  TITLE:       "Converted TSL Specification: EscalatorNonCounting"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0enter2event0bottom;
+    p0p0exit2event0top;
+  }
+
+  OUTPUTS {
+    u0steps0steps;
+    u0steps0f1dmove1b;
+    u0steps0f1dstop1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0steps0f1dmove1b) && (! ((u0steps0f1dstop1b) || (u0steps0steps)))) <-> ((! (((u0steps0f1dstop1b) && (! (u0steps0steps))) <-> ((u0steps0steps) && (! (u0steps0f1dstop1b))))) && (! (u0steps0f1dmove1b)))))) && ((G (((p0p0enter2event0bottom) && (! (p0p0exit2event0top))) <-> (u0steps0f1dmove1b))) && (G (((p0p0exit2event0top) && (! (p0p0enter2event0bottom))) <-> (u0steps0f1dstop1b))));
+  }
+}

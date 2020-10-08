@@ -1,0 +1,152 @@
+aag 72 9 6 1 57
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20 1
+22 51
+24 126
+26 132
+28 138
+30 145
+48
+32 22 20
+34 24 20
+36 26 20
+38 36 34
+40 28 20
+42 40 38
+44 30 20
+46 44 42
+48 46 32
+50 33 19
+52 11 9
+54 53 6
+56 12 2
+58 10 4
+60 58 56
+62 14 2
+64 12 4
+66 65 63
+68 64 62
+70 69 67
+72 71 61
+74 70 60
+76 75 73
+78 76 9
+80 78 55
+82 79 54
+84 83 81
+86 85 17
+88 84 16
+90 89 87
+92 13 3
+94 93 57
+96 95 4
+98 96 14
+100 15 5
+102 100 56
+104 103 99
+106 105 8
+108 5 3
+110 109 8
+112 111 13
+114 112 15
+116 115 107
+118 117 11
+120 118 90
+122 121 34
+124 120 35
+126 125 123
+128 122 36
+130 123 37
+132 131 129
+134 128 40
+136 129 41
+138 137 135
+140 134 45
+142 135 44
+144 143 141
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 controllable_c<2>
+i3 controllable_c<3>
+i4 in<0>
+i5 in<1>
+i6 in<2>
+i7 in<3>
+i8 controllable_s
+l0 bench|n21
+l1 bench|bad_out
+l2 bench|state<0>_out
+l3 bench|state<1>_out
+l4 bench|state<2>_out
+l5 bench|state<3>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:47 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv stay4.v   ---gives--> stay4.mv
+> abc -c "read_blif_mv stay4.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s stay4y.aig"   ---gives--> stay4y.aig
+> aigtoaig stay4y.aig stay4y.aag   ---gives--> stay4y.aag (this file)
+Content of stay4.v:
+// realizable
+module bench(clk, in, controllable_s, controllable_c, err);
+  input clk;
+  input [3:0] in;
+  input controllable_s;
+  input [3:0] controllable_c;
+  output err;
+  reg [3:0] state;
+  reg bad;
+  wire [3:0] mul;
+  wire [3:0] choose;
+
+  assign err = bad & (state == 4'b1111);
+  mult4 m(in, controllable_c, mul);
+  assign choose = controllable_c[3] ? {controllable_c[2:0],1'b0} : {mul[2:0],1'b0};
+
+  initial
+  begin
+    state = 0;
+    bad = 0;
+  end
+
+  always @ (posedge clk)
+  begin
+    state = state + (in != choose);
+    if(bad | controllable_s)
+      begin
+        bad = 1;
+      end
+  end
+endmodule
+
+module mult4(a,b,r);
+  input [3:0] a;
+  input [3:0] b;
+  output [3:0] r;
+  wire [3:0] s0;
+  wire [3:0] s1;
+  wire [3:0] s2;
+  wire [3:0] s3;
+  assign s0 = b[0] ? a : 0;
+  assign s1 = b[1] ? {a[2:0],1'b0} : 0;
+  assign s2 = b[2] ? {a[1:0],2'b00} : 0;
+  assign s3 = b[3] ? {a[0:0],3'b000} : 0;
+  assign r  = s0+s1+s2+s3;
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.008 [SYNTCOMP2014-RealSeq]
+#.

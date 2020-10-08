@@ -1,0 +1,38 @@
+INFO {
+  TITLE:       "n-ary latch"
+  DESCRIPTION: "latch that stores n bits and is updated by an external signal"
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 12;
+  }
+}
+
+MAIN {
+
+  INPUTS {
+    upd;
+    in[n];
+  }
+
+  OUTPUTS {
+    out[n]
+  }
+
+  ASSERT {
+    upd ->
+      &&[0 <= i < n]
+        ( (in[i] <-> out[i])
+        && (in[i]  -> X ( out[i] W upd))
+        && (!in[i] -> X (!out[i] W upd))
+        );
+  }
+}
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : -1
+//#.

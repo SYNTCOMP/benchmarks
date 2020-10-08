@@ -1,0 +1,27 @@
+INFO {
+  TITLE:       "Converted TSL Specification: TorcsSteeringSmart"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0at2side0track2pos;
+    p0p0clear2road0track;
+    p0p0close2to2bend0track;
+    p0p0straight0angle;
+  }
+
+  OUTPUTS {
+    u0steer0steer;
+    u0steer0f1dsteer2side0track1b;
+    u0steer0f1dstraighten0angle1b;
+    u0steer0f1dturn2mod0track1b;
+    u0x0x;
+    u0x0f1dturning1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((! (((u0steer0f1dstraighten0angle1b) && (! (u0steer0steer))) <-> ((u0steer0steer) && (! (u0steer0f1dstraighten0angle1b))))) && (! ((u0steer0f1dturn2mod0track1b) || (u0steer0f1dsteer2side0track1b)))) <-> ((! (((u0steer0f1dturn2mod0track1b) && (! (u0steer0f1dsteer2side0track1b))) <-> ((u0steer0f1dsteer2side0track1b) && (! (u0steer0f1dturn2mod0track1b))))) && (! ((u0steer0f1dstraighten0angle1b) || (u0steer0steer)))))) && (! (((u0x0x) && (! (u0x0f1dturning1b))) <-> ((u0x0f1dturning1b) && (! (u0x0x))))))) && (((! (u0x0f1dturning1b)) W (! (p0p0clear2road0track))) && (G (((! (u0x0f1dturning1b)) && (X (! (p0p0clear2road0track)))) -> (X ((((u0x0f1dturning1b) && (u0steer0f1dsteer2side0track1b)) W (p0p0at2side0track2pos)) && ((F (p0p0at2side0track2pos)) -> ((! (p0p0at2side0track2pos)) U ((p0p0at2side0track2pos) && ((((u0x0f1dturning1b) && (u0steer0f1dstraighten0angle1b)) W (p0p0straight0angle)) && ((F (p0p0straight0angle)) -> ((! (p0p0straight0angle)) U ((p0p0straight0angle) && ((((u0x0f1dturning1b) && (u0steer0steer)) W (p0p0close2to2bend0track)) && ((F (p0p0close2to2bend0track)) -> ((! (p0p0close2to2bend0track)) U ((p0p0close2to2bend0track) && ((((u0x0f1dturning1b) && (u0steer0f1dturn2mod0track1b)) W (p0p0clear2road0track)) && ((F (p0p0clear2road0track)) -> ((! (p0p0clear2road0track)) U ((p0p0clear2road0track) && ((! (u0x0f1dturning1b)) W (! (p0p0clear2road0track)))))))))))))))))))))));
+  }
+}

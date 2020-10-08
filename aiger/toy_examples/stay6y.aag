@@ -1,0 +1,239 @@
+aag 149 13 8 1 128
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28 1
+30 71
+32 268
+34 274
+36 280
+38 286
+40 292
+42 299
+68
+44 30 28
+46 32 28
+48 34 28
+50 48 46
+52 36 28
+54 52 50
+56 38 28
+58 56 54
+60 40 28
+62 60 58
+64 42 28
+66 64 62
+68 66 44
+70 45 27
+72 15 13
+74 73 10
+76 14 8
+78 14 6
+80 18 2
+82 16 2
+84 14 4
+86 84 82
+88 16 4
+90 88 87
+92 91 81
+94 88 80
+96 94 15
+98 97 93
+100 98 78
+102 16 6
+104 20 2
+106 95 87
+108 18 4
+110 109 106
+112 111 95
+114 112 104
+116 113 105
+118 117 115
+120 118 102
+122 119 103
+124 123 121
+126 124 100
+128 125 101
+130 129 127
+132 130 76
+134 16 8
+136 22 2
+138 20 4
+140 138 137
+142 139 136
+144 143 141
+146 111 104
+148 147 95
+150 148 144
+152 149 145
+154 153 151
+156 123 100
+158 157 121
+160 18 6
+162 160 159
+164 161 158
+166 165 163
+168 166 154
+170 167 155
+172 171 169
+174 172 134
+176 173 135
+178 177 175
+180 178 132
+182 179 133
+184 183 181
+186 184 13
+188 186 75
+190 187 74
+192 191 189
+194 193 25
+196 192 24
+198 197 195
+200 12 8
+202 131 77
+204 203 133
+206 204 13
+208 207 201
+210 209 23
+212 208 22
+214 213 211
+216 12 6
+218 99 79
+220 219 101
+222 220 13
+224 223 217
+226 225 21
+228 224 20
+230 229 227
+232 19 5
+234 232 82
+236 17 3
+238 237 83
+240 239 108
+242 241 235
+244 243 12
+246 5 3
+248 247 12
+250 249 17
+252 250 19
+254 253 245
+256 255 15
+258 256 230
+260 258 214
+262 260 198
+264 263 46
+266 262 47
+268 267 265
+270 264 48
+272 265 49
+274 273 271
+276 270 52
+278 271 53
+280 279 277
+282 276 56
+284 277 57
+286 285 283
+288 282 60
+290 283 61
+292 291 289
+294 288 65
+296 289 64
+298 297 295
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 controllable_c<2>
+i3 controllable_c<3>
+i4 controllable_c<4>
+i5 controllable_c<5>
+i6 in<0>
+i7 in<1>
+i8 in<2>
+i9 in<3>
+i10 in<4>
+i11 in<5>
+i12 controllable_s
+l0 bench|n29
+l1 bench|bad_out
+l2 bench|state<0>_out
+l3 bench|state<1>_out
+l4 bench|state<2>_out
+l5 bench|state<3>_out
+l6 bench|state<4>_out
+l7 bench|state<5>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:58 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv stay6.v   ---gives--> stay6.mv
+> abc -c "read_blif_mv stay6.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s stay6y.aig"   ---gives--> stay6y.aig
+> aigtoaig stay6y.aig stay6y.aag   ---gives--> stay6y.aag (this file)
+Content of stay6.v:
+// realizable
+module bench(clk, in, controllable_s, controllable_c, err);
+  input clk;
+  input [5:0] in;
+  input controllable_s;
+  input [5:0] controllable_c;
+  output err;
+  reg [5:0] state;
+  reg bad;
+  wire [5:0] mul;
+  wire [5:0] choose;
+
+  assign err = bad & (state == 6'b111111);
+  mult6 m(in, controllable_c, mul);
+  assign choose = controllable_c[5] ? {controllable_c[4:0],1'b0} : {mul[4:0],1'b0};
+
+  initial
+  begin
+    state = 0;
+    bad = 0;
+  end
+
+  always @ (posedge clk)
+  begin
+    state = state + (in != choose);
+    if(bad | controllable_s)
+      begin
+        bad = 1;
+      end
+  end
+endmodule
+
+module mult6(a,b,r);
+  input [5:0] a;
+  input [5:0] b;
+  output [5:0] r;
+  wire [5:0] s0;
+  wire [5:0] s1;
+  wire [5:0] s2;
+  wire [5:0] s3;
+  wire [5:0] s4;
+  wire [5:0] s5;
+  assign s0 = b[0] ? a : 0;
+  assign s1 = b[1] ? {a[4:0],1'b0} : 0;
+  assign s2 = b[2] ? {a[3:0],2'b00} : 0;
+  assign s3 = b[3] ? {a[2:0],3'b000} : 0;
+  assign s4 = b[4] ? {a[1:0],4'b0000} : 0;
+  assign s5 = b[5] ? {a[0:0],5'b00000} : 0;
+  assign r  = s0+s1+s2+s3+s4+s5;
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.016 [SYNTCOMP2014-RealSeq]
+#.

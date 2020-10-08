@@ -1,0 +1,20 @@
+INFO {
+  TITLE:       "Converted TSL Specification: SensorRegister"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0reg2cmp0f1dmy2type1b0reg2type;
+  }
+
+  OUTPUTS {
+    u0reg2val0reg2data;
+    u0reg2val0reg2val;
+  }
+
+  GUARANTEE {
+    (G (! (((u0reg2val0reg2data) && (! (u0reg2val0reg2val))) <-> ((u0reg2val0reg2val) && (! (u0reg2val0reg2data)))))) && (G ((p0p0reg2cmp0f1dmy2type1b0reg2type) <-> (u0reg2val0reg2data)));
+  }
+}

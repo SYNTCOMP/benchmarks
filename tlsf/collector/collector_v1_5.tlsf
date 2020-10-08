@@ -1,0 +1,36 @@
+INFO {
+  TITLE:       "Parameterized Collector"
+  DESCRIPTION: "Signals whether all input clients have delivered a token"
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 5;
+  }
+}
+
+MAIN {
+
+  INPUTS {
+    finished[n];
+  } 
+
+  OUTPUTS {
+    allFinished; 
+  }
+
+  ASSERT {
+    G !allFinished
+      -> ||[0 <= i < n] G !finished[i];
+
+    &&[0 <= i < n]  
+      (allFinished -> X (!allFinished W finished[i]));
+  }
+}
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : -1
+//#.

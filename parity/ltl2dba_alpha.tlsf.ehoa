@@ -1,0 +1,33 @@
+HOA: v1
+name: "(GFacc & F(p & q & X(p & q))) | (FG!acc & G(!p | !q | X(!p | !q)))"
+States: 5
+Start: 0
+AP: 3 "acc" "p" "q"
+controllable-AP: 0
+acc-name: parity max even 4
+Acceptance: 4 Fin(3) & (Inf(2) | (Fin(1) & Inf(0)))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic
+--BODY--
+State: 0
+[0&!1 | 0&!2] 0 {1}
+[!0&!1 | !0&!2] 1 {1}
+[!0&1&2] 2 {1}
+[0&1&2] 3 {1}
+State: 1
+[0&!1 | 0&!2] 0 {3}
+[!0&!1 | !0&!2] 1 {2}
+[!0&1&2] 2 {2}
+[0&1&2] 3 {3}
+State: 2
+[0&!1 | 0&!2] 0 {3}
+[!0&!1 | !0&!2] 1 {2}
+[1&2] 4 {1}
+State: 3
+[0&!1 | 0&!2] 0 {1}
+[!0&!1 | !0&!2] 1 {1}
+[1&2] 4 {1}
+State: 4
+[!0] 4 {1}
+[0] 4 {2}
+--END--

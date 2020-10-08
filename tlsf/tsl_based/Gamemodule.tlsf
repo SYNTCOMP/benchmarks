@@ -1,0 +1,25 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Gamemodule"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0iscockpitmode0gamemode;
+    p0p0isradarmode0gamemode;
+    p0p0isscoremode0gamemode;
+    p0p0on0gameover;
+  }
+
+  OUTPUTS {
+    u0outpoint0cockpitboardpoint;
+    u0outpoint0outpoint;
+    u0outpoint0radarboardpoint;
+    u0outpoint0scoreboardpoint;
+  }
+
+  GUARANTEE {
+    (G (! (((! (((u0outpoint0radarboardpoint) && (! (u0outpoint0cockpitboardpoint))) <-> ((u0outpoint0cockpitboardpoint) && (! (u0outpoint0radarboardpoint))))) && (! ((u0outpoint0scoreboardpoint) || (u0outpoint0outpoint)))) <-> ((! (((u0outpoint0scoreboardpoint) && (! (u0outpoint0outpoint))) <-> ((u0outpoint0outpoint) && (! (u0outpoint0scoreboardpoint))))) && (! ((u0outpoint0radarboardpoint) || (u0outpoint0cockpitboardpoint))))))) && ((((G (! ((p0p0isscoremode0gamemode) && (p0p0isradarmode0gamemode)))) && (G (! ((p0p0isradarmode0gamemode) && (p0p0iscockpitmode0gamemode))))) && (G (! ((p0p0iscockpitmode0gamemode) && (p0p0isscoremode0gamemode))))) -> (((G ((p0p0on0gameover) -> (u0outpoint0scoreboardpoint))) && (G ((! (p0p0on0gameover)) -> ((((p0p0isscoremode0gamemode) -> (u0outpoint0scoreboardpoint)) && ((p0p0isradarmode0gamemode) -> (u0outpoint0radarboardpoint))) && ((p0p0iscockpitmode0gamemode) -> (u0outpoint0cockpitboardpoint)))))) && (G (((u0outpoint0scoreboardpoint) || (u0outpoint0radarboardpoint)) || (u0outpoint0cockpitboardpoint)))));
+  }
+}

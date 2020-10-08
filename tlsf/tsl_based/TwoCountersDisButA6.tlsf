@@ -1,0 +1,43 @@
+INFO {
+  TITLE:       "Converted TSL Specification: TwoCountersDisButA6"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0button2pressed0down;
+    p0p0button2pressed0switch;
+    p0p0button2pressed0up;
+    p0p0first0selected;
+    p0p0in2range0first2counter;
+    p0p0in2range0second2counter;
+    p0p0in2range0f1ddecrement0first2counter1b;
+    p0p0in2range0f1ddecrement0second2counter1b;
+    p0p0in2range0f1ddecrement0f1dincrement0first2counter1b1b;
+    p0p0in2range0f1dincrement0first2counter1b;
+    p0p0in2range0f1dincrement0second2counter1b;
+    p0p0in2range0f1dincrement0f1dincrement0first2counter1b1b;
+    p0p0second0selected;
+  }
+
+  OUTPUTS {
+    u0first2counter0first2counter;
+    u0first2counter0f1ddecrement0first2counter1b;
+    u0first2counter0f1dincrement0first2counter1b;
+    u0second2counter0second2counter;
+    u0second2counter0f1ddecrement0second2counter1b;
+    u0second2counter0f1dincrement0second2counter1b;
+    u0selected0selected;
+    u0selected0f1dtoggle0selected1b;
+    u0window0window;
+    u0window0f1ddisable2button0down1b;
+    u0window0f1ddisable2button0up1b;
+    u0window0f1denable2button0down1b;
+    u0window0f1denable2button0up1b;
+  }
+
+  GUARANTEE {
+    (G ((((! (((u0first2counter0f1ddecrement0first2counter1b) && (! ((u0first2counter0f1dincrement0first2counter1b) || (u0first2counter0first2counter)))) <-> ((! (((u0first2counter0f1dincrement0first2counter1b) && (! (u0first2counter0first2counter))) <-> ((u0first2counter0first2counter) && (! (u0first2counter0f1dincrement0first2counter1b))))) && (! (u0first2counter0f1ddecrement0first2counter1b))))) && (! (((u0second2counter0f1ddecrement0second2counter1b) && (! ((u0second2counter0f1dincrement0second2counter1b) || (u0second2counter0second2counter)))) <-> ((! (((u0second2counter0f1dincrement0second2counter1b) && (! (u0second2counter0second2counter))) <-> ((u0second2counter0second2counter) && (! (u0second2counter0f1dincrement0second2counter1b))))) && (! (u0second2counter0f1ddecrement0second2counter1b)))))) && (! (((u0selected0selected) && (! (u0selected0f1dtoggle0selected1b))) <-> ((u0selected0f1dtoggle0selected1b) && (! (u0selected0selected)))))) && (! (((! (((u0window0f1denable2button0down1b) && (! (u0window0f1ddisable2button0down1b))) <-> ((u0window0f1ddisable2button0down1b) && (! (u0window0f1denable2button0down1b))))) && (! (((u0window0f1denable2button0up1b) || (u0window0f1ddisable2button0up1b)) || (u0window0window)))) <-> ((! (((u0window0f1ddisable2button0up1b) && (! ((u0window0window) || (u0window0f1denable2button0up1b)))) <-> ((! (((u0window0window) && (! (u0window0f1denable2button0up1b))) <-> ((u0window0f1denable2button0up1b) && (! (u0window0window))))) && (! (u0window0f1ddisable2button0up1b))))) && (! ((u0window0f1denable2button0down1b) || (u0window0f1ddisable2button0down1b)))))))) && (((((((((((((((p0p0in2range0first2counter) && (p0p0in2range0second2counter)) && (! (p0p0button2pressed0up))) && (! (p0p0button2pressed0down))) && (G (! ((p0p0first0selected) && (p0p0second0selected))))) && (G (! ((p0p0button2pressed0up) && (p0p0button2pressed0down))))) && (G ((u0window0f1ddisable2button0up1b) -> (X ((u0window0f1denable2button0up1b) R (! (p0p0button2pressed0up))))))) && (G ((u0window0f1ddisable2button0down1b) -> (X ((u0window0f1denable2button0down1b) R (! (p0p0button2pressed0down))))))) && (G (((p0p0in2range0first2counter) && (u0first2counter0first2counter)) -> (X (p0p0in2range0first2counter))))) && (G (((p0p0in2range0second2counter) && (u0second2counter0second2counter)) -> (X (p0p0in2range0second2counter))))) && (G (((p0p0in2range0f1dincrement0first2counter1b) && (u0first2counter0f1dincrement0first2counter1b)) -> (X (p0p0in2range0first2counter))))) && (G (((p0p0in2range0f1dincrement0f1dincrement0first2counter1b1b) && (u0first2counter0f1dincrement0first2counter1b)) -> (X (p0p0in2range0f1dincrement0first2counter1b))))) && (G (((p0p0in2range0f1ddecrement0first2counter1b) && (u0first2counter0f1ddecrement0first2counter1b)) -> (X (p0p0in2range0first2counter))))) && (G (((p0p0in2range0f1ddecrement0f1dincrement0first2counter1b1b) && (u0first2counter0f1ddecrement0first2counter1b)) -> (X (p0p0in2range0f1ddecrement0first2counter1b))))) -> (((((((G ((((p0p0first0selected) && (p0p0in2range0f1dincrement0first2counter1b)) || ((p0p0second0selected) && (p0p0in2range0f1dincrement0second2counter1b))) -> (u0window0f1denable2button0up1b))) && (G ((((p0p0first0selected) && (p0p0in2range0f1ddecrement0first2counter1b)) || ((p0p0second0selected) && (p0p0in2range0f1ddecrement0second2counter1b))) -> (u0window0f1denable2button0down1b)))) && (G ((p0p0first0selected) -> (((p0p0button2pressed0up) <-> (u0first2counter0f1dincrement0first2counter1b)) && ((p0p0button2pressed0down) <-> (u0first2counter0f1ddecrement0first2counter1b)))))) && (G ((p0p0second0selected) -> (((p0p0button2pressed0up) <-> (u0second2counter0f1dincrement0second2counter1b)) && ((p0p0button2pressed0down) <-> (u0second2counter0f1ddecrement0second2counter1b)))))) && (G ((p0p0button2pressed0switch) <-> (u0selected0f1dtoggle0selected1b)))) && (G (p0p0in2range0first2counter))) && (G (p0p0in2range0second2counter))));
+  }
+}

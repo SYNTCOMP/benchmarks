@@ -1,0 +1,25 @@
+INFO {
+  TITLE:       "Converted TSL Specification: TorcsAccelerating"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0clear2ahead0track;
+    p0p0slow0speed;
+  }
+
+  OUTPUTS {
+    u0accel0accel;
+    u0accel0f1ddeaccel1b;
+    u0accel0f1dspeed2up1b;
+    u0brakes0brakes;
+    u0brakes0f1dhit2brakes1b;
+    u0brakes0f1doff2brakes1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u0accel0f1ddeaccel1b) && (! ((u0accel0f1dspeed2up1b) || (u0accel0accel)))) <-> ((! (((u0accel0f1dspeed2up1b) && (! (u0accel0accel))) <-> ((u0accel0accel) && (! (u0accel0f1dspeed2up1b))))) && (! (u0accel0f1ddeaccel1b))))) && (! (((u0brakes0f1dhit2brakes1b) && (! ((u0brakes0f1doff2brakes1b) || (u0brakes0brakes)))) <-> ((! (((u0brakes0f1doff2brakes1b) && (! (u0brakes0brakes))) <-> ((u0brakes0brakes) && (! (u0brakes0f1doff2brakes1b))))) && (! (u0brakes0f1dhit2brakes1b))))))) && ((G (((u0accel0f1ddeaccel1b) && (u0brakes0f1dhit2brakes1b)) W ((p0p0slow0speed) || (p0p0clear2ahead0track)))) && (G ((p0p0clear2ahead0track) -> ((u0accel0f1dspeed2up1b) && (u0brakes0f1doff2brakes1b)))));
+  }
+}

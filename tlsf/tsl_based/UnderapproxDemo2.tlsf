@@ -1,0 +1,21 @@
+INFO {
+  TITLE:       "Converted TSL Specification: UnderapproxDemo2"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0p0x;
+    p0p0p0y;
+  }
+
+  OUTPUTS {
+    u0y0x;
+    u0y0y;
+  }
+
+  GUARANTEE {
+    (G (! (((u0y0x) && (! (u0y0y))) <-> ((u0y0y) && (! (u0y0x)))))) && ((G ((u0y0y) || (u0y0x))) && ((F (p0p0p0x)) -> (F (p0p0p0y))));
+  }
+}

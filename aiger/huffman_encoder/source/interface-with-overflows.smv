@@ -1,0 +1,359 @@
+-- The specification of the synthesis task of a Huffman encoder, given the decoder.
+-- The decoder is taken from the model checker VIS, so I kept the original description.
+-- FIFOs and the main module are coded 'manually' (i.e., not given).
+-- note: this is not a valid SMV (see SPEC section at the bottom).
+-- questions? gmail me to ayrat.khalimov
+
+
+
+
+
+-- Model of connected Huffman encoder and decoder.  
+-- The alphabet consists of the uppercase letters and the space.  
+-- The Huffman tree used by encoder and decoder is shown below.  
+-- All left branches are labeled 0, and all right branches are labeled 1.  
+-- 
+--                       +-------------( )---------------+ 
+--                       |                               | 
+--                       |                               | 
+--              +-------( )------+               +------( )-----+
+--              |                |               |              |
+--              |                |               |              |
+--        +----( )----+         ( )          +--( )--+         ( )
+--        |           |         / \          |       |         / \
+--        |           |        |   |         |       |        |   |
+--    +--( )--+      ( )      [E] ( )       ( )     ( )      [ ] ( )
+--    |       |      / \          / \       / \     / \          / \
+--    |       |     |   |        |   |     |   |   |   |        |   |
+--   ( )     ( )   [S] ( )      ( ) [A]   [I] [O] [R] [N]      ( ) [T]
+--   / \     / \       / \      / \                            / \
+--  |   |   |   |     |   |    |   |                          |   |
+-- [U] [P] [F] [C]   ( ) [L]  [H] ( )                        [D] ( )
+--                   / \          / \                            / \
+--                  |   |        |   |                          |   |
+--            +----( ) [W]      [G] [Y]                        ( ) [M]
+--            |      \                                         / \
+--            |       |                                       |   |
+--           ( )     ( )                                     [B] [V]
+--           / \     / \
+--          |   |   |   |
+--         [Q] ( ) [K] [X]
+--             / \
+--            |   |
+--           [Z] [J]
+--
+-- As an example, the code of W is 001101.
+--
+-- This tree is based on the following assumed frequencies.
+--
+--  E 130  T 93  N 78  R 77  I 74  O 74  A 73  S 63  D 44
+--  H  35  L 35  C 30  F 28  P 27  U 27  M 25  Y 19  G 16
+--  W  16  V 13  B  9  X  5  K  3  Q  3  J  2  Z  1
+--
+-- That is, it is assumed that there are 130 Es for every thousand letters.
+-- It is further assumed that there are 182 spaces for every 1000 letters.
+--
+-- The encoder retrieves the code for each symbol from a map, and shifts it
+-- out one bit at the time.  The decoder is a finite state machine whose
+-- state transition graph is obtained from the tree by adding acs from the
+-- leaves back to the top of the tree.  (To the second level nodes to be
+-- precise.)  Each node uses ten bits for its encoding.  The code of the root
+-- is 0.  If a state is not a leaf of the tree, and its encoding is n, then
+-- the encodings of its two children are 2n+1 and 2n+2.
+--
+-- Author: Fabio Somenzi <Fabio@Colorado.EDU>
+
+MODULE huffmanDec(cipher)
+DEFINE -- outputs
+-- {A,...,Z, space} -- 27 symbols, encoded as bitvector char_out5.char_out4.char_out3.char_out2.char_out1:
+-- we will map symbols in {A,...,Z, space} to ints in {1,..., 26, 27}
+-- A -> 00001
+-- B -> 00010
+-- ...
+-- Z -> 11010
+-- space -> 11011
+-- '00000' denotes <no-symbol>, the env is not allowed to send <no-symbol>
+-- Have to define explicitly, since no bitwise operators.
+  char_out5 := charOut>15;
+  char_out4 := (charOut in {8, 9, 10, 11, 12, 13, 14, 15, 24, 25, 26, 27});
+  char_out3 := (charOut in {4, 5, 6, 7, 12, 13, 14, 15, 20, 21, 22, 23});
+  char_out2 := (charOut in {2, 3, 6, 7, 10, 11, 14, 15, 18, 19, 22, 23, 26, 27});
+  char_out1 := (charOut in {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27});
+
+VAR
+  state: 0..610;
+
+DEFINE
+  -- charOut can get high for one tick only
+  charOut := case
+             state=9: 5;   --E
+            state=13: 27;  --space
+            state=17: 19;  --S
+            state=22: 1;   --A
+            state=23: 9;   --I
+            state=24: 15;  --O
+            state=25: 18;  --R
+            state=26: 14;  --N
+            state=30: 20;  --T
+            state=31: 21;  --U
+            state=32: 16;  --P
+            state=33: 6;   --F
+            state=34: 3;   --C
+            state=38: 12;  --L
+            state=43: 8;   --H
+            state=59: 4;   --D
+            state=76: 23;  --W
+            state=89: 7;   --G
+            state=90: 25;  --Y
+           state=122: 13;  --M
+           state=243: 2;   --B
+           state=244: 22;  --V
+           state=303: 17;  --Q
+           state=305: 11;  --K
+           state=306: 24;  --X
+           state=609: 26;  --Z
+           state=610: 10;  --J
+                   1: 0;
+           esac;
+ 
+  leaf := (charOut != 0);
+  -- if current `state` satisfies this -> `next(state)` cannot cause the overflow
+  no_overflow := (state < 307) | (state in {609,610}); -- not used
+
+INIT
+  state = 0
+
+ASSIGN
+  next(state) := (case leaf:0; 1:(state+state); esac) + (case cipher:2; 1:1; esac);
+
+
+-- FIFO
+-- will not save the input if there is data not dequeued the next tick
+-- has output `overflow` which is raised when someone tries to enqueue the full FIFO
+-- it is good to have !overflow in your properties
+-- acts (should) as a buffer if `enq` and `deq` are always high
+MODULE FIFO(enq,deq,in5,in4,in3,in2,in1)  -- FIFO module of size 1
+VAR -- outputs
+  out5: boolean;
+  out4: boolean;
+  out3: boolean;
+  out2: boolean;
+  out1: boolean;  
+
+VAR
+  mem5: boolean;
+  mem4: boolean;
+  mem3: boolean;
+  mem2: boolean;
+  mem1: boolean;
+
+DEFINE
+  empty := (!mem5 & !mem1 & !mem2 & !mem3 & !mem4);
+  overflow := enq & !empty & !deq;
+
+ASSIGN
+  init(mem5) := FALSE;
+  init(mem1) := FALSE;
+  init(mem2) := FALSE;
+  init(mem3) := FALSE;
+  init(mem4) := FALSE;
+
+
+  next(mem1) := case
+                enq & (empty | deq): in1;
+               !deq: mem1;
+                deq: 0;
+               esac;
+
+
+  next(mem2) := case
+                enq & (empty | deq): in2;
+               !deq: mem2;
+                deq: 0;
+               esac;
+
+
+  next(mem3) := case
+                enq & (empty | deq): in3;
+               !deq: mem3;
+                deq: 0;
+               esac;
+
+
+  next(mem4) := case
+                enq & (empty | deq): in4;
+               !deq: mem4;
+                deq: 0;
+               esac;
+
+
+  next(mem5) := case
+                enq & (empty | deq): in5;
+               !deq: mem5;
+                deq: 0;
+               esac;
+
+
+
+
+ASSIGN
+  init(out5) := FALSE;
+  init(out1) := FALSE;
+  init(out2) := FALSE;
+  init(out3) := FALSE;
+  init(out4) := FALSE;
+
+
+  next(out1) := case
+                    deq: mem1;
+                   !deq: out1;
+                   esac;
+
+
+
+  next(out2) := case
+                    deq: mem2;
+                   !deq: out2;
+                   esac;
+
+
+
+  next(out3) := case
+                    deq: mem3;
+                   !deq: out3;
+                   esac;
+
+
+
+  next(out4) := case
+                    deq: mem4;
+                   !deq: out4;
+                   esac;
+
+
+
+  next(out5) := case
+                    deq: mem5;
+                   !deq: out5;
+                   esac;
+
+
+MODULE main
+-- <inputs>
+VAR 
+  char_in5: boolean;
+  char_in4: boolean;
+  char_in3: boolean;
+  char_in2: boolean;
+  char_in1: boolean;
+-- </inputs>
+
+-- <outputs>
+VAR 
+  cipher: boolean;
+  done: boolean;
+-- </outputs>
+
+VAR
+  decoder: huffmanDec(cipher);
+
+  fifoEnc: FIFO(enq_FifoEnc, deq_Fifos, 
+                char_in5,char_in4,char_in3,char_in2,char_in1);
+
+  fifoDec: FIFO(enq_FifoDec, deq_Fifos, 
+                decoder.char_out5,
+                decoder.char_out4,
+                decoder.char_out3,
+                decoder.char_out2,
+                decoder.char_out1);
+
+
+-- <common definitions>
+DEFINE 
+  enq_FifoEnc := done;
+  enq_FifoDec := (decoder.charOut != 0);
+
+  deq_Fifos := !fifoEnc.empty & !fifoDec.empty;  -- in case of general encoders/decoders we need FIFOs of larger than 1 sizes (depends on the decoding speed of the decoder)
+
+  fifosDataEqual := fifoEnc.out5=fifoDec.out5 & 
+                    fifoEnc.out1=fifoDec.out1 & 
+                    fifoEnc.out2=fifoDec.out2 &
+                    fifoEnc.out3=fifoDec.out3 &
+                    fifoEnc.out4=fifoDec.out4;
+
+-- forbidden chars are: 0 and 28..31  
+--11100
+--11101
+--11110
+--11111
+--00000
+  inputIsOutsideRange := 
+( char_in5 & char_in4 & char_in3 & !char_in2 & !char_in1 ) |
+( char_in5 & char_in4 & char_in3 & !char_in2 & char_in1 ) |
+( char_in5 & char_in4 & char_in3 & char_in2 & !char_in1 ) |
+( char_in5 & char_in4 & char_in3 & char_in2 & char_in1 ) |
+( !char_in5 & !char_in4 & !char_in3 & !char_in2 & !char_in1);
+  
+  decoderDecodes := decoder.leaf;
+  
+  no_overflow := decoder.no_overflow;
+  no_fifos_overflow := !(fifoEnc.overflow | fifoDec.overflow);
+
+-- </common definitions>
+
+SPEC
+1: 
+   "FIFO outputs are equal"
+    input_type = automaton
+    output_type = spec
+    data = fifo_outputs_are_equal.gff
+    polarity = bad trace
+
+2:   
+   "Input doesnt change until processed"
+    input_type = automaton
+    output_type = invariant
+    data = inputs_dont_change_until_processed.gff
+    polarity = good trace
+
+3: 
+   "Input char is inside 1..27"
+    input_type = automaton
+    output_type = invariant
+    data = input_is_inside_range.gff
+    polarity = good trace
+
+4: 
+   "Signal done is infinitely often high"
+   input_type=automaton
+   output_type=spec
+   data= done_is_inf_often_high.gff
+   polarity = good trace
+
+--5: 
+--  "Decoder decodes data inf often"
+--   input_type=automaton
+--   output_type=spec
+--   data= decoder_decodes.gff
+--   polarity = good trace
+
+--6: 
+--  "No overflow in the decoder"
+--   input_type = automaton
+--   output_type=spec
+--   data=no_overflow.gff
+--   polarity=bad trace
+
+--7:
+--  "No overflow in FIFOs"
+--   input_type = automaton
+--   output_type=spec
+--   data=no_fifos_overflow.gff
+--   polarity=bad trace
+
+8: 
+  "G(done -> Xenq_dec)"
+   input_type = automaton
+   output_type=spec
+   data=meaning_of_done.gff
+   polarity=bad trace

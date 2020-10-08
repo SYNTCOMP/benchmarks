@@ -1,0 +1,120 @@
+aag 65 2 10 1 53
+2
+4
+6 1
+8 65
+10 73
+12 81
+14 89
+16 97
+18 105
+20 113
+22 121
+24 130
+58
+26 24 6
+28 22 6
+30 20 6
+32 18 6
+34 16 6
+36 14 6
+38 12 6
+40 8 6
+42 10 6
+44 42 40
+46 44 38
+48 46 36
+50 48 34
+52 50 32
+54 52 30
+56 54 28
+58 56 26
+60 40 2
+62 41 3
+64 63 61
+66 40 3
+68 67 42
+70 66 43
+72 71 69
+74 44 3
+76 75 38
+78 74 39
+80 79 77
+82 46 3
+84 83 36
+86 82 37
+88 87 85
+90 48 3
+92 91 34
+94 90 35
+96 95 93
+98 50 3
+100 99 32
+102 98 33
+104 103 101
+106 52 3
+108 107 30
+110 106 31
+112 111 109
+114 54 3
+116 115 28
+118 114 29
+120 119 117
+122 27 5
+124 56 3
+126 124 123
+128 125 27
+130 129 127
+i0 stay
+i1 controllable_reset
+l0 n7
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+l9 counter<8>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:25:04 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv cnt9.v   ---gives--> cnt9.mv
+> abc -c "read_blif_mv cnt9.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s cnt9y.aig"   ---gives--> cnt9y.aig
+> aigtoaig cnt9y.aig cnt9y.aag   ---gives--> cnt9y.aag (this file)
+Content of cnt9.v:
+// realizable
+module bench(clk, stay, controllable_reset, err);
+  input clk;
+  input stay;
+  input controllable_reset;
+  output err;
+  reg [8:0] counter;
+
+  assign err = (counter == 9'b111111111) ? 1 : 0;
+  
+  initial
+  begin
+    counter = 9'b0;
+  end
+  always @ (posedge clk)
+  begin
+    if(stay)
+      counter = counter;
+    else if(counter == 9'b011111111 && controllable_reset)
+      counter = 0;
+    else
+      counter = counter + 1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.008 [SYNTCOMP2014-RealSeq]
+#.

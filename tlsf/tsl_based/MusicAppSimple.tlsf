@@ -1,0 +1,24 @@
+INFO {
+  TITLE:       "Converted TSL Specification: MusicAppSimple"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0leave2app0sys;
+    p0p0pause2button0sys;
+    p0p0play2button0sys;
+    p0p0resume2app0sys;
+  }
+
+  OUTPUTS {
+    u0ctrl0ctrl;
+    u0ctrl0f1dpause0mp1b;
+    u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0ctrl0f1dpause0mp1b) && (! ((u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b) || (u0ctrl0ctrl)))) <-> ((! (((u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b) && (! (u0ctrl0ctrl))) <-> ((u0ctrl0ctrl) && (! (u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b))))) && (! (u0ctrl0f1dpause0mp1b)))))) && ((((G ((p0p0leave2app0sys) -> ((! (p0p0play2button0sys)) && (! (p0p0pause2button0sys))))) && (G (! ((p0p0play2button0sys) && (p0p0pause2button0sys))))) && (G (! ((p0p0leave2app0sys) && (p0p0resume2app0sys))))) -> ((((((G ((p0p0play2button0sys) -> (u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b))) && (G ((p0p0pause2button0sys) -> (u0ctrl0f1dpause0mp1b)))) && (G ((u0ctrl0f1dpause0mp1b) -> ((p0p0leave2app0sys) || (p0p0pause2button0sys))))) && (G ((u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b) -> (! (p0p0leave2app0sys))))) && (G ((((u0ctrl0f1dpause0mp1b) && (p0p0pause2button0sys)) -> (! (u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b))) W (p0p0play2button0sys)))) && (G (((u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b) && ((! (u0ctrl0f1dpause0mp1b)) U (p0p0leave2app0sys))) -> ((! ((u0ctrl0f1dpause0mp1b) && ((! ((! (p0p0pause2button0sys)) -> (u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b))) W (((! (p0p0pause2button0sys)) -> (u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b)) && (! (p0p0leave2app0sys)))))) W (((u0ctrl0f1dpause0mp1b) && ((! ((! (p0p0pause2button0sys)) -> (u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b))) W (((! (p0p0pause2button0sys)) -> (u0ctrl0f1dplay0tr0f1dtrack2pos0mp1b1b)) && (! (p0p0leave2app0sys))))) && (p0p0leave2app0sys)))))));
+  }
+}

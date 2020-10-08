@@ -1,0 +1,25 @@
+INFO {
+  TITLE:       "Converted TSL Specification: OneCounterInRangeA0"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0button2pressed0down;
+    p0p0button2pressed0up;
+    p0p0in2range0counter;
+    p0p0in2range0f1ddec0counter1b;
+    p0p0in2range0f1dinc0counter1b;
+  }
+
+  OUTPUTS {
+    u0counter0counter;
+    u0counter0f1ddec0counter1b;
+    u0counter0f1dinc0counter1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0counter0f1ddec0counter1b) && (! ((u0counter0f1dinc0counter1b) || (u0counter0counter)))) <-> ((! (((u0counter0f1dinc0counter1b) && (! (u0counter0counter))) <-> ((u0counter0counter) && (! (u0counter0f1dinc0counter1b))))) && (! (u0counter0f1ddec0counter1b)))))) && (((p0p0in2range0counter) && (G (! ((p0p0button2pressed0up) && (p0p0button2pressed0down))))) -> (((G (((p0p0button2pressed0up) && (p0p0in2range0f1dinc0counter1b)) <-> (u0counter0f1dinc0counter1b))) && (G (((p0p0button2pressed0down) && (p0p0in2range0f1ddec0counter1b)) <-> (u0counter0f1ddec0counter1b)))) && (G (p0p0in2range0counter))));
+  }
+}

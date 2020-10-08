@@ -1,0 +1,46 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Radarboard"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0eq0counter0f1dinc0f1denemycount1b1b;
+    p0p0eq0xcoord0f1ddec0f1dsizex1b1b;
+    p0p0eq0xcoord0f1dcartesianx0ramcosineout0bufferdradius1b;
+    p0p0eq0ycoord0f1dcartesiany0ramsineout0bufferdradius1b;
+    p0p0ismiddel0xcoord0ycoord;
+  }
+
+  OUTPUTS {
+    u0buffercolor0buffercolor;
+    u0buffercolor0f1dgetenemycolor0enemies0counter1b;
+    u0bufferdradius0bufferdradius;
+    u0bufferdradius0f1dgetenemyradius0enemies0counter1b;
+    u0color0color;
+    u0color0tmpcolor;
+    u0color0f1dwhitecolor1b;
+    u0counter0counter;
+    u0counter0f1dincmod0counter0f1dinc0f1dinc0f1denemycount1b1b1b1b;
+    u0outx0outx;
+    u0outx0xcoord;
+    u0outy0outy;
+    u0outy0ycoord;
+    u0ramreqcosine0ramreqcosine;
+    u0ramreqcosine0f1dsub0f1dgetenemyangle0enemies0counter1b0rotation1b;
+    u0ramreqsine0ramreqsine;
+    u0ramreqsine0f1dsub0f1dgetenemyangle0enemies0counter1b0rotation1b;
+    u0tmpcolor0buffercolor;
+    u0tmpcolor0tmpcolor;
+    u0tmpcolor0f1dblackcolor1b;
+    u0xcoord0xcoord;
+    u0xcoord0f1dinccoord0xcoord1b;
+    u0ycoord0ycoord;
+    u0ycoord0f1dinccoord0ycoord1b;
+  }
+
+  GUARANTEE {
+    (G (((((((((((! (((u0buffercolor0buffercolor) && (! (u0buffercolor0f1dgetenemycolor0enemies0counter1b))) <-> ((u0buffercolor0f1dgetenemycolor0enemies0counter1b) && (! (u0buffercolor0buffercolor))))) && (! (((u0bufferdradius0bufferdradius) && (! (u0bufferdradius0f1dgetenemyradius0enemies0counter1b))) <-> ((u0bufferdradius0f1dgetenemyradius0enemies0counter1b) && (! (u0bufferdradius0bufferdradius)))))) && (! (((u0color0tmpcolor) && (! ((u0color0f1dwhitecolor1b) || (u0color0color)))) <-> ((! (((u0color0f1dwhitecolor1b) && (! (u0color0color))) <-> ((u0color0color) && (! (u0color0f1dwhitecolor1b))))) && (! (u0color0tmpcolor)))))) && (! (((u0counter0counter) && (! (u0counter0f1dincmod0counter0f1dinc0f1dinc0f1denemycount1b1b1b1b))) <-> ((u0counter0f1dincmod0counter0f1dinc0f1dinc0f1denemycount1b1b1b1b) && (! (u0counter0counter)))))) && (! (((u0outx0outx) && (! (u0outx0xcoord))) <-> ((u0outx0xcoord) && (! (u0outx0outx)))))) && (! (((u0outy0outy) && (! (u0outy0ycoord))) <-> ((u0outy0ycoord) && (! (u0outy0outy)))))) && (! (((u0ramreqcosine0ramreqcosine) && (! (u0ramreqcosine0f1dsub0f1dgetenemyangle0enemies0counter1b0rotation1b))) <-> ((u0ramreqcosine0f1dsub0f1dgetenemyangle0enemies0counter1b0rotation1b) && (! (u0ramreqcosine0ramreqcosine)))))) && (! (((u0ramreqsine0ramreqsine) && (! (u0ramreqsine0f1dsub0f1dgetenemyangle0enemies0counter1b0rotation1b))) <-> ((u0ramreqsine0f1dsub0f1dgetenemyangle0enemies0counter1b0rotation1b) && (! (u0ramreqsine0ramreqsine)))))) && (! (((u0tmpcolor0tmpcolor) && (! ((u0tmpcolor0f1dblackcolor1b) || (u0tmpcolor0buffercolor)))) <-> ((! (((u0tmpcolor0f1dblackcolor1b) && (! (u0tmpcolor0buffercolor))) <-> ((u0tmpcolor0buffercolor) && (! (u0tmpcolor0f1dblackcolor1b))))) && (! (u0tmpcolor0tmpcolor)))))) && (! (((u0xcoord0xcoord) && (! (u0xcoord0f1dinccoord0xcoord1b))) <-> ((u0xcoord0f1dinccoord0xcoord1b) && (! (u0xcoord0xcoord)))))) && (! (((u0ycoord0ycoord) && (! (u0ycoord0f1dinccoord0ycoord1b))) <-> ((u0ycoord0f1dinccoord0ycoord1b) && (! (u0ycoord0ycoord))))))) && (((((((((((((G (u0counter0f1dincmod0counter0f1dinc0f1dinc0f1denemycount1b1b1b1b)) && (G ((p0p0eq0counter0f1dinc0f1denemycount1b1b) <-> (u0xcoord0f1dinccoord0xcoord1b)))) && (G (((p0p0eq0counter0f1dinc0f1denemycount1b1b) && (p0p0eq0xcoord0f1ddec0f1dsizex1b1b)) <-> (u0ycoord0f1dinccoord0ycoord1b)))) && (G (u0bufferdradius0f1dgetenemyradius0enemies0counter1b))) && (G (u0buffercolor0f1dgetenemycolor0enemies0counter1b))) && (G (u0ramreqsine0f1dsub0f1dgetenemyangle0enemies0counter1b0rotation1b))) && (G (u0ramreqcosine0f1dsub0f1dgetenemyangle0enemies0counter1b0rotation1b))) && (G ((! (p0p0eq0counter0f1dinc0f1denemycount1b1b)) -> (((p0p0eq0xcoord0f1dcartesianx0ramcosineout0bufferdradius1b) && (p0p0eq0ycoord0f1dcartesiany0ramsineout0bufferdradius1b)) <-> (u0tmpcolor0buffercolor))))) && (G ((p0p0eq0counter0f1dinc0f1denemycount1b1b) <-> (u0outx0xcoord)))) && (G ((p0p0eq0counter0f1dinc0f1denemycount1b1b) <-> (u0outy0ycoord)))) && (G ((p0p0eq0counter0f1dinc0f1denemycount1b1b) <-> (u0tmpcolor0f1dblackcolor1b)))) && (G (((p0p0eq0counter0f1dinc0f1denemycount1b1b) && (p0p0ismiddel0xcoord0ycoord)) <-> (u0color0f1dwhitecolor1b)))) && (G (((p0p0eq0counter0f1dinc0f1denemycount1b1b) && (! (p0p0ismiddel0xcoord0ycoord))) <-> (u0color0tmpcolor))));
+  }
+}

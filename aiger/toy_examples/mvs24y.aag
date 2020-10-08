@@ -1,0 +1,400 @@
+aag 257 46 25 1 186
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+80
+82
+84
+86
+88
+90
+92
+94 1
+96 378
+98 384
+100 390
+102 396
+104 402
+106 408
+108 414
+110 420
+112 426
+114 432
+116 438
+118 444
+120 450
+122 456
+124 462
+126 468
+128 474
+130 480
+132 486
+134 492
+136 498
+138 505
+140 511
+142 514
+236
+144 142 94
+146 138 94
+148 140 94
+150 148 146
+152 136 94
+154 132 94
+156 134 94
+158 156 154
+160 158 152
+162 160 150
+164 96 94
+166 98 94
+168 166 164
+170 100 94
+172 170 168
+174 102 94
+176 174 172
+178 104 94
+180 178 176
+182 106 94
+184 182 180
+186 108 94
+188 186 184
+190 110 94
+192 190 188
+194 112 94
+196 194 192
+198 114 94
+200 198 196
+202 116 94
+204 202 200
+206 118 94
+208 206 204
+210 120 94
+212 210 208
+214 122 94
+216 214 212
+218 124 94
+220 218 216
+222 126 94
+224 222 220
+226 128 94
+228 130 94
+230 228 226
+232 230 224
+234 232 162
+236 234 144
+238 4 3
+240 5 2
+242 241 239
+244 242 6
+246 243 7
+248 247 245
+250 248 8
+252 249 9
+254 253 251
+256 254 10
+258 255 11
+260 259 257
+262 260 12
+264 261 13
+266 265 263
+268 266 14
+270 267 15
+272 271 269
+274 272 16
+276 273 17
+278 277 275
+280 278 18
+282 279 19
+284 283 281
+286 284 20
+288 285 21
+290 289 287
+292 290 22
+294 291 23
+296 295 293
+298 296 24
+300 297 25
+302 301 299
+304 302 26
+306 303 27
+308 307 305
+310 308 28
+312 309 29
+314 313 311
+316 314 30
+318 315 31
+320 319 317
+322 320 32
+324 321 33
+326 325 323
+328 326 34
+330 327 35
+332 331 329
+334 332 36
+336 333 37
+338 337 335
+340 338 38
+342 339 39
+344 343 341
+346 344 40
+348 345 41
+350 349 347
+352 350 42
+354 351 43
+356 355 353
+358 356 44
+360 357 45
+362 361 359
+364 362 46
+366 363 47
+368 367 365
+370 369 144
+372 371 149
+374 373 165
+376 372 49
+378 377 375
+380 373 167
+382 372 51
+384 383 381
+386 373 171
+388 372 53
+390 389 387
+392 373 175
+394 372 55
+396 395 393
+398 373 179
+400 372 57
+402 401 399
+404 373 183
+406 372 59
+408 407 405
+410 373 187
+412 372 61
+414 413 411
+416 373 191
+418 372 63
+420 419 417
+422 373 195
+424 372 65
+426 425 423
+428 373 199
+430 372 67
+432 431 429
+434 373 203
+436 372 69
+438 437 435
+440 373 207
+442 372 71
+444 443 441
+446 373 211
+448 372 73
+450 449 447
+452 373 215
+454 372 75
+456 455 453
+458 373 219
+460 372 77
+462 461 459
+464 373 223
+466 372 79
+468 467 465
+470 373 227
+472 372 81
+474 473 471
+476 373 229
+478 372 83
+480 479 477
+482 373 155
+484 372 85
+486 485 483
+488 373 157
+490 372 87
+492 491 489
+494 373 153
+496 372 89
+498 497 495
+500 373 146
+502 372 90
+504 503 501
+506 370 148
+508 372 92
+510 509 507
+512 149 145
+514 513 371
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 controllable_c<2>
+i3 controllable_c<3>
+i4 controllable_c<4>
+i5 controllable_c<5>
+i6 controllable_c<6>
+i7 controllable_c<7>
+i8 controllable_c<8>
+i9 controllable_c<9>
+i10 controllable_c<10>
+i11 controllable_c<11>
+i12 controllable_c<12>
+i13 controllable_c<13>
+i14 controllable_c<14>
+i15 controllable_c<15>
+i16 controllable_c<16>
+i17 controllable_c<17>
+i18 controllable_c<18>
+i19 controllable_c<19>
+i20 controllable_c<20>
+i21 controllable_c<21>
+i22 controllable_c<22>
+i23 a<0>
+i24 a<1>
+i25 a<2>
+i26 a<3>
+i27 a<4>
+i28 a<5>
+i29 a<6>
+i30 a<7>
+i31 a<8>
+i32 a<9>
+i33 a<10>
+i34 a<11>
+i35 a<12>
+i36 a<13>
+i37 a<14>
+i38 a<15>
+i39 a<16>
+i40 a<17>
+i41 a<18>
+i42 a<19>
+i43 a<20>
+i44 a<21>
+i45 a<22>
+l0 n95
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+l9 counter<8>_out
+l10 counter<9>_out
+l11 counter<10>_out
+l12 counter<11>_out
+l13 counter<12>_out
+l14 counter<13>_out
+l15 counter<14>_out
+l16 counter<15>_out
+l17 counter<16>_out
+l18 counter<17>_out
+l19 counter<18>_out
+l20 counter<19>_out
+l21 counter<20>_out
+l22 counter<21>_out
+l23 counter<22>_out
+l24 counter<23>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:57 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv mvs24.v   ---gives--> mvs24.mv
+> abc -c "read_blif_mv mvs24.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s mvs24y.aig"   ---gives--> mvs24y.aig
+> aigtoaig mvs24y.aig mvs24y.aag   ---gives--> mvs24y.aag (this file)
+Content of mvs24.v:
+// realizable
+module bench(clk, a, controllable_c, err);
+  input clk;
+  input [22:0] a;
+  input [22:0] controllable_c;
+  reg [23:0] counter;
+  output err;
+  wire ctrl_xor;
+  
+  assign err = (counter == 24'b111111111111111111111111) ? 1 : 0;
+  assign ctrl_xor = controllable_c[0] ^
+                    controllable_c[1] ^
+                    controllable_c[2] ^
+                    controllable_c[3] ^
+                    controllable_c[4] ^
+                    controllable_c[5] ^
+                    controllable_c[6] ^
+                    controllable_c[7] ^
+                    controllable_c[8] ^
+                    controllable_c[9] ^
+                    controllable_c[10] ^
+                    controllable_c[11] ^
+                    controllable_c[12] ^
+                    controllable_c[13] ^
+                    controllable_c[14] ^
+                    controllable_c[15] ^
+                    controllable_c[16] ^
+                    controllable_c[17] ^
+                    controllable_c[18] ^
+                    controllable_c[19] ^
+                    controllable_c[20] ^
+                    controllable_c[21] ^
+                    controllable_c[22];
+
+  initial
+  begin
+    counter = 0;
+  end
+
+  always @ (posedge clk)
+  begin
+    if(counter[23] & ctrl_xor)
+       counter[23] = 0;
+    else if(counter[22])
+      begin
+       counter[23] = 1;
+       counter[22] = 0;
+      end
+    else
+       counter[22:0] = a;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq], 3/4 [SYNTCOMP2015-SyntSeq], 3/3 [SYNTCOMP2015-SyntPar], 7/7 [SYNTCOMP2015-RealSeq], 4/4 [SYNTCOMP2015-RealPar]
+SOLVED_IN : 0.024001 [SYNTCOMP2014-RealSeq], 0.0053 [SYNTCOMP2015-RealSeq], 0.025234 [SYNTCOMP2015-RealPar]
+REF_SIZE : 209
+STATUS : realizable
+#.

@@ -1,0 +1,35 @@
+INFO {
+  TITLE:       "Converted TSL Specification: OneCounterGuiA9"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0button2pressed0down;
+    p0p0button2pressed0up;
+    p0p0in2range0counter;
+    p0p0in2range0f1ddec0counter1b;
+    p0p0in2range0f1ddec0f1ddec0counter1b1b;
+    p0p0in2range0f1ddec0f1dinc0counter1b1b;
+    p0p0in2range0f1dinc0counter1b;
+    p0p0in2range0f1dinc0f1ddec0counter1b1b;
+    p0p0in2range0f1dinc0f1dinc0counter1b1b;
+  }
+
+  OUTPUTS {
+    u0button2down0button2down;
+    u0button2down0f1ddisable1b;
+    u0button2down0f1denable1b;
+    u0button2up0button2up;
+    u0button2up0f1ddisable1b;
+    u0button2up0f1denable1b;
+    u0counter0counter;
+    u0counter0f1ddec0counter1b;
+    u0counter0f1dinc0counter1b;
+  }
+
+  GUARANTEE {
+    (G (((! (((u0button2down0f1ddisable1b) && (! ((u0button2down0f1denable1b) || (u0button2down0button2down)))) <-> ((! (((u0button2down0f1denable1b) && (! (u0button2down0button2down))) <-> ((u0button2down0button2down) && (! (u0button2down0f1denable1b))))) && (! (u0button2down0f1ddisable1b))))) && (! (((u0button2up0f1ddisable1b) && (! ((u0button2up0f1denable1b) || (u0button2up0button2up)))) <-> ((! (((u0button2up0f1denable1b) && (! (u0button2up0button2up))) <-> ((u0button2up0button2up) && (! (u0button2up0f1denable1b))))) && (! (u0button2up0f1ddisable1b)))))) && (! (((u0counter0f1ddec0counter1b) && (! ((u0counter0f1dinc0counter1b) || (u0counter0counter)))) <-> ((! (((u0counter0f1dinc0counter1b) && (! (u0counter0counter))) <-> ((u0counter0counter) && (! (u0counter0f1dinc0counter1b))))) && (! (u0counter0f1ddec0counter1b))))))) && ((((((((((((((((p0p0in2range0counter) && (! (p0p0button2pressed0up))) && (! (p0p0button2pressed0down))) && (G (! ((p0p0button2pressed0up) && (p0p0button2pressed0down))))) && (G ((u0button2up0f1ddisable1b) -> (X ((u0button2up0f1denable1b) R (! (p0p0button2pressed0up))))))) && (G ((u0button2down0f1ddisable1b) -> (X ((u0button2down0f1denable1b) R (! (p0p0button2pressed0down))))))) && (G (((p0p0in2range0counter) && (u0counter0counter)) -> (X (p0p0in2range0counter))))) && (G (((p0p0in2range0f1dinc0counter1b) && (u0counter0counter)) -> (X (p0p0in2range0f1dinc0counter1b))))) && (G (((p0p0in2range0f1ddec0counter1b) && (u0counter0counter)) -> (X (p0p0in2range0f1ddec0counter1b))))) && (G (((p0p0in2range0f1dinc0counter1b) && (u0counter0f1dinc0counter1b)) -> (X (p0p0in2range0counter))))) && (G (((p0p0in2range0f1ddec0counter1b) && (u0counter0f1ddec0counter1b)) -> (X (p0p0in2range0counter))))) && (G (((p0p0in2range0f1dinc0f1dinc0counter1b1b) && (u0counter0f1dinc0counter1b)) -> (X (p0p0in2range0f1dinc0counter1b))))) && (G (((p0p0in2range0f1ddec0f1dinc0counter1b1b) && (u0counter0f1ddec0counter1b)) -> (X (p0p0in2range0f1dinc0counter1b))))) && (G (((p0p0in2range0f1dinc0f1ddec0counter1b1b) && (u0counter0f1dinc0counter1b)) -> (X (p0p0in2range0f1ddec0counter1b))))) && (G (((p0p0in2range0f1ddec0f1ddec0counter1b1b) && (u0counter0f1ddec0counter1b)) -> (X (p0p0in2range0f1ddec0counter1b))))) -> (((((G ((((p0p0in2range0f1dinc0f1dinc0counter1b1b) && (p0p0in2range0f1ddec0f1dinc0counter1b1b)) && (p0p0in2range0f1dinc0counter1b)) -> (u0button2up0f1denable1b))) && (G ((((p0p0in2range0f1dinc0f1ddec0counter1b1b) && (p0p0in2range0f1ddec0f1ddec0counter1b1b)) && (p0p0in2range0f1ddec0counter1b)) -> (u0button2down0f1denable1b)))) && (G ((p0p0button2pressed0up) <-> (u0counter0f1dinc0counter1b)))) && (G ((p0p0button2pressed0down) <-> (u0counter0f1ddec0counter1b)))) && (G (p0p0in2range0counter))));
+  }
+}

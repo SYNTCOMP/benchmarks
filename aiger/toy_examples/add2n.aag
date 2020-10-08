@@ -1,0 +1,80 @@
+aag 31 6 2 1 23
+2
+4
+6
+8
+10
+12
+14 1
+16 63
+18
+18 16 14
+20 10 7
+22 11 6
+24 23 21
+26 10 6
+28 25 3
+30 24 2
+32 31 29
+34 13 9
+36 34 26
+38 12 9
+40 38 27
+42 41 37
+44 13 8
+46 44 27
+48 47 42
+50 12 8
+52 50 26
+54 53 48
+56 55 5
+58 54 4
+60 59 57
+62 60 32
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 a<0>
+i3 a<1>
+i4 b<0>
+i5 b<1>
+l0 n15
+l1 err_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:59 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv add2.v   ---gives--> add2.mv
+> abc -c "read_blif_mv add2.mv; write_aiger -s add2n.aig"   ---gives--> add2n.aig
+> aigtoaig add2n.aig add2n.aag   ---gives--> add2n.aag (this file)
+Content of add2.v:
+// realizable
+module bench(clk, a, b, controllable_c, err);
+  input clk;
+  input [1:0] a;
+  input [1:0] b;
+  input [1:0] controllable_c;
+  output err;
+  reg err;
+
+  initial
+  begin
+    err = 1'b0;
+  end
+
+  always @ (posedge clk)
+  begin
+    if(controllable_c == a + b)
+         err = 1'b0;
+      else
+         err = 1'b1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.004 [SYNTCOMP2014-RealSeq]
+#.

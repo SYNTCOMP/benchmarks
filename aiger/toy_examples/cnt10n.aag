@@ -1,0 +1,220 @@
+aag 163 2 11 1 150
+2
+4
+6 1
+8 273
+10 279
+12 285
+14 291
+16 297
+18 303
+20 309
+22 315
+24 321
+26 327
+104
+28 9 6
+30 8 6
+32 29 6
+34 11 6
+36 10 6
+38 35 6
+40 13 6
+42 12 6
+44 41 6
+46 15 6
+48 14 6
+50 47 6
+52 17 6
+54 16 6
+56 53 6
+58 19 6
+60 18 6
+62 59 6
+64 21 6
+66 20 6
+68 65 6
+70 23 6
+72 22 6
+74 71 6
+76 25 6
+78 24 6
+80 77 6
+82 27 6
+84 26 6
+86 83 6
+88 38 32
+90 88 44
+92 90 50
+94 92 56
+96 94 62
+98 96 68
+100 98 74
+102 100 80
+104 102 86
+106 102 85
+108 106 4
+110 108 3
+112 111 3
+114 109 3
+116 115 112
+118 109 33
+120 30 2
+122 118 3
+124 123 121
+126 39 30
+128 36 31
+130 129 127
+132 131 109
+134 36 2
+136 132 3
+138 137 135
+140 36 30
+142 140 45
+144 141 42
+146 145 143
+148 147 109
+150 42 2
+152 148 3
+154 153 151
+156 140 42
+158 156 51
+160 157 48
+162 161 159
+164 163 109
+166 48 2
+168 164 3
+170 169 167
+172 156 48
+174 172 57
+176 173 54
+178 177 175
+180 179 109
+182 54 2
+184 180 3
+186 185 183
+188 172 54
+190 188 63
+192 189 60
+194 193 191
+196 195 109
+198 60 2
+200 196 3
+202 201 199
+204 188 60
+206 204 69
+208 205 66
+210 209 207
+212 211 109
+214 66 2
+216 212 3
+218 217 215
+220 204 66
+222 220 75
+224 221 72
+226 225 223
+228 227 109
+230 72 2
+232 228 3
+234 233 231
+236 220 72
+238 236 81
+240 237 78
+242 241 239
+244 243 109
+246 78 2
+248 244 3
+250 249 247
+252 236 78
+254 252 87
+256 253 84
+258 257 255
+260 259 109
+262 84 2
+264 260 3
+266 265 263
+268 125 117
+270 116 30
+272 271 269
+274 139 117
+276 116 36
+278 277 275
+280 155 117
+282 116 42
+284 283 281
+286 171 117
+288 116 48
+290 289 287
+292 187 117
+294 116 54
+296 295 293
+298 203 117
+300 116 60
+302 301 299
+304 219 117
+306 116 66
+308 307 305
+310 235 117
+312 116 72
+314 313 311
+316 251 117
+318 116 78
+320 319 317
+322 267 117
+324 116 84
+326 325 323
+i0 stay
+i1 controllable_reset
+l0 n7
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+l9 counter<8>_out
+l10 counter<9>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:35 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv cnt10.v   ---gives--> cnt10.mv
+> abc -c "read_blif_mv cnt10.mv; write_aiger -s cnt10n.aig"   ---gives--> cnt10n.aig
+> aigtoaig cnt10n.aig cnt10n.aag   ---gives--> cnt10n.aag (this file)
+Content of cnt10.v:
+// realizable
+module bench(clk, stay, controllable_reset, err);
+  input clk;
+  input stay;
+  input controllable_reset;
+  output err;
+  reg [9:0] counter;
+
+  assign err = (counter == 10'b1111111111) ? 1 : 0;
+  
+  initial
+  begin
+    counter = 10'b0;
+  end
+  always @ (posedge clk)
+  begin
+    if(stay)
+      counter = counter;
+    else if(counter == 10'b0111111111 && controllable_reset)
+      counter = 0;
+    else
+      counter = counter + 1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq], 4/4 [SYNTCOMP2015-SyntSeq], 3/3 [SYNTCOMP2015-SyntPar], 7/7 [SYNTCOMP2015-RealSeq], 4/4 [SYNTCOMP2015-RealPar], 7/7 [SYNTCOMP2016-SyntSeq], 4/4 [SYNTCOMP2016-SyntPar], 10/11 [SYNTCOMP2016-RealSeq], 6/6 [SYNTCOMP2016-RealPar], 9/10 [SYNTCOMP2017-RealSeq], 6/6 [SYNTCOMP2017-RealPar], 6/6 [SYNTCOMP2017-SyntSeq], 4/4 [SYNTCOMP2017-SyntPar]
+SOLVED_IN : 0.016001 [SYNTCOMP2014-RealSeq], 0.006393 [SYNTCOMP2015-RealSeq], 0.013139 [SYNTCOMP2015-RealPar], 0.004 [SYNTCOMP2016-RealSeq], 0.010346 [SYNTCOMP2016-RealPar], 0.004 [SYNTCOMP2017-RealSeq], 0.010451 [SYNTCOMP2017-RealPar]
+REF_SIZE : 151
+STATUS : realizable
+#.

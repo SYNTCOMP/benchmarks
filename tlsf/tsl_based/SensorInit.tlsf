@@ -1,0 +1,36 @@
+INFO {
+  TITLE:       "Converted TSL Specification: SensorInit"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0on0start2init;
+    p0p0spi2finished0spi2response;
+  }
+
+  OUTPUTS {
+    u0finished0finished;
+    u0finished0f1dbot1b;
+    u0finished0f1dtop1b;
+    u0reg2manager2cmd0reg2manager2cmd;
+    u0reg2manager2cmd0f1dno2command1b;
+    u0sensor2type0sensor2type;
+    u0sensor2type0f1dacc2gyr1b;
+    u0sensor2type0f1dmag1b;
+    u0spi2control0spi2control;
+    u0spi2control0f1dwrite2cmd2none1b;
+    u0spi2control0f1dwrite2cmd0f1dreg241b1b;
+    u0spi2control0f1dwrite2cmd0f1dreg251b1b;
+    u0spi2control0f1dwrite2cmd0f1dreg31b1b;
+    u0spi2control0f1dwrite2cmd0f1dreg41b1b;
+    u0spi2control0f1dwrite2cmd0f1dreg51b1b;
+    u0spi2control0f1dwrite2cmd0f1dreg61b1b;
+    u0spi2control0f1dwrite2cmd0f1dreg71b1b;
+  }
+
+  GUARANTEE {
+    (G ((((! (((u0finished0f1dbot1b) && (! ((u0finished0f1dtop1b) || (u0finished0finished)))) <-> ((! (((u0finished0f1dtop1b) && (! (u0finished0finished))) <-> ((u0finished0finished) && (! (u0finished0f1dtop1b))))) && (! (u0finished0f1dbot1b))))) && (! (((u0reg2manager2cmd0reg2manager2cmd) && (! (u0reg2manager2cmd0f1dno2command1b))) <-> ((u0reg2manager2cmd0f1dno2command1b) && (! (u0reg2manager2cmd0reg2manager2cmd)))))) && (! (((u0sensor2type0f1dacc2gyr1b) && (! ((u0sensor2type0f1dmag1b) || (u0sensor2type0sensor2type)))) <-> ((! (((u0sensor2type0f1dmag1b) && (! (u0sensor2type0sensor2type))) <-> ((u0sensor2type0sensor2type) && (! (u0sensor2type0f1dmag1b))))) && (! (u0sensor2type0f1dacc2gyr1b)))))) && (! (((! (((! (((u0spi2control0f1dwrite2cmd0f1dreg251b1b) && (! (u0spi2control0f1dwrite2cmd0f1dreg61b1b))) <-> ((u0spi2control0f1dwrite2cmd0f1dreg61b1b) && (! (u0spi2control0f1dwrite2cmd0f1dreg251b1b))))) && (! ((u0spi2control0f1dwrite2cmd2none1b) || (u0spi2control0f1dwrite2cmd0f1dreg41b1b)))) <-> ((! (((u0spi2control0f1dwrite2cmd2none1b) && (! (u0spi2control0f1dwrite2cmd0f1dreg41b1b))) <-> ((u0spi2control0f1dwrite2cmd0f1dreg41b1b) && (! (u0spi2control0f1dwrite2cmd2none1b))))) && (! ((u0spi2control0f1dwrite2cmd0f1dreg251b1b) || (u0spi2control0f1dwrite2cmd0f1dreg61b1b)))))) && (! (((((u0spi2control0f1dwrite2cmd0f1dreg71b1b) || (u0spi2control0f1dwrite2cmd0f1dreg51b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg31b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg241b1b)) || (u0spi2control0spi2control)))) <-> ((! (((! (((u0spi2control0f1dwrite2cmd0f1dreg241b1b) && (! (u0spi2control0f1dwrite2cmd0f1dreg51b1b))) <-> ((u0spi2control0f1dwrite2cmd0f1dreg51b1b) && (! (u0spi2control0f1dwrite2cmd0f1dreg241b1b))))) && (! (((u0spi2control0spi2control) || (u0spi2control0f1dwrite2cmd0f1dreg31b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg71b1b)))) <-> ((! (((u0spi2control0f1dwrite2cmd0f1dreg31b1b) && (! ((u0spi2control0f1dwrite2cmd0f1dreg71b1b) || (u0spi2control0spi2control)))) <-> ((! (((u0spi2control0f1dwrite2cmd0f1dreg71b1b) && (! (u0spi2control0spi2control))) <-> ((u0spi2control0spi2control) && (! (u0spi2control0f1dwrite2cmd0f1dreg71b1b))))) && (! (u0spi2control0f1dwrite2cmd0f1dreg31b1b))))) && (! ((u0spi2control0f1dwrite2cmd0f1dreg241b1b) || (u0spi2control0f1dwrite2cmd0f1dreg51b1b)))))) && (! ((((u0spi2control0f1dwrite2cmd0f1dreg61b1b) || (u0spi2control0f1dwrite2cmd0f1dreg41b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg251b1b)) || (u0spi2control0f1dwrite2cmd2none1b)))))))) && ((((((((((((((((p0p0on0start2init) R ((p0p0on0start2init) -> (u0spi2control0f1dwrite2cmd0f1dreg241b1b))) && ((u0spi2control0f1dwrite2cmd2none1b) W (p0p0on0start2init))) && ((u0spi2control0f1dwrite2cmd0f1dreg71b1b) R (u0finished0f1dbot1b))) && (G ((((((((u0spi2control0f1dwrite2cmd2none1b) || (u0spi2control0f1dwrite2cmd0f1dreg241b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg251b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg31b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg41b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg51b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg61b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg71b1b)))) && (G ((u0spi2control0f1dwrite2cmd0f1dreg241b1b) -> (X ((p0p0spi2finished0spi2response) R (((p0p0spi2finished0spi2response) -> (u0spi2control0f1dwrite2cmd0f1dreg251b1b)) && ((! (p0p0spi2finished0spi2response)) -> (u0spi2control0f1dwrite2cmd2none1b)))))))) && (G ((u0spi2control0f1dwrite2cmd0f1dreg251b1b) -> (X ((p0p0spi2finished0spi2response) R (((p0p0spi2finished0spi2response) -> (u0spi2control0f1dwrite2cmd0f1dreg31b1b)) && ((! (p0p0spi2finished0spi2response)) -> (u0spi2control0f1dwrite2cmd2none1b)))))))) && (G ((u0spi2control0f1dwrite2cmd0f1dreg31b1b) -> (X ((p0p0spi2finished0spi2response) R (((p0p0spi2finished0spi2response) -> (u0spi2control0f1dwrite2cmd0f1dreg41b1b)) && ((! (p0p0spi2finished0spi2response)) -> (u0spi2control0f1dwrite2cmd2none1b)))))))) && (G ((u0spi2control0f1dwrite2cmd0f1dreg41b1b) -> (X ((p0p0spi2finished0spi2response) R (((p0p0spi2finished0spi2response) -> (u0spi2control0f1dwrite2cmd0f1dreg51b1b)) && ((! (p0p0spi2finished0spi2response)) -> (u0spi2control0f1dwrite2cmd2none1b)))))))) && (G ((u0spi2control0f1dwrite2cmd0f1dreg51b1b) -> (X ((p0p0spi2finished0spi2response) R (((p0p0spi2finished0spi2response) -> (u0spi2control0f1dwrite2cmd0f1dreg61b1b)) && ((! (p0p0spi2finished0spi2response)) -> (u0spi2control0f1dwrite2cmd2none1b)))))))) && (G ((u0spi2control0f1dwrite2cmd0f1dreg61b1b) -> (X ((p0p0spi2finished0spi2response) R (((p0p0spi2finished0spi2response) -> (u0spi2control0f1dwrite2cmd0f1dreg71b1b)) && ((! (p0p0spi2finished0spi2response)) -> (u0spi2control0f1dwrite2cmd2none1b)))))))) && (G ((u0spi2control0f1dwrite2cmd0f1dreg71b1b) -> (X ((p0p0spi2finished0spi2response) R ((((p0p0spi2finished0spi2response) -> (((p0p0on0start2init) R ((p0p0on0start2init) -> (u0spi2control0f1dwrite2cmd0f1dreg241b1b))) && ((u0spi2control0f1dwrite2cmd2none1b) W (p0p0on0start2init)))) && ((! (p0p0spi2finished0spi2response)) -> (u0spi2control0f1dwrite2cmd2none1b))) && ((p0p0spi2finished0spi2response) <-> (u0finished0f1dtop1b)))))))) && (G ((u0finished0f1dtop1b) -> (X ((u0spi2control0f1dwrite2cmd0f1dreg71b1b) R (u0finished0f1dbot1b)))))) && (G (u0reg2manager2cmd0f1dno2command1b))) && (G (((((u0spi2control0f1dwrite2cmd0f1dreg241b1b) || (u0spi2control0f1dwrite2cmd0f1dreg251b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg31b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg41b1b)) -> (X ((p0p0spi2finished0spi2response) R (u0sensor2type0f1dacc2gyr1b)))))) && (G ((((u0spi2control0f1dwrite2cmd0f1dreg51b1b) || (u0spi2control0f1dwrite2cmd0f1dreg61b1b)) || (u0spi2control0f1dwrite2cmd0f1dreg71b1b)) -> (X ((p0p0spi2finished0spi2response) R (u0sensor2type0f1dmag1b))))));
+  }
+}

@@ -1,0 +1,369 @@
+aag 235 42 23 1 170
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+80
+82
+84
+86 1
+88 346
+90 352
+92 358
+94 364
+96 370
+98 376
+100 382
+102 388
+104 394
+106 400
+108 406
+110 412
+112 418
+114 424
+116 430
+118 436
+120 442
+122 448
+124 454
+126 461
+128 467
+130 470
+216
+132 130 86
+134 126 86
+136 128 86
+138 136 134
+140 124 86
+142 120 86
+144 122 86
+146 144 142
+148 146 140
+150 148 138
+152 88 86
+154 90 86
+156 154 152
+158 92 86
+160 158 156
+162 94 86
+164 162 160
+166 96 86
+168 166 164
+170 98 86
+172 170 168
+174 100 86
+176 174 172
+178 102 86
+180 178 176
+182 104 86
+184 182 180
+186 106 86
+188 186 184
+190 108 86
+192 190 188
+194 110 86
+196 194 192
+198 112 86
+200 198 196
+202 114 86
+204 202 200
+206 116 86
+208 118 86
+210 208 206
+212 210 204
+214 212 150
+216 214 132
+218 4 3
+220 5 2
+222 221 219
+224 222 6
+226 223 7
+228 227 225
+230 228 8
+232 229 9
+234 233 231
+236 234 10
+238 235 11
+240 239 237
+242 240 12
+244 241 13
+246 245 243
+248 246 14
+250 247 15
+252 251 249
+254 252 16
+256 253 17
+258 257 255
+260 258 18
+262 259 19
+264 263 261
+266 264 20
+268 265 21
+270 269 267
+272 270 22
+274 271 23
+276 275 273
+278 276 24
+280 277 25
+282 281 279
+284 282 26
+286 283 27
+288 287 285
+290 288 28
+292 289 29
+294 293 291
+296 294 30
+298 295 31
+300 299 297
+302 300 32
+304 301 33
+306 305 303
+308 306 34
+310 307 35
+312 311 309
+314 312 36
+316 313 37
+318 317 315
+320 318 38
+322 319 39
+324 323 321
+326 324 40
+328 325 41
+330 329 327
+332 330 42
+334 331 43
+336 335 333
+338 337 132
+340 339 137
+342 341 153
+344 340 45
+346 345 343
+348 341 155
+350 340 47
+352 351 349
+354 341 159
+356 340 49
+358 357 355
+360 341 163
+362 340 51
+364 363 361
+366 341 167
+368 340 53
+370 369 367
+372 341 171
+374 340 55
+376 375 373
+378 341 175
+380 340 57
+382 381 379
+384 341 179
+386 340 59
+388 387 385
+390 341 183
+392 340 61
+394 393 391
+396 341 187
+398 340 63
+400 399 397
+402 341 191
+404 340 65
+406 405 403
+408 341 195
+410 340 67
+412 411 409
+414 341 199
+416 340 69
+418 417 415
+420 341 203
+422 340 71
+424 423 421
+426 341 207
+428 340 73
+430 429 427
+432 341 209
+434 340 75
+436 435 433
+438 341 143
+440 340 77
+442 441 439
+444 341 145
+446 340 79
+448 447 445
+450 341 141
+452 340 81
+454 453 451
+456 341 134
+458 340 82
+460 459 457
+462 338 136
+464 340 84
+466 465 463
+468 137 133
+470 469 339
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 controllable_c<2>
+i3 controllable_c<3>
+i4 controllable_c<4>
+i5 controllable_c<5>
+i6 controllable_c<6>
+i7 controllable_c<7>
+i8 controllable_c<8>
+i9 controllable_c<9>
+i10 controllable_c<10>
+i11 controllable_c<11>
+i12 controllable_c<12>
+i13 controllable_c<13>
+i14 controllable_c<14>
+i15 controllable_c<15>
+i16 controllable_c<16>
+i17 controllable_c<17>
+i18 controllable_c<18>
+i19 controllable_c<19>
+i20 controllable_c<20>
+i21 a<0>
+i22 a<1>
+i23 a<2>
+i24 a<3>
+i25 a<4>
+i26 a<5>
+i27 a<6>
+i28 a<7>
+i29 a<8>
+i30 a<9>
+i31 a<10>
+i32 a<11>
+i33 a<12>
+i34 a<13>
+i35 a<14>
+i36 a<15>
+i37 a<16>
+i38 a<17>
+i39 a<18>
+i40 a<19>
+i41 a<20>
+l0 n87
+l1 counter<0>_out
+l2 counter<1>_out
+l3 counter<2>_out
+l4 counter<3>_out
+l5 counter<4>_out
+l6 counter<5>_out
+l7 counter<6>_out
+l8 counter<7>_out
+l9 counter<8>_out
+l10 counter<9>_out
+l11 counter<10>_out
+l12 counter<11>_out
+l13 counter<12>_out
+l14 counter<13>_out
+l15 counter<14>_out
+l16 counter<15>_out
+l17 counter<16>_out
+l18 counter<17>_out
+l19 counter<18>_out
+l20 counter<19>_out
+l21 counter<20>_out
+l22 counter<21>_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:40 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv mvs22.v   ---gives--> mvs22.mv
+> abc -c "read_blif_mv mvs22.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s mvs22y.aig"   ---gives--> mvs22y.aig
+> aigtoaig mvs22y.aig mvs22y.aag   ---gives--> mvs22y.aag (this file)
+Content of mvs22.v:
+// realizable
+module bench(clk, a, controllable_c, err);
+  input clk;
+  input [20:0] a;
+  input [20:0] controllable_c;
+  reg [21:0] counter;
+  output err;
+  wire ctrl_xor;
+  
+  assign err = (counter == 22'b1111111111111111111111) ? 1 : 0;
+  assign ctrl_xor = controllable_c[0] ^
+                    controllable_c[1] ^
+                    controllable_c[2] ^
+                    controllable_c[3] ^
+                    controllable_c[4] ^
+                    controllable_c[5] ^
+                    controllable_c[6] ^
+                    controllable_c[7] ^
+                    controllable_c[8] ^
+                    controllable_c[9] ^
+                    controllable_c[10] ^
+                    controllable_c[11] ^
+                    controllable_c[12] ^
+                    controllable_c[13] ^
+                    controllable_c[14] ^
+                    controllable_c[15] ^
+                    controllable_c[16] ^
+                    controllable_c[17] ^
+                    controllable_c[18] ^
+                    controllable_c[19] ^
+                    controllable_c[20];
+
+  initial
+  begin
+    counter = 0;
+  end
+
+  always @ (posedge clk)
+  begin
+    if(counter[21] & ctrl_xor)
+       counter[21] = 0;
+    else if(counter[20])
+      begin
+       counter[21] = 1;
+       counter[20] = 0;
+      end
+    else
+       counter[20:0] = a;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.028001 [SYNTCOMP2014-RealSeq]
+#.

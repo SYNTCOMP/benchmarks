@@ -1,0 +1,130 @@
+aag 75 12 2 1 61
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26 1
+28 151
+30
+30 28 26
+32 18 11
+34 19 10
+36 35 33
+38 18 10
+40 37 3
+42 36 2
+44 43 41
+46 21 13
+48 46 38
+50 20 13
+52 50 39
+54 53 49
+56 21 12
+58 56 39
+60 59 54
+62 20 12
+64 62 38
+66 65 60
+68 67 5
+70 66 4
+72 71 69
+74 38 20
+76 38 12
+78 77 75
+80 78 63
+82 23 15
+84 82 81
+86 22 15
+88 86 80
+90 89 85
+92 23 14
+94 92 80
+96 95 90
+98 22 14
+100 98 81
+102 101 96
+104 103 7
+106 102 6
+108 107 105
+110 81 22
+112 81 14
+114 113 111
+116 114 99
+118 25 17
+120 118 117
+122 24 17
+124 122 116
+126 125 121
+128 25 16
+130 128 116
+132 131 126
+134 24 16
+136 134 117
+138 137 132
+140 139 9
+142 138 8
+144 143 141
+146 72 44
+148 146 108
+150 148 144
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 controllable_c<2>
+i3 controllable_c<3>
+i4 a<0>
+i5 a<1>
+i6 a<2>
+i7 a<3>
+i8 b<0>
+i9 b<1>
+i10 b<2>
+i11 b<3>
+l0 n27
+l1 err_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:25:10 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv add4.v   ---gives--> add4.mv
+> abc -c "read_blif_mv add4.mv; write_aiger -s add4n.aig"   ---gives--> add4n.aig
+> aigtoaig add4n.aig add4n.aag   ---gives--> add4n.aag (this file)
+Content of add4.v:
+// realizable
+module bench(clk, a, b, controllable_c, err);
+  input clk;
+  input [3:0] a;
+  input [3:0] b;
+  input [3:0] controllable_c;
+  output err;
+  reg err;
+
+  initial
+  begin
+    err = 1'b0;
+  end
+
+  always @ (posedge clk)
+  begin
+    if(controllable_c == a + b)
+         err = 1'b0;
+      else
+         err = 1'b1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.004 [SYNTCOMP2014-RealSeq]
+#.

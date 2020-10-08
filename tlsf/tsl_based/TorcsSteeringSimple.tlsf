@@ -1,0 +1,24 @@
+INFO {
+  TITLE:       "Converted TSL Specification: TorcsSteeringSimple"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0left2of2center0track2pos;
+    p0p0right2of2center0track2pos;
+    p0p0turning2left0angle;
+    p0p0turning2right0angle;
+  }
+
+  OUTPUTS {
+    u0steer0steer;
+    u0steer0f1dsteer2left1b;
+    u0steer0f1dsteer2right1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0steer0f1dsteer2left1b) && (! ((u0steer0f1dsteer2right1b) || (u0steer0steer)))) <-> ((! (((u0steer0f1dsteer2right1b) && (! (u0steer0steer))) <-> ((u0steer0steer) && (! (u0steer0f1dsteer2right1b))))) && (! (u0steer0f1dsteer2left1b)))))) && (((((G ((p0p0right2of2center0track2pos) -> (! (p0p0left2of2center0track2pos)))) && (G ((p0p0left2of2center0track2pos) -> (! (p0p0right2of2center0track2pos))))) && (G ((p0p0turning2left0angle) -> (! (p0p0turning2right0angle))))) && (G ((p0p0turning2right0angle) -> (! (p0p0turning2left0angle))))) -> (((G ((p0p0right2of2center0track2pos) -> (u0steer0f1dsteer2left1b))) && (G ((p0p0left2of2center0track2pos) -> (u0steer0f1dsteer2right1b)))) && (G (((! (p0p0right2of2center0track2pos)) && (! (p0p0left2of2center0track2pos))) -> (((p0p0turning2left0angle) <-> (u0steer0f1dsteer2left1b)) && ((p0p0turning2right0angle) <-> (u0steer0f1dsteer2right1b)))))));
+  }
+}

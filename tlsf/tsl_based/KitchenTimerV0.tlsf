@@ -1,0 +1,21 @@
+INFO {
+  TITLE:       "Converted TSL Specification: KitchenTimerV0"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0btn2min;
+    p0b0btn2sec;
+  }
+
+  OUTPUTS {
+    u0time0time;
+    u0time0f1dzero1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0time0time) && (! (u0time0f1dzero1b))) <-> ((u0time0f1dzero1b) && (! (u0time0time)))))) && (G (((p0b0btn2min) && (p0b0btn2sec)) <-> (u0time0f1dzero1b)));
+  }
+}

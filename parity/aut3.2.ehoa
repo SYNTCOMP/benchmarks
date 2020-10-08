@@ -1,0 +1,15 @@
+HOA: v1
+name: "GFa & GFb"
+States: 1
+Start: 0
+acc-name: generalized-Buchi 2
+Acceptance: 2 (Inf(0) & Inf(1))
+AP: 2 "a" "b"
+controllable-AP: 1
+--BODY--
+State: 0
+[!0 & !1] 0
+[0 & !1]  0 {0}
+[!0 & 1]  0 {1}
+[0 & 1]   0 {0 1}
+--END--

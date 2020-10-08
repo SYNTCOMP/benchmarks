@@ -1,0 +1,1802 @@
+aag 847 27 43 1 777
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56 1
+58 1029
+60 22
+62 50
+64 1297
+66 6
+68 26
+70 8
+72 52
+74 1315
+76 10
+78 48
+80 30
+82 12
+84 46
+86 34
+88 4
+90 14
+92 42
+94 44
+96 38
+98 16
+100 40
+102 1337
+104 1525
+106 1531
+108 1537
+110 1543
+112 1549
+114 2
+116 1671
+118 1677
+120 1683
+122 1689
+124 1695
+126 20
+128 36
+130 24
+132 421
+134 32
+136 18
+138 28
+140 54
+980
+142 139 56
+144 138 56
+146 143 56
+148 67 56
+150 66 56
+152 149 56
+154 153 144
+156 154 29
+158 150 28
+160 159 157
+162 135 56
+164 134 56
+166 163 56
+168 71 56
+170 70 56
+172 169 56
+174 173 164
+176 174 33
+178 177 160
+180 170 32
+182 181 178
+184 129 56
+186 128 56
+188 185 56
+190 77 56
+192 76 56
+194 191 56
+196 195 186
+198 196 37
+200 199 182
+202 192 36
+204 203 200
+206 101 56
+208 100 56
+210 207 56
+212 83 56
+214 82 56
+216 213 56
+218 217 208
+220 218 41
+222 221 204
+224 214 40
+226 225 222
+228 93 56
+230 92 56
+232 229 56
+234 91 56
+236 90 56
+238 235 56
+240 239 230
+242 240 43
+244 243 226
+246 236 42
+248 247 244
+250 85 56
+252 84 56
+254 251 56
+256 99 56
+258 98 56
+260 257 56
+262 261 252
+264 262 47
+266 265 248
+268 258 46
+270 269 266
+272 79 56
+274 78 56
+276 273 56
+278 127 56
+280 126 56
+282 279 56
+284 283 274
+286 284 49
+288 287 270
+290 280 48
+292 291 288
+294 73 56
+296 72 56
+298 295 56
+300 131 56
+302 130 56
+304 301 56
+306 305 296
+308 306 53
+310 309 292
+312 302 52
+314 313 310
+316 137 56
+318 136 56
+320 317 56
+322 321 54
+324 323 314
+326 141 56
+328 140 56
+330 327 56
+332 328 318
+334 332 55
+336 335 324
+338 61 56
+340 60 56
+342 339 56
+344 343 50
+346 345 336
+348 63 56
+350 62 56
+352 349 56
+354 350 340
+356 354 51
+358 357 346
+360 89 56
+362 88 56
+364 361 56
+366 115 56
+368 114 56
+370 367 56
+372 371 362
+374 372 27
+376 375 358
+378 368 365
+380 378 44
+382 381 376
+384 379 373
+386 95 56
+388 94 56
+390 387 56
+392 391 44
+394 388 45
+396 395 393
+398 69 56
+400 68 56
+402 399 56
+404 403 26
+406 400 27
+408 407 405
+410 408 396
+412 411 384
+414 413 382
+416 133 56
+418 417 56
+420 419 414
+422 147 28
+424 422 6
+426 153 147
+428 426 6
+430 429 425
+432 150 144
+434 432 7
+436 435 430
+438 8 6
+440 439 436
+442 10 6
+444 443 440
+446 12 6
+448 447 444
+450 14 6
+452 451 448
+454 16 6
+456 455 452
+458 20 6
+460 459 456
+462 24 6
+464 463 460
+466 167 32
+468 466 8
+470 469 464
+472 173 167
+474 472 8
+476 475 470
+478 170 164
+480 478 9
+482 481 476
+484 10 8
+486 485 482
+488 12 8
+490 489 486
+492 14 8
+494 493 490
+496 16 8
+498 497 494
+500 20 8
+502 501 498
+504 24 8
+506 505 502
+508 189 36
+510 508 10
+512 511 506
+514 195 189
+516 514 10
+518 517 512
+520 192 186
+522 520 11
+524 523 518
+526 12 10
+528 527 524
+530 14 10
+532 531 528
+534 16 10
+536 535 532
+538 20 10
+540 539 536
+542 24 10
+544 543 540
+546 211 40
+548 546 12
+550 549 544
+552 217 211
+554 552 12
+556 555 550
+558 214 208
+560 558 13
+562 561 556
+564 14 12
+566 565 562
+568 16 12
+570 569 566
+572 20 12
+574 573 570
+576 24 12
+578 577 574
+580 233 42
+582 580 14
+584 583 578
+586 239 233
+588 586 14
+590 589 584
+592 236 230
+594 592 15
+596 595 590
+598 16 14
+600 599 596
+602 20 14
+604 603 600
+606 24 14
+608 607 604
+610 255 46
+612 610 16
+614 613 608
+616 261 255
+618 616 16
+620 619 614
+622 258 252
+624 622 17
+626 625 620
+628 20 16
+630 629 626
+632 24 16
+634 633 630
+636 277 48
+638 636 20
+640 639 634
+642 283 277
+644 642 20
+646 645 640
+648 280 274
+650 648 21
+652 651 646
+654 24 20
+656 655 652
+658 299 52
+660 658 24
+662 661 656
+664 305 299
+666 664 24
+668 667 662
+670 302 296
+672 670 25
+674 673 668
+676 331 318
+678 676 19
+680 679 674
+682 22 18
+684 683 680
+686 328 18
+688 687 684
+690 353 340
+692 690 23
+694 693 688
+696 350 22
+698 697 694
+700 340 318
+702 701 698
+704 75 56
+706 74 56
+708 705 56
+710 58 56
+712 710 706
+714 712 318
+716 715 702
+718 710 709
+720 718 340
+722 721 716
+724 153 6
+726 724 5
+728 727 722
+730 35 31
+732 730 39
+734 733 724
+736 735 728
+738 173 8
+740 738 5
+742 741 736
+744 35 30
+746 744 39
+748 746 739
+750 747 738
+752 751 749
+754 752 742
+756 195 10
+758 756 5
+760 759 754
+762 34 31
+764 762 39
+766 764 757
+768 765 756
+770 769 767
+772 770 760
+774 217 12
+776 774 5
+778 777 772
+780 34 30
+782 780 39
+784 782 775
+786 783 774
+788 787 785
+790 788 778
+792 239 14
+794 792 5
+796 795 790
+798 730 38
+800 798 793
+802 799 792
+804 803 801
+806 804 796
+808 261 16
+810 808 5
+812 811 806
+814 744 38
+816 814 809
+818 815 808
+820 819 817
+822 820 812
+824 283 20
+826 824 5
+828 827 822
+830 762 38
+832 830 825
+834 831 824
+836 835 833
+838 836 828
+840 305 24
+842 840 5
+844 843 838
+846 780 38
+848 846 841
+850 847 840
+852 851 849
+854 852 844
+856 739 725
+858 856 757
+860 858 775
+862 860 793
+864 862 809
+866 864 825
+868 866 841
+870 868 4
+872 871 854
+874 328 55
+876 874 3
+878 877 872
+880 350 51
+882 880 3
+884 883 878
+886 881 875
+888 886 2
+890 889 884
+892 44 3
+894 892 4
+896 895 890
+898 27 2
+900 899 896
+902 113 56
+904 112 56
+906 903 56
+908 111 56
+910 110 56
+912 909 56
+914 109 56
+916 108 56
+918 915 56
+920 107 56
+922 106 56
+924 921 56
+926 105 56
+928 104 56
+930 927 56
+932 925 919
+934 933 918
+936 934 924
+938 937 913
+940 939 912
+942 940 936
+944 943 907
+946 945 906
+948 946 942
+950 924 919
+952 925 916
+954 953 951
+956 936 913
+958 937 910
+960 959 957
+962 942 907
+964 943 904
+966 965 963
+968 929 924
+970 968 954
+972 970 960
+974 972 966
+976 975 949
+978 976 900
+980 979 420
+982 706 321
+984 982 340
+986 709 318
+988 986 343
+990 982 343
+992 709 321
+994 992 343
+996 988 985
+998 997 985
+1000 989 985
+1002 1000 990
+1004 1003 998
+1006 1000 991
+1008 1006 994
+1010 1009 1004
+1012 995 710
+1014 1013 995
+1016 1015 991
+1018 1017 991
+1020 1019 989
+1022 1020 985
+1024 1022 1011
+1026 1010 710
+1028 1027 1025
+1030 117 56
+1032 116 56
+1034 1031 56
+1036 119 56
+1038 118 56
+1040 1037 56
+1042 121 56
+1044 120 56
+1046 1043 56
+1048 123 56
+1050 122 56
+1052 1049 56
+1054 124 56
+1056 1039 1033
+1058 1056 1045
+1060 1058 1051
+1062 1060 1055
+1064 29 6
+1066 28 7
+1068 1067 1065
+1070 1068 1062
+1072 1039 1034
+1074 1072 1045
+1076 1074 1051
+1078 1076 1055
+1080 33 8
+1082 32 9
+1084 1083 1081
+1086 1084 1078
+1088 1040 1033
+1090 1088 1045
+1092 1090 1051
+1094 1092 1055
+1096 37 10
+1098 36 11
+1100 1099 1097
+1102 1100 1094
+1104 1040 1034
+1106 1104 1045
+1108 1106 1051
+1110 1108 1055
+1112 41 12
+1114 40 13
+1116 1115 1113
+1118 1116 1110
+1120 1056 1046
+1122 1120 1051
+1124 1122 1055
+1126 43 14
+1128 42 15
+1130 1129 1127
+1132 1130 1124
+1134 1072 1046
+1136 1134 1051
+1138 1136 1055
+1140 47 16
+1142 46 17
+1144 1143 1141
+1146 1144 1138
+1148 1088 1046
+1150 1148 1051
+1152 1150 1055
+1154 49 20
+1156 48 21
+1158 1157 1155
+1160 1158 1152
+1162 1104 1046
+1164 1162 1051
+1166 1164 1055
+1168 53 24
+1170 52 25
+1172 1171 1169
+1174 1172 1166
+1176 1058 1052
+1178 1176 1055
+1180 103 56
+1182 102 56
+1184 1181 56
+1186 1185 1178
+1188 65 56
+1190 64 56
+1192 1189 56
+1194 54 19
+1196 55 18
+1198 1197 1195
+1200 1198 1193
+1202 50 23
+1204 51 22
+1206 1205 1203
+1208 1206 1190
+1210 1086 1071
+1212 1211 1071
+1214 1087 1071
+1216 1214 1102
+1218 1217 1212
+1220 1214 1103
+1222 1220 1118
+1224 1223 1218
+1226 1220 1119
+1228 1226 1132
+1230 1229 1224
+1232 1226 1133
+1234 1232 1146
+1236 1235 1230
+1238 1232 1147
+1240 1238 1160
+1242 1241 1236
+1244 1238 1161
+1246 1244 1174
+1248 1247 1242
+1250 1244 1175
+1252 1250 1186
+1254 1253 1248
+1256 1250 1187
+1258 1256 1200
+1260 1259 1254
+1262 1256 1201
+1264 1262 1208
+1266 1265 1260
+1268 1209 1190
+1270 1268 1201
+1272 1271 1201
+1274 1273 1187
+1276 1274 1175
+1278 1276 1161
+1280 1278 1147
+1282 1280 1133
+1284 1282 1119
+1286 1284 1103
+1288 1286 1087
+1290 1288 1071
+1292 1290 1267
+1294 1266 1190
+1296 1295 1293
+1298 995 706
+1300 1298 991
+1302 1301 991
+1304 1303 989
+1306 1305 989
+1308 1307 985
+1310 1308 1011
+1312 1010 706
+1314 1313 1311
+1316 1185 400
+1318 1316 371
+1320 1182 368
+1322 1320 1319
+1324 1323 1319
+1326 1321 1182
+1328 1326 1319
+1330 1329 1319
+1332 1331 1325
+1334 1324 1182
+1336 1335 1333
+1338 1265 1254
+1340 1208 931
+1342 1209 928
+1344 1343 1341
+1346 1200 928
+1348 1345 1201
+1350 1349 1347
+1352 1351 1187
+1354 1352 1175
+1356 1354 1161
+1358 1356 1147
+1360 1358 1133
+1362 1360 1119
+1364 1362 1103
+1366 1364 1087
+1368 1366 1071
+1370 928 925
+1372 929 922
+1374 1373 1371
+1376 1375 1208
+1378 1209 922
+1380 1379 1377
+1382 1200 922
+1384 1381 1201
+1386 1385 1383
+1388 1387 1187
+1390 1388 1175
+1392 1390 1161
+1394 1392 1147
+1396 1394 1133
+1398 1396 1119
+1400 1398 1103
+1402 1400 1087
+1404 1402 1071
+1406 928 922
+1408 1406 919
+1410 1407 916
+1412 1411 1409
+1414 1413 1208
+1416 1209 916
+1418 1417 1415
+1420 1200 916
+1422 1419 1201
+1424 1423 1421
+1426 1425 1187
+1428 1426 1175
+1430 1428 1161
+1432 1430 1147
+1434 1432 1133
+1436 1434 1119
+1438 1436 1103
+1440 1438 1087
+1442 1440 1071
+1444 1406 916
+1446 1444 913
+1448 1445 910
+1450 1449 1447
+1452 1451 1208
+1454 1209 910
+1456 1455 1453
+1458 1200 910
+1460 1457 1201
+1462 1461 1459
+1464 1463 1187
+1466 1464 1175
+1468 1466 1161
+1470 1468 1147
+1472 1470 1133
+1474 1472 1119
+1476 1474 1103
+1478 1476 1087
+1480 1478 1071
+1482 1444 910
+1484 1482 907
+1486 1483 904
+1488 1487 1485
+1490 1489 1208
+1492 1209 904
+1494 1493 1491
+1496 1200 904
+1498 1495 1201
+1500 1499 1497
+1502 1501 1187
+1504 1502 1175
+1506 1504 1161
+1508 1506 1147
+1510 1508 1133
+1512 1510 1119
+1514 1512 1103
+1516 1514 1087
+1518 1516 1071
+1520 1368 1339
+1522 1338 928
+1524 1523 1521
+1526 1404 1339
+1528 1338 922
+1530 1529 1527
+1532 1442 1339
+1534 1338 916
+1536 1535 1533
+1538 1480 1339
+1540 1338 910
+1542 1541 1539
+1544 1518 1339
+1546 1338 904
+1548 1547 1545
+1550 1187 1032
+1552 1550 1175
+1554 1552 1161
+1556 1555 1161
+1558 1557 1147
+1560 1558 1133
+1562 1561 1133
+1564 1563 1119
+1566 1564 1103
+1568 1567 1103
+1570 1569 1087
+1572 1570 1071
+1574 1573 1071
+1576 1187 1038
+1578 1576 1175
+1580 1578 1161
+1582 1581 1161
+1584 1583 1147
+1586 1585 1147
+1588 1587 1133
+1590 1588 1119
+1592 1590 1103
+1594 1593 1103
+1596 1595 1087
+1598 1597 1087
+1600 1599 1071
+1602 1187 1044
+1604 1602 1175
+1606 1604 1161
+1608 1607 1161
+1610 1609 1147
+1612 1611 1147
+1614 1613 1133
+1616 1615 1133
+1618 1617 1119
+1620 1619 1119
+1622 1621 1103
+1624 1622 1087
+1626 1624 1071
+1628 1187 1050
+1630 1628 1175
+1632 1631 1175
+1634 1633 1161
+1636 1634 1147
+1638 1636 1133
+1640 1638 1119
+1642 1640 1103
+1644 1642 1087
+1646 1644 1071
+1648 1187 1054
+1650 1648 1175
+1652 1650 1161
+1654 1652 1147
+1656 1654 1133
+1658 1656 1119
+1660 1658 1103
+1662 1660 1087
+1664 1662 1071
+1666 1575 1255
+1668 1254 1032
+1670 1669 1667
+1672 1600 1255
+1674 1254 1038
+1676 1675 1673
+1678 1626 1255
+1680 1254 1044
+1682 1681 1679
+1684 1646 1255
+1686 1254 1050
+1688 1687 1685
+1690 1664 1255
+1692 1254 1054
+1694 1693 1691
+i0 controllable_DEQ
+i1 controllable_ENQ
+i2 controllable_BtoS_ACK0
+i3 controllable_BtoS_ACK1
+i4 controllable_BtoS_ACK2
+i5 controllable_BtoS_ACK3
+i6 controllable_BtoS_ACK4
+i7 controllable_BtoS_ACK5
+i8 controllable_BtoR_REQ0
+i9 controllable_BtoS_ACK6
+i10 controllable_BtoR_REQ1
+i11 controllable_BtoS_ACK7
+i12 i_nEMPTY
+i13 i_StoB_REQ0
+i14 controllable_SLC0
+i15 i_StoB_REQ1
+i16 controllable_SLC1
+i17 i_StoB_REQ2
+i18 controllable_SLC2
+i19 i_StoB_REQ3
+i20 i_StoB_REQ4
+i21 i_FULL
+i22 i_StoB_REQ5
+i23 i_StoB_REQ6
+i24 i_RtoB_ACK1
+i25 i_StoB_REQ7
+i26 i_RtoB_ACK0
+l0 n57
+l1 reg_stateG7_0_out
+l2 reg_controllable_BtoR_REQ1_out
+l3 reg_i_RtoB_ACK1_out
+l4 next_env_fair_out
+l5 reg_controllable_BtoS_ACK0_out
+l6 reg_i_nEMPTY_out
+l7 reg_controllable_BtoS_ACK1_out
+l8 reg_i_StoB_REQ7_out
+l9 reg_nstateG7_1_out
+l10 reg_controllable_BtoS_ACK2_out
+l11 reg_i_StoB_REQ6_out
+l12 reg_controllable_SLC0_out
+l13 reg_controllable_BtoS_ACK3_out
+l14 reg_i_StoB_REQ5_out
+l15 reg_controllable_SLC1_out
+l16 reg_controllable_ENQ_out
+l17 reg_controllable_BtoS_ACK4_out
+l18 reg_i_StoB_REQ4_out
+l19 reg_i_FULL_out
+l20 reg_controllable_SLC2_out
+l21 reg_controllable_BtoS_ACK5_out
+l22 reg_i_StoB_REQ3_out
+l23 reg_stateG12_out
+l24 fair_cnt<0>_out
+l25 fair_cnt<1>_out
+l26 fair_cnt<2>_out
+l27 fair_cnt<3>_out
+l28 fair_cnt<4>_out
+l29 reg_controllable_DEQ_out
+l30 next_sys_fair<0>_out
+l31 next_sys_fair<1>_out
+l32 next_sys_fair<2>_out
+l33 next_sys_fair<3>_out
+l34 next_sys_fair<4>_out
+l35 reg_controllable_BtoS_ACK6_out
+l36 reg_i_StoB_REQ2_out
+l37 reg_controllable_BtoS_ACK7_out
+l38 env_safe_err_happened_out
+l39 reg_i_StoB_REQ1_out
+l40 reg_controllable_BtoR_REQ0_out
+l41 reg_i_StoB_REQ0_out
+l42 reg_i_RtoB_ACK0_out
+o0 o_err
+c
+genbuf_8_new_30
+This file was written by ABC on Tue May  5 16:57:40 2015
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv genbuf8c30.v   ---gives--> genbuf8c30.mv
+> abc -c "read_blif_mv genbuf8c30.mv; write_aiger -s genbuf8c30n.aig"   ---gives--> genbuf8c30n.aig
+> aigtoaig genbuf8c30n.aig genbuf8c30n.aag   ---gives--> genbuf8c30n.aag (this file)
+Content of genbuf8c30.v:
+module genbuf_8_new_30(
+        o_err,
+        i_clk,
+        i_StoB_REQ0,
+        controllable_BtoS_ACK0,
+        i_StoB_REQ1,
+        controllable_BtoS_ACK1,
+        i_StoB_REQ2,
+        controllable_BtoS_ACK2,
+        i_StoB_REQ3,
+        controllable_BtoS_ACK3,
+        i_StoB_REQ4,
+        controllable_BtoS_ACK4,
+        i_StoB_REQ5,
+        controllable_BtoS_ACK5,
+        i_StoB_REQ6,
+        controllable_BtoS_ACK6,
+        i_StoB_REQ7,
+        controllable_BtoS_ACK7,
+        i_RtoB_ACK0,
+        controllable_BtoR_REQ0,
+        i_RtoB_ACK1,
+        controllable_BtoR_REQ1,
+        i_FULL,
+        i_nEMPTY,
+        controllable_ENQ,
+        controllable_DEQ,
+        controllable_SLC0,
+        controllable_SLC1,
+        controllable_SLC2);
+
+input i_clk;
+input i_StoB_REQ0;
+input controllable_BtoS_ACK0;
+input i_StoB_REQ1;
+input controllable_BtoS_ACK1;
+input i_StoB_REQ2;
+input controllable_BtoS_ACK2;
+input i_StoB_REQ3;
+input controllable_BtoS_ACK3;
+input i_StoB_REQ4;
+input controllable_BtoS_ACK4;
+input i_StoB_REQ5;
+input controllable_BtoS_ACK5;
+input i_StoB_REQ6;
+input controllable_BtoS_ACK6;
+input i_StoB_REQ7;
+input controllable_BtoS_ACK7;
+input i_RtoB_ACK0;
+input controllable_BtoR_REQ0;
+input i_RtoB_ACK1;
+input controllable_BtoR_REQ1;
+input i_FULL;
+input i_nEMPTY;
+input controllable_ENQ;
+input controllable_DEQ;
+input controllable_SLC0;
+input controllable_SLC1;
+input controllable_SLC2;
+output o_err;
+
+reg reg_i_StoB_REQ0;
+reg reg_controllable_BtoS_ACK0;
+reg reg_i_StoB_REQ1;
+reg reg_controllable_BtoS_ACK1;
+reg reg_i_StoB_REQ2;
+reg reg_controllable_BtoS_ACK2;
+reg reg_i_StoB_REQ3;
+reg reg_controllable_BtoS_ACK3;
+reg reg_i_StoB_REQ4;
+reg reg_controllable_BtoS_ACK4;
+reg reg_i_StoB_REQ5;
+reg reg_controllable_BtoS_ACK5;
+reg reg_i_StoB_REQ6;
+reg reg_controllable_BtoS_ACK6;
+reg reg_i_StoB_REQ7;
+reg reg_controllable_BtoS_ACK7;
+reg reg_i_RtoB_ACK0;
+reg reg_controllable_BtoR_REQ0;
+reg reg_i_RtoB_ACK1;
+reg reg_controllable_BtoR_REQ1;
+reg reg_i_FULL;
+reg reg_i_nEMPTY;
+reg reg_controllable_ENQ;
+reg reg_controllable_DEQ;
+reg reg_controllable_SLC0;
+reg reg_controllable_SLC1;
+reg reg_controllable_SLC2;
+reg reg_stateG7_0;
+reg reg_nstateG7_1;
+reg reg_stateG12;
+reg env_safe_err_happened;
+reg next_env_fair;
+reg [4:0] fair_cnt;
+reg [4:0] next_sys_fair;
+
+wire env_safe_err0;
+wire env_safe_err1;
+wire env_safe_err2;
+wire env_safe_err3;
+wire env_safe_err4;
+wire env_safe_err5;
+wire env_safe_err6;
+wire env_safe_err7;
+wire env_safe_err8;
+wire env_safe_err9;
+wire env_safe_err10;
+wire env_safe_err11;
+wire env_safe_err12;
+wire env_safe_err13;
+wire env_safe_err14;
+wire env_safe_err15;
+wire env_safe_err16;
+wire env_safe_err17;
+wire env_safe_err18;
+wire env_safe_err19;
+wire env_safe_err20;
+wire env_safe_err21;
+wire env_safe_err22;
+wire env_safe_err;
+
+wire sys_safe_err0;
+wire sys_safe_err1;
+wire sys_safe_err2;
+wire sys_safe_err3;
+wire sys_safe_err4;
+wire sys_safe_err5;
+wire sys_safe_err6;
+wire sys_safe_err7;
+wire sys_safe_err8;
+wire sys_safe_err9;
+wire sys_safe_err10;
+wire sys_safe_err11;
+wire sys_safe_err12;
+wire sys_safe_err13;
+wire sys_safe_err14;
+wire sys_safe_err15;
+wire sys_safe_err16;
+wire sys_safe_err17;
+wire sys_safe_err18;
+wire sys_safe_err19;
+wire sys_safe_err20;
+wire sys_safe_err21;
+wire sys_safe_err22;
+wire sys_safe_err23;
+wire sys_safe_err24;
+wire sys_safe_err25;
+wire sys_safe_err26;
+wire sys_safe_err27;
+wire sys_safe_err28;
+wire sys_safe_err29;
+wire sys_safe_err30;
+wire sys_safe_err31;
+wire sys_safe_err32;
+wire sys_safe_err33;
+wire sys_safe_err34;
+wire sys_safe_err35;
+wire sys_safe_err36;
+wire sys_safe_err37;
+wire sys_safe_err38;
+wire sys_safe_err39;
+wire sys_safe_err40;
+wire sys_safe_err41;
+wire sys_safe_err42;
+wire sys_safe_err43;
+wire sys_safe_err44;
+wire sys_safe_err45;
+wire sys_safe_err46;
+wire sys_safe_err47;
+wire sys_safe_err48;
+wire sys_safe_err49;
+wire sys_safe_err50;
+wire sys_safe_err51;
+wire sys_safe_err52;
+wire sys_safe_err53;
+wire sys_safe_err54;
+wire sys_safe_err55;
+wire sys_safe_err56;
+wire sys_safe_err57;
+wire sys_safe_err58;
+wire sys_safe_err59;
+wire sys_safe_err60;
+wire sys_safe_err61;
+wire sys_safe_err62;
+wire sys_safe_err63;
+wire sys_safe_err64;
+wire sys_safe_err65;
+wire sys_safe_err66;
+wire sys_safe_err67;
+wire sys_safe_err68;
+wire sys_safe_err69;
+wire sys_safe_err70;
+wire sys_safe_err71;
+wire sys_safe_err72;
+wire sys_safe_err73;
+wire sys_safe_err74;
+wire sys_safe_err75;
+wire sys_safe_err76;
+wire sys_safe_err77;
+wire sys_safe_err78;
+wire sys_safe_err79;
+wire sys_safe_err80;
+wire sys_safe_err81;
+wire sys_safe_err;
+
+wire env_fair0;
+wire env_fair1;
+
+wire sys_fair0;
+wire sys_fair1;
+wire sys_fair2;
+wire sys_fair3;
+wire sys_fair4;
+wire sys_fair5;
+wire sys_fair6;
+wire sys_fair7;
+wire sys_fair8;
+wire fair_err;
+wire o_err;
+
+// =============================================================
+//                        ENV_TRANSITION:
+// =============================================================
+// G((StoB_REQ0=1 * BtoS_ACK0=0) -> X(StoB_REQ0=1));	#A1
+assign env_safe_err0 = ~((~(reg_i_StoB_REQ0 & ~reg_controllable_BtoS_ACK0)) | i_StoB_REQ0);
+
+// G(BtoS_ACK0=1 -> X(StoB_REQ0=0));	#A1
+assign env_safe_err1 = ~((~(reg_controllable_BtoS_ACK0)) | ~i_StoB_REQ0);
+
+// G((StoB_REQ1=1 * BtoS_ACK1=0) -> X(StoB_REQ1=1));	#A1
+assign env_safe_err2 = ~((~(reg_i_StoB_REQ1 & ~reg_controllable_BtoS_ACK1)) | i_StoB_REQ1);
+
+// G(BtoS_ACK1=1 -> X(StoB_REQ1=0));	#A1
+assign env_safe_err3 = ~((~(reg_controllable_BtoS_ACK1)) | ~i_StoB_REQ1);
+
+// G((StoB_REQ2=1 * BtoS_ACK2=0) -> X(StoB_REQ2=1));	#A1
+assign env_safe_err4 = ~((~(reg_i_StoB_REQ2 & ~reg_controllable_BtoS_ACK2)) | i_StoB_REQ2);
+
+// G(BtoS_ACK2=1 -> X(StoB_REQ2=0));	#A1
+assign env_safe_err5 = ~((~(reg_controllable_BtoS_ACK2)) | ~i_StoB_REQ2);
+
+// G((StoB_REQ3=1 * BtoS_ACK3=0) -> X(StoB_REQ3=1));	#A1
+assign env_safe_err6 = ~((~(reg_i_StoB_REQ3 & ~reg_controllable_BtoS_ACK3)) | i_StoB_REQ3);
+
+// G(BtoS_ACK3=1 -> X(StoB_REQ3=0));	#A1
+assign env_safe_err7 = ~((~(reg_controllable_BtoS_ACK3)) | ~i_StoB_REQ3);
+
+// G((StoB_REQ4=1 * BtoS_ACK4=0) -> X(StoB_REQ4=1));	#A1
+assign env_safe_err8 = ~((~(reg_i_StoB_REQ4 & ~reg_controllable_BtoS_ACK4)) | i_StoB_REQ4);
+
+// G(BtoS_ACK4=1 -> X(StoB_REQ4=0));	#A1
+assign env_safe_err9 = ~((~(reg_controllable_BtoS_ACK4)) | ~i_StoB_REQ4);
+
+// G((StoB_REQ5=1 * BtoS_ACK5=0) -> X(StoB_REQ5=1));	#A1
+assign env_safe_err10 = ~((~(reg_i_StoB_REQ5 & ~reg_controllable_BtoS_ACK5)) | i_StoB_REQ5);
+
+// G(BtoS_ACK5=1 -> X(StoB_REQ5=0));	#A1
+assign env_safe_err11 = ~((~(reg_controllable_BtoS_ACK5)) | ~i_StoB_REQ5);
+
+// G((StoB_REQ6=1 * BtoS_ACK6=0) -> X(StoB_REQ6=1));	#A1
+assign env_safe_err12 = ~((~(reg_i_StoB_REQ6 & ~reg_controllable_BtoS_ACK6)) | i_StoB_REQ6);
+
+// G(BtoS_ACK6=1 -> X(StoB_REQ6=0));	#A1
+assign env_safe_err13 = ~((~(reg_controllable_BtoS_ACK6)) | ~i_StoB_REQ6);
+
+// G((StoB_REQ7=1 * BtoS_ACK7=0) -> X(StoB_REQ7=1));	#A1
+assign env_safe_err14 = ~((~(reg_i_StoB_REQ7 & ~reg_controllable_BtoS_ACK7)) | i_StoB_REQ7);
+
+// G(BtoS_ACK7=1 -> X(StoB_REQ7=0));	#A1
+assign env_safe_err15 = ~((~(reg_controllable_BtoS_ACK7)) | ~i_StoB_REQ7);
+
+// G(BtoR_REQ0=0 -> X(RtoB_ACK0=0));	#A3
+assign env_safe_err16 = ~(reg_controllable_BtoR_REQ0 | ~i_RtoB_ACK0);
+
+// G((BtoR_REQ0=1 * RtoB_ACK0=1) -> X(RtoB_ACK0=1));	#A4
+assign env_safe_err17 = ~((~(reg_controllable_BtoR_REQ0 & reg_i_RtoB_ACK0)) | i_RtoB_ACK0);
+
+// G(BtoR_REQ1=0 -> X(RtoB_ACK1=0));	#A3
+assign env_safe_err18 = ~(reg_controllable_BtoR_REQ1 | ~i_RtoB_ACK1);
+
+// G((BtoR_REQ1=1 * RtoB_ACK1=1) -> X(RtoB_ACK1=1));	#A4
+assign env_safe_err19 = ~((~(reg_controllable_BtoR_REQ1 & reg_i_RtoB_ACK1)) | i_RtoB_ACK1);
+
+// G((ENQ=1 * DEQ=0) -> X(EMPTY=0));	#A4
+assign env_safe_err20 = ~(~(reg_controllable_ENQ & ~reg_controllable_DEQ) | i_nEMPTY);
+
+// G((DEQ=1 * ENQ=0) -> X(FULL=0));	#A4
+assign env_safe_err21 = ~(~(reg_controllable_DEQ & ~reg_controllable_ENQ) | ~i_FULL);
+
+// G((ENQ=1 <-> DEQ=1) -> ((FULL=1 <-> X(FULL=1)) *
+//                         (EMPTY=1 <-> X(EMPTY=1))));	#A4
+assign env_safe_err22 = ~(~(reg_controllable_ENQ ^~ reg_controllable_DEQ) | ((reg_i_FULL ^~ i_FULL) &  (reg_i_nEMPTY ^~ i_nEMPTY)) );
+
+// collecting together the safety error bits:
+assign env_safe_err = env_safe_err0 |
+                      env_safe_err1 |
+                      env_safe_err2 |
+                      env_safe_err3 |
+                      env_safe_err4 |
+                      env_safe_err5 |
+                      env_safe_err6 |
+                      env_safe_err7 |
+                      env_safe_err8 |
+                      env_safe_err9 |
+                      env_safe_err10 |
+                      env_safe_err11 |
+                      env_safe_err12 |
+                      env_safe_err13 |
+                      env_safe_err14 |
+                      env_safe_err15 |
+                      env_safe_err16 |
+                      env_safe_err17 |
+                      env_safe_err18 |
+                      env_safe_err19 |
+                      env_safe_err20 |
+                      env_safe_err21 |
+                      env_safe_err22;
+
+// =============================================================
+//                        SYS_TRANSITION:
+// =============================================================
+// G((StoB_REQ0=0 * X(StoB_REQ0=1)) -> X(BtoS_ACK0=0));	#G2
+assign sys_safe_err0 = ~((~(~reg_i_StoB_REQ0 & i_StoB_REQ0 )) | ~controllable_BtoS_ACK0);
+
+// G((BtoS_ACK0=0 * StoB_REQ0=0) -> X(BtoS_ACK0=0));	#G2
+assign sys_safe_err1 = ~((~(~reg_controllable_BtoS_ACK0 & ~reg_i_StoB_REQ0 )) | ~controllable_BtoS_ACK0);
+
+// G((BtoS_ACK0=1 * StoB_REQ0=1) -> X(BtoS_ACK0=1));	#G4
+assign sys_safe_err2 = ~((~(reg_controllable_BtoS_ACK0 & reg_i_StoB_REQ0 )) | controllable_BtoS_ACK0);
+
+// G((BtoS_ACK0=0) + (BtoS_ACK1=0));	#G5
+assign sys_safe_err3 = ~(~controllable_BtoS_ACK0 | ~controllable_BtoS_ACK1);
+
+// G((BtoS_ACK0=0) + (BtoS_ACK2=0));	#G5
+assign sys_safe_err4 = ~(~controllable_BtoS_ACK0 | ~controllable_BtoS_ACK2);
+
+// G((BtoS_ACK0=0) + (BtoS_ACK3=0));	#G5
+assign sys_safe_err5 = ~(~controllable_BtoS_ACK0 | ~controllable_BtoS_ACK3);
+
+// G((BtoS_ACK0=0) + (BtoS_ACK4=0));	#G5
+assign sys_safe_err6 = ~(~controllable_BtoS_ACK0 | ~controllable_BtoS_ACK4);
+
+// G((BtoS_ACK0=0) + (BtoS_ACK5=0));	#G5
+assign sys_safe_err7 = ~(~controllable_BtoS_ACK0 | ~controllable_BtoS_ACK5);
+
+// G((BtoS_ACK0=0) + (BtoS_ACK6=0));	#G5
+assign sys_safe_err8 = ~(~controllable_BtoS_ACK0 | ~controllable_BtoS_ACK6);
+
+// G((BtoS_ACK0=0) + (BtoS_ACK7=0));	#G5
+assign sys_safe_err9 = ~(~controllable_BtoS_ACK0 | ~controllable_BtoS_ACK7);
+
+// G((StoB_REQ1=0 * X(StoB_REQ1=1)) -> X(BtoS_ACK1=0));	#G2
+assign sys_safe_err10 = ~((~(~reg_i_StoB_REQ1 & i_StoB_REQ1 )) | ~controllable_BtoS_ACK1);
+
+// G((BtoS_ACK1=0 * StoB_REQ1=0) -> X(BtoS_ACK1=0));	#G2
+assign sys_safe_err11 = ~((~(~reg_controllable_BtoS_ACK1 & ~reg_i_StoB_REQ1 )) | ~controllable_BtoS_ACK1);
+
+// G((BtoS_ACK1=1 * StoB_REQ1=1) -> X(BtoS_ACK1=1));	#G4
+assign sys_safe_err12 = ~((~(reg_controllable_BtoS_ACK1 & reg_i_StoB_REQ1 )) | controllable_BtoS_ACK1);
+
+// G((BtoS_ACK1=0) + (BtoS_ACK2=0));	#G5
+assign sys_safe_err13 = ~(~controllable_BtoS_ACK1 | ~controllable_BtoS_ACK2);
+
+// G((BtoS_ACK1=0) + (BtoS_ACK3=0));	#G5
+assign sys_safe_err14 = ~(~controllable_BtoS_ACK1 | ~controllable_BtoS_ACK3);
+
+// G((BtoS_ACK1=0) + (BtoS_ACK4=0));	#G5
+assign sys_safe_err15 = ~(~controllable_BtoS_ACK1 | ~controllable_BtoS_ACK4);
+
+// G((BtoS_ACK1=0) + (BtoS_ACK5=0));	#G5
+assign sys_safe_err16 = ~(~controllable_BtoS_ACK1 | ~controllable_BtoS_ACK5);
+
+// G((BtoS_ACK1=0) + (BtoS_ACK6=0));	#G5
+assign sys_safe_err17 = ~(~controllable_BtoS_ACK1 | ~controllable_BtoS_ACK6);
+
+// G((BtoS_ACK1=0) + (BtoS_ACK7=0));	#G5
+assign sys_safe_err18 = ~(~controllable_BtoS_ACK1 | ~controllable_BtoS_ACK7);
+
+// G((StoB_REQ2=0 * X(StoB_REQ2=1)) -> X(BtoS_ACK2=0));	#G2
+assign sys_safe_err19 = ~((~(~reg_i_StoB_REQ2 & i_StoB_REQ2 )) | ~controllable_BtoS_ACK2);
+
+// G((BtoS_ACK2=0 * StoB_REQ2=0) -> X(BtoS_ACK2=0));	#G2
+assign sys_safe_err20 = ~((~(~reg_controllable_BtoS_ACK2 & ~reg_i_StoB_REQ2 )) | ~controllable_BtoS_ACK2);
+
+// G((BtoS_ACK2=1 * StoB_REQ2=1) -> X(BtoS_ACK2=1));	#G4
+assign sys_safe_err21 = ~((~(reg_controllable_BtoS_ACK2 & reg_i_StoB_REQ2 )) | controllable_BtoS_ACK2);
+
+// G((BtoS_ACK2=0) + (BtoS_ACK3=0));	#G5
+assign sys_safe_err22 = ~(~controllable_BtoS_ACK2 | ~controllable_BtoS_ACK3);
+
+// G((BtoS_ACK2=0) + (BtoS_ACK4=0));	#G5
+assign sys_safe_err23 = ~(~controllable_BtoS_ACK2 | ~controllable_BtoS_ACK4);
+
+// G((BtoS_ACK2=0) + (BtoS_ACK5=0));	#G5
+assign sys_safe_err24 = ~(~controllable_BtoS_ACK2 | ~controllable_BtoS_ACK5);
+
+// G((BtoS_ACK2=0) + (BtoS_ACK6=0));	#G5
+assign sys_safe_err25 = ~(~controllable_BtoS_ACK2 | ~controllable_BtoS_ACK6);
+
+// G((BtoS_ACK2=0) + (BtoS_ACK7=0));	#G5
+assign sys_safe_err26 = ~(~controllable_BtoS_ACK2 | ~controllable_BtoS_ACK7);
+
+// G((StoB_REQ3=0 * X(StoB_REQ3=1)) -> X(BtoS_ACK3=0));	#G2
+assign sys_safe_err27 = ~((~(~reg_i_StoB_REQ3 & i_StoB_REQ3 )) | ~controllable_BtoS_ACK3);
+
+// G((BtoS_ACK3=0 * StoB_REQ3=0) -> X(BtoS_ACK3=0));	#G2
+assign sys_safe_err28 = ~((~(~reg_controllable_BtoS_ACK3 & ~reg_i_StoB_REQ3 )) | ~controllable_BtoS_ACK3);
+
+// G((BtoS_ACK3=1 * StoB_REQ3=1) -> X(BtoS_ACK3=1));	#G4
+assign sys_safe_err29 = ~((~(reg_controllable_BtoS_ACK3 & reg_i_StoB_REQ3 )) | controllable_BtoS_ACK3);
+
+// G((BtoS_ACK3=0) + (BtoS_ACK4=0));	#G5
+assign sys_safe_err30 = ~(~controllable_BtoS_ACK3 | ~controllable_BtoS_ACK4);
+
+// G((BtoS_ACK3=0) + (BtoS_ACK5=0));	#G5
+assign sys_safe_err31 = ~(~controllable_BtoS_ACK3 | ~controllable_BtoS_ACK5);
+
+// G((BtoS_ACK3=0) + (BtoS_ACK6=0));	#G5
+assign sys_safe_err32 = ~(~controllable_BtoS_ACK3 | ~controllable_BtoS_ACK6);
+
+// G((BtoS_ACK3=0) + (BtoS_ACK7=0));	#G5
+assign sys_safe_err33 = ~(~controllable_BtoS_ACK3 | ~controllable_BtoS_ACK7);
+
+// G((StoB_REQ4=0 * X(StoB_REQ4=1)) -> X(BtoS_ACK4=0));	#G2
+assign sys_safe_err34 = ~((~(~reg_i_StoB_REQ4 & i_StoB_REQ4 )) | ~controllable_BtoS_ACK4);
+
+// G((BtoS_ACK4=0 * StoB_REQ4=0) -> X(BtoS_ACK4=0));	#G2
+assign sys_safe_err35 = ~((~(~reg_controllable_BtoS_ACK4 & ~reg_i_StoB_REQ4 )) | ~controllable_BtoS_ACK4);
+
+// G((BtoS_ACK4=1 * StoB_REQ4=1) -> X(BtoS_ACK4=1));	#G4
+assign sys_safe_err36 = ~((~(reg_controllable_BtoS_ACK4 & reg_i_StoB_REQ4 )) | controllable_BtoS_ACK4);
+
+// G((BtoS_ACK4=0) + (BtoS_ACK5=0));	#G5
+assign sys_safe_err37 = ~(~controllable_BtoS_ACK4 | ~controllable_BtoS_ACK5);
+
+// G((BtoS_ACK4=0) + (BtoS_ACK6=0));	#G5
+assign sys_safe_err38 = ~(~controllable_BtoS_ACK4 | ~controllable_BtoS_ACK6);
+
+// G((BtoS_ACK4=0) + (BtoS_ACK7=0));	#G5
+assign sys_safe_err39 = ~(~controllable_BtoS_ACK4 | ~controllable_BtoS_ACK7);
+
+// G((StoB_REQ5=0 * X(StoB_REQ5=1)) -> X(BtoS_ACK5=0));	#G2
+assign sys_safe_err40 = ~((~(~reg_i_StoB_REQ5 & i_StoB_REQ5 )) | ~controllable_BtoS_ACK5);
+
+// G((BtoS_ACK5=0 * StoB_REQ5=0) -> X(BtoS_ACK5=0));	#G2
+assign sys_safe_err41 = ~((~(~reg_controllable_BtoS_ACK5 & ~reg_i_StoB_REQ5 )) | ~controllable_BtoS_ACK5);
+
+// G((BtoS_ACK5=1 * StoB_REQ5=1) -> X(BtoS_ACK5=1));	#G4
+assign sys_safe_err42 = ~((~(reg_controllable_BtoS_ACK5 & reg_i_StoB_REQ5 )) | controllable_BtoS_ACK5);
+
+// G((BtoS_ACK5=0) + (BtoS_ACK6=0));	#G5
+assign sys_safe_err43 = ~(~controllable_BtoS_ACK5 | ~controllable_BtoS_ACK6);
+
+// G((BtoS_ACK5=0) + (BtoS_ACK7=0));	#G5
+assign sys_safe_err44 = ~(~controllable_BtoS_ACK5 | ~controllable_BtoS_ACK7);
+
+// G((StoB_REQ6=0 * X(StoB_REQ6=1)) -> X(BtoS_ACK6=0));	#G2
+assign sys_safe_err45 = ~((~(~reg_i_StoB_REQ6 & i_StoB_REQ6 )) | ~controllable_BtoS_ACK6);
+
+// G((BtoS_ACK6=0 * StoB_REQ6=0) -> X(BtoS_ACK6=0));	#G2
+assign sys_safe_err46 = ~((~(~reg_controllable_BtoS_ACK6 & ~reg_i_StoB_REQ6 )) | ~controllable_BtoS_ACK6);
+
+// G((BtoS_ACK6=1 * StoB_REQ6=1) -> X(BtoS_ACK6=1));	#G4
+assign sys_safe_err47 = ~((~(reg_controllable_BtoS_ACK6 & reg_i_StoB_REQ6 )) | controllable_BtoS_ACK6);
+
+// G((BtoS_ACK6=0) + (BtoS_ACK7=0));	#G5
+assign sys_safe_err48 = ~(~controllable_BtoS_ACK6 | ~controllable_BtoS_ACK7);
+
+// G((StoB_REQ7=0 * X(StoB_REQ7=1)) -> X(BtoS_ACK7=0));	#G2
+assign sys_safe_err49 = ~((~(~reg_i_StoB_REQ7 & i_StoB_REQ7 )) | ~controllable_BtoS_ACK7);
+
+// G((BtoS_ACK7=0 * StoB_REQ7=0) -> X(BtoS_ACK7=0));	#G2
+assign sys_safe_err50 = ~((~(~reg_controllable_BtoS_ACK7 & ~reg_i_StoB_REQ7 )) | ~controllable_BtoS_ACK7);
+
+// G((BtoS_ACK7=1 * StoB_REQ7=1) -> X(BtoS_ACK7=1));	#G4
+assign sys_safe_err51 = ~((~(reg_controllable_BtoS_ACK7 & reg_i_StoB_REQ7 )) | controllable_BtoS_ACK7);
+
+// G((BtoR_REQ0=1 * RtoB_ACK0=0) -> X(BtoR_REQ0=1));	#G6
+assign sys_safe_err52 = ~((~(reg_controllable_BtoR_REQ0 & ~reg_i_RtoB_ACK0)) | controllable_BtoR_REQ0);
+
+// G((BtoR_REQ0=0) + (BtoR_REQ1=0));	#G7
+assign sys_safe_err53 = ~(~controllable_BtoR_REQ0 | ~controllable_BtoR_REQ1);
+
+// G(RtoB_ACK0=1 -> X(BtoR_REQ0=0));	#G8
+assign sys_safe_err54 = ~(~reg_i_RtoB_ACK0 | ~controllable_BtoR_REQ0);
+
+// G((BtoR_REQ1=1 * RtoB_ACK1=0) -> X(BtoR_REQ1=1));	#G6
+assign sys_safe_err55 = ~((~(reg_controllable_BtoR_REQ1 & ~reg_i_RtoB_ACK1)) | controllable_BtoR_REQ1);
+
+// G(RtoB_ACK1=1 -> X(BtoR_REQ1=0));	#G8
+assign sys_safe_err56 = ~(~reg_i_RtoB_ACK1 | ~controllable_BtoR_REQ1);
+
+// G((BtoR_REQ0=1 * BtoR_REQ1=1) -> FALSE);	#G7
+assign sys_safe_err57 = reg_controllable_BtoR_REQ0 & reg_controllable_BtoR_REQ1;
+
+// G((stateG7_1=0 * stateG7_0=1 * BtoR_REQ0=1) -> FALSE);	#G7
+assign sys_safe_err58 = reg_nstateG7_1 & reg_stateG7_0 & reg_controllable_BtoR_REQ0;
+
+// G((stateG7_1=1 * stateG7_0=1 * BtoR_REQ1=1) -> FALSE);	#G7
+assign sys_safe_err59 = ~reg_nstateG7_1 & reg_stateG7_0 & reg_controllable_BtoR_REQ1;
+
+// G((BtoS_ACK0=0 * X(BtoS_ACK0=1)) -> X(ENQ=1));	#G9
+assign sys_safe_err60 = ~(~((~reg_controllable_BtoS_ACK0 & controllable_BtoS_ACK0)) | controllable_ENQ);
+
+// G((BtoS_ACK0=0 * X(BtoS_ACK0=1))  -> X(SLC0=0 * SLC1=0 * SLC2=0));	#G9
+assign sys_safe_err61 = ~(~((~reg_controllable_BtoS_ACK0 & controllable_BtoS_ACK0)) | (~controllable_SLC0 & ~controllable_SLC1 & ~controllable_SLC2));
+
+// G((BtoS_ACK1=0 * X(BtoS_ACK1=1)) -> X(ENQ=1));	#G9
+assign sys_safe_err62 = ~(~((~reg_controllable_BtoS_ACK1 & controllable_BtoS_ACK1)) | controllable_ENQ);
+
+// G((BtoS_ACK1=0 * X(BtoS_ACK1=1)) <-> X(SLC0=1 * SLC1=0 * SLC2=0));	#G9
+assign sys_safe_err63 = ~(((~reg_controllable_BtoS_ACK1 & controllable_BtoS_ACK1)) ^~ (controllable_SLC0 & ~controllable_SLC1 & ~controllable_SLC2));
+
+// G((BtoS_ACK2=0 * X(BtoS_ACK2=1)) -> X(ENQ=1));	#G9
+assign sys_safe_err64 = ~(~((~reg_controllable_BtoS_ACK2 & controllable_BtoS_ACK2)) | controllable_ENQ);
+
+// G((BtoS_ACK2=0 * X(BtoS_ACK2=1)) <-> X(SLC0=0 * SLC1=1 * SLC2=0));	#G9
+assign sys_safe_err65 = ~(((~reg_controllable_BtoS_ACK2 & controllable_BtoS_ACK2)) ^~ (~controllable_SLC0 & controllable_SLC1 & ~controllable_SLC2));
+
+// G((BtoS_ACK3=0 * X(BtoS_ACK3=1)) -> X(ENQ=1));	#G9
+assign sys_safe_err66 = ~(~((~reg_controllable_BtoS_ACK3 & controllable_BtoS_ACK3)) | controllable_ENQ);
+
+// G((BtoS_ACK3=0 * X(BtoS_ACK3=1)) <-> X(SLC0=1 * SLC1=1 * SLC2=0));	#G9
+assign sys_safe_err67 = ~(((~reg_controllable_BtoS_ACK3 & controllable_BtoS_ACK3)) ^~ (controllable_SLC0 & controllable_SLC1 & ~controllable_SLC2));
+
+// G((BtoS_ACK4=0 * X(BtoS_ACK4=1)) -> X(ENQ=1));	#G9
+assign sys_safe_err68 = ~(~((~reg_controllable_BtoS_ACK4 & controllable_BtoS_ACK4)) | controllable_ENQ);
+
+// G((BtoS_ACK4=0 * X(BtoS_ACK4=1)) <-> X(SLC0=0 * SLC1=0 * SLC2=1));	#G9
+assign sys_safe_err69 = ~(((~reg_controllable_BtoS_ACK4 & controllable_BtoS_ACK4)) ^~ (~controllable_SLC0 & ~controllable_SLC1 & controllable_SLC2));
+
+// G((BtoS_ACK5=0 * X(BtoS_ACK5=1)) -> X(ENQ=1));	#G9
+assign sys_safe_err70 = ~(~((~reg_controllable_BtoS_ACK5 & controllable_BtoS_ACK5)) | controllable_ENQ);
+
+// G((BtoS_ACK5=0 * X(BtoS_ACK5=1)) <-> X(SLC0=1 * SLC1=0 * SLC2=1));	#G9
+assign sys_safe_err71 = ~(((~reg_controllable_BtoS_ACK5 & controllable_BtoS_ACK5)) ^~ (controllable_SLC0 & ~controllable_SLC1 & controllable_SLC2));
+
+// G((BtoS_ACK6=0 * X(BtoS_ACK6=1)) -> X(ENQ=1));	#G9
+assign sys_safe_err72 = ~(~((~reg_controllable_BtoS_ACK6 & controllable_BtoS_ACK6)) | controllable_ENQ);
+
+// G((BtoS_ACK6=0 * X(BtoS_ACK6=1)) <-> X(SLC0=0 * SLC1=1 * SLC2=1));	#G9
+assign sys_safe_err73 = ~(((~reg_controllable_BtoS_ACK6 & controllable_BtoS_ACK6)) ^~ (~controllable_SLC0 & controllable_SLC1 & controllable_SLC2));
+
+// G((BtoS_ACK7=0 * X(BtoS_ACK7=1)) -> X(ENQ=1));	#G9
+assign sys_safe_err74 = ~(~((~reg_controllable_BtoS_ACK7 & controllable_BtoS_ACK7)) | controllable_ENQ);
+
+// G((BtoS_ACK7=0 * X(BtoS_ACK7=1)) <-> X(SLC0=1 * SLC1=1 * SLC2=1));	#G9
+assign sys_safe_err75 = ~(((~reg_controllable_BtoS_ACK7 & controllable_BtoS_ACK7)) ^~ (controllable_SLC0 & controllable_SLC1 & controllable_SLC2));
+
+// G(((BtoS_ACK0=1 + X(BtoS_ACK0=0)) * (BtoS_ACK1=1 + X(BtoS_ACK1=0)) * (BtoS_ACK2=1 + X(BtoS_ACK2=0)) * (BtoS_ACK3=1 + X(BtoS_ACK3=0)) * (BtoS_ACK4=1 + X(BtoS_ACK4=0)) * (BtoS_ACK5=1 + X(BtoS_ACK5=0)) * (BtoS_ACK6=1 + X(BtoS_ACK6=0)) * (BtoS_ACK7=1 + X(BtoS_ACK7=0))) -> X(ENQ=0));	#G9
+assign sys_safe_err76 = ~(~((reg_controllable_BtoS_ACK0 | ~controllable_BtoS_ACK0) & (reg_controllable_BtoS_ACK1 | ~controllable_BtoS_ACK1) & (reg_controllable_BtoS_ACK2 | ~controllable_BtoS_ACK2) & (reg_controllable_BtoS_ACK3 | ~controllable_BtoS_ACK3) & (reg_controllable_BtoS_ACK4 | ~controllable_BtoS_ACK4) & (reg_controllable_BtoS_ACK5 | ~controllable_BtoS_ACK5) & (reg_controllable_BtoS_ACK6 | ~controllable_BtoS_ACK6) & (reg_controllable_BtoS_ACK7 | ~controllable_BtoS_ACK7)) | ~controllable_ENQ);
+
+// G((RtoB_ACK0=1 * X(RtoB_ACK0=0)) -> X(DEQ=1));	#G10
+assign sys_safe_err77 = ~(~(reg_i_RtoB_ACK0 & ~i_RtoB_ACK0) | controllable_DEQ);
+
+// G((RtoB_ACK1=1 * X(RtoB_ACK1=0)) -> X(DEQ=1));	#G10
+assign sys_safe_err78 = ~(~(reg_i_RtoB_ACK1 & ~i_RtoB_ACK1) | controllable_DEQ);
+
+// G(((RtoB_ACK0=0 + X(RtoB_ACK0=1)) * (RtoB_ACK1=0 + X(RtoB_ACK1=1))) -> X(DEQ=0));	#G10
+assign sys_safe_err79 = ~(~((~reg_i_RtoB_ACK0 | i_RtoB_ACK0) & (~reg_i_RtoB_ACK1 | i_RtoB_ACK1)) | ~controllable_DEQ);
+
+// G((FULL=1 * DEQ=0) -> ENQ=0);	#G11
+assign sys_safe_err80 = ~(~(i_FULL & ~controllable_DEQ) | ~controllable_ENQ);
+
+// G(EMPTY=1 -> DEQ=0);	#G11
+assign sys_safe_err81 = ~( i_nEMPTY | ~controllable_DEQ);
+
+// collecting together the safety error bits:
+assign sys_safe_err = sys_safe_err0 |
+                      sys_safe_err1 |
+                      sys_safe_err2 |
+                      sys_safe_err3 |
+                      sys_safe_err4 |
+                      sys_safe_err5 |
+                      sys_safe_err6 |
+                      sys_safe_err7 |
+                      sys_safe_err8 |
+                      sys_safe_err9 |
+                      sys_safe_err10 |
+                      sys_safe_err11 |
+                      sys_safe_err12 |
+                      sys_safe_err13 |
+                      sys_safe_err14 |
+                      sys_safe_err15 |
+                      sys_safe_err16 |
+                      sys_safe_err17 |
+                      sys_safe_err18 |
+                      sys_safe_err19 |
+                      sys_safe_err20 |
+                      sys_safe_err21 |
+                      sys_safe_err22 |
+                      sys_safe_err23 |
+                      sys_safe_err24 |
+                      sys_safe_err25 |
+                      sys_safe_err26 |
+                      sys_safe_err27 |
+                      sys_safe_err28 |
+                      sys_safe_err29 |
+                      sys_safe_err30 |
+                      sys_safe_err31 |
+                      sys_safe_err32 |
+                      sys_safe_err33 |
+                      sys_safe_err34 |
+                      sys_safe_err35 |
+                      sys_safe_err36 |
+                      sys_safe_err37 |
+                      sys_safe_err38 |
+                      sys_safe_err39 |
+                      sys_safe_err40 |
+                      sys_safe_err41 |
+                      sys_safe_err42 |
+                      sys_safe_err43 |
+                      sys_safe_err44 |
+                      sys_safe_err45 |
+                      sys_safe_err46 |
+                      sys_safe_err47 |
+                      sys_safe_err48 |
+                      sys_safe_err49 |
+                      sys_safe_err50 |
+                      sys_safe_err51 |
+                      sys_safe_err52 |
+                      sys_safe_err53 |
+                      sys_safe_err54 |
+                      sys_safe_err55 |
+                      sys_safe_err56 |
+                      sys_safe_err57 |
+                      sys_safe_err58 |
+                      sys_safe_err59 |
+                      sys_safe_err60 |
+                      sys_safe_err61 |
+                      sys_safe_err62 |
+                      sys_safe_err63 |
+                      sys_safe_err64 |
+                      sys_safe_err65 |
+                      sys_safe_err66 |
+                      sys_safe_err67 |
+                      sys_safe_err68 |
+                      sys_safe_err69 |
+                      sys_safe_err70 |
+                      sys_safe_err71 |
+                      sys_safe_err72 |
+                      sys_safe_err73 |
+                      sys_safe_err74 |
+                      sys_safe_err75 |
+                      sys_safe_err76 |
+                      sys_safe_err77 |
+                      sys_safe_err78 |
+                      sys_safe_err79 |
+                      sys_safe_err80 |
+                      sys_safe_err81;
+
+// =============================================================
+//                          ENV_FAIRNESS:
+// =============================================================
+// G(F(BtoR_REQ0=1 <-> RtoB_ACK0=1));	#A2
+assign env_fair0 = controllable_BtoR_REQ0 ^~ i_RtoB_ACK0;
+
+// G(F(BtoR_REQ1=1 <-> RtoB_ACK1=1));	#A2
+assign env_fair1 = controllable_BtoR_REQ1 ^~ i_RtoB_ACK1;
+
+
+// =============================================================
+//                          SYS_FAIRNESS:
+// =============================================================
+// G(F(StoB_REQ0=1 <-> BtoS_ACK0=1));	#G1+G2
+assign sys_fair0 = i_StoB_REQ0 ^~ controllable_BtoS_ACK0;
+
+// G(F(StoB_REQ1=1 <-> BtoS_ACK1=1));	#G1+G2
+assign sys_fair1 = i_StoB_REQ1 ^~ controllable_BtoS_ACK1;
+
+// G(F(StoB_REQ2=1 <-> BtoS_ACK2=1));	#G1+G2
+assign sys_fair2 = i_StoB_REQ2 ^~ controllable_BtoS_ACK2;
+
+// G(F(StoB_REQ3=1 <-> BtoS_ACK3=1));	#G1+G2
+assign sys_fair3 = i_StoB_REQ3 ^~ controllable_BtoS_ACK3;
+
+// G(F(StoB_REQ4=1 <-> BtoS_ACK4=1));	#G1+G2
+assign sys_fair4 = i_StoB_REQ4 ^~ controllable_BtoS_ACK4;
+
+// G(F(StoB_REQ5=1 <-> BtoS_ACK5=1));	#G1+G2
+assign sys_fair5 = i_StoB_REQ5 ^~ controllable_BtoS_ACK5;
+
+// G(F(StoB_REQ6=1 <-> BtoS_ACK6=1));	#G1+G2
+assign sys_fair6 = i_StoB_REQ6 ^~ controllable_BtoS_ACK6;
+
+// G(F(StoB_REQ7=1 <-> BtoS_ACK7=1));	#G1+G2
+assign sys_fair7 = i_StoB_REQ7 ^~ controllable_BtoS_ACK7;
+
+// G(F(stateG12=0));	#G12
+assign sys_fair8 = ~reg_stateG12;
+
+assign fair_err = (fair_cnt >= 5'b11110);
+
+// computing the error output bit:
+assign o_err = ~env_safe_err & ~env_safe_err_happened & (sys_safe_err | fair_err);
+initial
+ begin
+  reg_i_StoB_REQ0 = 0;
+  reg_controllable_BtoS_ACK0 = 0;
+  reg_i_StoB_REQ1 = 0;
+  reg_controllable_BtoS_ACK1 = 0;
+  reg_i_StoB_REQ2 = 0;
+  reg_controllable_BtoS_ACK2 = 0;
+  reg_i_StoB_REQ3 = 0;
+  reg_controllable_BtoS_ACK3 = 0;
+  reg_i_StoB_REQ4 = 0;
+  reg_controllable_BtoS_ACK4 = 0;
+  reg_i_StoB_REQ5 = 0;
+  reg_controllable_BtoS_ACK5 = 0;
+  reg_i_StoB_REQ6 = 0;
+  reg_controllable_BtoS_ACK6 = 0;
+  reg_i_StoB_REQ7 = 0;
+  reg_controllable_BtoS_ACK7 = 0;
+  reg_i_RtoB_ACK0 = 0;
+  reg_controllable_BtoR_REQ0 = 0;
+  reg_i_RtoB_ACK1 = 0;
+  reg_controllable_BtoR_REQ1 = 0;
+  reg_i_FULL = 0;
+  reg_i_nEMPTY = 0;
+  reg_controllable_ENQ = 0;
+  reg_controllable_DEQ = 0;
+  reg_controllable_SLC0 = 0;
+  reg_controllable_SLC1 = 0;
+  reg_controllable_SLC2 = 0;
+  reg_stateG7_0 = 0;
+  reg_nstateG7_1 = 0;
+  reg_stateG12 = 0;
+  env_safe_err_happened = 0;
+  next_env_fair = 0;
+  fair_cnt = 0;
+  next_sys_fair = 0;
+ end
+
+
+always @(posedge i_clk)
+ begin
+   // We remember if an environment error occurred:
+   env_safe_err_happened = env_safe_err_happened | env_safe_err;
+
+   // Updating the fairness counters: 
+   if((next_sys_fair == 0) & sys_fair0)
+    begin
+      next_sys_fair = 1;
+      next_env_fair = 0;
+      fair_cnt = 0;
+    end
+   else if((next_sys_fair == 1) & sys_fair1)
+    begin
+      next_sys_fair = 2;
+      next_env_fair = 0;
+      fair_cnt = 0;
+    end
+   else if((next_sys_fair == 2) & sys_fair2)
+    begin
+      next_sys_fair = 3;
+      next_env_fair = 0;
+      fair_cnt = 0;
+    end
+   else if((next_sys_fair == 3) & sys_fair3)
+    begin
+      next_sys_fair = 4;
+      next_env_fair = 0;
+      fair_cnt = 0;
+    end
+   else if((next_sys_fair == 4) & sys_fair4)
+    begin
+      next_sys_fair = 5;
+      next_env_fair = 0;
+      fair_cnt = 0;
+    end
+   else if((next_sys_fair == 5) & sys_fair5)
+    begin
+      next_sys_fair = 6;
+      next_env_fair = 0;
+      fair_cnt = 0;
+    end
+   else if((next_sys_fair == 6) & sys_fair6)
+    begin
+      next_sys_fair = 7;
+      next_env_fair = 0;
+      fair_cnt = 0;
+    end
+   else if((next_sys_fair == 7) & sys_fair7)
+    begin
+      next_sys_fair = 8;
+      next_env_fair = 0;
+      fair_cnt = 0;
+    end
+   else if((next_sys_fair == 8) & sys_fair8)
+    begin
+      next_sys_fair = 0;
+      next_env_fair = 0;
+      fair_cnt = 0;
+    end
+   else if(~next_env_fair & env_fair0)
+    begin
+      next_env_fair = 1;
+    end
+   else if(next_env_fair & env_fair1)
+    begin
+      next_env_fair = 0;
+      fair_cnt = fair_cnt + 1;
+    end
+
+   // Updating the automata: 
+   // Automaton G7: 
+   if(reg_nstateG7_1 & ~reg_controllable_BtoR_REQ0 & reg_controllable_BtoR_REQ1)
+    begin
+      reg_nstateG7_1 = 1'b0;
+      reg_stateG7_0 = 1'b0;
+    end
+   else if(~reg_nstateG7_1 & reg_controllable_BtoR_REQ0 & ~reg_controllable_BtoR_REQ1)
+    begin
+      reg_nstateG7_1 = 1'b1;
+      reg_stateG7_0 = 1'b0;
+    end
+   else if(reg_nstateG7_1 & ~reg_controllable_BtoR_REQ0 & ~reg_controllable_BtoR_REQ1)
+    begin
+      reg_nstateG7_1 = 1'b1;
+      reg_stateG7_0 = 1'b1;
+    end
+   else if(~reg_nstateG7_1 & ~reg_controllable_BtoR_REQ0 & ~reg_controllable_BtoR_REQ1)
+    begin
+      reg_nstateG7_1 = 1'b0;
+      reg_stateG7_0 = 1'b1;
+    end
+
+   // Automaton G12: 
+   if(~reg_stateG12 & reg_i_nEMPTY & ~reg_controllable_DEQ)
+      reg_stateG12 = 1'b1;
+   else if(reg_stateG12 & reg_controllable_DEQ)
+      reg_stateG12 = 1'b0;
+
+   // Latching the previous input:
+   reg_i_StoB_REQ0 =  i_StoB_REQ0;
+   reg_controllable_BtoS_ACK0 =  controllable_BtoS_ACK0;
+   reg_i_StoB_REQ1 =  i_StoB_REQ1;
+   reg_controllable_BtoS_ACK1 =  controllable_BtoS_ACK1;
+   reg_i_StoB_REQ2 =  i_StoB_REQ2;
+   reg_controllable_BtoS_ACK2 =  controllable_BtoS_ACK2;
+   reg_i_StoB_REQ3 =  i_StoB_REQ3;
+   reg_controllable_BtoS_ACK3 =  controllable_BtoS_ACK3;
+   reg_i_StoB_REQ4 =  i_StoB_REQ4;
+   reg_controllable_BtoS_ACK4 =  controllable_BtoS_ACK4;
+   reg_i_StoB_REQ5 =  i_StoB_REQ5;
+   reg_controllable_BtoS_ACK5 =  controllable_BtoS_ACK5;
+   reg_i_StoB_REQ6 =  i_StoB_REQ6;
+   reg_controllable_BtoS_ACK6 =  controllable_BtoS_ACK6;
+   reg_i_StoB_REQ7 =  i_StoB_REQ7;
+   reg_controllable_BtoS_ACK7 =  controllable_BtoS_ACK7;
+   reg_i_RtoB_ACK0 =  i_RtoB_ACK0;
+   reg_controllable_BtoR_REQ0 =  controllable_BtoR_REQ0;
+   reg_i_RtoB_ACK1 =  i_RtoB_ACK1;
+   reg_controllable_BtoR_REQ1 =  controllable_BtoR_REQ1;
+   reg_i_FULL =  i_FULL;
+   reg_i_nEMPTY =  i_nEMPTY;
+   reg_controllable_ENQ =  controllable_ENQ;
+   reg_controllable_DEQ =  controllable_DEQ;
+   reg_controllable_SLC0 =  controllable_SLC0;
+   reg_controllable_SLC1 =  controllable_SLC1;
+   reg_controllable_SLC2 =  controllable_SLC2;
+
+ end
+endmodule
+
+-------------------------------
+#!SYNTCOMP
+SOLVED_BY : 3/4 [2017-pre-classification], 8/10 [SYNTCOMP2017-RealSeq], 5/6 [SYNTCOMP2017-RealPar], 5/6 [SYNTCOMP2017-SyntSeq], 3/4 [SYNTCOMP2017-SyntPar]
+REF_SIZE : 3310
+SOLVED_IN : 0.264 [SYNTCOMP2017-RealSeq], 0.784204 [SYNTCOMP2017-RealPar]
+STATUS : realizable
+#.

@@ -1,0 +1,46 @@
+INFO {
+  TITLE:       "Converted TSL Specification: SensorSelector"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0is2acc2gyro0sensor2type;
+    p0p0is2alt0sensor2type;
+    p0p0is2mag0sensor2type;
+    p0p0is2none0sensor2type;
+  }
+
+  OUTPUTS {
+    u0cs2a2g0cs2a2g;
+    u0cs2a2g0cs2in;
+    u0cs2a2g0f1dhigh1b;
+    u0cs2a2g2out0cs2a2g;
+    u0cs2a2g2out0cs2a2g2out;
+    u0cs2alt0cs2alt;
+    u0cs2alt0cs2in;
+    u0cs2alt0f1dhigh1b;
+    u0cs2alt2out0cs2alt;
+    u0cs2alt2out0cs2alt2out;
+    u0cs2mag0cs2in;
+    u0cs2mag0cs2mag;
+    u0cs2mag0f1dhigh1b;
+    u0cs2mag2out0cs2mag;
+    u0cs2mag2out0cs2mag2out;
+    u0sdi0sdi;
+    u0sdi0sdi2in;
+    u0sdi0f1dhigh1b;
+    u0sdi2out0sdi;
+    u0sdi2out0sdi2out;
+    u0spc0spc;
+    u0spc0spc2in;
+    u0spc0f1dhigh1b;
+    u0spc2out0spc;
+    u0spc2out0spc2out;
+  }
+
+  GUARANTEE {
+    (G ((((((((((! (((u0cs2a2g0cs2in) && (! ((u0cs2a2g0f1dhigh1b) || (u0cs2a2g0cs2a2g)))) <-> ((! (((u0cs2a2g0f1dhigh1b) && (! (u0cs2a2g0cs2a2g))) <-> ((u0cs2a2g0cs2a2g) && (! (u0cs2a2g0f1dhigh1b))))) && (! (u0cs2a2g0cs2in))))) && (! (((u0cs2a2g2out0cs2a2g) && (! (u0cs2a2g2out0cs2a2g2out))) <-> ((u0cs2a2g2out0cs2a2g2out) && (! (u0cs2a2g2out0cs2a2g)))))) && (! (((u0cs2alt0cs2in) && (! ((u0cs2alt0f1dhigh1b) || (u0cs2alt0cs2alt)))) <-> ((! (((u0cs2alt0f1dhigh1b) && (! (u0cs2alt0cs2alt))) <-> ((u0cs2alt0cs2alt) && (! (u0cs2alt0f1dhigh1b))))) && (! (u0cs2alt0cs2in)))))) && (! (((u0cs2alt2out0cs2alt) && (! (u0cs2alt2out0cs2alt2out))) <-> ((u0cs2alt2out0cs2alt2out) && (! (u0cs2alt2out0cs2alt)))))) && (! (((u0cs2mag0cs2mag) && (! ((u0cs2mag0f1dhigh1b) || (u0cs2mag0cs2in)))) <-> ((! (((u0cs2mag0f1dhigh1b) && (! (u0cs2mag0cs2in))) <-> ((u0cs2mag0cs2in) && (! (u0cs2mag0f1dhigh1b))))) && (! (u0cs2mag0cs2mag)))))) && (! (((u0cs2mag2out0cs2mag) && (! (u0cs2mag2out0cs2mag2out))) <-> ((u0cs2mag2out0cs2mag2out) && (! (u0cs2mag2out0cs2mag)))))) && (! (((u0sdi0sdi2in) && (! ((u0sdi0f1dhigh1b) || (u0sdi0sdi)))) <-> ((! (((u0sdi0f1dhigh1b) && (! (u0sdi0sdi))) <-> ((u0sdi0sdi) && (! (u0sdi0f1dhigh1b))))) && (! (u0sdi0sdi2in)))))) && (! (((u0sdi2out0sdi) && (! (u0sdi2out0sdi2out))) <-> ((u0sdi2out0sdi2out) && (! (u0sdi2out0sdi)))))) && (! (((u0spc0spc2in) && (! ((u0spc0f1dhigh1b) || (u0spc0spc)))) <-> ((! (((u0spc0f1dhigh1b) && (! (u0spc0spc))) <-> ((u0spc0spc) && (! (u0spc0f1dhigh1b))))) && (! (u0spc0spc2in)))))) && (! (((u0spc2out0spc) && (! (u0spc2out0spc2out))) <-> ((u0spc2out0spc2out) && (! (u0spc2out0spc))))))) && (((((G ((p0p0is2alt0sensor2type) -> (! (((p0p0is2none0sensor2type) || (p0p0is2mag0sensor2type)) || (p0p0is2acc2gyro0sensor2type))))) && (G ((p0p0is2mag0sensor2type) -> (! (((p0p0is2none0sensor2type) || (p0p0is2alt0sensor2type)) || (p0p0is2acc2gyro0sensor2type)))))) && (G ((p0p0is2acc2gyro0sensor2type) -> (! (((p0p0is2none0sensor2type) || (p0p0is2mag0sensor2type)) || (p0p0is2alt0sensor2type)))))) && (G ((p0p0is2none0sensor2type) -> (! (((p0p0is2alt0sensor2type) || (p0p0is2mag0sensor2type)) || (p0p0is2acc2gyro0sensor2type)))))) -> (((((G ((p0p0is2alt0sensor2type) -> ((((u0cs2a2g0f1dhigh1b) && (u0cs2alt0cs2in)) && (u0cs2mag0f1dhigh1b)) && ((u0sdi0sdi2in) && (u0spc0spc2in))))) && (G ((p0p0is2mag0sensor2type) -> ((((u0cs2a2g0f1dhigh1b) && (u0cs2alt0f1dhigh1b)) && (u0cs2mag0cs2in)) && ((u0sdi0sdi2in) && (u0spc0spc2in)))))) && (G ((p0p0is2acc2gyro0sensor2type) -> ((((u0cs2a2g0cs2in) && (u0cs2alt0f1dhigh1b)) && (u0cs2mag0f1dhigh1b)) && ((u0sdi0sdi2in) && (u0spc0spc2in)))))) && (G ((p0p0is2none0sensor2type) -> (((((u0cs2a2g0f1dhigh1b) && (u0cs2alt0f1dhigh1b)) && (u0cs2mag0f1dhigh1b)) && (u0spc0f1dhigh1b)) && (u0sdi0f1dhigh1b))))) && (G (((((u0cs2a2g2out0cs2a2g) && (u0cs2alt2out0cs2alt)) && (u0cs2mag2out0cs2mag)) && (u0sdi2out0sdi)) && (u0spc2out0spc)))));
+  }
+}

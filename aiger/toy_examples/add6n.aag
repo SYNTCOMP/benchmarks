@@ -1,0 +1,180 @@
+aag 119 18 2 1 99
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38 1
+40 239
+42
+42 40 38
+44 26 15
+46 27 14
+48 47 45
+50 26 14
+52 49 3
+54 48 2
+56 55 53
+58 29 17
+60 58 50
+62 28 17
+64 62 51
+66 65 61
+68 29 16
+70 68 51
+72 71 66
+74 28 16
+76 74 50
+78 77 72
+80 79 5
+82 78 4
+84 83 81
+86 50 28
+88 50 16
+90 89 87
+92 90 75
+94 31 19
+96 94 93
+98 30 19
+100 98 92
+102 101 97
+104 31 18
+106 104 92
+108 107 102
+110 30 18
+112 110 93
+114 113 108
+116 115 7
+118 114 6
+120 119 117
+122 93 30
+124 93 18
+126 125 123
+128 126 111
+130 33 21
+132 130 129
+134 32 21
+136 134 128
+138 137 133
+140 33 20
+142 140 128
+144 143 138
+146 32 20
+148 146 129
+150 149 144
+152 151 9
+154 150 8
+156 155 153
+158 129 32
+160 129 20
+162 161 159
+164 162 147
+166 35 23
+168 166 165
+170 34 23
+172 170 164
+174 173 169
+176 35 22
+178 176 164
+180 179 174
+182 34 22
+184 182 165
+186 185 180
+188 187 11
+190 186 10
+192 191 189
+194 165 34
+196 165 22
+198 197 195
+200 198 183
+202 37 25
+204 202 201
+206 36 25
+208 206 200
+210 209 205
+212 37 24
+214 212 200
+216 215 210
+218 36 24
+220 218 201
+222 221 216
+224 223 13
+226 222 12
+228 227 225
+230 84 56
+232 230 120
+234 232 156
+236 234 192
+238 236 228
+i0 controllable_c<0>
+i1 controllable_c<1>
+i2 controllable_c<2>
+i3 controllable_c<3>
+i4 controllable_c<4>
+i5 controllable_c<5>
+i6 a<0>
+i7 a<1>
+i8 a<2>
+i9 a<3>
+i10 a<4>
+i11 a<5>
+i12 b<0>
+i13 b<1>
+i14 b<2>
+i15 b<3>
+i16 b<4>
+i17 b<5>
+l0 n39
+l1 err_out
+o0 err
+c
+bench
+This file was written by ABC on Sat Aug 31 20:24:44 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv add6.v   ---gives--> add6.mv
+> abc -c "read_blif_mv add6.mv; write_aiger -s add6n.aig"   ---gives--> add6n.aig
+> aigtoaig add6n.aig add6n.aag   ---gives--> add6n.aag (this file)
+Content of add6.v:
+// realizable
+module bench(clk, a, b, controllable_c, err);
+  input clk;
+  input [5:0] a;
+  input [5:0] b;
+  input [5:0] controllable_c;
+  output err;
+  reg err;
+
+  initial
+  begin
+    err = 1'b0;
+  end
+
+  always @ (posedge clk)
+  begin
+    if(controllable_c == a + b)
+         err = 1'b0;
+      else
+         err = 1'b1;
+   end
+endmodule
+-------------------------------
+#!SYNTCOMP
+STATUS : realizable
+SOLVED_BY : 8/8 [SYNTCOMP2014-RealSeq]
+SOLVED_IN : 0.012 [SYNTCOMP2014-RealSeq]
+#.

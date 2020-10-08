@@ -1,0 +1,37 @@
+INFO {
+  TITLE:       "Converted TSL Specification: SPI"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0do2read0spi2control;
+    p0p0do2write0spi2control;
+    p0p0read2finished0read2response;
+    p0p0write2finished0write2response;
+  }
+
+  OUTPUTS {
+    u0last2cmd0last2cmd;
+    u0last2cmd0spi2control;
+    u0read2control0read2control;
+    u0read2control0f1dno2read2cmd1b;
+    u0read2control0f1dread2cmd0last2cmd1b;
+    u0spi2pins0read2spi2pins;
+    u0spi2pins0spi2pins;
+    u0spi2pins0write2spi2pins;
+    u0spi2pins0f1ddefault2spi2pins1b;
+    u0spi2response0spi2response;
+    u0spi2response0f1dno2response1b;
+    u0spi2response0f1dmake2read2out0read2response0last2cmd1b;
+    u0spi2response0f1dmake2write2out0write2response0last2cmd1b;
+    u0write2control0write2control;
+    u0write2control0f1dno2write2cmd1b;
+    u0write2control0f1dwrite2cmd0last2cmd1b;
+  }
+
+  GUARANTEE {
+    (G (((((! (((u0last2cmd0last2cmd) && (! (u0last2cmd0spi2control))) <-> ((u0last2cmd0spi2control) && (! (u0last2cmd0last2cmd))))) && (! (((u0read2control0f1dno2read2cmd1b) && (! ((u0read2control0f1dread2cmd0last2cmd1b) || (u0read2control0read2control)))) <-> ((! (((u0read2control0f1dread2cmd0last2cmd1b) && (! (u0read2control0read2control))) <-> ((u0read2control0read2control) && (! (u0read2control0f1dread2cmd0last2cmd1b))))) && (! (u0read2control0f1dno2read2cmd1b)))))) && (! (((! (((u0spi2pins0write2spi2pins) && (! (u0spi2pins0read2spi2pins))) <-> ((u0spi2pins0read2spi2pins) && (! (u0spi2pins0write2spi2pins))))) && (! ((u0spi2pins0f1ddefault2spi2pins1b) || (u0spi2pins0spi2pins)))) <-> ((! (((u0spi2pins0f1ddefault2spi2pins1b) && (! (u0spi2pins0spi2pins))) <-> ((u0spi2pins0spi2pins) && (! (u0spi2pins0f1ddefault2spi2pins1b))))) && (! ((u0spi2pins0write2spi2pins) || (u0spi2pins0read2spi2pins))))))) && (! (((! (((u0spi2response0f1dmake2read2out0read2response0last2cmd1b) && (! (u0spi2response0spi2response))) <-> ((u0spi2response0spi2response) && (! (u0spi2response0f1dmake2read2out0read2response0last2cmd1b))))) && (! ((u0spi2response0f1dmake2write2out0write2response0last2cmd1b) || (u0spi2response0f1dno2response1b)))) <-> ((! (((u0spi2response0f1dmake2write2out0write2response0last2cmd1b) && (! (u0spi2response0f1dno2response1b))) <-> ((u0spi2response0f1dno2response1b) && (! (u0spi2response0f1dmake2write2out0write2response0last2cmd1b))))) && (! ((u0spi2response0f1dmake2read2out0read2response0last2cmd1b) || (u0spi2response0spi2response))))))) && (! (((u0write2control0f1dno2write2cmd1b) && (! ((u0write2control0f1dwrite2cmd0last2cmd1b) || (u0write2control0write2control)))) <-> ((! (((u0write2control0f1dwrite2cmd0last2cmd1b) && (! (u0write2control0write2control))) <-> ((u0write2control0write2control) && (! (u0write2control0f1dwrite2cmd0last2cmd1b))))) && (! (u0write2control0f1dno2write2cmd1b))))))) && (((G (! ((p0p0do2read0spi2control) && (p0p0do2write0spi2control)))) && (G (! ((p0p0read2finished0read2response) && (p0p0write2finished0write2response))))) -> (((((((((((((((((p0p0do2read0spi2control) || (p0p0do2write0spi2control)) R (u0spi2pins0f1ddefault2spi2pins1b)) && (G (((u0spi2pins0read2spi2pins) || (u0spi2pins0write2spi2pins)) || (u0spi2pins0f1ddefault2spi2pins1b)))) && (G ((((p0p0do2read0spi2control) || (p0p0do2write0spi2control)) && (u0spi2pins0f1ddefault2spi2pins1b)) <-> (u0last2cmd0spi2control)))) && (G (((p0p0do2read0spi2control) && (u0spi2pins0f1ddefault2spi2pins1b)) -> (X (u0read2control0f1dread2cmd0last2cmd1b))))) && (G (((p0p0do2write0spi2control) && (u0spi2pins0f1ddefault2spi2pins1b)) -> (X (u0write2control0f1dwrite2cmd0last2cmd1b))))) && (G ((! ((p0p0do2read0spi2control) && (u0spi2pins0f1ddefault2spi2pins1b))) -> (X (u0read2control0f1dno2read2cmd1b))))) && (G ((! ((p0p0do2write0spi2control) && (u0spi2pins0f1ddefault2spi2pins1b))) -> (X (u0write2control0f1dno2write2cmd1b))))) && (G (((p0p0do2read0spi2control) && (u0spi2pins0f1ddefault2spi2pins1b)) -> (X ((p0p0read2finished0read2response) R (u0spi2pins0read2spi2pins)))))) && (G (((p0p0do2write0spi2control) && (u0spi2pins0f1ddefault2spi2pins1b)) -> (X ((p0p0write2finished0write2response) R (u0spi2pins0write2spi2pins)))))) && (G (((u0spi2pins0read2spi2pins) && (p0p0read2finished0read2response)) -> (X (((p0p0do2read0spi2control) || (p0p0do2write0spi2control)) R (u0spi2pins0f1ddefault2spi2pins1b)))))) && (G (((u0spi2pins0write2spi2pins) && (p0p0write2finished0write2response)) -> (X (((p0p0do2read0spi2control) || (p0p0do2write0spi2control)) R (u0spi2pins0f1ddefault2spi2pins1b)))))) && (G (! ((u0read2control0f1dread2cmd0last2cmd1b) && (u0write2control0f1dwrite2cmd0last2cmd1b))))) && (G ((p0p0read2finished0read2response) <-> (u0spi2response0f1dmake2read2out0read2response0last2cmd1b)))) && (G ((p0p0write2finished0write2response) <-> (u0spi2response0f1dmake2write2out0write2response0last2cmd1b)))) && (G (((u0spi2response0f1dmake2write2out0write2response0last2cmd1b) || (u0spi2response0f1dmake2read2out0read2response0last2cmd1b)) || (u0spi2response0f1dno2response1b)))));
+  }
+}
