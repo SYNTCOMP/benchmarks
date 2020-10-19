@@ -1,0 +1,87 @@
+INFO {
+  TITLE:       "Lift controller"
+  DESCRIPTION: "This is similar to lift.tlsf except that the floors are one-hot encoded:
+                for each floor, create a separate Boolean output f[i].
+                The original version used binary-encoded output, i.e. log2(#floors) bits.
+                This version seems to be harder for solvers.
+                Written by Ayrat Khalimov."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 2;  // the number of floors 0...n-1
+  }
+  DEFINITIONS { }
+}
+
+MAIN {
+  INPUTS {
+    b[n];
+  }
+
+  OUTPUTS {
+    up;          // the lift is moving up
+    down;        // the lift is moving down
+    serve;       // serve the floor (open the door, etc.)
+    f[n];        // the current floor
+  }
+
+  ASSUMPTIONS {
+    // initially no buttons are pressed
+    &&[0 <= i < n]  !b[i];
+
+    // the button remains pressed until gets served
+    &&[0 <= i < n]
+      G (b[i] && !(f[i] && serve)  ->  X b[i]);
+
+    // the button is lowered when served
+    &&[0 <= i < n]
+      G (b[i] && (f[i] && serve)  ->  X !b[i]);
+  }
+
+  INVARIANTS {
+    // if the lift moves up, raise the signal `up`
+    up <-> ||[0 <= i < n-1] (f[i] && X f[i+1]);
+    // the same for `down`
+    down <-> ||[0 < i < n] (f[i] && X f[i-1]);
+
+    !(up && down); // (implied by above)
+
+    // the laws of lift physics
+    &&[0 < i < n-1]
+      (f[i] -> X( f[i] || f[i+1] || f[i-1]));
+
+    f[0] -> X(f[0] || f[1]);
+    f[n-1] -> X(f[n-1] || f[n-2]);
+  }
+
+  GUARANTEES {
+    // the lift starts at floor 0
+    f[0];
+
+    // every request is served
+    &&[0 <= i < n]
+      G(b[i] -> F (f[i] && serve));
+
+    // don't move up unless there is a request upwards
+    &&[0 <= i < n-1]
+      G(f[i] && up -> ||[i<j<n] b[j]);
+
+    // don't move down unless there is a request downwards or there are no requests at all
+    &&[0 < i < n]
+      G(f[i] && down
+          ->
+          (
+            (||[0<=j<i]  b[j]) // there is a request downwards
+            ||
+            (&&[0<=j<n] !b[j]) // there are no requests at all
+          )
+       );
+
+    // if no requests, move to floor 0
+    ! F G( (&&[0<=i<n] !b[i]) && !f[0] );
+  }
+}
+
