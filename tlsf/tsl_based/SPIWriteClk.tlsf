@@ -23,3 +23,8 @@ MAIN {
     (G (! (((u0spc0f1dhigh1b) && (! ((u0spc0f1dlow1b) || (u0spc0spc)))) <-> ((! (((u0spc0f1dlow1b) && (! (u0spc0spc))) <-> ((u0spc0spc) && (! (u0spc0f1dlow1b))))) && (! (u0spc0f1dhigh1b)))))) && ((G (((((! (p0p0is2even0counter)) && (p0p0lt0counter0f1dfourty1b)) || ((p0p0gt0counter0f1dsixteen1b) && (p0p0lt0counter0f1dtwentyfour1b))) || (p0p0eqz0counter)) <-> (u0spc0f1dhigh1b))) && (G ((! ((((! (p0p0is2even0counter)) && (p0p0lt0counter0f1dfourty1b)) || ((p0p0gt0counter0f1dsixteen1b) && (p0p0lt0counter0f1dtwentyfour1b))) || (p0p0eqz0counter))) <-> (u0spc0f1dlow1b))));
   }
 }
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 4
+//#.

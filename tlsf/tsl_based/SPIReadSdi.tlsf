@@ -22,3 +22,8 @@ MAIN {
     (G (! (((u0sdi0f1dhigh1b) && (! ((u0sdi0f1dget2bit0read2address0f1dsub0f1deight1b0f1ddiv0counter0f1dtwo1b1b1b1b) || (u0sdi0sdi)))) <-> ((! (((u0sdi0f1dget2bit0read2address0f1dsub0f1deight1b0f1ddiv0counter0f1dtwo1b1b1b1b) && (! (u0sdi0sdi))) <-> ((u0sdi0sdi) && (! (u0sdi0f1dget2bit0read2address0f1dsub0f1deight1b0f1ddiv0counter0f1dtwo1b1b1b1b))))) && (! (u0sdi0f1dhigh1b)))))) && (((G (! ((p0p0gte0counter0f1dfour1b) && (p0p0eq0counter0f1dtwo1b)))) && (G (! ((p0p0gte0counter0f1dfour1b) && (p0p0eq0counter0f1dthree1b))))) -> ((G (((p0p0eq0counter0f1dtwo1b) || (p0p0eq0counter0f1dthree1b)) -> (u0sdi0f1dhigh1b))) && (G (((p0p0gte0counter0f1dfour1b) && (p0p0lte0counter0f1dseventeen1b)) <-> (u0sdi0f1dget2bit0read2address0f1dsub0f1deight1b0f1ddiv0counter0f1dtwo1b1b1b1b)))));
   }
 }
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 3
+//#.

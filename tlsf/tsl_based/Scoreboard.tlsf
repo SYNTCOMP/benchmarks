@@ -32,3 +32,8 @@ MAIN {
     (G (((((! (((! (((u0actcolor0f1dblackcolor1b) && (! (u0actcolor0actcolor))) <-> ((u0actcolor0actcolor) && (! (u0actcolor0f1dblackcolor1b))))) && (! ((u0actcolor0f1dredcolor1b) || (u0actcolor0scorecolor)))) <-> ((! (((u0actcolor0f1dredcolor1b) && (! (u0actcolor0scorecolor))) <-> ((u0actcolor0scorecolor) && (! (u0actcolor0f1dredcolor1b))))) && (! ((u0actcolor0f1dblackcolor1b) || (u0actcolor0actcolor)))))) && (! (((u0bxcoord0bxcoord) && (! (u0bxcoord0xcoord))) <-> ((u0bxcoord0xcoord) && (! (u0bxcoord0bxcoord)))))) && (! (((u0bycoord0bycoord) && (! (u0bycoord0ycoord))) <-> ((u0bycoord0ycoord) && (! (u0bycoord0bycoord)))))) && (! (((u0xcoord0xcoord) && (! (u0xcoord0f1dinc0xcoord1b))) <-> ((u0xcoord0f1dinc0xcoord1b) && (! (u0xcoord0xcoord)))))) && (! (((u0ycoord0ycoord) && (! (u0ycoord0f1dinc0ycoord1b))) <-> ((u0ycoord0f1dinc0ycoord1b) && (! (u0ycoord0ycoord))))))) && (((((((G (u0bxcoord0xcoord)) && (G (u0bycoord0ycoord))) && (G (u0xcoord0f1dinc0xcoord1b))) && (G ((p0p0eq0xcoord0f1ddec0f1dsizex1b1b) <-> (u0ycoord0f1dinc0ycoord1b)))) && (G (((u0actcolor0scorecolor) || (u0actcolor0f1dredcolor1b)) || (u0actcolor0f1dblackcolor1b)))) && (G ((p0p0lt0f1dcoordcount0xcoord0ycoord1b0score) <-> (u0actcolor0scorecolor)))) && (G ((((p0p0on0gameover) && (! (p0p0lt0f1dcoordcount0xcoord0ycoord1b0score))) && ((p0p0eq0f1dadd0xcoord0ycoord1b0f1ddec0f1dsizex1b1b) || (p0p0eq0xcoord0ycoord))) <-> (u0actcolor0f1dredcolor1b))));
   }
 }
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 4
+//#.

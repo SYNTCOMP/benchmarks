@@ -19,3 +19,8 @@ MAIN {
     (G (! (((u0time0time) && (! (u0time0f1dzero1b))) <-> ((u0time0f1dzero1b) && (! (u0time0time)))))) && (G (((p0b0btn2min) && (p0b0btn2sec)) <-> (u0time0f1dzero1b)));
   }
 }
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 1
+//#.

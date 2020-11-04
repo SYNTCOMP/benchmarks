@@ -15,3 +15,8 @@ MAIN {
     (G (! (((u0steps0steps) && (! (u0steps0f1dmove1b))) <-> ((u0steps0f1dmove1b) && (! (u0steps0steps)))))) && (G (u0steps0f1dmove1b));
   }
 }
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 0
+//#.

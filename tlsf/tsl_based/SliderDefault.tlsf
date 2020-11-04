@@ -20,3 +20,8 @@ MAIN {
     (G (! (((u0pos0f1dadd0pos0vel1b) && (! ((u0pos0f1dsub0pos0vel1b) || (u0pos0pos)))) <-> ((! (((u0pos0f1dsub0pos0vel1b) && (! (u0pos0pos))) <-> ((u0pos0pos) && (! (u0pos0f1dsub0pos0vel1b))))) && (! (u0pos0f1dadd0pos0vel1b)))))) && (((G ((u0pos0f1dadd0pos0vel1b) -> (X (! (p0p0left2most0pos))))) && (G ((u0pos0f1dsub0pos0vel1b) -> (X (! (p0p0right2most0pos)))))) -> (((((G ((p0p0left2most0pos) -> (F (u0pos0f1dadd0pos0vel1b)))) && (G ((p0p0right2most0pos) -> (F (u0pos0f1dsub0pos0vel1b))))) && (G (((! (p0p0left2most0pos)) && (! (p0p0right2most0pos))) -> (F ((u0pos0f1dsub0pos0vel1b) || (u0pos0f1dadd0pos0vel1b)))))) && (G ((p0p0left2most0pos) -> ((! (u0pos0f1dsub0pos0vel1b)) W (p0p0right2most0pos))))) && (G ((p0p0right2most0pos) -> ((! (u0pos0f1dadd0pos0vel1b)) W (p0p0left2most0pos))))));
   }
 }
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 6
+//#.

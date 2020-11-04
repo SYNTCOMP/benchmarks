@@ -18,3 +18,8 @@ MAIN {
     (G (! (((u0reg2val0reg2data) && (! (u0reg2val0reg2val))) <-> ((u0reg2val0reg2val) && (! (u0reg2val0reg2data)))))) && (G ((p0p0reg2cmp0f1dmy2type1b0reg2type) <-> (u0reg2val0reg2data)));
   }
 }
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 0
+//#.

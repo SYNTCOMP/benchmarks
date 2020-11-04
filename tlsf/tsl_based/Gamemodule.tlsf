@@ -23,3 +23,8 @@ MAIN {
     (G (! (((! (((u0outpoint0radarboardpoint) && (! (u0outpoint0cockpitboardpoint))) <-> ((u0outpoint0cockpitboardpoint) && (! (u0outpoint0radarboardpoint))))) && (! ((u0outpoint0scoreboardpoint) || (u0outpoint0outpoint)))) <-> ((! (((u0outpoint0scoreboardpoint) && (! (u0outpoint0outpoint))) <-> ((u0outpoint0outpoint) && (! (u0outpoint0scoreboardpoint))))) && (! ((u0outpoint0radarboardpoint) || (u0outpoint0cockpitboardpoint))))))) && ((((G (! ((p0p0isscoremode0gamemode) && (p0p0isradarmode0gamemode)))) && (G (! ((p0p0isradarmode0gamemode) && (p0p0iscockpitmode0gamemode))))) && (G (! ((p0p0iscockpitmode0gamemode) && (p0p0isscoremode0gamemode))))) -> (((G ((p0p0on0gameover) -> (u0outpoint0scoreboardpoint))) && (G ((! (p0p0on0gameover)) -> ((((p0p0isscoremode0gamemode) -> (u0outpoint0scoreboardpoint)) && ((p0p0isradarmode0gamemode) -> (u0outpoint0radarboardpoint))) && ((p0p0iscockpitmode0gamemode) -> (u0outpoint0cockpitboardpoint)))))) && (G (((u0outpoint0scoreboardpoint) || (u0outpoint0radarboardpoint)) || (u0outpoint0cockpitboardpoint)))));
   }
 }
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 6
+//#.
