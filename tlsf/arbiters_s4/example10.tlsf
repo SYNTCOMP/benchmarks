@@ -1,0 +1,47 @@
+INFO {
+  TITLE:       "Example #10 from the S4 paper on synthesis via learning"
+  DESCRIPTION: "Safety specification, with a peculiar initialisation."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 2;  // n>=1
+  }
+
+  DEFINITIONS {
+    fib(n) =
+      n == 0 : 1
+      n == 1 : 1
+       n > 1 : fib(n-1) + fib(n-2);
+  }
+}
+
+MAIN {
+  INPUTS {
+    r;
+  }
+
+  OUTPUTS {
+    g;
+  }
+
+  ASSUMPTIONS { }
+
+  INVARIANTS { }
+
+  GUARANTEES {
+
+    // if r initially passes the 'secret' sequence, then act as a request-grant arbiter:
+    (&&[0<i<n] X[fib(i+2)] r)
+      ->
+    X[fib(n+1)] G(r <-> g);
+
+    // otherwise don't grant:
+    !(&&[0<i<n] X[fib(i+2)] r)
+      ->
+    G(!g);
+  }
+}
+
