@@ -1,0 +1,44 @@
+INFO {
+  TITLE:       "Example #9 from the S4 paper on synthesis via learning"
+  DESCRIPTION: "Safety specification, with a peculiar initialisation.
+                In fact, there is only one implementation, hence not so interesting."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 2;  // n>=1
+  }
+
+  DEFINITIONS { }
+}
+
+MAIN {
+  INPUTS {
+    r;
+  }
+
+  OUTPUTS {
+    g;
+  }
+
+  ASSUMPTIONS { }
+
+  INVARIANTS { }
+
+  GUARANTEES {
+    // moments 0 and n are related
+    g -> X[n] g;
+
+    // in (0,n) behaves like a repeater
+    &&[0<i<n] X[i](r <-> g);
+
+    // n-1 and n are related
+    (X[n-1] g) <-> (X[n] g);
+
+    // afterwards, again behaves like a delayer
+    X[n+1] G (r <-> X[n] g);
+  }
+}
+

@@ -1,0 +1,65 @@
+INFO {
+  TITLE:       "Example #8 from the S4 paper on synthesis via learning"
+  DESCRIPTION: "Arbiter-like safety specification."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 2;  // n>=1, the number of clients
+  }
+
+  DEFINITIONS {
+    // ensures mutual exclusion on an n-ary bus
+    mutual_exclusion(bus) =
+     mone(bus,0,(SIZEOF bus) - 1);
+
+    // ensures that none of the signals
+    // bus[i] - bus[j] is HIGH
+    none(bus,i,j) =
+      &&[i <= t <= j]
+        !bus[t];
+
+    // ensures that at most one of the signals
+    // bus[i] - bus[j] is HIGH
+    mone(bus,i,j) =
+    i > j : false
+    i == j : true
+    i < j :
+      // either no signal of the lower half is HIGH and at 
+      // most one signal of the upper half is HIGH
+      (none(bus, i, m(i,j)) && mone(bus, m(i,j) + 1, j)) ||
+      // or at most one signal of the lower half is HIGH
+      // and no signal in of the upper half is HIGH
+      (mone(bus, i, m(i,j)) && none(bus, m(i,j) + 1, j));
+
+    // returns the position between i and j
+    m(i,j) = (i + j) / 2;
+  }
+}
+
+MAIN {
+  INPUTS {
+    r[n];
+  }
+
+  OUTPUTS {
+    g[n];
+  }
+
+  ASSUMPTIONS { }
+
+  INVARIANTS {
+    mutual_exclusion(g);
+  }
+
+  GUARANTEES {
+    G( (||[0<=i<n] r[i]) -> ||[0<=i<n] (r[i] && X g[i]) );
+
+    &&[ 0 <= i < n ]
+    G ( (g[i] && !r[i]) -> X !g[i] );  // Although Mealy machines could try to !g on seeing !r,
+                                       // the premise can still fire bcz of previous obligations to grant
+  }
+}
+

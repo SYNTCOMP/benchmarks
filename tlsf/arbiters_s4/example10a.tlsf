@@ -1,0 +1,54 @@
+INFO {
+  TITLE:       "Modified example #10 from the S4 paper on synthesis via learning"
+  DESCRIPTION: "Arbiter with spy-like capabilities:
+                it triggers different arbiter behaviours depending on whether
+                it sees the secret sequence in the beginning. Liveness specification."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 2;  // n>=1
+  }
+
+  DEFINITIONS {
+    fib(n) =
+      n == 0 : 1
+      n == 1 : 1
+       n > 1 : fib(n-1) + fib(n-2);
+  }
+}
+
+MAIN {
+  INPUTS { r; }
+  OUTPUTS { g; }
+
+  ASSUMPTIONS { }
+
+  INVARIANTS {
+    // no spurious grants
+    g && G !r -> F !g;
+    g && X (!r && !g) -> X (r R !g);
+  }
+
+  GUARANTEES {
+    // no grant before any request
+    r R !g;
+    // every request is eventually granted
+    G (r -> F g);
+
+    // ... and now we add the capabilities for revealing the secret:
+
+    // if r initially passes the 'secret' sequence, then grants come in pairs
+    (&&[0<i<n] X[fib(i+2)] r)
+      ->
+    X[fib(n+1)] G(!g && X g -> X X g );
+
+    // otherwise every grant is immediately lowered:
+    !(&&[0<i<n] X[fib(i+2)] r)
+      ->
+    X[fib(n+1)] G(!g && X g -> X X !g);
+  }
+}
+
