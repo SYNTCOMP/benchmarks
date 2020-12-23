@@ -2,7 +2,7 @@ HOA: v1
 States: 31
 Start: 0
 acc-name: parity max even 21
-Acceptance: 21 Fin(19) | (Inf(18) & (Fin(17) | (Inf(16) & (Fin(15) | (Inf(14) & (Fin(13) | (Inf(12) & (Fin(11) | (Inf(10) & (Fin(9) | (Inf(8) & (Fin(7) | (Inf(6) & (Fin(5) | (Inf(4) & (Fin(3) | (Inf(2) & (Fin(1) | Inf(0)))))))))))))))))))
+Acceptance: 21 Inf(20) & (Fin(19) | (Inf(18) & (Fin(17) | (Inf(16) & (Fin(15) | (Inf(14) & (Fin(13) | (Inf(12) & (Fin(11) | (Inf(10) & (Fin(9) | (Inf(8) & (Fin(7) | (Inf(6) & (Fin(5) | (Inf(4) & (Fin(3) | (Inf(2) & (Fin(1) | Inf(0))))))))))))))))))))
 AP: 4 "pl0_0" "pl0_1" "pl1_0" "pl1_1"
 controllable-AP: 0 1
 properties: deterministic complete colored
