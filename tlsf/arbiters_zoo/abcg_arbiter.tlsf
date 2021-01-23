@@ -1,0 +1,68 @@
+INFO
+{
+  TITLE:       "Full arbiter that instead of simply grant `g`
+                requires the sequence `abc g` "
+  DESCRIPTION: ""
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL
+{
+  PARAMETERS { n = 1; }  // n≥1
+
+  DEFINITIONS
+  {
+    // copied from the full arbiter
+    mutual_exclusion(bus) = mone(bus,0,(SIZEOF bus) - 1);
+    none(bus,i,j) = &&[i <= t <= j] !bus[t];
+    mone(bus,i,j) =
+    i > j : false
+    i == j : true
+    i < j :
+      (none(bus, i, m(i,j)) && mone(bus, m(i,j) + 1, j)) ||
+      (mone(bus, i, m(i,j)) && none(bus, m(i,j) + 1, j));
+    m(i,j) = (i + j) / 2;
+
+    lower_grant_eventually(r,g) =
+      G(g && (G !r) -> F !g);
+
+    no_spurious_grants(r,g) =
+    (
+      (!g W r) &&                         // initially
+      G(g && X(!r && !g) -> X(!g W r))    // always
+    );
+
+    every_req_is_granted(r,g) = G(r -> F g);
+
+    full_arbiter(r,g) =
+      G mutual_exclusion(g) &&
+      (&&[0 <= i < (SIZEOF g)]
+        (
+          no_spurious_grants(r[i], g[i]) &&
+          lower_grant_eventually(r[i], g[i]) &&
+          every_req_is_granted(r[i], g[i])
+        )
+      );
+  }
+}
+
+MAIN
+{
+  INPUTS  { r[n]; }
+  OUTPUTS { a[n]; b[n]; c[n]; g[n]; }
+
+  GUARANTEES
+  {
+    full_arbiter(r,g);
+
+    // require the sequence abcg instead of g
+    &&[0 <= i < n]
+    (
+      G(a[i] <-> X b[i]) &&
+      G(b[i] <-> X c[i]) &&
+      G(c[i] <-> X g[i])
+    );
+  }
+}
+

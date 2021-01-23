@@ -1,0 +1,58 @@
+INFO
+{
+  TITLE:       "Simple arbiter with a buffer twist"
+  DESCRIPTION: "
+                Simple arbiter (with spurious grants) with added bufferization:
+                'G(req -> bufferX(try,ack) UNTIL grant)'
+               "
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL
+{
+  PARAMETERS { n = 1; }  // n≥1
+
+  DEFINITIONS
+  {
+    bufferX(inp, out, i) =
+      (
+        G(inp[i] <-> X out[i])
+      );
+
+    // the rest is copied from full_arbiter
+    mutual_exclusion(bus) = mone(bus, 0, (SIZEOF bus) - 1);
+    none(bus,i,j) = &&[i <= t <= j] !bus[t];
+    mone(bus,i,j) =
+    i > j  : false
+    i == j : true
+    i < j  :
+      (none(bus, i, m(i,j)) && mone(bus, m(i,j) + 1, j)) ||
+      (mone(bus, i, m(i,j)) && none(bus, m(i,j) + 1, j));
+    m(i,j) = (i + j) / 2;
+  }
+}
+
+MAIN
+{
+  INPUTS
+  {
+    r[n];    // requests
+    try[n];  // try (used for the buffer part)
+  }
+
+  OUTPUTS
+  {
+    g[n];   // grant signals
+    ack[n]; // acknowledge seeing `try`
+  }
+
+  GUARANTEES
+  {
+    G mutual_exclusion(g);
+
+    &&[0 <= i < n]
+      G (r[i] -> (bufferX(try, ack, i) U g[i]));
+  }
+}
+

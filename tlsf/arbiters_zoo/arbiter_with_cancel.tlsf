@@ -1,0 +1,68 @@
+INFO
+{
+  TITLE:       "Arbiter with cancellation and no spurious grants."
+  DESCRIPTION: "
+                (Note that it is slightly different from full_arbiter,
+                 which has a minor error inroduced due to Mealy/Moore semantics.)
+               "
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL
+{
+  PARAMETERS { n = 1; }  // n≥1
+
+  DEFINITIONS
+  {
+    // These parts are taken from full arbiter (modularized version)
+
+    mutual_exclusion(bus) = mone(bus,0,(SIZEOF bus) - 1);
+    none(bus,i,j) = &&[i <= t <= j] !bus[t];
+    mone(bus,i,j) =
+    i > j : false
+    i == j : true
+    i < j :
+      (none(bus, i, m(i,j)) && mone(bus, m(i,j) + 1, j)) ||
+      (mone(bus, i, m(i,j)) && none(bus, m(i,j) + 1, j));
+    m(i,j) = (i + j) / 2;
+
+    lower_grant_eventually(r, g) =
+      G(g && (G !r) -> F !g);
+
+    no_spurious_grants(r, g) =
+    (
+      (!g W r) &&                         // initially
+      G(g && X(!r && !g) -> X(!g W r))    // always
+    );
+
+    every_req_is_granted(r,g) = G(r -> F g);
+  }
+}
+
+MAIN
+{
+  INPUTS  { r[n]; c[n]; }
+  OUTPUTS { g[n]; }
+
+  GUARANTEES
+  {
+    G mutual_exclusion(g);
+
+    &&[0 <= i < n]
+    (
+      no_spurious_grants    ( (r[i] && !c[i]), g[i] ) &&
+      lower_grant_eventually( (r[i] && !c[i]), g[i] ) &&
+      every_req_is_granted  ( (r[i] && !c[i]), (g[i] || c[i])) && // or cancelled
+      G (c[i] -> !g[i]) &&  // forbid grant if cancel
+      // the part 'no_spurious_grants' is not sufficient
+      // in the cancellable arbiter, because a to-be-granted request
+      // can later be cancelled yet arbiter may still decide to grant it,
+      // so we explicitly forbid this:
+      G !(c[i] && X((!r[i] || c[i]) U (g[i] && (!r[i] || c[i]))))
+      //  ↑                            ↑
+      // cancel strictly forbids this grant
+    );
+  }
+}
+
