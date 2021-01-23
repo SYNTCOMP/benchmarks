@@ -1,0 +1,82 @@
+HOA: v1
+States: 31
+Start: 0
+acc-name: parity max even 21
+Acceptance: 21 Inf(20) | (Fin(19) & (Inf(18) | (Fin(17) & (Inf(16) | (Fin(15) & (Inf(14) | (Fin(13) & (Inf(12) | (Fin(11) & (Inf(10) | (Fin(9) & (Inf(8) | (Fin(7) & (Inf(6) | (Fin(5) & (Inf(4) | (Fin(3) & (Inf(2) | (Fin(1) & Inf(0))))))))))))))))))))
+AP: 4 "pl0_0" "pl0_1" "pl1_0" "pl1_1"
+controllable-AP: 0 1
+properties: deterministic complete colored
+--BODY--
+State: 0 "a10" {20}
+[t] 1
+State: 1 "b10" {0}
+[!3 & 2] 3
+[!((!3 & 2))] 2
+State: 2 "c10" {19}
+[t] 3
+State: 3 "a9" {18}
+[t] 4
+State: 4 "b9" {0}
+[!3 & 2] 6
+[!((!3 & 2))] 5
+State: 5 "c9" {17}
+[t] 6
+State: 6 "a8" {16}
+[t] 7
+State: 7 "b8" {0}
+[!3 & 2] 9
+[!((!3 & 2))] 8
+State: 8 "c8" {15}
+[t] 9
+State: 9 "a7" {14}
+[t] 10
+State: 10 "b7" {0}
+[!3 & 2] 12
+[!((!3 & 2))] 11
+State: 11 "c7" {13}
+[t] 12
+State: 12 "a6" {12}
+[t] 13
+State: 13 "b6" {0}
+[!3 & 2] 15
+[!((!3 & 2))] 14
+State: 14 "c6" {11}
+[t] 15
+State: 15 "a5" {10}
+[t] 16
+State: 16 "b5" {0}
+[!3 & 2] 18
+[!((!3 & 2))] 17
+State: 17 "c5" {9}
+[t] 18
+State: 18 "a4" {8}
+[t] 19
+State: 19 "b4" {0}
+[!3 & 2] 21
+[!((!3 & 2))] 20
+State: 20 "c4" {7}
+[t] 21
+State: 21 "a3" {6}
+[t] 22
+State: 22 "b3" {0}
+[!3 & 2] 24
+[!((!3 & 2))] 23
+State: 23 "c3" {5}
+[t] 24
+State: 24 "a2" {4}
+[t] 25
+State: 25 "b2" {0}
+[!3 & 2] 27
+[!((!3 & 2))] 26
+State: 26 "c2" {3}
+[t] 27
+State: 27 "a1" {2}
+[t] 28
+State: 28 "b1" {0}
+[!3 & 2] 30
+[!((!3 & 2))] 29
+State: 29 "c1" {1}
+[t] 30
+State: 30 "a0" {0}
+[t] 0
+--END--
