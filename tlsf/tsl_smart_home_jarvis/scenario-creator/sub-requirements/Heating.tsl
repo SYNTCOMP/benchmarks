@@ -1,0 +1,6 @@
+//import "../deviceModel/Heating.tsl" as Heating
+
+always guarantee {
+  gt outside.temperature Room.temperature
+    -> F Heating.off
+}

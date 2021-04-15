@@ -1,0 +1,9 @@
+assume {
+  (G (Device.on <-> (! Device.off)));
+  (G (([Device.control <- Device.turnOn()] -> (X Device.on)) W [Device.control <- Device.turnOff()]));
+  (G (([Device.control <- Device.turnOff()] -> (X Device.of)) W [Device.control <- Device.turnOn()]));
+}
+
+guarantee {
+  (G false);
+}

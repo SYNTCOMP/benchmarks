@@ -1,0 +1,13 @@
+assume {
+  (G (F Time.saturday));
+  (G (F (! Time.saturday)));
+  (G (F Time.sunday));
+  (G (F (! Time.sunday)));
+  (G (F Time.am7));
+  (G (([Alarm.control <- Alarm.turnOn()] -> (X Alarm.alarm)) W [Alarm.control <- Alarm.turnOff()]));
+  (G (([Alarm.control <- Alarm.turnOff()] -> (X (! Alarm.alarm))) W [Alarm.control <- Alarm.turnOn()]));
+}
+
+guarantee {
+  (G (((Time.am630 && (! (Time.saturday || Time.sunday))) && bed.occupied) -> (F (bed.exit || (Time.am7 && (F (Alarm.alarm W bed.exit)))))));
+}

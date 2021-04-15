@@ -1,0 +1,22 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Assumptions_a50cadd7_1"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0alarm;
+  }
+
+  OUTPUTS {
+    u0alarm29control0alarm29control;
+    u0alarm29control0f1dturn2on1b;
+    u0alarm29control0f1dturn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0alarm29control0f1dturn2on1b) && (! ((u0alarm29control0f1dturn2off1b) || (u0alarm29control0alarm29control)))) <-> ((! (((u0alarm29control0f1dturn2off1b) && (! (u0alarm29control0alarm29control))) <-> ((u0alarm29control0alarm29control) && (! (u0alarm29control0f1dturn2off1b))))) && (! (u0alarm29control0f1dturn2on1b)))))) && ((G (((u0alarm29control0f1dturn2on1b) -> (u0alarm29control0f1dturn2off1b)) R (p0b0alarm))) && (G (((u0alarm29control0f1dturn2off1b) -> (u0alarm29control0f1dturn2on1b)) R (! (p0b0alarm)))));
+  }
+}
+

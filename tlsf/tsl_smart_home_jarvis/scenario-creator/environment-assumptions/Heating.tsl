@@ -1,0 +1,5 @@
+always assume {
+  ! (Heating.off <-> Heating.on);
+  [ Heating.ctrl <- Heating.turnOn() ] -> F ([ Heating.ctrl <- Heating.turnOff() ] R Heating.on);
+  [ Heating.ctrl <- Heating.turnOff() ] -> F ([ Heating.ctrl <- Heating.turnOn() ] R Heating.off);
+}

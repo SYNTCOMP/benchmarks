@@ -1,0 +1,36 @@
+INFO {
+  TITLE:       "Converted TSL Specification: SingleContoller_d65ed84e"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02device29plug29on;
+    p0b02device29plug29off;
+    p0b02device29lamp29on;
+    p0b02device29lamp29off;
+    p0b02device292plug29on;
+    p0b02device292plug29off;
+    p0b02device292lamp29on;
+    p0b02device292lamp29off;
+    p0p0on02plug29intent;
+    p0p0on02lamp29intent;
+    p0p0off02plug29intent;
+    p0p0off02lamp29intent;
+  }
+
+  OUTPUTS {
+    u02device29plug29ctrl02device29plug29ctrl;
+    u02device29plug29ctrl0f1d2device29on1b;
+    u02device29plug29ctrl0f1d2device29off1b;
+    u02device29lamp29ctrl02device29lamp29ctrl;
+    u02device29lamp29ctrl0f1d2device29on1b;
+    u02device29lamp29ctrl0f1d2device29off1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u02device29plug29ctrl0f1d2device29on1b) && (! ((u02device29plug29ctrl0f1d2device29off1b) || (u02device29plug29ctrl02device29plug29ctrl)))) <-> ((! (((u02device29plug29ctrl0f1d2device29off1b) && (! (u02device29plug29ctrl02device29plug29ctrl))) <-> ((u02device29plug29ctrl02device29plug29ctrl) && (! (u02device29plug29ctrl0f1d2device29off1b))))) && (! (u02device29plug29ctrl0f1d2device29on1b))))) && (! (((u02device29lamp29ctrl0f1d2device29on1b) && (! ((u02device29lamp29ctrl0f1d2device29off1b) || (u02device29lamp29ctrl02device29lamp29ctrl)))) <-> ((! (((u02device29lamp29ctrl0f1d2device29off1b) && (! (u02device29lamp29ctrl02device29lamp29ctrl))) <-> ((u02device29lamp29ctrl02device29lamp29ctrl) && (! (u02device29lamp29ctrl0f1d2device29off1b))))) && (! (u02device29lamp29ctrl0f1d2device29on1b))))))) && (((((((((((G (! ((p0b02device29plug29on) <-> (p0b02device29plug29off)))) && (G ((u02device29plug29ctrl0f1d2device29on1b) -> (X (F ((p0b02device29plug29on) W (u02device29plug29ctrl0f1d2device29off1b))))))) && (G ((u02device29plug29ctrl0f1d2device29off1b) -> (X (F ((p0b02device29plug29off) W (u02device29plug29ctrl0f1d2device29on1b))))))) && (G (! ((p0b02device29lamp29on) <-> (p0b02device29lamp29off))))) && (G ((u02device29lamp29ctrl0f1d2device29on1b) -> (X (F ((p0b02device29lamp29on) W ((u02device29lamp29ctrl0f1d2device29off1b) || (p0b02device29plug29off)))))))) && (G ((u02device29lamp29ctrl0f1d2device29off1b) -> (X (F ((p0b02device29lamp29off) W ((u02device29lamp29ctrl0f1d2device29on1b) || (p0b02device29plug29off)))))))) && (G ((p0b02device29plug29off) -> (p0b02device29lamp29off)))) && (G (! ((p0p0on02plug29intent) <-> (p0p0off02plug29intent))))) && (G (! ((p0p0on02lamp29intent) <-> (p0p0off02lamp29intent))))) && (G (! ((p0p0off02plug29intent) && (p0p0on02lamp29intent))))) -> ((((G ((p0p0on02plug29intent) -> (F ((p0b02device292plug29on) W (! (p0p0on02plug29intent)))))) && (G ((p0p0off02plug29intent) -> (F ((p0b02device292plug29off) W (! (p0p0off02plug29intent))))))) && (G ((p0p0on02lamp29intent) -> (F ((p0b02device292lamp29on) W (! (p0p0on02lamp29intent))))))) && (G ((p0p0off02lamp29intent) -> (F ((p0b02device292lamp29off) W (! (p0p0off02lamp29intent))))))));
+  }
+}
+

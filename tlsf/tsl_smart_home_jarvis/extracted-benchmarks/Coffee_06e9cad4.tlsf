@@ -1,0 +1,32 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Coffee_06e9cad4"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02c2m29ready;
+    p0b02c2m29standby;
+    p0b02c2m29busy;
+    p0b02c2m29finished;
+    p0b02room29empty;
+    p0b02room29switch29toggled;
+    p0b02room29somebody2enters;
+    p0b02room29somebody2leaves;
+    p0b02room29bed29occupied;
+    p0b02room292room29empty;
+  }
+
+  OUTPUTS {
+    u02c2m29ctrl02c2m29ctrl;
+    u02c2m29ctrl0f1d2c2m29turn2on1b;
+    u02c2m29ctrl0f1d2c2m29make2coffee1b;
+    u02c2m29ctrl0f1d2c2m29turn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((! (((u02c2m29ctrl0f1d2c2m29make2coffee1b) && (! (u02c2m29ctrl02c2m29ctrl))) <-> ((u02c2m29ctrl02c2m29ctrl) && (! (u02c2m29ctrl0f1d2c2m29make2coffee1b))))) && (! ((u02c2m29ctrl0f1d2c2m29turn2off1b) || (u02c2m29ctrl0f1d2c2m29turn2on1b)))) <-> ((! (((u02c2m29ctrl0f1d2c2m29turn2off1b) && (! (u02c2m29ctrl0f1d2c2m29turn2on1b))) <-> ((u02c2m29ctrl0f1d2c2m29turn2on1b) && (! (u02c2m29ctrl0f1d2c2m29turn2off1b))))) && (! ((u02c2m29ctrl0f1d2c2m29make2coffee1b) || (u02c2m29ctrl02c2m29ctrl))))))) && (((((((((((((G (((p0b02c2m29ready) || (p0b02c2m29standby)) || (p0b02c2m29busy))) && (G ((p0b02c2m29ready) -> ((! (p0b02c2m29standby)) && (! (p0b02c2m29busy)))))) && (G ((p0b02c2m29standby) -> ((! (p0b02c2m29busy)) && (! (p0b02c2m29ready)))))) && (G ((p0b02c2m29busy) -> ((! (p0b02c2m29ready)) && (! (p0b02c2m29standby)))))) && (G (((u02c2m29ctrl0f1d2c2m29turn2on1b) && (p0b02c2m29standby)) -> (X ((p0b02c2m29busy) U (((u02c2m29ctrl0f1d2c2m29make2coffee1b) || (u02c2m29ctrl0f1d2c2m29turn2off1b)) R (p0b02c2m29ready))))))) && (G (((u02c2m29ctrl0f1d2c2m29turn2off1b) && (p0b02c2m29ready)) -> (X ((p0b02c2m29busy) U ((u02c2m29ctrl0f1d2c2m29turn2on1b) R (p0b02c2m29standby))))))) && (G (((u02c2m29ctrl0f1d2c2m29make2coffee1b) && (p0b02c2m29ready)) -> (X ((p0b02c2m29busy) U ((p0b02c2m29finished) && (((u02c2m29ctrl0f1d2c2m29make2coffee1b) || (u02c2m29ctrl0f1d2c2m29turn2off1b)) R (p0b02c2m29ready)))))))) && (F ((p0b02c2m29standby) || (p0b02c2m29ready)))) && (G ((p0b02room29empty) -> (! (p0b02room29switch29toggled))))) && (G ((p0b02room29somebody2enters) -> ((! (p0b02room29empty)) W (p0b02room29somebody2leaves))))) && (G (((p0b02room29somebody2leaves) && (p0b02room29empty)) -> ((p0b02room29empty) W (p0b02room29somebody2enters))))) && (G ((p0b02room29bed29occupied) -> (! (p0b02room292room29empty))))) -> (G ((p0b02room29somebody2enters) -> (F ((p0b02c2m29ready) W ((p0b02room29somebody2leaves) && (p0b02room29empty)))))));
+  }
+}
+

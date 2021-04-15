@@ -1,0 +1,8 @@
+assume {
+}
+
+guarantee {
+  (G ((! personInFrontOfScreen) -> [sit <- zero()]));
+  (G (personInFrontOfScreen -> [sit <- (up sit())]));
+  (G ((toolong sit) -> [screen <- off()]));
+}

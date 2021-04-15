@@ -1,0 +1,26 @@
+import "../deviceModel/Room_v1.tsl" as Room
+import "../deviceModel/Light_v1.tsl" as Roomlight
+import "../deviceModel/Timer_v1.tsl" as Timer
+import "../deviceModel/Time_v1.tsl" as Time
+
+always guarantee {
+    Room.somebodyLeaves && Room.empty
+    -> ([Timer.startNewTimer <- Timer.hour2()]
+    && F ( Room.somebodyEnters
+        || (Timer.timeout && F (Roomlight.off W Room.somebodyEnters))))
+}
+
+always guarantee {
+    bright outside.brightness
+        -> (Room.switch.toggled && Roomlight.off -> F (Roomlight.on W (Room.switch.toggled || Room.empty)))
+}
+
+always guarantee {  
+  Time.am630 && (!(Time.saturday || Time.sunday)) && bed.occupied
+    -> (F ((X Roomlight.on <-> ! bright outside.brightness) W (Room.somebodyLeaves && Room.empty)))
+
+}
+
+always guarantee {
+  (X Roomlight.on) -> ! Room.empty
+}

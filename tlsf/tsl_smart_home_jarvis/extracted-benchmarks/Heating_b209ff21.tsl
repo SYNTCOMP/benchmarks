@@ -1,0 +1,9 @@
+assume {
+  (G (! (Heating.off <-> Heating.on)));
+  (G ([Heating.ctrl <- Heating.turnOn()] -> (F ([Heating.ctrl <- Heating.turnOff()] R Heating.on))));
+  (G ([Heating.ctrl <- Heating.turnOff()] -> (F ([Heating.ctrl <- Heating.turnOn()] R Heating.off))));
+}
+
+guarantee {
+  (G (((gt outside.temperature) Room.temperature) -> (F Heating.off)));
+}

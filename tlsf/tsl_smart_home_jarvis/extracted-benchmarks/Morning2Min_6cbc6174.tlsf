@@ -1,0 +1,33 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Morning2Min_6cbc6174"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0alarm;
+    p0b0t29am6323;
+    p0b0t29saturday;
+    p0b0t29sunday;
+    p0b0bed29occupied;
+    p0b0room29shades29open;
+    p0b0room29light29on;
+    p0b0room29somebody2leaves;
+    p0b0room29empty;
+    p0b0bed29exit;
+    p0b0t29am7;
+    p0p0bright0outside29brightness;
+  }
+
+  OUTPUTS {
+    u0alarm29control0alarm29control;
+    u0alarm29control0f1dturn2on1b;
+    u0alarm29control0f1dturn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0alarm29control0f1dturn2on1b) && (! ((u0alarm29control0f1dturn2off1b) || (u0alarm29control0alarm29control)))) <-> ((! (((u0alarm29control0f1dturn2off1b) && (! (u0alarm29control0alarm29control))) <-> ((u0alarm29control0alarm29control) && (! (u0alarm29control0f1dturn2off1b))))) && (! (u0alarm29control0f1dturn2on1b)))))) && (((G (((u0alarm29control0f1dturn2on1b) -> (u0alarm29control0f1dturn2off1b)) R (p0b0alarm))) && (G (((u0alarm29control0f1dturn2off1b) -> (u0alarm29control0f1dturn2on1b)) R (! (p0b0alarm))))) -> (G ((((p0b0t29am6323) && (! ((p0b0t29saturday) || (p0b0t29sunday)))) && (p0b0bed29occupied)) -> ((F ((((p0b0room29shades29open) <-> (p0p0bright0outside29brightness)) && ((p0b0room29light29on) <-> (! (p0p0bright0outside29brightness)))) W ((p0b0room29somebody2leaves) && (p0b0room29empty)))) && (F ((p0b0bed29exit) || ((p0b0t29am7) && (F ((p0b0alarm) W (p0b0bed29exit))))))))));
+  }
+}
+

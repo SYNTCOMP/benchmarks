@@ -1,0 +1,11 @@
+assume {
+  (G (Warnlight.on <-> (! Warnlight.off)));
+  (G (([Warnlight.control <- Warnlight.turnOn()] -> (X Warnlight.on)) W [Warnlight.control <- Warnlight.turnOff()]));
+  (G (([Warnlight.control <- Warnlight.turnOff()] -> (X Warnlight.off)) W [Warnlight.control <- Warnlight.turnOn()]));
+  (G (! ((on Warnlight.intent) <-> (off Warnlight.intent))));
+}
+
+guarantee {
+  (G ((on Warnlight.intent) -> (F (Warnlight.on W (! (on Warnlight.intent))))));
+  (G ((off Warnlight.intent) -> (F (Warnlight.off W (! (off Warnlight.intent))))));
+}

@@ -1,0 +1,9 @@
+assume {
+  (G (room.empty -> (! switch.toggled)));
+  (G (room.somebodyEnters -> ((! room.empty) W room.somebodyLeaves)));
+  (G ((room.somebodyLeaves && room.empty) -> (room.empty W room.somebodyEnters)));
+}
+
+guarantee {
+  (G false);
+}

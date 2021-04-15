@@ -1,0 +1,6 @@
+import "../deviceModel/Room_v1.tsl" as Room
+import "../deviceModel/Light_v1.tsl" as Roomlight
+
+always guarantee {
+  (X Roomlight.on) -> ! Room.empty
+}

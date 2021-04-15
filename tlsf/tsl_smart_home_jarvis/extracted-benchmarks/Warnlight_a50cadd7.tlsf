@@ -1,0 +1,23 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Warnlight_a50cadd7"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0room29warnlight29on;
+    p0b0room29warnlight29off;
+  }
+
+  OUTPUTS {
+    u0room29warnlight29control0room29warnlight29control;
+    u0room29warnlight29control0f1dturn2on1b;
+    u0room29warnlight29control0f1dturn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0room29warnlight29control0f1dturn2on1b) && (! ((u0room29warnlight29control0f1dturn2off1b) || (u0room29warnlight29control0room29warnlight29control)))) <-> ((! (((u0room29warnlight29control0f1dturn2off1b) && (! (u0room29warnlight29control0room29warnlight29control))) <-> ((u0room29warnlight29control0room29warnlight29control) && (! (u0room29warnlight29control0f1dturn2off1b))))) && (! (u0room29warnlight29control0f1dturn2on1b)))))) && (((G ((p0b0room29warnlight29on) <-> (! (p0b0room29warnlight29off)))) && (G (((u0room29warnlight29control0f1dturn2on1b) -> (u0room29warnlight29control0f1dturn2off1b)) R (p0b0room29warnlight29on)))) && (G (((u0room29warnlight29control0f1dturn2off1b) -> (u0room29warnlight29control0f1dturn2on1b)) R (p0b0room29warnlight29off))));
+  }
+}
+

@@ -1,0 +1,7 @@
+import "../deviceModel/Room_v1.tsl" as Room
+import "../deviceModel/Light_v1.tsl" as Roomlight
+
+always guarantee {
+    bright outside.brightness
+        -> (Room.switch.toggled && Roomlight.off -> F (Roomlight.on W (Room.switch.toggled || Room.empty)))
+}

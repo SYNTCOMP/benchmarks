@@ -1,0 +1,26 @@
+INFO {
+  TITLE:       "Converted TSL Specification: AlarmMin_efe2feaf"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0room29shades29closed;
+    p0b0bed29enter;
+    p0b0alarm;
+    p0b0bed29exit;
+    p0p0bright0outside29brightness;
+    p0p0between0t29pm70t29pm8;
+  }
+
+  OUTPUTS {
+    u0room29shades29ctrl0room29shades29ctrl;
+    u0room29shades29ctrl0f1dmove2to0f1dpercent231b1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0room29shades29ctrl0room29shades29ctrl) && (! (u0room29shades29ctrl0f1dmove2to0f1dpercent231b1b))) <-> ((u0room29shades29ctrl0f1dmove2to0f1dpercent231b1b) && (! (u0room29shades29ctrl0room29shades29ctrl)))))) && ((G ((u0room29shades29ctrl0f1dmove2to0f1dpercent231b1b) -> (F (((! (u0room29shades29ctrl0f1dmove2to0f1dpercent231b1b)) && (! (u0room29shades29ctrl0room29shades29ctrl))) R (p0b0room29shades29closed))))) -> (G ((p0b0bed29enter) -> (F (((p0p0between0t29pm70t29pm8) -> (p0b0room29shades29closed)) W ((p0b0alarm) && (F (((! (p0p0bright0outside29brightness)) -> (p0b0room29shades29closed)) W (p0b0bed29exit)))))))));
+  }
+}
+

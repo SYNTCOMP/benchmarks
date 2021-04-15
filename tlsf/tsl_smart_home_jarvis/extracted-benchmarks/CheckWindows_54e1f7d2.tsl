@@ -1,0 +1,7 @@
+assume {
+  (G (room.window.opened -> ((! (allWindowsClosed room)) W room.window.closed)));
+}
+
+guarantee {
+  (G false);
+}

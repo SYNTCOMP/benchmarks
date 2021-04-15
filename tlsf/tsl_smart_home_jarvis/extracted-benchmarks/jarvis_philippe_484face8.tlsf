@@ -1,0 +1,99 @@
+INFO {
+  TITLE:       "Converted TSL Specification: jarvis_philippe_484face8"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02person2in2offic;
+    p0b0fire;
+    p0p0new2day0time;
+    p0p0has2person02printer2room2m2s;
+    p0p0work2time0time;
+    p0p0see2person0webcame;
+    p0p0daily2workload2archieved0timer;
+    p0p0is2bad0air2quality;
+    p0p0is2raining0weather;
+    p0p0after2work0time;
+    p0p0full0dish2washer2status;
+    p0p0full0dish2washerstatus;
+    p0p0cleaned0dish2washer2status;
+    p0p0empty0dish2washer2status;
+    p0p0sunlight0screenlightsensor;
+    p0p0is2empty0presence2sensor;
+    p0p0is2key2opened0keylock;
+    p0p0is2opende2insight0keylock;
+    p0p0is2meeting0calendar;
+    p0p0is2presentation0calendar;
+    p0p0rush2hour0time;
+    p0p0is2opened0window;
+    p0p0run2out0timer;
+    p0p0is2full0trash2bin;
+    p0p0work0time;
+    p0p0gt0light0th;
+    p0p0gt0temeprature0value;
+    p0p0gt0temperature0value;
+    p0p0gt0presence2timer0fivemin;
+    p0p0eq0temperature0value;
+    p0p0eq0temeperature0value;
+    p0p0lt0temeprature0value;
+    p0p0lt0temperature0value;
+  }
+
+  OUTPUTS {
+    u0light0light;
+    u0light0f1doff1b;
+    u0light0f1don1b;
+    u0timer0timer;
+    u0timer0f1dreset0tenminutes1b;
+    u0timer0f1dinc2timer0timer0time0date1b;
+    u0light2color0light2color;
+    u0light2color0f1d2green1b;
+    u0light2color0f1d2normal1b;
+    u0window0window;
+    u0window0close;
+    u0window0f1dopen1b;
+    u0window0f1dclose1b;
+    u0heating0heating;
+    u0heating0f1dzero1b;
+    u0heating0f1dturn2down0heating1b;
+    u0heating0f1dturn2up0heating1b;
+    u0dish2washer0on;
+    u0dish2washer0dish2washer;
+    u0coffe2machine0coffe2machine;
+    u0coffe2machine0f1doff1b;
+    u0blinders0closed;
+    u0blinders0blinders;
+    u0blinders0f1dclosed1b;
+    u0blinder2type0blinder2type;
+    u0blinder2type0outer;
+    u0blinder2type0f1dinner1b;
+    u0blinder2type0f1douter1b;
+    u0presence2timer0presence2timer;
+    u0presence2timer0f1dzero1b;
+    u0presence2timer0f1dinc0presence2timer1b;
+    u0doorlock0doorlock;
+    u0doorlock0f1dopen1b;
+    u0doorlock0f1dclose1b;
+    u0music0on;
+    u0music0music;
+    u0window2control0window2control;
+    u0window2control0f1dignore1b;
+    u0window2control0f1duse1b;
+    u0sitting2arrganent0sitting2arrganent;
+    u0sitting2arrganent0f1dgenerate0calendar1b;
+    u0sitting2arragment0sitting2arragment;
+    u0sitting2arragment0f1dsitting02arragment1b;
+    u0call2center0call2center;
+    u0call2center0f1dfacility2mangment0f1dclean1b0time1b;
+    u0cleaning2robot0cleaning2robot;
+    u0cleaning2robot0f1doff1b;
+    u0cleaning2robot0f1dclean1b;
+  }
+
+  GUARANTEE {
+    (G (((((((((((((((((! (((u0light0f1doff1b) && (! ((u0light0f1don1b) || (u0light0light)))) <-> ((! (((u0light0f1don1b) && (! (u0light0light))) <-> ((u0light0light) && (! (u0light0f1don1b))))) && (! (u0light0f1doff1b))))) && (! (((u0timer0f1dreset0tenminutes1b) && (! ((u0timer0f1dinc2timer0timer0time0date1b) || (u0timer0timer)))) <-> ((! (((u0timer0f1dinc2timer0timer0time0date1b) && (! (u0timer0timer))) <-> ((u0timer0timer) && (! (u0timer0f1dinc2timer0timer0time0date1b))))) && (! (u0timer0f1dreset0tenminutes1b)))))) && (! (((u0light2color0f1d2green1b) && (! ((u0light2color0f1d2normal1b) || (u0light2color0light2color)))) <-> ((! (((u0light2color0f1d2normal1b) && (! (u0light2color0light2color))) <-> ((u0light2color0light2color) && (! (u0light2color0f1d2normal1b))))) && (! (u0light2color0f1d2green1b)))))) && (! (((! (((u0window0f1dopen1b) && (! (u0window0window))) <-> ((u0window0window) && (! (u0window0f1dopen1b))))) && (! ((u0window0f1dclose1b) || (u0window0close)))) <-> ((! (((u0window0f1dclose1b) && (! (u0window0close))) <-> ((u0window0close) && (! (u0window0f1dclose1b))))) && (! ((u0window0f1dopen1b) || (u0window0window))))))) && (! (((! (((u0heating0f1dturn2down0heating1b) && (! (u0heating0heating))) <-> ((u0heating0heating) && (! (u0heating0f1dturn2down0heating1b))))) && (! ((u0heating0f1dturn2up0heating1b) || (u0heating0f1dzero1b)))) <-> ((! (((u0heating0f1dturn2up0heating1b) && (! (u0heating0f1dzero1b))) <-> ((u0heating0f1dzero1b) && (! (u0heating0f1dturn2up0heating1b))))) && (! ((u0heating0f1dturn2down0heating1b) || (u0heating0heating))))))) && (! (((u0dish2washer0on) && (! (u0dish2washer0dish2washer))) <-> ((u0dish2washer0dish2washer) && (! (u0dish2washer0on)))))) && (! (((u0coffe2machine0coffe2machine) && (! (u0coffe2machine0f1doff1b))) <-> ((u0coffe2machine0f1doff1b) && (! (u0coffe2machine0coffe2machine)))))) && (! (((u0blinders0blinders) && (! ((u0blinders0f1dclosed1b) || (u0blinders0closed)))) <-> ((! (((u0blinders0f1dclosed1b) && (! (u0blinders0closed))) <-> ((u0blinders0closed) && (! (u0blinders0f1dclosed1b))))) && (! (u0blinders0blinders)))))) && (! (((! (((u0blinder2type0f1dinner1b) && (! (u0blinder2type0blinder2type))) <-> ((u0blinder2type0blinder2type) && (! (u0blinder2type0f1dinner1b))))) && (! ((u0blinder2type0f1douter1b) || (u0blinder2type0outer)))) <-> ((! (((u0blinder2type0f1douter1b) && (! (u0blinder2type0outer))) <-> ((u0blinder2type0outer) && (! (u0blinder2type0f1douter1b))))) && (! ((u0blinder2type0f1dinner1b) || (u0blinder2type0blinder2type))))))) && (! (((u0presence2timer0f1dzero1b) && (! ((u0presence2timer0f1dinc0presence2timer1b) || (u0presence2timer0presence2timer)))) <-> ((! (((u0presence2timer0f1dinc0presence2timer1b) && (! (u0presence2timer0presence2timer))) <-> ((u0presence2timer0presence2timer) && (! (u0presence2timer0f1dinc0presence2timer1b))))) && (! (u0presence2timer0f1dzero1b)))))) && (! (((u0doorlock0f1dopen1b) && (! ((u0doorlock0f1dclose1b) || (u0doorlock0doorlock)))) <-> ((! (((u0doorlock0f1dclose1b) && (! (u0doorlock0doorlock))) <-> ((u0doorlock0doorlock) && (! (u0doorlock0f1dclose1b))))) && (! (u0doorlock0f1dopen1b)))))) && (! (((u0music0on) && (! (u0music0music))) <-> ((u0music0music) && (! (u0music0on)))))) && (! (((u0window2control0f1dignore1b) && (! ((u0window2control0f1duse1b) || (u0window2control0window2control)))) <-> ((! (((u0window2control0f1duse1b) && (! (u0window2control0window2control))) <-> ((u0window2control0window2control) && (! (u0window2control0f1duse1b))))) && (! (u0window2control0f1dignore1b)))))) && (! (((u0sitting2arrganent0sitting2arrganent) && (! (u0sitting2arrganent0f1dgenerate0calendar1b))) <-> ((u0sitting2arrganent0f1dgenerate0calendar1b) && (! (u0sitting2arrganent0sitting2arrganent)))))) && (! (((u0sitting2arragment0sitting2arragment) && (! (u0sitting2arragment0f1dsitting02arragment1b))) <-> ((u0sitting2arragment0f1dsitting02arragment1b) && (! (u0sitting2arragment0sitting2arragment)))))) && (! (((u0call2center0call2center) && (! (u0call2center0f1dfacility2mangment0f1dclean1b0time1b))) <-> ((u0call2center0f1dfacility2mangment0f1dclean1b0time1b) && (! (u0call2center0call2center)))))) && (! (((u0cleaning2robot0f1doff1b) && (! ((u0cleaning2robot0f1dclean1b) || (u0cleaning2robot0cleaning2robot)))) <-> ((! (((u0cleaning2robot0f1dclean1b) && (! (u0cleaning2robot0cleaning2robot))) <-> ((u0cleaning2robot0cleaning2robot) && (! (u0cleaning2robot0f1dclean1b))))) && (! (u0cleaning2robot0f1doff1b))))))) && ((G (G (F (p0p0new2day0time)))) -> (((((((((((((((((((((((((((((((((((G ((u0light0f1doff1b) || (u0light0f1don1b))) && (G ((! (p0p0has2person02printer2room2m2s)) -> (u0light0f1doff1b)))) && (G ((p0p0has2person02printer2room2m2s) -> (u0light0f1don1b)))) && (G ((p0p0work2time0time) -> (u0light0f1don1b)))) && (G ((! (p0p0work2time0time)) -> ((p0b02person2in2offic) <-> (u0light0f1don1b))))) && (G ((p0p0see2person0webcame) <-> (u0timer0f1dinc2timer0timer0time0date1b)))) && (G ((p0p0daily2workload2archieved0timer) -> (u0light2color0f1d2green1b)))) && (G ((u0light2color0f1d2normal1b) || (u0light2color0f1d2green1b)))) && (G ((u0window0f1dopen1b) || (u0window0f1dclose1b)))) && (G ((p0p0is2bad0air2quality) -> (u0window0f1dopen1b)))) && (G (((p0p0is2raining0weather) || (p0b0fire)) -> (! (u0window0f1dopen1b))))) && (G (((p0p0gt0temeprature0value) -> (u0heating0f1dturn2down0heating1b)) W ((p0p0eq0temperature0value) || (p0p0lt0temperature0value))))) && (G (((p0p0lt0temeprature0value) -> (u0heating0f1dturn2up0heating1b)) W ((p0p0eq0temperature0value) || (p0p0gt0temperature0value))))) && (G ((p0p0eq0temeperature0value) -> (u0heating0heating)))) && (G ((u0window0f1dopen1b) -> (u0heating0f1dzero1b)))) && (G ((u0dish2washer0on) <-> ((p0p0after2work0time) && (p0p0full0dish2washer2status))))) && (G (((((p0p0new2day0time) || (p0p0full0dish2washerstatus)) || (p0p0cleaned0dish2washer2status)) -> (u0coffe2machine0f1doff1b)) W (p0p0empty0dish2washer2status)))) && (G ((p0p0sunlight0screenlightsensor) -> (u0blinders0closed)))) && (G ((u0blinders0f1dclosed1b) -> (u0light0f1don1b)))) && (G ((u0blinder2type0f1dinner1b) || (u0blinder2type0f1douter1b)))) && (G ((p0p0gt0light0th) <-> (u0blinder2type0outer)))) && (G ((p0p0is2empty0presence2sensor) -> (u0presence2timer0f1dinc0presence2timer1b)))) && (G ((! (p0p0is2empty0presence2sensor)) -> (u0presence2timer0f1dzero1b)))) && (G (((p0p0is2empty0presence2sensor) && (p0p0gt0presence2timer0fivemin)) -> (u0doorlock0f1dclose1b)))) && (G ((p0p0is2key2opened0keylock) -> (u0doorlock0f1dopen1b)))) && (G ((p0p0is2opende2insight0keylock) -> (u0doorlock0f1dopen1b)))) && (G (((p0p0is2meeting0calendar) && (p0p0is2presentation0calendar)) -> (u0coffe2machine0f1doff1b)))) && (G (((p0p0rush2hour0time) && (p0p0is2bad0air2quality)) -> ((u0music0on) && (u0window0close))))) && (G (((p0p0is2opened0window) <-> (u0window2control0f1dignore1b)) W (p0p0run2out0timer)))) && (G ((p0p0is2opened0window) <-> (u0timer0f1dreset0tenminutes1b)))) && (G ((p0p0run2out0timer) -> (u0window2control0f1duse1b)))) && (G ((p0p0new2day0time) -> ((u0sitting2arrganent0f1dgenerate0calendar1b) && (X ((u0sitting2arragment0f1dsitting02arragment1b) U (p0p0new2day0time))))))) && (G ((p0p0is2full0trash2bin) -> (u0call2center0f1dfacility2mangment0f1dclean1b0time1b)))) && (G (G (F (u0cleaning2robot0f1dclean1b))))) && (G ((p0p0work0time) -> (u0cleaning2robot0f1doff1b)))));
+  }
+}
+

@@ -1,0 +1,23 @@
+INFO {
+  TITLE:       "Converted TSL Specification: CheckShades_1a2942e3"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02device29open;
+    p0b02device29closed;
+  }
+
+  OUTPUTS {
+    u02device29ctrl02device29ctrl;
+    u02device29ctrl0f1d2device29move2to0f1d2device29percent2423231b1b;
+    u02device29ctrl0f1d2device29move2to0f1d2device29percent231b1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02device29ctrl0f1d2device29move2to0f1d2device29percent2423231b1b) && (! ((u02device29ctrl0f1d2device29move2to0f1d2device29percent231b1b) || (u02device29ctrl02device29ctrl)))) <-> ((! (((u02device29ctrl0f1d2device29move2to0f1d2device29percent231b1b) && (! (u02device29ctrl02device29ctrl))) <-> ((u02device29ctrl02device29ctrl) && (! (u02device29ctrl0f1d2device29move2to0f1d2device29percent231b1b))))) && (! (u02device29ctrl0f1d2device29move2to0f1d2device29percent2423231b1b)))))) && ((((G (! ((p0b02device29open) && (p0b02device29closed)))) && (G ((u02device29ctrl0f1d2device29move2to0f1d2device29percent2423231b1b) -> (F (((! (u02device29ctrl0f1d2device29move2to0f1d2device29percent2423231b1b)) && (! (u02device29ctrl02device29ctrl))) R (p0b02device29open)))))) && (G ((u02device29ctrl0f1d2device29move2to0f1d2device29percent231b1b) -> (F (((! (u02device29ctrl0f1d2device29move2to0f1d2device29percent231b1b)) && (! (u02device29ctrl02device29ctrl))) R (p0b02device29closed)))))) -> (false));
+  }
+}
+

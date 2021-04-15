@@ -1,0 +1,34 @@
+assume {
+  (G (([Alarm.control <- Alarm.turnOn()] -> (X Alarm.alarm)) W [Alarm.control <- Alarm.turnOff()]));
+  (G (([Alarm.control <- Alarm.turnOff()] -> (X (! Alarm.alarm))) W [Alarm.control <- Alarm.turnOn()]));
+  (G (Room.empty -> (! Room.switch.toggled)));
+  (G (Room.somebodyEnters -> ((! Room.empty) W Room.somebodyLeaves)));
+  (G ((Room.somebodyLeaves && Room.empty) -> (Room.empty W Room.somebodyEnters)));
+  (G (Room.bed.occupied -> (! Room.Room.empty)));
+  (G (! (Roomlight.on <-> Roomlight.off)));
+  (G (([Roomlight.light <- Roomlight.turnOn()] || ([Roomlight.light <- Roomlight.toggle()] && Roomlight.off)) -> (X (F (([Roomlight.light <- Roomlight.turnOff()] || [Roomlight.light <- Roomlight.toggle()]) R Roomlight.on)))));
+  (G (([Roomlight.light <- Roomlight.turnOff()] || ([Roomlight.light <- Roomlight.toggle()] && Roomlight.on)) -> (X (F (([Roomlight.light <- Roomlight.turnOn()] || [Roomlight.light <- Roomlight.toggle()]) R Roomlight.off)))));
+  (G (! (Shades.open && Shades.closed)));
+  (G ([Shades.ctrl <- (Shades.moveTo Shades.percent100())] -> (F (((! [Shades.ctrl <- (Shades.moveTo Shades.percent100())]) && (! [Shades.ctrl <- Shades.ctrl])) R Shades.open))));
+  (G ([Shades.ctrl <- (Shades.moveTo Shades.percent0())] -> (F (((! [Shades.ctrl <- (Shades.moveTo Shades.percent0())]) && (! [Shades.ctrl <- Shades.ctrl])) R Shades.closed))));
+  (G ((Shades.closed && (! [Shades.ctrl <- (Shades.moveTo Shades.percent100())])) -> (X Shades.closed)));
+  (G ((Shades.open && (! [Shades.ctrl <- (Shades.moveTo Shades.percent0())])) -> (X Shades.open)));
+  (G (F ((Time.between Time.am5) Time.am10)));
+  (G (F ((Time.between Time.am0) Time.am10)));
+  (G (F (! ((Time.between Time.am5) Time.am10))));
+  (G (F Time.saturday));
+  (G (F (! Time.saturday)));
+  (G (F Time.sunday));
+  (G (F (! Time.sunday)));
+  (G (F ((Time.between Time.pm7) Time.pm8)));
+  (G (F (! ((Time.between Time.pm7) Time.pm8))));
+  (G (F Time.am7));
+  (G (F Time.am0));
+  (G (F Time.am5));
+}
+
+guarantee {
+  (G (((Time.am630 && (! (Time.saturday || Time.sunday))) && bed.occupied) -> (F ((((G (bright outside.brightness)) -> (F (G Shades.open))) && ((G (! (bright outside.brightness))) -> (F (G Shades.closed)))) W (Room.somebodyLeaves && Room.empty)))));
+  (G (((Time.am630 && (! (Time.saturday || Time.sunday))) && bed.occupied) -> (F (((X Roomlight.on) <-> (! (bright outside.brightness))) W (Room.somebodyLeaves && Room.empty)))));
+  (G (((Time.am630 && (! (Time.saturday || Time.sunday))) && bed.occupied) -> (F (bed.exit || (Time.am7 && (F (Alarm.alarm W bed.exit)))))));
+}

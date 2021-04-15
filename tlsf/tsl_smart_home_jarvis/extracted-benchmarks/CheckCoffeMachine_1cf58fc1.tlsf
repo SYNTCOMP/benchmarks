@@ -1,0 +1,26 @@
+INFO {
+  TITLE:       "Converted TSL Specification: CheckCoffeMachine_1cf58fc1"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02device29ready;
+    p0b02device29standby;
+    p0b02device29busy;
+    p0b02device29finished;
+  }
+
+  OUTPUTS {
+    u02device29ctrl02device29ctrl;
+    u02device29ctrl0f1d2device29turn2on1b;
+    u02device29ctrl0f1d2device29make2coffee1b;
+    u02device29ctrl0f1d2device29turn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((! (((u02device29ctrl0f1d2device29make2coffee1b) && (! (u02device29ctrl02device29ctrl))) <-> ((u02device29ctrl02device29ctrl) && (! (u02device29ctrl0f1d2device29make2coffee1b))))) && (! ((u02device29ctrl0f1d2device29turn2off1b) || (u02device29ctrl0f1d2device29turn2on1b)))) <-> ((! (((u02device29ctrl0f1d2device29turn2off1b) && (! (u02device29ctrl0f1d2device29turn2on1b))) <-> ((u02device29ctrl0f1d2device29turn2on1b) && (! (u02device29ctrl0f1d2device29turn2off1b))))) && (! ((u02device29ctrl0f1d2device29make2coffee1b) || (u02device29ctrl02device29ctrl))))))) && ((((((((G (((p0b02device29ready) || (p0b02device29standby)) || (p0b02device29busy))) && (G ((p0b02device29ready) -> ((! (p0b02device29standby)) && (! (p0b02device29busy)))))) && (G ((p0b02device29standby) -> ((! (p0b02device29busy)) && (! (p0b02device29ready)))))) && (G ((p0b02device29busy) -> ((! (p0b02device29ready)) && (! (p0b02device29standby)))))) && (G (((u02device29ctrl0f1d2device29turn2on1b) && (p0b02device29standby)) -> (X ((p0b02device29busy) U (((u02device29ctrl0f1d2device29make2coffee1b) || (u02device29ctrl0f1d2device29turn2off1b)) R (p0b02device29ready))))))) && (G (((u02device29ctrl0f1d2device29turn2off1b) && (p0b02device29ready)) -> (X ((p0b02device29busy) U ((u02device29ctrl0f1d2device29turn2on1b) R (p0b02device29standby))))))) && (G (((u02device29ctrl0f1d2device29make2coffee1b) && (p0b02device29ready)) -> (X ((p0b02device29busy) U ((p0b02device29finished) && (((u02device29ctrl0f1d2device29make2coffee1b) || (u02device29ctrl0f1d2device29turn2off1b)) R (p0b02device29ready)))))))) -> (false));
+  }
+}
+

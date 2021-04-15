@@ -1,0 +1,8 @@
+assume {
+  (G (G (F (newDay time))));
+}
+
+guarantee {
+  (G (G (F [cleaningRobot <- clean()])));
+  (G ((work time) -> [cleaningRobot <- off()]));
+}

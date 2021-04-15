@@ -1,0 +1,26 @@
+INFO {
+  TITLE:       "Converted TSL Specification: LampController_974f4a68"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02lamp29on;
+    p0b02lamp29off;
+    p0b02lamp29poweroff;
+    p0b02lamp29intent29on;
+    p0b02lamp29intent29off;
+  }
+
+  OUTPUTS {
+    u02lamp29ctrl02lamp29ctrl;
+    u02lamp29ctrl0f1d2lamp29con1b;
+    u02lamp29ctrl0f1d2lamp29coff1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02lamp29ctrl0f1d2lamp29con1b) && (! ((u02lamp29ctrl0f1d2lamp29coff1b) || (u02lamp29ctrl02lamp29ctrl)))) <-> ((! (((u02lamp29ctrl0f1d2lamp29coff1b) && (! (u02lamp29ctrl02lamp29ctrl))) <-> ((u02lamp29ctrl02lamp29ctrl) && (! (u02lamp29ctrl0f1d2lamp29coff1b))))) && (! (u02lamp29ctrl0f1d2lamp29con1b)))))) && ((((((G (! ((p0b02lamp29on) <-> (p0b02lamp29off)))) && (G ((u02lamp29ctrl0f1d2lamp29con1b) -> (X (F ((p0b02lamp29on) W ((u02lamp29ctrl0f1d2lamp29coff1b) || (p0b02lamp29poweroff)))))))) && (G ((u02lamp29ctrl0f1d2lamp29coff1b) -> (X (F ((p0b02lamp29off) W ((u02lamp29ctrl0f1d2lamp29con1b) || (p0b02lamp29poweroff)))))))) && (G ((p0b02lamp29poweroff) -> (p0b02lamp29off)))) && (G (! ((p0b02lamp29intent29on) && (p0b02lamp29intent29off))))) -> ((G ((p0b02lamp29intent29on) -> (((! (p0b02lamp29poweroff)) -> (F ((p0b02lamp29on) W ((p0b02lamp29poweroff) || (! (p0b02lamp29intent29on)))))) W (! (p0b02lamp29intent29on))))) && (G ((p0b02lamp29intent29off) -> (((! (p0b02lamp29poweroff)) -> (F ((p0b02lamp29off) W ((p0b02lamp29poweroff) || (! (p0b02lamp29intent29off)))))) W (! (p0b02lamp29intent29off)))))));
+  }
+}
+

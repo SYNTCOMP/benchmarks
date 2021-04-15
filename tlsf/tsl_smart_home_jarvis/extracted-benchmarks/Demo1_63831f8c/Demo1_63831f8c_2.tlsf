@@ -1,0 +1,24 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Demo1_63831f8c_2"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02shades29open;
+    p0b02shades29closed;
+    p0p0bright0outside29brightness;
+  }
+
+  OUTPUTS {
+    u02shades29ctrl02shades29ctrl;
+    u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b;
+    u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b) && (! ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) || (u02shades29ctrl02shades29ctrl)))) <-> ((! (((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) && (! (u02shades29ctrl02shades29ctrl))) <-> ((u02shades29ctrl02shades29ctrl) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b))))) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b)))))) && ((((((G (! ((p0b02shades29open) && (p0b02shades29closed)))) && (G ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b) -> (F (((! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b)) && (! (u02shades29ctrl02shades29ctrl))) R (p0b02shades29open)))))) && (G ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) -> (F (((! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b)) && (! (u02shades29ctrl02shades29ctrl))) R (p0b02shades29closed)))))) && (G (((p0b02shades29closed) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b))) -> (X (p0b02shades29closed))))) && (G (((p0b02shades29open) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b))) -> (X (p0b02shades29open))))) -> (G ((p0p0bright0outside29brightness) -> (F (p0b02shades29closed)))));
+  }
+}
+

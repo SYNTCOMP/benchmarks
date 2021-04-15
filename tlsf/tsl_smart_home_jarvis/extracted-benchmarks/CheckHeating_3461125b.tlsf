@@ -1,0 +1,23 @@
+INFO {
+  TITLE:       "Converted TSL Specification: CheckHeating_3461125b"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0room29heating29off;
+    p0b0room29heating29on;
+  }
+
+  OUTPUTS {
+    u0room29heating29ctrl0room29heating29ctrl;
+    u0room29heating29ctrl0f1dturn2on1b;
+    u0room29heating29ctrl0f1dturn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0room29heating29ctrl0f1dturn2on1b) && (! ((u0room29heating29ctrl0f1dturn2off1b) || (u0room29heating29ctrl0room29heating29ctrl)))) <-> ((! (((u0room29heating29ctrl0f1dturn2off1b) && (! (u0room29heating29ctrl0room29heating29ctrl))) <-> ((u0room29heating29ctrl0room29heating29ctrl) && (! (u0room29heating29ctrl0f1dturn2off1b))))) && (! (u0room29heating29ctrl0f1dturn2on1b)))))) && ((((G (! ((p0b0room29heating29off) <-> (p0b0room29heating29on)))) && (G ((u0room29heating29ctrl0f1dturn2on1b) -> (F ((u0room29heating29ctrl0f1dturn2off1b) R (p0b0room29heating29on)))))) && (G ((u0room29heating29ctrl0f1dturn2off1b) -> (F ((u0room29heating29ctrl0f1dturn2on1b) R (p0b0room29heating29off)))))) -> (false));
+  }
+}
+

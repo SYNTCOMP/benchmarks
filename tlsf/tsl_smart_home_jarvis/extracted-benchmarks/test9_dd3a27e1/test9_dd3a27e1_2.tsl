@@ -1,0 +1,9 @@
+assume {
+  (G (F (! in3)));
+  (G ([c <- val3()] -> (X in2)));
+}
+
+guarantee {
+  (G (F in2));
+  (G (in3 -> (X (! in2))));
+}

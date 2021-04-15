@@ -1,0 +1,12 @@
+assume {
+  (G (! (Lamp.on <-> Lamp.off)));
+  (G ([Lamp.ctrl <- Lamp.con()] -> (X (F (Lamp.on W ([Lamp.ctrl <- Lamp.coff()] || Lamp.poweroff))))));
+  (G ([Lamp.ctrl <- Lamp.coff()] -> (X (F (Lamp.off W ([Lamp.ctrl <- Lamp.con()] || Lamp.poweroff))))));
+  (G (Lamp.poweroff -> Lamp.off));
+  (G (! (Lamp.intent.on && Lamp.intent.off)));
+}
+
+guarantee {
+  (G (Lamp.intent.on -> (((! Lamp.poweroff) -> (F (Lamp.on W (Lamp.poweroff || (! Lamp.intent.on))))) W (! Lamp.intent.on))));
+  (G (Lamp.intent.off -> (((! Lamp.poweroff) -> (F (Lamp.off W (Lamp.poweroff || (! Lamp.intent.off))))) W (! Lamp.intent.off))));
+}

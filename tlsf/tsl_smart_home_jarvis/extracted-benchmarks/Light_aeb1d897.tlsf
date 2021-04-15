@@ -1,0 +1,27 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Light_aeb1d897"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02roomlight29on;
+    p0b02roomlight29off;
+    p0p0on02roomlight29intent;
+    p0p0off02roomlight29intent;
+    p0p0toggle02roomlight29intent;
+  }
+
+  OUTPUTS {
+    u02roomlight29light02roomlight29light;
+    u02roomlight29light0f1d2roomlight29turn2on1b;
+    u02roomlight29light0f1d2roomlight29toggle1b;
+    u02roomlight29light0f1d2roomlight29turn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((! (((u02roomlight29light0f1d2roomlight29toggle1b) && (! (u02roomlight29light02roomlight29light))) <-> ((u02roomlight29light02roomlight29light) && (! (u02roomlight29light0f1d2roomlight29toggle1b))))) && (! ((u02roomlight29light0f1d2roomlight29turn2off1b) || (u02roomlight29light0f1d2roomlight29turn2on1b)))) <-> ((! (((u02roomlight29light0f1d2roomlight29turn2off1b) && (! (u02roomlight29light0f1d2roomlight29turn2on1b))) <-> ((u02roomlight29light0f1d2roomlight29turn2on1b) && (! (u02roomlight29light0f1d2roomlight29turn2off1b))))) && (! ((u02roomlight29light0f1d2roomlight29toggle1b) || (u02roomlight29light02roomlight29light))))))) && ((((((((G (! ((p0b02roomlight29on) <-> (p0b02roomlight29off)))) && (G (((u02roomlight29light0f1d2roomlight29turn2on1b) || ((u02roomlight29light0f1d2roomlight29toggle1b) && (p0b02roomlight29off))) -> (X (F (((u02roomlight29light0f1d2roomlight29turn2off1b) || (u02roomlight29light0f1d2roomlight29toggle1b)) R (p0b02roomlight29on))))))) && (G (((u02roomlight29light0f1d2roomlight29turn2off1b) || ((u02roomlight29light0f1d2roomlight29toggle1b) && (p0b02roomlight29on))) -> (X (F (((u02roomlight29light0f1d2roomlight29turn2on1b) || (u02roomlight29light0f1d2roomlight29toggle1b)) R (p0b02roomlight29off))))))) && (G (((p0p0on02roomlight29intent) || (p0p0off02roomlight29intent)) || (p0p0toggle02roomlight29intent)))) && (G ((p0p0on02roomlight29intent) -> (! ((p0p0off02roomlight29intent) || (p0p0toggle02roomlight29intent)))))) && (G ((p0p0off02roomlight29intent) -> (! ((p0p0on02roomlight29intent) || (p0p0toggle02roomlight29intent)))))) && (G ((p0p0toggle02roomlight29intent) -> (! ((p0p0on02roomlight29intent) || (p0p0off02roomlight29intent)))))) -> ((((G ((p0p0on02roomlight29intent) -> (F ((p0b02roomlight29on) W (! (p0p0on02roomlight29intent)))))) && (G ((p0p0off02roomlight29intent) -> (F ((! (p0b02roomlight29on)) W (! (p0p0off02roomlight29intent))))))) && (G (((p0p0toggle02roomlight29intent) && (p0b02roomlight29on)) -> (F ((! (p0b02roomlight29on)) W (! (p0p0toggle02roomlight29intent))))))) && (G (((p0p0toggle02roomlight29intent) && (! (p0b02roomlight29on))) -> (F ((p0b02roomlight29on) W (! (p0p0toggle02roomlight29intent))))))));
+  }
+}
+

@@ -1,0 +1,14 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Lights2_f1477cc5_2"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+
+
+  GUARANTEE {
+    (G (true)) && (true);
+  }
+}
+

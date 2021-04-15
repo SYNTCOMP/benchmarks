@@ -1,0 +1,15 @@
+assume {
+  (G (G (F (newDay time))));
+}
+
+guarantee {
+  (G ([light <- off()] || [light <- on()]));
+  (G ((! (hasPerson PrinterRoomMS)) -> [light <- off()]));
+  (G ((hasPerson PrinterRoomMS) -> [light <- on()]));
+  (G ((workTime time) -> [light <- on()]));
+  (G ((! (workTime time)) -> (PersonInOffic <-> [light <- on()])));
+  (G ((sunlight screenlightsensor) -> [blinders <- closed]));
+  (G ([blinders <- closed()] -> [light <- on()]));
+  (G ([blinderType <- inner()] || [blinderType <- outer()]));
+  (G (((gt light) th) <-> [blinderType <- outer]));
+}

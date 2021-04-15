@@ -1,0 +1,11 @@
+assume {
+  (G (! (Plug.on <-> Plug.off)));
+  (G ([Plug.ctrl <- Plug.con()] -> (X (F (Plug.on W [Plug.ctrl <- Plug.coff()])))));
+  (G ([Plug.ctrl <- Plug.coff()] -> (X (F (Plug.off W [Plug.ctrl <- Plug.con()])))));
+  (G (! (Plug.intent.on <-> Plug.intent.off)));
+}
+
+guarantee {
+  (G (Plug.intent.on -> (F (Plug.on W (! Plug.intent.on)))));
+  (G (Plug.intent.off -> (F (Plug.off W (! Plug.intent.off)))));
+}

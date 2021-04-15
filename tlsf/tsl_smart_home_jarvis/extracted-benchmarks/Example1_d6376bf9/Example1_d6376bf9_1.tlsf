@@ -1,0 +1,27 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Example1_d6376bf9_1"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02power29failed;
+    p0b02c2m29failed;
+    p0b02door29failed;
+    p0b02time298am;
+    p0b02time296pm;
+  }
+
+  OUTPUTS {
+    u02c2m29intent02c2m29intent;
+    u02c2m29intent0f1dready1b;
+    u02power29intent02power29intent;
+    u02power29intent0f1don1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u02c2m29intent02c2m29intent) && (! (u02c2m29intent0f1dready1b))) <-> ((u02c2m29intent0f1dready1b) && (! (u02c2m29intent02c2m29intent))))) && (! (((u02power29intent02power29intent) && (! (u02power29intent0f1don1b))) <-> ((u02power29intent0f1don1b) && (! (u02power29intent02power29intent))))))) && (((G ((p0b02power29failed) -> (p0b02c2m29failed))) && (G ((p0b02power29failed) -> (p0b02door29failed)))) -> ((G ((! (p0b02c2m29failed)) -> ((p0b02time298am) -> (X ((u02c2m29intent0f1dready1b) W ((p0b02time296pm) || (p0b02c2m29failed))))))) && (G ((! (p0b02c2m29failed)) -> ((u02c2m29intent0f1dready1b) -> (u02power29intent0f1don1b))))));
+  }
+}
+

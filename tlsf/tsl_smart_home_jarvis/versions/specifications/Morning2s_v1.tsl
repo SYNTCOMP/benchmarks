@@ -1,0 +1,24 @@
+import "../deviceModel/Time_v1.tsl" as Time
+import "../deviceModel/Shades_v1.tsl" as Shades
+import "../deviceModel/Light_v1.tsl" as Roomlight
+import "../deviceModel/Room_v1.tsl" as Room
+import "../deviceModel/Alarm_v1.tsl" as Alarm
+
+always guarantee {  
+  Time.am630 && (!(Time.saturday || Time.sunday)) && bed.occupied
+    -> (F (((G (bright outside.brightness) -> (F G Shades.open)) && (G (! bright outside.brightness) -> (F G Shades.closed))
+             ) W (Room.somebodyLeaves && Room.empty)))
+
+}
+
+always guarantee {  
+  Time.am630 && (!(Time.saturday || Time.sunday)) && bed.occupied
+    -> (F ((X Roomlight.on <-> ! bright outside.brightness) W (Room.somebodyLeaves && Room.empty)))
+
+}
+
+always guarantee {  
+  Time.am630 && (!(Time.saturday || Time.sunday)) && bed.occupied
+    -> (F (bed.exit || (Time.am7 && F (Alarm.alarm W bed.exit))))
+  
+}

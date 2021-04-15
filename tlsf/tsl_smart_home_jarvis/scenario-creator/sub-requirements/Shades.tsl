@@ -1,0 +1,6 @@
+//import "../deviceModel/Shades.tsl" as Shades
+
+always guarantee {  
+  bright outside.brightness
+    -> F Shades.closed
+}

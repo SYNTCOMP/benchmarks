@@ -1,0 +1,28 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Window_42dc4fff"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02window29opened;
+    p0b02window29closed;
+    p0b02heating29off;
+    p0b02heating29on;
+    p0p02window29all2windows2closed02window29room;
+  }
+
+  OUTPUTS {
+    u02heating29ctrl02heating29ctrl;
+    u02heating29ctrl0f1d2heating29turn2on1b;
+    u02heating29ctrl0f1d2heating29turn2off1b;
+    u0music29ctrl0music29ctrl;
+    u0music29ctrl0f1dplay0f1doverture1b1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u02heating29ctrl0f1d2heating29turn2on1b) && (! ((u02heating29ctrl0f1d2heating29turn2off1b) || (u02heating29ctrl02heating29ctrl)))) <-> ((! (((u02heating29ctrl0f1d2heating29turn2off1b) && (! (u02heating29ctrl02heating29ctrl))) <-> ((u02heating29ctrl02heating29ctrl) && (! (u02heating29ctrl0f1d2heating29turn2off1b))))) && (! (u02heating29ctrl0f1d2heating29turn2on1b))))) && (! (((u0music29ctrl0music29ctrl) && (! (u0music29ctrl0f1dplay0f1doverture1b1b))) <-> ((u0music29ctrl0f1dplay0f1doverture1b1b) && (! (u0music29ctrl0music29ctrl))))))) && (((((G ((p0b02window29opened) -> ((! (p0p02window29all2windows2closed02window29room)) W (p0b02window29closed)))) && (G (! ((p0b02heating29off) <-> (p0b02heating29on))))) && (G ((u02heating29ctrl0f1d2heating29turn2on1b) -> (F ((u02heating29ctrl0f1d2heating29turn2off1b) R (p0b02heating29on)))))) && (G ((u02heating29ctrl0f1d2heating29turn2off1b) -> (F ((u02heating29ctrl0f1d2heating29turn2on1b) R (p0b02heating29off)))))) -> (G ((p0b02window29opened) -> ((u0music29ctrl0f1dplay0f1doverture1b1b) && (F ((p0b02heating29off) W ((p0b02window29closed) && (p0p02window29all2windows2closed02window29room))))))));
+  }
+}
+

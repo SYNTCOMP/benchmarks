@@ -1,0 +1,14 @@
+import "../deviceModel/Windows_v1.tsl" as Window
+import "../deviceModel/Warnlight_v1.tsl" as Warnlight
+import "../deviceModel/Timer_v1.tsl" as Timer
+
+always guarantee {
+  
+  Window.closed && Window.allWindowsClosed Window.room
+  -> ([Timer.startNewTimer <- Timer.hour1()]
+  && F ( Window.opened
+      || (Timer.timeout && (F ( ( (tooHigh room.co2Level -> X Warnlight.on) 
+              && (! tooHigh room.co2Level -> X Warnlight.off))
+            W  Window.opened)))))
+  
+}

@@ -1,0 +1,47 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Morning_c92eb242"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02shades29open;
+    p0b02shades29closed;
+    p0b02time29saturday;
+    p0b02time29sunday;
+    p0b02time29am7;
+    p0b02timer29timeout;
+    p0b02c2m29ready;
+    p0b02c2m29standby;
+    p0b02c2m29busy;
+    p0b02c2m29finished;
+    p0b0wakeup;
+    p0p0asleep0partner;
+    p0p02time29between02time29am502time29am2423;
+    p0p02time29between02time29pm702time29pm8;
+  }
+
+  OUTPUTS {
+    u02shades29ctrl02shades29ctrl;
+    u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b;
+    u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b;
+    u02timer29start2new2timer02timer29start2new2timer;
+    u02timer29start2new2timer0f1d2timer29min25231b;
+    u02timer29start2new2timer0f1d2timer29hour241b;
+    u02timer29start2new2timer0f1d2timer29hour251b;
+    u02c2m29ctrl02c2m29ctrl;
+    u02c2m29ctrl0f1d2c2m29turn2on1b;
+    u02c2m29ctrl0f1d2c2m29make2coffee1b;
+    u02c2m29ctrl0f1d2c2m29turn2off1b;
+    u0radio29ctrl0radio29ctrl;
+    u0radio29ctrl0f1dturn2on1b;
+    u0tv29ctrl0tv29ctrl;
+    u0tv29ctrl0f1dturn2on1b;
+  }
+
+  GUARANTEE {
+    (G (((((! (((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b) && (! ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) || (u02shades29ctrl02shades29ctrl)))) <-> ((! (((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) && (! (u02shades29ctrl02shades29ctrl))) <-> ((u02shades29ctrl02shades29ctrl) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b))))) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b))))) && (! (((! (((u02timer29start2new2timer0f1d2timer29hour241b) && (! (u02timer29start2new2timer02timer29start2new2timer))) <-> ((u02timer29start2new2timer02timer29start2new2timer) && (! (u02timer29start2new2timer0f1d2timer29hour241b))))) && (! ((u02timer29start2new2timer0f1d2timer29hour251b) || (u02timer29start2new2timer0f1d2timer29min25231b)))) <-> ((! (((u02timer29start2new2timer0f1d2timer29hour251b) && (! (u02timer29start2new2timer0f1d2timer29min25231b))) <-> ((u02timer29start2new2timer0f1d2timer29min25231b) && (! (u02timer29start2new2timer0f1d2timer29hour251b))))) && (! ((u02timer29start2new2timer0f1d2timer29hour241b) || (u02timer29start2new2timer02timer29start2new2timer))))))) && (! (((! (((u02c2m29ctrl0f1d2c2m29make2coffee1b) && (! (u02c2m29ctrl02c2m29ctrl))) <-> ((u02c2m29ctrl02c2m29ctrl) && (! (u02c2m29ctrl0f1d2c2m29make2coffee1b))))) && (! ((u02c2m29ctrl0f1d2c2m29turn2off1b) || (u02c2m29ctrl0f1d2c2m29turn2on1b)))) <-> ((! (((u02c2m29ctrl0f1d2c2m29turn2off1b) && (! (u02c2m29ctrl0f1d2c2m29turn2on1b))) <-> ((u02c2m29ctrl0f1d2c2m29turn2on1b) && (! (u02c2m29ctrl0f1d2c2m29turn2off1b))))) && (! ((u02c2m29ctrl0f1d2c2m29make2coffee1b) || (u02c2m29ctrl02c2m29ctrl))))))) && (! (((u0radio29ctrl0radio29ctrl) && (! (u0radio29ctrl0f1dturn2on1b))) <-> ((u0radio29ctrl0f1dturn2on1b) && (! (u0radio29ctrl0radio29ctrl)))))) && (! (((u0tv29ctrl0tv29ctrl) && (! (u0tv29ctrl0f1dturn2on1b))) <-> ((u0tv29ctrl0f1dturn2on1b) && (! (u0tv29ctrl0tv29ctrl))))))) && ((((((((((((((((((((((((G (! ((p0b02shades29open) && (p0b02shades29closed)))) && (G ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b) -> (F (((! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b)) && (! (u02shades29ctrl02shades29ctrl))) R (p0b02shades29open)))))) && (G ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) -> (F (((! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b)) && (! (u02shades29ctrl02shades29ctrl))) R (p0b02shades29closed)))))) && (G (F (p0p02time29between02time29am502time29am2423)))) && (G (F (! (p0p02time29between02time29am502time29am2423))))) && (G (F (p0b02time29saturday)))) && (G (F (! (p0b02time29saturday))))) && (G (F (p0b02time29sunday)))) && (G (F (! (p0b02time29sunday))))) && (G (F (p0p02time29between02time29pm702time29pm8)))) && (G (F (! (p0p02time29between02time29pm702time29pm8))))) && (G (F (p0b02time29am7)))) && (G ((u02timer29start2new2timer0f1d2timer29min25231b) -> (F (p0b02timer29timeout))))) && (G ((u02timer29start2new2timer0f1d2timer29hour241b) -> (F (p0b02timer29timeout))))) && (G ((u02timer29start2new2timer0f1d2timer29hour251b) -> (F (p0b02timer29timeout))))) && (G (((p0b02c2m29ready) || (p0b02c2m29standby)) || (p0b02c2m29busy)))) && (G ((p0b02c2m29ready) -> ((! (p0b02c2m29standby)) && (! (p0b02c2m29busy)))))) && (G ((p0b02c2m29standby) -> ((! (p0b02c2m29busy)) && (! (p0b02c2m29ready)))))) && (G ((p0b02c2m29busy) -> ((! (p0b02c2m29ready)) && (! (p0b02c2m29standby)))))) && (G (((u02c2m29ctrl0f1d2c2m29turn2on1b) && (p0b02c2m29standby)) -> (X ((p0b02c2m29busy) U (((u02c2m29ctrl0f1d2c2m29make2coffee1b) || (u02c2m29ctrl0f1d2c2m29turn2off1b)) R (p0b02c2m29ready))))))) && (G (((u02c2m29ctrl0f1d2c2m29turn2off1b) && (p0b02c2m29ready)) -> (X ((p0b02c2m29busy) U ((u02c2m29ctrl0f1d2c2m29turn2on1b) R (p0b02c2m29standby))))))) && (G (((u02c2m29ctrl0f1d2c2m29make2coffee1b) && (p0b02c2m29ready)) -> (X ((p0b02c2m29busy) U ((p0b02c2m29finished) && (((u02c2m29ctrl0f1d2c2m29make2coffee1b) || (u02c2m29ctrl0f1d2c2m29turn2off1b)) R (p0b02c2m29ready)))))))) && (F ((p0b02c2m29standby) || (p0b02c2m29ready)))) -> (G (((p0b0wakeup) && (p0p02time29between02time29am502time29am2423)) -> ((u02c2m29ctrl0f1d2c2m29make2coffee1b) && (F ((p0b02c2m29ready) && (((((p0b02time29saturday) || (p0b02time29sunday)) && (u0radio29ctrl0f1dturn2on1b)) && ((u02timer29start2new2timer0f1d2timer29min25231b) && (F ((p0b02timer29timeout) && ((p0p0asleep0partner) -> (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b)))))) || (((! ((p0b02time29saturday) || (p0b02time29sunday))) && (u0tv29ctrl0f1dturn2on1b)) && ((u02timer29start2new2timer0f1d2timer29min25231b) && (F ((p0b02timer29timeout) && ((p0p0asleep0partner) -> (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b)))))))))))));
+  }
+}
+

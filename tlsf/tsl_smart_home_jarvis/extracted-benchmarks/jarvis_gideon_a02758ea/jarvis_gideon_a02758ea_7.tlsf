@@ -1,0 +1,21 @@
+INFO {
+  TITLE:       "Converted TSL Specification: jarvis_gideon_a02758ea_7"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0full0trashcan;
+  }
+
+  OUTPUTS {
+    u0email0email;
+    u0email0f1dfacility2management1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0email0email) && (! (u0email0f1dfacility2management1b))) <-> ((u0email0f1dfacility2management1b) && (! (u0email0email)))))) && (G ((p0p0full0trashcan) -> (u0email0f1dfacility2management1b)));
+  }
+}
+

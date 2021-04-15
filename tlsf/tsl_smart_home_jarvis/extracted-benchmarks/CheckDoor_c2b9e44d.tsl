@@ -1,0 +1,9 @@
+assume {
+  (G (! (Device.locked <-> Device.unlocked)));
+  (G ([Device.door <- Device.lock()] -> (X (Device.locked W [Device.door <- Device.unlock()]))));
+  (G ([Device.door <- Device.unlock()] -> (X (Device.unlocked W [Device.door <- Device.lock()]))));
+}
+
+guarantee {
+  (G false);
+}

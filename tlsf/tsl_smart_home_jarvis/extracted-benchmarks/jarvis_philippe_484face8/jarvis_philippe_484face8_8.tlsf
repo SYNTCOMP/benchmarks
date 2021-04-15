@@ -1,0 +1,23 @@
+INFO {
+  TITLE:       "Converted TSL Specification: jarvis_philippe_484face8_8"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0new2day0time;
+    p0p0work0time;
+  }
+
+  OUTPUTS {
+    u0cleaning2robot0cleaning2robot;
+    u0cleaning2robot0f1dclean1b;
+    u0cleaning2robot0f1doff1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0cleaning2robot0f1dclean1b) && (! ((u0cleaning2robot0f1doff1b) || (u0cleaning2robot0cleaning2robot)))) <-> ((! (((u0cleaning2robot0f1doff1b) && (! (u0cleaning2robot0cleaning2robot))) <-> ((u0cleaning2robot0cleaning2robot) && (! (u0cleaning2robot0f1doff1b))))) && (! (u0cleaning2robot0f1dclean1b)))))) && ((G (G (F (p0p0new2day0time)))) -> ((G (G (F (u0cleaning2robot0f1dclean1b)))) && (G ((p0p0work0time) -> (u0cleaning2robot0f1doff1b)))));
+  }
+}
+

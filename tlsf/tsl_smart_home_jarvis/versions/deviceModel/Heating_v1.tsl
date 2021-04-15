@@ -1,0 +1,5 @@
+always assume {
+  ! (off <-> on);
+  [ ctrl <- turnOn() ] -> F ([ ctrl <- turnOff() ] R on);
+  [ ctrl <- turnOff() ] -> F ([ ctrl <- turnOn() ] R off);
+}

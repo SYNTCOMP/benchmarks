@@ -1,0 +1,9 @@
+assume {
+}
+
+guarantee {
+  (G (((workTime time) && PersonInOffice) -> [coffeemachine <- on()]));
+  (G (((isfull dishWasher) && (! (workTime time))) -> [dishWasher <- start()]));
+  (G ((isCleanAndLoaded dishWasher) -> [coffeemachine <- off()]));
+  (G (! ([coffeemachine <- off] && PersonInOffice)));
+}

@@ -1,0 +1,33 @@
+assume {
+}
+
+guarantee {
+  (G ([light <- off()] || [light <- on()]));
+  (G ((! (hasPerson PrinterRoomMS)) -> [light <- off()]));
+  (G ((hasPerson PrinterRoomMS) -> [light <- on()]));
+  (G ((workTime time) -> [light <- on()]));
+  (G ((! (workTime time)) -> (PersonInOffice <-> [light <- on()])));
+  (G (((workTime time) && PersonInOffice) -> [coffeemachine <- on()]));
+  (G (personInFrontOfScreen <-> [count <- (up count)]));
+  (G ((workDone count) <-> [light <- green()]));
+  (G ((! personInFrontOfScreen) -> [sit <- zero()]));
+  (G (personInFrontOfScreen -> [sit <- (up sit())]));
+  (G ((toolong sit) -> [screen <- off()]));
+  (G (((gt change) percentage) -> [wallserver <- commit()]));
+  (G (((gt co2level) val) -> [window <- open()]));
+  (G (fire -> [window <- close()]));
+  (G (rain -> [window <- close()]));
+  (G (! ([heater <- on()] && [window <- open()])));
+  (G (((workTime time) && PersonInOffice) -> [heater <- on()]));
+  (G (((isfull dishWasher) && (! (workTime time))) -> [dishWasher <- start()]));
+  (G ((isCleanAndLoaded dishWasher) -> [coffeemachine <- off()]));
+  (G ((blinding brightness) -> [blinds <- close()]));
+  (G ((enoughLight brightness) -> ([blinds <- open()] && [light <- off()])));
+  (G ((! PersonInOffice) -> [timer <- start()]));
+  (G ((fiveMinOver timer) -> [door <- lock()]));
+  (G ((key door) -> [door <- unlock()]));
+  (G (! ([coffeemachine <- off] && PersonInOffice)));
+  (G ((rushhour time) -> [window <- close()]));
+  (G ((full trashcan) -> [email <- facilityManagement()]));
+  (G (! ((PersonInOffice || (workTime time)) && [roomba <- on()])));
+}

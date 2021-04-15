@@ -1,0 +1,17 @@
+assume {
+}
+
+guarantee {
+  (G [counter <- ((incmod counter) (inc enemycount()))]);
+  (G ((eqz counter) <-> [xcoord <- (incCoord xcoord)]));
+  (G ((((eq xcoord) decSizeX()) && (eqz counter)) <-> [ycoord <- (incCoord ycoord)]));
+  (G ((((! (eqz counter)) && ((lt ((getenemyradius enemies) (dec counter))) tmpdist)) && (((((hitcoord xcoord) ycoord) ((getenemyradius enemies) (dec counter))) ((getenemyangle enemies) (dec counter))) rotation)) <-> [tmpcolor <- ((getenemycolor enemies) (dec counter))]));
+  (G ((((! (eqz counter)) && ((lt ((getenemyradius enemies) (dec counter))) tmpdist)) && (((((hitcoord xcoord) ycoord) ((getenemyradius enemies) (dec counter))) ((getenemyangle enemies) (dec counter))) rotation)) <-> [tmpdist <- ((getenemyradius enemies) (dec counter))]));
+  (G ((eqz counter) <-> ([color <- tmpcolor] || [color <- whitecolor()])));
+  (G ((eqz counter) <-> [tmpcolor <- blackcolor()]));
+  (G ((eqz counter) <-> [tmpdist <- startradius()]));
+  (G ((eqz counter) <-> [bxcoord <- xcoord]));
+  (G ((eqz counter) <-> [bycoord <- ycoord]));
+  (G ([color <- whitecolor()] -> (((eq xcoord) hairlinex()) && ((eq ycoord) hairliney()))));
+  (G ([color <- tmpcolor] -> (! (((eq xcoord) hairlinex()) && ((eq ycoord) hairliney())))));
+}

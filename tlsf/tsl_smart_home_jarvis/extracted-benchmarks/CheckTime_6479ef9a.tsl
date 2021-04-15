@@ -1,0 +1,14 @@
+assume {
+  (G (F ((Device.between Device.am5) Device.am10)));
+  (G (F (! ((Device.between Device.am5) Device.am10))));
+  (G (F Device.saturday));
+  (G (F (! Device.saturday)));
+  (G (F Device.sunday));
+  (G (F (! Device.sunday)));
+  (G (F ((Device.between Device.pm7) Device.pm8)));
+  (G (F (! ((Device.between Device.pm7) Device.pm8))));
+}
+
+guarantee {
+  (G false);
+}

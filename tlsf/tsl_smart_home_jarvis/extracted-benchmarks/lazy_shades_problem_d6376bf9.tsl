@@ -1,0 +1,13 @@
+assume {
+  (G (! (open && closed)));
+  (G ([ctrl <- (moveTo percent100())] -> (X (reachingOpen U (((! [ctrl <- (moveTo percent100())]) && (! [ctrl <- ctrl])) R open)))));
+  (G ([ctrl <- (moveTo percent0())] -> (X (reachingClosed U (((! [ctrl <- (moveTo percent0())]) && (! [ctrl <- ctrl])) R closed)))));
+  (G ((closed && (! [ctrl <- (moveTo percent100())])) -> (X closed)));
+  (G ((open && (! [ctrl <- (moveTo percent0())])) -> (X open)));
+  (G (F Time.10pm));
+}
+
+guarantee {
+  (G (Time.6am -> (X (F (open W Time.10pm)))));
+  (G (Time.6am -> (X (reachingOpen U (open W Time.10pm)))));
+}

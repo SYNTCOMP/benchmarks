@@ -1,0 +1,21 @@
+INFO {
+  TITLE:       "Converted TSL Specification: CheckTime_4b5e6eaa"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02device29saturday;
+    p0b02device29sunday;
+    p0b02device29am7;
+    p0p02device29between02device29am502device29am2423;
+    p0p02device29between02device29pm702device29pm8;
+  }
+
+
+  GUARANTEE {
+    (G (true)) && ((((((((((G (F (p0p02device29between02device29am502device29am2423))) && (G (F (! (p0p02device29between02device29am502device29am2423))))) && (G (F (p0b02device29saturday)))) && (G (F (! (p0b02device29saturday))))) && (G (F (p0b02device29sunday)))) && (G (F (! (p0b02device29sunday))))) && (G (F (p0p02device29between02device29pm702device29pm8)))) && (G (F (! (p0p02device29between02device29pm702device29pm8))))) && (G (F (p0b02device29am7)))) -> (false));
+  }
+}
+

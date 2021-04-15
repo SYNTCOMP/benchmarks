@@ -1,0 +1,59 @@
+/*
+    This file allows to create new combinations of assumptions-sets
+    and requirement-sets. This can be done as follows:
+    1. Copy this file, but do not change directory.
+    2. Uncomment the wanted assumptions and requirements below.
+    3. Use 'tslresolve' from tsltools to create a single TSL file 
+       without imports.
+    4. Use 'tsl2tlsf' to generate a TLSF file.
+
+    Note that step 3 and 4 can be merged by using
+        "tslresolve INPUT.tsl | tsl2tlsf > OUTPUT.tlsf"
+
+    We provided an example showing each of these steps.
+
+    Remarks:
+    * The assumptions need to realize an individual requirement; file 
+      can be found inside of these (as comment). However, these cannot 
+      be used anymore as we changed the import structure for these files.
+    * Some of the user requirements (mainly the 'All*.tsl' files) are
+      a combination of other requirements.
+
+*/
+
+
+/* Possible environment assumptions 
+*/
+
+//import "../environment-assumptions/Alarm.tsl" as Spec
+//import "../environment-assumptions/CoffeMachine.tsl" as Spec
+//import "../environment-assumptions/Door.tsl" as Spec
+//import "../environment-assumptions/Heating.tsl" as Spec
+//import "../environment-assumptions/Room.tsl" as Spec
+//import "../environment-assumptions/Light.tsl" as Spec
+//import "../environment-assumptions/Shades.tsl" as Spec
+//import "../environment-assumptions/Time.tsl" as Spec
+//import "../environment-assumptions/Timer.tsl" as Spec
+//import "../environment-assumptions/Warnlight.tsl" as Spec
+//import "../environment-assumptions/Windows.tsl" as Spec
+
+/* Possible user requirements
+*/
+
+//import "../sub-requirements/Alarm.tsl" as Spec
+//import "../sub-requirements/AllHeating.tsl" as Spec
+//import "../sub-requirements/AllLights.tsl" as Spec
+//import "../sub-requirements/AllShades.tsl" as Spec    
+//import "../sub-requirements/Coffee.tsl" as Spec   
+//import "../sub-requirements/Heating.tsl" as Spec  
+//import "../sub-requirements/Lights2.tsl" as Spec  
+//import "../sub-requirements/Lights3.tsl" as Spec  
+//import "../sub-requirements/LightsTotal.tsl" as Spec
+//import "../sub-requirements/Lights.tsl" as Spec     
+//import "../sub-requirements/Morning2s.tsl" as Spec  
+//import "../sub-requirements/Morning2.tsl" as Spec   
+//import "../sub-requirements/Morning.tsl" as Spec
+//import "../sub-requirements/Shades2.tsl" as Spec
+//import "../sub-requirements/Shades.tsl" as Spec
+//import "../sub-requirements/Window2.tsl" as Spec
+//import "../sub-requirements/Window.tsl" as Spec

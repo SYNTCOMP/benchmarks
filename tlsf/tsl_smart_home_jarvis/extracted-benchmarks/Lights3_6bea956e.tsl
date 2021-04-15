@@ -1,0 +1,6 @@
+assume {
+}
+
+guarantee {
+  ((G ((((((room.empty -> (! switch.toggled)) && (room.somebodyEnters -> ((! room.empty) W room.somebodyLeaves))) && ((room.somebodyLeaves && room.empty) -> (room.empty W room.somebodyEnters))) && (! (room.light.on <-> room.light.off))) && (([room.light <- turnOn()] || ([room.light <- toggle()] && room.light.off)) -> (X (F (([room.light <- turnOff()] || [room.light <- toggle()]) R room.light.on))))) && (([room.light <- turnOff()] || ([room.light <- toggle()] && room.light.on)) -> (X (F (([room.light <- turnOn()] || [room.light <- toggle()]) R room.light.off)))))) -> (G ((bright outside.brightness) -> ((switch.toggled && room.light.off) -> (X (F (room.light.on W (switch.toggled || room.empty))))))));
+}

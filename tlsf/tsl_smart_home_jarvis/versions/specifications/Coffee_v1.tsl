@@ -1,0 +1,11 @@
+
+/* The coffee machine is always ready when somebody is at the room.
+ */
+
+import "../deviceModel/Room_v1.tsl" as Room
+import "../deviceModel/CoffeMachine_v1.tsl" as CM
+
+always guarantee {
+  Room.somebodyEnters
+    -> F (CM.ready W (Room.somebodyLeaves && Room.empty));
+}

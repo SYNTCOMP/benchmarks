@@ -1,0 +1,27 @@
+assume {
+  (G ([Spec.Timer.startNewTimer <- Spec.Timer.min20()] -> (F Spec.Timer.timeout)));
+  (G ([Spec.Timer.startNewTimer <- Spec.Timer.hour1()] -> (F Spec.Timer.timeout)));
+  (G ([Spec.Timer.startNewTimer <- Spec.Timer.hour2()] -> (F Spec.Timer.timeout)));
+  (G (Spec.Room.empty -> (! Spec.Room.switch.toggled)));
+  (G (Spec.Room.somebodyEnters -> ((! Spec.Room.empty) W (Spec.Room.somebodyLeaves && Spec.Room.empty))));
+  (G ((Spec.Room.somebodyLeaves && Spec.Room.empty) -> (Spec.Room.empty W Spec.Room.somebodyEnters)));
+  (G (Spec.Room.bed.occupied -> (! Spec.Room.empty)));
+  (((! Spec.Room.empty) W (Spec.Room.somebodyLeaves && Spec.Room.empty)) || (Spec.Room.empty W Spec.Room.somebodyEnters));
+  (G (! (Spec.Heating.off <-> Spec.Heating.on)));
+  (G ([Spec.Heating.ctrl <- Spec.Heating.turnOn()] -> (F ([Spec.Heating.ctrl <- Spec.Heating.turnOff()] R Spec.Heating.on))));
+  (G ([Spec.Heating.ctrl <- Spec.Heating.turnOff()] -> (F ([Spec.Heating.ctrl <- Spec.Heating.turnOn()] R Spec.Heating.off))));
+  (G ((Spec.CM.ready || Spec.CM.standby) || Spec.CM.busy));
+  (G (Spec.CM.ready -> ((! Spec.CM.standby) && (! Spec.CM.busy))));
+  (G (Spec.CM.standby -> ((! Spec.CM.busy) && (! Spec.CM.ready))));
+  (G (Spec.CM.busy -> ((! Spec.CM.ready) && (! Spec.CM.standby))));
+  (G (([Spec.CM.ctrl <- Spec.CM.turnOn()] && Spec.CM.standby) -> (X (Spec.CM.busy U (([Spec.CM.ctrl <- Spec.CM.makeCoffee()] || [Spec.CM.ctrl <- Spec.CM.turnOff()]) R Spec.CM.ready)))));
+  (G (([Spec.CM.ctrl <- Spec.CM.turnOff()] && Spec.CM.ready) -> (X (Spec.CM.busy U ([Spec.CM.ctrl <- Spec.CM.turnOn()] R Spec.CM.standby)))));
+  (G (([Spec.CM.ctrl <- Spec.CM.makeCoffee()] && Spec.CM.ready) -> (X (Spec.CM.busy U (Spec.CM.finished && (([Spec.CM.ctrl <- Spec.CM.makeCoffee()] || [Spec.CM.ctrl <- Spec.CM.turnOff()]) R Spec.CM.ready))))));
+  (F (Spec.CM.standby || Spec.CM.ready));
+}
+
+guarantee {
+  (G (((Spec.gt Spec.outside.temperature) Spec.Room.temperature) -> (F Spec.Heating.off)));
+  (G (Spec.Room.somebodyEnters -> (F (Spec.CM.ready W (Spec.Room.somebodyLeaves && Spec.Room.empty)))));
+}
+

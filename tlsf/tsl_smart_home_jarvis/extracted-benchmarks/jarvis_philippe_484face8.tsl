@@ -1,0 +1,41 @@
+assume {
+  (G (G (F (newDay time))));
+}
+
+guarantee {
+  (G ([light <- off()] || [light <- on()]));
+  (G ((! (hasPerson PrinterRoomMS)) -> [light <- off()]));
+  (G ((hasPerson PrinterRoomMS) -> [light <- on()]));
+  (G ((workTime time) -> [light <- on()]));
+  (G ((! (workTime time)) -> (PersonInOffic <-> [light <- on()])));
+  (G ((seePerson webcame) <-> [timer <- (((incTimer timer) time) date)]));
+  (G ((dailyWorkloadArchieved timer) -> [lightColor <- Green()]));
+  (G ([lightColor <- Normal()] || [lightColor <- Green()]));
+  (G ([window <- open()] || [window <- close()]));
+  (G ((isBad airQuality) -> [window <- open()]));
+  (G (((isRaining weather) || fire) -> (! [window <- open()])));
+  (G ((((gt temeprature) value) -> [heating <- (turnDown heating)]) W (((eq temperature) value) || ((lt temperature) value))));
+  (G ((((lt temeprature) value) -> [heating <- (turnUp heating)]) W (((eq temperature) value) || ((gt temperature) value))));
+  (G (((eq temeperature) value) -> [heating <- heating]));
+  (G ([window <- open()] -> [heating <- zero()]));
+  (G ([dishWasher <- on] <-> ((afterWork time) && (full dishWasherStatus))));
+  (G (((((newDay time) || (full dishWasherstatus)) || (cleaned dishWasherStatus)) -> [coffeMachine <- off()]) W (empty dishWasherStatus)));
+  (G ((sunlight screenlightsensor) -> [blinders <- closed]));
+  (G ([blinders <- closed()] -> [light <- on()]));
+  (G ([blinderType <- inner()] || [blinderType <- outer()]));
+  (G (((gt light) th) <-> [blinderType <- outer]));
+  (G ((isEmpty presenceSensor) -> [presenceTimer <- (inc presenceTimer)]));
+  (G ((! (isEmpty presenceSensor)) -> [presenceTimer <- zero()]));
+  (G (((isEmpty presenceSensor) && ((gt presenceTimer) fivemin)) -> [doorlock <- close()]));
+  (G ((isKeyOpened keylock) -> [doorlock <- open()]));
+  (G ((isOpendeInsight keylock) -> [doorlock <- open()]));
+  (G (((isMeeting calendar) && (isPresentation calendar)) -> [coffeMachine <- off()]));
+  (G (((rushHour time) && (isBad airQuality)) -> ([music <- on] && [window <- close])));
+  (G (((isOpened window) <-> [windowControl <- ignore()]) W (runOut timer)));
+  (G ((isOpened window) <-> [timer <- (reset tenminutes)]));
+  (G ((runOut timer) -> [windowControl <- use()]));
+  (G ((newDay time) -> ([sittingArrganent <- (generate calendar)] && (X ([sittingArragment <- (sitting Arragment)] U (newDay time))))));
+  (G ((isFull trashBin) -> [callCenter <- ((facilityMangment clean()) time)]));
+  (G (G (F [cleaningRobot <- clean()])));
+  (G ((work time) -> [cleaningRobot <- off()]));
+}

@@ -1,0 +1,8 @@
+assume {
+  (G (([room.warnlight.control <- turnOn()] -> [room.warnlight.control <- turnOff()]) R room.warnlight.on));
+  (G (([room.warnlight.control <- turnOff()] -> [room.warnlight.control <- turnOn()]) R room.warnlight.off));
+}
+
+guarantee {
+  (G ((room.window.closed && (allWindowsClosed room)) -> ([system.startNewTimer <- hour1()] && (F (room.window.opened || (F ((((tooHigh room.co2Level) -> room.warnlight.on) && ((! (tooHigh room.co2Level)) -> room.warnlight.off)) W room.window.opened)))))));
+}

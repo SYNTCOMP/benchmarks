@@ -1,0 +1,7 @@
+assume {
+}
+
+guarantee {
+  (G ([room.heating.ctrl <- turnOn()] -> (F ([room.heating.ctrl <- turnOff()] R room.heating.on))));
+  (G ([room.heating.ctrl <- turnOff()] -> (F ([room.heating.ctrl <- turnOn()] R room.heating.off))));
+}

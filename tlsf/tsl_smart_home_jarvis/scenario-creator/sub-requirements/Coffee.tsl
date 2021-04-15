@@ -1,0 +1,7 @@
+//import "../deviceModel/Room.tsl" as Room
+//import "../deviceModel/CoffeMachine.tsl" as CM
+
+always guarantee {
+  Room.somebodyEnters
+    -> F (CM.ready W (Room.somebodyLeaves && Room.empty));
+}

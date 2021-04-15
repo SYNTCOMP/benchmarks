@@ -1,0 +1,6 @@
+assume {
+}
+
+guarantee {
+  ((G (((((((((room.somebodyEnters -> ((! room.empty) W room.somebodyLeaves)) && ((room.somebodyLeaves && room.empty) -> (room.empty W room.somebodyEnters))) && ((cm.ready || cm.standby) || cm.busy)) && (cm.ready -> ((! cm.standby) && (! cm.busy)))) && (cm.standby -> ((! cm.busy) && (! cm.ready)))) && (cm.busy -> ((! cm.ready) && (! cm.standby)))) && ((([cm.ctrl <- turnOn()] && cm.standby) -> (X cm.busy)) U (([cm.ctrl <- makeCoffee()] || [cm.ctrl <- turnOff()]) R cm.ready))) && ((([cm.ctrl <- turnOff()] && cm.ready) -> (X cm.busy)) U ([cm.ctrl <- turnOn()] R cm.standby))) && ((([cm.ctrl <- makeCoffee()] && cm.ready) -> (X cm.busy)) U (cm.finished && (([cm.ctrl <- makeCoffee()] || [cm.ctrl <- turnOff()]) R cm.ready))))) -> (G (room.somebodyEnters -> (F (cm.ready W (room.somebodyLeaves && room.empty))))));
+}

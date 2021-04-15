@@ -1,0 +1,10 @@
+assume {
+  (G (Window.opened -> ((! (Window.allWindowsClosed Window.room)) W Window.closed)));
+  (G (! (Heating.off <-> Heating.on)));
+  (G ([Heating.ctrl <- Heating.turnOn()] -> (F ([Heating.ctrl <- Heating.turnOff()] R Heating.on))));
+  (G ([Heating.ctrl <- Heating.turnOff()] -> (F ([Heating.ctrl <- Heating.turnOn()] R Heating.off))));
+}
+
+guarantee {
+  (G (Window.opened -> ([music.ctrl <- (play overture())] && (F (Heating.off W (Window.closed && (Window.allWindowsClosed Window.room)))))));
+}

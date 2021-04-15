@@ -1,0 +1,12 @@
+SOMEONEINSIDE = ! Room.empty W (Room.somebodyLeaves && Room.empty);
+ROOMEMPTY     = Room.empty W Room.somebodyEnters;
+
+always assume {
+    Room.empty -> !Room.switch.toggled;
+    Room.somebodyEnters -> SOMEONEINSIDE;
+    (Room.somebodyLeaves && Room.empty) -> ROOMEMPTY;
+    Room.bed.occupied -> (! Room.empty)
+}
+initially assume {
+    SOMEONEINSIDE || ROOMEMPTY;
+}

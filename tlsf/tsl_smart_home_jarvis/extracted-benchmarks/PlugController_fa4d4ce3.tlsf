@@ -1,0 +1,25 @@
+INFO {
+  TITLE:       "Converted TSL Specification: PlugController_fa4d4ce3"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02plug29on;
+    p0b02plug29off;
+    p0b02plug29intent29on;
+    p0b02plug29intent29off;
+  }
+
+  OUTPUTS {
+    u02plug29ctrl02plug29ctrl;
+    u02plug29ctrl0f1d2plug29con1b;
+    u02plug29ctrl0f1d2plug29coff1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02plug29ctrl0f1d2plug29con1b) && (! ((u02plug29ctrl0f1d2plug29coff1b) || (u02plug29ctrl02plug29ctrl)))) <-> ((! (((u02plug29ctrl0f1d2plug29coff1b) && (! (u02plug29ctrl02plug29ctrl))) <-> ((u02plug29ctrl02plug29ctrl) && (! (u02plug29ctrl0f1d2plug29coff1b))))) && (! (u02plug29ctrl0f1d2plug29con1b)))))) && (((((G (! ((p0b02plug29on) <-> (p0b02plug29off)))) && (G ((u02plug29ctrl0f1d2plug29con1b) -> (X (F ((p0b02plug29on) W (u02plug29ctrl0f1d2plug29coff1b))))))) && (G ((u02plug29ctrl0f1d2plug29coff1b) -> (X (F ((p0b02plug29off) W (u02plug29ctrl0f1d2plug29con1b))))))) && (G (! ((p0b02plug29intent29on) <-> (p0b02plug29intent29off))))) -> ((G ((p0b02plug29intent29on) -> (F ((p0b02plug29on) W (! (p0b02plug29intent29on)))))) && (G ((p0b02plug29intent29off) -> (F ((p0b02plug29off) W (! (p0b02plug29intent29off))))))));
+  }
+}
+

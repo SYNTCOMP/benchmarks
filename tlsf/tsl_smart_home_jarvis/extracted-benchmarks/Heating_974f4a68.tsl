@@ -1,0 +1,11 @@
+assume {
+  (G (! (Heating.off <-> Heating.on)));
+  (G ([Heating.ctrl <- Heating.turnOn()] -> (F ([Heating.ctrl <- Heating.turnOff()] R Heating.on))));
+  (G ([Heating.ctrl <- Heating.turnOff()] -> (F ([Heating.ctrl <- Heating.turnOn()] R Heating.off))));
+  (G (! ((on Heating.intend) <-> (off Heating.intend))));
+}
+
+guarantee {
+  (G ((on Heating.intend) -> (F (Heating.on W (! (on Heating.intend))))));
+  (G ((off Heating.intend) -> (F (Heating.off W (! (off Heating.intend))))));
+}

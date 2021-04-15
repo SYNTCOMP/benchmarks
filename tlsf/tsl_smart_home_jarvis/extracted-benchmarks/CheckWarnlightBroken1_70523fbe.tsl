@@ -1,0 +1,9 @@
+assume {
+  (G (room.warnlight.on <-> (! room.warnlight.off)));
+  (G (([room.warnlight.control <- turnOn()] -> [room.warnlight.control <- turnOff()]) R room.warnlight.on));
+  (G (([room.warnlight.control <- turnOff()] -> [room.warnlight.control <- turnOn()]) R room.warnlight.off));
+}
+
+guarantee {
+  (G false);
+}

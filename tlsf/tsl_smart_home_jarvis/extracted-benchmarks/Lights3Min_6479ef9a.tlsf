@@ -1,0 +1,27 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Lights3Min_6479ef9a"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0room29light29off;
+    p0b0room29light29on;
+    p0b0switch29toggled;
+    p0b0room29empty;
+    p0p0bright0outside29brightness;
+  }
+
+  OUTPUTS {
+    u0room29light0room29light;
+    u0room29light0f1dturn2on1b;
+    u0room29light0f1dtoggle1b;
+    u0room29light0f1dturn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((! (((u0room29light0f1dtoggle1b) && (! (u0room29light0room29light))) <-> ((u0room29light0room29light) && (! (u0room29light0f1dtoggle1b))))) && (! ((u0room29light0f1dturn2off1b) || (u0room29light0f1dturn2on1b)))) <-> ((! (((u0room29light0f1dturn2off1b) && (! (u0room29light0f1dturn2on1b))) <-> ((u0room29light0f1dturn2on1b) && (! (u0room29light0f1dturn2off1b))))) && (! ((u0room29light0f1dtoggle1b) || (u0room29light0room29light))))))) && ((G (((u0room29light0f1dturn2on1b) || ((u0room29light0f1dtoggle1b) && (p0b0room29light29off))) -> (X (F (((u0room29light0f1dturn2off1b) || (u0room29light0f1dtoggle1b)) R (p0b0room29light29on)))))) -> (G ((p0p0bright0outside29brightness) -> (((p0b0switch29toggled) && (p0b0room29light29off)) -> (X (F ((p0b0room29light29on) W ((p0b0switch29toggled) || (p0b0room29empty)))))))));
+  }
+}
+

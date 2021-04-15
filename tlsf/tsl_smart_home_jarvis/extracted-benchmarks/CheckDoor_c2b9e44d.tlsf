@@ -1,0 +1,23 @@
+INFO {
+  TITLE:       "Converted TSL Specification: CheckDoor_c2b9e44d"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02device29locked;
+    p0b02device29unlocked;
+  }
+
+  OUTPUTS {
+    u02device29door02device29door;
+    u02device29door0f1d2device29lock1b;
+    u02device29door0f1d2device29unlock1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02device29door0f1d2device29lock1b) && (! ((u02device29door0f1d2device29unlock1b) || (u02device29door02device29door)))) <-> ((! (((u02device29door0f1d2device29unlock1b) && (! (u02device29door02device29door))) <-> ((u02device29door02device29door) && (! (u02device29door0f1d2device29unlock1b))))) && (! (u02device29door0f1d2device29lock1b)))))) && ((((G (! ((p0b02device29locked) <-> (p0b02device29unlocked)))) && (G ((u02device29door0f1d2device29lock1b) -> (X ((p0b02device29locked) W (u02device29door0f1d2device29unlock1b)))))) && (G ((u02device29door0f1d2device29unlock1b) -> (X ((p0b02device29unlocked) W (u02device29door0f1d2device29lock1b)))))) -> (false));
+  }
+}
+

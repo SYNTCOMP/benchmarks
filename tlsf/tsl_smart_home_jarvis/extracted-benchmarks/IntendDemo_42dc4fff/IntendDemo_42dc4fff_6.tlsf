@@ -1,0 +1,22 @@
+INFO {
+  TITLE:       "Converted TSL Specification: IntendDemo_42dc4fff_6"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02outside29bright;
+    p0b02outside29dark;
+  }
+
+  OUTPUTS {
+    u02shades29intend02shades29intend;
+    u02shades29intend0f1dclosed1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02shades29intend02shades29intend) && (! (u02shades29intend0f1dclosed1b))) <-> ((u02shades29intend0f1dclosed1b) && (! (u02shades29intend02shades29intend)))))) && (G ((p0b02outside29bright) -> (X ((u02shades29intend0f1dclosed1b) W (p0b02outside29dark)))));
+  }
+}
+

@@ -1,0 +1,13 @@
+assume {
+}
+
+guarantee {
+  (G (F ((between t.am5) t.am10)));
+  (G (F (! ((between t.am5) t.am10))));
+  (G (F t.saturday));
+  (G (F (! t.saturday)));
+  (G (F t.sunday));
+  (G (F (! t.sunday)));
+  (G (F ((between t.pm7) t.pm8)));
+  (G (F (! ((between t.pm7) t.pm8))));
+}

@@ -1,0 +1,39 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Core_fa4d4ce3"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02timer329timeout;
+    p0b0bed29occupied;
+    p0b0wakeup;
+    p0b02time29saturday;
+    p0b02time29sunday;
+    p0p0bright0outside29brightness;
+    p0p0asleep0partner;
+    p0p02time29between02time29am502time29am2423;
+  }
+
+  OUTPUTS {
+    u02timer329start2new2timer02timer329start2new2timer;
+    u02timer329start2new2timer0f1d2timer329min25231b;
+    u02shades29intend02shades29intend;
+    u02shades29intend0f1dclosed1b;
+    u02shades29intend0f1dopen1b;
+    u02c2m29ctrl02c2m29ctrl;
+    u02c2m29ctrl0f1d2c2m29make2coffee1b;
+    u02c2m29intend02c2m29intend;
+    u02c2m29intend0f1dready1b;
+    u0radio29ctrl0radio29ctrl;
+    u0radio29ctrl0f1dturn2on1b;
+    u0tv29ctrl0tv29ctrl;
+    u0tv29ctrl0f1dturn2on1b;
+  }
+
+  GUARANTEE {
+    (G ((((((! (((u02timer329start2new2timer02timer329start2new2timer) && (! (u02timer329start2new2timer0f1d2timer329min25231b))) <-> ((u02timer329start2new2timer0f1d2timer329min25231b) && (! (u02timer329start2new2timer02timer329start2new2timer))))) && (! (((u02shades29intend0f1dclosed1b) && (! ((u02shades29intend0f1dopen1b) || (u02shades29intend02shades29intend)))) <-> ((! (((u02shades29intend0f1dopen1b) && (! (u02shades29intend02shades29intend))) <-> ((u02shades29intend02shades29intend) && (! (u02shades29intend0f1dopen1b))))) && (! (u02shades29intend0f1dclosed1b)))))) && (! (((u02c2m29ctrl02c2m29ctrl) && (! (u02c2m29ctrl0f1d2c2m29make2coffee1b))) <-> ((u02c2m29ctrl0f1d2c2m29make2coffee1b) && (! (u02c2m29ctrl02c2m29ctrl)))))) && (! (((u02c2m29intend02c2m29intend) && (! (u02c2m29intend0f1dready1b))) <-> ((u02c2m29intend0f1dready1b) && (! (u02c2m29intend02c2m29intend)))))) && (! (((u0radio29ctrl0radio29ctrl) && (! (u0radio29ctrl0f1dturn2on1b))) <-> ((u0radio29ctrl0f1dturn2on1b) && (! (u0radio29ctrl0radio29ctrl)))))) && (! (((u0tv29ctrl0tv29ctrl) && (! (u0tv29ctrl0f1dturn2on1b))) <-> ((u0tv29ctrl0f1dturn2on1b) && (! (u0tv29ctrl0tv29ctrl))))))) && ((G ((u02timer329start2new2timer0f1d2timer329min25231b) -> (X (F (p0b02timer329timeout))))) -> ((G (((p0p0bright0outside29brightness) && (! (p0b0bed29occupied))) -> (X ((u02shades29intend0f1dclosed1b) W (p0p0bright0outside29brightness))))) && (G (((p0b0wakeup) && (p0p02time29between02time29am502time29am2423)) -> ((u02c2m29ctrl0f1d2c2m29make2coffee1b) && ((u02c2m29intend0f1dready1b) U (((((p0b02time29saturday) || (p0b02time29sunday)) && (u0radio29ctrl0f1dturn2on1b)) && ((u02timer329start2new2timer0f1d2timer329min25231b) && (F ((p0b02timer329timeout) && ((p0p0asleep0partner) -> (u02shades29intend0f1dopen1b)))))) || (((! ((p0b02time29saturday) || (p0b02time29sunday))) && (u0tv29ctrl0f1dturn2on1b)) && ((u02timer329start2new2timer0f1d2timer329min25231b) && (F ((p0b02timer329timeout) && ((p0p0asleep0partner) -> (u02shades29intend0f1dopen1b)))))))))))));
+  }
+}
+

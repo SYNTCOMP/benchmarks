@@ -1,0 +1,34 @@
+INFO {
+  TITLE:       "Converted TSL Specification: jarvis_philippe_484face8_1"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02person2in2offic;
+    p0p0new2day0time;
+    p0p0has2person02printer2room2m2s;
+    p0p0work2time0time;
+    p0p0sunlight0screenlightsensor;
+    p0p0gt0light0th;
+  }
+
+  OUTPUTS {
+    u0light0light;
+    u0light0f1doff1b;
+    u0light0f1don1b;
+    u0blinders0closed;
+    u0blinders0blinders;
+    u0blinders0f1dclosed1b;
+    u0blinder2type0blinder2type;
+    u0blinder2type0outer;
+    u0blinder2type0f1dinner1b;
+    u0blinder2type0f1douter1b;
+  }
+
+  GUARANTEE {
+    (G (((! (((u0light0f1doff1b) && (! ((u0light0f1don1b) || (u0light0light)))) <-> ((! (((u0light0f1don1b) && (! (u0light0light))) <-> ((u0light0light) && (! (u0light0f1don1b))))) && (! (u0light0f1doff1b))))) && (! (((u0blinders0blinders) && (! ((u0blinders0f1dclosed1b) || (u0blinders0closed)))) <-> ((! (((u0blinders0f1dclosed1b) && (! (u0blinders0closed))) <-> ((u0blinders0closed) && (! (u0blinders0f1dclosed1b))))) && (! (u0blinders0blinders)))))) && (! (((! (((u0blinder2type0f1dinner1b) && (! (u0blinder2type0blinder2type))) <-> ((u0blinder2type0blinder2type) && (! (u0blinder2type0f1dinner1b))))) && (! ((u0blinder2type0f1douter1b) || (u0blinder2type0outer)))) <-> ((! (((u0blinder2type0f1douter1b) && (! (u0blinder2type0outer))) <-> ((u0blinder2type0outer) && (! (u0blinder2type0f1douter1b))))) && (! ((u0blinder2type0f1dinner1b) || (u0blinder2type0blinder2type)))))))) && ((G (G (F (p0p0new2day0time)))) -> (((((((((G ((u0light0f1doff1b) || (u0light0f1don1b))) && (G ((! (p0p0has2person02printer2room2m2s)) -> (u0light0f1doff1b)))) && (G ((p0p0has2person02printer2room2m2s) -> (u0light0f1don1b)))) && (G ((p0p0work2time0time) -> (u0light0f1don1b)))) && (G ((! (p0p0work2time0time)) -> ((p0b02person2in2offic) <-> (u0light0f1don1b))))) && (G ((p0p0sunlight0screenlightsensor) -> (u0blinders0closed)))) && (G ((u0blinders0f1dclosed1b) -> (u0light0f1don1b)))) && (G ((u0blinder2type0f1dinner1b) || (u0blinder2type0f1douter1b)))) && (G ((p0p0gt0light0th) <-> (u0blinder2type0outer)))));
+  }
+}
+

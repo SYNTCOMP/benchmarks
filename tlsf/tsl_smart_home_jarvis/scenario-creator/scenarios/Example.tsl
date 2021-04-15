@@ -1,0 +1,40 @@
+/*
+    This example combines the Heating and Coffee machine requirements.
+*/
+
+
+/* Possible environment assumptions 
+*/
+
+//import "../environment-assumptions/Alarm.tsl" as Spec
+import "../environment-assumptions/CoffeMachine.tsl" as Spec
+//import "../environment-assumptions/Door.tsl" as Spec
+import "../environment-assumptions/Heating.tsl" as Spec
+import "../environment-assumptions/Room.tsl" as Spec
+//import "../environment-assumptions/Light.tsl" as Spec
+//import "../environment-assumptions/Shades.tsl" as Spec
+//import "../environment-assumptions/Time.tsl" as Spec
+import "../environment-assumptions/Timer.tsl" as Spec
+//import "../environment-assumptions/Warnlight.tsl" as Spec
+//import "../environment-assumptions/Windows.tsl" as Spec
+
+/* Possible user requirements
+*/
+
+//import "../sub-requirements/Alarm.tsl" as Spec
+//import "../sub-requirements/AllHeating.tsl" as Spec
+//import "../sub-requirements/AllLights.tsl" as Spec
+//import "../sub-requirements/AllShades.tsl" as Spec    
+import "../sub-requirements/Coffee.tsl" as Spec   
+import "../sub-requirements/Heating.tsl" as Spec  
+//import "../sub-requirements/Lights2.tsl" as Spec  
+//import "../sub-requirements/Lights3.tsl" as Spec  
+//import "../sub-requirements/LightsTotal.tsl" as Spec
+//import "../sub-requirements/Lights.tsl" as Spec     
+//import "../sub-requirements/Morning2s.tsl" as Spec  
+//import "../sub-requirements/Morning2.tsl" as Spec   
+//import "../sub-requirements/Morning.tsl" as Spec
+//import "../sub-requirements/Shades2.tsl" as Spec
+//import "../sub-requirements/Shades.tsl" as Spec
+//import "../sub-requirements/Window2.tsl" as Spec
+//import "../sub-requirements/Window.tsl" as Spec

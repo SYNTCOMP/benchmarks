@@ -1,0 +1,17 @@
+assume {
+  (G (Room.empty -> (! Room.switch.toggled)));
+  (G (Room.somebodyEnters -> ((! Room.empty) W Room.somebodyLeaves)));
+  (G ((Room.somebodyLeaves && Room.empty) -> (Room.empty W Room.somebodyEnters)));
+  (G ((CM.ready || CM.standby) || CM.busy));
+  (G (CM.ready -> ((! CM.standby) && (! CM.busy))));
+  (G (CM.standby -> ((! CM.busy) && (! CM.ready))));
+  (G (CM.busy -> ((! CM.ready) && (! CM.standby))));
+  (G (([CM.ctrl <- CM.turnOn()] && CM.standby) -> (X (CM.busy U (([CM.ctrl <- CM.makeCoffee()] || [CM.ctrl <- CM.turnOff()]) R CM.ready)))));
+  (G (([CM.ctrl <- CM.turnOff()] && CM.ready) -> (X (CM.busy U ([CM.ctrl <- CM.turnOn()] R CM.standby)))));
+  (G (([CM.ctrl <- CM.makeCoffee()] && CM.ready) -> (X (CM.busy U (CM.finished && (([CM.ctrl <- CM.makeCoffee()] || [CM.ctrl <- CM.turnOff()]) R CM.ready))))));
+  (F (CM.standby || CM.ready));
+}
+
+guarantee {
+  (G (Room.somebodyEnters -> (F (CM.ready W (Room.somebodyLeaves && Room.empty)))));
+}

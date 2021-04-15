@@ -1,0 +1,8 @@
+assume {
+  (G ((([cm.ctrl <- turnOn()] && cm.standby) -> (X cm.busy)) U (([cm.ctrl <- makeCoffee()] || [cm.ctrl <- turnOff()]) R cm.ready)));
+  (G ([system.startNewTimer <- hour2()] -> (F timeout)));
+}
+
+guarantee {
+  (G ((wakeup && ((between t.am5) t.am10)) -> ([cm.ctrl <- makeCoffee()] && (F (cm.ready && ((((t.saturday || t.sunday) && [radio.ctrl <- turnOn()]) && ([system.startNewTimer <- min20()] && (F (timeout && ((asleep partner) -> [room.shades.ctrl <- (moveTo percent100())]))))) || (((! (t.saturday || t.sunday)) && [tv.ctrl <- turnOn()]) && ([system.startNewTimer <- min20()] && (F (timeout && ((asleep partner) -> [room.shades.ctrl <- (moveTo percent100())])))))))))));
+}

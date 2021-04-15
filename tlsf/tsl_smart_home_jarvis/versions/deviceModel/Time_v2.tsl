@@ -1,0 +1,11 @@
+always assume {
+  F between am5 am10;
+  F ! between am5 am10;  
+  F saturday;
+  F ! saturday;
+  F sunday;
+  F ! sunday;
+  F between pm7 pm8;
+  F ! between pm7 pm8;
+  F am7;
+}

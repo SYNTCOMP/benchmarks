@@ -1,0 +1,7 @@
+always assume {
+  ! (on <-> off);
+  ([ light <- turnOn() ] || ([ light <- toggle() ] && off))
+    -> X F (([ light <- turnOff() ] || [ light <- toggle() ]) R on);
+  ([ light <- turnOff() ] || ([ light <- toggle() ] && on))
+    -> X F (([ light <- turnOn() ] || [ light <- toggle() ]) R off);
+}

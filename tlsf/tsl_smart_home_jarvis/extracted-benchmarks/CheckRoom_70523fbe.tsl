@@ -1,0 +1,9 @@
+assume {
+  (G (Device.empty -> (! Device.switch.toggled)));
+  (G (Device.somebodyEnters -> ((! Device.empty) W Device.somebodyLeaves)));
+  (G ((Device.somebodyLeaves && Device.empty) -> (Device.empty W Device.somebodyEnters)));
+}
+
+guarantee {
+  (G false);
+}

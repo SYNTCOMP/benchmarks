@@ -1,0 +1,25 @@
+INFO {
+  TITLE:       "Converted TSL Specification: test5_6cbc6174"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0in24;
+  }
+
+  OUTPUTS {
+    u0a0a;
+    u0a0f1dval241b;
+    u0a0f1dval251b;
+    u0b0b;
+    u0b0f1dval241b;
+    u0b0f1dval251b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u0a0f1dval241b) && (! ((u0a0f1dval251b) || (u0a0a)))) <-> ((! (((u0a0f1dval251b) && (! (u0a0a))) <-> ((u0a0a) && (! (u0a0f1dval251b))))) && (! (u0a0f1dval241b))))) && (! (((u0b0f1dval241b) && (! ((u0b0f1dval251b) || (u0b0b)))) <-> ((! (((u0b0f1dval251b) && (! (u0b0b))) <-> ((u0b0b) && (! (u0b0f1dval251b))))) && (! (u0b0f1dval241b))))))) && ((G (((u0a0f1dval241b) && (u0b0f1dval251b)) -> (X (p0b0in24)))) -> (((G (F (p0b0in24))) && (G (F (u0a0f1dval251b)))) && (G (F (u0b0f1dval241b)))));
+  }
+}
+

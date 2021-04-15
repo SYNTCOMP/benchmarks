@@ -1,0 +1,13 @@
+assume {
+  (G ([Timer.startNewTimer <- Timer.min20()] -> (F Timer.timeout)));
+  (G ([Timer.startNewTimer <- Timer.hour1()] -> (F Timer.timeout)));
+  (G ([Timer.startNewTimer <- Timer.hour2()] -> (F Timer.timeout)));
+  (G (Warnlight.on <-> (! Warnlight.off)));
+  (G (([Warnlight.control <- Warnlight.turnOn()] -> (X Warnlight.on)) W [Warnlight.control <- Warnlight.turnOff()]));
+  (G (([Warnlight.control <- Warnlight.turnOff()] -> (X Warnlight.of)) W [Warnlight.control <- Warnlight.turnOn()]));
+  (G (Window.opened -> ((! (Window.allWindowsClosed Window.room)) W Window.closed)));
+}
+
+guarantee {
+  (G ((Window.closed && (Window.allWindowsClosed Window.room)) -> ([Timer.startNewTimer <- Timer.hour1()] && (F (Window.opened || (F ((((tooHigh room.co2Level) -> Warnlight.on) && ((! (tooHigh room.co2Level)) -> Warnlight.off)) W Window.opened)))))));
+}

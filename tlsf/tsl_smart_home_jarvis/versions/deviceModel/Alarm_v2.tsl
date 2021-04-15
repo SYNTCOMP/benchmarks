@@ -1,0 +1,4 @@
+always assume {
+    [control <- turnOn()] -> (X alarm) W [control <- turnOff()];
+    [control <- turnOff()] -> (X !alarm) W [control <- turnOn()];
+}

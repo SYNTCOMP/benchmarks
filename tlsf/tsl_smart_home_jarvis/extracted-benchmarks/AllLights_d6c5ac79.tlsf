@@ -1,0 +1,38 @@
+INFO {
+  TITLE:       "Converted TSL Specification: AllLights_d6c5ac79"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02timer29timeout;
+    p0b02room29empty;
+    p0b02room29switch29toggled;
+    p0b02room29somebody2enters;
+    p0b02room29somebody2leaves;
+    p0b02room29bed29occupied;
+    p0b02roomlight29on;
+    p0b02roomlight29off;
+    p0b02time29saturday;
+    p0b02time29sunday;
+    p0b02time29am6323;
+    p0p0bright0outside29brightness;
+  }
+
+  OUTPUTS {
+    u02timer29start2new2timer02timer29start2new2timer;
+    u02timer29start2new2timer0f1d2timer29min25231b;
+    u02timer29start2new2timer0f1d2timer29hour241b;
+    u02timer29start2new2timer0f1d2timer29hour251b;
+    u02roomlight29light02roomlight29light;
+    u02roomlight29light0f1d2roomlight29turn2on1b;
+    u02roomlight29light0f1d2roomlight29toggle1b;
+    u02roomlight29light0f1d2roomlight29turn2off1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((! (((u02timer29start2new2timer0f1d2timer29hour241b) && (! (u02timer29start2new2timer02timer29start2new2timer))) <-> ((u02timer29start2new2timer02timer29start2new2timer) && (! (u02timer29start2new2timer0f1d2timer29hour241b))))) && (! ((u02timer29start2new2timer0f1d2timer29hour251b) || (u02timer29start2new2timer0f1d2timer29min25231b)))) <-> ((! (((u02timer29start2new2timer0f1d2timer29hour251b) && (! (u02timer29start2new2timer0f1d2timer29min25231b))) <-> ((u02timer29start2new2timer0f1d2timer29min25231b) && (! (u02timer29start2new2timer0f1d2timer29hour251b))))) && (! ((u02timer29start2new2timer0f1d2timer29hour241b) || (u02timer29start2new2timer02timer29start2new2timer)))))) && (! (((! (((u02roomlight29light0f1d2roomlight29toggle1b) && (! (u02roomlight29light02roomlight29light))) <-> ((u02roomlight29light02roomlight29light) && (! (u02roomlight29light0f1d2roomlight29toggle1b))))) && (! ((u02roomlight29light0f1d2roomlight29turn2off1b) || (u02roomlight29light0f1d2roomlight29turn2on1b)))) <-> ((! (((u02roomlight29light0f1d2roomlight29turn2off1b) && (! (u02roomlight29light0f1d2roomlight29turn2on1b))) <-> ((u02roomlight29light0f1d2roomlight29turn2on1b) && (! (u02roomlight29light0f1d2roomlight29turn2off1b))))) && (! ((u02roomlight29light0f1d2roomlight29toggle1b) || (u02roomlight29light02roomlight29light)))))))) && ((((((((((((((((G ((u02timer29start2new2timer0f1d2timer29min25231b) -> (F (p0b02timer29timeout)))) && (G ((u02timer29start2new2timer0f1d2timer29hour241b) -> (F (p0b02timer29timeout))))) && (G ((u02timer29start2new2timer0f1d2timer29hour251b) -> (F (p0b02timer29timeout))))) && (G ((p0b02room29empty) -> (! (p0b02room29switch29toggled))))) && (G ((p0b02room29somebody2enters) -> ((! (p0b02room29empty)) W ((p0b02room29somebody2leaves) && (p0b02room29empty)))))) && (G (((p0b02room29somebody2leaves) && (p0b02room29empty)) -> ((p0b02room29empty) W (p0b02room29somebody2enters))))) && (G ((p0b02room29bed29occupied) -> (! (p0b02room29empty))))) && (((! (p0b02room29empty)) W ((p0b02room29somebody2leaves) && (p0b02room29empty))) || ((p0b02room29empty) W (p0b02room29somebody2enters)))) && (G (! ((p0b02roomlight29on) <-> (p0b02roomlight29off))))) && (G (((u02roomlight29light0f1d2roomlight29turn2on1b) || ((u02roomlight29light0f1d2roomlight29toggle1b) && (p0b02roomlight29off))) -> (X (F (((u02roomlight29light0f1d2roomlight29turn2off1b) || (u02roomlight29light0f1d2roomlight29toggle1b)) R (p0b02roomlight29on))))))) && (G (((u02roomlight29light0f1d2roomlight29turn2off1b) || ((u02roomlight29light0f1d2roomlight29toggle1b) && (p0b02roomlight29on))) -> (X (F (((u02roomlight29light0f1d2roomlight29turn2on1b) || (u02roomlight29light0f1d2roomlight29toggle1b)) R (p0b02roomlight29off))))))) && (G (F (p0b02time29saturday)))) && (G (F (! (p0b02time29saturday))))) && (G (F (p0b02time29sunday)))) && (G (F (! (p0b02time29sunday))))) -> ((((G ((X (p0b02roomlight29on)) -> (! (p0b02room29empty)))) && (G (((p0b02room29somebody2leaves) && (p0b02room29empty)) -> ((u02timer29start2new2timer0f1d2timer29hour251b) && (F ((p0b02room29somebody2enters) || ((p0b02timer29timeout) && (F ((p0b02roomlight29off) W (p0b02room29somebody2enters)))))))))) && (G ((p0p0bright0outside29brightness) -> (((p0b02room29switch29toggled) && (p0b02roomlight29off)) -> (X (F ((p0b02roomlight29on) W ((p0b02room29switch29toggled) || (p0b02room29empty))))))))) && (G ((((p0b02time29am6323) && (! ((p0b02time29saturday) || (p0b02time29sunday)))) && (p0b02room29bed29occupied)) -> (F (((X (p0b02roomlight29on)) <-> (! (p0p0bright0outside29brightness))) W ((p0b02room29somebody2leaves) && (p0b02room29empty))))))));
+  }
+}
+

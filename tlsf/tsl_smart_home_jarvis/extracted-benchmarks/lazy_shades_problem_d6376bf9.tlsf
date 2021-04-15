@@ -1,0 +1,27 @@
+INFO {
+  TITLE:       "Converted TSL Specification: lazy_shades_problem_d6376bf9"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0open;
+    p0b0closed;
+    p0b0reaching2open;
+    p0b0reaching2closed;
+    p0b02time292423pm;
+    p0b02time296am;
+  }
+
+  OUTPUTS {
+    u0ctrl0ctrl;
+    u0ctrl0f1dmove2to0f1dpercent2423231b1b;
+    u0ctrl0f1dmove2to0f1dpercent231b1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0ctrl0f1dmove2to0f1dpercent2423231b1b) && (! ((u0ctrl0f1dmove2to0f1dpercent231b1b) || (u0ctrl0ctrl)))) <-> ((! (((u0ctrl0f1dmove2to0f1dpercent231b1b) && (! (u0ctrl0ctrl))) <-> ((u0ctrl0ctrl) && (! (u0ctrl0f1dmove2to0f1dpercent231b1b))))) && (! (u0ctrl0f1dmove2to0f1dpercent2423231b1b)))))) && (((((((G (! ((p0b0open) && (p0b0closed)))) && (G ((u0ctrl0f1dmove2to0f1dpercent2423231b1b) -> (X ((p0b0reaching2open) U (((! (u0ctrl0f1dmove2to0f1dpercent2423231b1b)) && (! (u0ctrl0ctrl))) R (p0b0open))))))) && (G ((u0ctrl0f1dmove2to0f1dpercent231b1b) -> (X ((p0b0reaching2closed) U (((! (u0ctrl0f1dmove2to0f1dpercent231b1b)) && (! (u0ctrl0ctrl))) R (p0b0closed))))))) && (G (((p0b0closed) && (! (u0ctrl0f1dmove2to0f1dpercent2423231b1b))) -> (X (p0b0closed))))) && (G (((p0b0open) && (! (u0ctrl0f1dmove2to0f1dpercent231b1b))) -> (X (p0b0open))))) && (G (F (p0b02time292423pm)))) -> ((G ((p0b02time296am) -> (X (F ((p0b0open) W (p0b02time292423pm)))))) && (G ((p0b02time296am) -> (X ((p0b0reaching2open) U ((p0b0open) W (p0b02time292423pm))))))));
+  }
+}
+

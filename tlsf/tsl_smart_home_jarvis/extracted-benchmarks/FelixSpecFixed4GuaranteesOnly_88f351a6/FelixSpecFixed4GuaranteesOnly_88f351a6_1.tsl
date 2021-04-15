@@ -1,0 +1,8 @@
+assume {
+}
+
+guarantee {
+  (G ((room.somebodyLeaves && room.empty) -> ([system.startNewTimer <- hour2()] && (F (room.somebodyEnters || (timeout && (F (room.light.off W room.somebodyEnters))))))));
+  (G ((room.window.closed && (allWindowsClosed room)) -> ([system.startNewTimer <- hour1()] && (F (room.window.opened || (F ((((tooHigh room.co2Level) -> room.warnlight.on) && ((! (tooHigh room.co2Level)) -> room.warnlight.off)) W room.window.opened)))))));
+  (G ((wakeup && ((between t.am5) t.am10)) -> ([cm.ctrl <- makeCoffee()] && (F (cm.ready && ((((t.saturday || t.sunday) && [radio.ctrl <- turnOn()]) && ([system.startNewTimer <- min20()] && (F (timeout && ((asleep partner) -> [room.shades.ctrl <- (moveTo percent100())]))))) || (((! (t.saturday || t.sunday)) && [tv.ctrl <- turnOn()]) && ([system.startNewTimer <- min20()] && (F (timeout && ((asleep partner) -> [room.shades.ctrl <- (moveTo percent100())])))))))))));
+}

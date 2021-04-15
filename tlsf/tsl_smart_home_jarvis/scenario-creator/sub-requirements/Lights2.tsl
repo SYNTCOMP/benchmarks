@@ -1,0 +1,10 @@
+//import "../deviceModel/Room.tsl" as Room
+//import "../deviceModel/Light.tsl" as Roomlight
+//import "../deviceModel/Timer.tsl" as Timer
+
+always guarantee {
+    Room.somebodyLeaves && Room.empty
+    -> ([Timer.startNewTimer <- Timer.hour2()]
+    && F ( Room.somebodyEnters
+        || (Timer.timeout && F (Roomlight.off W Room.somebodyEnters))))
+}

@@ -1,0 +1,5 @@
+always assume {
+    Warnlight.on <-> ! Warnlight.off;
+    [Warnlight.control <- Warnlight.turnOn()] ->  (X Warnlight.on) W [Warnlight.control <- Warnlight.turnOff()];
+    [Warnlight.control <- Warnlight.turnOff()] -> (X Warnlight.off) W [Warnlight.control <- Warnlight.turnOn()];
+}

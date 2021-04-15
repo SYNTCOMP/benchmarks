@@ -1,0 +1,28 @@
+INFO {
+  TITLE:       "Converted TSL Specification: jarvis_philippe_484face8_5"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0p0is2empty0presence2sensor;
+    p0p0is2key2opened0keylock;
+    p0p0is2opende2insight0keylock;
+    p0p0gt0presence2timer0fivemin;
+  }
+
+  OUTPUTS {
+    u0presence2timer0presence2timer;
+    u0presence2timer0f1dzero1b;
+    u0presence2timer0f1dinc0presence2timer1b;
+    u0doorlock0doorlock;
+    u0doorlock0f1dclose1b;
+    u0doorlock0f1dopen1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u0presence2timer0f1dzero1b) && (! ((u0presence2timer0f1dinc0presence2timer1b) || (u0presence2timer0presence2timer)))) <-> ((! (((u0presence2timer0f1dinc0presence2timer1b) && (! (u0presence2timer0presence2timer))) <-> ((u0presence2timer0presence2timer) && (! (u0presence2timer0f1dinc0presence2timer1b))))) && (! (u0presence2timer0f1dzero1b))))) && (! (((u0doorlock0f1dclose1b) && (! ((u0doorlock0f1dopen1b) || (u0doorlock0doorlock)))) <-> ((! (((u0doorlock0f1dopen1b) && (! (u0doorlock0doorlock))) <-> ((u0doorlock0doorlock) && (! (u0doorlock0f1dopen1b))))) && (! (u0doorlock0f1dclose1b))))))) && (((((G ((p0p0is2empty0presence2sensor) -> (u0presence2timer0f1dinc0presence2timer1b))) && (G ((! (p0p0is2empty0presence2sensor)) -> (u0presence2timer0f1dzero1b)))) && (G (((p0p0is2empty0presence2sensor) && (p0p0gt0presence2timer0fivemin)) -> (u0doorlock0f1dclose1b)))) && (G ((p0p0is2key2opened0keylock) -> (u0doorlock0f1dopen1b)))) && (G ((p0p0is2opende2insight0keylock) -> (u0doorlock0f1dopen1b))));
+  }
+}
+

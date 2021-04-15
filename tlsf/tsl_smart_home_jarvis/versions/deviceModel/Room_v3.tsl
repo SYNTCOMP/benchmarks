@@ -1,0 +1,6 @@
+always assume {
+    empty -> !switch.toggled;
+    somebodyEnters -> (! empty W somebodyLeaves);
+    (somebodyLeaves && empty) -> (empty W somebodyEnters);
+    bed.occupied -> (! empty)
+}

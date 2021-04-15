@@ -1,0 +1,14 @@
+assume {
+}
+
+guarantee {
+  (G ([light <- off()] || [light <- on()]));
+  (G ((! (hasPerson PrinterRoomMS)) -> [light <- off()]));
+  (G ((hasPerson PrinterRoomMS) -> [light <- on()]));
+  (G ((workTime time) -> [light <- on()]));
+  (G ((! (workTime time)) -> (PersonInOffice <-> [light <- on()])));
+  (G (personInFrontOfScreen <-> [count <- (up count)]));
+  (G ((workDone count) <-> [light <- green()]));
+  (G ((blinding brightness) -> [blinds <- close()]));
+  (G ((enoughLight brightness) -> ([blinds <- open()] && [light <- off()])));
+}

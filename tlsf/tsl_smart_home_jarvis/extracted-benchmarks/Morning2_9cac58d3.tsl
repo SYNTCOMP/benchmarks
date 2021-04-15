@@ -1,0 +1,21 @@
+assume {
+  (G (room.empty -> (! switch.toggled)));
+  (G (room.somebodyEnters -> ((! room.empty) W room.somebodyLeaves)));
+  (G ((room.somebodyLeaves && room.empty) -> (room.empty W room.somebodyEnters)));
+  (G (! (room.light.on <-> room.light.off)));
+  (G (([room.light <- turnOn()] || ([room.light <- toggle()] && room.light.off)) -> (X (F (([room.light <- turnOff()] || [room.light <- toggle()]) R room.light.on)))));
+  (G (([room.light <- turnOff()] || ([room.light <- toggle()] && room.light.on)) -> (X (F (([room.light <- turnOn()] || [room.light <- toggle()]) R room.light.off)))));
+  (G (! (room.shades.open && room.shades.closed)));
+  (G ([room.shades.ctrl <- (moveTo percent100())] -> (F (((! [room.shades.ctrl <- (moveTo percent100())]) && (! [room.shades.ctrl <- room.shades.ctrl])) R room.shades.open))));
+  (G ([room.shades.ctrl <- (moveTo percent0())] -> (F (((! [room.shades.ctrl <- (moveTo percent0())]) && (! [room.shades.ctrl <- room.shades.ctrl])) R room.shades.closed))));
+  (G (F t.saturday));
+  (G (F (! t.saturday)));
+  (G (F t.sunday));
+  (G (F (! t.sunday)));
+  (G (([alarm.control <- turnOn()] -> [alarm.control <- turnOff()]) R alarm));
+  (G (([alarm.control <- turnOff()] -> [alarm.control <- turnOn()]) R (! alarm)));
+}
+
+guarantee {
+  (G (((t.am630 && (! (t.saturday || t.sunday))) && bed.occupied) -> ((F (((room.shades.open <-> (bright outside.brightness)) && (room.light.on <-> (! (bright outside.brightness)))) W (room.somebodyLeaves && room.empty))) && (F (bed.exit || (t.am7 && (F (alarm W bed.exit))))))));
+}

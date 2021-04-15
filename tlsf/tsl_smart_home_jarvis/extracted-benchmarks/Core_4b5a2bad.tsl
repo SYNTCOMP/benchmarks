@@ -1,0 +1,12 @@
+assume {
+  (G (Room.somebodyEnters -> ((! Room.empty) W (Room.somebodyLeaves && Room.empty))));
+  (G ((Room.somebodyLeaves && Room.empty) -> (Room.empty W Room.somebodyEnters)));
+  (((! Room.empty) W (Room.somebodyLeaves && Room.empty)) || (Room.empty W Room.somebodyEnters));
+  (G (bed.occupied -> (! Room.empty)));
+  (G ([Timer1.startNewTimer <- Timer1.hour2()] -> (X (F Timer1.timeout))));
+}
+
+guarantee {
+  (G ((Room.somebodyLeaves && Room.empty) -> ([Timer1.startNewTimer <- Timer1.hour2()] && (F (Room.somebodyEnters || (Timer1.timeout && (X ([Roomlight.intend <- off()] W Room.somebodyEnters))))))));
+  (G (((Time.am630 && (! (Time.saturday || Time.sunday))) && bed.occupied) -> (X (((([Roomlight.intend <- off()] <-> (bright outside.brightness)) && ((bright outside.brightness) -> [Shades.intend <- open()])) && ((! (bright outside.brightness)) -> [Shades.intend <- closed()])) W bed.exit))));
+}

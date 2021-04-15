@@ -1,0 +1,24 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Alarm_2d1010f8"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02alarm29alarm;
+    p0p0on02alarm29intent;
+    p0p0off02alarm29intent;
+  }
+
+  OUTPUTS {
+    u02alarm29control02alarm29control;
+    u02alarm29control0f1d2alarm29turn2on1b;
+    u02alarm29control0f1d2alarm29turn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02alarm29control0f1d2alarm29turn2on1b) && (! ((u02alarm29control0f1d2alarm29turn2off1b) || (u02alarm29control02alarm29control)))) <-> ((! (((u02alarm29control0f1d2alarm29turn2off1b) && (! (u02alarm29control02alarm29control))) <-> ((u02alarm29control02alarm29control) && (! (u02alarm29control0f1d2alarm29turn2off1b))))) && (! (u02alarm29control0f1d2alarm29turn2on1b)))))) && ((((G (((u02alarm29control0f1d2alarm29turn2on1b) -> (X (p0b02alarm29alarm))) W (u02alarm29control0f1d2alarm29turn2off1b))) && (G (((u02alarm29control0f1d2alarm29turn2off1b) -> (X (! (p0b02alarm29alarm)))) W (u02alarm29control0f1d2alarm29turn2on1b)))) && (G ((p0p0on02alarm29intent) <-> (! (p0p0off02alarm29intent))))) -> ((G ((p0p0on02alarm29intent) -> (F ((p0b02alarm29alarm) W (! (p0p0on02alarm29intent)))))) && (G ((p0p0off02alarm29intent) -> (F ((! (p0b02alarm29alarm)) W (! (p0p0off02alarm29intent))))))));
+  }
+}
+

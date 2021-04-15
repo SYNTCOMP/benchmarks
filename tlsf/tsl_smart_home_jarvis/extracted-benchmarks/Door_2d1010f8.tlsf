@@ -1,0 +1,25 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Door_2d1010f8"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02door29locked;
+    p0b02door29unlocked;
+    p0p0locked02door29intent;
+    p0p0unlocked02door29intent;
+  }
+
+  OUTPUTS {
+    u02door29door02door29door;
+    u02door29door0f1d2door29lock1b;
+    u02door29door0f1d2door29unlock1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02door29door0f1d2door29lock1b) && (! ((u02door29door0f1d2door29unlock1b) || (u02door29door02door29door)))) <-> ((! (((u02door29door0f1d2door29unlock1b) && (! (u02door29door02door29door))) <-> ((u02door29door02door29door) && (! (u02door29door0f1d2door29unlock1b))))) && (! (u02door29door0f1d2door29lock1b)))))) && ((((((G (! ((p0b02door29locked) <-> (p0b02door29unlocked)))) && (G ((u02door29door0f1d2door29lock1b) -> (X ((p0b02door29locked) W (u02door29door0f1d2door29unlock1b)))))) && (G ((u02door29door0f1d2door29unlock1b) -> (X ((p0b02door29unlocked) W (u02door29door0f1d2door29lock1b)))))) && (G ((p0p0locked02door29intent) || (p0p0unlocked02door29intent)))) && (G (! ((p0p0locked02door29intent) && (p0p0unlocked02door29intent))))) -> ((G ((p0p0locked02door29intent) -> (F ((p0b02door29locked) W (! (p0p0locked02door29intent)))))) && (G ((p0p0unlocked02door29intent) -> (F ((p0b02door29unlocked) W (! (p0p0unlocked02door29intent))))))));
+  }
+}
+

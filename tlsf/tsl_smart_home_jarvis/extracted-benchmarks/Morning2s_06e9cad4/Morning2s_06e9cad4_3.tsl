@@ -1,0 +1,18 @@
+assume {
+  (G (Room.empty -> (! Room.switch.toggled)));
+  (G (Room.somebodyEnters -> ((! Room.empty) W Room.somebodyLeaves)));
+  (G ((Room.somebodyLeaves && Room.empty) -> (Room.empty W Room.somebodyEnters)));
+  (G (F Time.saturday));
+  (G (F (! Time.saturday)));
+  (G (F Time.sunday));
+  (G (F (! Time.sunday)));
+  (G (! (Shades.open && Shades.closed)));
+  (G ([Shades.ctrl <- (Shades.moveTo Shades.percent100())] -> (F (((! [Shades.ctrl <- (Shades.moveTo Shades.percent100())]) && (! [Shades.ctrl <- Shades.ctrl])) R Shades.open))));
+  (G ([Shades.ctrl <- (Shades.moveTo Shades.percent0())] -> (F (((! [Shades.ctrl <- (Shades.moveTo Shades.percent0())]) && (! [Shades.ctrl <- Shades.ctrl])) R Shades.closed))));
+  (G ((Shades.closed && (! [Shades.ctrl <- (Shades.moveTo Shades.percent100())])) -> (X Shades.closed)));
+  (G ((Shades.open && (! [Shades.ctrl <- (Shades.moveTo Shades.percent0())])) -> (X Shades.open)));
+}
+
+guarantee {
+  (G (((Time.am630 && (! (Time.saturday || Time.sunday))) && bed.occupied) -> (F ((((G (bright outside.brightness)) -> (F (G Shades.open))) && ((G (! (bright outside.brightness))) -> (F (G Shades.closed)))) W (Room.somebodyLeaves && Room.empty)))));
+}

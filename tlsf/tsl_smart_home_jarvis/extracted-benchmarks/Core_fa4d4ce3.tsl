@@ -1,0 +1,8 @@
+assume {
+  (G ([Timer3.startNewTimer <- Timer3.min20()] -> (X (F Timer3.timeout))));
+}
+
+guarantee {
+  (G (((bright outside.brightness) && (! bed.occupied)) -> (X ([Shades.intend <- closed()] W (bright outside.brightness)))));
+  (G ((wakeup && ((Time.between Time.am5) Time.am10)) -> ([CM.ctrl <- CM.makeCoffee()] && ([CM.intend <- ready()] U ((((Time.saturday || Time.sunday) && [radio.ctrl <- turnOn()]) && ([Timer3.startNewTimer <- Timer3.min20()] && (F (Timer3.timeout && ((asleep partner) -> [Shades.intend <- open()]))))) || (((! (Time.saturday || Time.sunday)) && [tv.ctrl <- turnOn()]) && ([Timer3.startNewTimer <- Timer3.min20()] && (F (Timer3.timeout && ((asleep partner) -> [Shades.intend <- open()]))))))))));
+}

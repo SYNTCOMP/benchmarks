@@ -1,0 +1,7 @@
+always assume {
+  ! (open && closed);
+  [ ctrl <- moveTo percent100() ]
+    -> F ((! [ ctrl <- moveTo percent100() ] && ! [ ctrl <- ctrl ]) R open);
+  [ ctrl <- moveTo percent0() ]
+    -> F ((! [ ctrl <- moveTo percent0() ] && ! [ ctrl <- ctrl ]) R closed);
+}

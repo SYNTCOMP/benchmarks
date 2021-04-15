@@ -1,0 +1,29 @@
+INFO {
+  TITLE:       "Converted TSL Specification: jarvis_gideon_a02758ea_5"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0fire;
+    p0b0rain;
+    p0b02person2in2office;
+    p0p0work2time0time;
+    p0p0rushhour0time;
+    p0p0gt0co25level0val;
+  }
+
+  OUTPUTS {
+    u0window0window;
+    u0window0f1dopen1b;
+    u0window0f1dclose1b;
+    u0heater0heater;
+    u0heater0f1don1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u0window0f1dopen1b) && (! ((u0window0f1dclose1b) || (u0window0window)))) <-> ((! (((u0window0f1dclose1b) && (! (u0window0window))) <-> ((u0window0window) && (! (u0window0f1dclose1b))))) && (! (u0window0f1dopen1b))))) && (! (((u0heater0heater) && (! (u0heater0f1don1b))) <-> ((u0heater0f1don1b) && (! (u0heater0heater))))))) && ((((((G ((p0p0gt0co25level0val) -> (u0window0f1dopen1b))) && (G ((p0b0fire) -> (u0window0f1dclose1b)))) && (G ((p0b0rain) -> (u0window0f1dclose1b)))) && (G (! ((u0heater0f1don1b) && (u0window0f1dopen1b))))) && (G (((p0p0work2time0time) && (p0b02person2in2office)) -> (u0heater0f1don1b)))) && (G ((p0p0rushhour0time) -> (u0window0f1dclose1b))));
+  }
+}
+

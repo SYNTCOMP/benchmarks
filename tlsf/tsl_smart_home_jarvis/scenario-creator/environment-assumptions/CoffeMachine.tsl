@@ -1,0 +1,15 @@
+always assume {
+  CM.ready || CM.standby || CM.busy;
+  CM.ready -> (!CM.standby && !CM.busy);
+  CM.standby -> (!CM.busy && !CM.ready);
+  CM.busy -> (!CM.ready && !CM.standby);
+  [ CM.ctrl <- CM.turnOn() ] && CM.standby
+    -> X (CM.busy U (([ CM.ctrl <- CM.makeCoffee() ] || [ CM.ctrl <- CM.turnOff() ]) R CM.ready));
+  [ CM.ctrl <- CM.turnOff() ] && CM.ready
+    -> X (CM.busy U ([ CM.ctrl <- CM.turnOn() ] R CM.standby));
+   [ CM.ctrl <- CM.makeCoffee() ] && CM.ready
+    -> X (CM.busy U (CM.finished && (([ CM.ctrl <- CM.makeCoffee() ] || [ CM.ctrl <- CM.turnOff() ]) R CM.ready)));
+}
+initially assume {
+  F (CM.standby || CM.ready);
+}

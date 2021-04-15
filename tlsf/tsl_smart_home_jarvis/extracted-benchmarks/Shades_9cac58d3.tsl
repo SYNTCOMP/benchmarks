@@ -1,0 +1,9 @@
+assume {
+  (G (! (room.shades.open && room.shades.closed)));
+  (G ([room.shades.ctrl <- (moveTo percent100())] -> (F (((! [room.shades.ctrl <- (moveTo percent100())]) && (! [room.shades.ctrl <- room.shades.ctrl])) R room.shades.open))));
+  (G ([room.shades.ctrl <- (moveTo percent0())] -> (F (((! [room.shades.ctrl <- (moveTo percent0())]) && (! [room.shades.ctrl <- room.shades.ctrl])) R room.shades.closed))));
+}
+
+guarantee {
+  (G ((bright outside.brightness) -> (F room.shades.closed)));
+}

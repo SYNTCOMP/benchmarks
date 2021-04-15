@@ -1,0 +1,10 @@
+assume {
+  (G ([light_ctrl <- do_turnOn()] -> (X (is_on light_input))));
+  (G ([light_ctrl <- do_turnOff()] -> (X (is_off light_input))));
+  (G ([light_ctrl <- light_ctrl] -> (((is_on light_input) <-> (X (is_on light_input))) && ((is_off light_input) <-> (X (is_off light_input))))));
+  (G (! ((is_on light_input) && (is_off light_input))));
+}
+
+guarantee {
+  (G (env_outside_is_bright -> (F (! (is_on light_input)))));
+}

@@ -1,0 +1,5 @@
+always assume {
+    [Timer.startNewTimer <- Timer.min20()] -> F Timer.timeout;
+    [Timer.startNewTimer <- Timer.hour1()] -> F Timer.timeout;
+    [Timer.startNewTimer <- Timer.hour2()] -> F Timer.timeout;
+}

@@ -1,0 +1,13 @@
+assume {
+  (G (room.window.opened -> ((! (allWindowsClosed room)) W room.window.closed)));
+  (G ([system.startNewTimer <- hour2()] -> (F timeout)));
+  (G ([system.startNewTimer <- hour1()] -> (F timeout)));
+  (G (room.warnlight.on <-> (! room.warnlight.off)));
+  (G (([room.warnlight.control <- turnOn()] -> [room.warnlight.control <- turnOff()]) R room.warnlight.on));
+  (G (([room.warnlight.control <- turnOff()] -> [room.warnlight.control <- turnOn()]) R room.warnlight.off));
+  (G ([system.startNewTimer <- min20()] -> (F timeout)));
+}
+
+guarantee {
+  (G ((room.window.closed && (allWindowsClosed room)) -> ([system.startNewTimer <- hour1()] && (F (room.window.opened || (F ((((tooHigh room.co2Level) -> room.warnlight.on) && ((! (tooHigh room.co2Level)) -> room.warnlight.off)) W room.window.opened)))))));
+}

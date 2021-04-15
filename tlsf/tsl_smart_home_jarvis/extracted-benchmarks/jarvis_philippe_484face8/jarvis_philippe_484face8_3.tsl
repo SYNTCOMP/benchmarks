@@ -1,0 +1,7 @@
+assume {
+  (G (G (F (newDay time))));
+}
+
+guarantee {
+  (G ([dishWasher <- on] <-> ((afterWork time) && (full dishWasherStatus))));
+}

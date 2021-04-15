@@ -1,0 +1,22 @@
+INFO {
+  TITLE:       "Converted TSL Specification: test_f3987563_2"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0a;
+    p0b0c;
+  }
+
+  OUTPUTS {
+    u0out250out25;
+    u0out250f1dfun0p1db0a1b1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0out250out25) && (! (u0out250f1dfun0p1db0a1b1b))) <-> ((u0out250f1dfun0p1db0a1b1b) && (! (u0out250out25)))))) && (((G (F (p0b0a))) && (G (! ((p0b0a) && (p0b0c))))) -> (G ((p0b0c) <-> (u0out250f1dfun0p1db0a1b1b))));
+  }
+}
+

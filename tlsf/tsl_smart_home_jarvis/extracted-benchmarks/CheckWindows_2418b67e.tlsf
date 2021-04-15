@@ -1,0 +1,19 @@
+INFO {
+  TITLE:       "Converted TSL Specification: CheckWindows_2418b67e"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02device29opened;
+    p0b02device29closed;
+    p0p02device29all2windows2closed02device29room;
+  }
+
+
+  GUARANTEE {
+    (G (true)) && ((G ((p0b02device29opened) -> ((! (p0p02device29all2windows2closed02device29room)) W (p0b02device29closed)))) -> (false));
+  }
+}
+

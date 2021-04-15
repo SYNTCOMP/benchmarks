@@ -1,0 +1,3 @@
+always assume {
+  Window.opened -> ((! Window.allWindowsClosed Window.room) W Window.closed);
+}

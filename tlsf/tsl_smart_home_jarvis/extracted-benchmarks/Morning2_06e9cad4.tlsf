@@ -1,0 +1,51 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Morning2_06e9cad4"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02alarm29alarm;
+    p0b02room29empty;
+    p0b02room29switch29toggled;
+    p0b02room29somebody2enters;
+    p0b02room29somebody2leaves;
+    p0b02room29bed29occupied;
+    p0b02room292room29empty;
+    p0b02roomlight29on;
+    p0b02roomlight29off;
+    p0b02shades29open;
+    p0b02shades29closed;
+    p0b02time29am5;
+    p0b02time29am23;
+    p0b02time29saturday;
+    p0b02time29sunday;
+    p0b02time29am7;
+    p0b02time29am6323;
+    p0b0bed29occupied;
+    p0b0bed29exit;
+    p0p0bright0outside29brightness;
+    p0p02time29between0p1db02time29am51b02time29am2423;
+    p0p02time29between0p1db02time29am231b02time29am2423;
+    p0p02time29between0p1db02time29pm71b02time29pm8;
+  }
+
+  OUTPUTS {
+    u02alarm29control02alarm29control;
+    u02alarm29control0f1d2alarm29turn2on1b;
+    u02alarm29control0f1d2alarm29turn2off1b;
+    u02roomlight29light02roomlight29light;
+    u02roomlight29light0f1d2roomlight29turn2on1b;
+    u02roomlight29light0f1d2roomlight29toggle1b;
+    u02roomlight29light0f1d2roomlight29turn2off1b;
+    u02shades29ctrl02shades29ctrl;
+    u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b;
+    u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b;
+  }
+
+  GUARANTEE {
+    (G (((! (((u02alarm29control0f1d2alarm29turn2on1b) && (! ((u02alarm29control0f1d2alarm29turn2off1b) || (u02alarm29control02alarm29control)))) <-> ((! (((u02alarm29control0f1d2alarm29turn2off1b) && (! (u02alarm29control02alarm29control))) <-> ((u02alarm29control02alarm29control) && (! (u02alarm29control0f1d2alarm29turn2off1b))))) && (! (u02alarm29control0f1d2alarm29turn2on1b))))) && (! (((! (((u02roomlight29light0f1d2roomlight29toggle1b) && (! (u02roomlight29light02roomlight29light))) <-> ((u02roomlight29light02roomlight29light) && (! (u02roomlight29light0f1d2roomlight29toggle1b))))) && (! ((u02roomlight29light0f1d2roomlight29turn2off1b) || (u02roomlight29light0f1d2roomlight29turn2on1b)))) <-> ((! (((u02roomlight29light0f1d2roomlight29turn2off1b) && (! (u02roomlight29light0f1d2roomlight29turn2on1b))) <-> ((u02roomlight29light0f1d2roomlight29turn2on1b) && (! (u02roomlight29light0f1d2roomlight29turn2off1b))))) && (! ((u02roomlight29light0f1d2roomlight29toggle1b) || (u02roomlight29light02roomlight29light))))))) && (! (((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b) && (! ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) || (u02shades29ctrl02shades29ctrl)))) <-> ((! (((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) && (! (u02shades29ctrl02shades29ctrl))) <-> ((u02shades29ctrl02shades29ctrl) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b))))) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b))))))) && (((((((((((((((((((((((((((G (((u02alarm29control0f1d2alarm29turn2on1b) -> (X (p0b02alarm29alarm))) W (u02alarm29control0f1d2alarm29turn2off1b))) && (G (((u02alarm29control0f1d2alarm29turn2off1b) -> (X (! (p0b02alarm29alarm)))) W (u02alarm29control0f1d2alarm29turn2on1b)))) && (G ((p0b02room29empty) -> (! (p0b02room29switch29toggled))))) && (G ((p0b02room29somebody2enters) -> ((! (p0b02room29empty)) W (p0b02room29somebody2leaves))))) && (G (((p0b02room29somebody2leaves) && (p0b02room29empty)) -> ((p0b02room29empty) W (p0b02room29somebody2enters))))) && (G ((p0b02room29bed29occupied) -> (! (p0b02room292room29empty))))) && (G (! ((p0b02roomlight29on) <-> (p0b02roomlight29off))))) && (G (((u02roomlight29light0f1d2roomlight29turn2on1b) || ((u02roomlight29light0f1d2roomlight29toggle1b) && (p0b02roomlight29off))) -> (X (F (((u02roomlight29light0f1d2roomlight29turn2off1b) || (u02roomlight29light0f1d2roomlight29toggle1b)) R (p0b02roomlight29on))))))) && (G (((u02roomlight29light0f1d2roomlight29turn2off1b) || ((u02roomlight29light0f1d2roomlight29toggle1b) && (p0b02roomlight29on))) -> (X (F (((u02roomlight29light0f1d2roomlight29turn2on1b) || (u02roomlight29light0f1d2roomlight29toggle1b)) R (p0b02roomlight29off))))))) && (G (! ((p0b02shades29open) && (p0b02shades29closed))))) && (G ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b) -> (F (((! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b)) && (! (u02shades29ctrl02shades29ctrl))) R (p0b02shades29open)))))) && (G ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) -> (F (((! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b)) && (! (u02shades29ctrl02shades29ctrl))) R (p0b02shades29closed)))))) && (G (((p0b02shades29closed) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b))) -> (X (p0b02shades29closed))))) && (G (((p0b02shades29open) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b))) -> (X (p0b02shades29open))))) && (G (F (p0p02time29between0p1db02time29am51b02time29am2423)))) && (G (F (p0p02time29between0p1db02time29am231b02time29am2423)))) && (G (F (! (p0p02time29between0p1db02time29am51b02time29am2423))))) && (G (F (p0b02time29saturday)))) && (G (F (! (p0b02time29saturday))))) && (G (F (p0b02time29sunday)))) && (G (F (! (p0b02time29sunday))))) && (G (F (p0p02time29between0p1db02time29pm71b02time29pm8)))) && (G (F (! (p0p02time29between0p1db02time29pm71b02time29pm8))))) && (G (F (p0b02time29am7)))) && (G (F (p0b02time29am23)))) && (G (F (p0b02time29am5)))) -> (G ((((p0b02time29am6323) && (! ((p0b02time29saturday) || (p0b02time29sunday)))) && (p0b0bed29occupied)) -> ((F (((((G (p0p0bright0outside29brightness)) -> (F (G (p0b02shades29open)))) && ((G (! (p0p0bright0outside29brightness))) -> (F (G (p0b02shades29closed))))) && ((X (p0b02roomlight29on)) <-> (! (p0p0bright0outside29brightness)))) W ((p0b02room29somebody2leaves) && (p0b02room29empty)))) && (F ((p0b0bed29exit) || ((p0b02time29am7) && (F ((p0b02alarm29alarm) W (p0b0bed29exit))))))))));
+  }
+}
+

@@ -1,0 +1,9 @@
+assume {
+  (G (! (Device.open && Device.closed)));
+  (G ([Device.ctrl <- (Device.moveTo Device.percent100())] -> (F (((! [Device.ctrl <- (Device.moveTo Device.percent100())]) && (! [Device.ctrl <- Device.ctrl])) R Device.open))));
+  (G ([Device.ctrl <- (Device.moveTo Device.percent0())] -> (F (((! [Device.ctrl <- (Device.moveTo Device.percent0())]) && (! [Device.ctrl <- Device.ctrl])) R Device.closed))));
+}
+
+guarantee {
+  (G false);
+}

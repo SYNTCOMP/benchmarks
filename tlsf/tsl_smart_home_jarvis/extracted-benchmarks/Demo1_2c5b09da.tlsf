@@ -1,0 +1,75 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Demo1_2c5b09da"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02blackout2timer29timeout;
+    p0b02shades29open;
+    p0b02shades29closed;
+    p0b02heating29off;
+    p0b02heating29on;
+    p0b02c2m29ready;
+    p0b02c2m29standby;
+    p0b02c2m29busy;
+    p0b02c2m29finished;
+    p0b02roomlight29on;
+    p0b02roomlight29off;
+    p0b02room29empty;
+    p0b02room29switch29toggled;
+    p0b02room29somebody2enters;
+    p0b02room29sombebody2leaves;
+    p0b02room29somebody2leaves;
+    p0b02room29sombebody2enters;
+    p0b02room29bed29occupied;
+    p0b02time29am5;
+    p0b02time29am23;
+    p0b02time29saturday;
+    p0b02time29sunday;
+    p0b02time29am7;
+    p0b02frontdoor29locked;
+    p0b02frontdoor29unlocked;
+    p0b02firesensor29fire;
+    p0b02system29blackout;
+    p0p0bright0outside29brightness;
+    p0p02time29between0p1db02time29am51b02time29am2423;
+    p0p02time29between0p1db02time29am231b02time29am2423;
+    p0p02time29between0p1db02time29pm71b02time29pm8;
+    p0p0gt0outside29temperature02room29temperature;
+    p0p0lt0f1dten2degree1b02room29temperature;
+  }
+
+  OUTPUTS {
+    u02blackout2timer29start2new2timer02blackout2timer29start2new2timer;
+    u02blackout2timer29start2new2timer0f1d2blackout2timer29min25231b;
+    u02blackout2timer29start2new2timer0f1d2blackout2timer29hour241b;
+    u02blackout2timer29start2new2timer0f1d2blackout2timer29hour251b;
+    u02blackout2timer29start2new2timer0f1dmin25231b;
+    u02shades29ctrl02shades29ctrl;
+    u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b;
+    u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b;
+    u02heating29ctrl02heating29ctrl;
+    u02heating29ctrl0f1d2heating29turn2on1b;
+    u02heating29ctrl0f1d2heating29turn2off1b;
+    u02c2m29ctrl02c2m29ctrl;
+    u02c2m29ctrl0f1d2c2m29turn2on1b;
+    u02c2m29ctrl0f1d2c2m29make2coffee1b;
+    u02c2m29ctrl0f1d2c2m29turn2off1b;
+    u02roomlight29light02roomlight29light;
+    u02roomlight29light0f1d2roomlight29turn2on1b;
+    u02roomlight29light0f1d2roomlight29toggle1b;
+    u02roomlight29light0f1d2roomlight29turn2off1b;
+    u02frontdoor29door02frontdoor29door;
+    u02frontdoor29door0f1d2frontdoor29lock1b;
+    u02frontdoor29door0f1d2frontdoor29unlock1b;
+    u0music29ctrl0music29ctrl;
+    u0music29ctrl0f1dplay0f1dalarm1b1b;
+  }
+
+  GUARANTEE {
+    (G (((((((! (((! (((u02blackout2timer29start2new2timer0f1d2blackout2timer29hour251b) && (! (u02blackout2timer29start2new2timer0f1d2blackout2timer29min25231b))) <-> ((u02blackout2timer29start2new2timer0f1d2blackout2timer29min25231b) && (! (u02blackout2timer29start2new2timer0f1d2blackout2timer29hour251b))))) && (! (((u02blackout2timer29start2new2timer0f1dmin25231b) || (u02blackout2timer29start2new2timer0f1d2blackout2timer29hour241b)) || (u02blackout2timer29start2new2timer02blackout2timer29start2new2timer)))) <-> ((! (((u02blackout2timer29start2new2timer0f1d2blackout2timer29hour241b) && (! ((u02blackout2timer29start2new2timer02blackout2timer29start2new2timer) || (u02blackout2timer29start2new2timer0f1dmin25231b)))) <-> ((! (((u02blackout2timer29start2new2timer02blackout2timer29start2new2timer) && (! (u02blackout2timer29start2new2timer0f1dmin25231b))) <-> ((u02blackout2timer29start2new2timer0f1dmin25231b) && (! (u02blackout2timer29start2new2timer02blackout2timer29start2new2timer))))) && (! (u02blackout2timer29start2new2timer0f1d2blackout2timer29hour241b))))) && (! ((u02blackout2timer29start2new2timer0f1d2blackout2timer29hour251b) || (u02blackout2timer29start2new2timer0f1d2blackout2timer29min25231b)))))) && (! (((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b) && (! ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) || (u02shades29ctrl02shades29ctrl)))) <-> ((! (((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) && (! (u02shades29ctrl02shades29ctrl))) <-> ((u02shades29ctrl02shades29ctrl) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b))))) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b)))))) && (! (((u02heating29ctrl0f1d2heating29turn2on1b) && (! ((u02heating29ctrl0f1d2heating29turn2off1b) || (u02heating29ctrl02heating29ctrl)))) <-> ((! (((u02heating29ctrl0f1d2heating29turn2off1b) && (! (u02heating29ctrl02heating29ctrl))) <-> ((u02heating29ctrl02heating29ctrl) && (! (u02heating29ctrl0f1d2heating29turn2off1b))))) && (! (u02heating29ctrl0f1d2heating29turn2on1b)))))) && (! (((! (((u02c2m29ctrl0f1d2c2m29make2coffee1b) && (! (u02c2m29ctrl02c2m29ctrl))) <-> ((u02c2m29ctrl02c2m29ctrl) && (! (u02c2m29ctrl0f1d2c2m29make2coffee1b))))) && (! ((u02c2m29ctrl0f1d2c2m29turn2off1b) || (u02c2m29ctrl0f1d2c2m29turn2on1b)))) <-> ((! (((u02c2m29ctrl0f1d2c2m29turn2off1b) && (! (u02c2m29ctrl0f1d2c2m29turn2on1b))) <-> ((u02c2m29ctrl0f1d2c2m29turn2on1b) && (! (u02c2m29ctrl0f1d2c2m29turn2off1b))))) && (! ((u02c2m29ctrl0f1d2c2m29make2coffee1b) || (u02c2m29ctrl02c2m29ctrl))))))) && (! (((! (((u02roomlight29light0f1d2roomlight29toggle1b) && (! (u02roomlight29light02roomlight29light))) <-> ((u02roomlight29light02roomlight29light) && (! (u02roomlight29light0f1d2roomlight29toggle1b))))) && (! ((u02roomlight29light0f1d2roomlight29turn2off1b) || (u02roomlight29light0f1d2roomlight29turn2on1b)))) <-> ((! (((u02roomlight29light0f1d2roomlight29turn2off1b) && (! (u02roomlight29light0f1d2roomlight29turn2on1b))) <-> ((u02roomlight29light0f1d2roomlight29turn2on1b) && (! (u02roomlight29light0f1d2roomlight29turn2off1b))))) && (! ((u02roomlight29light0f1d2roomlight29toggle1b) || (u02roomlight29light02roomlight29light))))))) && (! (((u02frontdoor29door0f1d2frontdoor29lock1b) && (! ((u02frontdoor29door0f1d2frontdoor29unlock1b) || (u02frontdoor29door02frontdoor29door)))) <-> ((! (((u02frontdoor29door0f1d2frontdoor29unlock1b) && (! (u02frontdoor29door02frontdoor29door))) <-> ((u02frontdoor29door02frontdoor29door) && (! (u02frontdoor29door0f1d2frontdoor29unlock1b))))) && (! (u02frontdoor29door0f1d2frontdoor29lock1b)))))) && (! (((u0music29ctrl0music29ctrl) && (! (u0music29ctrl0f1dplay0f1dalarm1b1b))) <-> ((u0music29ctrl0f1dplay0f1dalarm1b1b) && (! (u0music29ctrl0music29ctrl))))))) && (((((((((((((((((((((((((((((((((((((((((((G ((u02blackout2timer29start2new2timer0f1d2blackout2timer29min25231b) -> (F (p0b02blackout2timer29timeout)))) && (G ((u02blackout2timer29start2new2timer0f1d2blackout2timer29hour241b) -> (F (p0b02blackout2timer29timeout))))) && (G ((u02blackout2timer29start2new2timer0f1d2blackout2timer29hour251b) -> (F (p0b02blackout2timer29timeout))))) && (G (! ((p0b02shades29open) && (p0b02shades29closed))))) && (G ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b) -> (F (((! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b)) && (! (u02shades29ctrl02shades29ctrl))) R (p0b02shades29open)))))) && (G ((u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b) -> (F (((! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b)) && (! (u02shades29ctrl02shades29ctrl))) R (p0b02shades29closed)))))) && (G (((p0b02shades29closed) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent2423231b1b))) -> (X (p0b02shades29closed))))) && (G (((p0b02shades29open) && (! (u02shades29ctrl0f1d2shades29move2to0f1d2shades29percent231b1b))) -> (X (p0b02shades29open))))) && (G (! ((p0b02heating29off) <-> (p0b02heating29on))))) && (G ((u02heating29ctrl0f1d2heating29turn2on1b) -> (F ((u02heating29ctrl0f1d2heating29turn2off1b) R (p0b02heating29on)))))) && (G ((u02heating29ctrl0f1d2heating29turn2off1b) -> (F ((u02heating29ctrl0f1d2heating29turn2on1b) R (p0b02heating29off)))))) && (G (((p0b02c2m29ready) || (p0b02c2m29standby)) || (p0b02c2m29busy)))) && (G ((p0b02c2m29ready) -> ((! (p0b02c2m29standby)) && (! (p0b02c2m29busy)))))) && (G ((p0b02c2m29standby) -> ((! (p0b02c2m29busy)) && (! (p0b02c2m29ready)))))) && (G ((p0b02c2m29busy) -> ((! (p0b02c2m29ready)) && (! (p0b02c2m29standby)))))) && (G (((u02c2m29ctrl0f1d2c2m29turn2on1b) && (p0b02c2m29standby)) -> (X ((p0b02c2m29busy) U (((u02c2m29ctrl0f1d2c2m29make2coffee1b) || (u02c2m29ctrl0f1d2c2m29turn2off1b)) R (p0b02c2m29ready))))))) && (G (((u02c2m29ctrl0f1d2c2m29turn2off1b) && (p0b02c2m29ready)) -> (X ((p0b02c2m29busy) U ((u02c2m29ctrl0f1d2c2m29turn2on1b) R (p0b02c2m29standby))))))) && (G (((u02c2m29ctrl0f1d2c2m29make2coffee1b) && (p0b02c2m29ready)) -> (X ((p0b02c2m29busy) U ((p0b02c2m29finished) && (((u02c2m29ctrl0f1d2c2m29make2coffee1b) || (u02c2m29ctrl0f1d2c2m29turn2off1b)) R (p0b02c2m29ready)))))))) && (F ((p0b02c2m29standby) || (p0b02c2m29ready)))) && (G (! ((p0b02roomlight29on) <-> (p0b02roomlight29off))))) && (G (((u02roomlight29light0f1d2roomlight29turn2on1b) || ((u02roomlight29light0f1d2roomlight29toggle1b) && (p0b02roomlight29off))) -> (X (F (((u02roomlight29light0f1d2roomlight29turn2off1b) || (u02roomlight29light0f1d2roomlight29toggle1b)) R (p0b02roomlight29on))))))) && (G (((u02roomlight29light0f1d2roomlight29turn2off1b) || ((u02roomlight29light0f1d2roomlight29toggle1b) && (p0b02roomlight29on))) -> (X (F (((u02roomlight29light0f1d2roomlight29turn2on1b) || (u02roomlight29light0f1d2roomlight29toggle1b)) R (p0b02roomlight29off))))))) && (G ((p0b02room29empty) -> (! (p0b02room29switch29toggled))))) && (G ((p0b02room29somebody2enters) -> ((! (p0b02room29empty)) W ((p0b02room29sombebody2leaves) && (p0b02room29empty)))))) && (G (((p0b02room29somebody2leaves) && (p0b02room29empty)) -> ((p0b02room29empty) W (p0b02room29sombebody2enters))))) && (G ((p0b02room29bed29occupied) -> (! (p0b02room29empty))))) && (((! (p0b02room29empty)) W ((p0b02room29sombebody2leaves) && (p0b02room29empty))) || ((p0b02room29empty) W (p0b02room29sombebody2enters)))) && (G (F (p0p02time29between0p1db02time29am51b02time29am2423)))) && (G (F (p0p02time29between0p1db02time29am231b02time29am2423)))) && (G (F (! (p0p02time29between0p1db02time29am51b02time29am2423))))) && (G (F (p0b02time29saturday)))) && (G (F (! (p0b02time29saturday))))) && (G (F (p0b02time29sunday)))) && (G (F (! (p0b02time29sunday))))) && (G (F (p0p02time29between0p1db02time29pm71b02time29pm8)))) && (G (F (! (p0p02time29between0p1db02time29pm71b02time29pm8))))) && (G (F (p0b02time29am7)))) && (G (F (p0b02time29am23)))) && (G (F (p0b02time29am5)))) && (G (! ((p0b02frontdoor29locked) <-> (p0b02frontdoor29unlocked))))) && (G ((u02frontdoor29door0f1d2frontdoor29lock1b) -> (X ((p0b02frontdoor29locked) W (u02frontdoor29door0f1d2frontdoor29unlock1b)))))) && (G ((u02frontdoor29door0f1d2frontdoor29unlock1b) -> (X ((p0b02frontdoor29unlocked) W (u02frontdoor29door0f1d2frontdoor29lock1b)))))) -> ((((((((((G ((p0b02room29somebody2enters) -> (X (F ((p0b02roomlight29on) W (p0b02room29empty)))))) && (G ((p0b02room29empty) -> (X (F (p0b02roomlight29off)))))) && (G ((p0b02time29am23) -> (X ((p0b02frontdoor29locked) U (p0b02time29am5)))))) && (G ((p0b02firesensor29fire) -> (X ((p0b02frontdoor29unlocked) && (u0music29ctrl0f1dplay0f1dalarm1b1b)))))) && (G ((p0b02firesensor29fire) -> (F ((p0b02heating29off) W (! (p0b02firesensor29fire))))))) && (G ((p0p0gt0outside29temperature02room29temperature) -> (F (p0b02heating29off))))) && (G (((p0p0lt0f1dten2degree1b02room29temperature) && (! (p0b02room29empty))) -> (F (p0b02heating29on))))) && (G ((p0p0bright0outside29brightness) -> (F (p0b02shades29closed))))) && (G ((p0b02room29somebody2enters) -> (F ((p0b02c2m29ready) W ((p0b02room29somebody2leaves) && (p0b02room29empty))))))) && (G ((p0b02system29blackout) -> ((u02blackout2timer29start2new2timer0f1dmin25231b) && ((F (! (p0b02system29blackout))) || (((p0b02blackout2timer29timeout) -> ((X (p0b02frontdoor29locked)) <-> (p0b02room29empty))) W (! (p0b02system29blackout)))))))));
+  }
+}
+

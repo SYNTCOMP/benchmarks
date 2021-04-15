@@ -1,0 +1,16 @@
+assume {
+  (G (room.empty -> (! switch.toggled)));
+  (G (room.somebodyEnters -> ((! room.empty) W room.somebodyLeaves)));
+  (G ((room.somebodyLeaves && room.empty) -> (room.empty W room.somebodyEnters)));
+  (G (! (room.shades.open && room.shades.closed)));
+  (G ([room.shades.ctrl <- (moveTo percent100())] -> (F (((! [room.shades.ctrl <- (moveTo percent100())]) && (! [room.shades.ctrl <- room.shades.ctrl])) R room.shades.open))));
+  (G ([room.shades.ctrl <- (moveTo percent0())] -> (F (((! [room.shades.ctrl <- (moveTo percent0())]) && (! [room.shades.ctrl <- room.shades.ctrl])) R room.shades.closed))));
+  (G (F ((between t.pm7) t.pm8)));
+  (G (F (! ((between t.pm7) t.pm8))));
+  (G (([alarm.control <- turnOn()] -> [alarm.control <- turnOff()]) R alarm));
+  (G (([alarm.control <- turnOff()] -> [alarm.control <- turnOn()]) R (! alarm)));
+}
+
+guarantee {
+  (G (bed.enter -> (F ((((between t.pm7) t.pm8) -> room.shades.closed) W (alarm && (F (((! (bright outside.brightness)) -> room.shades.closed) W bed.exit)))))));
+}

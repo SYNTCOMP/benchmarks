@@ -1,0 +1,13 @@
+assume {
+  (G ((cm.ready || cm.standby) || cm.busy));
+  (G (cm.ready -> ((! cm.standby) && (! cm.busy))));
+  (G (cm.standby -> ((! cm.busy) && (! cm.ready))));
+  (G (cm.busy -> ((! cm.ready) && (! cm.standby))));
+  (G ((([cm.ctrl <- turnOn()] && cm.standby) -> (X cm.busy)) U (([cm.ctrl <- makeCoffee()] || [cm.ctrl <- turnOff()]) R cm.ready)));
+  (G ((([cm.ctrl <- turnOff()] && cm.ready) -> (X cm.busy)) U ([cm.ctrl <- turnOn()] R cm.standby)));
+  (G ((([cm.ctrl <- makeCoffee()] && cm.ready) -> (X cm.busy)) U (cm.finished && (([cm.ctrl <- makeCoffee()] || [cm.ctrl <- turnOff()]) R cm.ready))));
+}
+
+guarantee {
+  (G false);
+}

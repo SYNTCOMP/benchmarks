@@ -1,0 +1,29 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Coffee_235467da"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0room29somebody2enters;
+    p0b0room29empty;
+    p0b0room29somebody2leaves;
+    p0b0cm29ready;
+    p0b0cm29standby;
+    p0b0cm29busy;
+    p0b0cm29finished;
+  }
+
+  OUTPUTS {
+    u0cm29ctrl0cm29ctrl;
+    u0cm29ctrl0f1dturn2on1b;
+    u0cm29ctrl0f1dmake2coffee1b;
+    u0cm29ctrl0f1dturn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((! (((u0cm29ctrl0f1dmake2coffee1b) && (! (u0cm29ctrl0cm29ctrl))) <-> ((u0cm29ctrl0cm29ctrl) && (! (u0cm29ctrl0f1dmake2coffee1b))))) && (! ((u0cm29ctrl0f1dturn2off1b) || (u0cm29ctrl0f1dturn2on1b)))) <-> ((! (((u0cm29ctrl0f1dturn2off1b) && (! (u0cm29ctrl0f1dturn2on1b))) <-> ((u0cm29ctrl0f1dturn2on1b) && (! (u0cm29ctrl0f1dturn2off1b))))) && (! ((u0cm29ctrl0f1dmake2coffee1b) || (u0cm29ctrl0cm29ctrl))))))) && ((((((((((G ((p0b0room29somebody2enters) -> ((! (p0b0room29empty)) W (p0b0room29somebody2leaves)))) && (G (((p0b0room29somebody2leaves) && (p0b0room29empty)) -> ((p0b0room29empty) W (p0b0room29somebody2enters))))) && (G (((p0b0cm29ready) || (p0b0cm29standby)) || (p0b0cm29busy)))) && (G ((p0b0cm29ready) -> ((! (p0b0cm29standby)) && (! (p0b0cm29busy)))))) && (G ((p0b0cm29standby) -> ((! (p0b0cm29busy)) && (! (p0b0cm29ready)))))) && (G ((p0b0cm29busy) -> ((! (p0b0cm29ready)) && (! (p0b0cm29standby)))))) && (G ((((u0cm29ctrl0f1dturn2on1b) && (p0b0cm29standby)) -> (X (p0b0cm29busy))) U (((u0cm29ctrl0f1dmake2coffee1b) || (u0cm29ctrl0f1dturn2off1b)) R (p0b0cm29ready))))) && (G ((((u0cm29ctrl0f1dturn2off1b) && (p0b0cm29ready)) -> (X (p0b0cm29busy))) U ((u0cm29ctrl0f1dturn2on1b) R (p0b0cm29standby))))) && (G ((((u0cm29ctrl0f1dmake2coffee1b) && (p0b0cm29ready)) -> (X (p0b0cm29busy))) U ((p0b0cm29finished) && (((u0cm29ctrl0f1dmake2coffee1b) || (u0cm29ctrl0f1dturn2off1b)) R (p0b0cm29ready)))))) -> (G ((p0b0room29somebody2enters) -> (F ((p0b0cm29ready) W ((p0b0room29somebody2leaves) && (p0b0room29empty)))))));
+  }
+}
+

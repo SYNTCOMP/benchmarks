@@ -1,0 +1,5 @@
+always assume {
+    [startNewTimer <- min20()] -> F timeout;
+    [startNewTimer <- hour1()] -> F timeout;
+    [startNewTimer <- hour2()] -> F timeout;
+}

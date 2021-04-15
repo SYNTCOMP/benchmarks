@@ -1,0 +1,17 @@
+assume {
+}
+
+guarantee {
+  (G (room.somebodyEnters -> (F (cm.ready W (room.somebodyLeaves && room.empty)))));
+  (G ((X room.light.on) -> (! room.empty)));
+  (G ((room.somebodyLeaves && room.empty) -> ([system.startNewTimer <- hour2()] && (F (room.somebodyEnters || (timeout && (F (room.light.off W room.somebodyEnters))))))));
+  (G ((bright outside.brightness) -> (F room.shades.closed)));
+  (G ((room.screen.lowered && (bright outside.brightness)) -> (F room.shades.closed)));
+  (G (room.window.opened -> ([music.ctrl <- (play overture())] && (F (room.heating.off W (room.window.closed && (allWindowsClosed room)))))));
+  (G (((gt outside.temperature) room.temperature) -> (F room.heating.off)));
+  (G ((room.window.closed && (allWindowsClosed room)) -> ([system.startNewTimer <- hour1()] && (F (room.window.opened || (F ((((tooHigh room.co2Level) -> room.warnlight.on) && ((! (tooHigh room.co2Level)) -> room.warnlight.off)) W room.window.opened)))))));
+  (G ((wakeup && ((between t.am5) t.am10)) -> ([cm.ctrl <- makeCoffee()] && (F (cm.ready && ((((t.saturday || t.sunday) && [radio.ctrl <- turnOn()]) && ([system.startNewTimer <- min20()] && (F (timeout && ((asleep partner) -> [room.shades.ctrl <- (moveTo percent100())]))))) || (((! (t.saturday || t.sunday)) && [tv.ctrl <- turnOn()]) && ([system.startNewTimer <- min20()] && (F (timeout && ((asleep partner) -> [room.shades.ctrl <- (moveTo percent100())])))))))))));
+  (G (bed.enter -> (F ((((between t.pm7) t.pm8) -> room.shades.closed) W (alarm && (F (((! (bright outside.brightness)) -> room.shades.closed) W bed.exit)))))));
+  (G (((t.am630 && (! (t.saturday || t.sunday))) && bed.occupied) -> ((F (((room.shades.open <-> (bright outside.brightness)) && (room.light.on <-> (! (bright outside.brightness)))) W (room.somebodyLeaves && room.empty))) && (F (bed.exit || (t.am7 && (F (alarm W bed.exit))))))));
+  (G ((bright outside.brightness) -> ((switch.toggled && room.light.off) -> (X (F (room.light.on W (switch.toggled || room.empty)))))));
+}

@@ -1,0 +1,8 @@
+assume {
+  (G (! (room.light.on <-> room.light.off)));
+  (G (([room.light <- turnOn()] || ([room.light <- toggle()] && room.light.off)) -> (X (F (([room.light <- turnOff()] || [room.light <- toggle()]) R room.light.on)))));
+  (G (([room.light <- turnOff()] || ([room.light <- toggle()] && room.light.on)) -> (X (F (([room.light <- turnOn()] || [room.light <- toggle()]) R room.light.off)))));
+}
+
+guarantee {
+}

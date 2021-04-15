@@ -1,0 +1,5 @@
+always assume {
+    on <-> ! off;
+    [control <- turnOn()] ->  (X on) W [control <- turnOff()];
+    [control <- turnOff()] -> (X off) W [control <- turnOn()];
+}

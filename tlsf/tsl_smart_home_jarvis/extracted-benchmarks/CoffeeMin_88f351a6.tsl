@@ -1,0 +1,7 @@
+assume {
+  (G ((([cm.ctrl <- turnOn()] && cm.standby) -> (X cm.busy)) U (([cm.ctrl <- makeCoffee()] || [cm.ctrl <- turnOff()]) R cm.ready)));
+}
+
+guarantee {
+  (G (room.somebodyEnters -> (F (cm.ready W (room.somebodyLeaves && room.empty)))));
+}

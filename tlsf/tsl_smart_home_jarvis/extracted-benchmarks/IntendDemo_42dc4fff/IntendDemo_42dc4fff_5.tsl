@@ -1,0 +1,9 @@
+assume {
+  (G ((Room.somebodyEnters -> (! Room.empty)) W (Room.empty && Room.somebodyLeaves)));
+  (G ((Room.empty -> Room.empty) W Room.somebodyEnters));
+  (G (Room.somebodyEnters -> (! Room.empty)));
+}
+
+guarantee {
+  (G (Room.somebodyEnters -> (X ([CM.intend <- ready()] W (Room.somebodyLeaves && Room.empty)))));
+}

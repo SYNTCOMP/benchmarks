@@ -1,0 +1,16 @@
+assume {
+  (G (! (room.light.on <-> room.light.off)));
+  (G (([room.light <- turnOn()] || ([room.light <- toggle()] && room.light.off)) -> (X (F (([room.light <- turnOff()] || [room.light <- toggle()]) R room.light.on)))));
+  (G (([room.light <- turnOff()] || ([room.light <- toggle()] && room.light.on)) -> (X (F (([room.light <- turnOn()] || [room.light <- toggle()]) R room.light.off)))));
+  (G ([system.startNewTimer <- hour2()] -> (F timeout)));
+  (G (room.window.opened -> ((! (allWindowsClosed room)) W room.window.closed)));
+  (G ([system.startNewTimer <- hour1()] -> (F timeout)));
+  (G (room.warnlight.on <-> (! room.warnlight.off)));
+  (G (([room.warnlight.control <- turnOn()] -> [room.warnlight.control <- turnOff()]) R room.warnlight.on));
+  (G (([room.warnlight.control <- turnOff()] -> [room.warnlight.control <- turnOn()]) R room.warnlight.off));
+  (G ([system.startNewTimer <- min20()] -> (F timeout)));
+}
+
+guarantee {
+  (G ((room.window.closed && (allWindowsClosed room)) -> ([system.startNewTimer <- hour1()] && (F (room.window.opened || (F ((((tooHigh room.co2Level) -> room.warnlight.on) && ((! (tooHigh room.co2Level)) -> room.warnlight.off)) W room.window.opened)))))));
+}

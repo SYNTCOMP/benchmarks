@@ -1,0 +1,8 @@
+assume {
+  (G (G (F (newDay time))));
+}
+
+guarantee {
+  (G (((((newDay time) || (full dishWasherstatus)) || (cleaned dishWasherStatus)) -> [coffeMachine <- off()]) W (empty dishWasherStatus)));
+  (G (((isMeeting calendar) && (isPresentation calendar)) -> [coffeMachine <- off()]));
+}

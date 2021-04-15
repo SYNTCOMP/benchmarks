@@ -1,0 +1,8 @@
+assume {
+}
+
+guarantee {
+  (G ((! PersonInOffice) -> [timer <- start()]));
+  (G ((fiveMinOver timer) -> [door <- lock()]));
+  (G ((key door) -> [door <- unlock()]));
+}

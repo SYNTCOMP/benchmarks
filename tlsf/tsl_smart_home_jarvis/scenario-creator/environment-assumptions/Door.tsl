@@ -1,0 +1,5 @@
+always assume {
+    ! (Door.locked <-> Door.unlocked);
+    [Door.door <- Door.lock()] -> X (Door.locked W [Door.door <- Door.unlock()]);
+    [Door.door <- Door.unlock()] -> X (Door.unlocked W [Door.door <- Door.lock()]);
+}

@@ -1,0 +1,22 @@
+INFO {
+  TITLE:       "Converted TSL Specification: ShadesMin_aeb1d897"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0room29shades29closed;
+    p0p0bright0outside29brightness;
+  }
+
+  OUTPUTS {
+    u0room29shades29ctrl0room29shades29ctrl;
+    u0room29shades29ctrl0f1dmove2to0f1dpercent231b1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0room29shades29ctrl0room29shades29ctrl) && (! (u0room29shades29ctrl0f1dmove2to0f1dpercent231b1b))) <-> ((u0room29shades29ctrl0f1dmove2to0f1dpercent231b1b) && (! (u0room29shades29ctrl0room29shades29ctrl)))))) && ((G ((u0room29shades29ctrl0f1dmove2to0f1dpercent231b1b) -> (F (((! (u0room29shades29ctrl0f1dmove2to0f1dpercent231b1b)) && (! (u0room29shades29ctrl0room29shades29ctrl))) R (p0b0room29shades29closed))))) -> (G ((p0p0bright0outside29brightness) -> (F (p0b0room29shades29closed)))));
+  }
+}
+

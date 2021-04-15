@@ -1,0 +1,24 @@
+assume {
+  (G ([Timer.startNewTimer <- Timer.min20()] -> (F Timer.timeout)));
+  (G ([Timer.startNewTimer <- Timer.hour1()] -> (F Timer.timeout)));
+  (G ([Timer.startNewTimer <- Timer.hour2()] -> (F Timer.timeout)));
+  (G (Room.empty -> (! Room.switch.toggled)));
+  (G (Room.somebodyEnters -> ((! Room.empty) W (Room.sombebodyLeaves && Room.empty))));
+  (G ((Room.somebodyLeaves && Room.empty) -> (Room.empty W Room.sombebodyEnters)));
+  (G (Room.bed.occupied -> (! Room.empty)));
+  (((! Room.empty) W (Room.sombebodyLeaves && Room.empty)) || (Room.empty W Room.sombebodyEnters));
+  (G (! (Roomlight.on <-> Roomlight.off)));
+  (G (([Roomlight.light <- Roomlight.turnOn()] || ([Roomlight.light <- Roomlight.toggle()] && Roomlight.off)) -> (X (F (([Roomlight.light <- Roomlight.turnOff()] || [Roomlight.light <- Roomlight.toggle()]) R Roomlight.on)))));
+  (G (([Roomlight.light <- Roomlight.turnOff()] || ([Roomlight.light <- Roomlight.toggle()] && Roomlight.on)) -> (X (F (([Roomlight.light <- Roomlight.turnOn()] || [Roomlight.light <- Roomlight.toggle()]) R Roomlight.off)))));
+  (G (F Time.saturday));
+  (G (F (! Time.saturday)));
+  (G (F Time.sunday));
+  (G (F (! Time.sunday)));
+}
+
+guarantee {
+  (G ((X Roomlight.on) -> (! Room.empty)));
+  (G ((Room.somebodyLeaves && Room.empty) -> ([Timer.startNewTimer <- Timer.hour2()] && (F (Room.somebodyEnters || (Timer.timeout && (F (Roomlight.off W Room.somebodyEnters))))))));
+  (G ((bright outside.brightness) -> ((Room.switch.toggled && Roomlight.off) -> (X (F (Roomlight.on W (Room.switch.toggled || Room.empty)))))));
+  (G (((Time.am630 && (! (Time.saturday || Time.sunday))) && bed.occupied) -> (F (((X Roomlight.on) <-> (! (bright outside.brightness))) W (Room.somebodyLeaves && Room.empty)))));
+}

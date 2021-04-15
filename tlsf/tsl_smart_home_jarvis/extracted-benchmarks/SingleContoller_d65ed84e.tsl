@@ -1,0 +1,19 @@
+assume {
+  (G (! (Device.plug.on <-> Device.plug.off)));
+  (G ([Device.plug.ctrl <- Device.on()] -> (X (F (Device.plug.on W [Device.plug.ctrl <- Device.off()])))));
+  (G ([Device.plug.ctrl <- Device.off()] -> (X (F (Device.plug.off W [Device.plug.ctrl <- Device.on()])))));
+  (G (! (Device.lamp.on <-> Device.lamp.off)));
+  (G ([Device.lamp.ctrl <- Device.on()] -> (X (F (Device.lamp.on W ([Device.lamp.ctrl <- Device.off()] || Device.plug.off))))));
+  (G ([Device.lamp.ctrl <- Device.off()] -> (X (F (Device.lamp.off W ([Device.lamp.ctrl <- Device.on()] || Device.plug.off))))));
+  (G (Device.plug.off -> Device.lamp.off));
+  (G (! ((on Plug.intent) <-> (off Plug.intent))));
+  (G (! ((on Lamp.intent) <-> (off Lamp.intent))));
+  (G (! ((off Plug.intent) && (on Lamp.intent))));
+}
+
+guarantee {
+  (G ((on Plug.intent) -> (F (Device.Plug.on W (! (on Plug.intent))))));
+  (G ((off Plug.intent) -> (F (Device.Plug.off W (! (off Plug.intent))))));
+  (G ((on Lamp.intent) -> (F (Device.Lamp.on W (! (on Lamp.intent))))));
+  (G ((off Lamp.intent) -> (F (Device.Lamp.off W (! (off Lamp.intent))))));
+}

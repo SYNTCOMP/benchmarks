@@ -1,0 +1,22 @@
+assume {
+  (G (Room.empty -> (! Room.switch.toggled)));
+  (G (Room.somebodyEnters -> ((! Room.empty) W Room.somebodyLeaves)));
+  (G ((Room.somebodyLeaves && Room.empty) -> (Room.empty W Room.somebodyEnters)));
+  (G (F ((Time.between Time.am5) Time.am10)));
+  (G (F ((Time.between Time.am0) Time.am10)));
+  (G (F (! ((Time.between Time.am5) Time.am10))));
+  (G (F Time.am0));
+  (G (F Time.am5));
+  (G ([BlackoutTimer.startNewTimer <- BlackoutTimer.min20()] -> (F BlackoutTimer.timeout)));
+  (G ([BlackoutTimer.startNewTimer <- BlackoutTimer.hour1()] -> (F BlackoutTimer.timeout)));
+  (G ([BlackoutTimer.startNewTimer <- BlackoutTimer.hour2()] -> (F BlackoutTimer.timeout)));
+  (G (! (Frontdoor.locked <-> Frontdoor.unlocked)));
+  (G ([Frontdoor.door <- Frontdoor.lock()] -> (X (Frontdoor.locked W [Frontdoor.door <- Frontdoor.unlock()]))));
+  (G ([Frontdoor.door <- Frontdoor.unlock()] -> (X (Frontdoor.unlocked W [Frontdoor.door <- Frontdoor.lock()]))));
+}
+
+guarantee {
+  (G (Time.am0 -> (X (Frontdoor.locked U Time.am5))));
+  (G (Firesensor.fire -> (X (Frontdoor.unlocked && [music.ctrl <- (play alarm())]))));
+  (G (System.blackout -> ([BlackoutTimer.startNewTimer <- min20()] && ((F (! System.blackout)) || (BlackoutTimer.timeout -> ((X Frontdoor.locked) <-> Room.empty))))));
+}

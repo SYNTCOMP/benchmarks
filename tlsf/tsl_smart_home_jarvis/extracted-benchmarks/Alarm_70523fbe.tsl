@@ -1,0 +1,20 @@
+assume {
+  (G (([Alarm.control <- Alarm.turnOn()] -> (X Alarm.alarm)) W [Alarm.control <- Alarm.turnOff()]));
+  (G (([Alarm.control <- Alarm.turnOff()] -> (X (! Alarm.alarm))) W [Alarm.control <- Alarm.turnOn()]));
+  (G (F ((Time.between Time.am5) Time.am10)));
+  (G (F (! ((Time.between Time.am5) Time.am10))));
+  (G (F Time.saturday));
+  (G (F (! Time.saturday)));
+  (G (F Time.sunday));
+  (G (F (! Time.sunday)));
+  (G (F ((Time.between Time.pm7) Time.pm8)));
+  (G (F (! ((Time.between Time.pm7) Time.pm8))));
+  (G (F Time.am7));
+  (G (! (Shades.open && Shades.closed)));
+  (G ([Shades.ctrl <- (Shades.moveTo Shades.percent100())] -> (F (((! [Shades.ctrl <- (Shades.moveTo Shades.percent100())]) && (! [Shades.ctrl <- Shades.ctrl])) R Shades.open))));
+  (G ([Shades.ctrl <- (Shades.moveTo Shades.percent0())] -> (F (((! [Shades.ctrl <- (Shades.moveTo Shades.percent0())]) && (! [Shades.ctrl <- Shades.ctrl])) R Shades.closed))));
+}
+
+guarantee {
+  (G (bed.enter -> (F ((((Time.between Time.pm7) Time.pm8) -> Shades.closed) W (Alarm.alarm && (F (((! (bright outside.brightness)) -> Shades.closed) W bed.exit)))))));
+}

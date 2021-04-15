@@ -1,0 +1,20 @@
+assume {
+  (G (G (F (newDay time))));
+}
+
+guarantee {
+  (G ((seePerson webcame) <-> [timer <- (((incTimer timer) time) date)]));
+  (G ((dailyWorkloadArchieved timer) -> [lightColor <- Green()]));
+  (G ([lightColor <- Normal()] || [lightColor <- Green()]));
+  (G ([window <- open()] || [window <- close()]));
+  (G ((isBad airQuality) -> [window <- open()]));
+  (G (((isRaining weather) || fire) -> (! [window <- open()])));
+  (G ((((gt temeprature) value) -> [heating <- (turnDown heating)]) W (((eq temperature) value) || ((lt temperature) value))));
+  (G ((((lt temeprature) value) -> [heating <- (turnUp heating)]) W (((eq temperature) value) || ((gt temperature) value))));
+  (G (((eq temeperature) value) -> [heating <- heating]));
+  (G ([window <- open()] -> [heating <- zero()]));
+  (G (((rushHour time) && (isBad airQuality)) -> ([music <- on] && [window <- close])));
+  (G (((isOpened window) <-> [windowControl <- ignore()]) W (runOut timer)));
+  (G ((isOpened window) <-> [timer <- (reset tenminutes)]));
+  (G ((runOut timer) -> [windowControl <- use()]));
+}

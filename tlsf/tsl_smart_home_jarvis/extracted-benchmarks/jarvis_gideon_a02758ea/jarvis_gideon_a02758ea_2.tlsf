@@ -1,0 +1,28 @@
+INFO {
+  TITLE:       "Converted TSL Specification: jarvis_gideon_a02758ea_2"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02person2in2office;
+    p0p0work2time0time;
+    p0p0isfull0dish2washer;
+    p0p0is2clean2and2loaded0dish2washer;
+  }
+
+  OUTPUTS {
+    u0coffeemachine0coffeemachine;
+    u0coffeemachine0off;
+    u0coffeemachine0f1don1b;
+    u0coffeemachine0f1doff1b;
+    u0dish2washer0dish2washer;
+    u0dish2washer0f1dstart1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((! (((u0coffeemachine0f1don1b) && (! (u0coffeemachine0coffeemachine))) <-> ((u0coffeemachine0coffeemachine) && (! (u0coffeemachine0f1don1b))))) && (! ((u0coffeemachine0f1doff1b) || (u0coffeemachine0off)))) <-> ((! (((u0coffeemachine0f1doff1b) && (! (u0coffeemachine0off))) <-> ((u0coffeemachine0off) && (! (u0coffeemachine0f1doff1b))))) && (! ((u0coffeemachine0f1don1b) || (u0coffeemachine0coffeemachine)))))) && (! (((u0dish2washer0dish2washer) && (! (u0dish2washer0f1dstart1b))) <-> ((u0dish2washer0f1dstart1b) && (! (u0dish2washer0dish2washer))))))) && ((((G (((p0p0work2time0time) && (p0b02person2in2office)) -> (u0coffeemachine0f1don1b))) && (G (((p0p0isfull0dish2washer) && (! (p0p0work2time0time))) -> (u0dish2washer0f1dstart1b)))) && (G ((p0p0is2clean2and2loaded0dish2washer) -> (u0coffeemachine0f1doff1b)))) && (G (! ((u0coffeemachine0off) && (p0b02person2in2office)))));
+  }
+}
+

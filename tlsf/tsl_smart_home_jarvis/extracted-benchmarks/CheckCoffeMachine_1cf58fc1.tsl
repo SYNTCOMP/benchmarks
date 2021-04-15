@@ -1,0 +1,13 @@
+assume {
+  (G ((Device.ready || Device.standby) || Device.busy));
+  (G (Device.ready -> ((! Device.standby) && (! Device.busy))));
+  (G (Device.standby -> ((! Device.busy) && (! Device.ready))));
+  (G (Device.busy -> ((! Device.ready) && (! Device.standby))));
+  (G (([Device.ctrl <- Device.turnOn()] && Device.standby) -> (X (Device.busy U (([Device.ctrl <- Device.makeCoffee()] || [Device.ctrl <- Device.turnOff()]) R Device.ready)))));
+  (G (([Device.ctrl <- Device.turnOff()] && Device.ready) -> (X (Device.busy U ([Device.ctrl <- Device.turnOn()] R Device.standby)))));
+  (G (([Device.ctrl <- Device.makeCoffee()] && Device.ready) -> (X (Device.busy U (Device.finished && (([Device.ctrl <- Device.makeCoffee()] || [Device.ctrl <- Device.turnOff()]) R Device.ready))))));
+}
+
+guarantee {
+  (G false);
+}

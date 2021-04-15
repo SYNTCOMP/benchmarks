@@ -1,0 +1,10 @@
+assume {
+  (G (([Alarm.control <- Alarm.turnOn()] -> (X Alarm.alarm)) W [Alarm.control <- Alarm.turnOff()]));
+  (G (([Alarm.control <- Alarm.turnOff()] -> (X (! Alarm.alarm))) W [Alarm.control <- Alarm.turnOn()]));
+  (G ((on Alarm.intent) <-> (! (off Alarm.intent))));
+}
+
+guarantee {
+  (G ((on Alarm.intent) -> (F (Alarm.alarm W (! (on Alarm.intent))))));
+  (G ((off Alarm.intent) -> (F ((! Alarm.alarm) W (! (off Alarm.intent))))));
+}

@@ -1,0 +1,25 @@
+INFO {
+  TITLE:       "Converted TSL Specification: test4_4b82b1f4_1"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0in24;
+    p0b0in3;
+  }
+
+  OUTPUTS {
+    u0a0a;
+    u0a0f1dc241b;
+    u0a0f1dc41b;
+    u0b0b;
+    u0b0f1dfun0a1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u0a0f1dc241b) && (! ((u0a0f1dc41b) || (u0a0a)))) <-> ((! (((u0a0f1dc41b) && (! (u0a0a))) <-> ((u0a0a) && (! (u0a0f1dc41b))))) && (! (u0a0f1dc241b))))) && (! (((u0b0b) && (! (u0b0f1dfun0a1b))) <-> ((u0b0f1dfun0a1b) && (! (u0b0b))))))) && (((G (((p0b0in24) -> (u0a0f1dc241b)) U (p0b0in3))) && (G (F (u0a0f1dc41b)))) && (G ((p0b0in3) <-> (u0b0f1dfun0a1b))));
+  }
+}
+

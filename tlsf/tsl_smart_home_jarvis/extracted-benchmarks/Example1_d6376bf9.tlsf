@@ -1,0 +1,32 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Example1_d6376bf9"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02power29failed;
+    p0b02c2m29failed;
+    p0b02door29failed;
+    p0b02time298am;
+    p0b02time296pm;
+    p0b02maschine2b29failed;
+  }
+
+  OUTPUTS {
+    u02c2m29intent02c2m29intent;
+    u02c2m29intent0f1dready1b;
+    u02power29intent02power29intent;
+    u02power29intent0f1don1b;
+    u02system02system;
+    u02system0f1dnotify0f1d2c2m1b1b;
+    u02maschine2a29intent02maschine2a29intent;
+    u02maschine2a29intent0f1dstop1b;
+  }
+
+  GUARANTEE {
+    (G ((((! (((u02c2m29intent02c2m29intent) && (! (u02c2m29intent0f1dready1b))) <-> ((u02c2m29intent0f1dready1b) && (! (u02c2m29intent02c2m29intent))))) && (! (((u02power29intent02power29intent) && (! (u02power29intent0f1don1b))) <-> ((u02power29intent0f1don1b) && (! (u02power29intent02power29intent)))))) && (! (((u02system02system) && (! (u02system0f1dnotify0f1d2c2m1b1b))) <-> ((u02system0f1dnotify0f1d2c2m1b1b) && (! (u02system02system)))))) && (! (((u02maschine2a29intent02maschine2a29intent) && (! (u02maschine2a29intent0f1dstop1b))) <-> ((u02maschine2a29intent0f1dstop1b) && (! (u02maschine2a29intent02maschine2a29intent))))))) && (((G ((p0b02power29failed) -> (p0b02c2m29failed))) && (G ((p0b02power29failed) -> (p0b02door29failed)))) -> ((((G ((! (p0b02c2m29failed)) -> ((p0b02time298am) -> (X ((u02c2m29intent0f1dready1b) W ((p0b02time296pm) || (p0b02c2m29failed))))))) && (G ((! (p0b02c2m29failed)) -> ((u02c2m29intent0f1dready1b) -> (u02power29intent0f1don1b))))) && (G ((p0b02c2m29failed) -> (u02system0f1dnotify0f1d2c2m1b1b)))) && (G ((p0b02maschine2b29failed) -> (u02maschine2a29intent0f1dstop1b)))));
+  }
+}
+

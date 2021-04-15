@@ -1,0 +1,21 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Example1_d6376bf9_3"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02maschine2b29failed;
+  }
+
+  OUTPUTS {
+    u02maschine2a29intent02maschine2a29intent;
+    u02maschine2a29intent0f1dstop1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02maschine2a29intent02maschine2a29intent) && (! (u02maschine2a29intent0f1dstop1b))) <-> ((u02maschine2a29intent0f1dstop1b) && (! (u02maschine2a29intent02maschine2a29intent)))))) && (G ((p0b02maschine2b29failed) -> (u02maschine2a29intent0f1dstop1b)));
+  }
+}
+

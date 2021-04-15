@@ -1,0 +1,8 @@
+assume {
+  (G (bed.occupied -> (! Room.empty)));
+}
+
+guarantee {
+  (G ((room.screen.lowered && (bright outside.brightness)) -> [Shades.intend <- closed()]));
+  (G (((Time.am630 && (! (Time.saturday || Time.sunday))) && bed.occupied) -> (X (((([Roomlight.intend <- off()] <-> (bright outside.brightness)) && ((bright outside.brightness) -> [Shades.intend <- open()])) && ((! (bright outside.brightness)) -> [Shades.intend <- closed()])) W (Room.somebodyLeaves && Room.empty)))));
+}

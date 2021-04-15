@@ -1,0 +1,16 @@
+import "../deviceModel/Heating_v1.tsl" as Heating
+
+always guarantee {
+  gt outside.temperature Room.temperature
+    -> Heating.off
+}
+
+import "../deviceModel/Windows_v1.tsl" as Window
+
+always guarantee {
+    Window.opened
+    -> ([ music.ctrl <- play overture() ]
+    && F ( Heating.off
+         W (Window.closed && Window.allWindowsClosed Window.room)))
+  
+}

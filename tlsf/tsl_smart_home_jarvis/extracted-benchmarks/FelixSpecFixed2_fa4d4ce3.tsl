@@ -1,0 +1,51 @@
+assume {
+  (G (room.somebodyEnters -> ((! room.empty) W room.somebodyLeaves)));
+  (G ((cm.ready || cm.standby) || cm.busy));
+  (G (cm.ready -> ((! cm.standby) && (! cm.busy))));
+  (G (cm.standby -> ((! cm.busy) && (! cm.ready))));
+  (G (cm.busy -> ((! cm.ready) && (! cm.standby))));
+  (G ((([cm.ctrl <- turnOn()] && cm.standby) -> (X cm.busy)) U (([cm.ctrl <- makeCoffee()] || [cm.ctrl <- turnOff()]) R cm.ready)));
+  (G ((([cm.ctrl <- turnOff()] && cm.ready) -> (X cm.busy)) U ([cm.ctrl <- turnOn()] R cm.standby)));
+  (G ((([cm.ctrl <- makeCoffee()] && cm.ready) -> (X cm.busy)) U (cm.finished && (([cm.ctrl <- makeCoffee()] || [cm.ctrl <- turnOff()]) R cm.ready))));
+  (G (! (room.light.on <-> room.light.off)));
+  (G (([room.light <- turnOn()] || ([room.light <- toggle()] && room.light.off)) -> (X (F (([room.light <- turnOff()] || [room.light <- toggle()]) R room.light.on)))));
+  (G (([room.light <- turnOff()] || ([room.light <- toggle()] && room.light.on)) -> (X (F (([room.light <- turnOn()] || [room.light <- toggle()]) R room.light.off)))));
+  (G ([system.startNewTimer <- hour2()] -> (F timeout)));
+  (G (! (room.shades.open && room.shades.closed)));
+  (G ([room.shades.ctrl <- (moveTo percent100())] -> (F (((! [room.shades.ctrl <- (moveTo percent100())]) && (! [room.shades.ctrl <- room.shades.ctrl])) R room.shades.open))));
+  (G ([room.shades.ctrl <- (moveTo percent0())] -> (F (((! [room.shades.ctrl <- (moveTo percent0())]) && (! [room.shades.ctrl <- room.shades.ctrl])) R room.shades.closed))));
+  (G (! (room.heating.off <-> room.heating.on)));
+  (G ([room.heating.ctrl <- turnOn()] -> (F ([room.heating.ctrl <- turnOff()] R room.heating.on))));
+  (G ([room.heating.ctrl <- turnOff()] -> (F ([room.heating.ctrl <- turnOn()] R room.heating.off))));
+  (G (room.window.opened -> ((! (allWindowsClosed room)) W room.window.closed)));
+  (G ([system.startNewTimer <- hour1()] -> (F timeout)));
+  (G (room.warnlight.on <-> (! room.warnlight.off)));
+  (G (([room.warnlight.control <- turnOn()] -> [room.warnlight.control <- turnOff()]) R room.warnlight.on));
+  (G (([room.warnlight.control <- turnOff()] -> [room.warnlight.control <- turnOn()]) R room.warnlight.off));
+  (G ([system.startNewTimer <- min20()] -> (F timeout)));
+  (G (F ((between t.am5) t.am10)));
+  (G (F (! ((between t.am5) t.am10))));
+  (G (F t.saturday));
+  (G (F (! t.saturday)));
+  (G (F t.sunday));
+  (G (F (! t.sunday)));
+  (G (F ((between t.pm7) t.pm8)));
+  (G (F (! ((between t.pm7) t.pm8))));
+  (G (([alarm.control <- turnOn()] -> [alarm.control <- turnOff()]) R alarm));
+  (G (([alarm.control <- turnOff()] -> [alarm.control <- turnOn()]) R (! alarm)));
+}
+
+guarantee {
+  (G (room.somebodyEnters -> (F (cm.ready W (room.somebodyLeaves && room.empty)))));
+  (G ((X room.light.on) -> (! room.empty)));
+  (G ((room.somebodyLeaves && room.empty) -> ([system.startNewTimer <- hour2()] && (F (room.somebodyEnters || (timeout && (F (room.light.off W room.somebodyEnters))))))));
+  (G ((bright outside.brightness) -> (F room.shades.closed)));
+  (G ((room.screen.lowered && (bright outside.brightness)) -> (F room.shades.closed)));
+  (G (room.window.opened -> ([music.ctrl <- (play overture())] && (F (room.heating.off W (room.window.closed && (allWindowsClosed room)))))));
+  (G (((gt outside.temperature) room.temperature) -> (F room.heating.off)));
+  (G ((room.window.closed && (allWindowsClosed room)) -> ([system.startNewTimer <- hour1()] && (F (room.window.opened || (F ((((tooHigh room.co2Level) -> room.warnlight.on) && ((! (tooHigh room.co2Level)) -> room.warnlight.off)) W room.window.opened)))))));
+  (G ((wakeup && ((between t.am5) t.am10)) -> ([cm.ctrl <- makeCoffee()] && (F (cm.ready && ((((t.saturday || t.sunday) && [radio.ctrl <- turnOn()]) && ([system.startNewTimer <- min20()] && (F (timeout && ((asleep partner) -> [room.shades.ctrl <- (moveTo percent100())]))))) || (((! (t.saturday || t.sunday)) && [tv.ctrl <- turnOn()]) && ([system.startNewTimer <- min20()] && (F (timeout && ((asleep partner) -> [room.shades.ctrl <- (moveTo percent100())])))))))))));
+  (G (bed.enter -> (F ((((between t.pm7) t.pm8) -> room.shades.closed) W (alarm && (F (((! (bright outside.brightness)) -> room.shades.closed) W bed.exit)))))));
+  (G (((t.am630 && (! (t.saturday || t.sunday))) && bed.occupied) -> ((F (((room.shades.open <-> (bright outside.brightness)) && (room.light.on <-> (! (bright outside.brightness)))) W (room.somebodyLeaves && room.empty))) && (F (bed.exit || (t.am7 && (F (alarm W bed.exit))))))));
+  (G ((bright outside.brightness) -> ((switch.toggled && room.light.off) -> (X (F (room.light.on W switch.toggled))))));
+}

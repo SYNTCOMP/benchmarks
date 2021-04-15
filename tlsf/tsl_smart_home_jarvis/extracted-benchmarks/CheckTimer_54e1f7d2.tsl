@@ -1,0 +1,9 @@
+assume {
+  (G ([system.startNewTimer <- min20()] -> (F timeout)));
+  (G ([system.startNewTimer <- hour1()] -> (F timeout)));
+  (G ([system.startNewTimer <- hour2()] -> (F timeout)));
+}
+
+guarantee {
+  (G false);
+}

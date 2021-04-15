@@ -1,0 +1,31 @@
+INFO {
+  TITLE:       "Converted TSL Specification: tmp_13cfc6f2"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0env26outside26is26bright;
+    p0b0user26is26sleeping;
+    p0p0is26on0light26input;
+    p0p0is26off0light26input;
+    p0p0is26closed0shutter26input;
+    p0p0is26open0shutter26input;
+  }
+
+  OUTPUTS {
+    u0light26ctrl0light26ctrl;
+    u0light26ctrl0f1ddo26turn2on1b;
+    u0light26ctrl0f1ddo26turn2off1b;
+    u0shutter26ctrl0shutter26ctrl;
+    u0shutter26ctrl0f1ddo26close1b;
+    u0shutter26ctrl0f1ddo26open1b;
+    u0shutter26ctrl0f1ddo26stop1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u0light26ctrl0f1ddo26turn2on1b) && (! ((u0light26ctrl0f1ddo26turn2off1b) || (u0light26ctrl0light26ctrl)))) <-> ((! (((u0light26ctrl0f1ddo26turn2off1b) && (! (u0light26ctrl0light26ctrl))) <-> ((u0light26ctrl0light26ctrl) && (! (u0light26ctrl0f1ddo26turn2off1b))))) && (! (u0light26ctrl0f1ddo26turn2on1b))))) && (! (((! (((u0shutter26ctrl0f1ddo26open1b) && (! (u0shutter26ctrl0shutter26ctrl))) <-> ((u0shutter26ctrl0shutter26ctrl) && (! (u0shutter26ctrl0f1ddo26open1b))))) && (! ((u0shutter26ctrl0f1ddo26stop1b) || (u0shutter26ctrl0f1ddo26close1b)))) <-> ((! (((u0shutter26ctrl0f1ddo26stop1b) && (! (u0shutter26ctrl0f1ddo26close1b))) <-> ((u0shutter26ctrl0f1ddo26close1b) && (! (u0shutter26ctrl0f1ddo26stop1b))))) && (! ((u0shutter26ctrl0f1ddo26open1b) || (u0shutter26ctrl0shutter26ctrl)))))))) && ((((((((((G ((u0light26ctrl0f1ddo26turn2on1b) -> (X (p0p0is26on0light26input)))) && (G ((u0light26ctrl0f1ddo26turn2off1b) -> (X (p0p0is26off0light26input))))) && (G ((u0light26ctrl0light26ctrl) -> (((p0p0is26on0light26input) <-> (X (p0p0is26on0light26input))) && ((p0p0is26off0light26input) <-> (X (p0p0is26off0light26input))))))) && (G (! ((p0p0is26on0light26input) && (p0p0is26off0light26input))))) && (G ((G (F ((u0shutter26ctrl0f1ddo26close1b) && ((! ((u0shutter26ctrl0f1ddo26open1b) || (u0shutter26ctrl0f1ddo26stop1b))) W (p0p0is26closed0shutter26input))))) -> (F (p0p0is26closed0shutter26input))))) && (G ((G (F ((u0shutter26ctrl0f1ddo26open1b) && ((! ((u0shutter26ctrl0f1ddo26close1b) || (u0shutter26ctrl0f1ddo26stop1b))) W (p0p0is26open0shutter26input))))) -> (F (p0p0is26open0shutter26input))))) && (G ((u0shutter26ctrl0f1ddo26stop1b) -> (((p0p0is26open0shutter26input) <-> (X (p0p0is26open0shutter26input))) && ((p0p0is26closed0shutter26input) <-> (X (p0p0is26closed0shutter26input))))))) && (G ((u0shutter26ctrl0shutter26ctrl) -> (((p0p0is26open0shutter26input) <-> (X (p0p0is26open0shutter26input))) && ((p0p0is26closed0shutter26input) <-> (X (p0p0is26closed0shutter26input))))))) && (G (! ((p0p0is26open0shutter26input) && (p0p0is26closed0shutter26input))))) -> (((G ((p0b0env26outside26is26bright) -> (F (! (p0p0is26on0light26input))))) && (G ((p0b0user26is26sleeping) -> (F ((p0p0is26closed0shutter26input) W (! (p0b0user26is26sleeping))))))) && (G (((p0b0env26outside26is26bright) && (! (p0b0user26is26sleeping))) -> (F ((p0p0is26open0shutter26input) W (! ((p0b0env26outside26is26bright) && (! (p0b0user26is26sleeping))))))))));
+  }
+}
+

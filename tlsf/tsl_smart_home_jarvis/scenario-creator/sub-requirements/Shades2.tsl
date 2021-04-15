@@ -1,0 +1,6 @@
+//import "../deviceModel/Shades.tsl" as Shades
+
+always guarantee {
+  room.screen.lowered && bright outside.brightness
+    -> F Shades.closed
+}

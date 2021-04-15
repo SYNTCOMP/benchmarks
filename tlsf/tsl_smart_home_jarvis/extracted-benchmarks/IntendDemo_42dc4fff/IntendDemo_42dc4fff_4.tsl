@@ -1,0 +1,11 @@
+assume {
+  (G ((Room.somebodyEnters -> (! Room.empty)) W (Room.empty && Room.somebodyLeaves)));
+  (G ((Room.empty -> Room.empty) W Room.somebodyEnters));
+  (G (Room.somebodyEnters -> (! Room.empty)));
+}
+
+guarantee {
+  (G (Firesensor.fire -> (X ([Heating.intend <- off()] W Firesensor.fireOff))));
+  (G ((Temperature.changes && ((gt Temperature.outside) Temperature.inside)) -> (X ([Heating.intend <- off()] W Temperature.changes))));
+  (G (((Temperature.changes && (! Room.empty)) && (lt10 Temperature.inside)) -> (X ([Heating.intend <- on()] W Temperature.changes))));
+}

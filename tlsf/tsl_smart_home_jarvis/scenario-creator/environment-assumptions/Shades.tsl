@@ -1,0 +1,9 @@
+always assume {
+  ! (Shades.open && Shades.closed);
+  [ Shades.ctrl <- Shades.moveTo Shades.percent100() ]
+    -> F ((! [ Shades.ctrl <- Shades.moveTo Shades.percent100() ] && ! [ Shades.ctrl <- Shades.ctrl ]) R Shades.open);
+  [ Shades.ctrl <- Shades.moveTo Shades.percent0() ]
+    -> F ((! [ Shades.ctrl <- Shades.moveTo Shades.percent0() ]   && ! [ Shades.ctrl <- Shades.ctrl ]) R Shades.closed);
+  Shades.closed && ![ Shades.ctrl <- Shades.moveTo Shades.percent100()] -> X Shades.closed;
+  Shades.open   && ![ Shades.ctrl <- Shades.moveTo Shades.percent0()]   -> X Shades.open;
+}

@@ -1,0 +1,6 @@
+assume {
+}
+
+guarantee {
+  (G (Firesensor.fire -> (X [soundSystem.play <- alarm()])));
+}

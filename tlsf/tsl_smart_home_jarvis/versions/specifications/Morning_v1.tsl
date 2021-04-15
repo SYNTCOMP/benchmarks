@@ -1,0 +1,22 @@
+import "../deviceModel/CoffeMachine_v1.tsl" as CM
+import "../deviceModel/Timer_v1.tsl" as Timer
+import "../deviceModel/Time_v1.tsl" as Time
+import "../deviceModel/Shades_v1.tsl" as Shades
+
+WPARTNER =
+  [Timer.startNewTimer <- Timer.min20()]
+&& F (Timer.timeout && (asleep partner -> [ Shades.ctrl <- Shades.moveTo Shades.percent100() ]));
+
+WEEKEND =
+  (Time.saturday || Time.sunday);
+
+WEEKDAY =
+  ! WEEKEND;
+
+always guarantee {
+  wakeup && Time.between Time.am5 Time.am10
+  -> ([ CM.ctrl <- CM.makeCoffee() ]
+  && F ( CM.ready  // ??? do we need a next here?
+      && ( (WEEKEND && [ radio.ctrl <- turnOn() ] && WPARTNER)
+         || (WEEKDAY && [ tv.ctrl <- turnOn() ] && WPARTNER))))
+}

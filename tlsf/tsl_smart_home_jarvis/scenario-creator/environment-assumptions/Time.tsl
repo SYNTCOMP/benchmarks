@@ -1,0 +1,14 @@
+always assume {
+  F Time.between Time.am5 Time.am10;
+  F Time.between Time.am0 Time.am10;
+  F ! Time.between Time.am5 Time.am10;  
+  F Time.saturday;
+  F ! Time.saturday;
+  F Time.sunday;
+  F ! Time.sunday;
+  F Time.between Time.pm7 Time.pm8;
+  F ! Time.between Time.pm7 Time.pm8;
+  F Time.am7;
+  F Time.am0;
+  F Time.am5;
+}

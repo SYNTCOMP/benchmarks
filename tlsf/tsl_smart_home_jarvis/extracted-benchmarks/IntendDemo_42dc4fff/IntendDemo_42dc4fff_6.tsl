@@ -1,0 +1,6 @@
+assume {
+}
+
+guarantee {
+  (G (Outside.bright -> (X ([Shades.intend <- closed()] W Outside.dark))));
+}

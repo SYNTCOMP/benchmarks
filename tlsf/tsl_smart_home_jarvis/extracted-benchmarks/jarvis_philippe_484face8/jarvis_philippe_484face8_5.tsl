@@ -1,0 +1,10 @@
+assume {
+}
+
+guarantee {
+  (G ((isEmpty presenceSensor) -> [presenceTimer <- (inc presenceTimer)]));
+  (G ((! (isEmpty presenceSensor)) -> [presenceTimer <- zero()]));
+  (G (((isEmpty presenceSensor) && ((gt presenceTimer) fivemin)) -> [doorlock <- close()]));
+  (G ((isKeyOpened keylock) -> [doorlock <- open()]));
+  (G ((isOpendeInsight keylock) -> [doorlock <- open()]));
+}

@@ -1,0 +1,9 @@
+assume {
+  (G (Door.locked <-> (! Door.unlocked)));
+  (G ([Door.ctrl <- unlock()] -> (X (Door.reachingUnlocked U (Door.unlocked W [Door.ctrl <- lock()])))));
+  (G ([Door.ctrl <- lock()] -> (X (Door.reachingLocked U (Door.locked W [Door.ctrl <- unlock()])))));
+}
+
+guarantee {
+  (G (Firesensor.fire -> (X (Door.reachingUnlocked U (Door.unlocked W Firesensor.fireExtinquished)))));
+}

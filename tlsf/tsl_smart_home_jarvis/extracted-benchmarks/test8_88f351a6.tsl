@@ -1,0 +1,10 @@
+assume {
+  (G (([a <- val1()] && [b <- val2()]) -> (X in1)));
+  (G ([c <- val3()] -> (X in2)));
+}
+
+guarantee {
+  (G (F in1));
+  (G (F in2));
+  (G (! (in1 && in2)));
+}

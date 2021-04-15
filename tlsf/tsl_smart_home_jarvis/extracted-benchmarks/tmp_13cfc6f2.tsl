@@ -1,0 +1,17 @@
+assume {
+  (G ([light_ctrl <- do_turnOn()] -> (X (is_on light_input))));
+  (G ([light_ctrl <- do_turnOff()] -> (X (is_off light_input))));
+  (G ([light_ctrl <- light_ctrl] -> (((is_on light_input) <-> (X (is_on light_input))) && ((is_off light_input) <-> (X (is_off light_input))))));
+  (G (! ((is_on light_input) && (is_off light_input))));
+  (G ((G (F ([shutter_ctrl <- do_close()] && ((! ([shutter_ctrl <- do_open()] || [shutter_ctrl <- do_stop()])) W (is_closed shutter_input))))) -> (F (is_closed shutter_input))));
+  (G ((G (F ([shutter_ctrl <- do_open()] && ((! ([shutter_ctrl <- do_close()] || [shutter_ctrl <- do_stop()])) W (is_open shutter_input))))) -> (F (is_open shutter_input))));
+  (G ([shutter_ctrl <- do_stop()] -> (((is_open shutter_input) <-> (X (is_open shutter_input))) && ((is_closed shutter_input) <-> (X (is_closed shutter_input))))));
+  (G ([shutter_ctrl <- shutter_ctrl] -> (((is_open shutter_input) <-> (X (is_open shutter_input))) && ((is_closed shutter_input) <-> (X (is_closed shutter_input))))));
+  (G (! ((is_open shutter_input) && (is_closed shutter_input))));
+}
+
+guarantee {
+  (G (env_outside_is_bright -> (F (! (is_on light_input)))));
+  (G (user_is_sleeping -> (F ((is_closed shutter_input) W (! user_is_sleeping)))));
+  (G ((env_outside_is_bright && (! user_is_sleeping)) -> (F ((is_open shutter_input) W (! (env_outside_is_bright && (! user_is_sleeping)))))));
+}

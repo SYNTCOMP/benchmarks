@@ -1,0 +1,22 @@
+INFO {
+  TITLE:       "Converted TSL Specification: test9_dd3a27e1_2"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0in3;
+    p0b0in25;
+  }
+
+  OUTPUTS {
+    u0c0c;
+    u0c0f1dval31b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0c0c) && (! (u0c0f1dval31b))) <-> ((u0c0f1dval31b) && (! (u0c0c)))))) && (((G (F (! (p0b0in3)))) && (G ((u0c0f1dval31b) -> (X (p0b0in25))))) -> ((G (F (p0b0in25))) && (G ((p0b0in3) -> (X (! (p0b0in25)))))));
+  }
+}
+

@@ -1,0 +1,8 @@
+assume {
+  (G (([alarm.control <- turnOn()] -> [alarm.control <- turnOff()]) R alarm));
+  (G (([alarm.control <- turnOff()] -> [alarm.control <- turnOn()]) R (! alarm)));
+}
+
+guarantee {
+  (G (((t.am630 && (! (t.saturday || t.sunday))) && bed.occupied) -> ((F (((room.shades.open <-> (bright outside.brightness)) && (room.light.on <-> (! (bright outside.brightness)))) W (room.somebodyLeaves && room.empty))) && (F (bed.exit || (t.am7 && (F (alarm W bed.exit))))))));
+}

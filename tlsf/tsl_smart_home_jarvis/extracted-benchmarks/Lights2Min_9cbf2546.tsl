@@ -1,0 +1,8 @@
+assume {
+  (G (([room.light <- turnOff()] || ([room.light <- toggle()] && room.light.on)) -> (X (F (([room.light <- turnOn()] || [room.light <- toggle()]) R room.light.off)))));
+  (G ([system.startNewTimer <- hour2()] -> (F timeout)));
+}
+
+guarantee {
+  (G ((room.somebodyLeaves && room.empty) -> ([system.startNewTimer <- hour2()] && (F (room.somebodyEnters || (timeout && (F (room.light.off W room.somebodyEnters))))))));
+}

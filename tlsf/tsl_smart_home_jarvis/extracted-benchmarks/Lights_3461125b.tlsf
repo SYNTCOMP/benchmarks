@@ -1,0 +1,28 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Lights_3461125b"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0room29empty;
+    p0b0switch29toggled;
+    p0b0room29somebody2enters;
+    p0b0room29somebody2leaves;
+    p0b0room29light29on;
+    p0b0room29light29off;
+  }
+
+  OUTPUTS {
+    u0room29light0room29light;
+    u0room29light0f1dturn2on1b;
+    u0room29light0f1dtoggle1b;
+    u0room29light0f1dturn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((! (((u0room29light0f1dtoggle1b) && (! (u0room29light0room29light))) <-> ((u0room29light0room29light) && (! (u0room29light0f1dtoggle1b))))) && (! ((u0room29light0f1dturn2off1b) || (u0room29light0f1dturn2on1b)))) <-> ((! (((u0room29light0f1dturn2off1b) && (! (u0room29light0f1dturn2on1b))) <-> ((u0room29light0f1dturn2on1b) && (! (u0room29light0f1dturn2off1b))))) && (! ((u0room29light0f1dtoggle1b) || (u0room29light0room29light))))))) && ((G (((((((p0b0room29empty) -> (! (p0b0switch29toggled))) && ((p0b0room29somebody2enters) -> ((! (p0b0room29empty)) W (p0b0room29somebody2leaves)))) && (((p0b0room29somebody2leaves) && (p0b0room29empty)) -> ((p0b0room29empty) W (p0b0room29somebody2enters)))) && (! ((p0b0room29light29on) <-> (p0b0room29light29off)))) && (((u0room29light0f1dturn2on1b) || ((u0room29light0f1dtoggle1b) && (p0b0room29light29off))) -> (X (F (((u0room29light0f1dturn2off1b) || (u0room29light0f1dtoggle1b)) R (p0b0room29light29on)))))) && (((u0room29light0f1dturn2off1b) || ((u0room29light0f1dtoggle1b) && (p0b0room29light29on))) -> (X (F (((u0room29light0f1dturn2on1b) || (u0room29light0f1dtoggle1b)) R (p0b0room29light29off))))))) -> (G ((X (p0b0room29light29on)) -> (! (p0b0room29empty)))));
+  }
+}
+

@@ -1,0 +1,24 @@
+INFO {
+  TITLE:       "Converted TSL Specification: CheckWarnlight_1cf58fc1"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02device29on;
+    p0b02device29off;
+    p0b02device29of;
+  }
+
+  OUTPUTS {
+    u02device29control02device29control;
+    u02device29control0f1d2device29turn2on1b;
+    u02device29control0f1d2device29turn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02device29control0f1d2device29turn2on1b) && (! ((u02device29control0f1d2device29turn2off1b) || (u02device29control02device29control)))) <-> ((! (((u02device29control0f1d2device29turn2off1b) && (! (u02device29control02device29control))) <-> ((u02device29control02device29control) && (! (u02device29control0f1d2device29turn2off1b))))) && (! (u02device29control0f1d2device29turn2on1b)))))) && ((((G ((p0b02device29on) <-> (! (p0b02device29off)))) && (G (((u02device29control0f1d2device29turn2on1b) -> (X (p0b02device29on))) W (u02device29control0f1d2device29turn2off1b)))) && (G (((u02device29control0f1d2device29turn2off1b) -> (X (p0b02device29of))) W (u02device29control0f1d2device29turn2on1b)))) -> (false));
+  }
+}
+

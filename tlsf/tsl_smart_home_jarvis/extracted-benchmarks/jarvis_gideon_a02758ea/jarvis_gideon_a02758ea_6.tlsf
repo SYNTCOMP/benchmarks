@@ -1,0 +1,26 @@
+INFO {
+  TITLE:       "Converted TSL Specification: jarvis_gideon_a02758ea_6"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02person2in2office;
+    p0p0five2min2over0timer;
+    p0p0key0door;
+  }
+
+  OUTPUTS {
+    u0timer0timer;
+    u0timer0f1dstart1b;
+    u0door0door;
+    u0door0f1dlock1b;
+    u0door0f1dunlock1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u0timer0timer) && (! (u0timer0f1dstart1b))) <-> ((u0timer0f1dstart1b) && (! (u0timer0timer))))) && (! (((u0door0f1dlock1b) && (! ((u0door0f1dunlock1b) || (u0door0door)))) <-> ((! (((u0door0f1dunlock1b) && (! (u0door0door))) <-> ((u0door0door) && (! (u0door0f1dunlock1b))))) && (! (u0door0f1dlock1b))))))) && (((G ((! (p0b02person2in2office)) -> (u0timer0f1dstart1b))) && (G ((p0p0five2min2over0timer) -> (u0door0f1dlock1b)))) && (G ((p0p0key0door) -> (u0door0f1dunlock1b))));
+  }
+}
+

@@ -1,0 +1,7 @@
+assume {
+  (G (G (F (newDay time))));
+}
+
+guarantee {
+  (G ((isFull trashBin) -> [callCenter <- ((facilityMangment clean()) time)]));
+}

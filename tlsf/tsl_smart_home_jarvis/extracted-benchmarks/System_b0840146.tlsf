@@ -1,0 +1,26 @@
+INFO {
+  TITLE:       "Converted TSL Specification: System_b0840146"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02plug29on;
+    p0b02lamp29on;
+    p0b0cond;
+  }
+
+  OUTPUTS {
+    u02plug29intent02plug29intent;
+    u02plug29intent0f1don1b;
+    u02lamp29intent02lamp29intent;
+    u02lamp29intent0f1don1b;
+    u02lamp29intent0f1doff1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u02plug29intent02plug29intent) && (! (u02plug29intent0f1don1b))) <-> ((u02plug29intent0f1don1b) && (! (u02plug29intent02plug29intent))))) && (! (((u02lamp29intent0f1don1b) && (! ((u02lamp29intent0f1doff1b) || (u02lamp29intent02lamp29intent)))) <-> ((! (((u02lamp29intent0f1doff1b) && (! (u02lamp29intent02lamp29intent))) <-> ((u02lamp29intent02lamp29intent) && (! (u02lamp29intent0f1doff1b))))) && (! (u02lamp29intent0f1don1b))))))) && (((G ((u02plug29intent0f1don1b) -> (F (p0b02plug29on)))) && (G ((u02lamp29intent0f1don1b) -> (F (p0b02lamp29on))))) -> ((((G ((p0b0cond) -> (u02lamp29intent0f1don1b))) && (G ((! (p0b0cond)) -> (u02lamp29intent0f1doff1b)))) && (G ((p0b02lamp29on) -> (p0b02plug29on)))) && (G ((u02lamp29intent0f1don1b) -> (u02plug29intent0f1don1b)))));
+  }
+}
+

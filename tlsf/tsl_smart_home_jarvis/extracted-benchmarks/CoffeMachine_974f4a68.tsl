@@ -1,0 +1,16 @@
+assume {
+  (G ((CM.ready || CM.standby) || CM.busy));
+  (G (CM.ready -> ((! CM.standby) && (! CM.busy))));
+  (G (CM.standby -> ((! CM.busy) && (! CM.ready))));
+  (G (CM.busy -> ((! CM.ready) && (! CM.standby))));
+  (G (([CM.ctrl <- CM.turnOn()] && CM.standby) -> (X (CM.busy U (([CM.ctrl <- CM.makeCoffee()] || [CM.ctrl <- CM.turnOff()]) R CM.ready)))));
+  (G (([CM.ctrl <- CM.turnOff()] && CM.ready) -> (X (CM.busy U ([CM.ctrl <- CM.turnOn()] R CM.standby)))));
+  (G (([CM.ctrl <- CM.makeCoffee()] && CM.ready) -> (X (CM.busy U (CM.finished && (([CM.ctrl <- CM.makeCoffee()] || [CM.ctrl <- CM.turnOff()]) R CM.ready))))));
+  (F (CM.standby || CM.ready));
+  (G (! ((ready CM.intend) <-> (standby CM.intend))));
+}
+
+guarantee {
+  (G ((ready CM.intend) -> (F (CM.ready W (! (ready CM.intend))))));
+  (G ((standby CM.intend) -> (F (CM.standby W (! (standby CM.intend))))));
+}

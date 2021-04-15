@@ -1,0 +1,9 @@
+assume {
+  (G (! (Device.on <-> Device.off)));
+  (G (([Device.light <- Device.turnOn()] || ([Device.light <- Device.toggle()] && Device.off)) -> (X (F (([Device.light <- Device.turnOff()] || [Device.light <- Device.toggle()]) R Device.on)))));
+  (G (([Device.light <- Device.turnOff()] || ([Device.light <- Device.toggle()] && Device.on)) -> (X (F (([Device.light <- Device.turnOn()] || [Device.light <- Device.toggle()]) R Device.off)))));
+}
+
+guarantee {
+  (G false);
+}

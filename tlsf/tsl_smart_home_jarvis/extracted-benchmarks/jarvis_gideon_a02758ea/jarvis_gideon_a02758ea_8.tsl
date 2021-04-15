@@ -1,0 +1,6 @@
+assume {
+}
+
+guarantee {
+  (G (! ((PersonInOffice || (workTime time)) && [roomba <- on()])));
+}

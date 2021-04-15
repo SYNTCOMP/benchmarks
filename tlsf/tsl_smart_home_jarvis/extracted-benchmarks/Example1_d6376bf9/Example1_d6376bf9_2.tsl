@@ -1,0 +1,8 @@
+assume {
+  (G (Power.failed -> CM.failed));
+  (G (Power.failed -> Door.failed));
+}
+
+guarantee {
+  (G (CM.failed -> [System <- (notify CM())]));
+}

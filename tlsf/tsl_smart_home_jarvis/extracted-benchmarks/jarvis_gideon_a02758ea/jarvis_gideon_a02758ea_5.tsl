@@ -1,0 +1,11 @@
+assume {
+}
+
+guarantee {
+  (G (((gt co2level) val) -> [window <- open()]));
+  (G (fire -> [window <- close()]));
+  (G (rain -> [window <- close()]));
+  (G (! ([heater <- on()] && [window <- open()])));
+  (G (((workTime time) && PersonInOffice) -> [heater <- on()]));
+  (G ((rushhour time) -> [window <- close()]));
+}

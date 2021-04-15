@@ -1,0 +1,7 @@
+assume {
+  (G (Device.opened -> ((! (Device.allWindowsClosed Device.room)) W Device.closed)));
+}
+
+guarantee {
+  (G false);
+}

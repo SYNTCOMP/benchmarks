@@ -1,0 +1,14 @@
+INFO {
+  TITLE:       "Converted TSL Specification: PlugDeviceModel_b0840146"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+
+
+  GUARANTEE {
+    (G (true)) && (true);
+  }
+}
+

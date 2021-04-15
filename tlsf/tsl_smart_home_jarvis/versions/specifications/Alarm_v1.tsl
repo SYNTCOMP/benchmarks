@@ -1,0 +1,9 @@
+import "../deviceModel/Shades_v1.tsl" as Shades
+import "../deviceModel/Time_v1.tsl" as Time
+import "../deviceModel/Alarm_v1.tsl" as Alarm
+
+always guarantee {
+  bed.enter
+    -> F ( (Time.between Time.pm7 Time.pm8 -> Shades.closed)
+        W (Alarm.alarm && F ((! bright outside.brightness -> Shades.closed) W bed.exit)))
+}

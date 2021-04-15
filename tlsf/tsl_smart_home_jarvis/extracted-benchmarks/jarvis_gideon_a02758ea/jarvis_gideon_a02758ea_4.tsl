@@ -1,0 +1,6 @@
+assume {
+}
+
+guarantee {
+  (G (((gt change) percentage) -> [wallserver <- commit()]));
+}

@@ -1,0 +1,7 @@
+assume {
+}
+
+guarantee {
+  (G ((in2 && in3) -> ([d <- (fun in2)] || [e <- e])));
+  (G ((in2 || in4) <-> [e <- (fun in3)]));
+}

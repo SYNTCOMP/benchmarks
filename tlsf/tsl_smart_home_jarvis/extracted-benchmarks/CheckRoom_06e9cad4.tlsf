@@ -1,0 +1,22 @@
+INFO {
+  TITLE:       "Converted TSL Specification: CheckRoom_06e9cad4"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02device29empty;
+    p0b02device29switch29toggled;
+    p0b02device29somebody2enters;
+    p0b02device29somebody2leaves;
+    p0b02device29bed29occupied;
+    p0b02device292room29empty;
+  }
+
+
+  GUARANTEE {
+    (G (true)) && (((((G ((p0b02device29empty) -> (! (p0b02device29switch29toggled)))) && (G ((p0b02device29somebody2enters) -> ((! (p0b02device29empty)) W (p0b02device29somebody2leaves))))) && (G (((p0b02device29somebody2leaves) && (p0b02device29empty)) -> ((p0b02device29empty) W (p0b02device29somebody2enters))))) && (G ((p0b02device29bed29occupied) -> (! (p0b02device292room29empty))))) -> (false));
+  }
+}
+

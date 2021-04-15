@@ -1,0 +1,14 @@
+assume {
+  (G (Room.empty -> (! Room.switch.toggled)));
+  (G (Room.somebodyEnters -> ((! Room.empty) W Room.somebodyLeaves)));
+  (G ((Room.somebodyLeaves && Room.empty) -> (Room.empty W Room.somebodyEnters)));
+  (G (! (Heating.off <-> Heating.on)));
+  (G ([Heating.ctrl <- Heating.turnOn()] -> (F ([Heating.ctrl <- Heating.turnOff()] R Heating.on))));
+  (G ([Heating.ctrl <- Heating.turnOff()] -> (F ([Heating.ctrl <- Heating.turnOn()] R Heating.off))));
+}
+
+guarantee {
+  (G (Firesensor.fire -> (F (Heating.off W (! Firesensor.fire)))));
+  (G (((gt outside.temperature) Room.temperature) -> (F Heating.off)));
+  (G ((((lt tenDegree()) Room.temperature) && (! Room.empty)) -> (F Heating.on)));
+}

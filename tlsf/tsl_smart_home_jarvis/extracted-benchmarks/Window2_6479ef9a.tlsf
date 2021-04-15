@@ -1,0 +1,32 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Window2_6479ef9a"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02timer29timeout;
+    p0b02warnlight29on;
+    p0b02warnlight29off;
+    p0b02window29opened;
+    p0b02window29closed;
+    p0p02window29all2windows2closed02window29room;
+    p0p0too2high0room29co252level;
+  }
+
+  OUTPUTS {
+    u02timer29start2new2timer02timer29start2new2timer;
+    u02timer29start2new2timer0f1d2timer29min25231b;
+    u02timer29start2new2timer0f1d2timer29hour241b;
+    u02timer29start2new2timer0f1d2timer29hour251b;
+    u02warnlight29control02warnlight29control;
+    u02warnlight29control0f1d2warnlight29turn2on1b;
+    u02warnlight29control0f1d2warnlight29turn2off1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((! (((u02timer29start2new2timer0f1d2timer29hour241b) && (! (u02timer29start2new2timer02timer29start2new2timer))) <-> ((u02timer29start2new2timer02timer29start2new2timer) && (! (u02timer29start2new2timer0f1d2timer29hour241b))))) && (! ((u02timer29start2new2timer0f1d2timer29hour251b) || (u02timer29start2new2timer0f1d2timer29min25231b)))) <-> ((! (((u02timer29start2new2timer0f1d2timer29hour251b) && (! (u02timer29start2new2timer0f1d2timer29min25231b))) <-> ((u02timer29start2new2timer0f1d2timer29min25231b) && (! (u02timer29start2new2timer0f1d2timer29hour251b))))) && (! ((u02timer29start2new2timer0f1d2timer29hour241b) || (u02timer29start2new2timer02timer29start2new2timer)))))) && (! (((u02warnlight29control0f1d2warnlight29turn2on1b) && (! ((u02warnlight29control0f1d2warnlight29turn2off1b) || (u02warnlight29control02warnlight29control)))) <-> ((! (((u02warnlight29control0f1d2warnlight29turn2off1b) && (! (u02warnlight29control02warnlight29control))) <-> ((u02warnlight29control02warnlight29control) && (! (u02warnlight29control0f1d2warnlight29turn2off1b))))) && (! (u02warnlight29control0f1d2warnlight29turn2on1b))))))) && ((((((((G ((u02timer29start2new2timer0f1d2timer29min25231b) -> (F (p0b02timer29timeout)))) && (G ((u02timer29start2new2timer0f1d2timer29hour241b) -> (F (p0b02timer29timeout))))) && (G ((u02timer29start2new2timer0f1d2timer29hour251b) -> (F (p0b02timer29timeout))))) && (G ((p0b02warnlight29on) <-> (! (p0b02warnlight29off))))) && (G (((u02warnlight29control0f1d2warnlight29turn2on1b) -> (X (p0b02warnlight29on))) W (u02warnlight29control0f1d2warnlight29turn2off1b)))) && (G (((u02warnlight29control0f1d2warnlight29turn2off1b) -> (X (p0b02warnlight29off))) W (u02warnlight29control0f1d2warnlight29turn2on1b)))) && (G ((p0b02window29opened) -> ((! (p0p02window29all2windows2closed02window29room)) W (p0b02window29closed))))) -> (G (((p0b02window29closed) && (p0p02window29all2windows2closed02window29room)) -> ((u02timer29start2new2timer0f1d2timer29hour241b) && (F ((p0b02window29opened) || (F ((((p0p0too2high0room29co252level) -> (X (p0b02warnlight29on))) && ((! (p0p0too2high0room29co252level)) -> (X (p0b02warnlight29off)))) W (p0b02window29opened)))))))));
+  }
+}
+

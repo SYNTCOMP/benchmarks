@@ -1,0 +1,11 @@
+assume {
+  (G (Power.failed -> CM.failed));
+  (G (Power.failed -> Door.failed));
+}
+
+guarantee {
+  (G ((! CM.failed) -> (Time.8am -> (X ([CM.intent <- ready()] W (Time.6pm || CM.failed))))));
+  (G ((! CM.failed) -> ([CM.intent <- ready()] -> [Power.intent <- on()])));
+  (G (CM.failed -> [System <- (notify CM())]));
+  (G (MaschineB.failed -> [MaschineA.intent <- stop()]));
+}

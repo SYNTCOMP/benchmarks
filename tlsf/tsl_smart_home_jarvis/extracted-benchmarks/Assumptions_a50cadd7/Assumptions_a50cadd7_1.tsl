@@ -1,0 +1,7 @@
+assume {
+}
+
+guarantee {
+  (G (([alarm.control <- turnOn()] -> [alarm.control <- turnOff()]) R alarm));
+  (G (([alarm.control <- turnOff()] -> [alarm.control <- turnOn()]) R (! alarm)));
+}

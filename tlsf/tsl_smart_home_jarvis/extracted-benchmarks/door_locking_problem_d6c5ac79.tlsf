@@ -1,0 +1,27 @@
+INFO {
+  TITLE:       "Converted TSL Specification: door_locking_problem_d6c5ac79"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02door29locked;
+    p0b02door29unlocked;
+    p0b02door29reaching2unlocked;
+    p0b02door29reaching2locked;
+    p0b02firesensor29fire;
+    p0b02firesensor29fire2extinquished;
+  }
+
+  OUTPUTS {
+    u02door29ctrl02door29ctrl;
+    u02door29ctrl0f1dunlock1b;
+    u02door29ctrl0f1dlock1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u02door29ctrl0f1dunlock1b) && (! ((u02door29ctrl0f1dlock1b) || (u02door29ctrl02door29ctrl)))) <-> ((! (((u02door29ctrl0f1dlock1b) && (! (u02door29ctrl02door29ctrl))) <-> ((u02door29ctrl02door29ctrl) && (! (u02door29ctrl0f1dlock1b))))) && (! (u02door29ctrl0f1dunlock1b)))))) && ((((G ((p0b02door29locked) <-> (! (p0b02door29unlocked)))) && (G ((u02door29ctrl0f1dunlock1b) -> (X ((p0b02door29reaching2unlocked) U ((p0b02door29unlocked) W (u02door29ctrl0f1dlock1b))))))) && (G ((u02door29ctrl0f1dlock1b) -> (X ((p0b02door29reaching2locked) U ((p0b02door29locked) W (u02door29ctrl0f1dunlock1b))))))) -> (G ((p0b02firesensor29fire) -> (X ((p0b02door29reaching2unlocked) U ((p0b02door29unlocked) W (p0b02firesensor29fire2extinquished)))))));
+  }
+}
+

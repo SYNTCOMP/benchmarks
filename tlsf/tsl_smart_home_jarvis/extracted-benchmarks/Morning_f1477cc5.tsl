@@ -1,0 +1,27 @@
+assume {
+  (G (! (Shades.open && Shades.closed)));
+  (G ([Shades.ctrl <- (Shades.moveTo Shades.percent100())] -> (F (((! [Shades.ctrl <- (Shades.moveTo Shades.percent100())]) && (! [Shades.ctrl <- Shades.ctrl])) R Shades.open))));
+  (G ([Shades.ctrl <- (Shades.moveTo Shades.percent0())] -> (F (((! [Shades.ctrl <- (Shades.moveTo Shades.percent0())]) && (! [Shades.ctrl <- Shades.ctrl])) R Shades.closed))));
+  (G (F ((Time.between Time.am5) Time.am10)));
+  (G (F (! ((Time.between Time.am5) Time.am10))));
+  (G (F Time.saturday));
+  (G (F (! Time.saturday)));
+  (G (F Time.sunday));
+  (G (F (! Time.sunday)));
+  (G (F ((Time.between Time.pm7) Time.pm8)));
+  (G (F (! ((Time.between Time.pm7) Time.pm8))));
+  (G ([Timer.startNewTimer <- Timer.min20()] -> (F Timer.timeout)));
+  (G ([Timer.startNewTimer <- Timer.hour1()] -> (F Timer.timeout)));
+  (G ([Timer.startNewTimer <- Timer.hour2()] -> (F Timer.timeout)));
+  (G ((CM.ready || CM.standby) || CM.busy));
+  (G (CM.ready -> ((! CM.standby) && (! CM.busy))));
+  (G (CM.standby -> ((! CM.busy) && (! CM.ready))));
+  (G (CM.busy -> ((! CM.ready) && (! CM.standby))));
+  (G (([CM.ctrl <- CM.turnOn()] && CM.standby) -> (X (CM.busy U (([CM.ctrl <- CM.makeCoffee()] || [CM.ctrl <- CM.turnOff()]) R CM.ready)))));
+  (G (([CM.ctrl <- CM.turnOff()] && CM.ready) -> (X (CM.busy U ([CM.ctrl <- CM.turnOn()] R CM.standby)))));
+  (G (([CM.ctrl <- CM.makeCoffee()] && CM.ready) -> (X (CM.busy U (CM.finished && (([CM.ctrl <- CM.makeCoffee()] || [CM.ctrl <- CM.turnOff()]) R CM.ready))))));
+}
+
+guarantee {
+  (G ((wakeup && ((Time.between Time.am5) Time.am10)) -> ([CM.ctrl <- CM.makeCoffee()] && (F (CM.ready && ((((Time.saturday || Time.sunday) && [radio.ctrl <- turnOn()]) && ([Timer.startNewTimer <- Timer.min20()] && (F (Timer.timeout && ((asleep partner) -> [Shades.ctrl <- (Shades.moveTo Shades.percent100())]))))) || (((! (Time.saturday || Time.sunday)) && [tv.ctrl <- turnOn()]) && ([Timer.startNewTimer <- Timer.min20()] && (F (Timer.timeout && ((asleep partner) -> [Shades.ctrl <- (Shades.moveTo Shades.percent100())])))))))))));
+}

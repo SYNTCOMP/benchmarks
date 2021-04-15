@@ -1,0 +1,4 @@
+always assume {
+    somebodyEnters -> (! empty W somebodyLeaves);
+    (somebodyLeaves && empty) -> (empty W somebodyEnters);
+}

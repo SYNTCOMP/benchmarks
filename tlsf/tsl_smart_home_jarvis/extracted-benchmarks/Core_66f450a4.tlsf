@@ -1,0 +1,31 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Core_66f450a4"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b0bed29occupied;
+    p0b02room29empty;
+    p0b0room29screen29lowered;
+    p0b02time29am6323;
+    p0b02time29saturday;
+    p0b02time29sunday;
+    p0b02room29somebody2leaves;
+    p0p0bright0outside29brightness;
+  }
+
+  OUTPUTS {
+    u02shades29intend02shades29intend;
+    u02shades29intend0f1dclosed1b;
+    u02shades29intend0f1dopen1b;
+    u02roomlight29intend02roomlight29intend;
+    u02roomlight29intend0f1doff1b;
+  }
+
+  GUARANTEE {
+    (G ((! (((u02shades29intend0f1dclosed1b) && (! ((u02shades29intend0f1dopen1b) || (u02shades29intend02shades29intend)))) <-> ((! (((u02shades29intend0f1dopen1b) && (! (u02shades29intend02shades29intend))) <-> ((u02shades29intend02shades29intend) && (! (u02shades29intend0f1dopen1b))))) && (! (u02shades29intend0f1dclosed1b))))) && (! (((u02roomlight29intend02roomlight29intend) && (! (u02roomlight29intend0f1doff1b))) <-> ((u02roomlight29intend0f1doff1b) && (! (u02roomlight29intend02roomlight29intend))))))) && ((G ((p0b0bed29occupied) -> (! (p0b02room29empty)))) -> ((G (((p0b0room29screen29lowered) && (p0p0bright0outside29brightness)) -> (u02shades29intend0f1dclosed1b))) && (G ((((p0b02time29am6323) && (! ((p0b02time29saturday) || (p0b02time29sunday)))) && (p0b0bed29occupied)) -> (X (((((u02roomlight29intend0f1doff1b) <-> (p0p0bright0outside29brightness)) && ((p0p0bright0outside29brightness) -> (u02shades29intend0f1dopen1b))) && ((! (p0p0bright0outside29brightness)) -> (u02shades29intend0f1dclosed1b))) W ((p0b02room29somebody2leaves) && (p0b02room29empty))))))));
+  }
+}
+

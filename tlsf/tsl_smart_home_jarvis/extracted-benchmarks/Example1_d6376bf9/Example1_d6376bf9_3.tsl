@@ -1,0 +1,6 @@
+assume {
+}
+
+guarantee {
+  (G (MaschineB.failed -> [MaschineA.intent <- stop()]));
+}

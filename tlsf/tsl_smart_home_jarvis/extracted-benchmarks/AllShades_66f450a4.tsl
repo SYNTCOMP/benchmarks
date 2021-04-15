@@ -1,0 +1,29 @@
+assume {
+  (G (([Alarm.control <- Alarm.turnOn()] -> (X Alarm.alarm)) W [Alarm.control <- Alarm.turnOff()]));
+  (G (([Alarm.control <- Alarm.turnOff()] -> (X (! Alarm.alarm))) W [Alarm.control <- Alarm.turnOn()]));
+  (G (F ((Time.between Time.am5) Time.am10)));
+  (G (F ((Time.between Time.am0) Time.am10)));
+  (G (F (! ((Time.between Time.am5) Time.am10))));
+  (G (F Time.saturday));
+  (G (F (! Time.saturday)));
+  (G (F Time.sunday));
+  (G (F (! Time.sunday)));
+  (G (F ((Time.between Time.pm7) Time.pm8)));
+  (G (F (! ((Time.between Time.pm7) Time.pm8))));
+  (G (F Time.am7));
+  (G (F Time.am0));
+  (G (F Time.am5));
+  (G (! (Shades.open && Shades.closed)));
+  (G ([Shades.ctrl <- (Shades.moveTo Shades.percent100())] -> (F (((! [Shades.ctrl <- (Shades.moveTo Shades.percent100())]) && (! [Shades.ctrl <- Shades.ctrl])) R Shades.open))));
+  (G ([Shades.ctrl <- (Shades.moveTo Shades.percent0())] -> (F (((! [Shades.ctrl <- (Shades.moveTo Shades.percent0())]) && (! [Shades.ctrl <- Shades.ctrl])) R Shades.closed))));
+  (G ((Shades.closed && (! [Shades.ctrl <- (Shades.moveTo Shades.percent100())])) -> (X Shades.closed)));
+  (G ((Shades.open && (! [Shades.ctrl <- (Shades.moveTo Shades.percent0())])) -> (X Shades.open)));
+}
+
+guarantee {
+  (G (bed.enter -> (F ((((Time.between Time.pm7) Time.pm8) -> Shades.closed) W (Alarm.alarm && (F (((! (bright outside.brightness)) -> Shades.closed) W bed.exit)))))));
+  (G (((Time.am630 && (! (Time.saturday || Time.sunday))) && bed.occupied) -> (F ((((G (bright outside.brightness)) -> (F (G Shades.open))) && ((G (! (bright outside.brightness))) -> (F (G Shades.closed)))) W (Room.somebodyLeaves && Room.empty)))));
+  (G (((Time.am630 && (! (Time.saturday || Time.sunday))) && bed.occupied) -> (F (bed.exit || (Time.am7 && (F (Alarm.alarm W bed.exit)))))));
+  (G ((bright outside.brightness) -> (F Shades.closed)));
+  (G ((room.screen.lowered && (bright outside.brightness)) -> (F Shades.closed)));
+}

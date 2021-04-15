@@ -1,0 +1,11 @@
+assume {
+  (G ([Plug.intent <- on()] -> (F Plug.on)));
+  (G ([Lamp.intent <- on()] -> (F Lamp.on)));
+}
+
+guarantee {
+  (G (cond -> [Lamp.intent <- on()]));
+  (G ((! cond) -> [Lamp.intent <- off()]));
+  (G (Lamp.on -> Plug.on));
+  (G ([Lamp.intent <- on()] -> [Plug.intent <- on()]));
+}

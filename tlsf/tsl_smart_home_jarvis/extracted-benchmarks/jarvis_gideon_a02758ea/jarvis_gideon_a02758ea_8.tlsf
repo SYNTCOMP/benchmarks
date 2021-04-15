@@ -1,0 +1,22 @@
+INFO {
+  TITLE:       "Converted TSL Specification: jarvis_gideon_a02758ea_8"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02person2in2office;
+    p0p0work2time0time;
+  }
+
+  OUTPUTS {
+    u0roomba0roomba;
+    u0roomba0f1don1b;
+  }
+
+  GUARANTEE {
+    (G (! (((u0roomba0roomba) && (! (u0roomba0f1don1b))) <-> ((u0roomba0f1don1b) && (! (u0roomba0roomba)))))) && (G (! (((p0b02person2in2office) || (p0p0work2time0time)) && (u0roomba0f1don1b))));
+  }
+}
+

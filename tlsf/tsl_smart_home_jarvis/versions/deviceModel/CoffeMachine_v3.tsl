@@ -1,0 +1,15 @@
+always assume {
+  ready || standby || busy;
+  ready -> (!standby && !busy);
+  standby -> (!busy && !ready);
+  busy -> (!ready && !standby);
+  [ ctrl <- turnOn() ] && standby
+    -> X (busy U (([ ctrl <- makeCoffee() ] || [ ctrl <- turnOff() ]) R ready));
+  [ ctrl <- turnOff() ] && ready
+    -> X (busy U ([ ctrl <- turnOn() ] R standby));
+   [ ctrl <- makeCoffee() ] && ready
+    -> X (busy U (finished && (([ ctrl <- makeCoffee() ] || [ ctrl <- turnOff() ]) R ready)));
+}
+initially assume {
+  F (standby || ready);
+}

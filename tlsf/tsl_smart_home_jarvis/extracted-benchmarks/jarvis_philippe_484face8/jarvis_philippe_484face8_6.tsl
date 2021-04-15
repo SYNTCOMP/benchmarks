@@ -1,0 +1,7 @@
+assume {
+  (G (G (F (newDay time))));
+}
+
+guarantee {
+  (G ((newDay time) -> ([sittingArrganent <- (generate calendar)] && (X ([sittingArragment <- (sitting Arragment)] U (newDay time))))));
+}

@@ -1,0 +1,24 @@
+INFO {
+  TITLE:       "Converted TSL Specification: CheckTime_3916ec59"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02device29am5;
+    p0b02device29am23;
+    p0b02device29saturday;
+    p0b02device29sunday;
+    p0b02device29am7;
+    p0p02device29between0p1db02device29am51b02device29am2423;
+    p0p02device29between0p1db02device29am231b02device29am2423;
+    p0p02device29between0p1db02device29pm71b02device29pm8;
+  }
+
+
+  GUARANTEE {
+    (G (true)) && (((((((((((((G (F (p0p02device29between0p1db02device29am51b02device29am2423))) && (G (F (p0p02device29between0p1db02device29am231b02device29am2423)))) && (G (F (! (p0p02device29between0p1db02device29am51b02device29am2423))))) && (G (F (p0b02device29saturday)))) && (G (F (! (p0b02device29saturday))))) && (G (F (p0b02device29sunday)))) && (G (F (! (p0b02device29sunday))))) && (G (F (p0p02device29between0p1db02device29pm71b02device29pm8)))) && (G (F (! (p0p02device29between0p1db02device29pm71b02device29pm8))))) && (G (F (p0b02device29am7)))) && (G (F (p0b02device29am23)))) && (G (F (p0b02device29am5)))) -> (false));
+  }
+}
+

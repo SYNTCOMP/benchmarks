@@ -1,0 +1,12 @@
+assume {
+  (G (! (Door.locked <-> Door.unlocked)));
+  (G ([Door.door <- Door.lock()] -> (X (Door.locked W [Door.door <- Door.unlock()]))));
+  (G ([Door.door <- Door.unlock()] -> (X (Door.unlocked W [Door.door <- Door.lock()]))));
+  (G ((locked Door.intent) || (unlocked Door.intent)));
+  (G (! ((locked Door.intent) && (unlocked Door.intent))));
+}
+
+guarantee {
+  (G ((locked Door.intent) -> (F (Door.locked W (! (locked Door.intent))))));
+  (G ((unlocked Door.intent) -> (F (Door.unlocked W (! (unlocked Door.intent))))));
+}

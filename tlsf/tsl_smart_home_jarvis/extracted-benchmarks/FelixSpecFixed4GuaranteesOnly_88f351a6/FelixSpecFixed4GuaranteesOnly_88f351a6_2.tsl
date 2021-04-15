@@ -1,0 +1,6 @@
+assume {
+}
+
+guarantee {
+  (G (room.window.opened -> ([music.ctrl <- (play overture())] && (F (room.heating.off W (room.window.closed && (allWindowsClosed room)))))));
+}

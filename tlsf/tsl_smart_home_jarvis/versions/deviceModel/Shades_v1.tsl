@@ -1,0 +1,19 @@
+// if x happens often enougth and from some point on stops
+// happening, then e will happen eventually.
+leadsWith x y e =
+  G F (x && (! y W e)) -> F e;
+
+always assume {
+  ! (open && closed);
+  leadsWith
+     [ ctrl <- moveTo percent100() ]
+     [ ctrl <- moveTo percent0() ]
+     open;
+  
+  leadsWith
+     [ ctrl <- moveTo percent0() ]
+     [ ctrl <- moveTo percent100() ]
+     closed;
+  closed && ![ ctrl <- moveTo percent100()] -> X closed;
+  open && ![ ctrl <- moveTo percent0()] -> X open;
+}

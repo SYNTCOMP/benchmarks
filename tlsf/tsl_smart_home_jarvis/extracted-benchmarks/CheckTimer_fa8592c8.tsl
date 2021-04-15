@@ -1,0 +1,9 @@
+assume {
+  (G ([Device.startNewTimer <- Device.min20()] -> (F Device.timeout)));
+  (G ([Device.startNewTimer <- Device.hour1()] -> (F Device.timeout)));
+  (G ([Device.startNewTimer <- Device.hour2()] -> (F Device.timeout)));
+}
+
+guarantee {
+  (G false);
+}

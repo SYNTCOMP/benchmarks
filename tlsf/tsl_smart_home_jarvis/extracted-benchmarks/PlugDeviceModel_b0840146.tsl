@@ -1,0 +1,8 @@
+assume {
+  (G (! (on <-> off)));
+  (G ([ctrl <- con()] -> (X (F (on W [ctrl <- coff()])))));
+  (G ([ctrl <- coff()] -> (X (F (off W [ctrl <- con()])))));
+}
+
+guarantee {
+}

@@ -1,0 +1,31 @@
+INFO {
+  TITLE:       "Converted TSL Specification: Demo1_2c5b09da_5"
+  DESCRIPTION: "TSL specification, which has been converted to TLSF."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+MAIN {
+  INPUTS {
+    p0b02room29empty;
+    p0b02room29switch29toggled;
+    p0b02room29somebody2enters;
+    p0b02room29sombebody2leaves;
+    p0b02room29somebody2leaves;
+    p0b02room29sombebody2enters;
+    p0b02room29bed29occupied;
+    p0b02roomlight29on;
+    p0b02roomlight29off;
+  }
+
+  OUTPUTS {
+    u02roomlight29light02roomlight29light;
+    u02roomlight29light0f1d2roomlight29turn2on1b;
+    u02roomlight29light0f1d2roomlight29toggle1b;
+    u02roomlight29light0f1d2roomlight29turn2off1b;
+  }
+
+  GUARANTEE {
+    (G (! (((! (((u02roomlight29light0f1d2roomlight29toggle1b) && (! (u02roomlight29light02roomlight29light))) <-> ((u02roomlight29light02roomlight29light) && (! (u02roomlight29light0f1d2roomlight29toggle1b))))) && (! ((u02roomlight29light0f1d2roomlight29turn2off1b) || (u02roomlight29light0f1d2roomlight29turn2on1b)))) <-> ((! (((u02roomlight29light0f1d2roomlight29turn2off1b) && (! (u02roomlight29light0f1d2roomlight29turn2on1b))) <-> ((u02roomlight29light0f1d2roomlight29turn2on1b) && (! (u02roomlight29light0f1d2roomlight29turn2off1b))))) && (! ((u02roomlight29light0f1d2roomlight29toggle1b) || (u02roomlight29light02roomlight29light))))))) && (((((((((G ((p0b02room29empty) -> (! (p0b02room29switch29toggled)))) && (G ((p0b02room29somebody2enters) -> ((! (p0b02room29empty)) W ((p0b02room29sombebody2leaves) && (p0b02room29empty)))))) && (G (((p0b02room29somebody2leaves) && (p0b02room29empty)) -> ((p0b02room29empty) W (p0b02room29sombebody2enters))))) && (G ((p0b02room29bed29occupied) -> (! (p0b02room29empty))))) && (((! (p0b02room29empty)) W ((p0b02room29sombebody2leaves) && (p0b02room29empty))) || ((p0b02room29empty) W (p0b02room29sombebody2enters)))) && (G (! ((p0b02roomlight29on) <-> (p0b02roomlight29off))))) && (G (((u02roomlight29light0f1d2roomlight29turn2on1b) || ((u02roomlight29light0f1d2roomlight29toggle1b) && (p0b02roomlight29off))) -> (X (F (((u02roomlight29light0f1d2roomlight29turn2off1b) || (u02roomlight29light0f1d2roomlight29toggle1b)) R (p0b02roomlight29on))))))) && (G (((u02roomlight29light0f1d2roomlight29turn2off1b) || ((u02roomlight29light0f1d2roomlight29toggle1b) && (p0b02roomlight29on))) -> (X (F (((u02roomlight29light0f1d2roomlight29turn2on1b) || (u02roomlight29light0f1d2roomlight29toggle1b)) R (p0b02roomlight29off))))))) -> ((G ((p0b02room29somebody2enters) -> (X (F ((p0b02roomlight29on) W (p0b02room29empty)))))) && (G ((p0b02room29empty) -> (X (F (p0b02roomlight29off)))))));
+  }
+}
+

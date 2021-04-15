@@ -1,0 +1,9 @@
+assume {
+  (G (F a));
+  (G (! (a && c)));
+}
+
+guarantee {
+  (G ([out <- b()] U a));
+  (G (c <-> [out2 <- (fun a)]));
+}
