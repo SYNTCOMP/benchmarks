@@ -2,8 +2,8 @@ HOA: v1
 name: "F(G(Facc & F(p | q | r)) | G(!acc & !p & !q & !r))"
 States: 3
 Start: 0
-AP: 4 "p" "q" "r" "acc"
-controllable-AP: 3
+AP: 4 "acc" "q" "r" "p"
+controllable-AP: 0
 acc-name: parity max even 3
 Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
 properties: trans-labels explicit-labels trans-acc colored complete
@@ -11,15 +11,15 @@ properties: deterministic stutter-invariant
 --BODY--
 State: 0
 [!0&!1&!2&!3] 0 {0}
-[3] 1 {0}
-[0&!3 | 1&!3 | 2&!3] 2 {0}
+[!0&1 | !0&2 | !0&3] 1 {0}
+[0] 2 {0}
 State: 1
 [!0&!1&!2&!3] 1 {0}
-[0&3 | 1&3 | 2&3] 1 {2}
-[!0&!1&!2&3] 1 {1}
-[0&!3 | 1&!3 | 2&!3] 2 {0}
+[!0&1 | !0&2 | !0&3] 1 {1}
+[0] 2 {2}
 State: 2
-[3] 1 {2}
+[!0&1 | !0&2 | !0&3] 1 {0}
 [!0&!1&!2&!3] 2 {0}
-[0&!3 | 1&!3 | 2&!3] 2 {1}
+[0&1 | 0&2 | 0&3] 2 {2}
+[0&!1&!2&!3] 2 {1}
 --END--
