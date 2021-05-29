@@ -17,7 +17,7 @@ GLOBAL {
       SINGLE: 01
       INCR:   00
       BURST4: 10;
-    
+
     m = log2(n);
 
     /* Values of the HBURST signal.
@@ -44,10 +44,10 @@ GLOBAL {
     /* Discrete logarithm.
      */
     log2(x) =
-      x <= 1     : 1
-      otherwise : 1 + log2(x / 2);
+      x <= 1    : 0
+      otherwise : 1 + log2((x+1) / 2);
 
-    /* Checks whether a bus of size n is low at index i. 
+    /* Checks whether a bus of size n is low at index i.
      */
     lowat(bus,i) =
       &&[0 <= j < SIZEOF bus]
@@ -58,7 +58,7 @@ GLOBAL {
     CWU(f1,f2,i) =
       i > 1 : f1 W (f2 && X CWU(f1,f2,i - 1))
       i <= 1 : f1 W f2;
-  } 
+  }
 }
 
 MAIN {

@@ -29,8 +29,8 @@ GLOBAL {
     /* Discrete logarithm.
      */
     log2(x) =
-      x <= 1     : 1
-      otherwise : 1 + log2(x / 2);
+      x <= 1    : 0
+      otherwise : 1 + log2((x+1) / 2);
 
     // ensures mutual exclusion on an n-ary bus
     mutual_exclusion(bus) =
@@ -86,5 +86,6 @@ MAIN {
   }
 }
 //#!SYNTCOMP
-//REF_SIZE : 0
+//STATUS : realizable
+//REF_SIZE : 3
 //#.
