@@ -1,5 +1,5 @@
 HOA: v1
-name: "G((p0 & !p1) | (!p0 & p1)) & F(G(F(a | b) & Fp0) | G(!p0 & !(a | b)))"
+name: "F(G(F(a | b) & Fp0) | G(!p0 & !(a | b))) & G((p0 & !p1) | (!p0 & p1))"
 States: 4
 Start: 0
 AP: 4 "p0" "p1" "a" "b"
