@@ -1,5 +1,5 @@
 HOA: v1
-name: "G((X!grant0 | (request0 & (!request0 | X!grant1) & (!request0 | X!grant2) & (idle | X(!grant0 & !grant1 & !grant2)))) & F(grant0 | !request0) & F(grant1 | !request1) & F(grant2 | !request2)) | F(idle & X(!grant0 & !grant1 & !grant2 & !idle)) | XF(G!idle | (grant0 & ((idle | request0) R (!idle | request0))))"
+name: "F(idle & X(!grant0 & !grant1 & !grant2 & !idle)) | XF(G!idle | (grant0 & ((idle | request0) R (!idle | request0)))) | G(F(grant0 | !request0) & F(grant1 | !request1) & F(grant2 | !request2) & (X!grant0 | (request0 & (!request0 | X!grant1) & (!request0 | X!grant2) & (idle | X(!grant0 & !grant1 & !grant2)))))"
 States: 16
 Start: 0
 AP: 7 "request1" "grant0" "grant1" "request2" "grant2" "request0" "idle"

@@ -1,5 +1,5 @@
 HOA: v1
-name: "G((!request0 | (!grant1 & (!grant2 | !request0) & (!grant3 | !request0) & (!grant4 | !request0) & (!grant2 | !grant3) & (!grant2 | !grant4) & (!grant3 | !grant4) & (!grant0 | request0) & (!grant2 | request2) & (!grant3 | request3) & (!grant4 | request4) & (idle | (!grant0 & !grant1 & !grant2 & !grant3 & !grant4)))) & F(grant0 | !request0) & F(grant1 | !request1) & F(grant2 | !request2) & F(grant3 | !request3) & F(grant4 | !request4)) | F(G!idle | (!grant0 & !grant1 & !grant2 & !grant3 & !grant4 & idle & X!idle) | (grant0 & X((idle | request0) R (!idle | request0))))"
+name: "F(G!idle | (!grant0 & !grant1 & !grant2 & !grant3 & !grant4 & idle & X!idle) | (grant0 & X((idle | request0) R (!idle | request0)))) | G((!request0 | (!grant1 & (!grant2 | !request0) & (!grant3 | !request0) & (!grant4 | !request0) & (!grant2 | !grant3) & (!grant2 | !grant4) & (!grant3 | !grant4) & (!grant0 | request0) & (!grant2 | request2) & (!grant3 | request3) & (!grant4 | request4) & (idle | (!grant0 & !grant1 & !grant2 & !grant3 & !grant4)))) & F(grant0 | !request0) & F(grant1 | !request1) & F(grant2 | !request2) & F(grant3 | !request3) & F(grant4 | !request4))"
 States: 33
 Start: 0
 AP: 11 "grant2" "request0" "grant3" "grant4" "grant0" "grant1" "request1" "request2" "request3" "request4" "idle"
