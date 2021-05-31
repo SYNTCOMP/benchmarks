@@ -8,7 +8,7 @@ is answerd by a respective binary encoded grant the same way. As a
 consequence, without further restrictions, every request could be
 answered immediately. Hence, to complicate the situation again, the
 output player is forced to repeate the same grant for one time step
-once at a while. This way, it can be possible for the input player to
+once in a while. This way, it can be possible for the input player to
 open multiple requests faster than they can be answered."
   SEMANTICS:   Mealy
   TARGET:      Mealy
@@ -16,7 +16,7 @@ open multiple requests faster than they can be answered."
 
 GLOBAL {
   PARAMETERS {
-    n = 8;
+    n = 8;    // n≥1
   }
 
   DEFINITIONS {
@@ -27,53 +27,56 @@ GLOBAL {
     value'(bus,v,i,j) =
       i >= j        : true
       bit(v,i) == 1 : value'(bus,v,i + 1,j) &&  bus[i]
-      otherwise    : value'(bus,v,i + 1,j) && !bus[i];
+      otherwise     : value'(bus,v,i + 1,j) && !bus[i];
 
-    /* Returns the i-th bit of the numerical value v.
-     */
+    /* Returns the i-th bit of the numerical value v. */
     bit(v,i) =
       i <= 0     : v % 2
-      otherwise : bit(v / 2,i - 1);
+      otherwise  : bit(v / 2,i - 1);
 
-    /* Discrete logarithm.
-     */
-    log2(x) =
+    /* floor(log2) */
+    log2_dn(x) =
       x <= 1    : 0
-      otherwise : 1 + log2((x+1) / 2);
+      otherwise : 1 + log2_dn(x/2);
+
+    /* nbits(x): return the number of bits needed to encode x values
+     * This is similar to ceil(log2) except for value 1: nbits(1) = 1 while ceil(log2(1)) = 0
+    */
+    nbits(x) =
+      x == 0    : 0
+      otherwise : 1 + log2_dn(x-1);
   }
 }
 
 MAIN {
-
   INPUTS {
-    // using the encoded value of 0 as the master grant
-    request[log2(n)];
+    // using the encoded value of 0 as a request of the master grant
+    request[nbits(n)];
   }
 
   OUTPUTS {
-    // allow one more value in the outputs indicating no selected
-    // grant
-    grant[log2(n+1)];
+    // allow one more value in the outputs indicating no selected grant
+    grant[nbits(n+1)];
   }
 
   ASSUMPTIONS {
-    // The master cannot starve the others
-    G F (||[0 <= i < log2(n)] request[i]);
+    // The request master cannot starve the others (i.e., we require inf-oft a nonzero request)
+    G F (||[0 <= i < nbits(n)] request[i]);
   }
 
   INVARIANTS {
-    // every request is eventually granted
-    &&[0 < i <= n]
+    // every request (except master) is eventually granted
+    &&[0 < i < n]
       (value(request, i) -> F value(grant, i));
 
     // a master request is granted before any other request
-    G (value(request, 0) -> X (&&[0 < i <= n] ! value(grant, i) U value(grant, 0)));
+    G (value(request, 0) -> X (&&[0 < i < n] !value(grant, i) U value(grant, 0)));
   }
 
   GUARANTEE {
     // sometimes there has to be a delay to allow requests to be
     // produced faster that they can be granted.
-    G F (&&[0 <= i < log2(n-1)] (grant[i] <-> X grant[i]));
+    G F (&&[0 <= i < nbits(n)] (grant[i] <-> X grant[i]));
   }
 }
 
