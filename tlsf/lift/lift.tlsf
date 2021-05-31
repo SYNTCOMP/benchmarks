@@ -27,13 +27,16 @@ GLOBAL {
     value'(bus,v,i,j) =
       i >= j        : true
       bit(v,i) == 1 : value'(bus,v,i + 1,j) &&  bus[i]
-      otherwise    : value'(bus,v,i + 1,j) && !bus[i];
+      otherwise     : value'(bus,v,i + 1,j) && !bus[i];
     bit(v,i) =
       i <= 0     : v % 2
-      otherwise : bit(v / 2,i - 1);
-    log2(x) =
+      otherwise  : bit(v / 2,i - 1);
+    log2_dn(x) =
       x <= 1    : 0
-      otherwise : 1 + log2((x+1) / 2);
+      otherwise : 1 + log2_dn(x/2);
+    nbits(x) =
+      x == 0    : 0
+      otherwise : 1 + log2_dn(x-1);
   }
 }
 
@@ -46,7 +49,7 @@ MAIN {
     up;          // the lift is moving up
     down;        // the lift is moving down
     serve;       // serve the floor (open the door, etc.)
-    f[log2(n)];  // the current floor
+    f[nbits(n)]; // the current floor
   }
 
   ASSUMPTIONS {
