@@ -1,0 +1,16 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 8 "u0accel0f1ddeaccel1b" "u0accel0f1dspeed2up1b" "u0accel0accel" "u0brakes0f1dhit2brakes1b" "u0brakes0f1doff2brakes1b" "u0brakes0brakes" "p0p0slow0speed" "p0p0clear2ahead0track"
+controllable-AP: 4 3 5 1 0 2
+acc-name: parity max even 2
+Acceptance: 2 Fin(1) & Inf(0)
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {0}
+[!0&!1&2&!3&!4&5&6&!7 | !0&!1&2&!3&4&!5&6&!7 | !0&!1&2&3&!4&!5&6&!7 | !0&1&!2&!3&!4&5&6&!7 | !0&1&!2&!3&4&!5&6 | !0&1&!2&!3&4&!5&7 | !0&1&!2&3&!4&!5&6&!7 | 0&!1&!2&!3&!4&5&6&!7 | 0&!1&!2&!3&4&!5&6&!7 | 0&!1&!2&3&!4&!5&!7] 0
+[!0&!1&!2 | 0&1 | 0&2 | !1&7 | 1&2 | 1&!6&!7 | 2&!6 | !3&!4&!5 | 3&4 | 3&5 | !4&7 | 4&5 | 4&!6&!7 | 5&!6] 1
+State: 1 {1}
+[t] 1
+--END--

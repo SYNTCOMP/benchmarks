@@ -1,0 +1,16 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 4 "u0time0time" "u0time0f1dzero1b" "p0b0btn2min" "p0b0btn2sec"
+controllable-AP: 1 0
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic
+--BODY--
+State: 0
+[!0&1&2&3 | 0&!1&!2 | 0&!1&!3] 0 {2}
+[!0&!2 | !0&!3 | 0&2&3 | !1&2&3 | 1&!2 | 1&!3] 1 {1}
+State: 1
+[t] 1 {1}
+--END--

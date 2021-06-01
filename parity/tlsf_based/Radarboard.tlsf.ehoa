@@ -1,0 +1,16 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 29 "u0buffercolor0buffercolor" "u0buffercolor0f1dgetenemycolor0enemies0counter1b" "u0bufferdradius0bufferdradius" "u0bufferdradius0f1dgetenemyradius0enemies0counter1b" "u0color0tmpcolor" "u0color0f1dwhitecolor1b" "u0color0color" "u0counter0counter" "u0counter0f1dincmod0counter0f1dinc0f1dinc0f1denemycount1b1b1b1b" "u0outx0outx" "u0outx0xcoord" "u0outy0outy" "u0outy0ycoord" "u0ramreqcosine0ramreqcosine" "u0ramreqcosine0f1dsub0f1dgetenemyangle0enemies0counter1b0rotation1b" "u0ramreqsine0ramreqsine" "u0ramreqsine0f1dsub0f1dgetenemyangle0enemies0counter1b0rotation1b" "u0tmpcolor0tmpcolor" "u0tmpcolor0f1dblackcolor1b" "u0tmpcolor0buffercolor" "u0xcoord0xcoord" "u0xcoord0f1dinccoord0xcoord1b" "u0ycoord0ycoord" "u0ycoord0f1dinccoord0ycoord1b" "p0p0eq0counter0f1dinc0f1denemycount1b1b" "p0p0eq0xcoord0f1ddec0f1dsizex1b1b" "p0p0eq0xcoord0f1dcartesianx0ramcosineout0bufferdradius1b" "p0p0eq0ycoord0f1dcartesiany0ramsineout0bufferdradius1b" "p0p0ismiddel0xcoord0ycoord"
+controllable-AP: 23 22 21 20 18 17 19 16 15 14 13 12 11 10 9 8 7 5 4 6 3 2 1 0
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic
+--BODY--
+State: 0
+[!0&1&!2&3&!4&!5&6&!7&8&9&!10&11&!12&!13&14&!15&16&!17&!18&19&20&!21&22&!23&!24&26&27 | !0&1&!2&3&!4&!5&6&!7&8&9&!10&11&!12&!13&14&!15&16&17&!18&!19&20&!21&22&!23&!24&!26 | !0&1&!2&3&!4&!5&6&!7&8&9&!10&11&!12&!13&14&!15&16&17&!18&!19&20&!21&22&!23&!24&!27 | !0&1&!2&3&!4&5&!6&!7&8&!9&10&!11&12&!13&14&!15&16&!17&18&!19&!20&21&!22&23&24&25&28 | !0&1&!2&3&!4&5&!6&!7&8&!9&10&!11&12&!13&14&!15&16&!17&18&!19&!20&21&22&!23&24&!25&28 | !0&1&!2&3&4&!5&!6&!7&8&!9&10&!11&12&!13&14&!15&16&!17&18&!19&!20&21&!22&23&24&25&!28 | !0&1&!2&3&4&!5&!6&!7&8&!9&10&!11&12&!13&14&!15&16&!17&18&!19&!20&21&22&!23&24&!25&!28] 0 {2}
+[0 | !1 | 2 | !3 | !4&24&!28 | 4&!24 | 4&28 | !5&24&28 | 5&!24 | 5&!28 | !6&!24 | 6&24 | 7 | !8 | !9&!24 | 9&24 | !10&24 | 10&!24 | !11&!24 | 11&24 | !12&24 | 12&!24 | 13 | !14 | 15 | !16 | !17&!24&!26 | !17&!24&!27 | 17&24 | 17&26&27 | !18&24 | 18&!24 | !19&!24&26&27 | 19&24 | 19&!26 | 19&!27 | !20&!24 | 20&24 | !21&24 | 21&!24 | !22&!24 | !22&!25 | 22&24&25 | !23&24&25 | 23&!24 | 23&!25] 1 {1}
+State: 1
+[t] 1 {1}
+--END--

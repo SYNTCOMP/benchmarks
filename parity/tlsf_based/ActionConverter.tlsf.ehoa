@@ -1,0 +1,16 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 11 "u0gamestart0f1dbot1b" "u0gamestart0f1dtop1b" "u0gamestart0gamestart" "u0shot0f1dbot1b" "u0shot0f1dtop1b" "u0shot0shot" "p0p0isscoremode0gamemode" "p0p0gt0accz0f1dresetthreshhold1b" "p0p0norotation0gyrox0gyroy0gyroz" "p0p0iscockpitmode0gamemode" "p0p0gt0f1dabs0accz1b0f1dshotthreshhold1b"
+controllable-AP: 4 3 5 1 0 2
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic
+--BODY--
+State: 0
+[!0&1&!2&!3&4&!5&6&7&8&9&10 | !0&1&!2&3&!4&!5&6&7&8&!9 | !0&1&!2&3&!4&!5&6&7&8&!10 | 0&!1&!2&!3&4&!5&!6&8&9&10 | 0&!1&!2&!3&4&!5&!7&8&9&10 | 0&!1&!2&3&!4&!5&!6&!9 | 0&!1&!2&3&!4&!5&!6&!10 | 0&!1&!2&3&!4&!5&!7&!9 | 0&!1&!2&3&!4&!5&!7&!10 | 0&!1&!2&3&!4&!5&!8] 0 {2}
+[!0&!6 | !0&!7 | !0&!8 | 0&6&7&8 | !1&6&7&8 | 1&!6 | 1&!7 | 1&!8 | 2 | !3&!8 | !3&!9 | !3&!10 | 3&8&9&10 | !4&8&9&10 | 4&!8 | 4&!9 | 4&!10 | 5] 1 {1}
+State: 1
+[t] 1 {1}
+--END--
