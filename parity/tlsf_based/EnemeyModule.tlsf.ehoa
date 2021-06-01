@@ -1,0 +1,16 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 9 "u0angle0angle" "u0angle0resetangle" "u0color0color" "u0color0incolor" "u0radius0f1dstartradius1b" "u0radius0f1ddec0radius1b" "u0radius0radius" "p0p0on0reset" "p0p0on0clock"
+controllable-AP: 5 4 6 3 2 1 0
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic
+--BODY--
+State: 0
+[!0&1&!2&3&4&!5&!6&7 | 0&!1&!2&3&!4&!5&6&!7&!8 | 0&!1&!2&3&!4&5&!6&!7&8] 0 {2}
+[!0&!7 | 0&7 | !1&7 | 1&!7 | 2 | !3 | !4&7 | 4&!7 | !5&!7&8 | 5&7 | 5&!8 | !6&!7&!8 | 6&7 | 6&8] 1 {1}
+State: 1
+[t] 1 {1}
+--END--

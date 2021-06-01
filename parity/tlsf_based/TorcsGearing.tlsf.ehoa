@@ -1,0 +1,25 @@
+HOA: v1
+States: 4
+Start: 0
+AP: 4 "u0gear0f1dshift2by2r2p2m0gear0rpm1b" "u0gear0f1dshift2by2speed0gear0speed1b" "u0gear0gear" "p0p0acceling0accel0brakes"
+controllable-AP: 1 0 2
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic
+--BODY--
+State: 0
+[!0&!1&2&3 | !0&1&!2&3 | 0&!1&!2&3] 1 {1}
+[!0&!1&2&!3] 2 {1}
+[!0&!1&!2 | 0&1 | 0&2 | 1&2 | !2&!3] 3 {1}
+State: 1
+[0&!1&!2&3] 1 {2}
+[!0&!1&2&!3] 2 {2}
+[!0&3 | 0&!3 | 1 | !2&!3 | 2&3] 3 {1}
+State: 2
+[!0&1&!2&3] 1 {2}
+[!0&!1&2&!3] 2 {2}
+[0 | !1&3 | 1&!3 | !2&!3 | 2&3] 3 {1}
+State: 3
+[t] 3 {1}
+--END--

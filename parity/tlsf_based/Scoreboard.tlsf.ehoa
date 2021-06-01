@@ -1,0 +1,16 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 17 "u0actcolor0f1dblackcolor1b" "u0actcolor0actcolor" "u0actcolor0f1dredcolor1b" "u0actcolor0scorecolor" "u0bxcoord0bxcoord" "u0bxcoord0xcoord" "u0bycoord0bycoord" "u0bycoord0ycoord" "u0xcoord0xcoord" "u0xcoord0f1dinc0xcoord1b" "u0ycoord0ycoord" "u0ycoord0f1dinc0ycoord1b" "p0p0eq0xcoord0f1ddec0f1dsizex1b1b" "p0p0lt0f1dcoordcount0xcoord0ycoord1b0score" "p0p0on0gameover" "p0p0eq0f1dadd0xcoord0ycoord1b0f1ddec0f1dsizex1b1b" "p0p0eq0xcoord0ycoord"
+controllable-AP: 11 10 9 8 7 6 5 4 2 0 3 1
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic
+--BODY--
+State: 0
+[!0&!1&!2&3&!4&5&!6&7&!8&9&!10&11&12&13 | !0&!1&!2&3&!4&5&!6&7&!8&9&10&!11&!12&13 | !0&!1&2&!3&!4&5&!6&7&!8&9&!10&11&12&!13&14&15 | !0&!1&2&!3&!4&5&!6&7&!8&9&!10&11&12&!13&14&16 | !0&!1&2&!3&!4&5&!6&7&!8&9&10&!11&!12&!13&14&15 | !0&!1&2&!3&!4&5&!6&7&!8&9&10&!11&!12&!13&14&16 | 0&!1&!2&!3&!4&5&!6&7&!8&9&!10&11&12&!13&!14 | 0&!1&!2&!3&!4&5&!6&7&!8&9&!10&11&12&!13&!15&!16 | 0&!1&!2&!3&!4&5&!6&7&!8&9&10&!11&!12&!13&!14 | 0&!1&!2&!3&!4&5&!6&7&!8&9&10&!11&!12&!13&!15&!16] 0 {2}
+[!0&!13&!14 | !0&!13&!15&!16 | 0&13 | 0&14&15 | 0&14&16 | 1 | !2&!13&14&15 | !2&!13&14&16 | 2&13 | 2&!14 | 2&!15&!16 | !3&13 | 3&!13 | 4 | !5 | 6 | !7 | 8 | !9 | !10&!12 | 10&12 | !11&12 | 11&!12] 1 {1}
+State: 1
+[t] 1 {1}
+--END--

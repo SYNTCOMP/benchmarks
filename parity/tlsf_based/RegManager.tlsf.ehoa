@@ -1,0 +1,16 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 10 "u0buffer0buffer" "u0buffer0f1dextract2dat0reg2manager2cmd1b" "u0reg2data0f1dzero1b" "u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b" "u0reg2data0reg2data" "u0reg2type0f1dregnone1b" "u0reg2type0f1dextract2reg0reg2manager2cmd1b" "u0reg2type0reg2type" "p0p0firsthalf0reg2manager2cmd" "p0p0secondhalf0reg2manager2cmd"
+controllable-AP: 6 5 7 3 2 4 1 0
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels trans-acc colored complete
+properties: deterministic
+--BODY--
+State: 0
+[!0&1&!2&3&!4&!5&6&!7&8&9 | !0&1&2&!3&!4&5&!6&!7&8&!9 | 0&!1&!2&3&!4&!5&6&!7&!8&9 | 0&!1&2&!3&!4&5&!6&!7&!8&!9] 0 {2}
+[!0&!8 | 0&8 | !1&8 | 1&!8 | !2&!9 | 2&9 | !3&9 | 3&!9 | 4 | !5&!9 | 5&9 | !6&9 | 6&!9 | 7] 1 {1}
+State: 1
+[t] 1 {1}
+--END--
