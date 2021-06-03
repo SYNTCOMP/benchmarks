@@ -90,6 +90,3 @@ MAIN {
     !DECIDE && HGRANT[0];
   }
 }
-//#!SYNTCOMP
-//REF_SIZE : 0
-//#.
