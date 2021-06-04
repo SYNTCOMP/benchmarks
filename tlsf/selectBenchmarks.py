@@ -36,7 +36,7 @@ benchdirs = ["amba",
              "simple_arbiter_log",
              "simple_arbiter_unreal",
              "tsl_paper",
-             "tsl_smart_home_jarvis"]
+             "tsl_smart_home_jarvis/extracted-benchmarks"]
 
 
 def makeBenchmarks(inputRoot, outputRoot):
