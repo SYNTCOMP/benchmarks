@@ -46,8 +46,6 @@ def generateFromCSV(templateFName, csvFName, outFName):
                     tags["REF_SIZE"] = vals["refsize"]
                 nontags = {k: vals[k] for k in vals
                            if k not in ["status", "refsize"]}
-                print("Retrieved tags and values from csv")
-                print(f"{vals}")
                 generateParametric(templateFName, nontags, tags, outFName)
             lineCount += 1
 
