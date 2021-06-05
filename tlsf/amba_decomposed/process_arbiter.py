@@ -26,7 +26,7 @@ def getVals(filename):
 if __name__ == "__main__":
     print(",".join(sorted(vrs)))
     for file in os.listdir("."):
-        if not file.startswith("amba_decomposed_arbiter"):
+        if not file.startswith("amba_decomposed_lock"):
             continue
         vals = getVals(file)
         print(",".join([vals[k] for k in sorted(vrs)]))
