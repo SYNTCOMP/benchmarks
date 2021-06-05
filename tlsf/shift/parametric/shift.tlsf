@@ -7,7 +7,7 @@ INFO {
 
 GLOBAL {
   PARAMETERS {
-    n = 12;
+    n = 10;
   }
 }
 
@@ -27,8 +27,3 @@ MAIN {
     in[n-1] <-> out[0];
   }
 }
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : 0
-//#.
