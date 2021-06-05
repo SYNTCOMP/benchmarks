@@ -77,7 +77,3 @@ MAIN {
            G mutual_exclusion(b2r_req));
   }
 }
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : 100
-//#.
