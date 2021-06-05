@@ -5,7 +5,8 @@ import os
 import re
 import sys
 
-assignREStr = r"^\s*{}\s*=\s*(.*)\s*;\s*$"
+# changed RE to account for comments after the semicolon
+assignREStr = r"^\s*{}\s*=\s*(.*)\s*;.*$"
 
 
 def generateParametric(templateFName, values, tags, outFName):
