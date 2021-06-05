@@ -34,8 +34,3 @@ MAIN {
       (all_finished -> X (!all_finished W finished[i]));
   }
 }
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : 4
-//#.

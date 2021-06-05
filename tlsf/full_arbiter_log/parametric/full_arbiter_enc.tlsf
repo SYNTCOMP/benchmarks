@@ -81,8 +81,3 @@ MAIN {
     G F (&&[0 <= i < nbits(n)] (grant[i] <-> X grant[i]));
   }
 }
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : -1
-//#.
