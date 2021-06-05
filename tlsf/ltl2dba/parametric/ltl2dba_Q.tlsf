@@ -1,5 +1,5 @@
 INFO {
-  TITLE:       "LTL -> DBA  -  Formula C2 From LtlNfBa Paper"
+  TITLE:       "LTL -> DBA  -  Formula Q From LtlNfBa Paper"
   DESCRIPTION: "Conversion of LTL to Deterministic Buchi Automaton"
   SEMANTICS:   Mealy
   TARGET:      Mealy
@@ -7,14 +7,15 @@ INFO {
 
 GLOBAL {
   PARAMETERS {
-    n = 14;
+    n = 2;
   }        
 
   DEFINITIONS {
-    // always eventually p_i for 0<=i<=n-1 
-    all_event(bus) =
-      &&[0 <= i < SIZEOF bus]
-        (G F bus[i]);      
+    // F p_i or G p_i+1 for 0<=i<=n-1 
+    event_or_all(bus) =
+      &&[0 <= i < (SIZEOF bus - 1)]
+        (F bus[i] || G bus[i+1])
+      && (F bus[SIZEOF bus - 1]);      
   } 
 }
            
@@ -29,12 +30,8 @@ MAIN {
   }
 
   GUARANTEES {
-    (all_event(p))
+    (event_or_all(p))
       <-> G F acc;
   }
 
 }
-
-//#!SYNTCOMP
-//REF_SIZE : 0
-//#.
