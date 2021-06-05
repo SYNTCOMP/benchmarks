@@ -8,7 +8,7 @@ INFO {
 
 GLOBAL {
   PARAMETERS {
-    n = 12;
+    n = 10;
   }
 
   DEFINITIONS {
@@ -55,8 +55,3 @@ MAIN {
       (value(select,i) -> out <-> in[i]);
   }
 }
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : 0
-//#.
