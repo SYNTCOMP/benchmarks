@@ -7,7 +7,7 @@ INFO {
 
 GLOBAL {
   PARAMETERS {
-    n = 10;
+    n = 8;
   }
 }
 
@@ -31,8 +31,3 @@ MAIN {
         );
   }
 }
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : -1
-//#.
