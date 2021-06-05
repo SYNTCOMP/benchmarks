@@ -55,3 +55,8 @@ MAIN {
       (value(select,i) -> out <-> in[i]);
   }
 }
+
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 0
+//#.
