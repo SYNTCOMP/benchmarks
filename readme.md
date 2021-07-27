@@ -23,8 +23,9 @@ Alternatively, you can create a pull request with your benchmarks.
 
 ## Downloading benchmarks
 
-- year 2020: [aiger](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2020/AIGER_2020.zip), [tlsf](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2020/TLSF_2020.zip), for parity, see the repository.
-- year 2019: [aiger](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2019/AIGER_2019.zip), [tlsf](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2019/TLSF_2019.zip)
+- year 2021: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2021/TLSF_2021.zip), [parity synthesis](https://github.com/SYNTCOMP/benchmarks/releases/download/v2021/PGAME_Synth_2021.zip), [parity realizability](https://github.com/SYNTCOMP/benchmarks/releases/download/v2021/PGAME_Real_2021.zip)
+- year 2020: [AIGER](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2020/AIGER_2020.zip), [TLSF](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2020/TLSF_2020.zip), for parity, see the repository.
+- year 2019: [AIGER](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2019/AIGER_2019.zip), [TLSF](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2019/TLSF_2019.zip)
 - for the years 2015-2018, see [here](https://syntcomp.react.uni-saarland.de/)
 
 
