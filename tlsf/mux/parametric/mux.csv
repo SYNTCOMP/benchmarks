@@ -1,7 +1,7 @@
 n,refsize,status
-10,0,unknown
-12,0,unknown
-8,0,unknown
-16,0,unknown
-32,0,unknown
-64,0,unknown
+10,27,realizable
+12,33,realizable
+8,21,realizable
+16,45,realizable
+32,93,realizable
+64,189,realizable
