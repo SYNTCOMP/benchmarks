@@ -13,7 +13,9 @@ INFO
 
 GLOBAL
 {
-  PARAMETERS { n = 1; }  // n≥1
+  PARAMETERS {
+  	n = 1; // n≥1
+  }
 
   DEFINITIONS
   {
