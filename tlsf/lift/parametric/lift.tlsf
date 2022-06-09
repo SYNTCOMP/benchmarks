@@ -19,7 +19,7 @@ INFO {
 
 GLOBAL {
   PARAMETERS {
-    n = 2;  // n≥2; the number of floors, set {0...n-1}
+    n = 2; // n≥2; the number of floors, set {0...n-1}
   }
   DEFINITIONS {
     // (this code is taken from other specs)
