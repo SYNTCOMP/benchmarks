@@ -19,7 +19,7 @@ GLOBAL
   {
     bufferX(inp, out, i) =
       (
-        G(inp[i] <-> X out[i])
+        (inp[i] <-> X out[i])
       );
 
     // the rest is copied from full_arbiter
