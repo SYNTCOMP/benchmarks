@@ -64,9 +64,3 @@ MAIN {
     G (r[i] -> F[0:n-1] g[i]);
   }
 }
-
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : 1
-//#.

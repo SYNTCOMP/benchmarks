@@ -41,9 +41,3 @@ MAIN {
     X[n+1] G (r <-> X[n] g);
   }
 }
-
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : 14
-//#.
