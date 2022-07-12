@@ -64,9 +64,3 @@ MAIN {
                                        // the premise can still fire bcz of previous obligations to grant
   }
 }
-
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : 21
-//#.

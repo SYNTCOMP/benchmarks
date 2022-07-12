@@ -44,9 +44,3 @@ MAIN {
     G(!g);
   }
 }
-
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : 13
-//#.
