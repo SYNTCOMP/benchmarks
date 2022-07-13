@@ -84,9 +84,3 @@ MAIN {
     ! F G( (&&[0<=i<n] !b[i]) && !f[0] );
   }
 }
-
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : 8
-//#.
