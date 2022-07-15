@@ -57,9 +57,3 @@ MAIN
       G (r[i] -> (bufferX(try, ack, i) U g[i]));
   }
 }
-
-
-//#!SYNTCOMP
-//STATUS : realizable
-//REF_SIZE : 0
-//#.
