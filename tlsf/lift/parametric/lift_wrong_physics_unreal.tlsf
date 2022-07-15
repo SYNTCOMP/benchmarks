@@ -110,9 +110,3 @@ MAIN {
     ! F G( (&&[0<=i<n] !b[i]) && !value(f,0) );
   }
 }
-
-
-//#!SYNTCOMP
-//STATUS : unrealizable
-//REF_SIZE : -1
-//#.
