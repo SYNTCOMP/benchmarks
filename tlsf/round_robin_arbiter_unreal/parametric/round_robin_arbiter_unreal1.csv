@@ -47,6 +47,6 @@ n,u,refsize,status
 3,1,-1,unrealizable
 2,5,-1,unrealizable
 4,3,-1,unrealizable
-3,20,0,unknown
-3,22,0,unknown
+3,20,-1,unrealizable
+3,22,-1,unrealizable
 3,50,0,unknown
