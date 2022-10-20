@@ -1,0 +1,16 @@
+HOA: v1
+States: 3
+Start: 0
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+AP: 2 "pl0_0" "pl1_0"
+controllable-AP: 0
+properties: deterministic complete colored
+--BODY--
+State: 0 "vertex0" {2}
+[t] 1
+State: 1 "vertex1" {2}
+[t] 2
+State: 2 "vertex2" {1}
+[t] 2
+--END--
