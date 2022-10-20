@@ -47,7 +47,7 @@ class ParityGame:
         header = True
         for line in f.readlines():
             scolon = line.find(';')
-            assert (scolon > -1)
+            assert (scolon > -1), line
             line = line[:scolon]
             if header:
                 header = False
@@ -61,6 +61,9 @@ class ParityGame:
                 self.name = [""] * noVtces
                 self.maxoutdeg = -1
                 self.maxpriority = -1
+            elif line.startswith("start"):
+                vtxInfo = line.split()
+                assert vtxInfo[1] == "0"
             else:
                 line = re.sub(r",\s*", ",", line)
                 vtxInfo = line.split()
@@ -121,7 +124,7 @@ class ParityGame:
                 negLabels = f"!({orLabels})"
                 print(f"[{negLabels}] {self.succ[i][0]}", file=out)
 
-        print("--END--")
+        print("--END--", file=out)
         return 0
 
 
@@ -133,6 +136,7 @@ if __name__ == "__main__":
     f = open(sys.argv[1])
     for line in f.readlines():
         line = line.strip()
+        print(f"Processing {line}")
         game = ParityGame(line)
         out = open(line + ".ehoa", "w")
         signal.signal(signal.SIGALRM, handler)
@@ -140,8 +144,11 @@ if __name__ == "__main__":
         try:
             game.toHoa(out)
             out.close()
+            print("Succeeded!")
         except TimeoutException as ex:
             print(f"Unexpected {ex=}, {type(ex)=}")
             out.close()
             os.remove(line + ".ehoa")
+        finally:
+            signal.alarm(0)
     exit(0)

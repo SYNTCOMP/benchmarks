@@ -4,4 +4,6 @@ which itself is an extension of the Hanoi omega-automata [format](https://adl.gi
 
 Relevant references:
 - [hoa-tools](https://github.com/gaperez64/hoa-tools) repository
+- Keiren's [parity-game
+  generator](https://github.com/jkeiren/paritygame-generator)
 

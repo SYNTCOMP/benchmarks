@@ -1,0 +1,6908 @@
+HOA: v1
+States: 2858
+Start: 0
+acc-name: parity max even 236
+Acceptance: 236 Fin(235) & (Inf(234) | (Fin(233) & (Inf(232) | (Fin(231) & (Inf(230) | (Fin(229) & (Inf(228) | (Fin(227) & (Inf(226) | (Fin(225) & (Inf(224) | (Fin(223) & (Inf(222) | (Fin(221) & (Inf(220) | (Fin(219) & (Inf(218) | (Fin(217) & (Inf(216) | (Fin(215) & (Inf(214) | (Fin(213) & (Inf(212) | (Fin(211) & (Inf(210) | (Fin(209) & (Inf(208) | (Fin(207) & (Inf(206) | (Fin(205) & (Inf(204) | (Fin(203) & (Inf(202) | (Fin(201) & (Inf(200) | (Fin(199) & (Inf(198) | (Fin(197) & (Inf(196) | (Fin(195) & (Inf(194) | (Fin(193) & (Inf(192) | (Fin(191) & (Inf(190) | (Fin(189) & (Inf(188) | (Fin(187) & (Inf(186) | (Fin(185) & (Inf(184) | (Fin(183) & (Inf(182) | (Fin(181) & (Inf(180) | (Fin(179) & (Inf(178) | (Fin(177) & (Inf(176) | (Fin(175) & (Inf(174) | (Fin(173) & (Inf(172) | (Fin(171) & (Inf(170) | (Fin(169) & (Inf(168) | (Fin(167) & (Inf(166) | (Fin(165) & (Inf(164) | (Fin(163) & (Inf(162) | (Fin(161) & (Inf(160) | (Fin(159) & (Inf(158) | (Fin(157) & (Inf(156) | (Fin(155) & (Inf(154) | (Fin(153) & (Inf(152) | (Fin(151) & (Inf(150) | (Fin(149) & (Inf(148) | (Fin(147) & (Inf(146) | (Fin(145) & (Inf(144) | (Fin(143) & (Inf(142) | (Fin(141) & (Inf(140) | (Fin(139) & (Inf(138) | (Fin(137) & (Inf(136) | (Fin(135) & (Inf(134) | (Fin(133) & (Inf(132) | (Fin(131) & (Inf(130) | (Fin(129) & (Inf(128) | (Fin(127) & (Inf(126) | (Fin(125) & (Inf(124) | (Fin(123) & (Inf(122) | (Fin(121) & (Inf(120) | (Fin(119) & (Inf(118) | (Fin(117) & (Inf(116) | (Fin(115) & (Inf(114) | (Fin(113) & (Inf(112) | (Fin(111) & (Inf(110) | (Fin(109) & (Inf(108) | (Fin(107) & (Inf(106) | (Fin(105) & (Inf(104) | (Fin(103) & (Inf(102) | (Fin(101) & (Inf(100) | (Fin(99) & (Inf(98) | (Fin(97) & (Inf(96) | (Fin(95) & (Inf(94) | (Fin(93) & (Inf(92) | (Fin(91) & (Inf(90) | (Fin(89) & (Inf(88) | (Fin(87) & (Inf(86) | (Fin(85) & (Inf(84) | (Fin(83) & (Inf(82) | (Fin(81) & (Inf(80) | (Fin(79) & (Inf(78) | (Fin(77) & (Inf(76) | (Fin(75) & (Inf(74) | (Fin(73) & (Inf(72) | (Fin(71) & (Inf(70) | (Fin(69) & (Inf(68) | (Fin(67) & (Inf(66) | (Fin(65) & (Inf(64) | (Fin(63) & (Inf(62) | (Fin(61) & (Inf(60) | (Fin(59) & (Inf(58) | (Fin(57) & (Inf(56) | (Fin(55) & (Inf(54) | (Fin(53) & (Inf(52) | (Fin(51) & (Inf(50) | (Fin(49) & (Inf(48) | (Fin(47) & (Inf(46) | (Fin(45) & (Inf(44) | (Fin(43) & (Inf(42) | (Fin(41) & (Inf(40) | (Fin(39) & (Inf(38) | (Fin(37) & (Inf(36) | (Fin(35) & (Inf(34) | (Fin(33) & (Inf(32) | (Fin(31) & (Inf(30) | (Fin(29) & (Inf(28) | (Fin(27) & (Inf(26) | (Fin(25) & (Inf(24) | (Fin(23) & (Inf(22) | (Fin(21) & (Inf(20) | (Fin(19) & (Inf(18) | (Fin(17) & (Inf(16) | (Fin(15) & (Inf(14) | (Fin(13) & (Inf(12) | (Fin(11) & (Inf(10) | (Fin(9) & (Inf(8) | (Fin(7) & (Inf(6) | (Fin(5) & (Inf(4) | (Fin(3) & (Inf(2) | (Fin(1) & Inf(0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+AP: 4 "pl0_0" "pl0_1" "pl1_0" "pl1_1"
+controllable-AP: 0 1
+properties: deterministic complete colored
+--BODY--
+State: 0 "vertex0" {235}
+[t] 1
+State: 1 "vertex1" {1}
+[t] 2
+State: 2 "vertex2" {1}
+[t] 3
+State: 3 "vertex3" {1}
+[t] 4
+State: 4 "vertex4" {1}
+[t] 5
+State: 5 "vertex5" {1}
+[t] 6
+State: 6 "vertex6" {1}
+[!3 & 2] 8
+[!((!3 & 2))] 7
+State: 7 "vertex7" {1}
+[!3 & 2] 10
+[!((!3 & 2))] 9
+State: 8 "vertex8" {1}
+[!3 & 2] 11
+[!((!3 & 2))] 9
+State: 9 "vertex9" {0}
+[t] 9
+State: 10 "vertex10" {1}
+[t] 12
+State: 11 "vertex11" {1}
+[t] 13
+State: 12 "vertex12" {1}
+[t] 14
+State: 13 "vertex13" {1}
+[t] 15
+State: 14 "vertex14" {1}
+[!3 & 2] 16
+[!((!3 & 2))] 9
+State: 15 "vertex15" {1}
+[t] 17
+State: 16 "vertex16" {1}
+[t] 18
+State: 17 "vertex17" {1}
+[t] 19
+State: 18 "vertex18" {1}
+[t] 20
+State: 19 "vertex19" {1}
+[t] 21
+State: 20 "vertex20" {1}
+[t] 22
+State: 21 "vertex21" {1}
+[!3 & 2] 24
+[!((!3 & 2))] 23
+State: 22 "vertex22" {1}
+[t] 25
+State: 23 "vertex23" {1}
+[!3 & 2] 26
+[!((!3 & 2))] 9
+State: 24 "vertex24" {1}
+[!3 & 2] 27
+[!((!3 & 2))] 9
+State: 25 "vertex25" {1}
+[!3 & 2] 29
+[!((!3 & 2))] 28
+State: 26 "vertex26" {1}
+[!3 & 2] 30
+[!((!3 & 2))] 9
+State: 27 "vertex27" {1}
+[!3 & 2] 31
+[!((!3 & 2))] 9
+State: 28 "vertex28" {1}
+[!3 & 2] 32
+[!((!3 & 2))] 9
+State: 29 "vertex29" {1}
+[!3 & 2] 33
+[!((!3 & 2))] 9
+State: 30 "vertex30" {1}
+[t] 34
+State: 31 "vertex31" {1}
+[t] 35
+State: 32 "vertex32" {1}
+[t] 36
+State: 33 "vertex33" {1}
+[t] 37
+State: 34 "vertex34" {1}
+[t] 38
+State: 35 "vertex35" {231}
+[t] 39
+State: 36 "vertex36" {1}
+[t] 40
+State: 37 "vertex37" {1}
+[t] 41
+State: 38 "vertex38" {1}
+[t] 42
+State: 39 "vertex39" {1}
+[t] 43
+State: 40 "vertex40" {1}
+[!3 & 2] 44
+[!((!3 & 2))] 9
+State: 41 "vertex41" {1}
+[t] 45
+State: 42 "vertex42" {1}
+[t] 46
+State: 43 "vertex43" {1}
+[t] 47
+State: 44 "vertex44" {1}
+[t] 48
+State: 45 "vertex45" {1}
+[t] 49
+State: 46 "vertex46" {1}
+[!3 & 2] 51
+[!((!3 & 2))] 50
+State: 47 "vertex47" {1}
+[t] 52
+State: 48 "vertex48" {1}
+[t] 53
+State: 49 "vertex49" {1}
+[t] 54
+State: 50 "vertex50" {1}
+[!3 & 2] 55
+[!((!3 & 2))] 9
+State: 51 "vertex51" {1}
+[!3 & 2] 56
+[!((!3 & 2))] 9
+State: 52 "vertex52" {1}
+[!3 & 2] 58
+[!((!3 & 2))] 57
+State: 53 "vertex53" {1}
+[t] 59
+State: 54 "vertex54" {1}
+[!3 & 2] 61
+[!((!3 & 2))] 60
+State: 55 "vertex55" {1}
+[!3 & 2] 62
+[!((!3 & 2))] 9
+State: 56 "vertex56" {1}
+[!3 & 2] 63
+[!((!3 & 2))] 9
+State: 57 "vertex57" {1}
+[!3 & 2] 64
+[!((!3 & 2))] 9
+State: 58 "vertex58" {1}
+[!3 & 2] 65
+[!((!3 & 2))] 9
+State: 59 "vertex59" {1}
+[t] 66
+State: 60 "vertex60" {1}
+[!3 & 2] 67
+[!((!3 & 2))] 9
+State: 61 "vertex61" {1}
+[!3 & 2] 68
+[!((!3 & 2))] 9
+State: 62 "vertex62" {1}
+[t] 69
+State: 63 "vertex63" {1}
+[t] 70
+State: 64 "vertex64" {1}
+[!3 & 2] 71
+[!((!3 & 2))] 9
+State: 65 "vertex65" {1}
+[!3 & 2] 72
+[!((!3 & 2))] 9
+State: 66 "vertex66" {1}
+[!3 & 2] 74
+[!((!3 & 2))] 73
+State: 67 "vertex67" {1}
+[!3 & 2] 75
+[!((!3 & 2))] 9
+State: 68 "vertex68" {1}
+[!3 & 2] 76
+[!((!3 & 2))] 9
+State: 69 "vertex69" {1}
+[t] 77
+State: 70 "vertex70" {1}
+[t] 78
+State: 71 "vertex71" {1}
+[t] 79
+State: 72 "vertex72" {1}
+[t] 80
+State: 73 "vertex73" {1}
+[!3 & 2] 81
+[!((!3 & 2))] 9
+State: 74 "vertex74" {1}
+[!3 & 2] 82
+[!((!3 & 2))] 9
+State: 75 "vertex75" {1}
+[t] 83
+State: 76 "vertex76" {1}
+[t] 84
+State: 77 "vertex77" {1}
+[t] 85
+State: 78 "vertex78" {233}
+[t] 77
+State: 79 "vertex79" {1}
+[t] 86
+State: 80 "vertex80" {229}
+[t] 87
+State: 81 "vertex81" {1}
+[t] 88
+State: 82 "vertex82" {1}
+[t] 89
+State: 83 "vertex83" {1}
+[t] 90
+State: 84 "vertex84" {231}
+[t] 91
+State: 85 "vertex85" {1}
+[t] 92
+State: 86 "vertex86" {1}
+[t] 93
+State: 87 "vertex87" {234}
+[t] 94
+State: 88 "vertex88" {1}
+[t] 95
+State: 89 "vertex89" {1}
+[t] 96
+State: 90 "vertex90" {1}
+[t] 97
+State: 91 "vertex91" {1}
+[t] 98
+State: 92 "vertex92" {1}
+[!3 & 2] 100
+[!((!3 & 2))] 99
+State: 93 "vertex93" {1}
+[t] 101
+State: 94 "vertex94" {1}
+[t] 102
+State: 95 "vertex95" {1}
+[!3 & 2] 103
+[!((!3 & 2))] 9
+State: 96 "vertex96" {1}
+[t] 104
+State: 97 "vertex97" {1}
+[t] 105
+State: 98 "vertex98" {1}
+[t] 106
+State: 99 "vertex99" {1}
+[!3 & 2] 107
+[!((!3 & 2))] 9
+State: 100 "vertex100" {1}
+[!3 & 2] 108
+[!((!3 & 2))] 9
+State: 101 "vertex101" {1}
+[!3 & 2] 110
+[!((!3 & 2))] 109
+State: 102 "vertex102" {1}
+[t] 111
+State: 103 "vertex103" {1}
+[t] 112
+State: 104 "vertex104" {1}
+[t] 113
+State: 105 "vertex105" {1}
+[!3 & 2] 115
+[!((!3 & 2))] 114
+State: 106 "vertex106" {1}
+[t] 116
+State: 107 "vertex107" {1}
+[!3 & 2] 117
+[!((!3 & 2))] 9
+State: 108 "vertex108" {1}
+[!3 & 2] 118
+[!((!3 & 2))] 9
+State: 109 "vertex109" {1}
+[!3 & 2] 119
+[!((!3 & 2))] 9
+State: 110 "vertex110" {1}
+[!3 & 2] 120
+[!((!3 & 2))] 9
+State: 111 "vertex111" {1}
+[!3 & 2] 122
+[!((!3 & 2))] 121
+State: 112 "vertex112" {1}
+[t] 123
+State: 113 "vertex113" {1}
+[t] 124
+State: 114 "vertex114" {1}
+[!3 & 2] 125
+[!((!3 & 2))] 9
+State: 115 "vertex115" {1}
+[!3 & 2] 126
+[!((!3 & 2))] 9
+State: 116 "vertex116" {1}
+[!3 & 2] 128
+[!((!3 & 2))] 127
+State: 117 "vertex117" {1}
+[t] 83
+State: 118 "vertex118" {1}
+[t] 129
+State: 119 "vertex119" {1}
+[!3 & 2] 130
+[!((!3 & 2))] 9
+State: 120 "vertex120" {1}
+[!3 & 2] 131
+[!((!3 & 2))] 9
+State: 121 "vertex121" {1}
+[!3 & 2] 132
+[!((!3 & 2))] 9
+State: 122 "vertex122" {1}
+[!3 & 2] 133
+[!((!3 & 2))] 9
+State: 123 "vertex123" {1}
+[t] 134
+State: 124 "vertex124" {1}
+[!3 & 2] 136
+[!((!3 & 2))] 135
+State: 125 "vertex125" {1}
+[!3 & 2] 137
+[!((!3 & 2))] 9
+State: 126 "vertex126" {1}
+[!3 & 2] 138
+[!((!3 & 2))] 9
+State: 127 "vertex127" {1}
+[!3 & 2] 139
+[!((!3 & 2))] 9
+State: 128 "vertex128" {1}
+[!3 & 2] 140
+[!((!3 & 2))] 9
+State: 129 "vertex129" {231}
+[t] 141
+State: 130 "vertex130" {1}
+[t] 142
+State: 131 "vertex131" {1}
+[t] 143
+State: 132 "vertex132" {1}
+[!3 & 2] 144
+[!((!3 & 2))] 9
+State: 133 "vertex133" {1}
+[!3 & 2] 145
+[!((!3 & 2))] 9
+State: 134 "vertex134" {1}
+[t] 146
+State: 135 "vertex135" {1}
+[!3 & 2] 147
+[!((!3 & 2))] 9
+State: 136 "vertex136" {1}
+[!3 & 2] 148
+[!((!3 & 2))] 9
+State: 137 "vertex137" {1}
+[t] 149
+State: 138 "vertex138" {1}
+[t] 150
+State: 139 "vertex139" {1}
+[!3 & 2] 151
+[!((!3 & 2))] 9
+State: 140 "vertex140" {1}
+[!3 & 2] 152
+[!((!3 & 2))] 9
+State: 141 "vertex141" {1}
+[t] 153
+State: 142 "vertex142" {1}
+[t] 154
+State: 143 "vertex143" {229}
+[t] 155
+State: 144 "vertex144" {1}
+[t] 156
+State: 145 "vertex145" {1}
+[t] 157
+State: 146 "vertex146" {1}
+[!3 & 2] 159
+[!((!3 & 2))] 158
+State: 147 "vertex147" {1}
+[!3 & 2] 160
+[!((!3 & 2))] 9
+State: 148 "vertex148" {1}
+[!3 & 2] 161
+[!((!3 & 2))] 9
+State: 149 "vertex149" {1}
+[t] 162
+State: 150 "vertex150" {1}
+[t] 163
+State: 151 "vertex151" {1}
+[t] 164
+State: 152 "vertex152" {1}
+[t] 165
+State: 153 "vertex153" {1}
+[t] 166
+State: 154 "vertex154" {1}
+[t] 167
+State: 155 "vertex155" {231}
+[t] 154
+State: 156 "vertex156" {1}
+[t] 168
+State: 157 "vertex157" {231}
+[t] 169
+State: 158 "vertex158" {1}
+[!3 & 2] 170
+[!((!3 & 2))] 9
+State: 159 "vertex159" {1}
+[!3 & 2] 171
+[!((!3 & 2))] 9
+State: 160 "vertex160" {1}
+[t] 172
+State: 161 "vertex161" {1}
+[t] 173
+State: 162 "vertex162" {1}
+[t] 174
+State: 163 "vertex163" {233}
+[t] 162
+State: 164 "vertex164" {1}
+[t] 175
+State: 165 "vertex165" {229}
+[t] 176
+State: 166 "vertex166" {1}
+[t] 177
+State: 167 "vertex167" {1}
+[t] 178
+State: 168 "vertex168" {1}
+[t] 179
+State: 169 "vertex169" {1}
+[t] 180
+State: 170 "vertex170" {1}
+[t] 181
+State: 171 "vertex171" {1}
+[t] 182
+State: 172 "vertex172" {1}
+[t] 183
+State: 173 "vertex173" {231}
+[t] 184
+State: 174 "vertex174" {1}
+[t] 185
+State: 175 "vertex175" {1}
+[t] 186
+State: 176 "vertex176" {234}
+[t] 187
+State: 177 "vertex177" {1}
+[!3 & 2] 189
+[!((!3 & 2))] 188
+State: 178 "vertex178" {1}
+[!3 & 2] 191
+[!((!3 & 2))] 190
+State: 179 "vertex179" {1}
+[t] 192
+State: 180 "vertex180" {1}
+[t] 193
+State: 181 "vertex181" {1}
+[t] 194
+State: 182 "vertex182" {1}
+[t] 195
+State: 183 "vertex183" {1}
+[t] 196
+State: 184 "vertex184" {1}
+[t] 197
+State: 185 "vertex185" {1}
+[!3 & 2] 199
+[!((!3 & 2))] 198
+State: 186 "vertex186" {1}
+[t] 200
+State: 187 "vertex187" {1}
+[t] 201
+State: 188 "vertex188" {1}
+[!3 & 2] 202
+[!((!3 & 2))] 9
+State: 189 "vertex189" {1}
+[!3 & 2] 203
+[!((!3 & 2))] 9
+State: 190 "vertex190" {1}
+[!3 & 2] 204
+[!((!3 & 2))] 9
+State: 191 "vertex191" {1}
+[!3 & 2] 205
+[!((!3 & 2))] 9
+State: 192 "vertex192" {1}
+[!3 & 2] 207
+[!((!3 & 2))] 206
+State: 193 "vertex193" {1}
+[t] 208
+State: 194 "vertex194" {1}
+[!3 & 2] 209
+[!((!3 & 2))] 9
+State: 195 "vertex195" {1}
+[t] 210
+State: 196 "vertex196" {1}
+[t] 211
+State: 197 "vertex197" {1}
+[t] 212
+State: 198 "vertex198" {1}
+[!3 & 2] 213
+[!((!3 & 2))] 9
+State: 199 "vertex199" {1}
+[!3 & 2] 214
+[!((!3 & 2))] 9
+State: 200 "vertex200" {1}
+[!3 & 2] 216
+[!((!3 & 2))] 215
+State: 201 "vertex201" {1}
+[t] 217
+State: 202 "vertex202" {1}
+[!3 & 2] 218
+[!((!3 & 2))] 9
+State: 203 "vertex203" {1}
+[!3 & 2] 219
+[!((!3 & 2))] 9
+State: 204 "vertex204" {1}
+[!3 & 2] 220
+[!((!3 & 2))] 9
+State: 205 "vertex205" {1}
+[!3 & 2] 221
+[!((!3 & 2))] 9
+State: 206 "vertex206" {1}
+[!3 & 2] 222
+[!((!3 & 2))] 9
+State: 207 "vertex207" {1}
+[!3 & 2] 223
+[!((!3 & 2))] 9
+State: 208 "vertex208" {1}
+[!3 & 2] 225
+[!((!3 & 2))] 224
+State: 209 "vertex209" {1}
+[t] 226
+State: 210 "vertex210" {1}
+[t] 227
+State: 211 "vertex211" {1}
+[!3 & 2] 229
+[!((!3 & 2))] 228
+State: 212 "vertex212" {1}
+[t] 230
+State: 213 "vertex213" {1}
+[!3 & 2] 231
+[!((!3 & 2))] 9
+State: 214 "vertex214" {1}
+[!3 & 2] 232
+[!((!3 & 2))] 9
+State: 215 "vertex215" {1}
+[!3 & 2] 233
+[!((!3 & 2))] 9
+State: 216 "vertex216" {1}
+[!3 & 2] 234
+[!((!3 & 2))] 9
+State: 217 "vertex217" {1}
+[!3 & 2] 236
+[!((!3 & 2))] 235
+State: 218 "vertex218" {1}
+[t] 164
+State: 219 "vertex219" {1}
+[t] 237
+State: 220 "vertex220" {1}
+[t] 164
+State: 221 "vertex221" {1}
+[t] 238
+State: 222 "vertex222" {1}
+[!3 & 2] 239
+[!((!3 & 2))] 9
+State: 223 "vertex223" {1}
+[!3 & 2] 240
+[!((!3 & 2))] 9
+State: 224 "vertex224" {1}
+[!3 & 2] 241
+[!((!3 & 2))] 9
+State: 225 "vertex225" {1}
+[!3 & 2] 242
+[!((!3 & 2))] 9
+State: 226 "vertex226" {1}
+[t] 243
+State: 227 "vertex227" {1}
+[t] 244
+State: 228 "vertex228" {1}
+[!3 & 2] 245
+[!((!3 & 2))] 9
+State: 229 "vertex229" {1}
+[!3 & 2] 246
+[!((!3 & 2))] 9
+State: 230 "vertex230" {1}
+[!3 & 2] 248
+[!((!3 & 2))] 247
+State: 231 "vertex231" {1}
+[t] 172
+State: 232 "vertex232" {1}
+[t] 249
+State: 233 "vertex233" {1}
+[!3 & 2] 250
+[!((!3 & 2))] 9
+State: 234 "vertex234" {1}
+[!3 & 2] 251
+[!((!3 & 2))] 9
+State: 235 "vertex235" {1}
+[!3 & 2] 252
+[!((!3 & 2))] 9
+State: 236 "vertex236" {1}
+[!3 & 2] 253
+[!((!3 & 2))] 9
+State: 237 "vertex237" {229}
+[t] 254
+State: 238 "vertex238" {229}
+[t] 255
+State: 239 "vertex239" {1}
+[t] 256
+State: 240 "vertex240" {1}
+[t] 257
+State: 241 "vertex241" {1}
+[!3 & 2] 258
+[!((!3 & 2))] 9
+State: 242 "vertex242" {1}
+[!3 & 2] 259
+[!((!3 & 2))] 9
+State: 243 "vertex243" {1}
+[t] 260
+State: 244 "vertex244" {1}
+[!3 & 2] 262
+[!((!3 & 2))] 261
+State: 245 "vertex245" {1}
+[!3 & 2] 263
+[!((!3 & 2))] 9
+State: 246 "vertex246" {1}
+[!3 & 2] 264
+[!((!3 & 2))] 9
+State: 247 "vertex247" {1}
+[!3 & 2] 265
+[!((!3 & 2))] 9
+State: 248 "vertex248" {1}
+[!3 & 2] 266
+[!((!3 & 2))] 9
+State: 249 "vertex249" {231}
+[t] 267
+State: 250 "vertex250" {1}
+[t] 268
+State: 251 "vertex251" {1}
+[t] 269
+State: 252 "vertex252" {1}
+[!3 & 2] 270
+[!((!3 & 2))] 9
+State: 253 "vertex253" {1}
+[!3 & 2] 271
+[!((!3 & 2))] 9
+State: 254 "vertex254" {1}
+[t] 272
+State: 255 "vertex255" {234}
+[t] 273
+State: 256 "vertex256" {1}
+[t] 273
+State: 257 "vertex257" {231}
+[t] 274
+State: 258 "vertex258" {1}
+[t] 164
+State: 259 "vertex259" {1}
+[t] 275
+State: 260 "vertex260" {1}
+[t] 276
+State: 261 "vertex261" {1}
+[!3 & 2] 277
+[!((!3 & 2))] 9
+State: 262 "vertex262" {1}
+[!3 & 2] 278
+[!((!3 & 2))] 9
+State: 263 "vertex263" {1}
+[t] 279
+State: 264 "vertex264" {1}
+[t] 280
+State: 265 "vertex265" {1}
+[!3 & 2] 281
+[!((!3 & 2))] 9
+State: 266 "vertex266" {1}
+[!3 & 2] 282
+[!((!3 & 2))] 9
+State: 267 "vertex267" {1}
+[t] 283
+State: 268 "vertex268" {1}
+[t] 284
+State: 269 "vertex269" {229}
+[t] 285
+State: 270 "vertex270" {1}
+[t] 286
+State: 271 "vertex271" {1}
+[t] 287
+State: 272 "vertex272" {1}
+[t] 288
+State: 273 "vertex273" {1}
+[t] 289
+State: 274 "vertex274" {1}
+[t] 290
+State: 275 "vertex275" {229}
+[t] 291
+State: 276 "vertex276" {1}
+[!3 & 2] 293
+[!((!3 & 2))] 292
+State: 277 "vertex277" {1}
+[!3 & 2] 294
+[!((!3 & 2))] 9
+State: 278 "vertex278" {1}
+[!3 & 2] 295
+[!((!3 & 2))] 9
+State: 279 "vertex279" {1}
+[t] 296
+State: 280 "vertex280" {1}
+[t] 297
+State: 281 "vertex281" {1}
+[t] 298
+State: 282 "vertex282" {1}
+[t] 299
+State: 283 "vertex283" {1}
+[t] 300
+State: 284 "vertex284" {1}
+[t] 301
+State: 285 "vertex285" {231}
+[t] 284
+State: 286 "vertex286" {1}
+[t] 302
+State: 287 "vertex287" {231}
+[t] 184
+State: 288 "vertex288" {1}
+[t] 303
+State: 289 "vertex289" {1}
+[t] 304
+State: 290 "vertex290" {1}
+[t] 305
+State: 291 "vertex291" {234}
+[t] 306
+State: 292 "vertex292" {1}
+[!3 & 2] 307
+[!((!3 & 2))] 9
+State: 293 "vertex293" {1}
+[!3 & 2] 308
+[!((!3 & 2))] 9
+State: 294 "vertex294" {1}
+[t] 309
+State: 295 "vertex295" {1}
+[t] 310
+State: 296 "vertex296" {1}
+[t] 311
+State: 297 "vertex297" {233}
+[t] 296
+State: 298 "vertex298" {1}
+[t] 312
+State: 299 "vertex299" {229}
+[t] 313
+State: 300 "vertex300" {1}
+[t] 314
+State: 301 "vertex301" {1}
+[t] 315
+State: 302 "vertex302" {1}
+[t] 316
+State: 303 "vertex303" {1}
+[!3 & 2] 318
+[!((!3 & 2))] 317
+State: 304 "vertex304" {1}
+[!3 & 2] 320
+[!((!3 & 2))] 319
+State: 305 "vertex305" {1}
+[t] 321
+State: 306 "vertex306" {1}
+[t] 322
+State: 307 "vertex307" {1}
+[t] 323
+State: 308 "vertex308" {1}
+[t] 324
+State: 309 "vertex309" {1}
+[t] 325
+State: 310 "vertex310" {231}
+[t] 326
+State: 311 "vertex311" {1}
+[t] 327
+State: 312 "vertex312" {1}
+[t] 328
+State: 313 "vertex313" {234}
+[t] 329
+State: 314 "vertex314" {1}
+[!3 & 2] 331
+[!((!3 & 2))] 330
+State: 315 "vertex315" {1}
+[!3 & 2] 333
+[!((!3 & 2))] 332
+State: 316 "vertex316" {1}
+[t] 334
+State: 317 "vertex317" {1}
+[!3 & 2] 335
+[!((!3 & 2))] 9
+State: 318 "vertex318" {1}
+[!3 & 2] 336
+[!((!3 & 2))] 9
+State: 319 "vertex319" {1}
+[!3 & 2] 337
+[!((!3 & 2))] 9
+State: 320 "vertex320" {1}
+[!3 & 2] 338
+[!((!3 & 2))] 9
+State: 321 "vertex321" {1}
+[!3 & 2] 340
+[!((!3 & 2))] 339
+State: 322 "vertex322" {1}
+[t] 341
+State: 323 "vertex323" {1}
+[t] 342
+State: 324 "vertex324" {1}
+[t] 343
+State: 325 "vertex325" {1}
+[t] 344
+State: 326 "vertex326" {1}
+[t] 345
+State: 327 "vertex327" {1}
+[!3 & 2] 347
+[!((!3 & 2))] 346
+State: 328 "vertex328" {1}
+[t] 348
+State: 329 "vertex329" {1}
+[t] 349
+State: 330 "vertex330" {1}
+[!3 & 2] 350
+[!((!3 & 2))] 9
+State: 331 "vertex331" {1}
+[!3 & 2] 351
+[!((!3 & 2))] 9
+State: 332 "vertex332" {1}
+[!3 & 2] 352
+[!((!3 & 2))] 9
+State: 333 "vertex333" {1}
+[!3 & 2] 353
+[!((!3 & 2))] 9
+State: 334 "vertex334" {1}
+[!3 & 2] 355
+[!((!3 & 2))] 354
+State: 335 "vertex335" {1}
+[!3 & 2] 356
+[!((!3 & 2))] 9
+State: 336 "vertex336" {1}
+[!3 & 2] 357
+[!((!3 & 2))] 9
+State: 337 "vertex337" {1}
+[!3 & 2] 358
+[!((!3 & 2))] 9
+State: 338 "vertex338" {1}
+[!3 & 2] 359
+[!((!3 & 2))] 9
+State: 339 "vertex339" {1}
+[!3 & 2] 360
+[!((!3 & 2))] 9
+State: 340 "vertex340" {1}
+[!3 & 2] 361
+[!((!3 & 2))] 9
+State: 341 "vertex341" {1}
+[!3 & 2] 363
+[!((!3 & 2))] 362
+State: 342 "vertex342" {1}
+[!3 & 2] 364
+[!((!3 & 2))] 9
+State: 343 "vertex343" {1}
+[t] 365
+State: 344 "vertex344" {1}
+[t] 366
+State: 345 "vertex345" {1}
+[t] 367
+State: 346 "vertex346" {1}
+[!3 & 2] 368
+[!((!3 & 2))] 9
+State: 347 "vertex347" {1}
+[!3 & 2] 369
+[!((!3 & 2))] 9
+State: 348 "vertex348" {1}
+[!3 & 2] 371
+[!((!3 & 2))] 370
+State: 349 "vertex349" {1}
+[t] 372
+State: 350 "vertex350" {1}
+[!3 & 2] 373
+[!((!3 & 2))] 9
+State: 351 "vertex351" {1}
+[!3 & 2] 374
+[!((!3 & 2))] 9
+State: 352 "vertex352" {1}
+[!3 & 2] 375
+[!((!3 & 2))] 9
+State: 353 "vertex353" {1}
+[!3 & 2] 376
+[!((!3 & 2))] 9
+State: 354 "vertex354" {1}
+[!3 & 2] 377
+[!((!3 & 2))] 9
+State: 355 "vertex355" {1}
+[!3 & 2] 378
+[!((!3 & 2))] 9
+State: 356 "vertex356" {1}
+[t] 379
+State: 357 "vertex357" {1}
+[t] 380
+State: 358 "vertex358" {1}
+[t] 286
+State: 359 "vertex359" {1}
+[t] 381
+State: 360 "vertex360" {1}
+[!3 & 2] 382
+[!((!3 & 2))] 9
+State: 361 "vertex361" {1}
+[!3 & 2] 383
+[!((!3 & 2))] 9
+State: 362 "vertex362" {1}
+[!3 & 2] 384
+[!((!3 & 2))] 9
+State: 363 "vertex363" {1}
+[!3 & 2] 385
+[!((!3 & 2))] 9
+State: 364 "vertex364" {1}
+[t] 386
+State: 365 "vertex365" {1}
+[t] 387
+State: 366 "vertex366" {1}
+[!3 & 2] 389
+[!((!3 & 2))] 388
+State: 367 "vertex367" {1}
+[t] 390
+State: 368 "vertex368" {1}
+[!3 & 2] 391
+[!((!3 & 2))] 9
+State: 369 "vertex369" {1}
+[!3 & 2] 392
+[!((!3 & 2))] 9
+State: 370 "vertex370" {1}
+[!3 & 2] 393
+[!((!3 & 2))] 9
+State: 371 "vertex371" {1}
+[!3 & 2] 394
+[!((!3 & 2))] 9
+State: 372 "vertex372" {1}
+[!3 & 2] 396
+[!((!3 & 2))] 395
+State: 373 "vertex373" {1}
+[t] 298
+State: 374 "vertex374" {1}
+[t] 397
+State: 375 "vertex375" {1}
+[t] 298
+State: 376 "vertex376" {1}
+[t] 398
+State: 377 "vertex377" {1}
+[!3 & 2] 399
+[!((!3 & 2))] 9
+State: 378 "vertex378" {1}
+[!3 & 2] 400
+[!((!3 & 2))] 9
+State: 379 "vertex379" {234}
+[t] 302
+State: 380 "vertex380" {227}
+[t] 401
+State: 381 "vertex381" {231}
+[t] 267
+State: 382 "vertex382" {1}
+[t] 402
+State: 383 "vertex383" {1}
+[t] 403
+State: 384 "vertex384" {1}
+[!3 & 2] 404
+[!((!3 & 2))] 9
+State: 385 "vertex385" {1}
+[!3 & 2] 405
+[!((!3 & 2))] 9
+State: 386 "vertex386" {1}
+[t] 406
+State: 387 "vertex387" {1}
+[t] 407
+State: 388 "vertex388" {1}
+[!3 & 2] 408
+[!((!3 & 2))] 9
+State: 389 "vertex389" {1}
+[!3 & 2] 409
+[!((!3 & 2))] 9
+State: 390 "vertex390" {1}
+[!3 & 2] 411
+[!((!3 & 2))] 410
+State: 391 "vertex391" {1}
+[t] 309
+State: 392 "vertex392" {1}
+[t] 412
+State: 393 "vertex393" {1}
+[!3 & 2] 413
+[!((!3 & 2))] 9
+State: 394 "vertex394" {1}
+[!3 & 2] 414
+[!((!3 & 2))] 9
+State: 395 "vertex395" {1}
+[!3 & 2] 415
+[!((!3 & 2))] 9
+State: 396 "vertex396" {1}
+[!3 & 2] 416
+[!((!3 & 2))] 9
+State: 397 "vertex397" {229}
+[t] 417
+State: 398 "vertex398" {229}
+[t] 418
+State: 399 "vertex399" {1}
+[t] 419
+State: 400 "vertex400" {1}
+[t] 420
+State: 401 "vertex401" {232}
+[t] 421
+State: 402 "vertex402" {1}
+[t] 422
+State: 403 "vertex403" {229}
+[t] 423
+State: 404 "vertex404" {1}
+[t] 286
+State: 405 "vertex405" {1}
+[t] 424
+State: 406 "vertex406" {1}
+[t] 425
+State: 407 "vertex407" {1}
+[!3 & 2] 427
+[!((!3 & 2))] 426
+State: 408 "vertex408" {1}
+[!3 & 2] 428
+[!((!3 & 2))] 9
+State: 409 "vertex409" {1}
+[!3 & 2] 429
+[!((!3 & 2))] 9
+State: 410 "vertex410" {1}
+[!3 & 2] 430
+[!((!3 & 2))] 9
+State: 411 "vertex411" {1}
+[!3 & 2] 431
+[!((!3 & 2))] 9
+State: 412 "vertex412" {231}
+[t] 432
+State: 413 "vertex413" {1}
+[t] 433
+State: 414 "vertex414" {1}
+[t] 434
+State: 415 "vertex415" {1}
+[!3 & 2] 435
+[!((!3 & 2))] 9
+State: 416 "vertex416" {1}
+[!3 & 2] 436
+[!((!3 & 2))] 9
+State: 417 "vertex417" {1}
+[t] 437
+State: 418 "vertex418" {234}
+[t] 438
+State: 419 "vertex419" {1}
+[t] 438
+State: 420 "vertex420" {231}
+[t] 439
+State: 421 "vertex421" {1}
+[t] 440
+State: 422 "vertex422" {1}
+[t] 441
+State: 423 "vertex423" {1}
+[t] 442
+State: 424 "vertex424" {231}
+[t] 443
+State: 425 "vertex425" {1}
+[t] 444
+State: 426 "vertex426" {1}
+[!3 & 2] 445
+[!((!3 & 2))] 9
+State: 427 "vertex427" {1}
+[!3 & 2] 446
+[!((!3 & 2))] 9
+State: 428 "vertex428" {1}
+[t] 447
+State: 429 "vertex429" {1}
+[t] 448
+State: 430 "vertex430" {1}
+[!3 & 2] 449
+[!((!3 & 2))] 9
+State: 431 "vertex431" {1}
+[!3 & 2] 450
+[!((!3 & 2))] 9
+State: 432 "vertex432" {1}
+[t] 451
+State: 433 "vertex433" {1}
+[t] 452
+State: 434 "vertex434" {229}
+[t] 453
+State: 435 "vertex435" {1}
+[t] 454
+State: 436 "vertex436" {1}
+[t] 455
+State: 437 "vertex437" {1}
+[t] 456
+State: 438 "vertex438" {1}
+[t] 457
+State: 439 "vertex439" {1}
+[t] 458
+State: 440 "vertex440" {1}
+[t] 459
+State: 441 "vertex441" {1}
+[t] 460
+State: 442 "vertex442" {1}
+[t] 461
+State: 443 "vertex443" {1}
+[t] 462
+State: 444 "vertex444" {1}
+[!3 & 2] 464
+[!((!3 & 2))] 463
+State: 445 "vertex445" {1}
+[!3 & 2] 465
+[!((!3 & 2))] 9
+State: 446 "vertex446" {1}
+[!3 & 2] 466
+[!((!3 & 2))] 9
+State: 447 "vertex447" {1}
+[t] 467
+State: 448 "vertex448" {1}
+[t] 468
+State: 449 "vertex449" {1}
+[t] 469
+State: 450 "vertex450" {1}
+[t] 470
+State: 451 "vertex451" {1}
+[t] 471
+State: 452 "vertex452" {1}
+[t] 472
+State: 453 "vertex453" {231}
+[t] 452
+State: 454 "vertex454" {1}
+[t] 473
+State: 455 "vertex455" {231}
+[t] 326
+State: 456 "vertex456" {1}
+[t] 474
+State: 457 "vertex457" {1}
+[t] 475
+State: 458 "vertex458" {1}
+[t] 476
+State: 459 "vertex459" {1}
+[!3 & 2] 478
+[!((!3 & 2))] 477
+State: 460 "vertex460" {1}
+[!3 & 2] 480
+[!((!3 & 2))] 479
+State: 461 "vertex461" {1}
+[t] 481
+State: 462 "vertex462" {1}
+[t] 482
+State: 463 "vertex463" {1}
+[!3 & 2] 483
+[!((!3 & 2))] 9
+State: 464 "vertex464" {1}
+[!3 & 2] 484
+[!((!3 & 2))] 9
+State: 465 "vertex465" {1}
+[t] 485
+State: 466 "vertex466" {1}
+[t] 486
+State: 467 "vertex467" {1}
+[t] 487
+State: 468 "vertex468" {233}
+[t] 467
+State: 469 "vertex469" {1}
+[t] 488
+State: 470 "vertex470" {229}
+[t] 489
+State: 471 "vertex471" {1}
+[t] 490
+State: 472 "vertex472" {1}
+[t] 491
+State: 473 "vertex473" {1}
+[t] 492
+State: 474 "vertex474" {1}
+[!3 & 2] 494
+[!((!3 & 2))] 493
+State: 475 "vertex475" {1}
+[!3 & 2] 496
+[!((!3 & 2))] 495
+State: 476 "vertex476" {1}
+[t] 497
+State: 477 "vertex477" {1}
+[!3 & 2] 498
+[!((!3 & 2))] 9
+State: 478 "vertex478" {1}
+[!3 & 2] 499
+[!((!3 & 2))] 9
+State: 479 "vertex479" {1}
+[!3 & 2] 500
+[!((!3 & 2))] 9
+State: 480 "vertex480" {1}
+[!3 & 2] 501
+[!((!3 & 2))] 9
+State: 481 "vertex481" {1}
+[!3 & 2] 503
+[!((!3 & 2))] 502
+State: 482 "vertex482" {1}
+[t] 504
+State: 483 "vertex483" {1}
+[t] 505
+State: 484 "vertex484" {1}
+[t] 506
+State: 485 "vertex485" {1}
+[t] 507
+State: 486 "vertex486" {231}
+[t] 508
+State: 487 "vertex487" {1}
+[t] 509
+State: 488 "vertex488" {1}
+[t] 510
+State: 489 "vertex489" {234}
+[t] 511
+State: 490 "vertex490" {1}
+[!3 & 2] 513
+[!((!3 & 2))] 512
+State: 491 "vertex491" {1}
+[!3 & 2] 515
+[!((!3 & 2))] 514
+State: 492 "vertex492" {1}
+[t] 516
+State: 493 "vertex493" {1}
+[!3 & 2] 517
+[!((!3 & 2))] 9
+State: 494 "vertex494" {1}
+[!3 & 2] 518
+[!((!3 & 2))] 9
+State: 495 "vertex495" {1}
+[!3 & 2] 519
+[!((!3 & 2))] 9
+State: 496 "vertex496" {1}
+[!3 & 2] 520
+[!((!3 & 2))] 9
+State: 497 "vertex497" {1}
+[!3 & 2] 522
+[!((!3 & 2))] 521
+State: 498 "vertex498" {1}
+[!3 & 2] 523
+[!((!3 & 2))] 9
+State: 499 "vertex499" {1}
+[!3 & 2] 524
+[!((!3 & 2))] 9
+State: 500 "vertex500" {1}
+[!3 & 2] 525
+[!((!3 & 2))] 9
+State: 501 "vertex501" {1}
+[!3 & 2] 526
+[!((!3 & 2))] 9
+State: 502 "vertex502" {1}
+[!3 & 2] 527
+[!((!3 & 2))] 9
+State: 503 "vertex503" {1}
+[!3 & 2] 528
+[!((!3 & 2))] 9
+State: 504 "vertex504" {1}
+[!3 & 2] 530
+[!((!3 & 2))] 529
+State: 505 "vertex505" {1}
+[t] 531
+State: 506 "vertex506" {1}
+[t] 532
+State: 507 "vertex507" {1}
+[t] 533
+State: 508 "vertex508" {1}
+[t] 534
+State: 509 "vertex509" {1}
+[!3 & 2] 536
+[!((!3 & 2))] 535
+State: 510 "vertex510" {1}
+[t] 537
+State: 511 "vertex511" {1}
+[t] 538
+State: 512 "vertex512" {1}
+[!3 & 2] 539
+[!((!3 & 2))] 9
+State: 513 "vertex513" {1}
+[!3 & 2] 540
+[!((!3 & 2))] 9
+State: 514 "vertex514" {1}
+[!3 & 2] 541
+[!((!3 & 2))] 9
+State: 515 "vertex515" {1}
+[!3 & 2] 542
+[!((!3 & 2))] 9
+State: 516 "vertex516" {1}
+[!3 & 2] 544
+[!((!3 & 2))] 543
+State: 517 "vertex517" {1}
+[!3 & 2] 545
+[!((!3 & 2))] 9
+State: 518 "vertex518" {1}
+[!3 & 2] 546
+[!((!3 & 2))] 9
+State: 519 "vertex519" {1}
+[!3 & 2] 547
+[!((!3 & 2))] 9
+State: 520 "vertex520" {1}
+[!3 & 2] 548
+[!((!3 & 2))] 9
+State: 521 "vertex521" {1}
+[!3 & 2] 549
+[!((!3 & 2))] 9
+State: 522 "vertex522" {1}
+[!3 & 2] 550
+[!((!3 & 2))] 9
+State: 523 "vertex523" {1}
+[t] 418
+State: 524 "vertex524" {1}
+[t] 551
+State: 525 "vertex525" {1}
+[t] 552
+State: 526 "vertex526" {1}
+[t] 553
+State: 527 "vertex527" {1}
+[!3 & 2] 554
+[!((!3 & 2))] 9
+State: 528 "vertex528" {1}
+[!3 & 2] 555
+[!((!3 & 2))] 9
+State: 529 "vertex529" {1}
+[!3 & 2] 556
+[!((!3 & 2))] 9
+State: 530 "vertex530" {1}
+[!3 & 2] 557
+[!((!3 & 2))] 9
+State: 531 "vertex531" {1}
+[!3 & 2] 558
+[!((!3 & 2))] 9
+State: 532 "vertex532" {1}
+[t] 559
+State: 533 "vertex533" {1}
+[t] 560
+State: 534 "vertex534" {1}
+[t] 561
+State: 535 "vertex535" {1}
+[!3 & 2] 562
+[!((!3 & 2))] 9
+State: 536 "vertex536" {1}
+[!3 & 2] 563
+[!((!3 & 2))] 9
+State: 537 "vertex537" {1}
+[!3 & 2] 565
+[!((!3 & 2))] 564
+State: 538 "vertex538" {1}
+[t] 566
+State: 539 "vertex539" {1}
+[!3 & 2] 567
+[!((!3 & 2))] 9
+State: 540 "vertex540" {1}
+[!3 & 2] 568
+[!((!3 & 2))] 9
+State: 541 "vertex541" {1}
+[!3 & 2] 569
+[!((!3 & 2))] 9
+State: 542 "vertex542" {1}
+[!3 & 2] 570
+[!((!3 & 2))] 9
+State: 543 "vertex543" {1}
+[!3 & 2] 571
+[!((!3 & 2))] 9
+State: 544 "vertex544" {1}
+[!3 & 2] 572
+[!((!3 & 2))] 9
+State: 545 "vertex545" {1}
+[t] 573
+State: 546 "vertex546" {1}
+[t] 574
+State: 547 "vertex547" {1}
+[t] 454
+State: 548 "vertex548" {1}
+[t] 575
+State: 549 "vertex549" {1}
+[!3 & 2] 576
+[!((!3 & 2))] 9
+State: 550 "vertex550" {1}
+[!3 & 2] 577
+[!((!3 & 2))] 9
+State: 551 "vertex551" {229}
+[t] 417
+State: 552 "vertex552" {1}
+[t] 578
+State: 553 "vertex553" {229}
+[t] 579
+State: 554 "vertex554" {1}
+[t] 418
+State: 555 "vertex555" {1}
+[t] 580
+State: 556 "vertex556" {1}
+[!3 & 2] 581
+[!((!3 & 2))] 9
+State: 557 "vertex557" {1}
+[!3 & 2] 582
+[!((!3 & 2))] 9
+State: 558 "vertex558" {1}
+[t] 583
+State: 559 "vertex559" {1}
+[t] 584
+State: 560 "vertex560" {1}
+[!3 & 2] 586
+[!((!3 & 2))] 585
+State: 561 "vertex561" {1}
+[t] 587
+State: 562 "vertex562" {1}
+[!3 & 2] 588
+[!((!3 & 2))] 9
+State: 563 "vertex563" {1}
+[!3 & 2] 589
+[!((!3 & 2))] 9
+State: 564 "vertex564" {1}
+[!3 & 2] 590
+[!((!3 & 2))] 9
+State: 565 "vertex565" {1}
+[!3 & 2] 591
+[!((!3 & 2))] 9
+State: 566 "vertex566" {1}
+[!3 & 2] 593
+[!((!3 & 2))] 592
+State: 567 "vertex567" {1}
+[t] 469
+State: 568 "vertex568" {1}
+[t] 594
+State: 569 "vertex569" {1}
+[t] 469
+State: 570 "vertex570" {1}
+[t] 595
+State: 571 "vertex571" {1}
+[!3 & 2] 596
+[!((!3 & 2))] 9
+State: 572 "vertex572" {1}
+[!3 & 2] 597
+[!((!3 & 2))] 9
+State: 573 "vertex573" {234}
+[t] 473
+State: 574 "vertex574" {227}
+[t] 598
+State: 575 "vertex575" {231}
+[t] 432
+State: 576 "vertex576" {1}
+[t] 599
+State: 577 "vertex577" {1}
+[t] 600
+State: 578 "vertex578" {1}
+[t] 601
+State: 579 "vertex579" {231}
+[t] 578
+State: 580 "vertex580" {227}
+[t] 602
+State: 581 "vertex581" {1}
+[t] 298
+State: 582 "vertex582" {1}
+[t] 603
+State: 583 "vertex583" {1}
+[t] 604
+State: 584 "vertex584" {1}
+[t] 605
+State: 585 "vertex585" {1}
+[!3 & 2] 606
+[!((!3 & 2))] 9
+State: 586 "vertex586" {1}
+[!3 & 2] 607
+[!((!3 & 2))] 9
+State: 587 "vertex587" {1}
+[!3 & 2] 609
+[!((!3 & 2))] 608
+State: 588 "vertex588" {1}
+[t] 485
+State: 589 "vertex589" {1}
+[t] 610
+State: 590 "vertex590" {1}
+[!3 & 2] 611
+[!((!3 & 2))] 9
+State: 591 "vertex591" {1}
+[!3 & 2] 612
+[!((!3 & 2))] 9
+State: 592 "vertex592" {1}
+[!3 & 2] 613
+[!((!3 & 2))] 9
+State: 593 "vertex593" {1}
+[!3 & 2] 614
+[!((!3 & 2))] 9
+State: 594 "vertex594" {229}
+[t] 615
+State: 595 "vertex595" {229}
+[t] 616
+State: 596 "vertex596" {1}
+[t] 617
+State: 597 "vertex597" {1}
+[t] 618
+State: 598 "vertex598" {232}
+[t] 619
+State: 599 "vertex599" {1}
+[t] 620
+State: 600 "vertex600" {229}
+[t] 621
+State: 601 "vertex601" {1}
+[t] 622
+State: 602 "vertex602" {232}
+[t] 623
+State: 603 "vertex603" {229}
+[t] 624
+State: 604 "vertex604" {1}
+[t] 625
+State: 605 "vertex605" {1}
+[!3 & 2] 627
+[!((!3 & 2))] 626
+State: 606 "vertex606" {1}
+[!3 & 2] 628
+[!((!3 & 2))] 9
+State: 607 "vertex607" {1}
+[!3 & 2] 629
+[!((!3 & 2))] 9
+State: 608 "vertex608" {1}
+[!3 & 2] 630
+[!((!3 & 2))] 9
+State: 609 "vertex609" {1}
+[!3 & 2] 631
+[!((!3 & 2))] 9
+State: 610 "vertex610" {231}
+[t] 632
+State: 611 "vertex611" {1}
+[t] 633
+State: 612 "vertex612" {1}
+[t] 634
+State: 613 "vertex613" {1}
+[!3 & 2] 635
+[!((!3 & 2))] 9
+State: 614 "vertex614" {1}
+[!3 & 2] 636
+[!((!3 & 2))] 9
+State: 615 "vertex615" {1}
+[t] 637
+State: 616 "vertex616" {234}
+[t] 638
+State: 617 "vertex617" {1}
+[t] 638
+State: 618 "vertex618" {231}
+[t] 639
+State: 619 "vertex619" {1}
+[t] 640
+State: 620 "vertex620" {1}
+[t] 641
+State: 621 "vertex621" {1}
+[t] 642
+State: 622 "vertex622" {1}
+[!3 & 2] 644
+[!((!3 & 2))] 643
+State: 623 "vertex623" {1}
+[t] 645
+State: 624 "vertex624" {234}
+[t] 646
+State: 625 "vertex625" {1}
+[t] 647
+State: 626 "vertex626" {1}
+[!3 & 2] 648
+[!((!3 & 2))] 9
+State: 627 "vertex627" {1}
+[!3 & 2] 649
+[!((!3 & 2))] 9
+State: 628 "vertex628" {1}
+[t] 650
+State: 629 "vertex629" {1}
+[t] 651
+State: 630 "vertex630" {1}
+[!3 & 2] 652
+[!((!3 & 2))] 9
+State: 631 "vertex631" {1}
+[!3 & 2] 653
+[!((!3 & 2))] 9
+State: 632 "vertex632" {1}
+[t] 654
+State: 633 "vertex633" {1}
+[t] 655
+State: 634 "vertex634" {229}
+[t] 656
+State: 635 "vertex635" {1}
+[t] 657
+State: 636 "vertex636" {1}
+[t] 658
+State: 637 "vertex637" {1}
+[t] 659
+State: 638 "vertex638" {1}
+[t] 660
+State: 639 "vertex639" {1}
+[t] 661
+State: 640 "vertex640" {1}
+[t] 662
+State: 641 "vertex641" {1}
+[t] 663
+State: 642 "vertex642" {1}
+[t] 664
+State: 643 "vertex643" {1}
+[!3 & 2] 665
+[!((!3 & 2))] 9
+State: 644 "vertex644" {1}
+[!3 & 2] 666
+[!((!3 & 2))] 9
+State: 645 "vertex645" {1}
+[t] 667
+State: 646 "vertex646" {1}
+[t] 668
+State: 647 "vertex647" {1}
+[!3 & 2] 669
+[!((!3 & 2))] 9
+State: 648 "vertex648" {1}
+[!3 & 2] 670
+[!((!3 & 2))] 9
+State: 649 "vertex649" {1}
+[!3 & 2] 671
+[!((!3 & 2))] 9
+State: 650 "vertex650" {1}
+[t] 672
+State: 651 "vertex651" {1}
+[t] 673
+State: 652 "vertex652" {1}
+[t] 674
+State: 653 "vertex653" {1}
+[t] 675
+State: 654 "vertex654" {1}
+[t] 676
+State: 655 "vertex655" {1}
+[t] 677
+State: 656 "vertex656" {231}
+[t] 655
+State: 657 "vertex657" {1}
+[t] 678
+State: 658 "vertex658" {231}
+[t] 508
+State: 659 "vertex659" {1}
+[t] 679
+State: 660 "vertex660" {1}
+[t] 680
+State: 661 "vertex661" {1}
+[t] 681
+State: 662 "vertex662" {1}
+[!3 & 2] 683
+[!((!3 & 2))] 682
+State: 663 "vertex663" {1}
+[!3 & 2] 685
+[!((!3 & 2))] 684
+State: 664 "vertex664" {1}
+[t] 686
+State: 665 "vertex665" {1}
+[!3 & 2] 687
+[!((!3 & 2))] 9
+State: 666 "vertex666" {1}
+[!3 & 2] 688
+[!((!3 & 2))] 9
+State: 667 "vertex667" {1}
+[!3 & 2] 690
+[!((!3 & 2))] 689
+State: 668 "vertex668" {1}
+[t] 691
+State: 669 "vertex669" {1}
+[!3 & 2] 693
+[!((!3 & 2))] 692
+State: 670 "vertex670" {1}
+[t] 694
+State: 671 "vertex671" {1}
+[t] 695
+State: 672 "vertex672" {1}
+[t] 696
+State: 673 "vertex673" {233}
+[t] 672
+State: 674 "vertex674" {1}
+[t] 697
+State: 675 "vertex675" {229}
+[t] 698
+State: 676 "vertex676" {1}
+[t] 699
+State: 677 "vertex677" {1}
+[t] 700
+State: 678 "vertex678" {1}
+[t] 701
+State: 679 "vertex679" {1}
+[!3 & 2] 703
+[!((!3 & 2))] 702
+State: 680 "vertex680" {1}
+[!3 & 2] 705
+[!((!3 & 2))] 704
+State: 681 "vertex681" {1}
+[t] 706
+State: 682 "vertex682" {1}
+[!3 & 2] 707
+[!((!3 & 2))] 9
+State: 683 "vertex683" {1}
+[!3 & 2] 708
+[!((!3 & 2))] 9
+State: 684 "vertex684" {1}
+[!3 & 2] 709
+[!((!3 & 2))] 9
+State: 685 "vertex685" {1}
+[!3 & 2] 710
+[!((!3 & 2))] 9
+State: 686 "vertex686" {1}
+[!3 & 2] 712
+[!((!3 & 2))] 711
+State: 687 "vertex687" {1}
+[t] 599
+State: 688 "vertex688" {1}
+[t] 713
+State: 689 "vertex689" {1}
+[!3 & 2] 714
+[!((!3 & 2))] 9
+State: 690 "vertex690" {1}
+[!3 & 2] 715
+[!((!3 & 2))] 9
+State: 691 "vertex691" {1}
+[!3 & 2] 717
+[!((!3 & 2))] 716
+State: 692 "vertex692" {1}
+[t] 718
+State: 693 "vertex693" {1}
+[t] 719
+State: 694 "vertex694" {1}
+[t] 720
+State: 695 "vertex695" {231}
+[t] 721
+State: 696 "vertex696" {1}
+[t] 722
+State: 697 "vertex697" {1}
+[t] 723
+State: 698 "vertex698" {234}
+[t] 724
+State: 699 "vertex699" {1}
+[!3 & 2] 726
+[!((!3 & 2))] 725
+State: 700 "vertex700" {1}
+[!3 & 2] 728
+[!((!3 & 2))] 727
+State: 701 "vertex701" {1}
+[t] 729
+State: 702 "vertex702" {1}
+[!3 & 2] 730
+[!((!3 & 2))] 9
+State: 703 "vertex703" {1}
+[!3 & 2] 731
+[!((!3 & 2))] 9
+State: 704 "vertex704" {1}
+[!3 & 2] 732
+[!((!3 & 2))] 9
+State: 705 "vertex705" {1}
+[!3 & 2] 733
+[!((!3 & 2))] 9
+State: 706 "vertex706" {1}
+[!3 & 2] 735
+[!((!3 & 2))] 734
+State: 707 "vertex707" {1}
+[!3 & 2] 736
+[!((!3 & 2))] 9
+State: 708 "vertex708" {1}
+[!3 & 2] 737
+[!((!3 & 2))] 9
+State: 709 "vertex709" {1}
+[!3 & 2] 738
+[!((!3 & 2))] 9
+State: 710 "vertex710" {1}
+[!3 & 2] 739
+[!((!3 & 2))] 9
+State: 711 "vertex711" {1}
+[!3 & 2] 740
+[!((!3 & 2))] 9
+State: 712 "vertex712" {1}
+[!3 & 2] 741
+[!((!3 & 2))] 9
+State: 713 "vertex713" {229}
+[t] 573
+State: 714 "vertex714" {1}
+[!3 & 2] 742
+[!((!3 & 2))] 9
+State: 715 "vertex715" {1}
+[!3 & 2] 743
+[!((!3 & 2))] 9
+State: 716 "vertex716" {1}
+[!3 & 2] 744
+[!((!3 & 2))] 9
+State: 717 "vertex717" {1}
+[!3 & 2] 745
+[!((!3 & 2))] 9
+State: 718 "vertex718" {1}
+[t] 746
+State: 719 "vertex719" {1}
+[t] 747
+State: 720 "vertex720" {1}
+[t] 748
+State: 721 "vertex721" {1}
+[t] 749
+State: 722 "vertex722" {1}
+[!3 & 2] 751
+[!((!3 & 2))] 750
+State: 723 "vertex723" {1}
+[t] 752
+State: 724 "vertex724" {1}
+[t] 753
+State: 725 "vertex725" {1}
+[!3 & 2] 754
+[!((!3 & 2))] 9
+State: 726 "vertex726" {1}
+[!3 & 2] 755
+[!((!3 & 2))] 9
+State: 727 "vertex727" {1}
+[!3 & 2] 756
+[!((!3 & 2))] 9
+State: 728 "vertex728" {1}
+[!3 & 2] 757
+[!((!3 & 2))] 9
+State: 729 "vertex729" {1}
+[!3 & 2] 759
+[!((!3 & 2))] 758
+State: 730 "vertex730" {1}
+[!3 & 2] 760
+[!((!3 & 2))] 9
+State: 731 "vertex731" {1}
+[!3 & 2] 761
+[!((!3 & 2))] 9
+State: 732 "vertex732" {1}
+[!3 & 2] 762
+[!((!3 & 2))] 9
+State: 733 "vertex733" {1}
+[!3 & 2] 763
+[!((!3 & 2))] 9
+State: 734 "vertex734" {1}
+[!3 & 2] 764
+[!((!3 & 2))] 9
+State: 735 "vertex735" {1}
+[!3 & 2] 765
+[!((!3 & 2))] 9
+State: 736 "vertex736" {1}
+[t] 616
+State: 737 "vertex737" {1}
+[t] 766
+State: 738 "vertex738" {1}
+[t] 767
+State: 739 "vertex739" {1}
+[t] 768
+State: 740 "vertex740" {1}
+[!3 & 2] 769
+[!((!3 & 2))] 9
+State: 741 "vertex741" {1}
+[!3 & 2] 770
+[!((!3 & 2))] 9
+State: 742 "vertex742" {1}
+[t] 573
+State: 743 "vertex743" {1}
+[t] 771
+State: 744 "vertex744" {1}
+[!3 & 2] 772
+[!((!3 & 2))] 9
+State: 745 "vertex745" {1}
+[!3 & 2] 773
+[!((!3 & 2))] 9
+State: 746 "vertex746" {234}
+[t] 774
+State: 747 "vertex747" {234}
+[t] 775
+State: 748 "vertex748" {1}
+[t] 776
+State: 749 "vertex749" {1}
+[t] 777
+State: 750 "vertex750" {1}
+[!3 & 2] 778
+[!((!3 & 2))] 9
+State: 751 "vertex751" {1}
+[!3 & 2] 779
+[!((!3 & 2))] 9
+State: 752 "vertex752" {1}
+[!3 & 2] 781
+[!((!3 & 2))] 780
+State: 753 "vertex753" {1}
+[t] 782
+State: 754 "vertex754" {1}
+[!3 & 2] 783
+[!((!3 & 2))] 9
+State: 755 "vertex755" {1}
+[!3 & 2] 784
+[!((!3 & 2))] 9
+State: 756 "vertex756" {1}
+[!3 & 2] 785
+[!((!3 & 2))] 9
+State: 757 "vertex757" {1}
+[!3 & 2] 786
+[!((!3 & 2))] 9
+State: 758 "vertex758" {1}
+[!3 & 2] 787
+[!((!3 & 2))] 9
+State: 759 "vertex759" {1}
+[!3 & 2] 788
+[!((!3 & 2))] 9
+State: 760 "vertex760" {1}
+[t] 789
+State: 761 "vertex761" {1}
+[t] 790
+State: 762 "vertex762" {1}
+[t] 657
+State: 763 "vertex763" {1}
+[t] 791
+State: 764 "vertex764" {1}
+[!3 & 2] 792
+[!((!3 & 2))] 9
+State: 765 "vertex765" {1}
+[!3 & 2] 793
+[!((!3 & 2))] 9
+State: 766 "vertex766" {229}
+[t] 615
+State: 767 "vertex767" {1}
+[t] 794
+State: 768 "vertex768" {229}
+[t] 795
+State: 769 "vertex769" {1}
+[t] 616
+State: 770 "vertex770" {1}
+[t] 796
+State: 771 "vertex771" {229}
+[t] 621
+State: 772 "vertex772" {1}
+[t] 454
+State: 773 "vertex773" {1}
+[t] 797
+State: 774 "vertex774" {1}
+[t] 798
+State: 775 "vertex775" {1}
+[t] 799
+State: 776 "vertex776" {1}
+[!3 & 2] 800
+[!((!3 & 2))] 9
+State: 777 "vertex777" {1}
+[t] 801
+State: 778 "vertex778" {1}
+[!3 & 2] 802
+[!((!3 & 2))] 9
+State: 779 "vertex779" {1}
+[!3 & 2] 803
+[!((!3 & 2))] 9
+State: 780 "vertex780" {1}
+[!3 & 2] 804
+[!((!3 & 2))] 9
+State: 781 "vertex781" {1}
+[!3 & 2] 805
+[!((!3 & 2))] 9
+State: 782 "vertex782" {1}
+[!3 & 2] 807
+[!((!3 & 2))] 806
+State: 783 "vertex783" {1}
+[t] 674
+State: 784 "vertex784" {1}
+[t] 808
+State: 785 "vertex785" {1}
+[t] 674
+State: 786 "vertex786" {1}
+[t] 809
+State: 787 "vertex787" {1}
+[!3 & 2] 810
+[!((!3 & 2))] 9
+State: 788 "vertex788" {1}
+[!3 & 2] 811
+[!((!3 & 2))] 9
+State: 789 "vertex789" {234}
+[t] 678
+State: 790 "vertex790" {227}
+[t] 812
+State: 791 "vertex791" {231}
+[t] 632
+State: 792 "vertex792" {1}
+[t] 813
+State: 793 "vertex793" {1}
+[t] 814
+State: 794 "vertex794" {1}
+[t] 815
+State: 795 "vertex795" {231}
+[t] 794
+State: 796 "vertex796" {227}
+[t] 816
+State: 797 "vertex797" {231}
+[t] 817
+State: 798 "vertex798" {1}
+[t] 818
+State: 799 "vertex799" {1}
+[t] 819
+State: 800 "vertex800" {1}
+[!3 & 2] 821
+[!((!3 & 2))] 820
+State: 801 "vertex801" {1}
+[!3 & 2] 822
+[!((!3 & 2))] 9
+State: 802 "vertex802" {1}
+[t] 694
+State: 803 "vertex803" {1}
+[t] 823
+State: 804 "vertex804" {1}
+[!3 & 2] 824
+[!((!3 & 2))] 9
+State: 805 "vertex805" {1}
+[!3 & 2] 825
+[!((!3 & 2))] 9
+State: 806 "vertex806" {1}
+[!3 & 2] 826
+[!((!3 & 2))] 9
+State: 807 "vertex807" {1}
+[!3 & 2] 827
+[!((!3 & 2))] 9
+State: 808 "vertex808" {229}
+[t] 828
+State: 809 "vertex809" {229}
+[t] 829
+State: 810 "vertex810" {1}
+[t] 830
+State: 811 "vertex811" {1}
+[t] 831
+State: 812 "vertex812" {232}
+[t] 832
+State: 813 "vertex813" {1}
+[t] 833
+State: 814 "vertex814" {229}
+[t] 834
+State: 815 "vertex815" {1}
+[t] 835
+State: 816 "vertex816" {232}
+[t] 836
+State: 817 "vertex817" {1}
+[t] 837
+State: 818 "vertex818" {1}
+[t] 838
+State: 819 "vertex819" {1}
+[t] 839
+State: 820 "vertex820" {1}
+[!3 & 2] 841
+[!((!3 & 2))] 840
+State: 821 "vertex821" {1}
+[!3 & 2] 843
+[!((!3 & 2))] 842
+State: 822 "vertex822" {1}
+[!3 & 2] 845
+[!((!3 & 2))] 844
+State: 823 "vertex823" {231}
+[t] 846
+State: 824 "vertex824" {1}
+[t] 847
+State: 825 "vertex825" {1}
+[t] 848
+State: 826 "vertex826" {1}
+[!3 & 2] 849
+[!((!3 & 2))] 9
+State: 827 "vertex827" {1}
+[!3 & 2] 850
+[!((!3 & 2))] 9
+State: 828 "vertex828" {1}
+[t] 851
+State: 829 "vertex829" {234}
+[t] 852
+State: 830 "vertex830" {1}
+[t] 852
+State: 831 "vertex831" {231}
+[t] 853
+State: 832 "vertex832" {1}
+[t] 854
+State: 833 "vertex833" {1}
+[t] 855
+State: 834 "vertex834" {1}
+[t] 856
+State: 835 "vertex835" {1}
+[!3 & 2] 858
+[!((!3 & 2))] 857
+State: 836 "vertex836" {1}
+[t] 859
+State: 837 "vertex837" {1}
+[t] 860
+State: 838 "vertex838" {1}
+[!3 & 2] 862
+[!((!3 & 2))] 861
+State: 839 "vertex839" {1}
+[!3 & 2] 864
+[!((!3 & 2))] 863
+State: 840 "vertex840" {1}
+[t] 865
+State: 841 "vertex841" {1}
+[t] 866
+State: 842 "vertex842" {1}
+[t] 867
+State: 843 "vertex843" {1}
+[t] 868
+State: 844 "vertex844" {1}
+[!3 & 2] 870
+[!((!3 & 2))] 869
+State: 845 "vertex845" {1}
+[!3 & 2] 872
+[!((!3 & 2))] 871
+State: 846 "vertex846" {1}
+[t] 873
+State: 847 "vertex847" {1}
+[t] 874
+State: 848 "vertex848" {229}
+[t] 875
+State: 849 "vertex849" {1}
+[t] 876
+State: 850 "vertex850" {1}
+[t] 877
+State: 851 "vertex851" {1}
+[t] 878
+State: 852 "vertex852" {1}
+[t] 879
+State: 853 "vertex853" {1}
+[t] 880
+State: 854 "vertex854" {1}
+[t] 881
+State: 855 "vertex855" {1}
+[t] 882
+State: 856 "vertex856" {1}
+[t] 883
+State: 857 "vertex857" {1}
+[!3 & 2] 884
+[!((!3 & 2))] 9
+State: 858 "vertex858" {1}
+[!3 & 2] 885
+[!((!3 & 2))] 9
+State: 859 "vertex859" {1}
+[t] 886
+State: 860 "vertex860" {1}
+[t] 887
+State: 861 "vertex861" {1}
+[!3 & 2] 888
+[!((!3 & 2))] 9
+State: 862 "vertex862" {1}
+[!3 & 2] 889
+[!((!3 & 2))] 9
+State: 863 "vertex863" {1}
+[!3 & 2] 890
+[!((!3 & 2))] 9
+State: 864 "vertex864" {1}
+[!3 & 2] 891
+[!((!3 & 2))] 9
+State: 865 "vertex865" {1}
+[t] 892
+State: 866 "vertex866" {1}
+[t] 893
+State: 867 "vertex867" {1}
+[t] 894
+State: 868 "vertex868" {1}
+[t] 895
+State: 869 "vertex869" {234}
+[t] 896
+State: 870 "vertex870" {1}
+[t] 897
+State: 871 "vertex871" {1}
+[t] 898
+State: 872 "vertex872" {1}
+[t] 899
+State: 873 "vertex873" {1}
+[t] 900
+State: 874 "vertex874" {1}
+[t] 901
+State: 875 "vertex875" {231}
+[t] 874
+State: 876 "vertex876" {1}
+[t] 902
+State: 877 "vertex877" {231}
+[t] 721
+State: 878 "vertex878" {1}
+[t] 903
+State: 879 "vertex879" {1}
+[t] 904
+State: 880 "vertex880" {1}
+[t] 905
+State: 881 "vertex881" {1}
+[!3 & 2] 907
+[!((!3 & 2))] 906
+State: 882 "vertex882" {1}
+[!3 & 2] 909
+[!((!3 & 2))] 908
+State: 883 "vertex883" {1}
+[t] 910
+State: 884 "vertex884" {1}
+[!3 & 2] 911
+[!((!3 & 2))] 9
+State: 885 "vertex885" {1}
+[!3 & 2] 912
+[!((!3 & 2))] 9
+State: 886 "vertex886" {1}
+[!3 & 2] 914
+[!((!3 & 2))] 913
+State: 887 "vertex887" {1}
+[!3 & 2] 916
+[!((!3 & 2))] 915
+State: 888 "vertex888" {1}
+[t] 917
+State: 889 "vertex889" {1}
+[t] 918
+State: 890 "vertex890" {1}
+[!3 & 2] 919
+[!((!3 & 2))] 9
+State: 891 "vertex891" {1}
+[!3 & 2] 920
+[!((!3 & 2))] 9
+State: 892 "vertex892" {232}
+[t] 921
+State: 893 "vertex893" {232}
+[t] 922
+State: 894 "vertex894" {232}
+[t] 923
+State: 895 "vertex895" {232}
+[t] 924
+State: 896 "vertex896" {231}
+[t] 925
+State: 897 "vertex897" {229}
+[t] 926
+State: 898 "vertex898" {229}
+[t] 927
+State: 899 "vertex899" {229}
+[t] 928
+State: 900 "vertex900" {1}
+[t] 929
+State: 901 "vertex901" {1}
+[t] 930
+State: 902 "vertex902" {1}
+[t] 931
+State: 903 "vertex903" {1}
+[!3 & 2] 933
+[!((!3 & 2))] 932
+State: 904 "vertex904" {1}
+[!3 & 2] 935
+[!((!3 & 2))] 934
+State: 905 "vertex905" {1}
+[t] 936
+State: 906 "vertex906" {1}
+[!3 & 2] 937
+[!((!3 & 2))] 9
+State: 907 "vertex907" {1}
+[!3 & 2] 938
+[!((!3 & 2))] 9
+State: 908 "vertex908" {1}
+[!3 & 2] 939
+[!((!3 & 2))] 9
+State: 909 "vertex909" {1}
+[!3 & 2] 940
+[!((!3 & 2))] 9
+State: 910 "vertex910" {1}
+[!3 & 2] 942
+[!((!3 & 2))] 941
+State: 911 "vertex911" {1}
+[t] 813
+State: 912 "vertex912" {1}
+[t] 943
+State: 913 "vertex913" {1}
+[!3 & 2] 944
+[!((!3 & 2))] 9
+State: 914 "vertex914" {1}
+[!3 & 2] 945
+[!((!3 & 2))] 9
+State: 915 "vertex915" {1}
+[!3 & 2] 946
+[!((!3 & 2))] 9
+State: 916 "vertex916" {1}
+[!3 & 2] 947
+[!((!3 & 2))] 9
+State: 917 "vertex917" {1}
+[t] 948
+State: 918 "vertex918" {231}
+[t] 949
+State: 919 "vertex919" {1}
+[t] 950
+State: 920 "vertex920" {1}
+[t] 951
+State: 921 "vertex921" {1}
+[t] 952
+State: 922 "vertex922" {1}
+[t] 953
+State: 923 "vertex923" {233}
+[t] 954
+State: 924 "vertex924" {233}
+[t] 955
+State: 925 "vertex925" {232}
+[t] 956
+State: 926 "vertex926" {230}
+[t] 957
+State: 927 "vertex927" {230}
+[t] 958
+State: 928 "vertex928" {230}
+[t] 959
+State: 929 "vertex929" {1}
+[!3 & 2] 960
+[!((!3 & 2))] 9
+State: 930 "vertex930" {1}
+[!3 & 2] 961
+[!((!3 & 2))] 9
+State: 931 "vertex931" {1}
+[t] 962
+State: 932 "vertex932" {1}
+[!3 & 2] 963
+[!((!3 & 2))] 9
+State: 933 "vertex933" {1}
+[!3 & 2] 964
+[!((!3 & 2))] 9
+State: 934 "vertex934" {1}
+[!3 & 2] 965
+[!((!3 & 2))] 9
+State: 935 "vertex935" {1}
+[!3 & 2] 966
+[!((!3 & 2))] 9
+State: 936 "vertex936" {1}
+[!3 & 2] 968
+[!((!3 & 2))] 967
+State: 937 "vertex937" {1}
+[!3 & 2] 969
+[!((!3 & 2))] 9
+State: 938 "vertex938" {1}
+[!3 & 2] 970
+[!((!3 & 2))] 9
+State: 939 "vertex939" {1}
+[!3 & 2] 971
+[!((!3 & 2))] 9
+State: 940 "vertex940" {1}
+[!3 & 2] 972
+[!((!3 & 2))] 9
+State: 941 "vertex941" {1}
+[!3 & 2] 973
+[!((!3 & 2))] 9
+State: 942 "vertex942" {1}
+[!3 & 2] 974
+[!((!3 & 2))] 9
+State: 943 "vertex943" {229}
+[t] 789
+State: 944 "vertex944" {1}
+[!3 & 2] 975
+[!((!3 & 2))] 9
+State: 945 "vertex945" {1}
+[!3 & 2] 976
+[!((!3 & 2))] 9
+State: 946 "vertex946" {1}
+[!3 & 2] 977
+[!((!3 & 2))] 9
+State: 947 "vertex947" {1}
+[!3 & 2] 978
+[!((!3 & 2))] 9
+State: 948 "vertex948" {1}
+[!3 & 2] 979
+[!((!3 & 2))] 9
+State: 949 "vertex949" {1}
+[t] 980
+State: 950 "vertex950" {1}
+[t] 981
+State: 951 "vertex951" {231}
+[t] 949
+State: 952 "vertex952" {1}
+[t] 982
+State: 953 "vertex953" {1}
+[t] 983
+State: 954 "vertex954" {1}
+[t] 984
+State: 955 "vertex955" {1}
+[t] 985
+State: 956 "vertex956" {1}
+[t] 986
+State: 957 "vertex957" {1}
+[t] 987
+State: 958 "vertex958" {234}
+[t] 954
+State: 959 "vertex959" {234}
+[t] 988
+State: 960 "vertex960" {1}
+[!3 & 2] 990
+[!((!3 & 2))] 989
+State: 961 "vertex961" {1}
+[!3 & 2] 992
+[!((!3 & 2))] 991
+State: 962 "vertex962" {1}
+[!3 & 2] 993
+[!((!3 & 2))] 9
+State: 963 "vertex963" {1}
+[!3 & 2] 994
+[!((!3 & 2))] 9
+State: 964 "vertex964" {1}
+[!3 & 2] 995
+[!((!3 & 2))] 9
+State: 965 "vertex965" {1}
+[!3 & 2] 996
+[!((!3 & 2))] 9
+State: 966 "vertex966" {1}
+[!3 & 2] 997
+[!((!3 & 2))] 9
+State: 967 "vertex967" {1}
+[!3 & 2] 998
+[!((!3 & 2))] 9
+State: 968 "vertex968" {1}
+[!3 & 2] 999
+[!((!3 & 2))] 9
+State: 969 "vertex969" {1}
+[t] 829
+State: 970 "vertex970" {1}
+[t] 1000
+State: 971 "vertex971" {1}
+[t] 1001
+State: 972 "vertex972" {1}
+[t] 1002
+State: 973 "vertex973" {1}
+[!3 & 2] 1003
+[!((!3 & 2))] 9
+State: 974 "vertex974" {1}
+[!3 & 2] 1004
+[!((!3 & 2))] 9
+State: 975 "vertex975" {1}
+[t] 789
+State: 976 "vertex976" {1}
+[t] 1005
+State: 977 "vertex977" {1}
+[t] 469
+State: 978 "vertex978" {1}
+[t] 1006
+State: 979 "vertex979" {1}
+[t] 1007
+State: 980 "vertex980" {1}
+[t] 1008
+State: 981 "vertex981" {1}
+[t] 1009
+State: 982 "vertex982" {1}
+[t] 1010
+State: 983 "vertex983" {1}
+[t] 1011
+State: 984 "vertex984" {1}
+[t] 1012
+State: 985 "vertex985" {1}
+[t] 1013
+State: 986 "vertex986" {1}
+[t] 1014
+State: 987 "vertex987" {1}
+[t] 1015
+State: 988 "vertex988" {1}
+[t] 1016
+State: 989 "vertex989" {1}
+[!3 & 2] 1018
+[!((!3 & 2))] 1017
+State: 990 "vertex990" {1}
+[!3 & 2] 1020
+[!((!3 & 2))] 1019
+State: 991 "vertex991" {1}
+[!3 & 2] 1022
+[!((!3 & 2))] 1021
+State: 992 "vertex992" {1}
+[!3 & 2] 1024
+[!((!3 & 2))] 1023
+State: 993 "vertex993" {1}
+[!3 & 2] 1026
+[!((!3 & 2))] 1025
+State: 994 "vertex994" {1}
+[t] 1027
+State: 995 "vertex995" {1}
+[t] 1028
+State: 996 "vertex996" {1}
+[t] 876
+State: 997 "vertex997" {1}
+[t] 1029
+State: 998 "vertex998" {1}
+[!3 & 2] 1030
+[!((!3 & 2))] 9
+State: 999 "vertex999" {1}
+[!3 & 2] 1031
+[!((!3 & 2))] 9
+State: 1000 "vertex1000" {229}
+[t] 828
+State: 1001 "vertex1001" {1}
+[t] 1032
+State: 1002 "vertex1002" {229}
+[t] 1033
+State: 1003 "vertex1003" {1}
+[t] 829
+State: 1004 "vertex1004" {1}
+[t] 1034
+State: 1005 "vertex1005" {229}
+[t] 834
+State: 1006 "vertex1006" {229}
+[t] 1035
+State: 1007 "vertex1007" {1}
+[t] 1036
+State: 1008 "vertex1008" {1}
+[t] 1037
+State: 1009 "vertex1009" {1}
+[t] 1038
+State: 1010 "vertex1010" {1}
+[!3 & 2] 1040
+[!((!3 & 2))] 1039
+State: 1011 "vertex1011" {1}
+[!3 & 2] 1042
+[!((!3 & 2))] 1041
+State: 1012 "vertex1012" {1}
+[!3 & 2] 1044
+[!((!3 & 2))] 1043
+State: 1013 "vertex1013" {1}
+[!3 & 2] 1046
+[!((!3 & 2))] 1045
+State: 1014 "vertex1014" {1}
+[t] 1047
+State: 1015 "vertex1015" {1}
+[t] 1048
+State: 1016 "vertex1016" {1}
+[t] 1049
+State: 1017 "vertex1017" {1}
+[t] 1050
+State: 1018 "vertex1018" {1}
+[t] 897
+State: 1019 "vertex1019" {1}
+[t] 898
+State: 1020 "vertex1020" {1}
+[t] 1051
+State: 1021 "vertex1021" {234}
+[t] 896
+State: 1022 "vertex1022" {1}
+[t] 1052
+State: 1023 "vertex1023" {1}
+[t] 898
+State: 1024 "vertex1024" {1}
+[t] 1053
+State: 1025 "vertex1025" {1}
+[!3 & 2] 1055
+[!((!3 & 2))] 1054
+State: 1026 "vertex1026" {1}
+[!3 & 2] 1057
+[!((!3 & 2))] 1056
+State: 1027 "vertex1027" {234}
+[t] 902
+State: 1028 "vertex1028" {227}
+[t] 1058
+State: 1029 "vertex1029" {231}
+[t] 846
+State: 1030 "vertex1030" {1}
+[t] 1059
+State: 1031 "vertex1031" {1}
+[t] 1060
+State: 1032 "vertex1032" {1}
+[t] 1061
+State: 1033 "vertex1033" {231}
+[t] 1032
+State: 1034 "vertex1034" {227}
+[t] 1062
+State: 1035 "vertex1035" {234}
+[t] 1063
+State: 1036 "vertex1036" {1}
+[t] 1064
+State: 1037 "vertex1037" {1}
+[!3 & 2] 1066
+[!((!3 & 2))] 1065
+State: 1038 "vertex1038" {1}
+[!3 & 2] 1068
+[!((!3 & 2))] 1067
+State: 1039 "vertex1039" {1}
+[!3 & 2] 1069
+[!((!3 & 2))] 9
+State: 1040 "vertex1040" {1}
+[!3 & 2] 1070
+[!((!3 & 2))] 9
+State: 1041 "vertex1041" {1}
+[!3 & 2] 1071
+[!((!3 & 2))] 9
+State: 1042 "vertex1042" {1}
+[!3 & 2] 1072
+[!((!3 & 2))] 9
+State: 1043 "vertex1043" {1}
+[!3 & 2] 1073
+[!((!3 & 2))] 9
+State: 1044 "vertex1044" {1}
+[!3 & 2] 1074
+[!((!3 & 2))] 9
+State: 1045 "vertex1045" {1}
+[!3 & 2] 1075
+[!((!3 & 2))] 9
+State: 1046 "vertex1046" {1}
+[!3 & 2] 1076
+[!((!3 & 2))] 9
+State: 1047 "vertex1047" {1}
+[!3 & 2] 1078
+[!((!3 & 2))] 1077
+State: 1048 "vertex1048" {1}
+[!3 & 2] 1080
+[!((!3 & 2))] 1079
+State: 1049 "vertex1049" {1}
+[!3 & 2] 1082
+[!((!3 & 2))] 1081
+State: 1050 "vertex1050" {234}
+[t] 1083
+State: 1051 "vertex1051" {229}
+[t] 1084
+State: 1052 "vertex1052" {234}
+[t] 1085
+State: 1053 "vertex1053" {229}
+[t] 1086
+State: 1054 "vertex1054" {1}
+[t] 896
+State: 1055 "vertex1055" {1}
+[t] 1087
+State: 1056 "vertex1056" {1}
+[t] 1088
+State: 1057 "vertex1057" {1}
+[t] 1089
+State: 1058 "vertex1058" {232}
+[t] 1090
+State: 1059 "vertex1059" {1}
+[t] 1091
+State: 1060 "vertex1060" {229}
+[t] 1092
+State: 1061 "vertex1061" {1}
+[t] 1093
+State: 1062 "vertex1062" {232}
+[t] 1094
+State: 1063 "vertex1063" {1}
+[t] 1095
+State: 1064 "vertex1064" {1}
+[t] 1096
+State: 1065 "vertex1065" {1}
+[!3 & 2] 1097
+[!((!3 & 2))] 9
+State: 1066 "vertex1066" {1}
+[!3 & 2] 1098
+[!((!3 & 2))] 9
+State: 1067 "vertex1067" {1}
+[!3 & 2] 1099
+[!((!3 & 2))] 9
+State: 1068 "vertex1068" {1}
+[!3 & 2] 1100
+[!((!3 & 2))] 9
+State: 1069 "vertex1069" {1}
+[t] 1101
+State: 1070 "vertex1070" {1}
+[t] 1102
+State: 1071 "vertex1071" {1}
+[!3 & 2] 1103
+[!((!3 & 2))] 9
+State: 1072 "vertex1072" {1}
+[!3 & 2] 1104
+[!((!3 & 2))] 9
+State: 1073 "vertex1073" {1}
+[t] 917
+State: 1074 "vertex1074" {1}
+[t] 1105
+State: 1075 "vertex1075" {1}
+[!3 & 2] 1106
+[!((!3 & 2))] 9
+State: 1076 "vertex1076" {1}
+[!3 & 2] 1107
+[!((!3 & 2))] 9
+State: 1077 "vertex1077" {1}
+[!3 & 2] 1108
+[!((!3 & 2))] 9
+State: 1078 "vertex1078" {1}
+[!3 & 2] 1109
+[!((!3 & 2))] 9
+State: 1079 "vertex1079" {1}
+[!3 & 2] 1110
+[!((!3 & 2))] 9
+State: 1080 "vertex1080" {1}
+[!3 & 2] 1111
+[!((!3 & 2))] 9
+State: 1081 "vertex1081" {1}
+[!3 & 2] 1112
+[!((!3 & 2))] 9
+State: 1082 "vertex1082" {1}
+[!3 & 2] 1113
+[!((!3 & 2))] 9
+State: 1083 "vertex1083" {231}
+[t] 956
+State: 1084 "vertex1084" {230}
+[t] 957
+State: 1085 "vertex1085" {231}
+[t] 1114
+State: 1086 "vertex1086" {230}
+[t] 1115
+State: 1087 "vertex1087" {231}
+[t] 1116
+State: 1088 "vertex1088" {231}
+[t] 1117
+State: 1089 "vertex1089" {231}
+[t] 1118
+State: 1090 "vertex1090" {1}
+[t] 1119
+State: 1091 "vertex1091" {1}
+[t] 1120
+State: 1092 "vertex1092" {1}
+[t] 1121
+State: 1093 "vertex1093" {1}
+[!3 & 2] 1123
+[!((!3 & 2))] 1122
+State: 1094 "vertex1094" {1}
+[t] 1124
+State: 1095 "vertex1095" {1}
+[t] 1125
+State: 1096 "vertex1096" {1}
+[!3 & 2] 1127
+[!((!3 & 2))] 1126
+State: 1097 "vertex1097" {1}
+[!3 & 2] 1128
+[!((!3 & 2))] 9
+State: 1098 "vertex1098" {1}
+[!3 & 2] 1129
+[!((!3 & 2))] 9
+State: 1099 "vertex1099" {1}
+[!3 & 2] 1130
+[!((!3 & 2))] 9
+State: 1100 "vertex1100" {1}
+[!3 & 2] 1131
+[!((!3 & 2))] 9
+State: 1101 "vertex1101" {1}
+[t] 1132
+State: 1102 "vertex1102" {229}
+[t] 1133
+State: 1103 "vertex1103" {1}
+[t] 1134
+State: 1104 "vertex1104" {1}
+[t] 1135
+State: 1105 "vertex1105" {231}
+[t] 1136
+State: 1106 "vertex1106" {1}
+[t] 950
+State: 1107 "vertex1107" {1}
+[t] 1137
+State: 1108 "vertex1108" {1}
+[t] 1138
+State: 1109 "vertex1109" {1}
+[t] 1139
+State: 1110 "vertex1110" {1}
+[!3 & 2] 1140
+[!((!3 & 2))] 9
+State: 1111 "vertex1111" {1}
+[!3 & 2] 1141
+[!((!3 & 2))] 9
+State: 1112 "vertex1112" {1}
+[!3 & 2] 1142
+[!((!3 & 2))] 9
+State: 1113 "vertex1113" {1}
+[!3 & 2] 1143
+[!((!3 & 2))] 9
+State: 1114 "vertex1114" {1}
+[t] 1144
+State: 1115 "vertex1115" {234}
+[t] 1145
+State: 1116 "vertex1116" {232}
+[t] 1114
+State: 1117 "vertex1117" {232}
+[t] 956
+State: 1118 "vertex1118" {232}
+[t] 1114
+State: 1119 "vertex1119" {1}
+[t] 1146
+State: 1120 "vertex1120" {1}
+[t] 1147
+State: 1121 "vertex1121" {1}
+[t] 1148
+State: 1122 "vertex1122" {1}
+[!3 & 2] 1149
+[!((!3 & 2))] 9
+State: 1123 "vertex1123" {1}
+[!3 & 2] 1150
+[!((!3 & 2))] 9
+State: 1124 "vertex1124" {1}
+[t] 1151
+State: 1125 "vertex1125" {1}
+[!3 & 2] 1153
+[!((!3 & 2))] 1152
+State: 1126 "vertex1126" {1}
+[!3 & 2] 1154
+[!((!3 & 2))] 9
+State: 1127 "vertex1127" {1}
+[!3 & 2] 1155
+[!((!3 & 2))] 9
+State: 1128 "vertex1128" {1}
+[t] 1156
+State: 1129 "vertex1129" {1}
+[t] 1157
+State: 1130 "vertex1130" {1}
+[t] 1158
+State: 1131 "vertex1131" {1}
+[t] 1159
+State: 1132 "vertex1132" {1}
+[!3 & 2] 1160
+[!((!3 & 2))] 9
+State: 1133 "vertex1133" {1}
+[t] 1161
+State: 1134 "vertex1134" {1}
+[t] 1162
+State: 1135 "vertex1135" {229}
+[t] 1133
+State: 1136 "vertex1136" {1}
+[t] 1163
+State: 1137 "vertex1137" {231}
+[t] 1136
+State: 1138 "vertex1138" {234}
+[t] 948
+State: 1139 "vertex1139" {229}
+[t] 1164
+State: 1140 "vertex1140" {1}
+[t] 1165
+State: 1141 "vertex1141" {1}
+[t] 1166
+State: 1142 "vertex1142" {1}
+[t] 1167
+State: 1143 "vertex1143" {1}
+[t] 1168
+State: 1144 "vertex1144" {1}
+[t] 1169
+State: 1145 "vertex1145" {1}
+[t] 1170
+State: 1146 "vertex1146" {1}
+[!3 & 2] 1171
+[!((!3 & 2))] 9
+State: 1147 "vertex1147" {1}
+[!3 & 2] 1172
+[!((!3 & 2))] 9
+State: 1148 "vertex1148" {1}
+[t] 1173
+State: 1149 "vertex1149" {1}
+[!3 & 2] 1174
+[!((!3 & 2))] 9
+State: 1150 "vertex1150" {1}
+[!3 & 2] 1175
+[!((!3 & 2))] 9
+State: 1151 "vertex1151" {1}
+[!3 & 2] 1177
+[!((!3 & 2))] 1176
+State: 1152 "vertex1152" {1}
+[!3 & 2] 1178
+[!((!3 & 2))] 9
+State: 1153 "vertex1153" {1}
+[!3 & 2] 1179
+[!((!3 & 2))] 9
+State: 1154 "vertex1154" {1}
+[t] 1180
+State: 1155 "vertex1155" {1}
+[t] 1181
+State: 1156 "vertex1156" {1}
+[t] 1182
+State: 1157 "vertex1157" {229}
+[t] 1183
+State: 1158 "vertex1158" {1}
+[t] 1184
+State: 1159 "vertex1159" {1}
+[t] 1185
+State: 1160 "vertex1160" {1}
+[t] 1186
+State: 1161 "vertex1161" {1}
+[t] 1187
+State: 1162 "vertex1162" {1}
+[t] 1188
+State: 1163 "vertex1163" {1}
+[t] 1189
+State: 1164 "vertex1164" {1}
+[t] 1190
+State: 1165 "vertex1165" {234}
+[t] 1191
+State: 1166 "vertex1166" {227}
+[t] 1192
+State: 1167 "vertex1167" {1}
+[t] 1191
+State: 1168 "vertex1168" {231}
+[t] 949
+State: 1169 "vertex1169" {1}
+[t] 1193
+State: 1170 "vertex1170" {1}
+[t] 1194
+State: 1171 "vertex1171" {1}
+[!3 & 2] 1196
+[!((!3 & 2))] 1195
+State: 1172 "vertex1172" {1}
+[!3 & 2] 1198
+[!((!3 & 2))] 1197
+State: 1173 "vertex1173" {1}
+[!3 & 2] 1199
+[!((!3 & 2))] 9
+State: 1174 "vertex1174" {1}
+[t] 1059
+State: 1175 "vertex1175" {1}
+[t] 1200
+State: 1176 "vertex1176" {1}
+[!3 & 2] 1201
+[!((!3 & 2))] 9
+State: 1177 "vertex1177" {1}
+[!3 & 2] 1202
+[!((!3 & 2))] 9
+State: 1178 "vertex1178" {1}
+[!3 & 2] 1203
+[!((!3 & 2))] 9
+State: 1179 "vertex1179" {1}
+[!3 & 2] 1204
+[!((!3 & 2))] 9
+State: 1180 "vertex1180" {1}
+[t] 1205
+State: 1181 "vertex1181" {231}
+[t] 1206
+State: 1182 "vertex1182" {1}
+[t] 1207
+State: 1183 "vertex1183" {234}
+[t] 1208
+State: 1184 "vertex1184" {1}
+[t] 1209
+State: 1185 "vertex1185" {233}
+[t] 1184
+State: 1186 "vertex1186" {1}
+[t] 1210
+State: 1187 "vertex1187" {1}
+[t] 1211
+State: 1188 "vertex1188" {1}
+[t] 1212
+State: 1189 "vertex1189" {1}
+[t] 1213
+State: 1190 "vertex1190" {1}
+[t] 1214
+State: 1191 "vertex1191" {1}
+[t] 1215
+State: 1192 "vertex1192" {232}
+[t] 1216
+State: 1193 "vertex1193" {1}
+[!3 & 2] 1218
+[!((!3 & 2))] 1217
+State: 1194 "vertex1194" {1}
+[!3 & 2] 1220
+[!((!3 & 2))] 1219
+State: 1195 "vertex1195" {1}
+[!3 & 2] 1221
+[!((!3 & 2))] 1017
+State: 1196 "vertex1196" {1}
+[!3 & 2] 1223
+[!((!3 & 2))] 1222
+State: 1197 "vertex1197" {1}
+[!3 & 2] 1225
+[!((!3 & 2))] 1224
+State: 1198 "vertex1198" {1}
+[!3 & 2] 1227
+[!((!3 & 2))] 1226
+State: 1199 "vertex1199" {1}
+[!3 & 2] 1229
+[!((!3 & 2))] 1228
+State: 1200 "vertex1200" {229}
+[t] 1027
+State: 1201 "vertex1201" {1}
+[!3 & 2] 1230
+[!((!3 & 2))] 9
+State: 1202 "vertex1202" {1}
+[!3 & 2] 1231
+[!((!3 & 2))] 9
+State: 1203 "vertex1203" {1}
+[t] 657
+State: 1204 "vertex1204" {1}
+[t] 1232
+State: 1205 "vertex1205" {1}
+[!3 & 2] 1233
+[!((!3 & 2))] 9
+State: 1206 "vertex1206" {1}
+[t] 1234
+State: 1207 "vertex1207" {1}
+[t] 1235
+State: 1208 "vertex1208" {1}
+[t] 1236
+State: 1209 "vertex1209" {1}
+[t] 1237
+State: 1210 "vertex1210" {1}
+[t] 1238
+State: 1211 "vertex1211" {1}
+[!3 & 2] 1240
+[!((!3 & 2))] 1239
+State: 1212 "vertex1212" {1}
+[!3 & 2] 1242
+[!((!3 & 2))] 1241
+State: 1213 "vertex1213" {1}
+[!3 & 2] 1244
+[!((!3 & 2))] 1243
+State: 1214 "vertex1214" {1}
+[t] 1245
+State: 1215 "vertex1215" {1}
+[t] 1246
+State: 1216 "vertex1216" {1}
+[t] 1247
+State: 1217 "vertex1217" {1}
+[!3 & 2] 1248
+[!((!3 & 2))] 9
+State: 1218 "vertex1218" {1}
+[!3 & 2] 1249
+[!((!3 & 2))] 9
+State: 1219 "vertex1219" {1}
+[!3 & 2] 1250
+[!((!3 & 2))] 9
+State: 1220 "vertex1220" {1}
+[!3 & 2] 1251
+[!((!3 & 2))] 9
+State: 1221 "vertex1221" {1}
+[t] 1052
+State: 1222 "vertex1222" {1}
+[t] 1252
+State: 1223 "vertex1223" {1}
+[t] 1253
+State: 1224 "vertex1224" {1}
+[t] 1050
+State: 1225 "vertex1225" {1}
+[t] 1254
+State: 1226 "vertex1226" {1}
+[t] 1252
+State: 1227 "vertex1227" {1}
+[t] 1255
+State: 1228 "vertex1228" {1}
+[!3 & 2] 1257
+[!((!3 & 2))] 1256
+State: 1229 "vertex1229" {1}
+[!3 & 2] 1259
+[!((!3 & 2))] 1258
+State: 1230 "vertex1230" {1}
+[t] 1027
+State: 1231 "vertex1231" {1}
+[t] 1260
+State: 1232 "vertex1232" {231}
+[t] 1261
+State: 1233 "vertex1233" {1}
+[t] 1262
+State: 1234 "vertex1234" {1}
+[t] 1263
+State: 1235 "vertex1235" {1}
+[!3 & 2] 1265
+[!((!3 & 2))] 1264
+State: 1236 "vertex1236" {1}
+[t] 1266
+State: 1237 "vertex1237" {1}
+[!3 & 2] 1268
+[!((!3 & 2))] 1267
+State: 1238 "vertex1238" {1}
+[t] 1269
+State: 1239 "vertex1239" {1}
+[!3 & 2] 1270
+[!((!3 & 2))] 9
+State: 1240 "vertex1240" {1}
+[!3 & 2] 1271
+[!((!3 & 2))] 9
+State: 1241 "vertex1241" {1}
+[!3 & 2] 1272
+[!((!3 & 2))] 9
+State: 1242 "vertex1242" {1}
+[!3 & 2] 1273
+[!((!3 & 2))] 9
+State: 1243 "vertex1243" {1}
+[!3 & 2] 1274
+[!((!3 & 2))] 9
+State: 1244 "vertex1244" {1}
+[!3 & 2] 1275
+[!((!3 & 2))] 9
+State: 1245 "vertex1245" {1}
+[!3 & 2] 1277
+[!((!3 & 2))] 1276
+State: 1246 "vertex1246" {1}
+[!3 & 2] 1279
+[!((!3 & 2))] 1278
+State: 1247 "vertex1247" {1}
+[t] 1280
+State: 1248 "vertex1248" {1}
+[!3 & 2] 1281
+[!((!3 & 2))] 9
+State: 1249 "vertex1249" {1}
+[!3 & 2] 1282
+[!((!3 & 2))] 9
+State: 1250 "vertex1250" {1}
+[!3 & 2] 1283
+[!((!3 & 2))] 9
+State: 1251 "vertex1251" {1}
+[!3 & 2] 1284
+[!((!3 & 2))] 9
+State: 1252 "vertex1252" {234}
+[t] 1285
+State: 1253 "vertex1253" {229}
+[t] 1286
+State: 1254 "vertex1254" {229}
+[t] 1287
+State: 1255 "vertex1255" {229}
+[t] 1288
+State: 1256 "vertex1256" {232}
+[t] 1050
+State: 1257 "vertex1257" {1}
+[t] 1052
+State: 1258 "vertex1258" {1}
+[t] 1252
+State: 1259 "vertex1259" {1}
+[t] 1289
+State: 1260 "vertex1260" {229}
+[t] 1092
+State: 1261 "vertex1261" {1}
+[t] 1290
+State: 1262 "vertex1262" {1}
+[t] 1291
+State: 1263 "vertex1263" {1}
+[t] 1292
+State: 1264 "vertex1264" {1}
+[!3 & 2] 1293
+[!((!3 & 2))] 9
+State: 1265 "vertex1265" {1}
+[!3 & 2] 1294
+[!((!3 & 2))] 9
+State: 1266 "vertex1266" {1}
+[!3 & 2] 1296
+[!((!3 & 2))] 1295
+State: 1267 "vertex1267" {1}
+[!3 & 2] 1297
+[!((!3 & 2))] 9
+State: 1268 "vertex1268" {1}
+[!3 & 2] 1298
+[!((!3 & 2))] 9
+State: 1269 "vertex1269" {1}
+[!3 & 2] 1300
+[!((!3 & 2))] 1299
+State: 1270 "vertex1270" {1}
+[!3 & 2] 1301
+[!((!3 & 2))] 9
+State: 1271 "vertex1271" {1}
+[!3 & 2] 1302
+[!((!3 & 2))] 9
+State: 1272 "vertex1272" {1}
+[!3 & 2] 1303
+[!((!3 & 2))] 9
+State: 1273 "vertex1273" {1}
+[!3 & 2] 1304
+[!((!3 & 2))] 9
+State: 1274 "vertex1274" {1}
+[!3 & 2] 1305
+[!((!3 & 2))] 9
+State: 1275 "vertex1275" {1}
+[!3 & 2] 1306
+[!((!3 & 2))] 9
+State: 1276 "vertex1276" {1}
+[!3 & 2] 1307
+[!((!3 & 2))] 9
+State: 1277 "vertex1277" {1}
+[!3 & 2] 1308
+[!((!3 & 2))] 9
+State: 1278 "vertex1278" {1}
+[!3 & 2] 1309
+[!((!3 & 2))] 9
+State: 1279 "vertex1279" {1}
+[!3 & 2] 1310
+[!((!3 & 2))] 9
+State: 1280 "vertex1280" {1}
+[!3 & 2] 1312
+[!((!3 & 2))] 1311
+State: 1281 "vertex1281" {1}
+[t] 1313
+State: 1282 "vertex1282" {1}
+[t] 1314
+State: 1283 "vertex1283" {1}
+[t] 1167
+State: 1284 "vertex1284" {1}
+[t] 1315
+State: 1285 "vertex1285" {231}
+[t] 956
+State: 1286 "vertex1286" {230}
+[t] 957
+State: 1287 "vertex1287" {230}
+[t] 1316
+State: 1288 "vertex1288" {230}
+[t] 1317
+State: 1289 "vertex1289" {227}
+[t] 1318
+State: 1290 "vertex1290" {1}
+[t] 1319
+State: 1291 "vertex1291" {1}
+[t] 1320
+State: 1292 "vertex1292" {1}
+[!3 & 2] 1322
+[!((!3 & 2))] 1321
+State: 1293 "vertex1293" {1}
+[!3 & 2] 1323
+[!((!3 & 2))] 9
+State: 1294 "vertex1294" {1}
+[!3 & 2] 1324
+[!((!3 & 2))] 9
+State: 1295 "vertex1295" {1}
+[!3 & 2] 1325
+[!((!3 & 2))] 9
+State: 1296 "vertex1296" {1}
+[!3 & 2] 1326
+[!((!3 & 2))] 9
+State: 1297 "vertex1297" {1}
+[!3 & 2] 1327
+[!((!3 & 2))] 9
+State: 1298 "vertex1298" {1}
+[!3 & 2] 1328
+[!((!3 & 2))] 9
+State: 1299 "vertex1299" {1}
+[!3 & 2] 1329
+[!((!3 & 2))] 9
+State: 1300 "vertex1300" {1}
+[!3 & 2] 1330
+[!((!3 & 2))] 9
+State: 1301 "vertex1301" {1}
+[t] 1331
+State: 1302 "vertex1302" {1}
+[t] 1332
+State: 1303 "vertex1303" {1}
+[t] 1333
+State: 1304 "vertex1304" {1}
+[t] 1334
+State: 1305 "vertex1305" {1}
+[t] 1156
+State: 1306 "vertex1306" {1}
+[t] 1335
+State: 1307 "vertex1307" {1}
+[!3 & 2] 1336
+[!((!3 & 2))] 9
+State: 1308 "vertex1308" {1}
+[!3 & 2] 1337
+[!((!3 & 2))] 9
+State: 1309 "vertex1309" {1}
+[!3 & 2] 1338
+[!((!3 & 2))] 9
+State: 1310 "vertex1310" {1}
+[!3 & 2] 1339
+[!((!3 & 2))] 9
+State: 1311 "vertex1311" {1}
+[!3 & 2] 1340
+[!((!3 & 2))] 9
+State: 1312 "vertex1312" {1}
+[!3 & 2] 1341
+[!((!3 & 2))] 9
+State: 1313 "vertex1313" {1}
+[t] 1342
+State: 1314 "vertex1314" {229}
+[t] 1164
+State: 1315 "vertex1315" {231}
+[t] 1136
+State: 1316 "vertex1316" {1}
+[t] 1343
+State: 1317 "vertex1317" {231}
+[t] 1344
+State: 1318 "vertex1318" {228}
+[t] 1345
+State: 1319 "vertex1319" {1}
+[t] 1346
+State: 1320 "vertex1320" {1}
+[t] 1347
+State: 1321 "vertex1321" {1}
+[!3 & 2] 1348
+[!((!3 & 2))] 9
+State: 1322 "vertex1322" {1}
+[!3 & 2] 1349
+[!((!3 & 2))] 9
+State: 1323 "vertex1323" {1}
+[t] 1350
+State: 1324 "vertex1324" {1}
+[t] 1351
+State: 1325 "vertex1325" {1}
+[!3 & 2] 1352
+[!((!3 & 2))] 9
+State: 1326 "vertex1326" {1}
+[!3 & 2] 1353
+[!((!3 & 2))] 9
+State: 1327 "vertex1327" {1}
+[t] 1354
+State: 1328 "vertex1328" {1}
+[t] 1355
+State: 1329 "vertex1329" {1}
+[t] 1356
+State: 1330 "vertex1330" {1}
+[t] 1357
+State: 1331 "vertex1331" {1}
+[t] 1358
+State: 1332 "vertex1332" {227}
+[t] 1359
+State: 1333 "vertex1333" {1}
+[t] 1360
+State: 1334 "vertex1334" {1}
+[t] 1361
+State: 1335 "vertex1335" {229}
+[t] 1362
+State: 1336 "vertex1336" {1}
+[t] 1363
+State: 1337 "vertex1337" {1}
+[t] 1364
+State: 1338 "vertex1338" {1}
+[t] 1365
+State: 1339 "vertex1339" {1}
+[t] 1366
+State: 1340 "vertex1340" {1}
+[!3 & 2] 1367
+[!((!3 & 2))] 9
+State: 1341 "vertex1341" {1}
+[!3 & 2] 1368
+[!((!3 & 2))] 9
+State: 1342 "vertex1342" {1}
+[t] 1369
+State: 1343 "vertex1343" {1}
+[t] 1370
+State: 1344 "vertex1344" {1}
+[t] 1371
+State: 1345 "vertex1345" {232}
+[t] 1372
+State: 1346 "vertex1346" {1}
+[!3 & 2] 1374
+[!((!3 & 2))] 1373
+State: 1347 "vertex1347" {1}
+[!3 & 2] 1376
+[!((!3 & 2))] 1375
+State: 1348 "vertex1348" {1}
+[!3 & 2] 1377
+[!((!3 & 2))] 9
+State: 1349 "vertex1349" {1}
+[!3 & 2] 1378
+[!((!3 & 2))] 9
+State: 1350 "vertex1350" {1}
+[t] 1379
+State: 1351 "vertex1351" {229}
+[t] 1380
+State: 1352 "vertex1352" {1}
+[t] 1381
+State: 1353 "vertex1353" {1}
+[t] 1382
+State: 1354 "vertex1354" {1}
+[t] 1383
+State: 1355 "vertex1355" {231}
+[t] 1206
+State: 1356 "vertex1356" {1}
+[t] 1384
+State: 1357 "vertex1357" {229}
+[t] 1385
+State: 1358 "vertex1358" {1}
+[t] 1386
+State: 1359 "vertex1359" {232}
+[t] 1387
+State: 1360 "vertex1360" {1}
+[t] 1388
+State: 1361 "vertex1361" {231}
+[t] 1360
+State: 1362 "vertex1362" {1}
+[t] 1389
+State: 1363 "vertex1363" {234}
+[t] 1390
+State: 1364 "vertex1364" {227}
+[t] 1391
+State: 1365 "vertex1365" {1}
+[t] 1390
+State: 1366 "vertex1366" {231}
+[t] 1392
+State: 1367 "vertex1367" {1}
+[t] 1363
+State: 1368 "vertex1368" {1}
+[t] 1393
+State: 1369 "vertex1369" {1}
+[t] 1394
+State: 1370 "vertex1370" {1}
+[t] 1395
+State: 1371 "vertex1371" {1}
+[t] 1396
+State: 1372 "vertex1372" {1}
+[t] 1397
+State: 1373 "vertex1373" {1}
+[!3 & 2] 1398
+[!((!3 & 2))] 9
+State: 1374 "vertex1374" {1}
+[!3 & 2] 1399
+[!((!3 & 2))] 9
+State: 1375 "vertex1375" {1}
+[!3 & 2] 1400
+[!((!3 & 2))] 9
+State: 1376 "vertex1376" {1}
+[!3 & 2] 1401
+[!((!3 & 2))] 9
+State: 1377 "vertex1377" {1}
+[t] 1402
+State: 1378 "vertex1378" {1}
+[t] 1403
+State: 1379 "vertex1379" {1}
+[t] 1404
+State: 1380 "vertex1380" {231}
+[t] 1379
+State: 1381 "vertex1381" {1}
+[t] 1405
+State: 1382 "vertex1382" {231}
+[t] 1406
+State: 1383 "vertex1383" {1}
+[t] 1407
+State: 1384 "vertex1384" {1}
+[!3 & 2] 1408
+[!((!3 & 2))] 9
+State: 1385 "vertex1385" {1}
+[t] 1409
+State: 1386 "vertex1386" {1}
+[t] 1410
+State: 1387 "vertex1387" {1}
+[t] 1411
+State: 1388 "vertex1388" {1}
+[t] 1412
+State: 1389 "vertex1389" {1}
+[t] 1413
+State: 1390 "vertex1390" {1}
+[t] 1414
+State: 1391 "vertex1391" {232}
+[t] 1415
+State: 1392 "vertex1392" {1}
+[t] 1416
+State: 1393 "vertex1393" {229}
+[t] 1362
+State: 1394 "vertex1394" {1}
+[!3 & 2] 1418
+[!((!3 & 2))] 1417
+State: 1395 "vertex1395" {1}
+[!3 & 2] 1420
+[!((!3 & 2))] 1419
+State: 1396 "vertex1396" {1}
+[!3 & 2] 1422
+[!((!3 & 2))] 1421
+State: 1397 "vertex1397" {1}
+[t] 1423
+State: 1398 "vertex1398" {1}
+[!3 & 2] 1424
+[!((!3 & 2))] 9
+State: 1399 "vertex1399" {1}
+[!3 & 2] 1425
+[!((!3 & 2))] 9
+State: 1400 "vertex1400" {1}
+[t] 1426
+State: 1401 "vertex1401" {1}
+[t] 1427
+State: 1402 "vertex1402" {1}
+[t] 1428
+State: 1403 "vertex1403" {229}
+[t] 1429
+State: 1404 "vertex1404" {1}
+[t] 1430
+State: 1405 "vertex1405" {1}
+[t] 1431
+State: 1406 "vertex1406" {1}
+[t] 1432
+State: 1407 "vertex1407" {1}
+[t] 1433
+State: 1408 "vertex1408" {1}
+[t] 1434
+State: 1409 "vertex1409" {1}
+[t] 1435
+State: 1410 "vertex1410" {1}
+[!3 & 2] 1437
+[!((!3 & 2))] 1436
+State: 1411 "vertex1411" {1}
+[t] 1438
+State: 1412 "vertex1412" {1}
+[!3 & 2] 1440
+[!((!3 & 2))] 1439
+State: 1413 "vertex1413" {1}
+[t] 1441
+State: 1414 "vertex1414" {1}
+[t] 1442
+State: 1415 "vertex1415" {1}
+[t] 1443
+State: 1416 "vertex1416" {1}
+[t] 1444
+State: 1417 "vertex1417" {1}
+[!3 & 2] 1445
+[!((!3 & 2))] 9
+State: 1418 "vertex1418" {1}
+[!3 & 2] 1446
+[!((!3 & 2))] 9
+State: 1419 "vertex1419" {1}
+[!3 & 2] 1447
+[!((!3 & 2))] 9
+State: 1420 "vertex1420" {1}
+[!3 & 2] 1448
+[!((!3 & 2))] 9
+State: 1421 "vertex1421" {1}
+[!3 & 2] 1449
+[!((!3 & 2))] 9
+State: 1422 "vertex1422" {1}
+[!3 & 2] 1450
+[!((!3 & 2))] 9
+State: 1423 "vertex1423" {1}
+[!3 & 2] 1452
+[!((!3 & 2))] 1451
+State: 1424 "vertex1424" {1}
+[t] 674
+State: 1425 "vertex1425" {1}
+[t] 1453
+State: 1426 "vertex1426" {1}
+[t] 1454
+State: 1427 "vertex1427" {231}
+[t] 274
+State: 1428 "vertex1428" {1}
+[t] 1455
+State: 1429 "vertex1429" {1}
+[t] 1456
+State: 1430 "vertex1430" {1}
+[!3 & 2] 1458
+[!((!3 & 2))] 1457
+State: 1431 "vertex1431" {1}
+[t] 1459
+State: 1432 "vertex1432" {1}
+[t] 1460
+State: 1433 "vertex1433" {1}
+[!3 & 2] 1462
+[!((!3 & 2))] 1461
+State: 1434 "vertex1434" {1}
+[t] 1463
+State: 1435 "vertex1435" {1}
+[t] 1464
+State: 1436 "vertex1436" {1}
+[!3 & 2] 1465
+[!((!3 & 2))] 9
+State: 1437 "vertex1437" {1}
+[!3 & 2] 1466
+[!((!3 & 2))] 9
+State: 1438 "vertex1438" {1}
+[!3 & 2] 1468
+[!((!3 & 2))] 1467
+State: 1439 "vertex1439" {1}
+[!3 & 2] 1469
+[!((!3 & 2))] 9
+State: 1440 "vertex1440" {1}
+[!3 & 2] 1470
+[!((!3 & 2))] 9
+State: 1441 "vertex1441" {1}
+[!3 & 2] 1472
+[!((!3 & 2))] 1471
+State: 1442 "vertex1442" {1}
+[!3 & 2] 1474
+[!((!3 & 2))] 1473
+State: 1443 "vertex1443" {1}
+[t] 1475
+State: 1444 "vertex1444" {1}
+[t] 1476
+State: 1445 "vertex1445" {1}
+[!3 & 2] 1477
+[!((!3 & 2))] 9
+State: 1446 "vertex1446" {1}
+[!3 & 2] 1478
+[!((!3 & 2))] 9
+State: 1447 "vertex1447" {1}
+[!3 & 2] 1479
+[!((!3 & 2))] 9
+State: 1448 "vertex1448" {1}
+[!3 & 2] 1480
+[!((!3 & 2))] 9
+State: 1449 "vertex1449" {1}
+[!3 & 2] 1481
+[!((!3 & 2))] 9
+State: 1450 "vertex1450" {1}
+[!3 & 2] 1482
+[!((!3 & 2))] 9
+State: 1451 "vertex1451" {1}
+[!3 & 2] 1483
+[!((!3 & 2))] 9
+State: 1452 "vertex1452" {1}
+[!3 & 2] 1484
+[!((!3 & 2))] 9
+State: 1453 "vertex1453" {229}
+[t] 1485
+State: 1454 "vertex1454" {1}
+[!3 & 2] 1486
+[!((!3 & 2))] 9
+State: 1455 "vertex1455" {1}
+[t] 1487
+State: 1456 "vertex1456" {1}
+[t] 1488
+State: 1457 "vertex1457" {1}
+[!3 & 2] 1489
+[!((!3 & 2))] 9
+State: 1458 "vertex1458" {1}
+[!3 & 2] 1490
+[!((!3 & 2))] 9
+State: 1459 "vertex1459" {1}
+[!3 & 2] 1492
+[!((!3 & 2))] 1491
+State: 1460 "vertex1460" {1}
+[t] 1493
+State: 1461 "vertex1461" {1}
+[!3 & 2] 1494
+[!((!3 & 2))] 9
+State: 1462 "vertex1462" {1}
+[!3 & 2] 1495
+[!((!3 & 2))] 9
+State: 1463 "vertex1463" {1}
+[t] 1496
+State: 1464 "vertex1464" {1}
+[!3 & 2] 1498
+[!((!3 & 2))] 1497
+State: 1465 "vertex1465" {1}
+[!3 & 2] 1499
+[!((!3 & 2))] 9
+State: 1466 "vertex1466" {1}
+[!3 & 2] 1500
+[!((!3 & 2))] 9
+State: 1467 "vertex1467" {1}
+[!3 & 2] 1501
+[!((!3 & 2))] 9
+State: 1468 "vertex1468" {1}
+[!3 & 2] 1502
+[!((!3 & 2))] 9
+State: 1469 "vertex1469" {1}
+[!3 & 2] 1503
+[!((!3 & 2))] 9
+State: 1470 "vertex1470" {1}
+[!3 & 2] 1504
+[!((!3 & 2))] 9
+State: 1471 "vertex1471" {1}
+[!3 & 2] 1505
+[!((!3 & 2))] 9
+State: 1472 "vertex1472" {1}
+[!3 & 2] 1506
+[!((!3 & 2))] 9
+State: 1473 "vertex1473" {1}
+[!3 & 2] 1507
+[!((!3 & 2))] 9
+State: 1474 "vertex1474" {1}
+[!3 & 2] 1508
+[!((!3 & 2))] 9
+State: 1475 "vertex1475" {1}
+[!3 & 2] 1510
+[!((!3 & 2))] 1509
+State: 1476 "vertex1476" {1}
+[!3 & 2] 1512
+[!((!3 & 2))] 1511
+State: 1477 "vertex1477" {1}
+[t] 1513
+State: 1478 "vertex1478" {1}
+[t] 1514
+State: 1479 "vertex1479" {1}
+[t] 1515
+State: 1480 "vertex1480" {1}
+[t] 1516
+State: 1481 "vertex1481" {1}
+[t] 1313
+State: 1482 "vertex1482" {1}
+[t] 1517
+State: 1483 "vertex1483" {1}
+[!3 & 2] 1518
+[!((!3 & 2))] 9
+State: 1484 "vertex1484" {1}
+[!3 & 2] 1519
+[!((!3 & 2))] 9
+State: 1485 "vertex1485" {234}
+[t] 1520
+State: 1486 "vertex1486" {1}
+[t] 1521
+State: 1487 "vertex1487" {1}
+[!3 & 2] 1523
+[!((!3 & 2))] 1522
+State: 1488 "vertex1488" {1}
+[t] 1524
+State: 1489 "vertex1489" {1}
+[!3 & 2] 1525
+[!((!3 & 2))] 9
+State: 1490 "vertex1490" {1}
+[!3 & 2] 1526
+[!((!3 & 2))] 9
+State: 1491 "vertex1491" {1}
+[!3 & 2] 1527
+[!((!3 & 2))] 9
+State: 1492 "vertex1492" {1}
+[!3 & 2] 1528
+[!((!3 & 2))] 9
+State: 1493 "vertex1493" {1}
+[!3 & 2] 1530
+[!((!3 & 2))] 1529
+State: 1494 "vertex1494" {1}
+[!3 & 2] 1531
+[!((!3 & 2))] 9
+State: 1495 "vertex1495" {1}
+[!3 & 2] 1532
+[!((!3 & 2))] 9
+State: 1496 "vertex1496" {1}
+[t] 1533
+State: 1497 "vertex1497" {1}
+[!3 & 2] 1534
+[!((!3 & 2))] 9
+State: 1498 "vertex1498" {1}
+[!3 & 2] 1535
+[!((!3 & 2))] 9
+State: 1499 "vertex1499" {1}
+[t] 1385
+State: 1500 "vertex1500" {1}
+[t] 1536
+State: 1501 "vertex1501" {1}
+[!3 & 2] 1537
+[!((!3 & 2))] 9
+State: 1502 "vertex1502" {1}
+[!3 & 2] 1538
+[!((!3 & 2))] 9
+State: 1503 "vertex1503" {1}
+[t] 1539
+State: 1504 "vertex1504" {1}
+[t] 1540
+State: 1505 "vertex1505" {1}
+[!3 & 2] 1541
+[!((!3 & 2))] 9
+State: 1506 "vertex1506" {1}
+[!3 & 2] 1542
+[!((!3 & 2))] 9
+State: 1507 "vertex1507" {1}
+[!3 & 2] 1543
+[!((!3 & 2))] 9
+State: 1508 "vertex1508" {1}
+[!3 & 2] 1544
+[!((!3 & 2))] 9
+State: 1509 "vertex1509" {1}
+[!3 & 2] 1545
+[!((!3 & 2))] 9
+State: 1510 "vertex1510" {1}
+[!3 & 2] 1546
+[!((!3 & 2))] 9
+State: 1511 "vertex1511" {1}
+[!3 & 2] 1547
+[!((!3 & 2))] 9
+State: 1512 "vertex1512" {1}
+[!3 & 2] 1548
+[!((!3 & 2))] 9
+State: 1513 "vertex1513" {1}
+[t] 1549
+State: 1514 "vertex1514" {229}
+[t] 1550
+State: 1515 "vertex1515" {1}
+[t] 1551
+State: 1516 "vertex1516" {227}
+[t] 1165
+State: 1517 "vertex1517" {229}
+[t] 1165
+State: 1518 "vertex1518" {1}
+[t] 1165
+State: 1519 "vertex1519" {1}
+[t] 1552
+State: 1520 "vertex1520" {1}
+[t] 1553
+State: 1521 "vertex1521" {1}
+[t] 1554
+State: 1522 "vertex1522" {1}
+[!3 & 2] 1555
+[!((!3 & 2))] 9
+State: 1523 "vertex1523" {1}
+[!3 & 2] 1556
+[!((!3 & 2))] 9
+State: 1524 "vertex1524" {1}
+[!3 & 2] 1558
+[!((!3 & 2))] 1557
+State: 1525 "vertex1525" {1}
+[t] 1402
+State: 1526 "vertex1526" {1}
+[t] 1559
+State: 1527 "vertex1527" {1}
+[!3 & 2] 1560
+[!((!3 & 2))] 9
+State: 1528 "vertex1528" {1}
+[!3 & 2] 1561
+[!((!3 & 2))] 9
+State: 1529 "vertex1529" {1}
+[!3 & 2] 1562
+[!((!3 & 2))] 9
+State: 1530 "vertex1530" {1}
+[!3 & 2] 1563
+[!((!3 & 2))] 9
+State: 1531 "vertex1531" {1}
+[t] 1564
+State: 1532 "vertex1532" {1}
+[t] 1565
+State: 1533 "vertex1533" {1}
+[!3 & 2] 1567
+[!((!3 & 2))] 1566
+State: 1534 "vertex1534" {1}
+[!3 & 2] 1568
+[!((!3 & 2))] 9
+State: 1535 "vertex1535" {1}
+[!3 & 2] 1569
+[!((!3 & 2))] 9
+State: 1536 "vertex1536" {227}
+[t] 1570
+State: 1537 "vertex1537" {1}
+[t] 1571
+State: 1538 "vertex1538" {1}
+[t] 1572
+State: 1539 "vertex1539" {1}
+[t] 1573
+State: 1540 "vertex1540" {229}
+[t] 1385
+State: 1541 "vertex1541" {1}
+[t] 1574
+State: 1542 "vertex1542" {1}
+[t] 1575
+State: 1543 "vertex1543" {1}
+[t] 1381
+State: 1544 "vertex1544" {1}
+[t] 1576
+State: 1545 "vertex1545" {1}
+[!3 & 2] 1577
+[!((!3 & 2))] 9
+State: 1546 "vertex1546" {1}
+[!3 & 2] 1578
+[!((!3 & 2))] 9
+State: 1547 "vertex1547" {1}
+[!3 & 2] 1579
+[!((!3 & 2))] 9
+State: 1548 "vertex1548" {1}
+[!3 & 2] 1580
+[!((!3 & 2))] 9
+State: 1549 "vertex1549" {1}
+[t] 1581
+State: 1550 "vertex1550" {231}
+[t] 1549
+State: 1551 "vertex1551" {1}
+[t] 1582
+State: 1552 "vertex1552" {229}
+[t] 1164
+State: 1553 "vertex1553" {1}
+[t] 1583
+State: 1554 "vertex1554" {1}
+[t] 1584
+State: 1555 "vertex1555" {1}
+[!3 & 2] 1585
+[!((!3 & 2))] 9
+State: 1556 "vertex1556" {1}
+[!3 & 2] 1586
+[!((!3 & 2))] 9
+State: 1557 "vertex1557" {1}
+[!3 & 2] 1587
+[!((!3 & 2))] 9
+State: 1558 "vertex1558" {1}
+[!3 & 2] 1588
+[!((!3 & 2))] 9
+State: 1559 "vertex1559" {229}
+[t] 1589
+State: 1560 "vertex1560" {1}
+[t] 156
+State: 1561 "vertex1561" {1}
+[t] 1590
+State: 1562 "vertex1562" {1}
+[!3 & 2] 1591
+[!((!3 & 2))] 9
+State: 1563 "vertex1563" {1}
+[!3 & 2] 1592
+[!((!3 & 2))] 9
+State: 1564 "vertex1564" {1}
+[t] 1593
+State: 1565 "vertex1565" {1}
+[t] 1594
+State: 1566 "vertex1566" {1}
+[!3 & 2] 1595
+[!((!3 & 2))] 9
+State: 1567 "vertex1567" {1}
+[!3 & 2] 1596
+[!((!3 & 2))] 9
+State: 1568 "vertex1568" {1}
+[t] 1597
+State: 1569 "vertex1569" {1}
+[t] 1598
+State: 1570 "vertex1570" {229}
+[t] 1409
+State: 1571 "vertex1571" {1}
+[t] 1599
+State: 1572 "vertex1572" {229}
+[t] 1385
+State: 1573 "vertex1573" {1}
+[t] 1600
+State: 1574 "vertex1574" {234}
+[t] 1405
+State: 1575 "vertex1575" {227}
+[t] 1601
+State: 1576 "vertex1576" {231}
+[t] 1206
+State: 1577 "vertex1577" {1}
+[t] 1574
+State: 1578 "vertex1578" {1}
+[t] 1602
+State: 1579 "vertex1579" {1}
+[t] 79
+State: 1580 "vertex1580" {1}
+[t] 1603
+State: 1581 "vertex1581" {1}
+[t] 1604
+State: 1582 "vertex1582" {1}
+[t] 1605
+State: 1583 "vertex1583" {1}
+[!3 & 2] 1607
+[!((!3 & 2))] 1606
+State: 1584 "vertex1584" {1}
+[t] 1608
+State: 1585 "vertex1585" {1}
+[t] 1609
+State: 1586 "vertex1586" {1}
+[t] 1610
+State: 1587 "vertex1587" {1}
+[!3 & 2] 1611
+[!((!3 & 2))] 9
+State: 1588 "vertex1588" {1}
+[!3 & 2] 1612
+[!((!3 & 2))] 9
+State: 1589 "vertex1589" {234}
+[t] 168
+State: 1590 "vertex1590" {231}
+[t] 141
+State: 1591 "vertex1591" {1}
+[t] 1402
+State: 1592 "vertex1592" {1}
+[t] 1613
+State: 1593 "vertex1593" {1}
+[t] 1614
+State: 1594 "vertex1594" {233}
+[t] 1593
+State: 1595 "vertex1595" {1}
+[t] 1615
+State: 1596 "vertex1596" {1}
+[t] 1616
+State: 1597 "vertex1597" {1}
+[t] 1617
+State: 1598 "vertex1598" {227}
+[t] 1618
+State: 1599 "vertex1599" {1}
+[t] 1619
+State: 1600 "vertex1600" {1}
+[t] 1620
+State: 1601 "vertex1601" {232}
+[t] 1621
+State: 1602 "vertex1602" {229}
+[t] 1622
+State: 1603 "vertex1603" {229}
+[t] 1622
+State: 1604 "vertex1604" {1}
+[!3 & 2] 1624
+[!((!3 & 2))] 1623
+State: 1605 "vertex1605" {1}
+[!3 & 2] 1626
+[!((!3 & 2))] 1625
+State: 1606 "vertex1606" {1}
+[!3 & 2] 1627
+[!((!3 & 2))] 9
+State: 1607 "vertex1607" {1}
+[!3 & 2] 1628
+[!((!3 & 2))] 9
+State: 1608 "vertex1608" {1}
+[!3 & 2] 1630
+[!((!3 & 2))] 1629
+State: 1609 "vertex1609" {1}
+[t] 1631
+State: 1610 "vertex1610" {229}
+[t] 1632
+State: 1611 "vertex1611" {1}
+[t] 255
+State: 1612 "vertex1612" {1}
+[t] 1633
+State: 1613 "vertex1613" {229}
+[t] 1634
+State: 1614 "vertex1614" {1}
+[t] 1635
+State: 1615 "vertex1615" {1}
+[t] 1636
+State: 1616 "vertex1616" {229}
+[t] 1637
+State: 1617 "vertex1617" {1}
+[t] 1638
+State: 1618 "vertex1618" {232}
+[t] 1639
+State: 1619 "vertex1619" {1}
+[t] 1640
+State: 1620 "vertex1620" {1}
+[!3 & 2] 1642
+[!((!3 & 2))] 1641
+State: 1621 "vertex1621" {1}
+[t] 1643
+State: 1622 "vertex1622" {1}
+[t] 1644
+State: 1623 "vertex1623" {1}
+[!3 & 2] 1645
+[!((!3 & 2))] 9
+State: 1624 "vertex1624" {1}
+[!3 & 2] 1646
+[!((!3 & 2))] 9
+State: 1625 "vertex1625" {1}
+[!3 & 2] 1647
+[!((!3 & 2))] 9
+State: 1626 "vertex1626" {1}
+[!3 & 2] 1648
+[!((!3 & 2))] 9
+State: 1627 "vertex1627" {1}
+[!3 & 2] 1649
+[!((!3 & 2))] 9
+State: 1628 "vertex1628" {1}
+[!3 & 2] 1650
+[!((!3 & 2))] 9
+State: 1629 "vertex1629" {1}
+[!3 & 2] 1651
+[!((!3 & 2))] 9
+State: 1630 "vertex1630" {1}
+[!3 & 2] 1652
+[!((!3 & 2))] 9
+State: 1631 "vertex1631" {1}
+[t] 1653
+State: 1632 "vertex1632" {231}
+[t] 1631
+State: 1633 "vertex1633" {227}
+[t] 1654
+State: 1634 "vertex1634" {234}
+[t] 1655
+State: 1635 "vertex1635" {1}
+[!3 & 2] 1657
+[!((!3 & 2))] 1656
+State: 1636 "vertex1636" {1}
+[!3 & 2] 1658
+[!((!3 & 2))] 9
+State: 1637 "vertex1637" {1}
+[t] 1659
+State: 1638 "vertex1638" {1}
+[t] 1660
+State: 1639 "vertex1639" {1}
+[t] 1661
+State: 1640 "vertex1640" {1}
+[!3 & 2] 1663
+[!((!3 & 2))] 1662
+State: 1641 "vertex1641" {1}
+[!3 & 2] 1664
+[!((!3 & 2))] 9
+State: 1642 "vertex1642" {1}
+[!3 & 2] 1665
+[!((!3 & 2))] 9
+State: 1643 "vertex1643" {1}
+[t] 1666
+State: 1644 "vertex1644" {1}
+[t] 1667
+State: 1645 "vertex1645" {1}
+[!3 & 2] 1668
+[!((!3 & 2))] 9
+State: 1646 "vertex1646" {1}
+[!3 & 2] 1669
+[!((!3 & 2))] 9
+State: 1647 "vertex1647" {1}
+[!3 & 2] 1670
+[!((!3 & 2))] 9
+State: 1648 "vertex1648" {1}
+[!3 & 2] 1671
+[!((!3 & 2))] 9
+State: 1649 "vertex1649" {1}
+[t] 876
+State: 1650 "vertex1650" {1}
+[t] 1672
+State: 1651 "vertex1651" {1}
+[t] 1673
+State: 1652 "vertex1652" {1}
+[t] 1674
+State: 1653 "vertex1653" {1}
+[t] 1675
+State: 1654 "vertex1654" {232}
+[t] 1676
+State: 1655 "vertex1655" {1}
+[t] 1677
+State: 1656 "vertex1656" {1}
+[!3 & 2] 1678
+[!((!3 & 2))] 9
+State: 1657 "vertex1657" {1}
+[!3 & 2] 1679
+[!((!3 & 2))] 9
+State: 1658 "vertex1658" {1}
+[t] 1680
+State: 1659 "vertex1659" {1}
+[t] 1681
+State: 1660 "vertex1660" {1}
+[!3 & 2] 1683
+[!((!3 & 2))] 1682
+State: 1661 "vertex1661" {1}
+[t] 1684
+State: 1662 "vertex1662" {1}
+[!3 & 2] 1685
+[!((!3 & 2))] 9
+State: 1663 "vertex1663" {1}
+[!3 & 2] 1686
+[!((!3 & 2))] 9
+State: 1664 "vertex1664" {1}
+[!3 & 2] 1687
+[!((!3 & 2))] 9
+State: 1665 "vertex1665" {1}
+[!3 & 2] 1688
+[!((!3 & 2))] 9
+State: 1666 "vertex1666" {1}
+[!3 & 2] 1690
+[!((!3 & 2))] 1689
+State: 1667 "vertex1667" {1}
+[t] 1691
+State: 1668 "vertex1668" {1}
+[t] 79
+State: 1669 "vertex1669" {1}
+[t] 1692
+State: 1670 "vertex1670" {1}
+[t] 1693
+State: 1671 "vertex1671" {1}
+[t] 1694
+State: 1672 "vertex1672" {231}
+[t] 1695
+State: 1673 "vertex1673" {1}
+[t] 1696
+State: 1674 "vertex1674" {231}
+[t] 439
+State: 1675 "vertex1675" {1}
+[!3 & 2] 1698
+[!((!3 & 2))] 1697
+State: 1676 "vertex1676" {1}
+[t] 1699
+State: 1677 "vertex1677" {1}
+[t] 1700
+State: 1678 "vertex1678" {1}
+[!3 & 2] 1701
+[!((!3 & 2))] 9
+State: 1679 "vertex1679" {1}
+[!3 & 2] 1702
+[!((!3 & 2))] 9
+State: 1680 "vertex1680" {1}
+[t] 1703
+State: 1681 "vertex1681" {1}
+[t] 1704
+State: 1682 "vertex1682" {1}
+[!3 & 2] 1705
+[!((!3 & 2))] 9
+State: 1683 "vertex1683" {1}
+[!3 & 2] 1706
+[!((!3 & 2))] 9
+State: 1684 "vertex1684" {1}
+[!3 & 2] 1708
+[!((!3 & 2))] 1707
+State: 1685 "vertex1685" {1}
+[!3 & 2] 1709
+[!((!3 & 2))] 9
+State: 1686 "vertex1686" {1}
+[!3 & 2] 1710
+[!((!3 & 2))] 9
+State: 1687 "vertex1687" {1}
+[t] 1711
+State: 1688 "vertex1688" {1}
+[t] 1712
+State: 1689 "vertex1689" {1}
+[!3 & 2] 1713
+[!((!3 & 2))] 9
+State: 1690 "vertex1690" {1}
+[!3 & 2] 1714
+[!((!3 & 2))] 9
+State: 1691 "vertex1691" {1}
+[!3 & 2] 1716
+[!((!3 & 2))] 1715
+State: 1692 "vertex1692" {229}
+[t] 1574
+State: 1693 "vertex1693" {1}
+[t] 1717
+State: 1694 "vertex1694" {227}
+[t] 1718
+State: 1695 "vertex1695" {1}
+[t] 1719
+State: 1696 "vertex1696" {1}
+[!3 & 2] 1720
+[!((!3 & 2))] 9
+State: 1697 "vertex1697" {1}
+[!3 & 2] 1721
+[!((!3 & 2))] 9
+State: 1698 "vertex1698" {1}
+[!3 & 2] 1722
+[!((!3 & 2))] 9
+State: 1699 "vertex1699" {1}
+[t] 1723
+State: 1700 "vertex1700" {1}
+[!3 & 2] 1725
+[!((!3 & 2))] 1724
+State: 1701 "vertex1701" {1}
+[t] 1726
+State: 1702 "vertex1702" {1}
+[t] 1727
+State: 1703 "vertex1703" {1}
+[t] 1728
+State: 1704 "vertex1704" {1}
+[!3 & 2] 1730
+[!((!3 & 2))] 1729
+State: 1705 "vertex1705" {1}
+[!3 & 2] 1731
+[!((!3 & 2))] 9
+State: 1706 "vertex1706" {1}
+[!3 & 2] 1732
+[!((!3 & 2))] 9
+State: 1707 "vertex1707" {1}
+[!3 & 2] 1733
+[!((!3 & 2))] 9
+State: 1708 "vertex1708" {1}
+[!3 & 2] 1734
+[!((!3 & 2))] 9
+State: 1709 "vertex1709" {1}
+[t] 1735
+State: 1710 "vertex1710" {1}
+[t] 1736
+State: 1711 "vertex1711" {1}
+[t] 1737
+State: 1712 "vertex1712" {1}
+[t] 1738
+State: 1713 "vertex1713" {1}
+[!3 & 2] 1739
+[!((!3 & 2))] 9
+State: 1714 "vertex1714" {1}
+[!3 & 2] 1740
+[!((!3 & 2))] 9
+State: 1715 "vertex1715" {1}
+[!3 & 2] 1741
+[!((!3 & 2))] 9
+State: 1716 "vertex1716" {1}
+[!3 & 2] 1742
+[!((!3 & 2))] 9
+State: 1717 "vertex1717" {1}
+[t] 1743
+State: 1718 "vertex1718" {229}
+[t] 1717
+State: 1719 "vertex1719" {1}
+[t] 1744
+State: 1720 "vertex1720" {1}
+[t] 1745
+State: 1721 "vertex1721" {1}
+[!3 & 2] 1746
+[!((!3 & 2))] 9
+State: 1722 "vertex1722" {1}
+[!3 & 2] 1747
+[!((!3 & 2))] 9
+State: 1723 "vertex1723" {1}
+[!3 & 2] 1749
+[!((!3 & 2))] 1748
+State: 1724 "vertex1724" {1}
+[!3 & 2] 1750
+[!((!3 & 2))] 9
+State: 1725 "vertex1725" {1}
+[!3 & 2] 1751
+[!((!3 & 2))] 9
+State: 1726 "vertex1726" {1}
+[t] 1752
+State: 1727 "vertex1727" {231}
+[t] 274
+State: 1728 "vertex1728" {1}
+[t] 1753
+State: 1729 "vertex1729" {1}
+[!3 & 2] 1754
+[!((!3 & 2))] 9
+State: 1730 "vertex1730" {1}
+[!3 & 2] 1755
+[!((!3 & 2))] 9
+State: 1731 "vertex1731" {1}
+[t] 1637
+State: 1732 "vertex1732" {1}
+[t] 1756
+State: 1733 "vertex1733" {1}
+[!3 & 2] 1757
+[!((!3 & 2))] 9
+State: 1734 "vertex1734" {1}
+[!3 & 2] 1758
+[!((!3 & 2))] 9
+State: 1735 "vertex1735" {1}
+[t] 1639
+State: 1736 "vertex1736" {229}
+[t] 1759
+State: 1737 "vertex1737" {1}
+[t] 1760
+State: 1738 "vertex1738" {231}
+[t] 1737
+State: 1739 "vertex1739" {1}
+[t] 1589
+State: 1740 "vertex1740" {1}
+[t] 1761
+State: 1741 "vertex1741" {1}
+[!3 & 2] 1762
+[!((!3 & 2))] 9
+State: 1742 "vertex1742" {1}
+[!3 & 2] 1763
+[!((!3 & 2))] 9
+State: 1743 "vertex1743" {1}
+[t] 1764
+State: 1744 "vertex1744" {1}
+[t] 1765
+State: 1745 "vertex1745" {1}
+[t] 1766
+State: 1746 "vertex1746" {1}
+[t] 402
+State: 1747 "vertex1747" {1}
+[t] 1767
+State: 1748 "vertex1748" {1}
+[!3 & 2] 1768
+[!((!3 & 2))] 9
+State: 1749 "vertex1749" {1}
+[!3 & 2] 1769
+[!((!3 & 2))] 9
+State: 1750 "vertex1750" {1}
+[!3 & 2] 1770
+[!((!3 & 2))] 9
+State: 1751 "vertex1751" {1}
+[!3 & 2] 1771
+[!((!3 & 2))] 9
+State: 1752 "vertex1752" {1}
+[t] 1772
+State: 1753 "vertex1753" {1}
+[!3 & 2] 1774
+[!((!3 & 2))] 1773
+State: 1754 "vertex1754" {1}
+[!3 & 2] 1775
+[!((!3 & 2))] 9
+State: 1755 "vertex1755" {1}
+[!3 & 2] 1776
+[!((!3 & 2))] 9
+State: 1756 "vertex1756" {227}
+[t] 1777
+State: 1757 "vertex1757" {1}
+[t] 1778
+State: 1758 "vertex1758" {1}
+[t] 1779
+State: 1759 "vertex1759" {1}
+[t] 1780
+State: 1760 "vertex1760" {1}
+[t] 1781
+State: 1761 "vertex1761" {229}
+[t] 1429
+State: 1762 "vertex1762" {1}
+[t] 1589
+State: 1763 "vertex1763" {1}
+[t] 1782
+State: 1764 "vertex1764" {1}
+[!3 & 2] 1784
+[!((!3 & 2))] 1783
+State: 1765 "vertex1765" {1}
+[!3 & 2] 1785
+[!((!3 & 2))] 9
+State: 1766 "vertex1766" {1}
+[t] 1786
+State: 1767 "vertex1767" {229}
+[t] 379
+State: 1768 "vertex1768" {1}
+[!3 & 2] 1787
+[!((!3 & 2))] 9
+State: 1769 "vertex1769" {1}
+[!3 & 2] 1788
+[!((!3 & 2))] 9
+State: 1770 "vertex1770" {1}
+[t] 256
+State: 1771 "vertex1771" {1}
+[t] 1789
+State: 1772 "vertex1772" {1}
+[t] 1790
+State: 1773 "vertex1773" {1}
+[!3 & 2] 1791
+[!((!3 & 2))] 9
+State: 1774 "vertex1774" {1}
+[!3 & 2] 1792
+[!((!3 & 2))] 9
+State: 1775 "vertex1775" {1}
+[t] 1793
+State: 1776 "vertex1776" {1}
+[t] 1794
+State: 1777 "vertex1777" {229}
+[t] 1659
+State: 1778 "vertex1778" {1}
+[t] 1795
+State: 1779 "vertex1779" {229}
+[t] 1637
+State: 1780 "vertex1780" {1}
+[t] 1796
+State: 1781 "vertex1781" {1}
+[!3 & 2] 1798
+[!((!3 & 2))] 1797
+State: 1782 "vertex1782" {227}
+[t] 1799
+State: 1783 "vertex1783" {1}
+[!3 & 2] 1800
+[!((!3 & 2))] 9
+State: 1784 "vertex1784" {1}
+[!3 & 2] 1801
+[!((!3 & 2))] 9
+State: 1785 "vertex1785" {1}
+[!3 & 2] 1803
+[!((!3 & 2))] 1802
+State: 1786 "vertex1786" {1}
+[t] 1804
+State: 1787 "vertex1787" {1}
+[t] 379
+State: 1788 "vertex1788" {1}
+[t] 1805
+State: 1789 "vertex1789" {231}
+[t] 1806
+State: 1790 "vertex1790" {1}
+[!3 & 2] 1808
+[!((!3 & 2))] 1807
+State: 1791 "vertex1791" {1}
+[t] 1809
+State: 1792 "vertex1792" {1}
+[t] 1810
+State: 1793 "vertex1793" {1}
+[t] 1811
+State: 1794 "vertex1794" {227}
+[t] 1812
+State: 1795 "vertex1795" {1}
+[t] 1813
+State: 1796 "vertex1796" {1}
+[t] 1814
+State: 1797 "vertex1797" {1}
+[!3 & 2] 1815
+[!((!3 & 2))] 9
+State: 1798 "vertex1798" {1}
+[!3 & 2] 1816
+[!((!3 & 2))] 9
+State: 1799 "vertex1799" {232}
+[t] 1817
+State: 1800 "vertex1800" {1}
+[!3 & 2] 1818
+[!((!3 & 2))] 9
+State: 1801 "vertex1801" {1}
+[!3 & 2] 1819
+[!((!3 & 2))] 9
+State: 1802 "vertex1802" {1}
+[!3 & 2] 1821
+[!((!3 & 2))] 1820
+State: 1803 "vertex1803" {1}
+[!3 & 2] 1823
+[!((!3 & 2))] 1822
+State: 1804 "vertex1804" {1}
+[!3 & 2] 1825
+[!((!3 & 2))] 1824
+State: 1805 "vertex1805" {229}
+[t] 423
+State: 1806 "vertex1806" {1}
+[t] 1826
+State: 1807 "vertex1807" {1}
+[!3 & 2] 1827
+[!((!3 & 2))] 9
+State: 1808 "vertex1808" {1}
+[!3 & 2] 1828
+[!((!3 & 2))] 9
+State: 1809 "vertex1809" {1}
+[t] 1829
+State: 1810 "vertex1810" {229}
+[t] 1830
+State: 1811 "vertex1811" {1}
+[t] 1831
+State: 1812 "vertex1812" {232}
+[t] 1832
+State: 1813 "vertex1813" {1}
+[t] 1833
+State: 1814 "vertex1814" {1}
+[!3 & 2] 1835
+[!((!3 & 2))] 1834
+State: 1815 "vertex1815" {1}
+[!3 & 2] 1836
+[!((!3 & 2))] 9
+State: 1816 "vertex1816" {1}
+[!3 & 2] 1837
+[!((!3 & 2))] 9
+State: 1817 "vertex1817" {1}
+[t] 1838
+State: 1818 "vertex1818" {1}
+[t] 1839
+State: 1819 "vertex1819" {1}
+[t] 1840
+State: 1820 "vertex1820" {234}
+[t] 896
+State: 1821 "vertex1821" {1}
+[t] 897
+State: 1822 "vertex1822" {1}
+[t] 898
+State: 1823 "vertex1823" {1}
+[t] 1841
+State: 1824 "vertex1824" {1}
+[!3 & 2] 1842
+[!((!3 & 2))] 9
+State: 1825 "vertex1825" {1}
+[!3 & 2] 1843
+[!((!3 & 2))] 9
+State: 1826 "vertex1826" {1}
+[t] 1844
+State: 1827 "vertex1827" {1}
+[!3 & 2] 1845
+[!((!3 & 2))] 9
+State: 1828 "vertex1828" {1}
+[!3 & 2] 1846
+[!((!3 & 2))] 9
+State: 1829 "vertex1829" {1}
+[!3 & 2] 1847
+[!((!3 & 2))] 9
+State: 1830 "vertex1830" {1}
+[t] 1848
+State: 1831 "vertex1831" {1}
+[t] 1849
+State: 1832 "vertex1832" {1}
+[t] 1850
+State: 1833 "vertex1833" {1}
+[!3 & 2] 1852
+[!((!3 & 2))] 1851
+State: 1834 "vertex1834" {1}
+[!3 & 2] 1853
+[!((!3 & 2))] 9
+State: 1835 "vertex1835" {1}
+[!3 & 2] 1854
+[!((!3 & 2))] 9
+State: 1836 "vertex1836" {1}
+[t] 1855
+State: 1837 "vertex1837" {1}
+[t] 1856
+State: 1838 "vertex1838" {1}
+[t] 1857
+State: 1839 "vertex1839" {1}
+[t] 1858
+State: 1840 "vertex1840" {227}
+[t] 1574
+State: 1841 "vertex1841" {229}
+[t] 1859
+State: 1842 "vertex1842" {1}
+[t] 1860
+State: 1843 "vertex1843" {1}
+[t] 1861
+State: 1844 "vertex1844" {1}
+[t] 1862
+State: 1845 "vertex1845" {1}
+[t] 1863
+State: 1846 "vertex1846" {1}
+[t] 1864
+State: 1847 "vertex1847" {1}
+[t] 1865
+State: 1848 "vertex1848" {1}
+[t] 1866
+State: 1849 "vertex1849" {1}
+[!3 & 2] 1868
+[!((!3 & 2))] 1867
+State: 1850 "vertex1850" {1}
+[t] 1869
+State: 1851 "vertex1851" {1}
+[!3 & 2] 1870
+[!((!3 & 2))] 9
+State: 1852 "vertex1852" {1}
+[!3 & 2] 1871
+[!((!3 & 2))] 9
+State: 1853 "vertex1853" {1}
+[!3 & 2] 1872
+[!((!3 & 2))] 9
+State: 1854 "vertex1854" {1}
+[!3 & 2] 1873
+[!((!3 & 2))] 9
+State: 1855 "vertex1855" {1}
+[t] 1874
+State: 1856 "vertex1856" {229}
+[t] 1637
+State: 1857 "vertex1857" {1}
+[!3 & 2] 1876
+[!((!3 & 2))] 1875
+State: 1858 "vertex1858" {1}
+[t] 1877
+State: 1859 "vertex1859" {230}
+[t] 1878
+State: 1860 "vertex1860" {1}
+[t] 1879
+State: 1861 "vertex1861" {231}
+[t] 639
+State: 1862 "vertex1862" {1}
+[!3 & 2] 1881
+[!((!3 & 2))] 1880
+State: 1863 "vertex1863" {1}
+[t] 1882
+State: 1864 "vertex1864" {1}
+[t] 1883
+State: 1865 "vertex1865" {1}
+[t] 1884
+State: 1866 "vertex1866" {1}
+[t] 1885
+State: 1867 "vertex1867" {1}
+[!3 & 2] 1886
+[!((!3 & 2))] 9
+State: 1868 "vertex1868" {1}
+[!3 & 2] 1887
+[!((!3 & 2))] 9
+State: 1869 "vertex1869" {1}
+[!3 & 2] 1889
+[!((!3 & 2))] 1888
+State: 1870 "vertex1870" {1}
+[!3 & 2] 1890
+[!((!3 & 2))] 9
+State: 1871 "vertex1871" {1}
+[!3 & 2] 1891
+[!((!3 & 2))] 9
+State: 1872 "vertex1872" {1}
+[t] 1892
+State: 1873 "vertex1873" {1}
+[t] 1893
+State: 1874 "vertex1874" {1}
+[t] 1894
+State: 1875 "vertex1875" {1}
+[!3 & 2] 1895
+[!((!3 & 2))] 9
+State: 1876 "vertex1876" {1}
+[!3 & 2] 1896
+[!((!3 & 2))] 9
+State: 1877 "vertex1877" {1}
+[t] 1897
+State: 1878 "vertex1878" {234}
+[t] 1898
+State: 1879 "vertex1879" {1}
+[!3 & 2] 1899
+[!((!3 & 2))] 9
+State: 1880 "vertex1880" {1}
+[!3 & 2] 1900
+[!((!3 & 2))] 9
+State: 1881 "vertex1881" {1}
+[!3 & 2] 1901
+[!((!3 & 2))] 9
+State: 1882 "vertex1882" {1}
+[t] 1902
+State: 1883 "vertex1883" {233}
+[t] 1882
+State: 1884 "vertex1884" {1}
+[t] 1903
+State: 1885 "vertex1885" {1}
+[!3 & 2] 1905
+[!((!3 & 2))] 1904
+State: 1886 "vertex1886" {1}
+[!3 & 2] 1906
+[!((!3 & 2))] 9
+State: 1887 "vertex1887" {1}
+[!3 & 2] 1907
+[!((!3 & 2))] 9
+State: 1888 "vertex1888" {1}
+[!3 & 2] 1908
+[!((!3 & 2))] 9
+State: 1889 "vertex1889" {1}
+[!3 & 2] 1909
+[!((!3 & 2))] 9
+State: 1890 "vertex1890" {1}
+[t] 1910
+State: 1891 "vertex1891" {1}
+[t] 1911
+State: 1892 "vertex1892" {1}
+[t] 1912
+State: 1893 "vertex1893" {227}
+[t] 1913
+State: 1894 "vertex1894" {1}
+[t] 1914
+State: 1895 "vertex1895" {1}
+[!3 & 2] 1915
+[!((!3 & 2))] 9
+State: 1896 "vertex1896" {1}
+[!3 & 2] 1916
+[!((!3 & 2))] 9
+State: 1897 "vertex1897" {1}
+[!3 & 2] 1918
+[!((!3 & 2))] 1917
+State: 1898 "vertex1898" {1}
+[t] 1919
+State: 1899 "vertex1899" {1}
+[t] 1920
+State: 1900 "vertex1900" {1}
+[!3 & 2] 1921
+[!((!3 & 2))] 9
+State: 1901 "vertex1901" {1}
+[!3 & 2] 1922
+[!((!3 & 2))] 9
+State: 1902 "vertex1902" {1}
+[t] 1923
+State: 1903 "vertex1903" {1}
+[t] 1924
+State: 1904 "vertex1904" {1}
+[!3 & 2] 1925
+[!((!3 & 2))] 9
+State: 1905 "vertex1905" {1}
+[!3 & 2] 1926
+[!((!3 & 2))] 9
+State: 1906 "vertex1906" {1}
+[t] 1830
+State: 1907 "vertex1907" {1}
+[t] 1927
+State: 1908 "vertex1908" {1}
+[!3 & 2] 1928
+[!((!3 & 2))] 9
+State: 1909 "vertex1909" {1}
+[!3 & 2] 1929
+[!((!3 & 2))] 9
+State: 1910 "vertex1910" {1}
+[t] 1832
+State: 1911 "vertex1911" {229}
+[t] 1930
+State: 1912 "vertex1912" {1}
+[t] 1931
+State: 1913 "vertex1913" {232}
+[t] 1795
+State: 1914 "vertex1914" {1}
+[!3 & 2] 1933
+[!((!3 & 2))] 1932
+State: 1915 "vertex1915" {1}
+[t] 255
+State: 1916 "vertex1916" {1}
+[t] 1934
+State: 1917 "vertex1917" {1}
+[!3 & 2] 1935
+[!((!3 & 2))] 9
+State: 1918 "vertex1918" {1}
+[!3 & 2] 1936
+[!((!3 & 2))] 9
+State: 1919 "vertex1919" {1}
+[t] 1937
+State: 1920 "vertex1920" {1}
+[t] 1938
+State: 1921 "vertex1921" {1}
+[t] 402
+State: 1922 "vertex1922" {1}
+[t] 1939
+State: 1923 "vertex1923" {1}
+[!3 & 2] 1941
+[!((!3 & 2))] 1940
+State: 1924 "vertex1924" {1}
+[!3 & 2] 1943
+[!((!3 & 2))] 1942
+State: 1925 "vertex1925" {1}
+[!3 & 2] 1944
+[!((!3 & 2))] 9
+State: 1926 "vertex1926" {1}
+[!3 & 2] 1945
+[!((!3 & 2))] 9
+State: 1927 "vertex1927" {227}
+[t] 1946
+State: 1928 "vertex1928" {1}
+[t] 1947
+State: 1929 "vertex1929" {1}
+[t] 1948
+State: 1930 "vertex1930" {1}
+[t] 1949
+State: 1931 "vertex1931" {1}
+[t] 1950
+State: 1932 "vertex1932" {1}
+[!3 & 2] 1951
+[!((!3 & 2))] 9
+State: 1933 "vertex1933" {1}
+[!3 & 2] 1952
+[!((!3 & 2))] 9
+State: 1934 "vertex1934" {229}
+[t] 254
+State: 1935 "vertex1935" {1}
+[!3 & 2] 1953
+[!((!3 & 2))] 9
+State: 1936 "vertex1936" {1}
+[!3 & 2] 1954
+[!((!3 & 2))] 9
+State: 1937 "vertex1937" {1}
+[!3 & 2] 1956
+[!((!3 & 2))] 1955
+State: 1938 "vertex1938" {1}
+[t] 1957
+State: 1939 "vertex1939" {229}
+[t] 1958
+State: 1940 "vertex1940" {1}
+[!3 & 2] 1959
+[!((!3 & 2))] 9
+State: 1941 "vertex1941" {1}
+[!3 & 2] 1960
+[!((!3 & 2))] 9
+State: 1942 "vertex1942" {1}
+[!3 & 2] 1961
+[!((!3 & 2))] 9
+State: 1943 "vertex1943" {1}
+[!3 & 2] 1962
+[!((!3 & 2))] 9
+State: 1944 "vertex1944" {1}
+[t] 1963
+State: 1945 "vertex1945" {1}
+[t] 1964
+State: 1946 "vertex1946" {229}
+[t] 1848
+State: 1947 "vertex1947" {1}
+[t] 1965
+State: 1948 "vertex1948" {229}
+[t] 1830
+State: 1949 "vertex1949" {1}
+[t] 1966
+State: 1950 "vertex1950" {1}
+[!3 & 2] 1968
+[!((!3 & 2))] 1967
+State: 1951 "vertex1951" {1}
+[!3 & 2] 1969
+[!((!3 & 2))] 9
+State: 1952 "vertex1952" {1}
+[!3 & 2] 1970
+[!((!3 & 2))] 9
+State: 1953 "vertex1953" {1}
+[t] 1971
+State: 1954 "vertex1954" {1}
+[t] 1972
+State: 1955 "vertex1955" {1}
+[!3 & 2] 1973
+[!((!3 & 2))] 9
+State: 1956 "vertex1956" {1}
+[!3 & 2] 1974
+[!((!3 & 2))] 9
+State: 1957 "vertex1957" {1}
+[t] 1975
+State: 1958 "vertex1958" {234}
+[t] 1976
+State: 1959 "vertex1959" {1}
+[!3 & 2] 1977
+[!((!3 & 2))] 9
+State: 1960 "vertex1960" {1}
+[!3 & 2] 1978
+[!((!3 & 2))] 9
+State: 1961 "vertex1961" {1}
+[t] 1979
+State: 1962 "vertex1962" {1}
+[t] 1980
+State: 1963 "vertex1963" {1}
+[t] 1981
+State: 1964 "vertex1964" {227}
+[t] 1982
+State: 1965 "vertex1965" {1}
+[t] 1983
+State: 1966 "vertex1966" {1}
+[t] 1984
+State: 1967 "vertex1967" {1}
+[!3 & 2] 1985
+[!((!3 & 2))] 9
+State: 1968 "vertex1968" {1}
+[!3 & 2] 1986
+[!((!3 & 2))] 9
+State: 1969 "vertex1969" {1}
+[t] 1987
+State: 1970 "vertex1970" {1}
+[t] 1988
+State: 1971 "vertex1971" {1}
+[t] 1989
+State: 1972 "vertex1972" {227}
+[t] 1990
+State: 1973 "vertex1973" {1}
+[!3 & 2] 1991
+[!((!3 & 2))] 9
+State: 1974 "vertex1974" {1}
+[!3 & 2] 1992
+[!((!3 & 2))] 9
+State: 1975 "vertex1975" {1}
+[!3 & 2] 1994
+[!((!3 & 2))] 1993
+State: 1976 "vertex1976" {1}
+[t] 1995
+State: 1977 "vertex1977" {1}
+[t] 1996
+State: 1978 "vertex1978" {1}
+[t] 1997
+State: 1979 "vertex1979" {1}
+[t] 1998
+State: 1980 "vertex1980" {229}
+[t] 1999
+State: 1981 "vertex1981" {1}
+[t] 2000
+State: 1982 "vertex1982" {232}
+[t] 2001
+State: 1983 "vertex1983" {1}
+[t] 2002
+State: 1984 "vertex1984" {1}
+[!3 & 2] 2004
+[!((!3 & 2))] 2003
+State: 1985 "vertex1985" {1}
+[!3 & 2] 2005
+[!((!3 & 2))] 9
+State: 1986 "vertex1986" {1}
+[!3 & 2] 2006
+[!((!3 & 2))] 9
+State: 1987 "vertex1987" {1}
+[t] 2007
+State: 1988 "vertex1988" {1}
+[t] 2008
+State: 1989 "vertex1989" {1}
+[t] 2009
+State: 1990 "vertex1990" {229}
+[t] 1989
+State: 1991 "vertex1991" {1}
+[t] 1167
+State: 1992 "vertex1992" {1}
+[t] 2010
+State: 1993 "vertex1993" {1}
+[!3 & 2] 2011
+[!((!3 & 2))] 9
+State: 1994 "vertex1994" {1}
+[!3 & 2] 2012
+[!((!3 & 2))] 9
+State: 1995 "vertex1995" {1}
+[t] 2013
+State: 1996 "vertex1996" {1}
+[t] 2014
+State: 1997 "vertex1997" {231}
+[t] 439
+State: 1998 "vertex1998" {1}
+[!3 & 2] 2015
+[!((!3 & 2))] 9
+State: 1999 "vertex1999" {1}
+[t] 2016
+State: 2000 "vertex2000" {1}
+[t] 2017
+State: 2001 "vertex2001" {1}
+[t] 2018
+State: 2002 "vertex2002" {1}
+[!3 & 2] 2020
+[!((!3 & 2))] 2019
+State: 2003 "vertex2003" {1}
+[!3 & 2] 2021
+[!((!3 & 2))] 9
+State: 2004 "vertex2004" {1}
+[!3 & 2] 2022
+[!((!3 & 2))] 9
+State: 2005 "vertex2005" {1}
+[t] 1930
+State: 2006 "vertex2006" {1}
+[t] 2023
+State: 2007 "vertex2007" {1}
+[t] 2024
+State: 2008 "vertex2008" {231}
+[t] 2007
+State: 2009 "vertex2009" {1}
+[t] 2025
+State: 2010 "vertex2010" {231}
+[t] 2026
+State: 2011 "vertex2011" {1}
+[t] 2027
+State: 2012 "vertex2012" {1}
+[t] 2028
+State: 2013 "vertex2013" {1}
+[!3 & 2] 2030
+[!((!3 & 2))] 2029
+State: 2014 "vertex2014" {1}
+[t] 2031
+State: 2015 "vertex2015" {1}
+[t] 2032
+State: 2016 "vertex2016" {1}
+[t] 2033
+State: 2017 "vertex2017" {1}
+[!3 & 2] 2035
+[!((!3 & 2))] 2034
+State: 2018 "vertex2018" {1}
+[t] 2036
+State: 2019 "vertex2019" {1}
+[!3 & 2] 2037
+[!((!3 & 2))] 9
+State: 2020 "vertex2020" {1}
+[!3 & 2] 2038
+[!((!3 & 2))] 9
+State: 2021 "vertex2021" {1}
+[!3 & 2] 2039
+[!((!3 & 2))] 9
+State: 2022 "vertex2022" {1}
+[!3 & 2] 2040
+[!((!3 & 2))] 9
+State: 2023 "vertex2023" {227}
+[t] 2041
+State: 2024 "vertex2024" {1}
+[t] 2042
+State: 2025 "vertex2025" {1}
+[!3 & 2] 2044
+[!((!3 & 2))] 2043
+State: 2026 "vertex2026" {1}
+[t] 2045
+State: 2027 "vertex2027" {1}
+[t] 2046
+State: 2028 "vertex2028" {231}
+[t] 853
+State: 2029 "vertex2029" {1}
+[!3 & 2] 2047
+[!((!3 & 2))] 9
+State: 2030 "vertex2030" {1}
+[!3 & 2] 2048
+[!((!3 & 2))] 9
+State: 2031 "vertex2031" {1}
+[t] 2049
+State: 2032 "vertex2032" {1}
+[t] 2050
+State: 2033 "vertex2033" {1}
+[t] 2051
+State: 2034 "vertex2034" {1}
+[!3 & 2] 2052
+[!((!3 & 2))] 9
+State: 2035 "vertex2035" {1}
+[!3 & 2] 2053
+[!((!3 & 2))] 9
+State: 2036 "vertex2036" {1}
+[!3 & 2] 2055
+[!((!3 & 2))] 2054
+State: 2037 "vertex2037" {1}
+[!3 & 2] 2056
+[!((!3 & 2))] 9
+State: 2038 "vertex2038" {1}
+[!3 & 2] 2057
+[!((!3 & 2))] 9
+State: 2039 "vertex2039" {1}
+[t] 2058
+State: 2040 "vertex2040" {1}
+[t] 2059
+State: 2041 "vertex2041" {229}
+[t] 1949
+State: 2042 "vertex2042" {1}
+[!3 & 2] 2061
+[!((!3 & 2))] 2060
+State: 2043 "vertex2043" {1}
+[!3 & 2] 2062
+[!((!3 & 2))] 9
+State: 2044 "vertex2044" {1}
+[!3 & 2] 2063
+[!((!3 & 2))] 9
+State: 2045 "vertex2045" {1}
+[t] 2064
+State: 2046 "vertex2046" {1}
+[!3 & 2] 2065
+[!((!3 & 2))] 9
+State: 2047 "vertex2047" {1}
+[!3 & 2] 2066
+[!((!3 & 2))] 9
+State: 2048 "vertex2048" {1}
+[!3 & 2] 2067
+[!((!3 & 2))] 9
+State: 2049 "vertex2049" {1}
+[!3 & 2] 2069
+[!((!3 & 2))] 2068
+State: 2050 "vertex2050" {1}
+[t] 2070
+State: 2051 "vertex2051" {1}
+[!3 & 2] 2072
+[!((!3 & 2))] 2071
+State: 2052 "vertex2052" {1}
+[!3 & 2] 2073
+[!((!3 & 2))] 9
+State: 2053 "vertex2053" {1}
+[!3 & 2] 2074
+[!((!3 & 2))] 9
+State: 2054 "vertex2054" {1}
+[!3 & 2] 2075
+[!((!3 & 2))] 9
+State: 2055 "vertex2055" {1}
+[!3 & 2] 2076
+[!((!3 & 2))] 9
+State: 2056 "vertex2056" {1}
+[t] 2077
+State: 2057 "vertex2057" {1}
+[t] 2078
+State: 2058 "vertex2058" {1}
+[t] 2079
+State: 2059 "vertex2059" {227}
+[t] 2080
+State: 2060 "vertex2060" {1}
+[!3 & 2] 2081
+[!((!3 & 2))] 9
+State: 2061 "vertex2061" {1}
+[!3 & 2] 2082
+[!((!3 & 2))] 9
+State: 2062 "vertex2062" {1}
+[!3 & 2] 2083
+[!((!3 & 2))] 9
+State: 2063 "vertex2063" {1}
+[!3 & 2] 2084
+[!((!3 & 2))] 9
+State: 2064 "vertex2064" {1}
+[t] 2085
+State: 2065 "vertex2065" {1}
+[t] 2086
+State: 2066 "vertex2066" {1}
+[t] 419
+State: 2067 "vertex2067" {1}
+[t] 2087
+State: 2068 "vertex2068" {1}
+[!3 & 2] 2088
+[!((!3 & 2))] 9
+State: 2069 "vertex2069" {1}
+[!3 & 2] 2089
+[!((!3 & 2))] 9
+State: 2070 "vertex2070" {1}
+[t] 2090
+State: 2071 "vertex2071" {1}
+[!3 & 2] 2091
+[!((!3 & 2))] 9
+State: 2072 "vertex2072" {1}
+[!3 & 2] 2092
+[!((!3 & 2))] 9
+State: 2073 "vertex2073" {1}
+[t] 1999
+State: 2074 "vertex2074" {1}
+[t] 2093
+State: 2075 "vertex2075" {1}
+[!3 & 2] 2094
+[!((!3 & 2))] 9
+State: 2076 "vertex2076" {1}
+[!3 & 2] 2095
+[!((!3 & 2))] 9
+State: 2077 "vertex2077" {1}
+[t] 2001
+State: 2078 "vertex2078" {229}
+[t] 2096
+State: 2079 "vertex2079" {1}
+[t] 2097
+State: 2080 "vertex2080" {232}
+[t] 1965
+State: 2081 "vertex2081" {1}
+[!3 & 2] 2098
+[!((!3 & 2))] 9
+State: 2082 "vertex2082" {1}
+[!3 & 2] 2099
+[!((!3 & 2))] 9
+State: 2083 "vertex2083" {1}
+[t] 2100
+State: 2084 "vertex2084" {1}
+[t] 2101
+State: 2085 "vertex2085" {1}
+[!3 & 2] 2103
+[!((!3 & 2))] 2102
+State: 2086 "vertex2086" {1}
+[t] 2104
+State: 2087 "vertex2087" {231}
+[t] 2105
+State: 2088 "vertex2088" {1}
+[!3 & 2] 2106
+[!((!3 & 2))] 9
+State: 2089 "vertex2089" {1}
+[!3 & 2] 2107
+[!((!3 & 2))] 9
+State: 2090 "vertex2090" {1}
+[!3 & 2] 2109
+[!((!3 & 2))] 2108
+State: 2091 "vertex2091" {1}
+[!3 & 2] 2110
+[!((!3 & 2))] 9
+State: 2092 "vertex2092" {1}
+[!3 & 2] 2111
+[!((!3 & 2))] 9
+State: 2093 "vertex2093" {227}
+[t] 2112
+State: 2094 "vertex2094" {1}
+[t] 2113
+State: 2095 "vertex2095" {1}
+[t] 2114
+State: 2096 "vertex2096" {1}
+[t] 2115
+State: 2097 "vertex2097" {1}
+[t] 2116
+State: 2098 "vertex2098" {1}
+[t] 2117
+State: 2099 "vertex2099" {1}
+[t] 2118
+State: 2100 "vertex2100" {1}
+[t] 2119
+State: 2101 "vertex2101" {227}
+[t] 255
+State: 2102 "vertex2102" {1}
+[!3 & 2] 2120
+[!((!3 & 2))] 9
+State: 2103 "vertex2103" {1}
+[!3 & 2] 2121
+[!((!3 & 2))] 9
+State: 2104 "vertex2104" {1}
+[t] 2122
+State: 2105 "vertex2105" {1}
+[t] 2123
+State: 2106 "vertex2106" {1}
+[t] 2124
+State: 2107 "vertex2107" {1}
+[t] 2125
+State: 2108 "vertex2108" {1}
+[!3 & 2] 2126
+[!((!3 & 2))] 9
+State: 2109 "vertex2109" {1}
+[!3 & 2] 2127
+[!((!3 & 2))] 9
+State: 2110 "vertex2110" {1}
+[t] 2128
+State: 2111 "vertex2111" {1}
+[t] 2129
+State: 2112 "vertex2112" {229}
+[t] 2016
+State: 2113 "vertex2113" {1}
+[t] 2130
+State: 2114 "vertex2114" {229}
+[t] 1999
+State: 2115 "vertex2115" {1}
+[t] 2131
+State: 2116 "vertex2116" {1}
+[!3 & 2] 2133
+[!((!3 & 2))] 2132
+State: 2117 "vertex2117" {1}
+[t] 2134
+State: 2118 "vertex2118" {229}
+[t] 1830
+State: 2119 "vertex2119" {1}
+[t] 2135
+State: 2120 "vertex2120" {1}
+[!3 & 2] 2136
+[!((!3 & 2))] 9
+State: 2121 "vertex2121" {1}
+[!3 & 2] 2137
+[!((!3 & 2))] 9
+State: 2122 "vertex2122" {1}
+[t] 2138
+State: 2123 "vertex2123" {1}
+[t] 2139
+State: 2124 "vertex2124" {1}
+[t] 2140
+State: 2125 "vertex2125" {1}
+[t] 2141
+State: 2126 "vertex2126" {1}
+[t] 2142
+State: 2127 "vertex2127" {1}
+[t] 2143
+State: 2128 "vertex2128" {1}
+[t] 2144
+State: 2129 "vertex2129" {227}
+[t] 2145
+State: 2130 "vertex2130" {1}
+[t] 2146
+State: 2131 "vertex2131" {1}
+[t] 2147
+State: 2132 "vertex2132" {1}
+[!3 & 2] 2148
+[!((!3 & 2))] 9
+State: 2133 "vertex2133" {1}
+[!3 & 2] 2149
+[!((!3 & 2))] 9
+State: 2134 "vertex2134" {1}
+[t] 2150
+State: 2135 "vertex2135" {1}
+[t] 2151
+State: 2136 "vertex2136" {1}
+[t] 1156
+State: 2137 "vertex2137" {1}
+[t] 2152
+State: 2138 "vertex2138" {1}
+[!3 & 2] 2153
+[!((!3 & 2))] 9
+State: 2139 "vertex2139" {1}
+[t] 2154
+State: 2140 "vertex2140" {1}
+[t] 2155
+State: 2141 "vertex2141" {233}
+[t] 2140
+State: 2142 "vertex2142" {1}
+[t] 2156
+State: 2143 "vertex2143" {229}
+[t] 2157
+State: 2144 "vertex2144" {1}
+[t] 2158
+State: 2145 "vertex2145" {232}
+[t] 2159
+State: 2146 "vertex2146" {1}
+[t] 2160
+State: 2147 "vertex2147" {1}
+[!3 & 2] 2162
+[!((!3 & 2))] 2161
+State: 2148 "vertex2148" {1}
+[!3 & 2] 2163
+[!((!3 & 2))] 9
+State: 2149 "vertex2149" {1}
+[!3 & 2] 2164
+[!((!3 & 2))] 9
+State: 2150 "vertex2150" {1}
+[t] 2165
+State: 2151 "vertex2151" {1}
+[!3 & 2] 2167
+[!((!3 & 2))] 2166
+State: 2152 "vertex2152" {229}
+[t] 2168
+State: 2153 "vertex2153" {1}
+[!3 & 2] 2169
+[!((!3 & 2))] 1054
+State: 2154 "vertex2154" {1}
+[!3 & 2] 2171
+[!((!3 & 2))] 2170
+State: 2155 "vertex2155" {1}
+[t] 2172
+State: 2156 "vertex2156" {1}
+[!3 & 2] 2173
+[!((!3 & 2))] 9
+State: 2157 "vertex2157" {1}
+[t] 2174
+State: 2158 "vertex2158" {1}
+[t] 2175
+State: 2159 "vertex2159" {1}
+[t] 2176
+State: 2160 "vertex2160" {1}
+[!3 & 2] 2178
+[!((!3 & 2))] 2177
+State: 2161 "vertex2161" {1}
+[!3 & 2] 2179
+[!((!3 & 2))] 9
+State: 2162 "vertex2162" {1}
+[!3 & 2] 2180
+[!((!3 & 2))] 9
+State: 2163 "vertex2163" {1}
+[t] 2096
+State: 2164 "vertex2164" {1}
+[t] 2181
+State: 2165 "vertex2165" {1}
+[!3 & 2] 2183
+[!((!3 & 2))] 2182
+State: 2166 "vertex2166" {1}
+[!3 & 2] 2184
+[!((!3 & 2))] 9
+State: 2167 "vertex2167" {1}
+[!3 & 2] 2185
+[!((!3 & 2))] 9
+State: 2168 "vertex2168" {234}
+[t] 2186
+State: 2169 "vertex2169" {1}
+[t] 1087
+State: 2170 "vertex2170" {1}
+[!3 & 2] 2187
+[!((!3 & 2))] 9
+State: 2171 "vertex2171" {1}
+[!3 & 2] 2188
+[!((!3 & 2))] 9
+State: 2172 "vertex2172" {1}
+[!3 & 2] 2190
+[!((!3 & 2))] 2189
+State: 2173 "vertex2173" {1}
+[t] 2191
+State: 2174 "vertex2174" {1}
+[t] 2192
+State: 2175 "vertex2175" {1}
+[!3 & 2] 2194
+[!((!3 & 2))] 2193
+State: 2176 "vertex2176" {1}
+[t] 2195
+State: 2177 "vertex2177" {1}
+[!3 & 2] 2196
+[!((!3 & 2))] 9
+State: 2178 "vertex2178" {1}
+[!3 & 2] 2197
+[!((!3 & 2))] 9
+State: 2179 "vertex2179" {1}
+[!3 & 2] 2198
+[!((!3 & 2))] 9
+State: 2180 "vertex2180" {1}
+[!3 & 2] 2199
+[!((!3 & 2))] 9
+State: 2181 "vertex2181" {227}
+[t] 2200
+State: 2182 "vertex2182" {1}
+[!3 & 2] 2201
+[!((!3 & 2))] 9
+State: 2183 "vertex2183" {1}
+[!3 & 2] 2202
+[!((!3 & 2))] 9
+State: 2184 "vertex2184" {1}
+[!3 & 2] 2203
+[!((!3 & 2))] 9
+State: 2185 "vertex2185" {1}
+[!3 & 2] 2204
+[!((!3 & 2))] 9
+State: 2186 "vertex2186" {1}
+[t] 2205
+State: 2187 "vertex2187" {1}
+[!3 & 2] 2206
+[!((!3 & 2))] 9
+State: 2188 "vertex2188" {1}
+[!3 & 2] 2207
+[!((!3 & 2))] 9
+State: 2189 "vertex2189" {1}
+[!3 & 2] 2208
+[!((!3 & 2))] 9
+State: 2190 "vertex2190" {1}
+[!3 & 2] 2209
+[!((!3 & 2))] 9
+State: 2191 "vertex2191" {1}
+[t] 2210
+State: 2192 "vertex2192" {1}
+[t] 2211
+State: 2193 "vertex2193" {1}
+[!3 & 2] 2212
+[!((!3 & 2))] 9
+State: 2194 "vertex2194" {1}
+[!3 & 2] 2213
+[!((!3 & 2))] 9
+State: 2195 "vertex2195" {1}
+[!3 & 2] 2215
+[!((!3 & 2))] 2214
+State: 2196 "vertex2196" {1}
+[!3 & 2] 2216
+[!((!3 & 2))] 9
+State: 2197 "vertex2197" {1}
+[!3 & 2] 2217
+[!((!3 & 2))] 9
+State: 2198 "vertex2198" {1}
+[t] 2218
+State: 2199 "vertex2199" {1}
+[t] 2219
+State: 2200 "vertex2200" {229}
+[t] 2115
+State: 2201 "vertex2201" {1}
+[!3 & 2] 2220
+[!((!3 & 2))] 9
+State: 2202 "vertex2202" {1}
+[!3 & 2] 2221
+[!((!3 & 2))] 9
+State: 2203 "vertex2203" {1}
+[t] 2222
+State: 2204 "vertex2204" {1}
+[t] 2223
+State: 2205 "vertex2205" {1}
+[t] 2224
+State: 2206 "vertex2206" {1}
+[t] 599
+State: 2207 "vertex2207" {1}
+[t] 2225
+State: 2208 "vertex2208" {1}
+[!3 & 2] 2226
+[!((!3 & 2))] 9
+State: 2209 "vertex2209" {1}
+[!3 & 2] 2227
+[!((!3 & 2))] 9
+State: 2210 "vertex2210" {1}
+[t] 2228
+State: 2211 "vertex2211" {1}
+[!3 & 2] 2230
+[!((!3 & 2))] 2229
+State: 2212 "vertex2212" {1}
+[!3 & 2] 2231
+[!((!3 & 2))] 9
+State: 2213 "vertex2213" {1}
+[!3 & 2] 2232
+[!((!3 & 2))] 9
+State: 2214 "vertex2214" {1}
+[!3 & 2] 2233
+[!((!3 & 2))] 9
+State: 2215 "vertex2215" {1}
+[!3 & 2] 2234
+[!((!3 & 2))] 9
+State: 2216 "vertex2216" {1}
+[t] 2235
+State: 2217 "vertex2217" {1}
+[t] 2236
+State: 2218 "vertex2218" {1}
+[t] 2237
+State: 2219 "vertex2219" {227}
+[t] 2238
+State: 2220 "vertex2220" {1}
+[t] 2239
+State: 2221 "vertex2221" {1}
+[t] 2240
+State: 2222 "vertex2222" {1}
+[t] 2241
+State: 2223 "vertex2223" {227}
+[t] 2242
+State: 2224 "vertex2224" {1}
+[!3 & 2] 2244
+[!((!3 & 2))] 2243
+State: 2225 "vertex2225" {229}
+[t] 2245
+State: 2226 "vertex2226" {1}
+[t] 2246
+State: 2227 "vertex2227" {1}
+[t] 2247
+State: 2228 "vertex2228" {1}
+[t] 2248
+State: 2229 "vertex2229" {1}
+[!3 & 2] 2249
+[!((!3 & 2))] 9
+State: 2230 "vertex2230" {1}
+[!3 & 2] 2250
+[!((!3 & 2))] 9
+State: 2231 "vertex2231" {1}
+[t] 2157
+State: 2232 "vertex2232" {1}
+[t] 2251
+State: 2233 "vertex2233" {1}
+[!3 & 2] 2252
+[!((!3 & 2))] 9
+State: 2234 "vertex2234" {1}
+[!3 & 2] 2253
+[!((!3 & 2))] 9
+State: 2235 "vertex2235" {1}
+[t] 2159
+State: 2236 "vertex2236" {229}
+[t] 2254
+State: 2237 "vertex2237" {1}
+[t] 2255
+State: 2238 "vertex2238" {232}
+[t] 2130
+State: 2239 "vertex2239" {1}
+[t] 2256
+State: 2240 "vertex2240" {1}
+[t] 2257
+State: 2241 "vertex2241" {1}
+[t] 2258
+State: 2242 "vertex2242" {229}
+[t] 2241
+State: 2243 "vertex2243" {1}
+[!3 & 2] 2259
+[!((!3 & 2))] 9
+State: 2244 "vertex2244" {1}
+[!3 & 2] 2260
+[!((!3 & 2))] 9
+State: 2245 "vertex2245" {234}
+[t] 2261
+State: 2246 "vertex2246" {1}
+[t] 2262
+State: 2247 "vertex2247" {231}
+[t] 639
+State: 2248 "vertex2248" {1}
+[!3 & 2] 2263
+[!((!3 & 2))] 9
+State: 2249 "vertex2249" {1}
+[!3 & 2] 2264
+[!((!3 & 2))] 9
+State: 2250 "vertex2250" {1}
+[!3 & 2] 2265
+[!((!3 & 2))] 9
+State: 2251 "vertex2251" {227}
+[t] 2266
+State: 2252 "vertex2252" {1}
+[t] 2267
+State: 2253 "vertex2253" {1}
+[t] 2268
+State: 2254 "vertex2254" {1}
+[t] 2269
+State: 2255 "vertex2255" {1}
+[t] 2270
+State: 2256 "vertex2256" {1}
+[t] 2271
+State: 2257 "vertex2257" {231}
+[t] 2256
+State: 2258 "vertex2258" {1}
+[t] 2272
+State: 2259 "vertex2259" {1}
+[!3 & 2] 2273
+[!((!3 & 2))] 9
+State: 2260 "vertex2260" {1}
+[!3 & 2] 2274
+[!((!3 & 2))] 9
+State: 2261 "vertex2261" {1}
+[t] 2275
+State: 2262 "vertex2262" {1}
+[t] 2276
+State: 2263 "vertex2263" {1}
+[!3 & 2] 2278
+[!((!3 & 2))] 2277
+State: 2264 "vertex2264" {1}
+[t] 2279
+State: 2265 "vertex2265" {1}
+[t] 2280
+State: 2266 "vertex2266" {229}
+[t] 2174
+State: 2267 "vertex2267" {1}
+[t] 2281
+State: 2268 "vertex2268" {229}
+[t] 2157
+State: 2269 "vertex2269" {1}
+[t] 2282
+State: 2270 "vertex2270" {1}
+[!3 & 2] 2284
+[!((!3 & 2))] 2283
+State: 2271 "vertex2271" {1}
+[t] 2285
+State: 2272 "vertex2272" {1}
+[!3 & 2] 2287
+[!((!3 & 2))] 2286
+State: 2273 "vertex2273" {1}
+[t] 1381
+State: 2274 "vertex2274" {1}
+[t] 2288
+State: 2275 "vertex2275" {1}
+[t] 2289
+State: 2276 "vertex2276" {1}
+[t] 2290
+State: 2277 "vertex2277" {1}
+[t] 2291
+State: 2278 "vertex2278" {1}
+[t] 2292
+State: 2279 "vertex2279" {1}
+[t] 2293
+State: 2280 "vertex2280" {227}
+[t] 2294
+State: 2281 "vertex2281" {1}
+[t] 2295
+State: 2282 "vertex2282" {1}
+[t] 2296
+State: 2283 "vertex2283" {1}
+[!3 & 2] 2297
+[!((!3 & 2))] 9
+State: 2284 "vertex2284" {1}
+[!3 & 2] 2298
+[!((!3 & 2))] 9
+State: 2285 "vertex2285" {1}
+[!3 & 2] 2300
+[!((!3 & 2))] 2299
+State: 2286 "vertex2286" {1}
+[!3 & 2] 2301
+[!((!3 & 2))] 9
+State: 2287 "vertex2287" {1}
+[!3 & 2] 2302
+[!((!3 & 2))] 9
+State: 2288 "vertex2288" {231}
+[t] 2303
+State: 2289 "vertex2289" {1}
+[!3 & 2] 2305
+[!((!3 & 2))] 2304
+State: 2290 "vertex2290" {1}
+[!3 & 2] 2307
+[!((!3 & 2))] 2306
+State: 2291 "vertex2291" {232}
+[t] 892
+State: 2292 "vertex2292" {229}
+[t] 2308
+State: 2293 "vertex2293" {1}
+[t] 2309
+State: 2294 "vertex2294" {232}
+[t] 2310
+State: 2295 "vertex2295" {1}
+[t] 2311
+State: 2296 "vertex2296" {1}
+[!3 & 2] 2313
+[!((!3 & 2))] 2312
+State: 2297 "vertex2297" {1}
+[!3 & 2] 2314
+[!((!3 & 2))] 9
+State: 2298 "vertex2298" {1}
+[!3 & 2] 2315
+[!((!3 & 2))] 9
+State: 2299 "vertex2299" {1}
+[!3 & 2] 2316
+[!((!3 & 2))] 9
+State: 2300 "vertex2300" {1}
+[!3 & 2] 2317
+[!((!3 & 2))] 9
+State: 2301 "vertex2301" {1}
+[!3 & 2] 2318
+[!((!3 & 2))] 9
+State: 2302 "vertex2302" {1}
+[!3 & 2] 2319
+[!((!3 & 2))] 9
+State: 2303 "vertex2303" {1}
+[t] 2320
+State: 2304 "vertex2304" {1}
+[!3 & 2] 2321
+[!((!3 & 2))] 9
+State: 2305 "vertex2305" {1}
+[!3 & 2] 2322
+[!((!3 & 2))] 9
+State: 2306 "vertex2306" {1}
+[!3 & 2] 2323
+[!((!3 & 2))] 9
+State: 2307 "vertex2307" {1}
+[!3 & 2] 2324
+[!((!3 & 2))] 9
+State: 2308 "vertex2308" {230}
+[t] 2325
+State: 2309 "vertex2309" {1}
+[t] 2326
+State: 2310 "vertex2310" {1}
+[t] 2327
+State: 2311 "vertex2311" {1}
+[!3 & 2] 2329
+[!((!3 & 2))] 2328
+State: 2312 "vertex2312" {1}
+[!3 & 2] 2330
+[!((!3 & 2))] 9
+State: 2313 "vertex2313" {1}
+[!3 & 2] 2331
+[!((!3 & 2))] 9
+State: 2314 "vertex2314" {1}
+[t] 2254
+State: 2315 "vertex2315" {1}
+[t] 2332
+State: 2316 "vertex2316" {1}
+[!3 & 2] 2333
+[!((!3 & 2))] 9
+State: 2317 "vertex2317" {1}
+[!3 & 2] 2334
+[!((!3 & 2))] 9
+State: 2318 "vertex2318" {1}
+[t] 2335
+State: 2319 "vertex2319" {1}
+[t] 2336
+State: 2320 "vertex2320" {1}
+[t] 2337
+State: 2321 "vertex2321" {1}
+[!3 & 2] 2338
+[!((!3 & 2))] 9
+State: 2322 "vertex2322" {1}
+[!3 & 2] 2339
+[!((!3 & 2))] 9
+State: 2323 "vertex2323" {1}
+[!3 & 2] 2340
+[!((!3 & 2))] 9
+State: 2324 "vertex2324" {1}
+[!3 & 2] 2341
+[!((!3 & 2))] 9
+State: 2325 "vertex2325" {1}
+[t] 2342
+State: 2326 "vertex2326" {1}
+[!3 & 2] 2343
+[!((!3 & 2))] 9
+State: 2327 "vertex2327" {1}
+[t] 2344
+State: 2328 "vertex2328" {1}
+[!3 & 2] 2345
+[!((!3 & 2))] 9
+State: 2329 "vertex2329" {1}
+[!3 & 2] 2346
+[!((!3 & 2))] 9
+State: 2330 "vertex2330" {1}
+[!3 & 2] 2347
+[!((!3 & 2))] 9
+State: 2331 "vertex2331" {1}
+[!3 & 2] 2348
+[!((!3 & 2))] 9
+State: 2332 "vertex2332" {227}
+[t] 2349
+State: 2333 "vertex2333" {1}
+[t] 2350
+State: 2334 "vertex2334" {1}
+[t] 2351
+State: 2335 "vertex2335" {1}
+[t] 2352
+State: 2336 "vertex2336" {227}
+[t] 418
+State: 2337 "vertex2337" {1}
+[t] 2353
+State: 2338 "vertex2338" {1}
+[t] 617
+State: 2339 "vertex2339" {1}
+[t] 2354
+State: 2340 "vertex2340" {1}
+[t] 2355
+State: 2341 "vertex2341" {1}
+[t] 2356
+State: 2342 "vertex2342" {1}
+[t] 2357
+State: 2343 "vertex2343" {1}
+[!3 & 2] 2359
+[!((!3 & 2))] 2358
+State: 2344 "vertex2344" {1}
+[!3 & 2] 2360
+[!((!3 & 2))] 9
+State: 2345 "vertex2345" {1}
+[!3 & 2] 2361
+[!((!3 & 2))] 9
+State: 2346 "vertex2346" {1}
+[!3 & 2] 2362
+[!((!3 & 2))] 9
+State: 2347 "vertex2347" {1}
+[t] 2363
+State: 2348 "vertex2348" {1}
+[t] 2364
+State: 2349 "vertex2349" {229}
+[t] 2269
+State: 2350 "vertex2350" {1}
+[t] 2365
+State: 2351 "vertex2351" {229}
+[t] 1999
+State: 2352 "vertex2352" {1}
+[t] 2366
+State: 2353 "vertex2353" {1}
+[!3 & 2] 2368
+[!((!3 & 2))] 2367
+State: 2354 "vertex2354" {231}
+[t] 2369
+State: 2355 "vertex2355" {1}
+[t] 2370
+State: 2356 "vertex2356" {1}
+[t] 2371
+State: 2357 "vertex2357" {1}
+[t] 2372
+State: 2358 "vertex2358" {1}
+[!3 & 2] 2374
+[!((!3 & 2))] 2373
+State: 2359 "vertex2359" {1}
+[!3 & 2] 2376
+[!((!3 & 2))] 2375
+State: 2360 "vertex2360" {1}
+[!3 & 2] 2378
+[!((!3 & 2))] 2377
+State: 2361 "vertex2361" {1}
+[t] 2379
+State: 2362 "vertex2362" {1}
+[t] 2380
+State: 2363 "vertex2363" {1}
+[t] 2381
+State: 2364 "vertex2364" {227}
+[t] 2382
+State: 2365 "vertex2365" {1}
+[t] 2383
+State: 2366 "vertex2366" {1}
+[t] 2384
+State: 2367 "vertex2367" {1}
+[!3 & 2] 2385
+[!((!3 & 2))] 9
+State: 2368 "vertex2368" {1}
+[!3 & 2] 2386
+[!((!3 & 2))] 9
+State: 2369 "vertex2369" {1}
+[t] 2387
+State: 2370 "vertex2370" {1}
+[t] 2388
+State: 2371 "vertex2371" {233}
+[t] 2370
+State: 2372 "vertex2372" {1}
+[!3 & 2] 2390
+[!((!3 & 2))] 2389
+State: 2373 "vertex2373" {1}
+[t] 2291
+State: 2374 "vertex2374" {1}
+[t] 2391
+State: 2375 "vertex2375" {1}
+[t] 2392
+State: 2376 "vertex2376" {1}
+[t] 2393
+State: 2377 "vertex2377" {1}
+[!3 & 2] 2394
+[!((!3 & 2))] 2277
+State: 2378 "vertex2378" {1}
+[!3 & 2] 2396
+[!((!3 & 2))] 2395
+State: 2379 "vertex2379" {1}
+[t] 2310
+State: 2380 "vertex2380" {229}
+[t] 2397
+State: 2381 "vertex2381" {1}
+[t] 2398
+State: 2382 "vertex2382" {232}
+[t] 2281
+State: 2383 "vertex2383" {1}
+[t] 2399
+State: 2384 "vertex2384" {1}
+[!3 & 2] 2401
+[!((!3 & 2))] 2400
+State: 2385 "vertex2385" {1}
+[!3 & 2] 2402
+[!((!3 & 2))] 9
+State: 2386 "vertex2386" {1}
+[!3 & 2] 2403
+[!((!3 & 2))] 9
+State: 2387 "vertex2387" {1}
+[t] 2404
+State: 2388 "vertex2388" {1}
+[t] 2405
+State: 2389 "vertex2389" {1}
+[!3 & 2] 2406
+[!((!3 & 2))] 9
+State: 2390 "vertex2390" {1}
+[!3 & 2] 2407
+[!((!3 & 2))] 9
+State: 2391 "vertex2391" {231}
+[t] 2308
+State: 2392 "vertex2392" {232}
+[t] 2408
+State: 2393 "vertex2393" {227}
+[t] 2409
+State: 2394 "vertex2394" {1}
+[t] 2292
+State: 2395 "vertex2395" {1}
+[t] 2410
+State: 2396 "vertex2396" {1}
+[t] 2411
+State: 2397 "vertex2397" {1}
+[t] 2412
+State: 2398 "vertex2398" {1}
+[t] 2413
+State: 2399 "vertex2399" {1}
+[!3 & 2] 2415
+[!((!3 & 2))] 2414
+State: 2400 "vertex2400" {1}
+[!3 & 2] 2416
+[!((!3 & 2))] 9
+State: 2401 "vertex2401" {1}
+[!3 & 2] 2417
+[!((!3 & 2))] 9
+State: 2402 "vertex2402" {1}
+[t] 1402
+State: 2403 "vertex2403" {1}
+[t] 2418
+State: 2404 "vertex2404" {1}
+[t] 2419
+State: 2405 "vertex2405" {1}
+[!3 & 2] 2421
+[!((!3 & 2))] 2420
+State: 2406 "vertex2406" {1}
+[!3 & 2] 2422
+[!((!3 & 2))] 9
+State: 2407 "vertex2407" {1}
+[!3 & 2] 2423
+[!((!3 & 2))] 9
+State: 2408 "vertex2408" {229}
+[t] 2424
+State: 2409 "vertex2409" {228}
+[t] 2425
+State: 2410 "vertex2410" {229}
+[t] 2426
+State: 2411 "vertex2411" {229}
+[t] 2427
+State: 2412 "vertex2412" {1}
+[t] 2428
+State: 2413 "vertex2413" {1}
+[!3 & 2] 2430
+[!((!3 & 2))] 2429
+State: 2414 "vertex2414" {1}
+[!3 & 2] 2431
+[!((!3 & 2))] 9
+State: 2415 "vertex2415" {1}
+[!3 & 2] 2432
+[!((!3 & 2))] 9
+State: 2416 "vertex2416" {1}
+[!3 & 2] 2433
+[!((!3 & 2))] 9
+State: 2417 "vertex2417" {1}
+[!3 & 2] 2434
+[!((!3 & 2))] 9
+State: 2418 "vertex2418" {229}
+[t] 2435
+State: 2419 "vertex2419" {1}
+[!3 & 2] 2437
+[!((!3 & 2))] 2436
+State: 2420 "vertex2420" {1}
+[!3 & 2] 2438
+[!((!3 & 2))] 9
+State: 2421 "vertex2421" {1}
+[!3 & 2] 2439
+[!((!3 & 2))] 9
+State: 2422 "vertex2422" {1}
+[t] 2440
+State: 2423 "vertex2423" {1}
+[t] 2441
+State: 2424 "vertex2424" {232}
+[t] 952
+State: 2425 "vertex2425" {229}
+[t] 2342
+State: 2426 "vertex2426" {230}
+[t] 2424
+State: 2427 "vertex2427" {230}
+[t] 2325
+State: 2428 "vertex2428" {1}
+[t] 2442
+State: 2429 "vertex2429" {1}
+[!3 & 2] 2443
+[!((!3 & 2))] 9
+State: 2430 "vertex2430" {1}
+[!3 & 2] 2444
+[!((!3 & 2))] 9
+State: 2431 "vertex2431" {1}
+[!3 & 2] 2445
+[!((!3 & 2))] 9
+State: 2432 "vertex2432" {1}
+[!3 & 2] 2446
+[!((!3 & 2))] 9
+State: 2433 "vertex2433" {1}
+[t] 2447
+State: 2434 "vertex2434" {1}
+[t] 2448
+State: 2435 "vertex2435" {234}
+[t] 2449
+State: 2436 "vertex2436" {1}
+[!3 & 2] 2450
+[!((!3 & 2))] 9
+State: 2437 "vertex2437" {1}
+[!3 & 2] 2451
+[!((!3 & 2))] 9
+State: 2438 "vertex2438" {1}
+[!3 & 2] 2452
+[!((!3 & 2))] 9
+State: 2439 "vertex2439" {1}
+[!3 & 2] 2453
+[!((!3 & 2))] 9
+State: 2440 "vertex2440" {1}
+[t] 2454
+State: 2441 "vertex2441" {227}
+[t] 2455
+State: 2442 "vertex2442" {1}
+[!3 & 2] 2456
+[!((!3 & 2))] 9
+State: 2443 "vertex2443" {1}
+[!3 & 2] 2457
+[!((!3 & 2))] 9
+State: 2444 "vertex2444" {1}
+[!3 & 2] 2458
+[!((!3 & 2))] 9
+State: 2445 "vertex2445" {1}
+[t] 2459
+State: 2446 "vertex2446" {1}
+[t] 2460
+State: 2447 "vertex2447" {1}
+[t] 2461
+State: 2448 "vertex2448" {227}
+[t] 2462
+State: 2449 "vertex2449" {1}
+[t] 2463
+State: 2450 "vertex2450" {1}
+[!3 & 2] 2464
+[!((!3 & 2))] 9
+State: 2451 "vertex2451" {1}
+[!3 & 2] 2465
+[!((!3 & 2))] 9
+State: 2452 "vertex2452" {1}
+[t] 2466
+State: 2453 "vertex2453" {1}
+[t] 2467
+State: 2454 "vertex2454" {1}
+[t] 2468
+State: 2455 "vertex2455" {232}
+[t] 2469
+State: 2456 "vertex2456" {1}
+[!3 & 2] 2471
+[!((!3 & 2))] 2470
+State: 2457 "vertex2457" {1}
+[t] 2397
+State: 2458 "vertex2458" {1}
+[t] 2472
+State: 2459 "vertex2459" {1}
+[t] 2473
+State: 2460 "vertex2460" {1}
+[t] 2474
+State: 2461 "vertex2461" {1}
+[t] 2475
+State: 2462 "vertex2462" {229}
+[t] 2461
+State: 2463 "vertex2463" {1}
+[t] 2476
+State: 2464 "vertex2464" {1}
+[t] 813
+State: 2465 "vertex2465" {1}
+[t] 2477
+State: 2466 "vertex2466" {1}
+[t] 2478
+State: 2467 "vertex2467" {231}
+[t] 853
+State: 2468 "vertex2468" {1}
+[t] 2479
+State: 2469 "vertex2469" {1}
+[t] 2480
+State: 2470 "vertex2470" {1}
+[!3 & 2] 2482
+[!((!3 & 2))] 2481
+State: 2471 "vertex2471" {1}
+[!3 & 2] 2484
+[!((!3 & 2))] 2483
+State: 2472 "vertex2472" {227}
+[t] 2485
+State: 2473 "vertex2473" {1}
+[t] 2486
+State: 2474 "vertex2474" {231}
+[t] 2473
+State: 2475 "vertex2475" {1}
+[t] 2487
+State: 2476 "vertex2476" {1}
+[!3 & 2] 2489
+[!((!3 & 2))] 2488
+State: 2477 "vertex2477" {229}
+[t] 2490
+State: 2478 "vertex2478" {1}
+[t] 2491
+State: 2479 "vertex2479" {1}
+[!3 & 2] 2493
+[!((!3 & 2))] 2492
+State: 2480 "vertex2480" {1}
+[t] 2494
+State: 2481 "vertex2481" {232}
+[t] 2291
+State: 2482 "vertex2482" {1}
+[t] 2495
+State: 2483 "vertex2483" {1}
+[t] 2496
+State: 2484 "vertex2484" {1}
+[t] 2497
+State: 2485 "vertex2485" {229}
+[t] 2412
+State: 2486 "vertex2486" {1}
+[t] 2498
+State: 2487 "vertex2487" {1}
+[!3 & 2] 2500
+[!((!3 & 2))] 2499
+State: 2488 "vertex2488" {1}
+[!3 & 2] 2501
+[!((!3 & 2))] 9
+State: 2489 "vertex2489" {1}
+[!3 & 2] 2502
+[!((!3 & 2))] 9
+State: 2490 "vertex2490" {234}
+[t] 2503
+State: 2491 "vertex2491" {1}
+[t] 2504
+State: 2492 "vertex2492" {1}
+[!3 & 2] 2505
+[!((!3 & 2))] 9
+State: 2493 "vertex2493" {1}
+[!3 & 2] 2506
+[!((!3 & 2))] 9
+State: 2494 "vertex2494" {1}
+[!3 & 2] 2508
+[!((!3 & 2))] 2507
+State: 2495 "vertex2495" {232}
+[t] 2509
+State: 2496 "vertex2496" {230}
+[t] 2426
+State: 2497 "vertex2497" {227}
+[t] 2510
+State: 2498 "vertex2498" {1}
+[!3 & 2] 2512
+[!((!3 & 2))] 2511
+State: 2499 "vertex2499" {1}
+[!3 & 2] 2513
+[!((!3 & 2))] 9
+State: 2500 "vertex2500" {1}
+[!3 & 2] 2514
+[!((!3 & 2))] 9
+State: 2501 "vertex2501" {1}
+[!3 & 2] 2515
+[!((!3 & 2))] 9
+State: 2502 "vertex2502" {1}
+[!3 & 2] 2516
+[!((!3 & 2))] 9
+State: 2503 "vertex2503" {1}
+[t] 2517
+State: 2504 "vertex2504" {1}
+[!3 & 2] 2519
+[!((!3 & 2))] 2518
+State: 2505 "vertex2505" {1}
+[!3 & 2] 2520
+[!((!3 & 2))] 9
+State: 2506 "vertex2506" {1}
+[!3 & 2] 2521
+[!((!3 & 2))] 9
+State: 2507 "vertex2507" {1}
+[!3 & 2] 2522
+[!((!3 & 2))] 9
+State: 2508 "vertex2508" {1}
+[!3 & 2] 2523
+[!((!3 & 2))] 9
+State: 2509 "vertex2509" {229}
+[t] 2325
+State: 2510 "vertex2510" {228}
+[t] 2524
+State: 2511 "vertex2511" {1}
+[!3 & 2] 2525
+[!((!3 & 2))] 9
+State: 2512 "vertex2512" {1}
+[!3 & 2] 2526
+[!((!3 & 2))] 9
+State: 2513 "vertex2513" {1}
+[!3 & 2] 2527
+[!((!3 & 2))] 9
+State: 2514 "vertex2514" {1}
+[!3 & 2] 2528
+[!((!3 & 2))] 9
+State: 2515 "vertex2515" {1}
+[t] 256
+State: 2516 "vertex2516" {1}
+[t] 2529
+State: 2517 "vertex2517" {1}
+[t] 2530
+State: 2518 "vertex2518" {1}
+[!3 & 2] 2531
+[!((!3 & 2))] 9
+State: 2519 "vertex2519" {1}
+[!3 & 2] 2532
+[!((!3 & 2))] 9
+State: 2520 "vertex2520" {1}
+[t] 2533
+State: 2521 "vertex2521" {1}
+[t] 2534
+State: 2522 "vertex2522" {1}
+[!3 & 2] 2535
+[!((!3 & 2))] 9
+State: 2523 "vertex2523" {1}
+[!3 & 2] 2536
+[!((!3 & 2))] 9
+State: 2524 "vertex2524" {232}
+[t] 2537
+State: 2525 "vertex2525" {1}
+[!3 & 2] 2538
+[!((!3 & 2))] 9
+State: 2526 "vertex2526" {1}
+[!3 & 2] 2539
+[!((!3 & 2))] 9
+State: 2527 "vertex2527" {1}
+[t] 2540
+State: 2528 "vertex2528" {1}
+[t] 2541
+State: 2529 "vertex2529" {231}
+[t] 2542
+State: 2530 "vertex2530" {1}
+[!3 & 2] 2544
+[!((!3 & 2))] 2543
+State: 2531 "vertex2531" {1}
+[!3 & 2] 2545
+[!((!3 & 2))] 9
+State: 2532 "vertex2532" {1}
+[!3 & 2] 2546
+[!((!3 & 2))] 9
+State: 2533 "vertex2533" {1}
+[t] 2547
+State: 2534 "vertex2534" {227}
+[t] 2548
+State: 2535 "vertex2535" {1}
+[t] 2549
+State: 2536 "vertex2536" {1}
+[t] 2550
+State: 2537 "vertex2537" {1}
+[t] 2551
+State: 2538 "vertex2538" {1}
+[t] 2552
+State: 2539 "vertex2539" {1}
+[t] 2553
+State: 2540 "vertex2540" {1}
+[t] 2554
+State: 2541 "vertex2541" {227}
+[t] 616
+State: 2542 "vertex2542" {1}
+[t] 2555
+State: 2543 "vertex2543" {1}
+[!3 & 2] 2556
+[!((!3 & 2))] 9
+State: 2544 "vertex2544" {1}
+[!3 & 2] 2557
+[!((!3 & 2))] 9
+State: 2545 "vertex2545" {1}
+[t] 2558
+State: 2546 "vertex2546" {1}
+[t] 2559
+State: 2547 "vertex2547" {1}
+[t] 2560
+State: 2548 "vertex2548" {229}
+[t] 2547
+State: 2549 "vertex2549" {1}
+[t] 1387
+State: 2550 "vertex2550" {229}
+[t] 2533
+State: 2551 "vertex2551" {1}
+[t] 2561
+State: 2552 "vertex2552" {1}
+[t] 2562
+State: 2553 "vertex2553" {229}
+[t] 2157
+State: 2554 "vertex2554" {1}
+[t] 2563
+State: 2555 "vertex2555" {1}
+[t] 2564
+State: 2556 "vertex2556" {1}
+[!3 & 2] 2565
+[!((!3 & 2))] 9
+State: 2557 "vertex2557" {1}
+[!3 & 2] 2566
+[!((!3 & 2))] 9
+State: 2558 "vertex2558" {1}
+[t] 2567
+State: 2559 "vertex2559" {1}
+[t] 2568
+State: 2560 "vertex2560" {1}
+[t] 2569
+State: 2561 "vertex2561" {1}
+[!3 & 2] 2571
+[!((!3 & 2))] 2570
+State: 2562 "vertex2562" {1}
+[t] 2572
+State: 2563 "vertex2563" {1}
+[t] 2573
+State: 2564 "vertex2564" {1}
+[t] 2574
+State: 2565 "vertex2565" {1}
+[t] 830
+State: 2566 "vertex2566" {1}
+[t] 2575
+State: 2567 "vertex2567" {1}
+[t] 2576
+State: 2568 "vertex2568" {233}
+[t] 2567
+State: 2569 "vertex2569" {1}
+[!3 & 2] 2578
+[!((!3 & 2))] 2577
+State: 2570 "vertex2570" {1}
+[!3 & 2] 2579
+[!((!3 & 2))] 9
+State: 2571 "vertex2571" {1}
+[!3 & 2] 2580
+[!((!3 & 2))] 9
+State: 2572 "vertex2572" {1}
+[t] 2581
+State: 2573 "vertex2573" {1}
+[!3 & 2] 2583
+[!((!3 & 2))] 2582
+State: 2574 "vertex2574" {1}
+[!3 & 2] 2585
+[!((!3 & 2))] 2584
+State: 2575 "vertex2575" {231}
+[t] 2586
+State: 2576 "vertex2576" {1}
+[t] 2587
+State: 2577 "vertex2577" {1}
+[!3 & 2] 2588
+[!((!3 & 2))] 9
+State: 2578 "vertex2578" {1}
+[!3 & 2] 2589
+[!((!3 & 2))] 9
+State: 2579 "vertex2579" {1}
+[!3 & 2] 2590
+[!((!3 & 2))] 9
+State: 2580 "vertex2580" {1}
+[!3 & 2] 2591
+[!((!3 & 2))] 9
+State: 2581 "vertex2581" {1}
+[!3 & 2] 2593
+[!((!3 & 2))] 2592
+State: 2582 "vertex2582" {1}
+[!3 & 2] 2594
+[!((!3 & 2))] 9
+State: 2583 "vertex2583" {1}
+[!3 & 2] 2595
+[!((!3 & 2))] 9
+State: 2584 "vertex2584" {1}
+[!3 & 2] 2596
+[!((!3 & 2))] 9
+State: 2585 "vertex2585" {1}
+[!3 & 2] 2597
+[!((!3 & 2))] 9
+State: 2586 "vertex2586" {1}
+[t] 2598
+State: 2587 "vertex2587" {1}
+[!3 & 2] 2599
+[!((!3 & 2))] 9
+State: 2588 "vertex2588" {1}
+[!3 & 2] 2600
+[!((!3 & 2))] 9
+State: 2589 "vertex2589" {1}
+[!3 & 2] 2601
+[!((!3 & 2))] 9
+State: 2590 "vertex2590" {1}
+[t] 2602
+State: 2591 "vertex2591" {1}
+[t] 2603
+State: 2592 "vertex2592" {1}
+[!3 & 2] 2604
+[!((!3 & 2))] 9
+State: 2593 "vertex2593" {1}
+[!3 & 2] 2605
+[!((!3 & 2))] 9
+State: 2594 "vertex2594" {1}
+[!3 & 2] 2606
+[!((!3 & 2))] 9
+State: 2595 "vertex2595" {1}
+[!3 & 2] 2607
+[!((!3 & 2))] 9
+State: 2596 "vertex2596" {1}
+[!3 & 2] 2608
+[!((!3 & 2))] 9
+State: 2597 "vertex2597" {1}
+[!3 & 2] 2609
+[!((!3 & 2))] 9
+State: 2598 "vertex2598" {1}
+[t] 2610
+State: 2599 "vertex2599" {1}
+[!3 & 2] 2612
+[!((!3 & 2))] 2611
+State: 2600 "vertex2600" {1}
+[t] 2613
+State: 2601 "vertex2601" {1}
+[t] 2614
+State: 2602 "vertex2602" {1}
+[t] 2469
+State: 2603 "vertex2603" {229}
+[t] 1133
+State: 2604 "vertex2604" {1}
+[!3 & 2] 2615
+[!((!3 & 2))] 9
+State: 2605 "vertex2605" {1}
+[!3 & 2] 2616
+[!((!3 & 2))] 9
+State: 2606 "vertex2606" {1}
+[t] 2617
+State: 2607 "vertex2607" {1}
+[t] 2618
+State: 2608 "vertex2608" {1}
+[t] 402
+State: 2609 "vertex2609" {1}
+[t] 2619
+State: 2610 "vertex2610" {1}
+[t] 2620
+State: 2611 "vertex2611" {1}
+[!3 & 2] 2621
+[!((!3 & 2))] 1054
+State: 2612 "vertex2612" {1}
+[!3 & 2] 2623
+[!((!3 & 2))] 2622
+State: 2613 "vertex2613" {1}
+[t] 2624
+State: 2614 "vertex2614" {227}
+[t] 2625
+State: 2615 "vertex2615" {1}
+[t] 2626
+State: 2616 "vertex2616" {1}
+[t] 2627
+State: 2617 "vertex2617" {1}
+[t] 2628
+State: 2618 "vertex2618" {227}
+[t] 2629
+State: 2619 "vertex2619" {229}
+[t] 2630
+State: 2620 "vertex2620" {1}
+[!3 & 2] 2632
+[!((!3 & 2))] 2631
+State: 2621 "vertex2621" {1}
+[t] 1087
+State: 2622 "vertex2622" {1}
+[t] 2633
+State: 2623 "vertex2623" {1}
+[t] 2634
+State: 2624 "vertex2624" {1}
+[t] 2635
+State: 2625 "vertex2625" {232}
+[t] 1599
+State: 2626 "vertex2626" {1}
+[t] 2636
+State: 2627 "vertex2627" {1}
+[t] 2637
+State: 2628 "vertex2628" {1}
+[t] 2638
+State: 2629 "vertex2629" {229}
+[t] 2628
+State: 2630 "vertex2630" {234}
+[t] 2639
+State: 2631 "vertex2631" {1}
+[!3 & 2] 2640
+[!((!3 & 2))] 9
+State: 2632 "vertex2632" {1}
+[!3 & 2] 2641
+[!((!3 & 2))] 9
+State: 2633 "vertex2633" {231}
+[t] 2642
+State: 2634 "vertex2634" {231}
+[t] 2643
+State: 2635 "vertex2635" {1}
+[t] 2644
+State: 2636 "vertex2636" {1}
+[t] 2645
+State: 2637 "vertex2637" {231}
+[t] 2636
+State: 2638 "vertex2638" {1}
+[t] 2646
+State: 2639 "vertex2639" {1}
+[t] 2647
+State: 2640 "vertex2640" {1}
+[!3 & 2] 2648
+[!((!3 & 2))] 9
+State: 2641 "vertex2641" {1}
+[!3 & 2] 2649
+[!((!3 & 2))] 9
+State: 2642 "vertex2642" {232}
+[t] 956
+State: 2643 "vertex2643" {232}
+[t] 1114
+State: 2644 "vertex2644" {1}
+[!3 & 2] 2651
+[!((!3 & 2))] 2650
+State: 2645 "vertex2645" {1}
+[t] 2652
+State: 2646 "vertex2646" {1}
+[!3 & 2] 2654
+[!((!3 & 2))] 2653
+State: 2647 "vertex2647" {1}
+[t] 2655
+State: 2648 "vertex2648" {1}
+[t] 1059
+State: 2649 "vertex2649" {1}
+[t] 2656
+State: 2650 "vertex2650" {1}
+[!3 & 2] 2657
+[!((!3 & 2))] 9
+State: 2651 "vertex2651" {1}
+[!3 & 2] 2658
+[!((!3 & 2))] 9
+State: 2652 "vertex2652" {1}
+[!3 & 2] 2659
+[!((!3 & 2))] 9
+State: 2653 "vertex2653" {1}
+[!3 & 2] 2660
+[!((!3 & 2))] 9
+State: 2654 "vertex2654" {1}
+[!3 & 2] 2661
+[!((!3 & 2))] 9
+State: 2655 "vertex2655" {1}
+[!3 & 2] 2663
+[!((!3 & 2))] 2662
+State: 2656 "vertex2656" {229}
+[t] 2664
+State: 2657 "vertex2657" {1}
+[!3 & 2] 2665
+[!((!3 & 2))] 9
+State: 2658 "vertex2658" {1}
+[!3 & 2] 2666
+[!((!3 & 2))] 9
+State: 2659 "vertex2659" {1}
+[!3 & 2] 2668
+[!((!3 & 2))] 2667
+State: 2660 "vertex2660" {1}
+[!3 & 2] 2669
+[!((!3 & 2))] 9
+State: 2661 "vertex2661" {1}
+[!3 & 2] 2670
+[!((!3 & 2))] 9
+State: 2662 "vertex2662" {1}
+[!3 & 2] 2671
+[!((!3 & 2))] 9
+State: 2663 "vertex2663" {1}
+[!3 & 2] 2672
+[!((!3 & 2))] 9
+State: 2664 "vertex2664" {234}
+[t] 2673
+State: 2665 "vertex2665" {1}
+[t] 1759
+State: 2666 "vertex2666" {1}
+[t] 2674
+State: 2667 "vertex2667" {1}
+[!3 & 2] 2675
+[!((!3 & 2))] 2277
+State: 2668 "vertex2668" {1}
+[!3 & 2] 2677
+[!((!3 & 2))] 2676
+State: 2669 "vertex2669" {1}
+[t] 2678
+State: 2670 "vertex2670" {1}
+[t] 2679
+State: 2671 "vertex2671" {1}
+[!3 & 2] 2680
+[!((!3 & 2))] 9
+State: 2672 "vertex2672" {1}
+[!3 & 2] 2681
+[!((!3 & 2))] 9
+State: 2673 "vertex2673" {1}
+[t] 2682
+State: 2674 "vertex2674" {227}
+[t] 2683
+State: 2675 "vertex2675" {1}
+[t] 2292
+State: 2676 "vertex2676" {1}
+[t] 2684
+State: 2677 "vertex2677" {1}
+[t] 2685
+State: 2678 "vertex2678" {1}
+[t] 2686
+State: 2679 "vertex2679" {227}
+[t] 829
+State: 2680 "vertex2680" {1}
+[t] 419
+State: 2681 "vertex2681" {1}
+[t] 2687
+State: 2682 "vertex2682" {1}
+[t] 2688
+State: 2683 "vertex2683" {229}
+[t] 1780
+State: 2684 "vertex2684" {232}
+[t] 2689
+State: 2685 "vertex2685" {229}
+[t] 2690
+State: 2686 "vertex2686" {1}
+[t] 2691
+State: 2687 "vertex2687" {231}
+[t] 2692
+State: 2688 "vertex2688" {1}
+[!3 & 2] 2693
+[!((!3 & 2))] 9
+State: 2689 "vertex2689" {232}
+[t] 921
+State: 2690 "vertex2690" {230}
+[t] 2325
+State: 2691 "vertex2691" {1}
+[t] 2694
+State: 2692 "vertex2692" {1}
+[t] 2695
+State: 2693 "vertex2693" {1}
+[!3 & 2] 2697
+[!((!3 & 2))] 2696
+State: 2694 "vertex2694" {1}
+[!3 & 2] 2699
+[!((!3 & 2))] 2698
+State: 2695 "vertex2695" {1}
+[t] 2700
+State: 2696 "vertex2696" {1}
+[!3 & 2] 2702
+[!((!3 & 2))] 2701
+State: 2697 "vertex2697" {1}
+[!3 & 2] 2704
+[!((!3 & 2))] 2703
+State: 2698 "vertex2698" {1}
+[!3 & 2] 2705
+[!((!3 & 2))] 9
+State: 2699 "vertex2699" {1}
+[!3 & 2] 2706
+[!((!3 & 2))] 9
+State: 2700 "vertex2700" {1}
+[t] 2707
+State: 2701 "vertex2701" {1}
+[t] 896
+State: 2702 "vertex2702" {1}
+[t] 1087
+State: 2703 "vertex2703" {1}
+[t] 1088
+State: 2704 "vertex2704" {1}
+[t] 2708
+State: 2705 "vertex2705" {1}
+[!3 & 2] 2709
+[!((!3 & 2))] 9
+State: 2706 "vertex2706" {1}
+[!3 & 2] 2710
+[!((!3 & 2))] 9
+State: 2707 "vertex2707" {1}
+[!3 & 2] 2712
+[!((!3 & 2))] 2711
+State: 2708 "vertex2708" {231}
+[t] 2713
+State: 2709 "vertex2709" {1}
+[t] 2714
+State: 2710 "vertex2710" {1}
+[t] 2715
+State: 2711 "vertex2711" {1}
+[!3 & 2] 2716
+[!((!3 & 2))] 9
+State: 2712 "vertex2712" {1}
+[!3 & 2] 2717
+[!((!3 & 2))] 9
+State: 2713 "vertex2713" {232}
+[t] 2718
+State: 2714 "vertex2714" {1}
+[t] 2719
+State: 2715 "vertex2715" {227}
+[t] 2720
+State: 2716 "vertex2716" {1}
+[!3 & 2] 2721
+[!((!3 & 2))] 9
+State: 2717 "vertex2717" {1}
+[!3 & 2] 2722
+[!((!3 & 2))] 9
+State: 2718 "vertex2718" {1}
+[t] 2723
+State: 2719 "vertex2719" {1}
+[t] 2724
+State: 2720 "vertex2720" {229}
+[t] 2719
+State: 2721 "vertex2721" {1}
+[t] 599
+State: 2722 "vertex2722" {1}
+[t] 2725
+State: 2723 "vertex2723" {1}
+[t] 2726
+State: 2724 "vertex2724" {1}
+[t] 2727
+State: 2725 "vertex2725" {229}
+[t] 2728
+State: 2726 "vertex2726" {1}
+[t] 2729
+State: 2727 "vertex2727" {1}
+[!3 & 2] 2730
+[!((!3 & 2))] 9
+State: 2728 "vertex2728" {234}
+[t] 2731
+State: 2729 "vertex2729" {1}
+[!3 & 2] 2733
+[!((!3 & 2))] 2732
+State: 2730 "vertex2730" {1}
+[!3 & 2] 2735
+[!((!3 & 2))] 2734
+State: 2731 "vertex2731" {1}
+[t] 2736
+State: 2732 "vertex2732" {1}
+[!3 & 2] 2737
+[!((!3 & 2))] 9
+State: 2733 "vertex2733" {1}
+[!3 & 2] 2738
+[!((!3 & 2))] 9
+State: 2734 "vertex2734" {1}
+[!3 & 2] 2739
+[!((!3 & 2))] 1021
+State: 2735 "vertex2735" {1}
+[!3 & 2] 2741
+[!((!3 & 2))] 2740
+State: 2736 "vertex2736" {1}
+[t] 2742
+State: 2737 "vertex2737" {1}
+[!3 & 2] 2743
+[!((!3 & 2))] 9
+State: 2738 "vertex2738" {1}
+[!3 & 2] 2744
+[!((!3 & 2))] 9
+State: 2739 "vertex2739" {1}
+[t] 1052
+State: 2740 "vertex2740" {1}
+[t] 2745
+State: 2741 "vertex2741" {1}
+[t] 2746
+State: 2742 "vertex2742" {1}
+[!3 & 2] 2748
+[!((!3 & 2))] 2747
+State: 2743 "vertex2743" {1}
+[t] 1313
+State: 2744 "vertex2744" {1}
+[t] 2749
+State: 2745 "vertex2745" {230}
+[t] 2750
+State: 2746 "vertex2746" {227}
+[t] 2751
+State: 2747 "vertex2747" {1}
+[!3 & 2] 2752
+[!((!3 & 2))] 9
+State: 2748 "vertex2748" {1}
+[!3 & 2] 2753
+[!((!3 & 2))] 9
+State: 2749 "vertex2749" {229}
+[t] 2754
+State: 2750 "vertex2750" {230}
+[t] 958
+State: 2751 "vertex2751" {228}
+[t] 1115
+State: 2752 "vertex2752" {1}
+[!3 & 2] 2755
+[!((!3 & 2))] 9
+State: 2753 "vertex2753" {1}
+[!3 & 2] 2756
+[!((!3 & 2))] 9
+State: 2754 "vertex2754" {234}
+[t] 2757
+State: 2755 "vertex2755" {1}
+[t] 617
+State: 2756 "vertex2756" {1}
+[t] 2758
+State: 2757 "vertex2757" {1}
+[t] 2759
+State: 2758 "vertex2758" {231}
+[t] 2760
+State: 2759 "vertex2759" {1}
+[t] 2761
+State: 2760 "vertex2760" {1}
+[t] 2762
+State: 2761 "vertex2761" {1}
+[!3 & 2] 2764
+[!((!3 & 2))] 2763
+State: 2762 "vertex2762" {1}
+[t] 2765
+State: 2763 "vertex2763" {1}
+[!3 & 2] 2766
+[!((!3 & 2))] 9
+State: 2764 "vertex2764" {1}
+[!3 & 2] 2767
+[!((!3 & 2))] 9
+State: 2765 "vertex2765" {1}
+[t] 2768
+State: 2766 "vertex2766" {1}
+[!3 & 2] 2769
+[!((!3 & 2))] 9
+State: 2767 "vertex2767" {1}
+[!3 & 2] 2770
+[!((!3 & 2))] 9
+State: 2768 "vertex2768" {1}
+[!3 & 2] 2772
+[!((!3 & 2))] 2771
+State: 2769 "vertex2769" {1}
+[t] 1365
+State: 2770 "vertex2770" {1}
+[t] 2773
+State: 2771 "vertex2771" {1}
+[!3 & 2] 2774
+[!((!3 & 2))] 9
+State: 2772 "vertex2772" {1}
+[!3 & 2] 2775
+[!((!3 & 2))] 9
+State: 2773 "vertex2773" {231}
+[t] 2776
+State: 2774 "vertex2774" {1}
+[!3 & 2] 2777
+[!((!3 & 2))] 9
+State: 2775 "vertex2775" {1}
+[!3 & 2] 2778
+[!((!3 & 2))] 9
+State: 2776 "vertex2776" {1}
+[t] 2779
+State: 2777 "vertex2777" {1}
+[t] 813
+State: 2778 "vertex2778" {1}
+[t] 2780
+State: 2779 "vertex2779" {1}
+[t] 2781
+State: 2780 "vertex2780" {229}
+[t] 2782
+State: 2781 "vertex2781" {1}
+[t] 2783
+State: 2782 "vertex2782" {234}
+[t] 2784
+State: 2783 "vertex2783" {1}
+[!3 & 2] 2786
+[!((!3 & 2))] 2785
+State: 2784 "vertex2784" {1}
+[t] 2787
+State: 2785 "vertex2785" {1}
+[!3 & 2] 2788
+[!((!3 & 2))] 9
+State: 2786 "vertex2786" {1}
+[!3 & 2] 2789
+[!((!3 & 2))] 9
+State: 2787 "vertex2787" {1}
+[t] 2790
+State: 2788 "vertex2788" {1}
+[!3 & 2] 2791
+[!((!3 & 2))] 9
+State: 2789 "vertex2789" {1}
+[!3 & 2] 2792
+[!((!3 & 2))] 9
+State: 2790 "vertex2790" {1}
+[!3 & 2] 2794
+[!((!3 & 2))] 2793
+State: 2791 "vertex2791" {1}
+[t] 79
+State: 2792 "vertex2792" {1}
+[t] 2795
+State: 2793 "vertex2793" {1}
+[!3 & 2] 2796
+[!((!3 & 2))] 9
+State: 2794 "vertex2794" {1}
+[!3 & 2] 2797
+[!((!3 & 2))] 9
+State: 2795 "vertex2795" {229}
+[t] 2798
+State: 2796 "vertex2796" {1}
+[!3 & 2] 2799
+[!((!3 & 2))] 9
+State: 2797 "vertex2797" {1}
+[!3 & 2] 2800
+[!((!3 & 2))] 9
+State: 2798 "vertex2798" {234}
+[t] 2801
+State: 2799 "vertex2799" {1}
+[t] 830
+State: 2800 "vertex2800" {1}
+[t] 2802
+State: 2801 "vertex2801" {1}
+[t] 2803
+State: 2802 "vertex2802" {231}
+[t] 2804
+State: 2803 "vertex2803" {1}
+[t] 2805
+State: 2804 "vertex2804" {1}
+[t] 2806
+State: 2805 "vertex2805" {1}
+[!3 & 2] 2808
+[!((!3 & 2))] 2807
+State: 2806 "vertex2806" {1}
+[t] 2809
+State: 2807 "vertex2807" {1}
+[!3 & 2] 2810
+[!((!3 & 2))] 9
+State: 2808 "vertex2808" {1}
+[!3 & 2] 2811
+[!((!3 & 2))] 9
+State: 2809 "vertex2809" {1}
+[t] 2812
+State: 2810 "vertex2810" {1}
+[!3 & 2] 2813
+[!((!3 & 2))] 9
+State: 2811 "vertex2811" {1}
+[!3 & 2] 2814
+[!((!3 & 2))] 9
+State: 2812 "vertex2812" {1}
+[!3 & 2] 2816
+[!((!3 & 2))] 2815
+State: 2813 "vertex2813" {1}
+[t] 156
+State: 2814 "vertex2814" {1}
+[t] 2817
+State: 2815 "vertex2815" {1}
+[!3 & 2] 2818
+[!((!3 & 2))] 9
+State: 2816 "vertex2816" {1}
+[!3 & 2] 2819
+[!((!3 & 2))] 9
+State: 2817 "vertex2817" {231}
+[t] 91
+State: 2818 "vertex2818" {1}
+[!3 & 2] 2820
+[!((!3 & 2))] 9
+State: 2819 "vertex2819" {1}
+[!3 & 2] 2821
+[!((!3 & 2))] 9
+State: 2820 "vertex2820" {1}
+[t] 1059
+State: 2821 "vertex2821" {1}
+[t] 2822
+State: 2822 "vertex2822" {229}
+[t] 2823
+State: 2823 "vertex2823" {234}
+[t] 2824
+State: 2824 "vertex2824" {1}
+[t] 2825
+State: 2825 "vertex2825" {1}
+[t] 2826
+State: 2826 "vertex2826" {1}
+[!3 & 2] 2827
+[!((!3 & 2))] 9
+State: 2827 "vertex2827" {1}
+[!3 & 2] 2829
+[!((!3 & 2))] 2828
+State: 2828 "vertex2828" {1}
+[!3 & 2] 2831
+[!((!3 & 2))] 2830
+State: 2829 "vertex2829" {1}
+[!3 & 2] 2833
+[!((!3 & 2))] 2832
+State: 2830 "vertex2830" {1}
+[t] 896
+State: 2831 "vertex2831" {1}
+[t] 1087
+State: 2832 "vertex2832" {1}
+[t] 1088
+State: 2833 "vertex2833" {1}
+[t] 2834
+State: 2834 "vertex2834" {231}
+[t] 2835
+State: 2835 "vertex2835" {232}
+[t] 2836
+State: 2836 "vertex2836" {1}
+[t] 2837
+State: 2837 "vertex2837" {1}
+[t] 2838
+State: 2838 "vertex2838" {1}
+[t] 2839
+State: 2839 "vertex2839" {1}
+[!3 & 2] 2841
+[!((!3 & 2))] 2840
+State: 2840 "vertex2840" {1}
+[!3 & 2] 2842
+[!((!3 & 2))] 9
+State: 2841 "vertex2841" {1}
+[!3 & 2] 2843
+[!((!3 & 2))] 9
+State: 2842 "vertex2842" {1}
+[!3 & 2] 2844
+[!((!3 & 2))] 9
+State: 2843 "vertex2843" {1}
+[!3 & 2] 2845
+[!((!3 & 2))] 9
+State: 2844 "vertex2844" {1}
+[t] 1313
+State: 2845 "vertex2845" {1}
+[t] 2846
+State: 2846 "vertex2846" {229}
+[t] 2847
+State: 2847 "vertex2847" {234}
+[t] 2848
+State: 2848 "vertex2848" {1}
+[t] 2849
+State: 2849 "vertex2849" {1}
+[t] 2850
+State: 2850 "vertex2850" {1}
+[!3 & 2] 2852
+[!((!3 & 2))] 2851
+State: 2851 "vertex2851" {1}
+[!3 & 2] 2853
+[!((!3 & 2))] 9
+State: 2852 "vertex2852" {1}
+[!3 & 2] 2854
+[!((!3 & 2))] 9
+State: 2853 "vertex2853" {1}
+[!3 & 2] 2855
+[!((!3 & 2))] 9
+State: 2854 "vertex2854" {1}
+[!3 & 2] 2856
+[!((!3 & 2))] 9
+State: 2855 "vertex2855" {1}
+[t] 1365
+State: 2856 "vertex2856" {1}
+[t] 2857
+State: 2857 "vertex2857" {231}
+[t] 39
+--END--

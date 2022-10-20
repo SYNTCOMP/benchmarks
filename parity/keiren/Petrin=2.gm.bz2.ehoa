@@ -1,0 +1,434 @@
+HOA: v1
+States: 200
+Start: 0
+acc-name: parity max even 682
+Acceptance: 682 Fin(681) & (Inf(680) | (Fin(679) & (Inf(678) | (Fin(677) & (Inf(676) | (Fin(675) & (Inf(674) | (Fin(673) & (Inf(672) | (Fin(671) & (Inf(670) | (Fin(669) & (Inf(668) | (Fin(667) & (Inf(666) | (Fin(665) & (Inf(664) | (Fin(663) & (Inf(662) | (Fin(661) & (Inf(660) | (Fin(659) & (Inf(658) | (Fin(657) & (Inf(656) | (Fin(655) & (Inf(654) | (Fin(653) & (Inf(652) | (Fin(651) & (Inf(650) | (Fin(649) & (Inf(648) | (Fin(647) & (Inf(646) | (Fin(645) & (Inf(644) | (Fin(643) & (Inf(642) | (Fin(641) & (Inf(640) | (Fin(639) & (Inf(638) | (Fin(637) & (Inf(636) | (Fin(635) & (Inf(634) | (Fin(633) & (Inf(632) | (Fin(631) & (Inf(630) | (Fin(629) & (Inf(628) | (Fin(627) & (Inf(626) | (Fin(625) & (Inf(624) | (Fin(623) & (Inf(622) | (Fin(621) & (Inf(620) | (Fin(619) & (Inf(618) | (Fin(617) & (Inf(616) | (Fin(615) & (Inf(614) | (Fin(613) & (Inf(612) | (Fin(611) & (Inf(610) | (Fin(609) & (Inf(608) | (Fin(607) & (Inf(606) | (Fin(605) & (Inf(604) | (Fin(603) & (Inf(602) | (Fin(601) & (Inf(600) | (Fin(599) & (Inf(598) | (Fin(597) & (Inf(596) | (Fin(595) & (Inf(594) | (Fin(593) & (Inf(592) | (Fin(591) & (Inf(590) | (Fin(589) & (Inf(588) | (Fin(587) & (Inf(586) | (Fin(585) & (Inf(584) | (Fin(583) & (Inf(582) | (Fin(581) & (Inf(580) | (Fin(579) & (Inf(578) | (Fin(577) & (Inf(576) | (Fin(575) & (Inf(574) | (Fin(573) & (Inf(572) | (Fin(571) & (Inf(570) | (Fin(569) & (Inf(568) | (Fin(567) & (Inf(566) | (Fin(565) & (Inf(564) | (Fin(563) & (Inf(562) | (Fin(561) & (Inf(560) | (Fin(559) & (Inf(558) | (Fin(557) & (Inf(556) | (Fin(555) & (Inf(554) | (Fin(553) & (Inf(552) | (Fin(551) & (Inf(550) | (Fin(549) & (Inf(548) | (Fin(547) & (Inf(546) | (Fin(545) & (Inf(544) | (Fin(543) & (Inf(542) | (Fin(541) & (Inf(540) | (Fin(539) & (Inf(538) | (Fin(537) & (Inf(536) | (Fin(535) & (Inf(534) | (Fin(533) & (Inf(532) | (Fin(531) & (Inf(530) | (Fin(529) & (Inf(528) | (Fin(527) & (Inf(526) | (Fin(525) & (Inf(524) | (Fin(523) & (Inf(522) | (Fin(521) & (Inf(520) | (Fin(519) & (Inf(518) | (Fin(517) & (Inf(516) | (Fin(515) & (Inf(514) | (Fin(513) & (Inf(512) | (Fin(511) & (Inf(510) | (Fin(509) & (Inf(508) | (Fin(507) & (Inf(506) | (Fin(505) & (Inf(504) | (Fin(503) & (Inf(502) | (Fin(501) & (Inf(500) | (Fin(499) & (Inf(498) | (Fin(497) & (Inf(496) | (Fin(495) & (Inf(494) | (Fin(493) & (Inf(492) | (Fin(491) & (Inf(490) | (Fin(489) & (Inf(488) | (Fin(487) & (Inf(486) | (Fin(485) & (Inf(484) | (Fin(483) & (Inf(482) | (Fin(481) & (Inf(480) | (Fin(479) & (Inf(478) | (Fin(477) & (Inf(476) | (Fin(475) & (Inf(474) | (Fin(473) & (Inf(472) | (Fin(471) & (Inf(470) | (Fin(469) & (Inf(468) | (Fin(467) & (Inf(466) | (Fin(465) & (Inf(464) | (Fin(463) & (Inf(462) | (Fin(461) & (Inf(460) | (Fin(459) & (Inf(458) | (Fin(457) & (Inf(456) | (Fin(455) & (Inf(454) | (Fin(453) & (Inf(452) | (Fin(451) & (Inf(450) | (Fin(449) & (Inf(448) | (Fin(447) & (Inf(446) | (Fin(445) & (Inf(444) | (Fin(443) & (Inf(442) | (Fin(441) & (Inf(440) | (Fin(439) & (Inf(438) | (Fin(437) & (Inf(436) | (Fin(435) & (Inf(434) | (Fin(433) & (Inf(432) | (Fin(431) & (Inf(430) | (Fin(429) & (Inf(428) | (Fin(427) & (Inf(426) | (Fin(425) & (Inf(424) | (Fin(423) & (Inf(422) | (Fin(421) & (Inf(420) | (Fin(419) & (Inf(418) | (Fin(417) & (Inf(416) | (Fin(415) & (Inf(414) | (Fin(413) & (Inf(412) | (Fin(411) & (Inf(410) | (Fin(409) & (Inf(408) | (Fin(407) & (Inf(406) | (Fin(405) & (Inf(404) | (Fin(403) & (Inf(402) | (Fin(401) & (Inf(400) | (Fin(399) & (Inf(398) | (Fin(397) & (Inf(396) | (Fin(395) & (Inf(394) | (Fin(393) & (Inf(392) | (Fin(391) & (Inf(390) | (Fin(389) & (Inf(388) | (Fin(387) & (Inf(386) | (Fin(385) & (Inf(384) | (Fin(383) & (Inf(382) | (Fin(381) & (Inf(380) | (Fin(379) & (Inf(378) | (Fin(377) & (Inf(376) | (Fin(375) & (Inf(374) | (Fin(373) & (Inf(372) | (Fin(371) & (Inf(370) | (Fin(369) & (Inf(368) | (Fin(367) & (Inf(366) | (Fin(365) & (Inf(364) | (Fin(363) & (Inf(362) | (Fin(361) & (Inf(360) | (Fin(359) & (Inf(358) | (Fin(357) & (Inf(356) | (Fin(355) & (Inf(354) | (Fin(353) & (Inf(352) | (Fin(351) & (Inf(350) | (Fin(349) & (Inf(348) | (Fin(347) & (Inf(346) | (Fin(345) & (Inf(344) | (Fin(343) & (Inf(342) | (Fin(341) & (Inf(340) | (Fin(339) & (Inf(338) | (Fin(337) & (Inf(336) | (Fin(335) & (Inf(334) | (Fin(333) & (Inf(332) | (Fin(331) & (Inf(330) | (Fin(329) & (Inf(328) | (Fin(327) & (Inf(326) | (Fin(325) & (Inf(324) | (Fin(323) & (Inf(322) | (Fin(321) & (Inf(320) | (Fin(319) & (Inf(318) | (Fin(317) & (Inf(316) | (Fin(315) & (Inf(314) | (Fin(313) & (Inf(312) | (Fin(311) & (Inf(310) | (Fin(309) & (Inf(308) | (Fin(307) & (Inf(306) | (Fin(305) & (Inf(304) | (Fin(303) & (Inf(302) | (Fin(301) & (Inf(300) | (Fin(299) & (Inf(298) | (Fin(297) & (Inf(296) | (Fin(295) & (Inf(294) | (Fin(293) & (Inf(292) | (Fin(291) & (Inf(290) | (Fin(289) & (Inf(288) | (Fin(287) & (Inf(286) | (Fin(285) & (Inf(284) | (Fin(283) & (Inf(282) | (Fin(281) & (Inf(280) | (Fin(279) & (Inf(278) | (Fin(277) & (Inf(276) | (Fin(275) & (Inf(274) | (Fin(273) & (Inf(272) | (Fin(271) & (Inf(270) | (Fin(269) & (Inf(268) | (Fin(267) & (Inf(266) | (Fin(265) & (Inf(264) | (Fin(263) & (Inf(262) | (Fin(261) & (Inf(260) | (Fin(259) & (Inf(258) | (Fin(257) & (Inf(256) | (Fin(255) & (Inf(254) | (Fin(253) & (Inf(252) | (Fin(251) & (Inf(250) | (Fin(249) & (Inf(248) | (Fin(247) & (Inf(246) | (Fin(245) & (Inf(244) | (Fin(243) & (Inf(242) | (Fin(241) & (Inf(240) | (Fin(239) & (Inf(238) | (Fin(237) & (Inf(236) | (Fin(235) & (Inf(234) | (Fin(233) & (Inf(232) | (Fin(231) & (Inf(230) | (Fin(229) & (Inf(228) | (Fin(227) & (Inf(226) | (Fin(225) & (Inf(224) | (Fin(223) & (Inf(222) | (Fin(221) & (Inf(220) | (Fin(219) & (Inf(218) | (Fin(217) & (Inf(216) | (Fin(215) & (Inf(214) | (Fin(213) & (Inf(212) | (Fin(211) & (Inf(210) | (Fin(209) & (Inf(208) | (Fin(207) & (Inf(206) | (Fin(205) & (Inf(204) | (Fin(203) & (Inf(202) | (Fin(201) & (Inf(200) | (Fin(199) & (Inf(198) | (Fin(197) & (Inf(196) | (Fin(195) & (Inf(194) | (Fin(193) & (Inf(192) | (Fin(191) & (Inf(190) | (Fin(189) & (Inf(188) | (Fin(187) & (Inf(186) | (Fin(185) & (Inf(184) | (Fin(183) & (Inf(182) | (Fin(181) & (Inf(180) | (Fin(179) & (Inf(178) | (Fin(177) & (Inf(176) | (Fin(175) & (Inf(174) | (Fin(173) & (Inf(172) | (Fin(171) & (Inf(170) | (Fin(169) & (Inf(168) | (Fin(167) & (Inf(166) | (Fin(165) & (Inf(164) | (Fin(163) & (Inf(162) | (Fin(161) & (Inf(160) | (Fin(159) & (Inf(158) | (Fin(157) & (Inf(156) | (Fin(155) & (Inf(154) | (Fin(153) & (Inf(152) | (Fin(151) & (Inf(150) | (Fin(149) & (Inf(148) | (Fin(147) & (Inf(146) | (Fin(145) & (Inf(144) | (Fin(143) & (Inf(142) | (Fin(141) & (Inf(140) | (Fin(139) & (Inf(138) | (Fin(137) & (Inf(136) | (Fin(135) & (Inf(134) | (Fin(133) & (Inf(132) | (Fin(131) & (Inf(130) | (Fin(129) & (Inf(128) | (Fin(127) & (Inf(126) | (Fin(125) & (Inf(124) | (Fin(123) & (Inf(122) | (Fin(121) & (Inf(120) | (Fin(119) & (Inf(118) | (Fin(117) & (Inf(116) | (Fin(115) & (Inf(114) | (Fin(113) & (Inf(112) | (Fin(111) & (Inf(110) | (Fin(109) & (Inf(108) | (Fin(107) & (Inf(106) | (Fin(105) & (Inf(104) | (Fin(103) & (Inf(102) | (Fin(101) & (Inf(100) | (Fin(99) & (Inf(98) | (Fin(97) & (Inf(96) | (Fin(95) & (Inf(94) | (Fin(93) & (Inf(92) | (Fin(91) & (Inf(90) | (Fin(89) & (Inf(88) | (Fin(87) & (Inf(86) | (Fin(85) & (Inf(84) | (Fin(83) & (Inf(82) | (Fin(81) & (Inf(80) | (Fin(79) & (Inf(78) | (Fin(77) & (Inf(76) | (Fin(75) & (Inf(74) | (Fin(73) & (Inf(72) | (Fin(71) & (Inf(70) | (Fin(69) & (Inf(68) | (Fin(67) & (Inf(66) | (Fin(65) & (Inf(64) | (Fin(63) & (Inf(62) | (Fin(61) & (Inf(60) | (Fin(59) & (Inf(58) | (Fin(57) & (Inf(56) | (Fin(55) & (Inf(54) | (Fin(53) & (Inf(52) | (Fin(51) & (Inf(50) | (Fin(49) & (Inf(48) | (Fin(47) & (Inf(46) | (Fin(45) & (Inf(44) | (Fin(43) & (Inf(42) | (Fin(41) & (Inf(40) | (Fin(39) & (Inf(38) | (Fin(37) & (Inf(36) | (Fin(35) & (Inf(34) | (Fin(33) & (Inf(32) | (Fin(31) & (Inf(30) | (Fin(29) & (Inf(28) | (Fin(27) & (Inf(26) | (Fin(25) & (Inf(24) | (Fin(23) & (Inf(22) | (Fin(21) & (Inf(20) | (Fin(19) & (Inf(18) | (Fin(17) & (Inf(16) | (Fin(15) & (Inf(14) | (Fin(13) & (Inf(12) | (Fin(11) & (Inf(10) | (Fin(9) & (Inf(8) | (Fin(7) & (Inf(6) | (Fin(5) & (Inf(4) | (Fin(3) & (Inf(2) | (Fin(1) & Inf(0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+AP: 4 "pl0_0" "pl0_1" "pl1_0" "pl1_1"
+controllable-AP: 0 1
+properties: deterministic complete colored
+--BODY--
+State: 0 "vertex0" {681}
+[t] 1
+State: 1 "vertex1" {1}
+[t] 2
+State: 2 "vertex2" {1}
+[t] 3
+State: 3 "vertex3" {1}
+[t] 4
+State: 4 "vertex4" {1}
+[t] 5
+State: 5 "vertex5" {1}
+[t] 6
+State: 6 "vertex6" {1}
+[!3 & 2] 8
+[!((!3 & 2))] 7
+State: 7 "vertex7" {1}
+[t] 9
+State: 8 "vertex8" {1}
+[!3 & 2] 11
+[!((!3 & 2))] 10
+State: 9 "vertex9" {1}
+[!3 & 2] 13
+[!((!3 & 2))] 12
+State: 10 "vertex10" {1}
+[t] 14
+State: 11 "vertex11" {1}
+[t] 15
+State: 12 "vertex12" {0}
+[t] 12
+State: 13 "vertex13" {1}
+[t] 16
+State: 14 "vertex14" {1}
+[t] 17
+State: 15 "vertex15" {1}
+[t] 18
+State: 16 "vertex16" {1}
+[t] 19
+State: 17 "vertex17" {1}
+[t] 20
+State: 18 "vertex18" {1}
+[t] 21
+State: 19 "vertex19" {1}
+[t] 22
+State: 20 "vertex20" {1}
+[t] 23
+State: 21 "vertex21" {1}
+[t] 24
+State: 22 "vertex22" {1}
+[t] 25
+State: 23 "vertex23" {1}
+[t] 26
+State: 24 "vertex24" {1}
+[t] 27
+State: 25 "vertex25" {1}
+[t] 28
+State: 26 "vertex26" {1}
+[t] 29
+State: 27 "vertex27" {1}
+[t] 30
+State: 28 "vertex28" {1}
+[t] 31
+State: 29 "vertex29" {1}
+[t] 32
+State: 30 "vertex30" {1}
+[t] 33
+State: 31 "vertex31" {1}
+[t] 34
+State: 32 "vertex32" {1}
+[t] 35
+State: 33 "vertex33" {1}
+[t] 36
+State: 34 "vertex34" {1}
+[!3 & 2] 37
+[!((!3 & 2))] 12
+State: 35 "vertex35" {1}
+[t] 38
+State: 36 "vertex36" {1}
+[t] 39
+State: 37 "vertex37" {1}
+[t] 40
+State: 38 "vertex38" {1}
+[t] 41
+State: 39 "vertex39" {1}
+[t] 42
+State: 40 "vertex40" {1}
+[t] 43
+State: 41 "vertex41" {1}
+[t] 44
+State: 42 "vertex42" {1}
+[!3 & 2] 46
+[!((!3 & 2))] 45
+State: 43 "vertex43" {1}
+[t] 47
+State: 44 "vertex44" {1}
+[t] 48
+State: 45 "vertex45" {1}
+[t] 49
+State: 46 "vertex46" {1}
+[!3 & 2] 50
+[!((!3 & 2))] 12
+State: 47 "vertex47" {1}
+[t] 51
+State: 48 "vertex48" {1}
+[t] 52
+State: 49 "vertex49" {1}
+[t] 53
+State: 50 "vertex50" {1}
+[!3 & 2] 54
+[!((!3 & 2))] 12
+State: 51 "vertex51" {1}
+[t] 55
+State: 52 "vertex52" {1}
+[t] 56
+State: 53 "vertex53" {1}
+[t] 57
+State: 54 "vertex54" {1}
+[t] 12
+State: 55 "vertex55" {1}
+[t] 58
+State: 56 "vertex56" {1}
+[t] 59
+State: 57 "vertex57" {1}
+[t] 60
+State: 58 "vertex58" {1}
+[!3 & 2] 61
+[!((!3 & 2))] 12
+State: 59 "vertex59" {1}
+[t] 62
+State: 60 "vertex60" {1}
+[t] 63
+State: 61 "vertex61" {1}
+[t] 64
+State: 62 "vertex62" {1}
+[t] 65
+State: 63 "vertex63" {1}
+[t] 66
+State: 64 "vertex64" {1}
+[t] 67
+State: 65 "vertex65" {1}
+[t] 68
+State: 66 "vertex66" {1}
+[t] 69
+State: 67 "vertex67" {1}
+[t] 70
+State: 68 "vertex68" {1}
+[t] 71
+State: 69 "vertex69" {1}
+[t] 72
+State: 70 "vertex70" {1}
+[t] 73
+State: 71 "vertex71" {1}
+[t] 74
+State: 72 "vertex72" {1}
+[t] 75
+State: 73 "vertex73" {1}
+[t] 76
+State: 74 "vertex74" {1}
+[t] 77
+State: 75 "vertex75" {1}
+[t] 78
+State: 76 "vertex76" {1}
+[t] 79
+State: 77 "vertex77" {1}
+[t] 80
+State: 78 "vertex78" {1}
+[!3 & 2] 82
+[!((!3 & 2))] 81
+State: 79 "vertex79" {1}
+[t] 83
+State: 80 "vertex80" {1}
+[t] 84
+State: 81 "vertex81" {677}
+[t] 85
+State: 82 "vertex82" {1}
+[!3 & 2] 86
+[!((!3 & 2))] 12
+State: 83 "vertex83" {1}
+[!3 & 2] 87
+[!((!3 & 2))] 12
+State: 84 "vertex84" {1}
+[t] 88
+State: 85 "vertex85" {1}
+[t] 89
+State: 86 "vertex86" {1}
+[!3 & 2] 90
+[!((!3 & 2))] 12
+State: 87 "vertex87" {1}
+[t] 91
+State: 88 "vertex88" {1}
+[t] 92
+State: 89 "vertex89" {1}
+[t] 93
+State: 90 "vertex90" {1}
+[t] 12
+State: 91 "vertex91" {677}
+[t] 94
+State: 92 "vertex92" {1}
+[t] 95
+State: 93 "vertex93" {1}
+[t] 96
+State: 94 "vertex94" {678}
+[t] 97
+State: 95 "vertex95" {1}
+[t] 98
+State: 96 "vertex96" {1}
+[t] 99
+State: 97 "vertex97" {1}
+[t] 100
+State: 98 "vertex98" {1}
+[t] 101
+State: 99 "vertex99" {1}
+[t] 102
+State: 100 "vertex100" {1}
+[t] 103
+State: 101 "vertex101" {1}
+[t] 104
+State: 102 "vertex102" {680}
+[t] 105
+State: 103 "vertex103" {1}
+[t] 106
+State: 104 "vertex104" {1}
+[t] 107
+State: 105 "vertex105" {1}
+[t] 108
+State: 106 "vertex106" {1}
+[t] 109
+State: 107 "vertex107" {1}
+[t] 110
+State: 108 "vertex108" {1}
+[t] 111
+State: 109 "vertex109" {1}
+[!3 & 2] 112
+[!((!3 & 2))] 12
+State: 110 "vertex110" {1}
+[t] 113
+State: 111 "vertex111" {1}
+[t] 114
+State: 112 "vertex112" {1}
+[t] 115
+State: 113 "vertex113" {1}
+[t] 116
+State: 114 "vertex114" {1}
+[!3 & 2] 118
+[!((!3 & 2))] 117
+State: 115 "vertex115" {1}
+[t] 119
+State: 116 "vertex116" {1}
+[t] 120
+State: 117 "vertex117" {677}
+[t] 121
+State: 118 "vertex118" {1}
+[!3 & 2] 122
+[!((!3 & 2))] 12
+State: 119 "vertex119" {1}
+[t] 123
+State: 120 "vertex120" {1}
+[t] 124
+State: 121 "vertex121" {1}
+[t] 125
+State: 122 "vertex122" {1}
+[!3 & 2] 126
+[!((!3 & 2))] 12
+State: 123 "vertex123" {680}
+[t] 127
+State: 124 "vertex124" {1}
+[t] 128
+State: 125 "vertex125" {1}
+[t] 129
+State: 126 "vertex126" {1}
+[t] 12
+State: 127 "vertex127" {1}
+[t] 130
+State: 128 "vertex128" {1}
+[t] 131
+State: 129 "vertex129" {1}
+[t] 132
+State: 130 "vertex130" {1}
+[t] 133
+State: 131 "vertex131" {1}
+[t] 134
+State: 132 "vertex132" {1}
+[t] 135
+State: 133 "vertex133" {1}
+[t] 136
+State: 134 "vertex134" {1}
+[t] 137
+State: 135 "vertex135" {1}
+[t] 138
+State: 136 "vertex136" {1}
+[!3 & 2] 139
+[!((!3 & 2))] 12
+State: 137 "vertex137" {1}
+[t] 140
+State: 138 "vertex138" {680}
+[t] 141
+State: 139 "vertex139" {1}
+[t] 142
+State: 140 "vertex140" {1}
+[t] 143
+State: 141 "vertex141" {1}
+[t] 144
+State: 142 "vertex142" {677}
+[t] 145
+State: 143 "vertex143" {1}
+[t] 146
+State: 144 "vertex144" {1}
+[t] 147
+State: 145 "vertex145" {1}
+[t] 148
+State: 146 "vertex146" {1}
+[t] 149
+State: 147 "vertex147" {1}
+[t] 150
+State: 148 "vertex148" {1}
+[t] 151
+State: 149 "vertex149" {1}
+[t] 152
+State: 150 "vertex150" {1}
+[t] 153
+State: 151 "vertex151" {1}
+[t] 154
+State: 152 "vertex152" {1}
+[t] 155
+State: 153 "vertex153" {1}
+[!3 & 2] 157
+[!((!3 & 2))] 156
+State: 154 "vertex154" {1}
+[t] 158
+State: 155 "vertex155" {1}
+[t] 159
+State: 156 "vertex156" {677}
+[t] 160
+State: 157 "vertex157" {1}
+[!3 & 2] 161
+[!((!3 & 2))] 12
+State: 158 "vertex158" {1}
+[!3 & 2] 162
+[!((!3 & 2))] 12
+State: 159 "vertex159" {1}
+[t] 163
+State: 160 "vertex160" {1}
+[t] 164
+State: 161 "vertex161" {1}
+[!3 & 2] 165
+[!((!3 & 2))] 12
+State: 162 "vertex162" {1}
+[t] 166
+State: 163 "vertex163" {1}
+[t] 167
+State: 164 "vertex164" {1}
+[t] 168
+State: 165 "vertex165" {1}
+[t] 12
+State: 166 "vertex166" {1}
+[t] 169
+State: 167 "vertex167" {1}
+[t] 170
+State: 168 "vertex168" {1}
+[t] 171
+State: 169 "vertex169" {1}
+[t] 172
+State: 170 "vertex170" {677}
+[t] 173
+State: 171 "vertex171" {1}
+[t] 174
+State: 172 "vertex172" {680}
+[t] 73
+State: 173 "vertex173" {1}
+[t] 175
+State: 174 "vertex174" {1}
+[t] 176
+State: 175 "vertex175" {1}
+[t] 177
+State: 176 "vertex176" {680}
+[t] 178
+State: 177 "vertex177" {1}
+[t] 179
+State: 178 "vertex178" {1}
+[t] 180
+State: 179 "vertex179" {1}
+[t] 181
+State: 180 "vertex180" {1}
+[t] 182
+State: 181 "vertex181" {1}
+[t] 183
+State: 182 "vertex182" {1}
+[t] 184
+State: 183 "vertex183" {1}
+[t] 185
+State: 184 "vertex184" {1}
+[!3 & 2] 187
+[!((!3 & 2))] 186
+State: 185 "vertex185" {1}
+[t] 188
+State: 186 "vertex186" {677}
+[t] 189
+State: 187 "vertex187" {1}
+[!3 & 2] 190
+[!((!3 & 2))] 12
+State: 188 "vertex188" {1}
+[t] 191
+State: 189 "vertex189" {1}
+[t] 192
+State: 190 "vertex190" {1}
+[!3 & 2] 193
+[!((!3 & 2))] 12
+State: 191 "vertex191" {1}
+[t] 194
+State: 192 "vertex192" {1}
+[t] 195
+State: 193 "vertex193" {1}
+[t] 12
+State: 194 "vertex194" {1}
+[t] 196
+State: 195 "vertex195" {1}
+[t] 197
+State: 196 "vertex196" {680}
+[t] 71
+State: 197 "vertex197" {1}
+[t] 198
+State: 198 "vertex198" {1}
+[t] 199
+State: 199 "vertex199" {680}
+[t] 69
+--END--

@@ -1,0 +1,46 @@
+HOA: v1
+States: 16
+Start: 0
+acc-name: parity max even 50
+Acceptance: 50 Fin(49) & (Inf(48) | (Fin(47) & (Inf(46) | (Fin(45) & (Inf(44) | (Fin(43) & (Inf(42) | (Fin(41) & (Inf(40) | (Fin(39) & (Inf(38) | (Fin(37) & (Inf(36) | (Fin(35) & (Inf(34) | (Fin(33) & (Inf(32) | (Fin(31) & (Inf(30) | (Fin(29) & (Inf(28) | (Fin(27) & (Inf(26) | (Fin(25) & (Inf(24) | (Fin(23) & (Inf(22) | (Fin(21) & (Inf(20) | (Fin(19) & (Inf(18) | (Fin(17) & (Inf(16) | (Fin(15) & (Inf(14) | (Fin(13) & (Inf(12) | (Fin(11) & (Inf(10) | (Fin(9) & (Inf(8) | (Fin(7) & (Inf(6) | (Fin(5) & (Inf(4) | (Fin(3) & (Inf(2) | (Fin(1) & Inf(0)))))))))))))))))))))))))))))))))))))))))))))))))
+AP: 4 "pl0_0" "pl0_1" "pl1_0" "pl1_1"
+controllable-AP: 0 1
+properties: deterministic complete colored
+--BODY--
+State: 0 "vertex0" {49}
+[t] 1
+State: 1 "vertex1" {1}
+[t] 2
+State: 2 "vertex2" {1}
+[t] 3
+State: 3 "vertex3" {1}
+[t] 4
+State: 4 "vertex4" {1}
+[t] 5
+State: 5 "vertex5" {1}
+[!3 & 2] 7
+[!((!3 & 2))] 6
+State: 6 "vertex6" {0}
+[t] 6
+State: 7 "vertex7" {1}
+[!3 & 2] 8
+[!((!3 & 2))] 6
+State: 8 "vertex8" {1}
+[t] 9
+State: 9 "vertex9" {1}
+[t] 10
+State: 10 "vertex10" {48}
+[t] 11
+State: 11 "vertex11" {1}
+[t] 12
+State: 12 "vertex12" {1}
+[!3 & 2] 13
+[!((!3 & 2))] 6
+State: 13 "vertex13" {1}
+[!3 & 2] 14
+[!((!3 & 2))] 6
+State: 14 "vertex14" {1}
+[t] 15
+State: 15 "vertex15" {48}
+[t] 10
+--END--
