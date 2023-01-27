@@ -81,6 +81,25 @@ MAIN {
       (value(f,i) -> X(value(f,i) || value(f,i+1)));
     &&[0 < i < n]
       (value(f,i) -> X(value(f,i) || value(f,i-1)));
+
+    // don't move up unless there is a request upwards
+    &&[0 <= i < n-1]
+      (value(f,i) && up -> ||[i<j<n] b[j]);
+
+    // don't move down unless there is a request downwards or there are no requests at all
+    &&[0 < i < n]
+      (value(f,i) && down
+          ->
+          (
+            (||[0<=j<i]  b[j]) // there is a request downwards
+            ||
+            (&&[0<=j<n] !b[j]) // there are no requests at all
+          )
+       );
+
+    // no spurious serves
+    &&[0 <= i < n]
+      (value(f,i) && serve -> b[i]);
   }
 
   GUARANTEES {
@@ -90,21 +109,6 @@ MAIN {
     // every request is served
     &&[0 <= i < n]
       G(b[i] -> F (value(f,i) && serve));
-
-    // don't move up unless there is a request upwards
-    &&[0 <= i < n-1]
-      G(value(f,i) && up -> ||[i<j<n] b[j]);
-
-    // don't move down unless there is a request downwards or there are no requests at all
-    &&[0 < i < n]
-      G(value(f,i) && down
-          ->
-          (
-            (||[0<=j<i]  b[j]) // there is a request downwards
-            ||
-            (&&[0<=j<n] !b[j]) // there are no requests at all
-          )
-       );
 
     // if no requests, move to floor 0
     ! F G( (&&[0<=i<n] !b[i]) && !value(f,0) );

@@ -55,6 +55,25 @@ MAIN {
 
     f[0] -> X(f[0] || f[1]);
     f[n-1] -> X(f[n-1] || f[n-2]);
+
+    // don't move up unless there is a request upwards
+    &&[0 <= i < n-1]
+      (f[i] && up -> ||[i<j<n] b[j]);
+
+    // don't move down unless there is a request downwards or there are no requests at all
+    &&[0 < i < n]
+      (f[i] && down
+          ->
+          (
+            (||[0<=j<i]  b[j]) // there is a request downwards
+            ||
+            (&&[0<=j<n] !b[j]) // there are no requests at all
+          )
+       );
+
+    // no spurious serves
+    &&[0 <= i < n]
+      (f[i] && serve -> b[i]);
   }
 
   GUARANTEES {
@@ -64,21 +83,6 @@ MAIN {
     // every request is served
     &&[0 <= i < n]
       G(b[i] -> F (f[i] && serve));
-
-    // don't move up unless there is a request upwards
-    &&[0 <= i < n-1]
-      G(f[i] && up -> ||[i<j<n] b[j]);
-
-    // don't move down unless there is a request downwards or there are no requests at all
-    &&[0 < i < n]
-      G(f[i] && down
-          ->
-          (
-            (||[0<=j<i]  b[j]) // there is a request downwards
-            ||
-            (&&[0<=j<n] !b[j]) // there are no requests at all
-          )
-       );
 
     // if no requests, move to floor 0
     ! F G( (&&[0<=i<n] !b[i]) && !f[0] );
