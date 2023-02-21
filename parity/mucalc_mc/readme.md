@@ -1,4 +1,4 @@
-The benchmarks in this folder were submitted by [Tim Willemse](https://lmcs.episciences.org/6812) in the PGSolver
+The benchmarks in this folder were submitted by [Tim Willemse](https://www.tue.nl/en/research/researchers/tim-willemse/) in the PGSolver
 format and then translated to extended HOA using the pg2hoa.py script from
 hoa-tools.
 
