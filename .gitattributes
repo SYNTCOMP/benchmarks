@@ -1,0 +1,8 @@
+/parity/keiren/FLCTLLimitClosuren=8_compact.gm.bz2.ehoa filter=lfs diff=lfs merge=lfs -text
+/parity/keiren/SWP_SWP_(datasize=2_capacity=1_windowsize=1)eq=weak-bisim.gm.bz2.ehoa filter=lfs diff=lfs merge=lfs -text
+/parity/mucalc_mc/model_paper-3.property1.ehoa filter=lfs diff=lfs merge=lfs -text
+/parity/mucalc_mc/model_paper-3.property2.ehoa filter=lfs diff=lfs merge=lfs -text
+/parity/mucalc_mc/model_paper-3.property3.ehoa filter=lfs diff=lfs merge=lfs -text
+/parity/mucalc_mc/model_paper-3.property4.ehoa filter=lfs diff=lfs merge=lfs -text
+/parity/tlsf_based/ModdifiedLedMatrix4X.tlsf.ehoa filter=lfs diff=lfs merge=lfs -text
+/parity/tlsf_based/generalized_buffer_unreal1.tlsf.ehoa filter=lfs diff=lfs merge=lfs -text
