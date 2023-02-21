@@ -6,4 +6,4 @@ Relevant references:
 - [hoa-tools](https://github.com/gaperez64/hoa-tools) repository
 - Keiren's [parity-game
   generator](https://github.com/jkeiren/paritygame-generator)
-
+- The paper on [https://lmcs.episciences.org/6812](A symmetric protocol to establish service level agreements)
