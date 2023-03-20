@@ -1,0 +1,131 @@
+INFO {
+  TITLE:       "Lift controller"
+  DESCRIPTION: "GR1++ version of the lift spec; with slight changes (see `obstacle`, `open`, `req_power`, `grant_power`)."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 2; // n≥2; the number of floors, set {0...n-1}
+  }
+  DEFINITIONS {
+    // (this code is taken from other specs)
+    value(bus,v) = value'(bus,v,0,SIZEOF bus);
+    value'(bus,v,i,j) =
+      i >= j        : true
+      bit(v,i) == 1 : value'(bus,v,i + 1,j) &&  bus[i]
+      otherwise     : value'(bus,v,i + 1,j) && !bus[i];
+    bit(v,i) =
+      i <= 0     : v % 2
+      otherwise  : bit(v / 2,i - 1);
+    log2_dn(x) =
+      x <= 1    : 0
+      otherwise : 1 + log2_dn(x/2);
+    nbits(x) =
+      x == 0    : 0
+      otherwise : 1 + log2_dn(x-1);
+  }
+}
+
+MAIN {
+  INPUTS {
+    b[n];        // button
+    grant_pwr;   // grant power to move the lift
+    obstacle;    // obstacle in the door pass
+  }
+
+  OUTPUTS {
+    up;          // the lift is moving up
+    down;        // the lift is moving down
+    open;        // open-close the door
+    f[nbits(n)]; // the current floor
+    req_pwr;     // request power to move the lift
+  }
+
+  // env init
+  INITIALLY {
+    // (Note: also realisable without this assumption)
+
+    // initially no buttons are pressed
+    &&[0 <= i < n]  !b[i];
+  }
+
+  // sys init
+  PRESET {
+    // the lift starts on floor 0
+    value(f,0);
+  }
+
+  // env safety
+  REQUIRE {
+    // (Note: also realisable without these two assumptions)
+
+    // the button remains pressed until gets served
+    &&[0 <= i < n]
+      (b[i] && !(value(f,i) && open)  ->  X b[i]);
+
+    // the button is lowered when served
+    &&[0 <= i < n]
+      (b[i] && (value(f,i) && open)  ->  X !b[i]);
+  }
+
+  // sys safety
+  ASSERT {
+    // if the lift moves up, raise the signal `up`
+    up <-> ||[0 <= i < n-1] (value(f,i) && X value(f,i+1));
+    // the same for `down`
+    down <-> ||[0 < i < n] (value(f,i) && X value(f,i-1));
+
+    !(up && down); // (implied by above)
+
+    // don't move without enough power
+    (!grant_pwr) -> (!up && !down);
+    (open && obstacle) -> X open;
+    open -> (!up && !down);
+
+    // the laws of lift physics
+    &&[0 < i < n-1]
+      (value(f,i) -> X( value(f,i) ||
+                        value(f,i+1) ||
+                        value(f,i-1)));
+
+    value(f,0) -> X(value(f,0) || value(f,1));
+    value(f,n-1) -> X(value(f,n-1) || value(f,n-2));
+
+    // don't move up unless there is a request upwards
+    &&[0 <= i < n-1]
+      (value(f,i) && up -> ||[i<j<n] b[j]);
+
+    // don't move down unless there is a request downwards or there are no requests at all
+    &&[0 < i < n]
+      (value(f,i) && down
+         ->
+         (
+           (||[0<=j<i]  b[j]) // there is a request downwards
+           ||
+           (&&[0<=j<n] !b[j]) // there are no requests at all
+         )
+      );
+    // no spurious serves
+    &&[0 <= i < n]
+      (value(f,i) && open -> b[i]);
+  }
+
+  // env GF
+  ASSUME {
+    (G F req_pwr) -> (G F grant_pwr);
+    G F (!obstacle);
+  }
+
+  // sys GF
+  GUARANTEE {
+    // every request is served
+    &&[0 <= i < n]
+      G F (b[i] -> (value(f,i) && open));
+
+    // if no requests, move to floor 0
+    ! F G( (&&[0<=i<n] !b[i]) && !value(f,0) );
+  }
+}
+
