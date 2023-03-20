@@ -2,7 +2,7 @@
 
 The folder contains AMBA-bus related benchmarks.
 
-- `amba_thesis`: these are the benchmarks taken from Barbara Jobstmann PhD thesis [1], without any additional conversion into GR1; thus, they are LTL and are the most natural to understand.
+- `amba`: these are the benchmarks taken from Barbara Jobstmann PhD thesis [1], without any additional conversion into GR1; thus, they are LTL and are the most natural to understand.
 
 - `amba_decomposed`: this version divides the AMBA into components and describes the LTL specifications of those components.
 
