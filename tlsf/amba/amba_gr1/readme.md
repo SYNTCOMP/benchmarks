@@ -17,6 +17,6 @@ There are two versions:
 The specs are in folder `specs`.
 
 
-[1]:  Synthesis of Reactive (1) Designs,  by Bloem, Jobstmann, Piterman, Pnueli, Sa'ar.
+[1]:  Synthesis of Reactive (1) Designs,  by Bloem, Jobstmann, Piterman, Pnueli, Sa'ar.\
 [2]:  Applications and Optimizations for LTL Synthesis, PhD thesis by Barbara Jobstmann
 
