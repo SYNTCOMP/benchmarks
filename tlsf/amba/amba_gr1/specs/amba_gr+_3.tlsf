@@ -1,0 +1,177 @@
+INFO {
+  TITLE:       "AMBA AHB Case Study"
+  DESCRIPTION: "The spec inspired by spec from that GR1 journal paper."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+MAIN {
+
+INPUTS {
+hready ;
+hbusreq0 ;
+hlock0 ;
+hbusreq1 ;
+hlock1 ;
+hbusreq2 ;
+hlock2 ;
+hburst0 ;
+hburst1 ;
+}
+
+OUTPUTS {
+hmaster0 ;
+hmaster1 ;
+hmastlock ;
+start ;
+decide ;
+locked ;
+hgrant0 ;
+hgrant1 ;
+hgrant2 ;
+busreq ;
+stateA1_0 ;
+stateA1_1 ;
+stateG2 ;
+stateG3_0 ;
+stateG3_1 ;
+stateG3_2 ;
+stateG10_1 ;
+stateG10_2 ;
+req_ready ;
+}
+
+// env_init
+INITIALLY {
+!hready ;
+!hbusreq0 ;
+!hlock0 ;
+!hbusreq1 ;
+!hlock1 ;
+!hbusreq2 ;
+!hlock2 ;
+!hburst0 ;
+!hburst1 ;
+
+}
+
+// sys_init
+PRESET {
+!hmaster0 ;
+!hmaster1 ;
+!hmastlock ;
+start ;
+decide ;
+!locked ;
+hgrant0 ;
+!hgrant1 ;
+!hgrant2 ;
+!busreq ;
+!stateA1_0 ;
+!stateA1_1 ;
+!stateG2 ;
+!stateG3_0 ;
+!stateG3_1 ;
+!stateG3_2 ;
+!stateG10_1 ;
+!stateG10_2 ;
+
+}
+
+// env safety
+REQUIRE {
+( hlock0 ->hbusreq0 ) ;
+( hlock1 ->hbusreq1 ) ;
+( hlock2 ->hbusreq2 ) ;
+
+}
+
+// sys safety
+ASSERT {
+(!hmaster0) && (!hmaster1) -> (hbusreq0 <->busreq) ;
+(hmaster0) && (!hmaster1) -> (hbusreq1 <->busreq) ;
+(!hmaster0) && (hmaster1) -> (hbusreq2 <->busreq) ;
+(((!stateA1_1) && (!stateA1_0) && ((!hmastlock) || (hburst0) || (hburst1))) ->  X((!stateA1_1) && (!stateA1_0))) ;
+(((!stateA1_1) && (!stateA1_0) &&  (hmastlock) && (!hburst0) && (!hburst1)) ->  X((stateA1_1) && (!stateA1_0))) ;
+(((stateA1_1) && (!stateA1_0) && (busreq)) ->  X((stateA1_1) && (!stateA1_0))) ;
+(((stateA1_1) && (!stateA1_0) && (!busreq) && ((!hmastlock) || (hburst0) || (hburst1))) ->  X((!stateA1_1) && (!stateA1_0))) ;
+(((stateA1_1) && (!stateA1_0) && (!busreq) &&  (hmastlock) && (!hburst0) && (!hburst1)) ->  X((!stateA1_1) && (stateA1_0))) ;
+(((!stateA1_1) && (stateA1_0) && (busreq)) -> X((stateA1_1) && (!stateA1_0))) ;
+(((!stateA1_1) && (stateA1_0) &&  (hmastlock) && (!hburst0) && (!hburst1)) -> X((stateA1_1) && (!stateA1_0))) ;
+(((!stateA1_1) && (stateA1_0) && (!busreq) && ((!hmastlock) || (hburst0) || (hburst1))) -> X((!stateA1_1) && (!stateA1_0))) ;
+((!hready) ->X(!start)) ;
+(((!stateG2) && ((!hmastlock) || (!start) || (hburst0) || (hburst1))) ->X(!stateG2)) ;
+(((!stateG2) &&  (hmastlock) && (start) && (!hburst0) && (!hburst1))  ->X(stateG2)) ;
+(((stateG2) && (!start) && (busreq)) ->X(stateG2)) ;
+!(((stateG2) && (start))) ;
+(((stateG2) && (!start) && (!busreq)) ->X(!stateG2)) ;
+(((!stateG3_0) && (!stateG3_1) && (!stateG3_2) &&   ((!hmastlock) || (!start) || ((hburst0) || (!hburst1)))) ->  (X(!stateG3_0) && X(!stateG3_1) && X(!stateG3_2)))  ;
+(((!stateG3_0) && (!stateG3_1) && (!stateG3_2) &&   ((hmastlock) && (start) && ((!hburst0) && (hburst1)) && (!hready))) ->   (X(stateG3_0) && X(!stateG3_1) && X(!stateG3_2)))  ;
+(((!stateG3_0) && (!stateG3_1) && (!stateG3_2) &&   ((hmastlock) && (start) && ((!hburst0) && (hburst1)) && (hready))) ->   (X(!stateG3_0) && X(stateG3_1) && X(!stateG3_2)))  ;
+ 
+(((stateG3_0) && (!stateG3_1) && (!stateG3_2) && ((!start) && (!hready))) ->   (X(stateG3_0) && X(!stateG3_1) && X(!stateG3_2)))  ;
+(((stateG3_0) && (!stateG3_1) && (!stateG3_2) && ((!start) && (hready))) ->   (X(!stateG3_0) && X(stateG3_1) && X(!stateG3_2)))  ;
+
+!(((stateG3_0) && (!stateG3_1) && (!stateG3_2) && ((start))))  ;
+
+
+(((!stateG3_0) && (stateG3_1) && (!stateG3_2) && ((!start) && (!hready))) ->   (X(!stateG3_0) && X(stateG3_1) && X(!stateG3_2)))  ;
+(((!stateG3_0) && (stateG3_1) && (!stateG3_2) && ((!start) && (hready))) ->   (X(stateG3_0) && X(stateG3_1) && X(!stateG3_2)))  ;
+!(((!stateG3_0) && (stateG3_1) && (!stateG3_2) && ((start))))  ;
+
+(((stateG3_0) && (stateG3_1) && (!stateG3_2) && ((!start) && (!hready))) ->   (X(stateG3_0) && X(stateG3_1) && X(!stateG3_2)))  ;
+(((stateG3_0) && (stateG3_1) && (!stateG3_2) && ((!start) && (hready))) ->   (X(!stateG3_0) && X(!stateG3_1) && X(stateG3_2))) ;
+!(((stateG3_0) && (stateG3_1) && (!stateG3_2) && ((start))))  ;
+
+(((!stateG3_0) && (!stateG3_1) && (stateG3_2) && ((!start) && (!hready))) ->   (X(!stateG3_0) && X(!stateG3_1) && X(stateG3_2)))  ;
+(((!stateG3_0) && (!stateG3_1) && (stateG3_2) && ((!start) && (hready))) ->   (X(!stateG3_0) && X(!stateG3_1) && X(!stateG3_2))) ;
+
+!(((!stateG3_0) && (!stateG3_1) && (stateG3_2) && ((start))))  ;
+((hready) -> ((hgrant0) <-> (X(!hmaster0) && X(!hmaster1)))) ;
+((hready) -> ((hgrant1) <-> (X(hmaster0) && X(!hmaster1)))) ;
+((hready) -> ((hgrant2) <-> (X(!hmaster0) && X(hmaster1)))) ;
+((hready) -> (!locked <-> X(!hmastlock))) ;
+(X(!start) -> (((!hmaster0) && (!hmaster1)) <-> (X(!hmaster0) && X(!hmaster1)))) ;
+(X(!start) -> (((hmaster0) && (!hmaster1)) <-> (X(hmaster0) && X(!hmaster1)))) ;
+(X(!start) -> (((!hmaster0) && (hmaster1)) <-> (X(!hmaster0) && X(hmaster1)))) ;
+(((X(!start))) -> ((hmastlock) <->X(hmastlock))) ;
+((decide  &&  !hlock0  &&  X(hgrant0)) -> X(!locked)) ;
+((decide  &&  !hlock0  &&  X(hgrant0)) -> X(!locked)) ;
+((decide  &&  !hlock1  &&  X(hgrant1)) -> X(!locked)) ;
+((decide  &&  !hlock1  &&  X(hgrant1)) -> X(!locked)) ;
+((decide  &&  !hlock2  &&  X(hgrant2)) -> X(!locked)) ;
+((decide  &&  !hlock2  &&  X(hgrant2)) -> X(!locked)) ;
+((!decide) -> (((!hgrant0) <-> X(!hgrant0)))) ;
+((!decide) -> (((!hgrant1) <-> X(!hgrant1)))) ;
+((!decide) -> (((!hgrant2) <-> X(!hgrant2)))) ;
+((!decide) -> (!locked <->X(!locked))) ;
+(((!stateG10_1) && (((hgrant1) || (hbusreq1)))) -> X(!stateG10_1)) ;
+(((!stateG10_1) && ((!hgrant1) && (!hbusreq1))) -> X(stateG10_1)) ;
+(((stateG10_1) && ((!hgrant1) && (!hbusreq1))) -> X(stateG10_1)) ;
+!(((stateG10_1) && (((hgrant1)) && (!hbusreq1)))) ;
+(((stateG10_1) && (hbusreq1)) -> X(!stateG10_1)) ;
+(((!stateG10_2) && (((hgrant2) || (hbusreq2)))) -> X(!stateG10_2)) ;
+(((!stateG10_2) && ((!hgrant2) && (!hbusreq2))) -> X(stateG10_2)) ;
+(((stateG10_2) && ((!hgrant2) && (!hbusreq2))) -> X(stateG10_2)) ;
+!(((stateG10_2) && (((hgrant2)) && (!hbusreq2)))) ;
+(((stateG10_2) && (hbusreq2)) -> X(!stateG10_2)) ;
+
+}
+
+// env GF
+ASSUME {
+G(F(!stateA1_1)) ;
+G(F(req_ready)) -> G(F(hready)) ;
+
+}
+
+// sys GF
+GUARANTEE {
+G(F(((!hmaster0) && (!hmaster1))  ||  !hbusreq0)) ;
+G(F(((hmaster0) && (!hmaster1))  ||  !hbusreq1)) ;
+G(F(((!hmaster0) && (hmaster1))  ||  !hbusreq2)) ;
+F(G((decide  &&  !hbusreq0  &&  !hbusreq1  &&  !hbusreq2) -> X(hgrant0))) ;
+
+}
+
+}
