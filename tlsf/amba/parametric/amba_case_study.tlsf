@@ -2,7 +2,7 @@ INFO {
   TITLE:       "AMBA AHB Case Study"
   DESCRIPTION: "ARM's Advanced Microcontroller Bus Architecture
                 defining the Advanced High-Performance Bus
-                (taken from the PhD Thesis of Babara Jobstmann)"
+                (taken from the PhD Thesis of Barbara Jobstmann)"
   SEMANTICS:   Mealy
   TARGET:      Mealy
 }
