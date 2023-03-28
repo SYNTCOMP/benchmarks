@@ -7,7 +7,8 @@ import sys
 from genParametric import generateAllParametric
 
 benchdirs = ["amba",
-             "amba_decomposed",
+             "amba/amba_decomposed",
+             "amba/amba_gr1",
              "arbiters_s4",
              "arbiters_zoo",
              "collector",
