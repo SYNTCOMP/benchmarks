@@ -6,18 +6,18 @@ import sys
 
 from genParametric import generateAllParametric
 
-benchdirs = ["amba",
+benchdirs = ["amba/amba",
              "amba/amba_decomposed",
-             "amba/amba_gr1",
+             "amba/amba_gr1/specs",
              "arbiters_s4",
              "arbiters_zoo",
              "collector",
              "detector",
              "detector_unreal",
-             "full_arbiter",
              "full_arbiter_log",
              "full_arbiter_unreal",
              "generalized_buffer",
+             "gui_glue_code_synthesis",
              "lift",
              "lily",
              "load_balancer",
@@ -33,11 +33,11 @@ benchdirs = ["amba",
              "round_robin_arbiter",
              "round_robin_arbiter_unreal",
              "shift",
-             "simple_arbiter",
              "simple_arbiter_log",
              "simple_arbiter_unreal",
              "tsl_paper",
-             "tsl_smart_home_jarvis/extracted-benchmarks"]
+             "tsl_smart_home_jarvis/extracted-benchmarks"
+             ]
 
 
 def makeBenchmarks(inputRoot, outputRoot):
