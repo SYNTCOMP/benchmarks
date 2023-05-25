@@ -24,6 +24,7 @@ benchdirs = ["amba/amba",
              "load_balancer_unreal",
              "ltl2dba",
              "ltl2dpa",
+             "ltl_f/generated_TLSF",
              "mux",
              "nary_latch",
              "prioritized_arbiter",
@@ -59,9 +60,10 @@ def makeBenchmarks(inputRoot, outputRoot):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Two positional arguments expected: "
-              "(1) the path to the benchmark-family directories"
-              "(2) the path where you want the benchmarks",
+        print("Two positional arguments expected: \n"
+              "  (1) the path to the benchmark-family directories\n"
+              "  (2) the path where you want the benchmarks\n"
+              "The output folder should exist.",
               file=sys.stderr)
         exit(1)
     else:
