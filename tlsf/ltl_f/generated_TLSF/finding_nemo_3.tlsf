@@ -1,0 +1,33 @@
+
+    INFO {
+      TITLE:       "finding_nemo"
+      DESCRIPTION: "LTLf benchmark converted to LTL TLSF. Source: https://www.ijcai.org/proceedings/2021/0255.pdf"
+      SEMANTICS:   Mealy
+      TARGET:      Mealy
+    }
+
+    MAIN {
+      INPUTS {
+      sense_nemo;
+nemo_leaving;
+      }
+      
+      OUTPUTS {
+      camera_on;
+hallway_0;
+hallway_1;
+hallway_2;
+room_0;
+room_1;
+room_2;
+room_3;
+room_4;
+room_5;
+alive;
+      }
+      
+      GUARANTEES {
+      ((!((((G(F(room_1))) && (G(F(room_3))) && (G(F(room_5)))) -> ((G(F(X sense_nemo))))))) || ((alive) && (!((G((!(alive)) || (((hallway_0) -> ((!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((hallway_1) -> ((!(hallway_0)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((hallway_2) -> ((!(hallway_0)) && (!(hallway_1)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((room_0) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((room_1) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_2)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((room_2) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((room_3) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_4)) && (!(room_5)))) && ((room_4) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_5)))) && ((room_5) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_4))))))) -> ((G((!(alive)) || (((!(room_1)) && (!(room_3)) && (!(room_5))) -> (!(X((alive) && (sense_nemo))))))) && (G((!(alive)) || (((X((alive) && (sense_nemo))) && (((hallway_0) && (X((alive) && (hallway_0)))) || ((hallway_1) && (X((alive) && (hallway_1)))) || ((hallway_2) && (X((alive) && (hallway_2)))) || ((room_0) && (X((alive) && (room_0)))) || ((room_1) && (X((alive) && (room_1)))) || ((room_2) && (X((alive) && (room_2)))) || ((room_3) && (X((alive) && (room_3)))) || ((room_4) && (X((alive) && (room_4)))) || ((room_5) && (X((alive) && (room_5)))))) -> ((X((alive) && (X((alive) && (sense_nemo))))) <-> (!(X((alive) && (nemo_leaving)))))))) && (G((!(alive)) || (((!(X((alive) && (sense_nemo)))) && (X((alive) && (X((alive) && (sense_nemo))))) && (((X((alive) && (hallway_0))) && (X((alive) && (X((alive) && (hallway_0)))))) || ((X((alive) && (hallway_1))) && (X((alive) && (X((alive) && (hallway_1)))))) || ((X((alive) && (hallway_2))) && (X((alive) && (X((alive) && (hallway_2)))))) || ((X((alive) && (room_0))) && (X((alive) && (X((alive) && (room_0)))))) || ((X((alive) && (room_1))) && (X((alive) && (X((alive) && (room_1)))))) || ((X((alive) && (room_2))) && (X((alive) && (X((alive) && (room_2)))))) || ((X((alive) && (room_3))) && (X((alive) && (X((alive) && (room_3)))))) || ((X((alive) && (room_4))) && (X((alive) && (X((alive) && (room_4)))))) || ((X((alive) && (room_5))) && (X((alive) && (X((alive) && (room_5)))))))) -> (X((alive) && (X((alive) && (X((alive) && (sense_nemo))))))))))))) && ((alive) U (G(!(alive))))) || (((alive) && (F((alive) && (camera_on) && (X((alive) && (sense_nemo))) && (X((alive) && (F((alive) && (camera_on) && (X((alive) && (sense_nemo))) && (X((alive) && (F((alive) && (camera_on) && (X((alive) && (sense_nemo))))))))))))) && ((alive) U (G(!(alive))))) && (alive) && (G((!(alive)) || (((hallway_0) -> ((!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((hallway_1) -> ((!(hallway_0)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((hallway_2) -> ((!(hallway_0)) && (!(hallway_1)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((room_0) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((room_1) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_2)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((room_2) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_3)) && (!(room_4)) && (!(room_5)))) && ((room_3) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_4)) && (!(room_5)))) && ((room_4) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_5)))) && ((room_5) -> ((!(hallway_0)) && (!(hallway_1)) && (!(hallway_2)) && (!(room_0)) && (!(room_1)) && (!(room_2)) && (!(room_3)) && (!(room_4))))))) && (G((!(alive)) || (((hallway_0) -> ((X((!(alive)) || (room_0))) || (X((!(alive)) || (room_1))) || (X((!(alive)) || (hallway_2))) || (X((!(alive)) || (hallway_0))) || (X((!(alive)) || (hallway_1))))) && ((hallway_1) -> ((X((!(alive)) || (hallway_2))) || (X((!(alive)) || (hallway_0))) || (X((!(alive)) || (hallway_1))) || (X((!(alive)) || (room_2))) || (X((!(alive)) || (room_3))))) && ((hallway_2) -> ((X((!(alive)) || (hallway_2))) || (X((!(alive)) || (hallway_0))) || (X((!(alive)) || (hallway_1))) || (X((!(alive)) || (room_4))) || (X((!(alive)) || (room_5))))) && ((room_0) -> ((X((!(alive)) || (room_0))) || (X((!(alive)) || (hallway_0))))) && ((room_1) -> ((X((!(alive)) || (room_1))) || (X((!(alive)) || (hallway_0))))) && ((room_2) -> ((X((!(alive)) || (hallway_1))) || (X((!(alive)) || (room_2))))) && ((room_3) -> ((X((!(alive)) || (hallway_1))) || (X((!(alive)) || (room_3))))) && ((room_4) -> ((X((!(alive)) || (hallway_2))) || (X((!(alive)) || (room_4))))) && ((room_5) -> ((X((!(alive)) || (hallway_2))) || (X((!(alive)) || (room_5)))))))) && (G((!(alive)) || ((!(X((alive) && (sense_nemo)))) -> (!(camera_on))))) && ((alive) U (G(!(alive))))));
+      }
+    }
+    
