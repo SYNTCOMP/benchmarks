@@ -1,0 +1,31 @@
+
+    INFO {
+      TITLE:       "finding_nemo"
+      DESCRIPTION: "LTLf benchmark converted to LTL TLSF. Source: https://www.ijcai.org/proceedings/2021/0255.pdf"
+      SEMANTICS:   Mealy
+      TARGET:      Mealy
+    }
+
+    MAIN {
+      INPUTS {
+      occupied_0;
+occupied_1;
+      }
+      
+      OUTPUTS {
+      stockroom;
+station_0;
+station_1;
+outside_stockroom;
+outside_station_0;
+outside_station_1;
+pick_up_part;
+resupply;
+alive;
+      }
+      
+      GUARANTEES {
+      ((!((((G(F(true)))) -> ((G(F(!(X occupied_0)))) && (G(F(!(X occupied_1)))))))) || ((alive) && (!((G((!(alive)) || (((stockroom) -> ((!(outside_station_0)) && (!(outside_station_1)) && (!(outside_stockroom)) && (!(station_0)) && (!(station_1)))) && ((station_0) -> ((!(outside_station_0)) && (!(outside_station_1)) && (!(outside_stockroom)) && (!(station_1)) && (!(stockroom)))) && ((station_1) -> ((!(outside_station_0)) && (!(outside_station_1)) && (!(outside_stockroom)) && (!(station_0)) && (!(stockroom)))) && ((outside_stockroom) -> ((!(outside_station_0)) && (!(outside_station_1)) && (!(station_0)) && (!(station_1)) && (!(stockroom)))) && ((outside_station_0) -> ((!(outside_station_1)) && (!(outside_stockroom)) && (!(station_0)) && (!(station_1)) && (!(stockroom)))) && ((outside_station_1) -> ((!(outside_station_0)) && (!(outside_stockroom)) && (!(station_0)) && (!(station_1)) && (!(stockroom))))))) -> ((G((!(alive)) || (((!(X((alive) && (occupied_0)))) && (X((alive) && (station_0)))) -> (!(X((alive) && (X((alive) && (occupied_0))))))))) && (G((!(alive)) || (((!(X((alive) && (occupied_1)))) && (X((alive) && (station_1)))) -> (!(X((alive) && (X((alive) && (occupied_1)))))))))))) && ((alive) U (G(!(alive))))) || (((alive) && (F((alive) && (resupply) && (station_0))) && (F((alive) && (resupply) && (station_1))) && ((alive) U (G(!(alive))))) && (alive) && (G((!(alive)) || (((stockroom) -> ((!(outside_station_0)) && (!(outside_station_1)) && (!(outside_stockroom)) && (!(station_0)) && (!(station_1)))) && ((station_0) -> ((!(outside_station_0)) && (!(outside_station_1)) && (!(outside_stockroom)) && (!(station_1)) && (!(stockroom)))) && ((station_1) -> ((!(outside_station_0)) && (!(outside_station_1)) && (!(outside_stockroom)) && (!(station_0)) && (!(stockroom)))) && ((outside_stockroom) -> ((!(outside_station_0)) && (!(outside_station_1)) && (!(station_0)) && (!(station_1)) && (!(stockroom)))) && ((outside_station_0) -> ((!(outside_station_1)) && (!(outside_stockroom)) && (!(station_0)) && (!(station_1)) && (!(stockroom)))) && ((outside_station_1) -> ((!(outside_station_0)) && (!(outside_stockroom)) && (!(station_0)) && (!(station_1)) && (!(stockroom))))))) && (G((!(alive)) || (((stockroom) -> ((X((!(alive)) || (stockroom))) || (X((!(alive)) || (outside_stockroom))))) && ((station_0) -> ((X((!(alive)) || (station_0))) || (X((!(alive)) || (outside_station_0))))) && ((station_1) -> ((X((!(alive)) || (station_1))) || (X((!(alive)) || (outside_station_1))))) && ((outside_stockroom) -> ((X((!(alive)) || (stockroom))) || (X((!(alive)) || (outside_stockroom))) || (X((!(alive)) || (outside_station_0))) || (X((!(alive)) || (outside_station_1))))) && ((outside_station_0) -> ((X((!(alive)) || (outside_stockroom))) || (X((!(alive)) || (station_0))) || (X((!(alive)) || (outside_station_0))) || (X((!(alive)) || (outside_station_1))))) && ((outside_station_1) -> ((X((!(alive)) || (outside_stockroom))) || (X((!(alive)) || (outside_station_0))) || (X((!(alive)) || (station_1))) || (X((!(alive)) || (outside_station_1)))))))) && (G((!(alive)) || (((X((alive) && (occupied_0))) -> (!(station_0))) && ((X((alive) && (occupied_1))) -> (!(station_1)))))) && (G((!(alive)) || ((pick_up_part) -> (stockroom)))) && (G((!(alive)) || ((resupply) -> ((station_0) || (station_1))))) && (((!(alive)) || (!(resupply))) W (pick_up_part)) && (G((!(alive)) || ((resupply) -> (X((alive) && (((!(alive)) || (!(resupply))) W (pick_up_part))))))) && ((alive) U (G(!(alive))))));
+      }
+    }
+    
