@@ -1,0 +1,24 @@
+INFO {
+  TITLE:       "counter_01"
+  DESCRIPTION: "Two-player-Game/Single-Counter/System-first"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    init_counter_0;
+    inc;
+  }
+
+  OUTPUTS {
+    counter_0;
+    carry_0;
+  }
+
+  GUARANTEES {
+    ((((X[!] counter_0 -> init_counter_0) && (init_counter_0 -> X counter_0))) && (G ((!inc -> X[!] inc)) -> (X[!] G ((X[!] carry_0 -> inc) && (inc -> X carry_0) && ((X[!] counter_0 -> !(counter_0 <-> X[!] carry_0)) && (!(counter_0 <-> X carry_0) -> X counter_0))) && X[!] F (!counter_0))));
+  }
+
+}

@@ -1,0 +1,40 @@
+INFO {
+  TITLE:       "nim_01_05"
+  DESCRIPTION: "Two-player-Game/Nim/nim_01/System-first"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    select_env_0;
+    change_env_0;
+    change_env_1;
+    change_env_2;
+    change_env_3;
+    change_env_4;
+  }
+
+  OUTPUTS {
+    select_sys_0;
+    change_sys_0;
+    change_sys_1;
+    change_sys_2;
+    change_sys_3;
+    change_sys_4;
+    turn_sys;
+    turn_env;
+    heap_0_0;
+    heap_0_1;
+    heap_0_2;
+    heap_0_3;
+    heap_0_4;
+    heap_0_5;
+  }
+
+  GUARANTEES {
+    ((turn_sys && !turn_env && (!select_sys_0 -> heap_0_5) && (select_sys_0 -> (change_sys_0 || change_sys_1 || change_sys_2 || change_sys_3 || change_sys_4))) && (G ((turn_env -> (select_env_0)) && (change_env_1 -> !change_env_0) && (change_env_2 -> !change_env_0) && (change_env_2 -> !change_env_1) && (change_env_3 -> !change_env_0) && (change_env_3 -> !change_env_1) && (change_env_3 -> !change_env_2) && (change_env_4 -> !change_env_0) && (change_env_4 -> !change_env_1) && (change_env_4 -> !change_env_2) && (change_env_4 -> !change_env_3) && (((!heap_0_0) && heap_0_0 && X[!] select_env_0) -> false) && (((!heap_0_0) && heap_0_1 && X[!] select_env_0) -> (X[!] change_env_0)) && (((!heap_0_0) && heap_0_2 && X[!] select_env_0) -> (X[!] change_env_0 || X[!] change_env_1)) && (((!heap_0_0) && heap_0_3 && X[!] select_env_0) -> (X[!] change_env_0 || X[!] change_env_1 || X[!] change_env_2)) && (((!heap_0_0) && heap_0_4 && X[!] select_env_0) -> (X[!] change_env_0 || X[!] change_env_1 || X[!] change_env_2 || X[!] change_env_3)) && (((!heap_0_0) && heap_0_5 && X[!] select_env_0) -> (X[!] change_env_0 || X[!] change_env_1 || X[!] change_env_2 || X[!] change_env_3 || X[!] change_env_4))) -> (G ((turn_sys -> (select_sys_0)) && (change_sys_1 -> !change_sys_0) && (change_sys_2 -> !change_sys_0) && (change_sys_2 -> !change_sys_1) && (change_sys_3 -> !change_sys_0) && (change_sys_3 -> !change_sys_1) && (change_sys_3 -> !change_sys_2) && (change_sys_4 -> !change_sys_0) && (change_sys_4 -> !change_sys_1) && (change_sys_4 -> !change_sys_2) && (change_sys_4 -> !change_sys_3) && (((!heap_0_0) && heap_0_0 && X[!] select_sys_0) -> false) && (((!heap_0_0) && heap_0_1 && X[!] select_sys_0) -> (X[!] change_sys_0)) && (((!heap_0_0) && heap_0_2 && X[!] select_sys_0) -> (X[!] change_sys_0 || X[!] change_sys_1)) && (((!heap_0_0) && heap_0_3 && X[!] select_sys_0) -> (X[!] change_sys_0 || X[!] change_sys_1 || X[!] change_sys_2)) && (((!heap_0_0) && heap_0_4 && X[!] select_sys_0) -> (X[!] change_sys_0 || X[!] change_sys_1 || X[!] change_sys_2 || X[!] change_sys_3)) && (((!heap_0_0) && heap_0_5 && X[!] select_sys_0) -> (X[!] change_sys_0 || X[!] change_sys_1 || X[!] change_sys_2 || X[!] change_sys_3 || X[!] change_sys_4)) && (turn_sys <-> !turn_env) && (X[!] turn_sys -> turn_env) && (X[!] turn_env -> turn_sys) && (heap_0_1 -> !heap_0_0) && (heap_0_2 -> !heap_0_0) && (heap_0_2 -> !heap_0_1) && (heap_0_3 -> !heap_0_0) && (heap_0_3 -> !heap_0_1) && (heap_0_3 -> !heap_0_2) && (heap_0_4 -> !heap_0_0) && (heap_0_4 -> !heap_0_1) && (heap_0_4 -> !heap_0_2) && (heap_0_4 -> !heap_0_3) && (heap_0_5 -> !heap_0_0) && (heap_0_5 -> !heap_0_1) && (heap_0_5 -> !heap_0_2) && (heap_0_5 -> !heap_0_3) && (heap_0_5 -> !heap_0_4) && ((turn_env && select_env_0 && change_env_0) -> heap_0_0) && ((turn_env && select_env_0 && change_env_1) -> heap_0_1) && ((turn_env && select_env_0 && change_env_2) -> heap_0_2) && ((turn_env && select_env_0 && change_env_3) -> heap_0_3) && ((turn_env && select_env_0 && change_env_4) -> heap_0_4) && ((turn_sys && select_sys_0 && change_sys_0) -> heap_0_0) && ((turn_sys && select_sys_0 && change_sys_1) -> heap_0_1) && ((turn_sys && select_sys_0 && change_sys_2) -> heap_0_2) && ((turn_sys && select_sys_0 && change_sys_3) -> heap_0_3) && ((turn_sys && select_sys_0 && change_sys_4) -> heap_0_4) && ((X[!] turn_env && X[!] !select_env_0 && heap_0_0) -> X[!] heap_0_0) && ((X[!] turn_env && X[!] !select_env_0 && heap_0_1) -> X[!] heap_0_1) && ((X[!] turn_env && X[!] !select_env_0 && heap_0_2) -> X[!] heap_0_2) && ((X[!] turn_env && X[!] !select_env_0 && heap_0_3) -> X[!] heap_0_3) && ((X[!] turn_env && X[!] !select_env_0 && heap_0_4) -> X[!] heap_0_4) && ((X[!] turn_env && X[!] !select_env_0 && heap_0_5) -> X[!] heap_0_5) && ((X[!] turn_sys && X[!] !select_sys_0 && heap_0_0) -> X[!] heap_0_0) && ((X[!] turn_sys && X[!] !select_sys_0 && heap_0_1) -> X[!] heap_0_1) && ((X[!] turn_sys && X[!] !select_sys_0 && heap_0_2) -> X[!] heap_0_2) && ((X[!] turn_sys && X[!] !select_sys_0 && heap_0_3) -> X[!] heap_0_3) && ((X[!] turn_sys && X[!] !select_sys_0 && heap_0_4) -> X[!] heap_0_4) && ((X[!] turn_sys && X[!] !select_sys_0 && heap_0_5) -> X[!] heap_0_5)) && ((!heap_0_0) U (turn_env && (heap_0_0))))));
+  }
+
+}

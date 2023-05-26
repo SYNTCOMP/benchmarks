@@ -1,0 +1,51 @@
+INFO {
+  TITLE:       "counter_10"
+  DESCRIPTION: "Two-player-Game/Single-Counter/System-first"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    init_counter_0;
+    init_counter_1;
+    init_counter_2;
+    init_counter_3;
+    init_counter_4;
+    init_counter_5;
+    init_counter_6;
+    init_counter_7;
+    init_counter_8;
+    init_counter_9;
+    inc;
+  }
+
+  OUTPUTS {
+    counter_0;
+    counter_1;
+    counter_2;
+    counter_3;
+    counter_4;
+    counter_5;
+    counter_6;
+    counter_7;
+    counter_8;
+    counter_9;
+    carry_0;
+    carry_1;
+    carry_2;
+    carry_3;
+    carry_4;
+    carry_5;
+    carry_6;
+    carry_7;
+    carry_8;
+    carry_9;
+  }
+
+  GUARANTEES {
+    ((((X[!] counter_0 -> init_counter_0) && (init_counter_0 -> X counter_0)) && ((X[!] counter_1 -> init_counter_1) && (init_counter_1 -> X counter_1)) && ((X[!] counter_2 -> init_counter_2) && (init_counter_2 -> X counter_2)) && ((X[!] counter_3 -> init_counter_3) && (init_counter_3 -> X counter_3)) && ((X[!] counter_4 -> init_counter_4) && (init_counter_4 -> X counter_4)) && ((X[!] counter_5 -> init_counter_5) && (init_counter_5 -> X counter_5)) && ((X[!] counter_6 -> init_counter_6) && (init_counter_6 -> X counter_6)) && ((X[!] counter_7 -> init_counter_7) && (init_counter_7 -> X counter_7)) && ((X[!] counter_8 -> init_counter_8) && (init_counter_8 -> X counter_8)) && ((X[!] counter_9 -> init_counter_9) && (init_counter_9 -> X counter_9))) && (G ((!inc -> X[!] inc)) -> (X[!] G ((X[!] carry_0 -> inc) && (inc -> X carry_0) && (X[!] carry_1 -> (counter_0 && X[!] carry_0)) && (X[!] carry_2 -> (counter_1 && X[!] carry_1)) && (X[!] carry_3 -> (counter_2 && X[!] carry_2)) && (X[!] carry_4 -> (counter_3 && X[!] carry_3)) && (X[!] carry_5 -> (counter_4 && X[!] carry_4)) && (X[!] carry_6 -> (counter_5 && X[!] carry_5)) && (X[!] carry_7 -> (counter_6 && X[!] carry_6)) && (X[!] carry_8 -> (counter_7 && X[!] carry_7)) && (X[!] carry_9 -> (counter_8 && X[!] carry_8)) && ((counter_0 && X carry_0) -> X carry_1) && ((counter_1 && X carry_1) -> X carry_2) && ((counter_2 && X carry_2) -> X carry_3) && ((counter_3 && X carry_3) -> X carry_4) && ((counter_4 && X carry_4) -> X carry_5) && ((counter_5 && X carry_5) -> X carry_6) && ((counter_6 && X carry_6) -> X carry_7) && ((counter_7 && X carry_7) -> X carry_8) && ((counter_8 && X carry_8) -> X carry_9) && ((X[!] counter_0 -> !(counter_0 <-> X[!] carry_0)) && (!(counter_0 <-> X carry_0) -> X counter_0)) && ((X[!] counter_1 -> !(counter_1 <-> X[!] carry_1)) && (!(counter_1 <-> X carry_1) -> X counter_1)) && ((X[!] counter_2 -> !(counter_2 <-> X[!] carry_2)) && (!(counter_2 <-> X carry_2) -> X counter_2)) && ((X[!] counter_3 -> !(counter_3 <-> X[!] carry_3)) && (!(counter_3 <-> X carry_3) -> X counter_3)) && ((X[!] counter_4 -> !(counter_4 <-> X[!] carry_4)) && (!(counter_4 <-> X carry_4) -> X counter_4)) && ((X[!] counter_5 -> !(counter_5 <-> X[!] carry_5)) && (!(counter_5 <-> X carry_5) -> X counter_5)) && ((X[!] counter_6 -> !(counter_6 <-> X[!] carry_6)) && (!(counter_6 <-> X carry_6) -> X counter_6)) && ((X[!] counter_7 -> !(counter_7 <-> X[!] carry_7)) && (!(counter_7 <-> X carry_7) -> X counter_7)) && ((X[!] counter_8 -> !(counter_8 <-> X[!] carry_8)) && (!(counter_8 <-> X carry_8) -> X counter_8)) && ((X[!] counter_9 -> !(counter_9 <-> X[!] carry_9)) && (!(counter_9 <-> X carry_9) -> X counter_9))) && X[!] F (!counter_0 && !counter_1 && !counter_2 && !counter_3 && !counter_4 && !counter_5 && !counter_6 && !counter_7 && !counter_8 && !counter_9))));
+  }
+
+}

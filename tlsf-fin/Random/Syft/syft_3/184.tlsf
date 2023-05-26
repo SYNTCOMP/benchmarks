@@ -1,0 +1,44 @@
+INFO {
+  TITLE:       "184"
+  DESCRIPTION: "Random/Syft/syft_3"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p2;
+    p3;
+    p4;
+    p5;
+    p6;
+    p7;
+    p8;
+    p17;
+    p18;
+    p21;
+    p22;
+  }
+
+  OUTPUTS {
+    p9;
+    p10;
+    p11;
+    p12;
+    p13;
+    p14;
+    p15;
+    p16;
+    p19;
+    p20;
+    p23;
+    p24;
+  }
+
+  GUARANTEES {
+    ((( true  ) -> (  (G (false  || (!(X[!](p9))) || (p1)))  && (G (false  || (!(X[!](p10))) || (p2)))  && (G (false  || (!(X[!](p11))) || (p3)))  && (G (false  || (!(X[!](p12))) || (p4)))  && (G (false  || (!(X[!](p13))) || (p5)))  && (G (false  || (!(X[!](p14))) || (p6)))  && (G (false  || (!(X[!](p15))) || (p7)))  && (G (false  || (!(X[!](p16))) || (p8)))  && true ))) && (G(!p19) ||  (G((p17)->F(p20)) ||  G((p18)->F(p19)))) && (G(p21 -> F(p23))& G(p22 -> F(p24))& G(!(p23 &&  p24))& ((!p23 U p21) ||  G(!p23))& ((!p24 U p22) ||  G(p24))) ;
+  }
+
+}

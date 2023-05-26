@@ -1,0 +1,37 @@
+INFO {
+  TITLE:       "087"
+  DESCRIPTION: "Random/Syft/syft_5"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p3;
+    p4;
+    p6;
+    p7;
+    p10;
+    p11;
+    p12;
+    p14;
+    p15;
+  }
+
+  OUTPUTS {
+    p2;
+    p5;
+    p8;
+    p9;
+    p13;
+    p16;
+    p17;
+  }
+
+  GUARANTEES {
+    ((G(F(p1))) -> ((G(!p2 -> (!p2 U p1)))&(((!p2))&((G(p1 -> F(p2)))&(G(F(p2))))))) && (G( p3 -> X[!](!p5 U p4))) && (!(G((p6)->F(p9)) &&  G((p7)->F(p8)))) && ((G( p11 -> (X[!](p12) ||  X[!](X[!](p12))) )) -> (G( p10 -> (X[!](p13) ||  X[!](X[!](p13)) ||  X[!](X[!](X[!](p13))) )) &&  G( p13 -> X[!](!p13)) &&  G( p11 -> X[!](!p13 U p12)))) && ((( true  ) -> (  (G (false  || (!(X[!](p16))) || (p14)))  && (G (false  || (!(X[!](p17))) || (p15)))  && true ))) ;
+  }
+
+}

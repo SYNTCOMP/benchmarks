@@ -1,0 +1,37 @@
+INFO {
+  TITLE:       "counters_03"
+  DESCRIPTION: "Two-player-Game/Double-Counter/System-first"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    init_counter_0;
+    init_counter_1;
+    init_counter_2;
+    inc_env;
+  }
+
+  OUTPUTS {
+    counter_env_0;
+    counter_sys_0;
+    counter_env_1;
+    counter_sys_1;
+    counter_env_2;
+    counter_sys_2;
+    carry_env_0;
+    carry_sys_0;
+    carry_env_1;
+    carry_sys_1;
+    carry_env_2;
+    carry_sys_2;
+    inc_sys;
+  }
+
+  GUARANTEES {
+    ((((X[!] counter_env_0 -> init_counter_0) && (init_counter_0 -> X counter_env_0)) && ((X[!] counter_env_1 -> init_counter_1) && (init_counter_1 -> X counter_env_1)) && ((X[!] counter_env_2 -> init_counter_2) && (init_counter_2 -> X counter_env_2)) && !counter_sys_0 && !counter_sys_1 && !counter_sys_2 && !inc_sys) && (G ((inc_env -> !X[!] inc_env)) -> (X[!] G ((X[!] carry_env_0 -> inc_env) && (inc_env -> X carry_env_0) && (carry_sys_0 <-> inc_sys) && (X[!] carry_env_1 -> (counter_env_0 && X[!] carry_env_0)) && (X[!] carry_sys_1 -> (counter_sys_0 && X[!] carry_sys_0)) && (X[!] carry_env_2 -> (counter_env_1 && X[!] carry_env_1)) && (X[!] carry_sys_2 -> (counter_sys_1 && X[!] carry_sys_1)) && ((counter_env_0 && X carry_env_0) -> X carry_env_1) && ((counter_sys_0 && X carry_sys_0) -> X carry_sys_1) && ((counter_env_1 && X carry_env_1) -> X carry_env_2) && ((counter_sys_1 && X carry_sys_1) -> X carry_sys_2) && ((X[!] counter_env_0 -> !(counter_env_0 <-> X[!] carry_env_0)) && (!(counter_env_0 <-> X carry_env_0) -> X counter_env_0)) && ((X[!] counter_sys_0 -> !(counter_sys_0 <-> X[!] carry_sys_0)) && (!(counter_sys_0 <-> X carry_sys_0) -> X counter_sys_0)) && ((X[!] counter_env_1 -> !(counter_env_1 <-> X[!] carry_env_1)) && (!(counter_env_1 <-> X carry_env_1) -> X counter_env_1)) && ((X[!] counter_sys_1 -> !(counter_sys_1 <-> X[!] carry_sys_1)) && (!(counter_sys_1 <-> X carry_sys_1) -> X counter_sys_1)) && ((X[!] counter_env_2 -> !(counter_env_2 <-> X[!] carry_env_2)) && (!(counter_env_2 <-> X carry_env_2) -> X counter_env_2)) && ((X[!] counter_sys_2 -> !(counter_sys_2 <-> X[!] carry_sys_2)) && (!(counter_sys_2 <-> X carry_sys_2) -> X counter_sys_2))) && X[!] F ((counter_env_0 <-> counter_sys_0) && (counter_env_1 <-> counter_sys_1) && (counter_env_2 <-> counter_sys_2)))));
+  }
+
+}

@@ -1,0 +1,27 @@
+INFO {
+  TITLE:       "uright07"
+  DESCRIPTION: "Patterns/Uright"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p3;
+    p2;
+    p4;
+  }
+
+  OUTPUTS {
+    p5;
+    p6;
+    p7;
+  }
+
+  GUARANTEES {
+    p1 U (p2 U (p3 U (p4 U (p5 U (p6 U p7)))));
+  }
+
+}

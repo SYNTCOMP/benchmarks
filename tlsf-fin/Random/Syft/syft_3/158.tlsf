@@ -1,0 +1,40 @@
+INFO {
+  TITLE:       "158"
+  DESCRIPTION: "Random/Syft/syft_3"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p2;
+    p3;
+    p4;
+    p5;
+    p11;
+    p12;
+    p15;
+    p16;
+    p17;
+  }
+
+  OUTPUTS {
+    p6;
+    p7;
+    p8;
+    p9;
+    p10;
+    p13;
+    p14;
+    p18;
+    p19;
+    p20;
+  }
+
+  GUARANTEES {
+    ((( true  ) -> (  (G (false  || (!(X[!](p6))) || (p1)))  && (G (false  || (!(X[!](p7))) || (p2)))  && (G (false  || (!(X[!](p8))) || (p3)))  && (G (false  || (!(X[!](p9))) || (p4)))  && (G (false  || (!(X[!](p10))) || (p5)))  && true ))) && ((( true  ) -> (  (G (false  || (!(X[!](p13))) || (p11)))  && (G (false  || (!(X[!](p14))) || (p12)))  && (G (true  && (false  || (!(X[!](p13))) || (!(X[!](p14)))) && (false  || (!(X[!](p14))) || (!(X[!](p13))))))  && true ))) && ((( true  ) -> (  (G (false  || (!(X[!](p18))) || (p15)))  && (G (false  || (!(X[!](p19))) || (p16)))  && (G (false  || (!(X[!](p20))) || (p17)))  && true ))) ;
+  }
+
+}
