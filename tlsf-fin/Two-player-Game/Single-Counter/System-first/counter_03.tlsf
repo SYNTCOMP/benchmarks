@@ -1,0 +1,30 @@
+INFO {
+  TITLE:       "counter_03"
+  DESCRIPTION: "Two-player-Game/Single-Counter/System-first"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    init_counter_0;
+    init_counter_1;
+    init_counter_2;
+    inc;
+  }
+
+  OUTPUTS {
+    counter_0;
+    counter_1;
+    counter_2;
+    carry_0;
+    carry_1;
+    carry_2;
+  }
+
+  GUARANTEES {
+    ((((X[!] counter_0 -> init_counter_0) && (init_counter_0 -> X counter_0)) && ((X[!] counter_1 -> init_counter_1) && (init_counter_1 -> X counter_1)) && ((X[!] counter_2 -> init_counter_2) && (init_counter_2 -> X counter_2))) && (G ((!inc -> X[!] inc)) -> (X[!] G ((X[!] carry_0 -> inc) && (inc -> X carry_0) && (X[!] carry_1 -> (counter_0 && X[!] carry_0)) && (X[!] carry_2 -> (counter_1 && X[!] carry_1)) && ((counter_0 && X carry_0) -> X carry_1) && ((counter_1 && X carry_1) -> X carry_2) && ((X[!] counter_0 -> !(counter_0 <-> X[!] carry_0)) && (!(counter_0 <-> X carry_0) -> X counter_0)) && ((X[!] counter_1 -> !(counter_1 <-> X[!] carry_1)) && (!(counter_1 <-> X carry_1) -> X counter_1)) && ((X[!] counter_2 -> !(counter_2 <-> X[!] carry_2)) && (!(counter_2 <-> X carry_2) -> X counter_2))) && X[!] F (!counter_0 && !counter_1 && !counter_2))));
+  }
+
+}

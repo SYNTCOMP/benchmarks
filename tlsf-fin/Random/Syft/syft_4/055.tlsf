@@ -1,0 +1,44 @@
+INFO {
+  TITLE:       "055"
+  DESCRIPTION: "Random/Syft/syft_4"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p2;
+    p3;
+    p4;
+    p5;
+    p6;
+    p7;
+    p15;
+    p16;
+    p17;
+    p20;
+    p22;
+    p23;
+  }
+
+  OUTPUTS {
+    p8;
+    p9;
+    p10;
+    p11;
+    p12;
+    p13;
+    p14;
+    p18;
+    p19;
+    p21;
+    p24;
+  }
+
+  GUARANTEES {
+    ((( true  ) -> (  (G (false  || (!(X[!](p8))) || (p1)))  && (G (false  || (!(X[!](p9))) || (p2)))  && (G (false  || (!(X[!](p10))) || (p3)))  && (G (false  || (!(X[!](p11))) || (p4)))  && (G (false  || (!(X[!](p12))) || (p5)))  && (G (false  || (!(X[!](p13))) || (p6)))  && (G (false  || (!(X[!](p14))) || (p7)))  && true ))) && (((   (G (false  || (!(true  && (p17) && (!(X[!](p18))) && (!(X[!](p19))))) || (X[!] (p17))))  &&   (G (F (p17)))  &&   (G (false  || (!(X[!](p18))) || (X[!] ((true  && (!(p15)) && (!(p17))) U (true  && (!(p15)) && (p17))))))  && true  ) -> (  (G (false  || (!(X[!](p18))) || (p15)))  && (G (false  || (!(X[!](p19))) || (p16)))  && (G (true  && (false  || (!(X[!](p18))) || (!(X[!](p19)))) && (false  || (!(X[!](p19))) || (!(X[!](p18))))))  && (!(F (G (true  && (p15) && (!(X[!](p18)))))))  && (!(F (G (true  && (p16) && (!(X[!](p19)))))))  && (G (false  || (true  && (!(X[!](p18))) && (!(X[!](p19)))) || (p17)))  && (G (false  || (!(p15)) || (!(X[!](p19)))))  && true ))) && (G(F p20) -> G(F p21)) && (G( p22 -> X[!](!p24 U p23))) ;
+  }
+
+}

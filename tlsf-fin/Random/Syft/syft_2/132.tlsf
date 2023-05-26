@@ -1,0 +1,38 @@
+INFO {
+  TITLE:       "132"
+  DESCRIPTION: "Random/Syft/syft_2"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p2;
+    p3;
+    p4;
+    p5;
+    p6;
+    p7;
+    p8;
+    p17;
+  }
+
+  OUTPUTS {
+    p9;
+    p10;
+    p11;
+    p12;
+    p13;
+    p14;
+    p15;
+    p16;
+    p18;
+  }
+
+  GUARANTEES {
+    ((( true  ) -> (  (G (false  || (!(X[!](p9))) || (p1)))  && (G (false  || (!(X[!](p10))) || (p2)))  && (G (false  || (!(X[!](p11))) || (p3)))  && (G (false  || (!(X[!](p12))) || (p4)))  && (G (false  || (!(X[!](p13))) || (p5)))  && (G (false  || (!(X[!](p14))) || (p6)))  && (G (false  || (!(X[!](p15))) || (p7)))  && (G (false  || (!(X[!](p16))) || (p8)))  && true ))) && (G( p17 -> (X[!](p18) ||  X[!](X[!](p18)) ||  X[!](X[!](X[!](p18))) ))) ;
+  }
+
+}

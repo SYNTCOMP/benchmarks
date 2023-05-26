@@ -1,0 +1,22 @@
+INFO {
+  TITLE:       "gfand02"
+  DESCRIPTION: "Patterns/GFand"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+  }
+
+  OUTPUTS {
+    p2;
+  }
+
+  GUARANTEES {
+    (G(p1)) && (F(p2));
+  }
+
+}
