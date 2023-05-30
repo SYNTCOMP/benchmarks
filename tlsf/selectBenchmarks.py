@@ -12,7 +12,7 @@ benchdirs = ["amba/amba",
              "arbiters_s4",
              "arbiters_zoo",
              "collector",
-             "detector",
+             # "detector", (equivalent to ltl2dba_C2)
              "detector_unreal",
              "full_arbiter_log",
              "full_arbiter_unreal",
