@@ -5,6 +5,8 @@ There are three kinds of benchmarks describing three different formats:
 
 - `aiger`: safety games encoded in the [extended AIGER](https://arxiv.org/pdf/1405.5793.pdf) format,
 - `tlsf`: LTL synthesis encoded in [TLSF](https://arxiv.org/pdf/1604.02284.pdf) format,
+- `tlsf-fin`: LTLf synthesis, that is LTL for finite words, encoded in
+  [extended TLSF](https://arxiv.org/abs/2303.03839) format
 - `parity`: parity games encoded in the [extended HOA](https://arxiv.org/pdf/1912.05793.pdf) format.
 
 Their folders contain more descriptions.

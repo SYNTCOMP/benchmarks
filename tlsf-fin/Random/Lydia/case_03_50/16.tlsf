@@ -1,0 +1,26 @@
+INFO {
+  TITLE:       "16"
+  DESCRIPTION: "Random/Lydia/case_03_50"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p10;
+    p26;
+    p34;
+  }
+
+  OUTPUTS {
+    p160;
+    p132;
+    p146;
+  }
+
+  GUARANTEES {
+    (G( (p132) -> X[!](!(p132)))) && (G( (p160) -> X[!](!(p160)))) && (G( (p146) -> X[!](!(p146))));
+  }
+
+}

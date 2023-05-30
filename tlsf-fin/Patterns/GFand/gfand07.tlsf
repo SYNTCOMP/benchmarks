@@ -1,0 +1,27 @@
+INFO {
+  TITLE:       "gfand07"
+  DESCRIPTION: "Patterns/GFand"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p3;
+    p5;
+    p6;
+  }
+
+  OUTPUTS {
+    p2;
+    p4;
+    p7;
+  }
+
+  GUARANTEES {
+    (G(p1)) && (F(p2)) && (F(p3)) && (F(p4)) && (F(p5)) && (F(p6)) && (F(p7));
+  }
+
+}
