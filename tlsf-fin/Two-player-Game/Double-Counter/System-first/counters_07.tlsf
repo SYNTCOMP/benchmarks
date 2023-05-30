@@ -1,0 +1,57 @@
+INFO {
+  TITLE:       "counters_07"
+  DESCRIPTION: "Two-player-Game/Double-Counter/System-first"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    init_counter_0;
+    init_counter_1;
+    init_counter_2;
+    init_counter_3;
+    init_counter_4;
+    init_counter_5;
+    init_counter_6;
+    inc_env;
+  }
+
+  OUTPUTS {
+    counter_env_0;
+    counter_sys_0;
+    counter_env_1;
+    counter_sys_1;
+    counter_env_2;
+    counter_sys_2;
+    counter_env_3;
+    counter_sys_3;
+    counter_env_4;
+    counter_sys_4;
+    counter_env_5;
+    counter_sys_5;
+    counter_env_6;
+    counter_sys_6;
+    carry_env_0;
+    carry_sys_0;
+    carry_env_1;
+    carry_sys_1;
+    carry_env_2;
+    carry_sys_2;
+    carry_env_3;
+    carry_sys_3;
+    carry_env_4;
+    carry_sys_4;
+    carry_env_5;
+    carry_sys_5;
+    carry_env_6;
+    carry_sys_6;
+    inc_sys;
+  }
+
+  GUARANTEES {
+    ((((X[!] counter_env_0 -> init_counter_0) && (init_counter_0 -> X counter_env_0)) && ((X[!] counter_env_1 -> init_counter_1) && (init_counter_1 -> X counter_env_1)) && ((X[!] counter_env_2 -> init_counter_2) && (init_counter_2 -> X counter_env_2)) && ((X[!] counter_env_3 -> init_counter_3) && (init_counter_3 -> X counter_env_3)) && ((X[!] counter_env_4 -> init_counter_4) && (init_counter_4 -> X counter_env_4)) && ((X[!] counter_env_5 -> init_counter_5) && (init_counter_5 -> X counter_env_5)) && ((X[!] counter_env_6 -> init_counter_6) && (init_counter_6 -> X counter_env_6)) && !counter_sys_0 && !counter_sys_1 && !counter_sys_2 && !counter_sys_3 && !counter_sys_4 && !counter_sys_5 && !counter_sys_6 && !inc_sys) && (G ((inc_env -> !X[!] inc_env)) -> (X[!] G ((X[!] carry_env_0 -> inc_env) && (inc_env -> X carry_env_0) && (carry_sys_0 <-> inc_sys) && (X[!] carry_env_1 -> (counter_env_0 && X[!] carry_env_0)) && (X[!] carry_sys_1 -> (counter_sys_0 && X[!] carry_sys_0)) && (X[!] carry_env_2 -> (counter_env_1 && X[!] carry_env_1)) && (X[!] carry_sys_2 -> (counter_sys_1 && X[!] carry_sys_1)) && (X[!] carry_env_3 -> (counter_env_2 && X[!] carry_env_2)) && (X[!] carry_sys_3 -> (counter_sys_2 && X[!] carry_sys_2)) && (X[!] carry_env_4 -> (counter_env_3 && X[!] carry_env_3)) && (X[!] carry_sys_4 -> (counter_sys_3 && X[!] carry_sys_3)) && (X[!] carry_env_5 -> (counter_env_4 && X[!] carry_env_4)) && (X[!] carry_sys_5 -> (counter_sys_4 && X[!] carry_sys_4)) && (X[!] carry_env_6 -> (counter_env_5 && X[!] carry_env_5)) && (X[!] carry_sys_6 -> (counter_sys_5 && X[!] carry_sys_5)) && ((counter_env_0 && X carry_env_0) -> X carry_env_1) && ((counter_sys_0 && X carry_sys_0) -> X carry_sys_1) && ((counter_env_1 && X carry_env_1) -> X carry_env_2) && ((counter_sys_1 && X carry_sys_1) -> X carry_sys_2) && ((counter_env_2 && X carry_env_2) -> X carry_env_3) && ((counter_sys_2 && X carry_sys_2) -> X carry_sys_3) && ((counter_env_3 && X carry_env_3) -> X carry_env_4) && ((counter_sys_3 && X carry_sys_3) -> X carry_sys_4) && ((counter_env_4 && X carry_env_4) -> X carry_env_5) && ((counter_sys_4 && X carry_sys_4) -> X carry_sys_5) && ((counter_env_5 && X carry_env_5) -> X carry_env_6) && ((counter_sys_5 && X carry_sys_5) -> X carry_sys_6) && ((X[!] counter_env_0 -> !(counter_env_0 <-> X[!] carry_env_0)) && (!(counter_env_0 <-> X carry_env_0) -> X counter_env_0)) && ((X[!] counter_sys_0 -> !(counter_sys_0 <-> X[!] carry_sys_0)) && (!(counter_sys_0 <-> X carry_sys_0) -> X counter_sys_0)) && ((X[!] counter_env_1 -> !(counter_env_1 <-> X[!] carry_env_1)) && (!(counter_env_1 <-> X carry_env_1) -> X counter_env_1)) && ((X[!] counter_sys_1 -> !(counter_sys_1 <-> X[!] carry_sys_1)) && (!(counter_sys_1 <-> X carry_sys_1) -> X counter_sys_1)) && ((X[!] counter_env_2 -> !(counter_env_2 <-> X[!] carry_env_2)) && (!(counter_env_2 <-> X carry_env_2) -> X counter_env_2)) && ((X[!] counter_sys_2 -> !(counter_sys_2 <-> X[!] carry_sys_2)) && (!(counter_sys_2 <-> X carry_sys_2) -> X counter_sys_2)) && ((X[!] counter_env_3 -> !(counter_env_3 <-> X[!] carry_env_3)) && (!(counter_env_3 <-> X carry_env_3) -> X counter_env_3)) && ((X[!] counter_sys_3 -> !(counter_sys_3 <-> X[!] carry_sys_3)) && (!(counter_sys_3 <-> X carry_sys_3) -> X counter_sys_3)) && ((X[!] counter_env_4 -> !(counter_env_4 <-> X[!] carry_env_4)) && (!(counter_env_4 <-> X carry_env_4) -> X counter_env_4)) && ((X[!] counter_sys_4 -> !(counter_sys_4 <-> X[!] carry_sys_4)) && (!(counter_sys_4 <-> X carry_sys_4) -> X counter_sys_4)) && ((X[!] counter_env_5 -> !(counter_env_5 <-> X[!] carry_env_5)) && (!(counter_env_5 <-> X carry_env_5) -> X counter_env_5)) && ((X[!] counter_sys_5 -> !(counter_sys_5 <-> X[!] carry_sys_5)) && (!(counter_sys_5 <-> X carry_sys_5) -> X counter_sys_5)) && ((X[!] counter_env_6 -> !(counter_env_6 <-> X[!] carry_env_6)) && (!(counter_env_6 <-> X carry_env_6) -> X counter_env_6)) && ((X[!] counter_sys_6 -> !(counter_sys_6 <-> X[!] carry_sys_6)) && (!(counter_sys_6 <-> X carry_sys_6) -> X counter_sys_6))) && X[!] F ((counter_env_0 <-> counter_sys_0) && (counter_env_1 <-> counter_sys_1) && (counter_env_2 <-> counter_sys_2) && (counter_env_3 <-> counter_sys_3) && (counter_env_4 <-> counter_sys_4) && (counter_env_5 <-> counter_sys_5) && (counter_env_6 <-> counter_sys_6)))));
+  }
+
+}

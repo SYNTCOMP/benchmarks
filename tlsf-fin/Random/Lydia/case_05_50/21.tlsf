@@ -1,0 +1,27 @@
+INFO {
+  TITLE:       "21"
+  DESCRIPTION: "Random/Lydia/case_05_50"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p92;
+    p57;
+    p84;
+  }
+
+  OUTPUTS {
+    p145;
+    p119;
+    p101;
+    p147;
+  }
+
+  GUARANTEES {
+    (G( (p101) -> X[!](!(p101)))) && (G( (p119) -> X[!](!(p119)))) && (G( (p101) -> X[!](!(p101)))) && (G( (p147) -> X[!](!(p147)))) && (G( (p145) -> X[!](!(p145))));
+  }
+
+}

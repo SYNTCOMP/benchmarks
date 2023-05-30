@@ -1,0 +1,31 @@
+INFO {
+  TITLE:       "090"
+  DESCRIPTION: "Random/Syft/syft_2"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p2;
+    p3;
+    p4;
+    p8;
+    p9;
+  }
+
+  OUTPUTS {
+    p5;
+    p6;
+    p7;
+    p10;
+    p11;
+  }
+
+  GUARANTEES {
+    ((( true  ) -> (  (G (false  || (!(X[!](p5))) || (p1)))  && (G (false  || (!(X[!](p6))) || (p2)))  && (G (false  || (!(X[!](p7))) || (p3)))  && (G (true  && (false  || (!(X[!](p5))) || (!(X[!](p6)))) && (false  || (!(X[!](p5))) || (!(X[!](p7)))) && (false  || (!(X[!](p6))) || (!(X[!](p5)))) && (false  || (!(X[!](p6))) || (!(X[!](p7)))) && (false  || (!(X[!](p7))) || (!(X[!](p5)))) && (false  || (!(X[!](p7))) || (!(X[!](p6))))))  && (false  || (!(G (F (p1)))) || (G (F (X[!](p5)))))  && (false  || (!(G (F (p2)))) || (G (F (X[!](p6)))))  && (false  || (!(G (F (p3)))) || (G (F (X[!](p7)))))  && (G (false  || (true  && (!(X[!](p5))) && (!(X[!](p6))) && (!(X[!](p7)))) || (p4)))  && true ))) && ((G(F(p8)) ||  F(p9) ) -> ( G(F(p10)) ||  G(p11))) ;
+  }
+
+}

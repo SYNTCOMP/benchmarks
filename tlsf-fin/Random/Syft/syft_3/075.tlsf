@@ -1,0 +1,44 @@
+INFO {
+  TITLE:       "075"
+  DESCRIPTION: "Random/Syft/syft_3"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p3;
+    p4;
+    p5;
+    p6;
+    p7;
+    p8;
+    p9;
+    p10;
+    p11;
+    p21;
+    p22;
+  }
+
+  OUTPUTS {
+    p2;
+    p12;
+    p13;
+    p14;
+    p15;
+    p16;
+    p17;
+    p18;
+    p19;
+    p20;
+    p23;
+    p24;
+  }
+
+  GUARANTEES {
+    (G( p1 -> (X[!](p2) && X[!](X[!](p2)) && X[!](X[!](X[!](p2))) ))) && ((( true  ) -> (  (G (false  || (!(X[!](p12))) || (p3)))  && (G (false  || (!(X[!](p13))) || (p4)))  && (G (false  || (!(X[!](p14))) || (p5)))  && (G (false  || (!(X[!](p15))) || (p6)))  && (G (false  || (!(X[!](p16))) || (p7)))  && (G (false  || (!(X[!](p17))) || (p8)))  && (G (false  || (!(X[!](p18))) || (p9)))  && (G (false  || (!(X[!](p19))) || (p10)))  && (G (false  || (!(X[!](p20))) || (p11)))  && true ))) && (G(!p23) ||  (G((p21)->F(p24)) ||  G((p22)->F(p23)))) ;
+  }
+
+}

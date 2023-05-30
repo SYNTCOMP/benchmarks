@@ -1,0 +1,30 @@
+INFO {
+  TITLE:       "071"
+  DESCRIPTION: "Random/Syft/syft_4"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p3;
+    p5;
+    p6;
+    p9;
+  }
+
+  OUTPUTS {
+    p2;
+    p4;
+    p7;
+    p8;
+    p10;
+  }
+
+  GUARANTEES {
+    (G( p2 -> X[!](!p2))) && ((G(p3)->F(p4)) &&  (G(!p3)->F(!p4))) && ((( true  ) -> (  (G (false  || (!(X[!](p7))) || (p5)))  && (G (false  || (!(X[!](p8))) || (p6)))  && true ))) && (G( p10 -> X[!](!p10))) ;
+  }
+
+}

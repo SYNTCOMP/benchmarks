@@ -1,0 +1,30 @@
+INFO {
+  TITLE:       "191"
+  DESCRIPTION: "Random/Syft/syft_2"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Moore
+}
+
+MAIN {
+
+  INPUTS {
+    p1;
+    p3;
+    p4;
+    p5;
+    p6;
+  }
+
+  OUTPUTS {
+    p2;
+    p7;
+    p8;
+    p9;
+    p10;
+  }
+
+  GUARANTEES {
+    (G( p1 -> (X[!](p2) ||  X[!](X[!](p2)) ||  X[!](X[!](X[!](p2))) ))) && ((( true  ) -> (  (G (false  || (!(X[!](p7))) || (p3)))  && (G (false  || (!(X[!](p8))) || (p4)))  && (G (false  || (!(X[!](p9))) || (p5)))  && (G (false  || (!(X[!](p10))) || (p6)))  && true ))) ;
+  }
+
+}
