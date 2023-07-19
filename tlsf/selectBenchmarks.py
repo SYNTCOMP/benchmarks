@@ -8,9 +8,6 @@ import argparse
 from genParametric import generateAllParametric
 from utils import sortStrList
 
-<<<<<<< HEAD
-benchdirs = ["amba/amba",
-=======
 parser = argparse.ArgumentParser("Create all tlsf instances")
 
 parser.add_argument("benchmarkpath", type=str, help="the path to the benchmark-family directories")
@@ -23,7 +20,6 @@ parser.add_argument("-s", "--savestruct", action="store_true",
 
 
 benchdirs = ["amba/amba", # PSC: I suppose?
->>>>>>> 4c8d3d2 (feat: Generating benchmarks now exports a structure)
              "amba/amba_decomposed",
              "amba/amba_gr1/specs",
              "arbiters_s4",
@@ -82,18 +78,6 @@ def makeBenchmarks(args):
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
-    if len(sys.argv) != 3:
-        print("Two positional arguments expected: \n"
-              "  (1) the path to the benchmark-family directories\n"
-              "  (2) the path where you want the benchmarks\n"
-              "The output folder should exist.",
-              file=sys.stderr)
-        exit(1)
-    else:
-        makeBenchmarks(sys.argv[1], sys.argv[2])
-        exit(0)
-=======
     args = parser.parse_args()
     info = makeBenchmarks(args)
     if args.savestruct:
@@ -102,4 +86,3 @@ if __name__ == "__main__":
             json.dump(info, fp)
 
     exit(0)
->>>>>>> 4c8d3d2 (feat: Generating benchmarks now exports a structure)
