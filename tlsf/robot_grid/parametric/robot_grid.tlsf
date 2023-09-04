@@ -85,7 +85,7 @@ GLOBAL
       // once appears, target does not move until served:
       &&[0 <= x < xN]
         &&[0 <= y < yN]
-          G (value(tx,x) && value(ty,y) && !(value(rx,x) && value(ry,y) && serve)
+          (value(tx,x) && value(ty,y) && !(value(rx,x) && value(ry,y) && serve)
              ->
              X(value(tx,x) && value(ty,y))
           );
