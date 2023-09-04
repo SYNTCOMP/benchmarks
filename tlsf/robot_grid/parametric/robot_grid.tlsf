@@ -76,7 +76,7 @@ GLOBAL
       ||[0<= x < xN] value(rx,x) &&
       ||[0<= y < yN] value(ry,y);
 
-    i_sys(rx,ry,tx,ty) = true;
+    //i_sys(rx,ry,tx,ty) is defined a bit later
 
     s_env(rx,ry,tx,ty) =
       // Environment updates coordinates of the robot using left/right/up/down
@@ -90,7 +90,7 @@ GLOBAL
              X(value(tx,x) && value(ty,y))
           );
 
-    s_sys(rx,ry,tx,ty) =
+    s_sys(rx,ry,tx,ty) = // note that this formula talks about current output only, which introduces some problems, see the comment at the bottom
       // mutual exclusion of move commands:
         !(right && left) && !(up && down) &&
       // don't bang the walls:
@@ -98,6 +98,8 @@ GLOBAL
         (value(ry,0) -> !down) && (value(ry,yN-1) -> !up) &&
       // no spurious serve signals
         (serve -> eq(rx,tx) && eq(ry,ty));
+
+    i_sys(rx,ry,tx,ty) = s_sys(rx,ry,tx,ty);  // s_sys only talks about current output, see the comment at the bottom
 
     l_env(rx,ry,tx,ty) = true;
 
@@ -132,16 +134,35 @@ MAIN
     ->
     (
       i_sys(rx,ry,tx,ty) &&
-      (s_sys(rx,ry,tx,ty)  W  s_sys(rx,ry,tx,ty) && !s_env(rx,ry,tx,ty)) &&
+      ((X s_sys(rx,ry,tx,ty))  W  !s_env(rx,ry,tx,ty)) &&
       ((G s_env(rx,ry,tx,ty)) && l_env(rx,ry,tx,ty) -> l_sys(rx,ry,tx,ty))
     );
 
     // Note: we do need to use
-    //   s_sys W (s_sys && !s_env)
+    //   X s_sys W (s_sys && !s_env)
     // instead of
     //   s_sys W !s_env
     // because in the latter case the system can cheat by forcing the env
     // to violate the assumptions by asking to incr/decr a counter at the same time.
+    // More details:
+    // no, we do not introduce a special semantics of GR(1) here.
+    // In our case, s_sys
+    // talks only about the current outputs (and not about the next outputs),
+    // i.e., it is a "game-state formula" rather than "game-transition" formula.
+    // In such a case, the designer needs to be careful about the semantics of GR(1),
+    // as the system can try to win by violating its guarantee at the current step,
+    // which forces the environment to make a step that also violates the assumption:
+    // hence, it is OK to do so from the GR(1) semantics point of view, but that is not
+    // what the designer intended. (In yet other words:
+    // e.g., env formula talks about "a" and "Xa" and "Xa" is violated now because
+    // the system violates its guarantee "b" now (and it has no "Xb").)
+    // To fix the issue, either use "sys & Xsys" or just "Xsys" and add
+    // "sys" to the initial system property. We do the latter.
+    // (and strictly strictly speaking, we should define:
+    //  s_sys = (φ & Xφ)
+    //  i_sys = φ
+    //  and then we use the standard semantics of GR(1). I am being a bit lazy here.
+    // )
   }
 }
 
