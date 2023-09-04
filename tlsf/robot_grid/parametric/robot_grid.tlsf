@@ -67,8 +67,8 @@ GLOBAL
         (value(curr,c) && !minus && !plus -> X(value(curr,c)));
 
     /* The following will be used to write a GR1-like spec.
-       NOTE: we have to pass busses by argument since currently
-       syfco supports only non-buss inputs/outputs in definitions.
+       NOTE: we have to pass buses by argument since currently
+       syfco supports only non-bus inputs/outputs in definitions.
     */
 
     i_env(rx,ry,tx,ty) =
