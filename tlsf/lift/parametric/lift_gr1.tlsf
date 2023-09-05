@@ -1,6 +1,9 @@
 INFO {
   TITLE:       "Lift controller"
-  DESCRIPTION: "Pure GR1 version of the lift spec; with slight changes (`obstacle`, `open`) making it more interesting. "
+  DESCRIPTION: "Pure GR1 version of the lift spec; with slight changes (`obstacle`, `open`) making it more interesting.
+                Note that the spec is 'well-separated': system cannot enforce env to violate its safety assumptions.
+                Hence, the spec's safety system guarantees use formulas over current state only without having
+                their duplicates with X."
   SEMANTICS:   Mealy
   TARGET:      Mealy
 }
@@ -75,9 +78,8 @@ MAIN {
     // the same for `down`
     down <-> ||[0 < i < n] (value(f,i) && X value(f,i-1));
 
-    !(up && down); // (implied by above)
+    !(up && down); // (note: implied by above)
 
-    // don't move without enough power
     (open && obstacle) -> X open;
     open -> (!up && !down);
 
