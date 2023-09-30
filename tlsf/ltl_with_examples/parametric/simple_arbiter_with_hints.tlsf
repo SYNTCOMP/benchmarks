@@ -1,0 +1,86 @@
+INFO {
+  TITLE:       "Arbiter"
+  DESCRIPTION: "Each request is eventually granted + a few hints.
+                Inspired by the paper 'Reactive synthesis with a few hints'"
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+    n = 9;  // n≥1
+  }
+
+  DEFINITIONS {
+    // ensures mutual exclusion on an n-ary bus
+    mutual_exclusion(bus) =
+     mone(bus,0,(SIZEOF bus) - 1);
+
+    // ensures that none of the signals
+    // bus[i] - bus[j] is HIGH
+    none(bus,i,j) =
+      &&[i <= t <= j]
+        !bus[t];
+
+    // ensures that at most one of the signals
+    // bus[i] - bus[j] is HIGH
+    mone(bus,i,j) =
+    i > j : false
+    i == j : true
+    i < j :
+      // either no signal of the lower half is HIGH and at
+      // most one signal of the upper half is HIGH
+      (none(bus, i, m(i,j)) && mone(bus, m(i,j) + 1, j)) ||
+      // or at most one signal of the lower half is HIGH
+      // and no signal in of the upper half is HIGH
+      (mone(bus, i, m(i,j)) && none(bus, m(i,j) + 1, j));
+
+    // returns the position between i and j
+    m(i,j) = (i + j) / 2;
+
+    // "input repeats output" for initial x steps
+    work_as_buffer_for_n_steps(in_bus, out_bus) =
+     bf(in_bus, out_bus, (SIZEOF in_bus)-1);
+
+    // if mut excl of requests then req[i]<->g[i]
+    bf(in_bus, out_bus, i) =
+      i>=0:
+        mutual_exclusion(in_bus) -> (&&[0 <= j < (SIZEOF in_bus)] (in_bus[j] <-> out_bus[j])) && X(bf(in_bus, out_bus, i-1))
+      otherwise : true;
+  }
+}
+
+MAIN {
+
+  INPUTS {
+    r[n]; // requests
+  }
+
+  OUTPUTS {
+    g[n]; // grants
+  }
+
+  GUARANTEES {
+    // simple-arbiter original spec
+    G (mutual_exclusion(g));
+
+    &&[0 <= i < n]
+      G (r[i] -> F g[i]);
+
+    // HINTS
+
+    // for n steps, if we have mut_excl of requests up to this step,
+    // then grant[i] <-> request[i], for every i
+    // this generalises the trace given in the original paper
+    work_as_buffer_for_n_steps(r,g);
+
+    // priorities:
+    // if initially all r[i] are raised, then g[n] g[n-1] ... g[0] are raised, in this sequence
+    (&&[0<=i<n] r[i]) -> &&[0<=i<n] X[i] g[i];
+
+    // Notes:
+    // when tried on bosy, the resulting system gives causal grants only up to the first point
+    // of mut_excl violation of inputs requests, after which it starts giving spurious grants.
+  }
+}
+
