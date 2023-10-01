@@ -1,7 +1,7 @@
 ## SYNTCOMP benchmarks
 
 This repository contains all benchmarks collected over the years by [SYNTCOMP](http://www.syntcomp.org/) community.
-There are three kinds of benchmarks describing three different formats:
+There are several kinds of benchmarks:
 
 - `aiger`: safety games encoded in the [extended AIGER](https://arxiv.org/pdf/1405.5793.pdf) format,
 - `tlsf`: LTL synthesis encoded in [TLSF](https://arxiv.org/pdf/1604.02284.pdf) format,
