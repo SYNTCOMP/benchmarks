@@ -1,7 +1,7 @@
 ## SYNTCOMP benchmarks
 
 This repository contains all benchmarks collected over the years by [SYNTCOMP](http://www.syntcomp.org/) community.
-There are three kinds of benchmarks describing three different formats:
+There are several kinds of benchmarks:
 
 - `aiger`: safety games encoded in the [extended AIGER](https://arxiv.org/pdf/1405.5793.pdf) format,
 - `tlsf`: LTL synthesis encoded in [TLSF](https://arxiv.org/pdf/1604.02284.pdf) format,
@@ -25,6 +25,7 @@ Alternatively, you can create a pull request with your benchmarks.
 
 ## Download benchmarks
 
+- year 2023: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2023.4/TLSF_2023.zip), [TLSF-fin](https://github.com/SYNTCOMP/benchmarks/releases/download/v2023.4/TLSF-fin_2023.zip), [parity](https://github.com/SYNTCOMP/benchmarks/releases/download/v2023.4/Parity_2023.zip)
 - year 2022: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2022/TLSF_2022.zip), [parity](https://github.com/SYNTCOMP/benchmarks/releases/download/v2022/PGAME_2022.zip)
 - year 2021: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2021/TLSF_2021.zip), parity [synthesis](https://github.com/SYNTCOMP/benchmarks/releases/download/v2021/PGAME_Synth_2021.zip) and [realizability](https://github.com/SYNTCOMP/benchmarks/releases/download/v2021/PGAME_Real_2021.zip)
 - year 2020: [AIGER](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2020/AIGER_2020.zip), [TLSF](https://github.com/5nizza/syntcomp_benchmarks/releases/download/v2020/TLSF_2020.zip), for parity, see the repository.
