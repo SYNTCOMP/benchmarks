@@ -1,0 +1,807 @@
+INFO {
+TITLE:       "Robot-on-a-grid avoiding an obstacle"
+DESCRIPTION: ""
+SEMANTICS:   Mealy,Strict
+TARGET:      Mealy
+}
+
+GLOBAL {}
+
+MAIN {
+
+OUTPUTS {
+left; right; up; down; pickup; drop;
+}
+
+INPUTS {
+x0;
+x1;
+x2;
+y0;
+y1;
+y2;
+y3;
+}
+// env init
+INITIALLY {
+! x0 && ! x1 && ! x2;
+! y0 && ! y1 && ! y2 && ! y3;
+}
+// sys init
+PRESET {
+! left;
+! right;
+! up;
+! down;
+! pickup;
+! drop;
+}
+// env safety
+REQUIRE {
+// robots' coordinates are updated according to the move commands
+!left && !right && ! x0 && ! x1 && ! x2 -> ! X x0 && ! X x1 && ! X x2;
+right && ! x0 && ! x1 && ! x2 -> X x0 && ! X x1 && ! X x2;
+!left && !right && x0 && ! x1 && ! x2 -> X x0 && ! X x1 && ! X x2;
+left && x0 && ! x1 && ! x2 -> ! X x0 && ! X x1 && ! X x2;
+right && x0 && ! x1 && ! x2 -> ! X x0 && X x1 && ! X x2;
+!left && !right && ! x0 && x1 && ! x2 -> ! X x0 && X x1 && ! X x2;
+left && ! x0 && x1 && ! x2 -> X x0 && ! X x1 && ! X x2;
+right && ! x0 && x1 && ! x2 -> X x0 && X x1 && ! X x2;
+!left && !right && x0 && x1 && ! x2 -> X x0 && X x1 && ! X x2;
+left && x0 && x1 && ! x2 -> ! X x0 && X x1 && ! X x2;
+right && x0 && x1 && ! x2 -> ! X x0 && ! X x1 && X x2;
+!left && !right && ! x0 && ! x1 && x2 -> ! X x0 && ! X x1 && X x2;
+left && ! x0 && ! x1 && x2 -> X x0 && X x1 && ! X x2;
+right && ! x0 && ! x1 && x2 -> X x0 && ! X x1 && X x2;
+!left && !right && x0 && ! x1 && x2 -> X x0 && ! X x1 && X x2;
+left && x0 && ! x1 && x2 -> ! X x0 && ! X x1 && X x2;
+right && x0 && ! x1 && x2 -> ! X x0 && X x1 && X x2;
+!left && !right && ! x0 && x1 && x2 -> ! X x0 && X x1 && X x2;
+left && ! x0 && x1 && x2 -> X x0 && ! X x1 && X x2;
+right && ! x0 && x1 && x2 -> X x0 && X x1 && X x2;
+!left && !right && x0 && x1 && x2 -> X x0 && X x1 && X x2;
+left && x0 && x1 && x2 -> ! X x0 && X x1 && X x2;
+!up && !down && ! y0 && ! y1 && ! y2 && ! y3 -> ! X y0 && ! X y1 && ! X y2 && ! X y3;
+down && ! y0 && ! y1 && ! y2 && ! y3 -> X y0 && ! X y1 && ! X y2 && ! X y3;
+!up && !down && y0 && ! y1 && ! y2 && ! y3 -> X y0 && ! X y1 && ! X y2 && ! X y3;
+up && y0 && ! y1 && ! y2 && ! y3 -> ! X y0 && ! X y1 && ! X y2 && ! X y3;
+down && y0 && ! y1 && ! y2 && ! y3 -> ! X y0 && X y1 && ! X y2 && ! X y3;
+!up && !down && ! y0 && y1 && ! y2 && ! y3 -> ! X y0 && X y1 && ! X y2 && ! X y3;
+up && ! y0 && y1 && ! y2 && ! y3 -> X y0 && ! X y1 && ! X y2 && ! X y3;
+down && ! y0 && y1 && ! y2 && ! y3 -> X y0 && X y1 && ! X y2 && ! X y3;
+!up && !down && y0 && y1 && ! y2 && ! y3 -> X y0 && X y1 && ! X y2 && ! X y3;
+up && y0 && y1 && ! y2 && ! y3 -> ! X y0 && X y1 && ! X y2 && ! X y3;
+down && y0 && y1 && ! y2 && ! y3 -> ! X y0 && ! X y1 && X y2 && ! X y3;
+!up && !down && ! y0 && ! y1 && y2 && ! y3 -> ! X y0 && ! X y1 && X y2 && ! X y3;
+up && ! y0 && ! y1 && y2 && ! y3 -> X y0 && X y1 && ! X y2 && ! X y3;
+down && ! y0 && ! y1 && y2 && ! y3 -> X y0 && ! X y1 && X y2 && ! X y3;
+!up && !down && y0 && ! y1 && y2 && ! y3 -> X y0 && ! X y1 && X y2 && ! X y3;
+up && y0 && ! y1 && y2 && ! y3 -> ! X y0 && ! X y1 && X y2 && ! X y3;
+down && y0 && ! y1 && y2 && ! y3 -> ! X y0 && X y1 && X y2 && ! X y3;
+!up && !down && ! y0 && y1 && y2 && ! y3 -> ! X y0 && X y1 && X y2 && ! X y3;
+up && ! y0 && y1 && y2 && ! y3 -> X y0 && ! X y1 && X y2 && ! X y3;
+down && ! y0 && y1 && y2 && ! y3 -> X y0 && X y1 && X y2 && ! X y3;
+!up && !down && y0 && y1 && y2 && ! y3 -> X y0 && X y1 && X y2 && ! X y3;
+up && y0 && y1 && y2 && ! y3 -> ! X y0 && X y1 && X y2 && ! X y3;
+down && y0 && y1 && y2 && ! y3 -> ! X y0 && ! X y1 && ! X y2 && X y3;
+!up && !down && ! y0 && ! y1 && ! y2 && y3 -> ! X y0 && ! X y1 && ! X y2 && X y3;
+up && ! y0 && ! y1 && ! y2 && y3 -> X y0 && X y1 && X y2 && ! X y3;
+down && ! y0 && ! y1 && ! y2 && y3 -> X y0 && ! X y1 && ! X y2 && X y3;
+!up && !down && y0 && ! y1 && ! y2 && y3 -> X y0 && ! X y1 && ! X y2 && X y3;
+up && y0 && ! y1 && ! y2 && y3 -> ! X y0 && ! X y1 && ! X y2 && X y3;
+down && y0 && ! y1 && ! y2 && y3 -> ! X y0 && X y1 && ! X y2 && X y3;
+!up && !down && ! y0 && y1 && ! y2 && y3 -> ! X y0 && X y1 && ! X y2 && X y3;
+up && ! y0 && y1 && ! y2 && y3 -> X y0 && ! X y1 && ! X y2 && X y3;
+down && ! y0 && y1 && ! y2 && y3 -> X y0 && X y1 && ! X y2 && X y3;
+!up && !down && y0 && y1 && ! y2 && y3 -> X y0 && X y1 && ! X y2 && X y3;
+up && y0 && y1 && ! y2 && y3 -> ! X y0 && X y1 && ! X y2 && X y3;
+down && y0 && y1 && ! y2 && y3 -> ! X y0 && ! X y1 && X y2 && X y3;
+!up && !down && ! y0 && ! y1 && y2 && y3 -> ! X y0 && ! X y1 && X y2 && X y3;
+up && ! y0 && ! y1 && y2 && y3 -> X y0 && X y1 && ! X y2 && X y3;
+down && ! y0 && ! y1 && y2 && y3 -> X y0 && ! X y1 && X y2 && X y3;
+!up && !down && y0 && ! y1 && y2 && y3 -> X y0 && ! X y1 && X y2 && X y3;
+up && y0 && ! y1 && y2 && y3 -> ! X y0 && ! X y1 && X y2 && X y3;
+down && y0 && ! y1 && y2 && y3 -> ! X y0 && X y1 && X y2 && X y3;
+!up && !down && ! y0 && y1 && y2 && y3 -> ! X y0 && X y1 && X y2 && X y3;
+up && ! y0 && y1 && y2 && y3 -> X y0 && ! X y1 && X y2 && X y3;
+down && ! y0 && y1 && y2 && y3 -> X y0 && X y1 && X y2 && X y3;
+!up && !down && y0 && y1 && y2 && y3 -> X y0 && X y1 && X y2 && X y3;
+up && y0 && y1 && y2 && y3 -> ! X y0 && X y1 && X y2 && X y3;
+}
+
+// sys init
+ASSERT {
+// we forbid diagonal moves
+X (left -> !right && !up && !down);
+X (right -> !left && !up && !down);
+X (up -> !left && !right && !down);
+X (down -> !up && !left && !right);
+}
+
+//sys trans
+ASSERT {
+// forbidden zones:
+!(! X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+!(X x0 && X x1 && X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+!(! X x0 && ! X x1 && ! X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+!(X x0 && X x1 && X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+!(! X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+!(X x0 && X x1 && X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+!(! X x0 && ! X x1 && ! X x2 && X y0 && X y1 && X y2 && ! X y3);
+!(X x0 && X x1 && X x2 && X y0 && X y1 && X y2 && ! X y3);
+!(! X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+!(X x0 && X x1 && X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+!(! X x0 && ! X x1 && ! X x2 && X y0 && X y1 && ! X y2 && X y3);
+!(X x0 && X x1 && X x2 && X y0 && X y1 && ! X y2 && X y3);
+
+}
+INPUTS {
+door72;
+}
+
+// sys liveness
+GUARANTEE {
+G F (!(x0 && ! x1 && ! x2 && ! y0 && y1 && y2 && ! y3) && !(! x0 && x1 && x2 && ! y0 && y1 && y2 && ! y3) );
+}
+
+
+ASSERT {
+// Never walk towards a closed door
+! (X door72 && X right && ! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (X door72 && X left && ! X x0 && X x1 && ! X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (X door72 && X down && X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (X door72 && X up && X x0 && ! X x1 && ! X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (X door72 && X right && X x0 && ! X x1 && X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (X door72 && X left && X x0 && X x1 && X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (X door72 && X down && ! X x0 && X x1 && X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (X door72 && X up && ! X x0 && X x1 && X x2 && X y0 && X y1 && X y2 && ! X y3);
+}
+
+// env liveness
+ASSUME {
+G F ! door72;
+}
+
+INPUTS {
+door74;
+}
+
+// sys liveness
+GUARANTEE {
+G F (!(x0 && ! x1 && ! x2 && ! y0 && ! y1 && ! y2 && y3) && !(! x0 && x1 && x2 && ! y0 && ! y1 && ! y2 && y3) );
+}
+
+
+ASSERT {
+// Never walk towards a closed door
+! (X door74 && X right && ! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (X door74 && X left && ! X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (X door74 && X down && X x0 && ! X x1 && ! X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (X door74 && X up && X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (X door74 && X right && X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (X door74 && X left && X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (X door74 && X down && ! X x0 && X x1 && X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (X door74 && X up && ! X x0 && X x1 && X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+}
+
+// env liveness
+ASSUME {
+G F ! door74;
+}
+
+INPUTS {
+door78;
+}
+
+// sys liveness
+GUARANTEE {
+G F (!(x0 && ! x1 && ! x2 && ! y0 && y1 && ! y2 && y3) && !(! x0 && x1 && x2 && ! y0 && y1 && ! y2 && y3) );
+}
+
+
+ASSERT {
+// Never walk towards a closed door
+! (X door78 && X right && ! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (X door78 && X left && ! X x0 && X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (X door78 && X down && X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (X door78 && X up && X x0 && ! X x1 && ! X x2 && X y0 && X y1 && ! X y2 && X y3);
+! (X door78 && X right && X x0 && ! X x1 && X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (X door78 && X left && X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (X door78 && X down && ! X x0 && X x1 && X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (X door78 && X up && ! X x0 && X x1 && X x2 && X y0 && X y1 && ! X y2 && X y3);
+}
+
+// env liveness
+ASSUME {
+G F ! door78;
+}
+
+INPUTS {
+door56;
+}
+
+// sys liveness
+GUARANTEE {
+G F (!(x0 && ! x1 && ! x2 && ! y0 && ! y1 && ! y2 && ! y3) && !(! x0 && x1 && x2 && ! y0 && ! y1 && ! y2 && ! y3) );
+}
+
+
+ASSERT {
+// Never walk towards a closed door
+! (X door56 && X right && ! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X door56 && X left && ! X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X door56 && X up && X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X door56 && X right && X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X door56 && X left && X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X door56 && X up && ! X x0 && X x1 && X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+}
+
+// env liveness
+ASSUME {
+G F ! door56;
+}
+
+INPUTS {
+door58;
+}
+
+// sys liveness
+GUARANTEE {
+G F (!(x0 && ! x1 && ! x2 && ! y0 && y1 && ! y2 && ! y3) && !(! x0 && x1 && x2 && ! y0 && y1 && ! y2 && ! y3) );
+}
+
+
+ASSERT {
+// Never walk towards a closed door
+! (X door58 && X right && ! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (X door58 && X left && ! X x0 && X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (X door58 && X down && X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X door58 && X up && X x0 && ! X x1 && ! X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (X door58 && X right && X x0 && ! X x1 && X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (X door58 && X left && X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (X door58 && X down && ! X x0 && X x1 && X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X door58 && X up && ! X x0 && X x1 && X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+}
+
+// env liveness
+ASSUME {
+G F ! door58;
+}
+
+INPUTS {
+door62;
+}
+
+// sys liveness
+GUARANTEE {
+G F (!(x0 && ! x1 && ! x2 && ! y0 && ! y1 && y2 && ! y3) && !(! x0 && x1 && x2 && ! y0 && ! y1 && y2 && ! y3) );
+}
+
+
+ASSERT {
+// Never walk towards a closed door
+! (X door62 && X right && ! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (X door62 && X left && ! X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (X door62 && X down && X x0 && ! X x1 && ! X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (X door62 && X up && X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (X door62 && X right && X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (X door62 && X left && X x0 && X x1 && X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (X door62 && X down && ! X x0 && X x1 && X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (X door62 && X up && ! X x0 && X x1 && X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+}
+
+// env liveness
+ASSUME {
+G F ! door62;
+}
+
+OUTPUTS {
+pendingdelivery4;
+deliverypickedup4;
+}
+
+INPUTS {
+deliveryrequest4;
+}
+
+//sys init
+PRESET {
+! pendingdelivery4;
+! deliverypickedup4;
+}
+
+// sys trans
+ASSERT {
+(X pendingdelivery4) -> (pendingdelivery4 || deliveryrequest4);
+deliveryrequest4 -> (pendingdelivery4 || X pendingdelivery4);
+pendingdelivery4 -> X (pendingdelivery4 || drop);
+pendingdelivery4 && ! deliverypickedup4 -> X pendingdelivery4;
+(pendingdelivery4 && ! X pendingdelivery4) -> ((X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3));
+pendingdelivery4 && deliverypickedup4 && X drop && ((X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3)) -> ! X pendingdelivery4;
+((! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3)) && X pickup -> (deliverypickedup4 || X deliverypickedup4);
+! deliverypickedup4 && X deliverypickedup4 -> ((! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3)) && X pickup;
+deliverypickedup4 -> X (deliverypickedup4 || drop);
+(deliverypickedup4 && X drop) -> ! X deliverypickedup4;
+deliverypickedup4 && X drop -> ((X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3));
+deliverypickedup4 -> ! X pickup;
+}
+
+// sys liveness
+GUARANTEE {
+G F ! pendingdelivery4;
+}
+
+OUTPUTS {
+pendingdelivery14;
+deliverypickedup14;
+}
+
+INPUTS {
+deliveryrequest14;
+}
+
+//sys init
+PRESET {
+! pendingdelivery14;
+! deliverypickedup14;
+}
+
+// sys trans
+ASSERT {
+(X pendingdelivery14) -> (pendingdelivery14 || deliveryrequest14);
+deliveryrequest14 -> (pendingdelivery14 || X pendingdelivery14);
+pendingdelivery14 -> X (pendingdelivery14 || drop);
+pendingdelivery14 && ! deliverypickedup14 -> X pendingdelivery14;
+(pendingdelivery14 && ! X pendingdelivery14) -> ((X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && ! X y3));
+pendingdelivery14 && deliverypickedup14 && X drop && ((X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && ! X y3)) -> ! X pendingdelivery14;
+((! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && ! X y3)) && X pickup -> (deliverypickedup14 || X deliverypickedup14);
+! deliverypickedup14 && X deliverypickedup14 -> ((! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && ! X y3)) && X pickup;
+deliverypickedup14 -> X (deliverypickedup14 || drop);
+(deliverypickedup14 && X drop) -> ! X deliverypickedup14;
+deliverypickedup14 && X drop -> ((X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && ! X y3));
+deliverypickedup14 -> ! X pickup;
+}
+
+// sys liveness
+GUARANTEE {
+G F ! pendingdelivery14;
+}
+
+OUTPUTS {
+pendingdelivery16;
+deliverypickedup16;
+}
+
+INPUTS {
+deliveryrequest16;
+}
+
+//sys init
+PRESET {
+! pendingdelivery16;
+! deliverypickedup16;
+}
+
+// sys trans
+ASSERT {
+(X pendingdelivery16) -> (pendingdelivery16 || deliveryrequest16);
+deliveryrequest16 -> (pendingdelivery16 || X pendingdelivery16);
+pendingdelivery16 -> X (pendingdelivery16 || drop);
+pendingdelivery16 && ! deliverypickedup16 -> X pendingdelivery16;
+(pendingdelivery16 && ! X pendingdelivery16) -> ((X x0 && X x1 && X x2 && ! X y0 && ! X y1 && X y2 && ! X y3));
+pendingdelivery16 && deliverypickedup16 && X drop && ((X x0 && X x1 && X x2 && ! X y0 && ! X y1 && X y2 && ! X y3)) -> ! X pendingdelivery16;
+((! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && ! X y3)) && X pickup -> (deliverypickedup16 || X deliverypickedup16);
+! deliverypickedup16 && X deliverypickedup16 -> ((! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && ! X y3)) && X pickup;
+deliverypickedup16 -> X (deliverypickedup16 || drop);
+(deliverypickedup16 && X drop) -> ! X deliverypickedup16;
+deliverypickedup16 && X drop -> ((X x0 && X x1 && X x2 && ! X y0 && ! X y1 && X y2 && ! X y3));
+deliverypickedup16 -> ! X pickup;
+}
+
+// sys liveness
+GUARANTEE {
+G F ! pendingdelivery16;
+}
+
+OUTPUTS {
+pendingdelivery20;
+deliverypickedup20;
+}
+
+INPUTS {
+deliveryrequest20;
+}
+
+//sys init
+PRESET {
+! pendingdelivery20;
+! deliverypickedup20;
+}
+
+// sys trans
+ASSERT {
+(X pendingdelivery20) -> (pendingdelivery20 || deliveryrequest20);
+deliveryrequest20 -> (pendingdelivery20 || X pendingdelivery20);
+pendingdelivery20 -> X (pendingdelivery20 || drop);
+pendingdelivery20 && ! deliverypickedup20 -> X pendingdelivery20;
+(pendingdelivery20 && ! X pendingdelivery20) -> ((X x0 && X x1 && X x2 && ! X y0 && X y1 && X y2 && ! X y3));
+pendingdelivery20 && deliverypickedup20 && X drop && ((X x0 && X x1 && X x2 && ! X y0 && X y1 && X y2 && ! X y3)) -> ! X pendingdelivery20;
+((! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && X y2 && ! X y3)) && X pickup -> (deliverypickedup20 || X deliverypickedup20);
+! deliverypickedup20 && X deliverypickedup20 -> ((! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && X y2 && ! X y3)) && X pickup;
+deliverypickedup20 -> X (deliverypickedup20 || drop);
+(deliverypickedup20 && X drop) -> ! X deliverypickedup20;
+deliverypickedup20 && X drop -> ((X x0 && X x1 && X x2 && ! X y0 && X y1 && X y2 && ! X y3));
+deliverypickedup20 -> ! X pickup;
+}
+
+// sys liveness
+GUARANTEE {
+G F ! pendingdelivery20;
+}
+
+OUTPUTS {
+pendingdelivery22;
+deliverypickedup22;
+}
+
+INPUTS {
+deliveryrequest22;
+}
+
+//sys init
+PRESET {
+! pendingdelivery22;
+! deliverypickedup22;
+}
+
+// sys trans
+ASSERT {
+(X pendingdelivery22) -> (pendingdelivery22 || deliveryrequest22);
+deliveryrequest22 -> (pendingdelivery22 || X pendingdelivery22);
+pendingdelivery22 -> X (pendingdelivery22 || drop);
+pendingdelivery22 && ! deliverypickedup22 -> X pendingdelivery22;
+(pendingdelivery22 && ! X pendingdelivery22) -> ((X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && X y3));
+pendingdelivery22 && deliverypickedup22 && X drop && ((X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && X y3)) -> ! X pendingdelivery22;
+((! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && X y3)) && X pickup -> (deliverypickedup22 || X deliverypickedup22);
+! deliverypickedup22 && X deliverypickedup22 -> ((! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && X y3)) && X pickup;
+deliverypickedup22 -> X (deliverypickedup22 || drop);
+(deliverypickedup22 && X drop) -> ! X deliverypickedup22;
+deliverypickedup22 && X drop -> ((X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && X y3));
+deliverypickedup22 -> ! X pickup;
+}
+
+// sys liveness
+GUARANTEE {
+G F ! pendingdelivery22;
+}
+
+OUTPUTS {
+pendingdelivery24;
+deliverypickedup24;
+}
+
+INPUTS {
+deliveryrequest24;
+}
+
+//sys init
+PRESET {
+! pendingdelivery24;
+! deliverypickedup24;
+}
+
+// sys trans
+ASSERT {
+(X pendingdelivery24) -> (pendingdelivery24 || deliveryrequest24);
+deliveryrequest24 -> (pendingdelivery24 || X pendingdelivery24);
+pendingdelivery24 -> X (pendingdelivery24 || drop);
+pendingdelivery24 && ! deliverypickedup24 -> X pendingdelivery24;
+(pendingdelivery24 && ! X pendingdelivery24) -> ((X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && X y3));
+pendingdelivery24 && deliverypickedup24 && X drop && ((X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && X y3)) -> ! X pendingdelivery24;
+((! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && X y3)) && X pickup -> (deliverypickedup24 || X deliverypickedup24);
+! deliverypickedup24 && X deliverypickedup24 -> ((! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && X y3)) && X pickup;
+deliverypickedup24 -> X (deliverypickedup24 || drop);
+(deliverypickedup24 && X drop) -> ! X deliverypickedup24;
+deliverypickedup24 && X drop -> ((X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && X y3));
+deliverypickedup24 -> ! X pickup;
+}
+
+// sys liveness
+GUARANTEE {
+G F ! pendingdelivery24;
+}
+
+INPUTS {
+mox38_0;
+mox38_1;
+mox38_2;
+moy38_0;
+moy38_1;
+moy38_2;
+moy38_3;
+}
+
+// env init
+INITIALLY {
+mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3;
+}
+
+//env trans
+REQUIRE {
+// correct motion by the moving obstacle
+(! mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(! mox38_0 && mox38_1 && mox38_2 && moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && ! moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && moy38_0 && moy38_1 && moy38_2 && ! moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+(mox38_0 && mox38_1 && mox38_2 && moy38_0 && moy38_1 && moy38_2 && moy38_3) -> (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3) || (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3);
+}
+
+// sys trans
+ASSERT {
+// no collisions with the moving object
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && X y0 && X y1 && ! X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && ! X x2 && X y0 && X y1 && X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && ! X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && ! X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && ! X x2 && X y0 && X y1 && ! X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && ! X x2 && X y0 && ! X y1 && X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && ! X x2 && ! X y0 && X y1 && X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && ! X x2 && X y0 && X y1 && X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && ! X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && ! X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && ! X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && ! X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && ! X x2 && X y0 && X y1 && ! X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && ! X x2 && X y0 && ! X y1 && X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && ! X x2 && ! X y0 && X y1 && X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && ! X x2 && X y0 && X y1 && X y2 && X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && ! X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && ! X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && ! X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && ! X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && X x1 && ! X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && X x1 && ! X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && X x1 && ! X x2 && X y0 && X y1 && ! X y2 && X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && X x1 && ! X x2 && ! X y0 && ! X y1 && X y2 && X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && X x1 && ! X x2 && X y0 && ! X y1 && X y2 && X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && X x1 && ! X x2 && ! X y0 && X y1 && X y2 && X y3);
+! (X mox38_0 && X mox38_1 && ! X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && X x1 && ! X x2 && X y0 && X y1 && X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && ! X x1 && X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && X x2 && X y0 && X y1 && ! X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && X x2 && X y0 && ! X y1 && X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && X x2 && ! X y0 && X y1 && X y2 && X y3);
+! (! X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && ! X x1 && X x2 && X y0 && X y1 && X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && ! X x1 && X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && X x2 && X y0 && X y1 && ! X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && X x2 && ! X y0 && ! X y1 && X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && X x2 && X y0 && ! X y1 && X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && X x2 && ! X y0 && X y1 && X y2 && X y3);
+! (X mox38_0 && ! X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && ! X x1 && X x2 && X y0 && X y1 && X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  ! X x0 && X x1 && X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && X x2 && X y0 && X y1 && ! X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && X x2 && ! X y0 && ! X y1 && X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && X x2 && X y0 && ! X y1 && X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && X x2 && ! X y0 && X y1 && X y2 && X y3);
+! (! X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  ! X x0 && X x1 && X x2 && X y0 && X y1 && X y2 && X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && X x2 && X y0 && ! X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && X x2 && X y0 && X y1 && ! X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && X x2 && ! X y0 && ! X y1 && X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && X x2 && X y0 && ! X y1 && X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && X x2 && ! X y0 && X y1 && X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && ! X moy38_3  &&  X x0 && X x1 && X x2 && X y0 && X y1 && X y2 && ! X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && X x1 && X x2 && ! X y0 && ! X y1 && ! X y2 && X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && X x1 && X x2 && X y0 && ! X y1 && ! X y2 && X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && X x1 && X x2 && ! X y0 && X y1 && ! X y2 && X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && ! X moy38_2 && X moy38_3  &&  X x0 && X x1 && X x2 && X y0 && X y1 && ! X y2 && X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && X x1 && X x2 && ! X y0 && ! X y1 && X y2 && X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && ! X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && X x1 && X x2 && X y0 && ! X y1 && X y2 && X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && ! X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && X x1 && X x2 && ! X y0 && X y1 && X y2 && X y3);
+! (X mox38_0 && X mox38_1 && X mox38_2 && X moy38_0 && X moy38_1 && X moy38_2 && X moy38_3  &&  X x0 && X x1 && X x2 && X y0 && X y1 && X y2 && X y3);
+}
+
+// env liveness (GR1+)
+ASSUME {
+// FG (the moving object visits fav cells only)
+F G ( (mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) || (mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && moy38_3) || (mox38_0 && mox38_1 && ! mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && moy38_3) || (mox38_0 && mox38_1 && ! mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && moy38_3) || (! mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && ! moy38_1 && ! moy38_2 && moy38_3) || (! mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && moy38_1 && ! moy38_2 && moy38_3) || (! mox38_0 && ! mox38_1 && mox38_2 && moy38_0 && moy38_1 && ! moy38_2 && moy38_3) || (! mox38_0 && ! mox38_1 && mox38_2 && ! moy38_0 && ! moy38_1 && moy38_2 && moy38_3) );
+}
+
+// sys liveness (GR1+)
+GUARANTEE {
+// FG (the robot moves along fav cells only (or doors/target/delivery))
+F G ( (! x0 && ! x1 && ! x2 && ! y0 && ! y1 && ! y2 && ! y3) || (! x0 && ! x1 && ! x2 && ! y0 && y1 && ! y2 && ! y3) || (! x0 && ! x1 && ! x2 && ! y0 && ! y1 && y2 && ! y3) || (! x0 && ! x1 && ! x2 && ! y0 && y1 && y2 && ! y3) || (! x0 && ! x1 && ! x2 && ! y0 && ! y1 && ! y2 && y3) || (! x0 && ! x1 && ! x2 && ! y0 && y1 && ! y2 && y3) || (x0 && ! x1 && ! x2 && ! y0 && ! y1 && ! y2 && ! y3) || (x0 && ! x1 && ! x2 && y0 && ! y1 && ! y2 && ! y3) || (x0 && ! x1 && ! x2 && ! y0 && y1 && ! y2 && ! y3) || (x0 && ! x1 && ! x2 && y0 && y1 && ! y2 && ! y3) || (x0 && ! x1 && ! x2 && ! y0 && ! y1 && y2 && ! y3) || (x0 && ! x1 && ! x2 && y0 && ! y1 && y2 && ! y3) || (x0 && ! x1 && ! x2 && ! y0 && y1 && y2 && ! y3) || (x0 && ! x1 && ! x2 && y0 && y1 && y2 && ! y3) || (x0 && ! x1 && ! x2 && ! y0 && ! y1 && ! y2 && y3) || (x0 && ! x1 && ! x2 && y0 && ! y1 && ! y2 && y3) || (x0 && ! x1 && ! x2 && ! y0 && y1 && ! y2 && y3) || (! x0 && x1 && ! x2 && ! y0 && ! y1 && ! y2 && ! y3) || (x0 && x1 && ! x2 && ! y0 && ! y1 && ! y2 && ! y3) || (! x0 && ! x1 && x2 && ! y0 && ! y1 && ! y2 && ! y3) || (x0 && ! x1 && x2 && ! y0 && ! y1 && ! y2 && ! y3) || (! x0 && x1 && x2 && ! y0 && ! y1 && ! y2 && ! y3) || (! x0 && x1 && x2 && y0 && ! y1 && ! y2 && ! y3) || (! x0 && x1 && x2 && ! y0 && y1 && ! y2 && ! y3) || (! x0 && x1 && x2 && y0 && y1 && ! y2 && ! y3) || (! x0 && x1 && x2 && ! y0 && ! y1 && y2 && ! y3) || (! x0 && x1 && x2 && y0 && ! y1 && y2 && ! y3) || (! x0 && x1 && x2 && ! y0 && y1 && y2 && ! y3) || (! x0 && x1 && x2 && y0 && y1 && y2 && ! y3) || (! x0 && x1 && x2 && ! y0 && ! y1 && ! y2 && y3) || (! x0 && x1 && x2 && y0 && ! y1 && ! y2 && y3) || (! x0 && x1 && x2 && ! y0 && y1 && ! y2 && y3) || (x0 && x1 && x2 && ! y0 && ! y1 && ! y2 && ! y3) || (x0 && x1 && x2 && ! y0 && y1 && ! y2 && ! y3) || (x0 && x1 && x2 && ! y0 && ! y1 && y2 && ! y3) || (x0 && x1 && x2 && ! y0 && y1 && y2 && ! y3) || (x0 && x1 && x2 && ! y0 && ! y1 && ! y2 && y3) || (x0 && x1 && x2 && ! y0 && y1 && ! y2 && y3) );
+}
+
+}
