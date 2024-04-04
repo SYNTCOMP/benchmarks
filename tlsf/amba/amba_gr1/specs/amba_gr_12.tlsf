@@ -1,7 +1,7 @@
 INFO {
   TITLE:       "AMBA AHB Case Study"
   DESCRIPTION: "The spec inspired by spec from that GR1 journal paper."
-  SEMANTICS:   Mealy
+  SEMANTICS:   Mealy,Strict
   TARGET:      Mealy
 }
 
@@ -246,30 +246,18 @@ ASSERT {
 (X(!start) -> (((!hmaster0) && (hmaster1) && (!hmaster2) && (hmaster3)) <-> (X(!hmaster0) && X(hmaster1) && X(!hmaster2) && X(hmaster3)))) ;
 (X(!start) -> (((hmaster0) && (hmaster1) && (!hmaster2) && (hmaster3)) <-> (X(hmaster0) && X(hmaster1) && X(!hmaster2) && X(hmaster3)))) ;
 (((X(!start))) -> ((hmastlock) <->X(hmastlock))) ;
-((decide  &&  !hlock0  &&  X(hgrant0)) -> X(!locked)) ;
-((decide  &&  !hlock0  &&  X(hgrant0)) -> X(!locked)) ;
-((decide  &&  !hlock1  &&  X(hgrant1)) -> X(!locked)) ;
-((decide  &&  !hlock1  &&  X(hgrant1)) -> X(!locked)) ;
-((decide  &&  !hlock2  &&  X(hgrant2)) -> X(!locked)) ;
-((decide  &&  !hlock2  &&  X(hgrant2)) -> X(!locked)) ;
-((decide  &&  !hlock3  &&  X(hgrant3)) -> X(!locked)) ;
-((decide  &&  !hlock3  &&  X(hgrant3)) -> X(!locked)) ;
-((decide  &&  !hlock4  &&  X(hgrant4)) -> X(!locked)) ;
-((decide  &&  !hlock4  &&  X(hgrant4)) -> X(!locked)) ;
-((decide  &&  !hlock5  &&  X(hgrant5)) -> X(!locked)) ;
-((decide  &&  !hlock5  &&  X(hgrant5)) -> X(!locked)) ;
-((decide  &&  !hlock6  &&  X(hgrant6)) -> X(!locked)) ;
-((decide  &&  !hlock6  &&  X(hgrant6)) -> X(!locked)) ;
-((decide  &&  !hlock7  &&  X(hgrant7)) -> X(!locked)) ;
-((decide  &&  !hlock7  &&  X(hgrant7)) -> X(!locked)) ;
-((decide  &&  !hlock8  &&  X(hgrant8)) -> X(!locked)) ;
-((decide  &&  !hlock8  &&  X(hgrant8)) -> X(!locked)) ;
-((decide  &&  !hlock9  &&  X(hgrant9)) -> X(!locked)) ;
-((decide  &&  !hlock9  &&  X(hgrant9)) -> X(!locked)) ;
-((decide  &&  !hlock10  &&  X(hgrant10)) -> X(!locked)) ;
-((decide  &&  !hlock10  &&  X(hgrant10)) -> X(!locked)) ;
-((decide  &&  !hlock11  &&  X(hgrant11)) -> X(!locked)) ;
-((decide  &&  !hlock11  &&  X(hgrant11)) -> X(!locked)) ;
+((decide  &&  X(hgrant0)) -> (hlock0 <-> X(locked))) ;
+((decide  &&  X(hgrant1)) -> (hlock1 <-> X(locked))) ;
+((decide  &&  X(hgrant2)) -> (hlock2 <-> X(locked))) ;
+((decide  &&  X(hgrant3)) -> (hlock3 <-> X(locked))) ;
+((decide  &&  X(hgrant4)) -> (hlock4 <-> X(locked))) ;
+((decide  &&  X(hgrant5)) -> (hlock5 <-> X(locked))) ;
+((decide  &&  X(hgrant6)) -> (hlock6 <-> X(locked))) ;
+((decide  &&  X(hgrant7)) -> (hlock7 <-> X(locked))) ;
+((decide  &&  X(hgrant8)) -> (hlock8 <-> X(locked))) ;
+((decide  &&  X(hgrant9)) -> (hlock9 <-> X(locked))) ;
+((decide  &&  X(hgrant10)) -> (hlock10 <-> X(locked))) ;
+((decide  &&  X(hgrant11)) -> (hlock11 <-> X(locked))) ;
 ((!decide) -> (((!hgrant0) <-> X(!hgrant0)))) ;
 ((!decide) -> (((!hgrant1) <-> X(!hgrant1)))) ;
 ((!decide) -> (((!hgrant2) <-> X(!hgrant2)))) ;

@@ -85,7 +85,7 @@ def buildNegHMasterString(master_bits:int, value, _OR):
     return result
 
 
-def generate(num_masters:int, tlsf:bool, gfgf:bool, fg:bool, fg_ind:bool) -> str:
+def generate(num_masters:int, tlsf:bool, gfgf:bool, fg:bool, fg_ind:bool, produce_ss:bool) -> str:
     assert num_masters>1
     if tlsf:
         _G="G"
@@ -405,14 +405,10 @@ def generate(num_masters:int, tlsf:bool, gfgf:bool, fg:bool, fg_ind:bool) -> str
     sys_transitions += f"((({_X}(!start))) -> ((hmastlock) <->{_X}(hmastlock))){nFormula}\n"
 
     #Guarantee 7:
-    #FIXME: formula can be written as
     # G((decide=1 {_and} {_X}(hgrant$i)) -> (hlock$i=1 <->{_X}(locked)))
     #sys_transitions += "\n#Guarantee 7:\n"
     for i in range(num_masters):
-        #        sys_transitions += "$G((decide=1 {_and} hlock$i=1 {_and} {_X}(hgrant$i)) -> {_X}(locked)){nFormula}\n"
-        sys_transitions += f"((decide {_and} !hlock{i} {_and} {_X}(hgrant{i})) -> {_X}(!locked)){nFormula}\n"
-        #        sys_transitions += "$G((decide=1 {_and} hlock$i=1 {_and} {_X}(hgrant$i)) -> {_X}(locked)){nFormula}\n"
-        sys_transitions += f"((decide {_and} !hlock{i} {_and} {_X}(hgrant{i})) -> {_X}(!locked)){nFormula}\n"
+        sys_transitions += f"((decide {_and} {_X}(hgrant{i})) -> (hlock{i} <-> {_X}(locked))){nFormula}\n"
 
     #Guarantee 8:
     #MW: Note, that this formula changes with respect to the number of grant signals
@@ -483,7 +479,7 @@ def generate(num_masters:int, tlsf:bool, gfgf:bool, fg:bool, fg_ind:bool) -> str
 """INFO {
   TITLE:       "AMBA AHB Case Study"
   DESCRIPTION: "The spec inspired by spec from that GR1 journal paper."
-  SEMANTICS:   Mealy
+  SEMANTICS:   Mealy,Strict
   TARGET:      Mealy
 }
 
@@ -569,10 +565,13 @@ GUARANTEE {
         ss_file.write("\n")
         ss_file.flush()
 
-        rc, out, err = execute_shell(f"{SS_COMPILER_EXEC} {ss_file.name}")
-        assert_exec_strict(rc, out, err)
-
-        result = out
+        if produce_ss:
+            with open(ss_file.name, 'r') as readable_ss_file:
+                result = readable_ss_file.read()
+        else:  # convert to SlugsIN format
+            rc, out, err = execute_shell(f"{SS_COMPILER_EXEC} {ss_file.name}")
+            assert_exec_strict(rc, out, err)
+            result = out
 
         if env_spec != "":
             result += "[ENV_SPEC]\n"
@@ -618,6 +617,12 @@ if __name__ == '__main__':
                         dest='fg_ind',
                         help='use indexed FG guarantee (GR1++)')
 
+    parser.add_argument('-ss', '--ss',
+                        required=False, default=False,
+                        action='store_true',
+                        dest='ss',
+                        help='produce StructuredSlugs instead of default SlugsIN')
+
     args = parser.parse_args()
 
     if args.num_masters <= 1:
@@ -626,6 +631,6 @@ if __name__ == '__main__':
 
     num_masters = args.num_masters
 
-    print(generate(num_masters, args.tlsf, args.gfgf, args.fg, args.fg_ind))
+    print(generate(num_masters, args.tlsf, args.gfgf, args.fg, args.fg_ind, args.ss))
 
 

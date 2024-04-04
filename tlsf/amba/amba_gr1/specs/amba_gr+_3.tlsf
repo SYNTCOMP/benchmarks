@@ -1,7 +1,7 @@
 INFO {
   TITLE:       "AMBA AHB Case Study"
   DESCRIPTION: "The spec inspired by spec from that GR1 journal paper."
-  SEMANTICS:   Mealy
+  SEMANTICS:   Mealy,Strict
   TARGET:      Mealy
 }
 
@@ -135,12 +135,9 @@ ASSERT {
 (X(!start) -> (((hmaster0) && (!hmaster1)) <-> (X(hmaster0) && X(!hmaster1)))) ;
 (X(!start) -> (((!hmaster0) && (hmaster1)) <-> (X(!hmaster0) && X(hmaster1)))) ;
 (((X(!start))) -> ((hmastlock) <->X(hmastlock))) ;
-((decide  &&  !hlock0  &&  X(hgrant0)) -> X(!locked)) ;
-((decide  &&  !hlock0  &&  X(hgrant0)) -> X(!locked)) ;
-((decide  &&  !hlock1  &&  X(hgrant1)) -> X(!locked)) ;
-((decide  &&  !hlock1  &&  X(hgrant1)) -> X(!locked)) ;
-((decide  &&  !hlock2  &&  X(hgrant2)) -> X(!locked)) ;
-((decide  &&  !hlock2  &&  X(hgrant2)) -> X(!locked)) ;
+((decide  &&  X(hgrant0)) -> (hlock0 <-> X(locked))) ;
+((decide  &&  X(hgrant1)) -> (hlock1 <-> X(locked))) ;
+((decide  &&  X(hgrant2)) -> (hlock2 <-> X(locked))) ;
 ((!decide) -> (((!hgrant0) <-> X(!hgrant0)))) ;
 ((!decide) -> (((!hgrant1) <-> X(!hgrant1)))) ;
 ((!decide) -> (((!hgrant2) <-> X(!hgrant2)))) ;
