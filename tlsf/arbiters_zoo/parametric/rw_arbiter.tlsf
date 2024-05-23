@@ -1,0 +1,101 @@
+INFO
+{
+  TITLE:       ""
+  DESCRIPTION: "Controller (arbiter) managing requests for a single read-write lock."
+  SEMANTICS:   Mealy
+  TARGET:      Mealy
+}
+
+GLOBAL
+{
+  PARAMETERS {
+  	n = 1; // n≥1
+  }
+
+  DEFINITIONS
+  {
+    // copied from simple arbiter
+    mutual_exclusion(bus) = mone(bus,0,(SIZEOF bus) - 1);
+    none(bus,i,j) = &&[i <= t <= j] !bus[t];
+    mone(bus,i,j) =
+    i > j : false
+    i == j : true
+    i < j :
+      (none(bus, i, m(i,j)) && mone(bus, m(i,j) + 1, j)) ||
+      (mone(bus, i, m(i,j)) && none(bus, m(i,j) + 1, j));
+    m(i,j) = (i + j) / 2;
+
+    //
+
+    lower_grant_eventually(r,g) =
+      G(g && (G !r) -> F !g);
+
+    no_spurious_grants(r,g) =
+    (
+      (!g W r) &&                         // initially
+      G(g && X(!r && !g) -> X(!g W r))    // always
+    );
+
+    every_req_is_granted(r,g) = G(r -> F g);
+  }
+}
+
+MAIN
+{
+  INPUTS  { r_RL[n]; r_WL[n]; }
+  OUTPUTS {   RL[n];   WL[n]; }
+
+  GUARANTEES
+  {
+    // -- MUTUAL EXCLUSION --
+
+    G mutual_exclusion(WL);
+
+    // mutual exclusion between RL and WL,
+    // also forbids simultaneously having both RL[i] and WL[i]
+    G ( (||[0<= i < n] RL[i]) -> (&&[0<=i<n] !WL[i]) );
+
+
+
+    // -- FAIRNESS --
+
+    &&[0 <= i < n]
+    (
+      every_req_is_granted(r_RL[i], RL[i] || WL[i]) &&
+      every_req_is_granted(r_WL[i], WL[i])
+    );
+
+
+
+    // -- LOCK UPGRADABILITY --
+
+    // A thread holding a read lock is upgraded to a write lock, if requested.
+    // For simplicity of specifying, we prioritize the upgrade requests.
+    &&[0<=i<n]
+    (
+      G(
+        RL[i] && r_WL[i] &&
+        !( ||[0<=j<i] (RL[j] && r_WL[j]) )
+        ->
+        X WL[i])
+    );
+
+
+
+    // -- FORBID SPURIOUS GRANTS --
+
+    &&[0 <= i < n]
+      (
+      no_spurious_grants(r_RL[i], RL[i]) &&
+      no_spurious_grants(r_WL[i], WL[i]) &&
+      lower_grant_eventually(r_RL[i], RL[i]) &&
+      lower_grant_eventually(r_WL[i], WL[i])
+      );
+
+    // The above property is an example of when costs are useful: e.g.,
+    // cost(RL[i])=1
+    // cost(WL[i])=2
+    // With costs, we would not need to specify those properties.
+  }
+}
+
