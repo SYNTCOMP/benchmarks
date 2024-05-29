@@ -38,6 +38,7 @@ benchdirs = ["amba/amba", # PSC: I suppose?
              "ltl2dba",
              "ltl2dpa",
              "ltl_f/generated_TLSF",
+             "ltl_with_hints",
              "mux",
              "nary_latch",
              "prioritized_arbiter",
