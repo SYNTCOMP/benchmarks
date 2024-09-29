@@ -25,6 +25,7 @@ Alternatively, you can create a pull request with your benchmarks.
 
 ## Download benchmarks
 
+- year 2024: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2024.0.1/tlsfSelection2024.zip), [TLSF-fin](https://github.com/SYNTCOMP/benchmarks/releases/download/v2024.0.1/tlsfFinSelection2024.zip), [parity](https://github.com/SYNTCOMP/benchmarks/releases/download/v2024.0.1/paritySelection2024.zip)
 - year 2023: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2023.4/TLSF_2023.zip), [TLSF-fin](https://github.com/SYNTCOMP/benchmarks/releases/download/v2023.4/TLSF-fin_2023.zip), [parity](https://github.com/SYNTCOMP/benchmarks/releases/download/v2023.4/Parity_2023.zip)
 - year 2022: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2022/TLSF_2022.zip), [parity](https://github.com/SYNTCOMP/benchmarks/releases/download/v2022/PGAME_2022.zip)
 - year 2021: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2021/TLSF_2021.zip), parity [synthesis](https://github.com/SYNTCOMP/benchmarks/releases/download/v2021/PGAME_Synth_2021.zip) and [realizability](https://github.com/SYNTCOMP/benchmarks/releases/download/v2021/PGAME_Real_2021.zip)
