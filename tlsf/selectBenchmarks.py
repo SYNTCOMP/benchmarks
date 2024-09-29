@@ -25,8 +25,6 @@ benchdirs = ["amba/amba", # PSC: I suppose?
              "arbiters_s4",
              "arbiters_zoo",
              "collector",
-             # "detector", (equivalent to ltl2dba_C2)
-             "detector_unreal",
              "full_arbiter_log",
              "full_arbiter_unreal",
              "generalized_buffer",
