@@ -34,6 +34,7 @@ benchdirs = ["amba/amba", # PSC: I suppose?
              "load_balancer",
              "load_balancer_unreal",
              "ltl2dba",
+             "ltl2dba/non_parametric_from_acacia",
              "ltl2dpa",
              "ltl_f/generated_TLSF",
              "ltl_with_hints",
