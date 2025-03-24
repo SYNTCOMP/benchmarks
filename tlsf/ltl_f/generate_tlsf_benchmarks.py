@@ -74,6 +74,6 @@ if __name__ == '__main__':
             ltlf_benchmark = ROOT_DIR + "/original_scripts/" + benchmark_name + "/" + benchmark_name + "_" + str(i) + "/" + str(i)
             ltl, in_vars, out_vars = reduction_to_ltl.produce_strix_benchmark(ltlf_benchmark)
             tlsf_string = convert_ltl_to_tlsf(ltl, in_vars, out_vars)
-            with open(f"{TLSF_OUT_DIR}/{benchmark_name}_{i}.tlsf", "w") as f:
+            with open(f"{TLSF_OUT_DIR}/{benchmark_name}_pb_{i}_pe_.tlsf", "w") as f:
                 print("writing to " + f.name)
                 f.write(tlsf_string)
