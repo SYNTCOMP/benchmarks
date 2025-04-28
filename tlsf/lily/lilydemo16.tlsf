@@ -29,9 +29,9 @@ MAIN {
   }
 
   GUARANTEES {
-    a0 W r0;
-    a1 W r1;
-    a2 W r2;
+    !a0 W r0;
+    !a1 W r1;
+    !a2 W r2;
   }
   
 }
