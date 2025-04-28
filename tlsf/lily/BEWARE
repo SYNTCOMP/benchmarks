@@ -1,0 +1,15 @@
+The original `lily` tool synthesized _Moore_ systems.
+All specifications in this folder contain the original properties, _but allow for synthesis of Mealy systems_.
+
+This change affects the realizability of only one specification:
+`lilydemo04.tlsf`, originally unrealizable (wrt. Moore machines) is now realiazable (because it is wrt. Mealy machines).
+This folder provides two versions of `lilydemo04.tlsf`:
+- `lilydemo04.tlsf` contains the original properties (but wrt. Mealy machines), it is realizable,
+- `lilydemo04_modified.tlsf` modifies one property to make the specification unrealizable (wrt. Mealy machines).
+
+If you are interested in the raw original versions of lily specifications,
+use `TARGET: Moore` in all specifications.
+
+See also `lily` tool documentation at
+http://www.ist.tugraz.at/staff/jobstmann/lily/
+
