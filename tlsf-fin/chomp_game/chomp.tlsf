@@ -1,7 +1,7 @@
 INFO {
   TITLE:       "Chomp Game"
   DESCRIPTION: "Parameteric Chomp Game over a NxM grid"
-  SEMANTICS:   Mealy
+  SEMANTICS:   Mealy,Finite
   TARGET:      Mealy
 }
 
