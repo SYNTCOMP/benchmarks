@@ -1,0 +1,37 @@
+INFO {
+  TITLE:       "Scutellà's counterexample"
+  DESCRIPTION: "LTLf version of a counterexample by Scutellà"
+  SEMANTICS:   Moore,Finite
+  TARGET:      Moore
+}
+GLOBAL {
+  DEFINITIONS {
+    ExactlyOne(x) = (||[0 <= i < (SIZEOF x)] x[i])
+      && (&&[1 <= i < (SIZEOF x)] (x[i] -> (&&[0 <= j < i] !x[j])));
+  }
+}
+
+MAIN {
+  INPUTS {
+    a;
+  }
+  OUTPUTS {
+    s[5]; // five states
+    b;
+  }
+  PRESET {
+    s[0]; // we start in state 0
+  }
+  ASSERT {
+    ExactlyOne(s); // only one state is active at all time
+    // transition structure:
+    s[0] -> ((a && X(s[3])) || (!a && X(s[1])));
+    s[1] -> X(s[2]);
+    s[2] -> ((b && X(s[3])) || (!b && X(s[4])));
+    s[3] -> X(s[1]);
+  }
+  GUARANTEE {
+    // The game must reach state 4
+    F(s[4]);
+  }
+}
