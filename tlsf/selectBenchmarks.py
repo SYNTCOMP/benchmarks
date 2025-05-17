@@ -26,6 +26,7 @@ benchdirs = ["amba/amba", # PSC: I suppose?
              "amba/amba_gr1/specs",
              "arbiters_s4",
              "arbiters_zoo",
+             "chomp_game",
              "collector",
              "full_arbiter_log",
              "full_arbiter_unreal",
