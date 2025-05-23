@@ -1,3 +1,8 @@
+# Note
+This is the version of the spec written for the TLSF-fin track:
+it is equivalent to the TLSF-fin except that "finite" was removed from the semantics.
+The rest is the original text for TLSF-fin by Alexandre.
+
 # Chomp Game
 
 The chomp game is a played as follows:
