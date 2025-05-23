@@ -1,0 +1,94 @@
+INFO {
+  TITLE:       "Chomp Game"
+  DESCRIPTION: "Parameteric Chomp Game over a NxM grid"
+  SEMANTICS:   Mealy,Finite
+  TARGET:      Mealy
+}
+
+GLOBAL {
+  PARAMETERS {
+N = 3;
+M = 3;
+    // for N=M=1, the spec becomes unrealizable, otherwise it is realizable
+  }
+  DEFINITIONS {
+    Pos(grid, i, j) = grid[i + j * N];
+    PickOne(sel) = ||[0 <= k < (SIZEOF sel)] sel[k];
+    // if sel[i] is true, sel[i+1] should be too.
+    AboveToo(sel) = &&[0 <= i < ((SIZEOF sel) - 1)] (sel[i] -> sel[i+1]);
+    // if it's the other's turn, all values of sel should be false
+    OtherTurn(other, sel) = other -> (&&[0 <= k < (SIZEOF sel)](!sel[k]));
+    // if it's the other's turn and square (0,0) still exists, our
+    // choices for sx and sy on next turn depend on what square is
+    // available in the grid.
+    NextChoices(grid, other, sx, sy) =
+      (Pos(grid, 0, 0) && other) ->
+        (||[0 <= x < N] ||[0 <= y < M] (Pos(grid, x, y) && X(sx[x] && sy[y])));
+    // Rules that both players should obey
+    PlayerRules(grid, other, sx, sy) =
+       AboveToo(sx) &&
+       AboveToo(sy) &&
+       OtherTurn(other, sx) &&
+       OtherTurn(other, sy) &&
+       NextChoices(grid, other, sx, sy);
+  }
+}
+
+MAIN {
+  INPUTS {
+    // When it's the input player's turn, they
+    // use ix[I] iy[J] to select square (I,J).
+    ix[N];
+    iy[M];
+  }
+  OUTPUTS {
+    // When it's the output player's turn, they
+    // use ox[I] oy[J] to select square (I,J).
+    ox[N];
+    oy[M];
+    // whether a square is available
+    os[N*M];
+    // turn
+    oti; // input turn
+    oto; // output turn
+  }
+  PRESET {
+    // The output player is the first player.
+    !oti && oto;
+    // The output player has to choose a square.
+    PickOne(ox);
+    PickOne(oy);
+    // The squares that are taken initially depend on the first choice.
+    //&&[0 <= i < N] &&[0 <= j < N] (Pos(os, i, j) <-> !(ox[i] && oy[j]));
+    &&[0 <= i < N] &&[0 <= j < M] (Pos(os, i, j) <-> !(ox[i] && oy[j]));
+
+    // Turns alternate between players.
+    // (Writing G(oto <-> X oti) would be ok in LTL, but not LTLf.)
+    G(oti <-> !oto);
+    G(oto -> X oti);
+    G(oti -> X oto);
+  }
+  REQUIRE {
+    PlayerRules(os, oto, ix, iy);
+  }
+  ASSERT {
+    PlayerRules(os, oti, ox, oy);
+    // If (i,j) is selected by either player, that (i,j) should become false.
+    &&[0 <= i < N] &&[0 <= j < M]
+      (((ox[i] && oy[j]) || (ix[i] && iy[j])) -> !Pos(os,i,j));
+    // if (i,j) is not availlable now, it's not available on next turn.
+    &&[0 <= i < N] &&[0 <= j < M] ((!Pos(os,i,j)) -> X !(Pos(os,i,j)));
+    // if (i,j) is availlable now, it might not be on next turn.
+    &&[0 <= i < N] &&[0 <= j < M]
+      (Pos(os,i,j) -> X(Pos(os,i,j) || (ox[i] && oy[j]) || (ix[i] && iy[j])));
+  }
+  GUARANTEE {
+    // The game finishes once square (0, 0) has been taken, and since
+    // this square is poisonous, we want the input player to take it.
+    Pos(os,0,0) U (!Pos(os,0,0) && oti);
+  }
+}
+//#!SYNTCOMP
+//STATUS : realizable
+//REF_SIZE : 0
+//#

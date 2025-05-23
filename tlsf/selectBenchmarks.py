@@ -126,7 +126,7 @@ def genFam_(path:str) -> None:
 
     rec_(allFam)
 
-    with open(os.path.join(args.outputpath, "families.json"), "w") as fp:
+    with open(os.path.join(path, "families.json"), "w") as fp:
         json.dump(allFam, fp)
 
 if __name__ == "__main__":

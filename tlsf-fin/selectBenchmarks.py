@@ -15,7 +15,8 @@ def makeBenchmarks(inputRoot, outputRoot):
             # Random choice of benchmarks
             if filename.endswith(".tlsf"):
                 found += 1
-                if bool(random.getrandbits(1)):
+                # Only random select if not part of a family
+                if (filename.find("_pb_") != -1 and filename.find("_pe_") != -1) or bool(random.getrandbits(1)):
                     selected += 1
                     fullname = os.path.join(root, filename)
                     print(f"Selecting benchmark {fullname}")
