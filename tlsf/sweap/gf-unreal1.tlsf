@@ -1,0 +1,31 @@
+INFO {
+	TITLE:       ""
+	DESCRIPTION: ""
+	SEMANTICS:   Mealy
+	TARGET:      Mealy
+}
+MAIN {
+	INPUTS { 
+		bin_x0;
+		bin_st_0;
+		pred__xprev_LT_x_;
+		bin_x1
+	}
+	OUTPUTS { 
+		
+	}
+	ASSUMPTIONS {
+		(G(F(pred__xprev_LT_x_)) -> G(F((bin_x0 && bin_x1))));
+
+		(!bin_st_0 && !bin_x0 && !bin_x1 && !pred__xprev_LT_x_);
+
+		(!X(bin_st_0) && !X(bin_x0) && !X(bin_x1) && X(pred__xprev_LT_x_));
+
+		G((!bin_st_0 -> (((X(pred__xprev_LT_x_) && ((bin_x0 && bin_x1 && X(bin_x0) && X(bin_x1)) || (bin_x0 && !bin_x1 && ((X(bin_x0) && X(bin_x1)) || (X(bin_x0) && !X(bin_x1)))) || (!bin_x0 && bin_x1 && X(bin_x0) && !X(bin_x1)) || (!bin_x0 && !bin_x1 && ((!X(bin_x0) && X(bin_x1)) || (!X(bin_x0) && !X(bin_x1)))))) && !X(bin_st_0)) || ((X(pred__xprev_LT_x_) && ((bin_x0 && bin_x1 && X(bin_x0) && X(bin_x1)) || (bin_x0 && !bin_x1 && ((X(bin_x0) && X(bin_x1)) || (X(bin_x0) && !X(bin_x1)))) || (!bin_x0 && bin_x1 && X(bin_x0) && !X(bin_x1)) || (!bin_x0 && !bin_x1 && ((!X(bin_x0) && X(bin_x1)) || (!X(bin_x0) && !X(bin_x1)))))) && !X(bin_st_0)))));
+
+		true
+	}
+	GUARANTEES { 
+		G(F(!(bin_x0 && bin_x1)))
+	}
+}

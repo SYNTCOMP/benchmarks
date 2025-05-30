@@ -1,0 +1,54 @@
+INFO {
+	TITLE:       ""
+	DESCRIPTION: ""
+	SEMANTICS:   Mealy
+	TARGET:      Mealy
+}
+MAIN {
+	INPUTS { 
+		stay;
+		inc;
+		bin_st_2;
+		pred__resource_LT_resourceprev_;
+		bin_x0;
+		bin_resource0;
+		bin_st_0;
+		bin_resource2;
+		pred__xprev_LT_x_;
+		pred__x_LT_xprev_;
+		bin_st_1;
+		bin_resource1
+	}
+	OUTPUTS { 
+		cinc;
+		cdec
+	}
+	ASSUMPTIONS {
+		(G(F(pred__resource_LT_resourceprev_)) -> G(F((!bin_resource0 && !bin_resource1 && !bin_resource2))));
+
+		(G(F(pred__xprev_LT_x_)) -> G(F((pred__x_LT_xprev_ || bin_x0))));
+
+		(G(F(pred__x_LT_xprev_)) -> G(F((pred__xprev_LT_x_ || !bin_x0))));
+
+		(!bin_st_0 && !bin_st_1 && bin_st_2 && bin_resource0 && !bin_resource1 && bin_resource2 && !pred__xprev_LT_x_ && !pred__x_LT_xprev_ && !pred__resource_LT_resourceprev_ && !bin_x0);
+
+		(!bin_x0 && !X(bin_st_0) && X(bin_st_1) && !X(bin_st_2) && X(bin_resource0) && !X(bin_resource1) && X(bin_resource2) && !X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !X(pred__resource_LT_resourceprev_) && !X(bin_x0));
+
+		G(((!bin_st_0 && !bin_st_1 && bin_st_2) -> ((!bin_x0 && (!bin_x0 && !X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !X(bin_x0) && !X(pred__resource_LT_resourceprev_) && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2))) && !X(bin_st_0) && X(bin_st_1) && !X(bin_st_2)) || (!bin_x0 && (!bin_x0 && !X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !X(bin_x0) && !X(pred__resource_LT_resourceprev_) && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2))) && !X(bin_st_0) && X(bin_st_1) && !X(bin_st_2)) || (bin_x0 && (cinc <-> cdec) && (X(bin_x0) && !X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !X(pred__resource_LT_resourceprev_) && bin_x0 && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2))) && !X(bin_st_0) && !X(bin_st_1) && X(bin_st_2)) || (bin_x0 && cinc && !cdec && (!X(pred__x_LT_xprev_) && X(pred__xprev_LT_x_) && bin_x0 && !X(pred__resource_LT_resourceprev_) && X(bin_x0) && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2))) && !X(bin_st_0) && !X(bin_st_1) && X(bin_st_2)) || (bin_x0 && !cinc && cdec && (!X(pred__xprev_LT_x_) && X(pred__x_LT_xprev_) && !X(pred__resource_LT_resourceprev_) && bin_x0 && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2)) && (X(bin_x0) || !X(bin_x0))) && !X(bin_st_0) && !X(bin_st_1) && X(bin_st_2)))));
+
+		G(((!bin_st_0 && !bin_st_1 && !bin_st_2) -> ((stay && (!X(pred__x_LT_xprev_) && X(pred__xprev_LT_x_) && !X(pred__resource_LT_resourceprev_) && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2)) && ((bin_x0 && X(bin_x0)) || (!bin_x0 && (X(bin_x0) || !X(bin_x0))))) && !X(bin_st_0) && !X(bin_st_1) && !X(bin_st_2)) || (!stay && (!X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !X(pred__resource_LT_resourceprev_) && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2)) && (bin_x0 <-> X(bin_x0))) && !X(bin_st_0) && !X(bin_st_1) && X(bin_st_2)))));
+
+		G(((bin_st_0 && !bin_st_1 && bin_st_2) -> ((!stay && (!X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !X(pred__resource_LT_resourceprev_) && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2)) && (bin_x0 <-> X(bin_x0))) && !X(bin_st_0) && !X(bin_st_1) && X(bin_st_2)) || (stay && (!X(pred__xprev_LT_x_) && X(pred__x_LT_xprev_) && !X(pred__resource_LT_resourceprev_) && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2)) && ((bin_x0 && (X(bin_x0) || !X(bin_x0))) || (!bin_x0 && !X(bin_x0)))) && X(bin_st_0) && !X(bin_st_1) && X(bin_st_2)))));
+
+		G(((!bin_st_0 && bin_st_1 && !bin_st_2) -> ((!bin_resource0 && !bin_resource1 && !bin_resource2 && (!X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !bin_resource0 && !bin_resource1 && !bin_resource2 && !X(pred__resource_LT_resourceprev_) && !X(bin_resource0) && !X(bin_resource1) && !X(bin_resource2) && (bin_x0 <-> X(bin_x0))) && X(bin_st_0) && !X(bin_st_1) && !X(bin_st_2)) || (!(!bin_resource0 && !bin_resource1 && !bin_resource2) && (!X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !X(pred__resource_LT_resourceprev_) && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2)) && (bin_x0 <-> X(bin_x0))) && !X(bin_st_0) && X(bin_st_1) && X(bin_st_2)))));
+
+		G(((!bin_st_0 && bin_st_1 && bin_st_2) -> ((inc && (!X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && X(pred__resource_LT_resourceprev_) && (bin_x0 <-> X(bin_x0)) && ((bin_resource0 && !bin_resource1 && bin_resource2 && ((X(bin_resource0) && !X(bin_resource1) && X(bin_resource2)) || (X(bin_resource0) && !X(bin_resource1) && !X(bin_resource2)))) || (bin_resource0 && !bin_resource1 && !bin_resource2 && !X(bin_resource0) && X(bin_resource1) && X(bin_resource2)) || (!bin_resource0 && bin_resource1 && bin_resource2 && !X(bin_resource0) && X(bin_resource1) && !X(bin_resource2)) || (!bin_resource0 && bin_resource1 && !bin_resource2 && !X(bin_resource0) && !X(bin_resource1) && X(bin_resource2)) || (!bin_resource0 && !bin_resource1 && bin_resource2 && !X(bin_resource0) && !X(bin_resource1) && !X(bin_resource2)) || (!bin_resource0 && !bin_resource1 && !bin_resource2 && !X(bin_resource0) && !X(bin_resource1) && !X(bin_resource2)))) && !X(bin_st_0) && !X(bin_st_1) && !X(bin_st_2)) || (!inc && (!X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && X(pred__resource_LT_resourceprev_) && (bin_x0 <-> X(bin_x0)) && ((bin_resource0 && !bin_resource1 && bin_resource2 && ((X(bin_resource0) && !X(bin_resource1) && X(bin_resource2)) || (X(bin_resource0) && !X(bin_resource1) && !X(bin_resource2)))) || (bin_resource0 && !bin_resource1 && !bin_resource2 && !X(bin_resource0) && X(bin_resource1) && X(bin_resource2)) || (!bin_resource0 && bin_resource1 && bin_resource2 && !X(bin_resource0) && X(bin_resource1) && !X(bin_resource2)) || (!bin_resource0 && bin_resource1 && !bin_resource2 && !X(bin_resource0) && !X(bin_resource1) && X(bin_resource2)) || (!bin_resource0 && !bin_resource1 && bin_resource2 && !X(bin_resource0) && !X(bin_resource1) && !X(bin_resource2)) || (!bin_resource0 && !bin_resource1 && !bin_resource2 && !X(bin_resource0) && !X(bin_resource1) && !X(bin_resource2)))) && X(bin_st_0) && !X(bin_st_1) && X(bin_st_2)))));
+
+		G(((bin_st_0 && !bin_st_1 && !bin_st_2) -> ((!X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !X(pred__resource_LT_resourceprev_) && (bin_resource0 <-> X(bin_resource0)) && (bin_resource1 <-> X(bin_resource1)) && (bin_resource2 <-> X(bin_resource2)) && (bin_x0 <-> X(bin_x0))) && X(bin_st_0) && !X(bin_st_1) && !X(bin_st_2))));
+
+		true
+	}
+	GUARANTEES { 
+		(G(F((!bin_st_0 && bin_st_1 && !bin_st_2))) || F(G(((!bin_st_0 && !bin_st_1 && !bin_st_2) || (bin_st_0 && !bin_st_1 && bin_st_2)))))
+	}
+}

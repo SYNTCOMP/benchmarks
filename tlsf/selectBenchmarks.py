@@ -2,23 +2,24 @@
 
 import os
 import shutil
-import sys
 import argparse
 
 from genParametric import generateAllParametric
 from utils import sortStrList
 
-from typing import Tuple
-
 parser = argparse.ArgumentParser("Create all tlsf instances")
 
-parser.add_argument("benchmarkpath", type=str, help="the path to the benchmark-family directories")
-parser.add_argument("outputpath", type=str, help="the path where you want the benchmarks")
+parser.add_argument("benchmarkpath", type=str,
+                    help="the path to the benchmark-family directories")
+parser.add_argument("outputpath", type=str,
+                    help="the path where you want the benchmarks")
 parser.add_argument("-s", "--savestruct", action="store_true",
-                    help="If set, creates a structure.json containing information "\
-                    "about the benchmark families.")
-parser.add_argument("-t", "--treeLike", action="store_true", help="Generate a tree-like structure for all benchmarks")
-parser.add_argument("--saveFam", action="store_true", help="Save information about the different families")
+                    help="If set, creates a structure.json containing "\
+                    "information about the benchmark families.")
+parser.add_argument("-t", "--treeLike", action="store_true",
+                    help="Generate a tree-like structure for all benchmarks")
+parser.add_argument("--saveFam", action="store_true",
+                    help="Save information about the different families")
 
 
 benchdirs = ["amba/amba", # PSC: I suppose?
@@ -53,7 +54,8 @@ benchdirs = ["amba/amba", # PSC: I suppose?
              "simple_arbiter_log",
              "simple_arbiter_unreal",
              "tsl_paper",
-             "tsl_smart_home_jarvis/extracted-benchmarks"
+             "tsl_smart_home_jarvis/extracted-benchmarks",
+             "sweap",
              ]
 
 

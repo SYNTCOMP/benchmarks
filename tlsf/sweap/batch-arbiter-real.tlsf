@@ -1,0 +1,41 @@
+INFO {
+	TITLE:       ""
+	DESCRIPTION: ""
+	SEMANTICS:   Mealy
+	TARGET:      Mealy
+}
+MAIN {
+	INPUTS { 
+		request;
+		changeRoom;
+		pred__cnt_LT_cntprev_;
+		bin_cnt0;
+		pred_roomA;
+		pred__cntprev_LT_cnt_;
+		bin_st_0;
+		bin_cnt1
+	}
+	OUTPUTS { 
+		grantA;
+		grantB;
+		finished
+	}
+	ASSUMPTIONS {
+		(G(F(pred__cntprev_LT_cnt_)) -> G(F((pred__cnt_LT_cntprev_ || (bin_cnt0 && !bin_cnt1)))));
+
+		(G(F(pred__cnt_LT_cntprev_)) -> G(F((pred__cntprev_LT_cnt_ || (!bin_cnt0 && !bin_cnt1)))));
+
+		(bin_st_0 && !pred__cntprev_LT_cnt_ && !pred__cnt_LT_cntprev_ && pred_roomA && !bin_cnt0 && bin_cnt1);
+
+		((request && !changeRoom && X(bin_st_0) && !X(pred__cnt_LT_cntprev_) && X(pred__cntprev_LT_cnt_) && X(pred_roomA) && X(bin_cnt0) && !X(bin_cnt1)) || (!request && !changeRoom && !X(bin_st_0) && !X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && X(pred_roomA) && !X(bin_cnt0) && X(bin_cnt1)) || (request && changeRoom && X(bin_st_0) && !X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && X(pred_roomA) && !X(bin_cnt0) && X(bin_cnt1)) || (!request && changeRoom && X(bin_st_0) && !X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && !X(pred_roomA) && !X(bin_cnt0) && X(bin_cnt1)));
+
+		G((bin_st_0 -> ((request && changeRoom && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt0 <-> X(bin_cnt0)) && (bin_cnt1 <-> X(bin_cnt1)) && (pred_roomA <-> X(pred_roomA))) && X(bin_st_0)) || (request && changeRoom && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt0 <-> X(bin_cnt0)) && (bin_cnt1 <-> X(bin_cnt1)) && (pred_roomA <-> X(pred_roomA))) && X(bin_st_0)) || (request && !changeRoom && (!X(pred__cnt_LT_cntprev_) && X(pred__cntprev_LT_cnt_) && X(bin_cnt0) && !X(bin_cnt1) && (pred_roomA <-> X(pred_roomA))) && X(bin_st_0)) || (request && !changeRoom && (!X(pred__cnt_LT_cntprev_) && X(pred__cntprev_LT_cnt_) && X(bin_cnt0) && !X(bin_cnt1) && (pred_roomA <-> X(pred_roomA))) && X(bin_st_0)) || (!request && changeRoom && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt0 <-> X(bin_cnt0)) && (bin_cnt1 <-> X(bin_cnt1)) && ((!pred_roomA && X(pred_roomA)) || (pred_roomA && !X(pred_roomA)))) && X(bin_st_0)) || (!request && changeRoom && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt0 <-> X(bin_cnt0)) && (bin_cnt1 <-> X(bin_cnt1)) && ((!pred_roomA && X(pred_roomA)) || (pred_roomA && !X(pred_roomA)))) && X(bin_st_0)) || (!request && !changeRoom && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt0 <-> X(bin_cnt0)) && (bin_cnt1 <-> X(bin_cnt1)) && (pred_roomA <-> X(pred_roomA))) && !X(bin_st_0)) || (!request && !changeRoom && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt0 <-> X(bin_cnt0)) && (bin_cnt1 <-> X(bin_cnt1)) && (pred_roomA <-> X(pred_roomA))) && !X(bin_st_0)))));
+
+		G((!bin_st_0 -> ((pred_roomA && grantA && !grantB && bin_cnt0 && !bin_cnt1 && (bin_cnt0 && !bin_cnt1 && !X(pred__cntprev_LT_cnt_) && X(pred__cnt_LT_cntprev_) && pred_roomA && X(pred_roomA) && ((X(bin_cnt0) && !X(bin_cnt1)) || (!X(bin_cnt0) && X(bin_cnt1)))) && !X(bin_st_0)) || (!pred_roomA && grantB && !grantA && bin_cnt0 && !bin_cnt1 && (bin_cnt0 && !bin_cnt1 && !X(pred__cntprev_LT_cnt_) && X(pred__cnt_LT_cntprev_) && !X(pred_roomA) && !pred_roomA && ((X(bin_cnt0) && !X(bin_cnt1)) || (!X(bin_cnt0) && X(bin_cnt1)))) && !X(bin_st_0)) || (!bin_cnt0 && bin_cnt1 && finished && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && !bin_cnt0 && bin_cnt1 && !X(bin_cnt0) && X(bin_cnt1) && (pred_roomA <-> X(pred_roomA))) && X(bin_st_0)) || (((finished && !((((((!!(!bin_cnt0 && !bin_cnt1) && !(!bin_cnt0 && bin_cnt1)) || (!bin_cnt0 && bin_cnt1)) && !grantA) || (((!pred_roomA && ((!!(!bin_cnt0 && !bin_cnt1) && !(!bin_cnt0 && bin_cnt1)) || (!bin_cnt0 && bin_cnt1))) || (pred_roomA && ((bin_cnt0 && !bin_cnt1) || (!(bin_cnt0 && !bin_cnt1) && ((!!(!bin_cnt0 && !bin_cnt1) && !(!bin_cnt0 && bin_cnt1)) || (!bin_cnt0 && bin_cnt1)))))) && grantA)) && !grantB) || (((((!pred_roomA && ((bin_cnt0 && !bin_cnt1) || (!(bin_cnt0 && !bin_cnt1) && ((!!(!bin_cnt0 && !bin_cnt1) && !(!bin_cnt0 && bin_cnt1)) || (!bin_cnt0 && bin_cnt1))))) || (pred_roomA && ((!!(!bin_cnt0 && !bin_cnt1) && !(!bin_cnt0 && bin_cnt1)) || (!bin_cnt0 && bin_cnt1)))) && !grantA) || (grantA && ((!!(!bin_cnt0 && !bin_cnt1) && !(!bin_cnt0 && bin_cnt1)) || (!bin_cnt0 && bin_cnt1)))) && grantB))) || (!finished && !((!((!(!bin_cnt0 && !bin_cnt1) && !grantA) || (!((!!(!bin_cnt0 && !bin_cnt1) && !pred_roomA) || (pred_roomA && ((!!(!bin_cnt0 && !bin_cnt1) && !(bin_cnt0 && !bin_cnt1)) || (bin_cnt0 && !bin_cnt1)))) && grantA)) && !grantB) || (grantB && !((((!(!bin_cnt0 && !bin_cnt1) && !pred_roomA && !(bin_cnt0 && !bin_cnt1)) || (!(!bin_cnt0 && !bin_cnt1) && pred_roomA)) && !grantA) || (!(!bin_cnt0 && !bin_cnt1) && grantA)))))) && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt0 <-> X(bin_cnt0)) && (bin_cnt1 <-> X(bin_cnt1)) && (pred_roomA <-> X(pred_roomA))) && !X(bin_st_0)))));
+
+		true
+	}
+	GUARANTEES { 
+		G((!bin_st_0 -> F(bin_st_0)))
+	}
+}

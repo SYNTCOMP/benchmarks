@@ -1,0 +1,37 @@
+INFO {
+	TITLE:       ""
+	DESCRIPTION: ""
+	SEMANTICS:   Mealy
+	TARGET:      Mealy
+}
+MAIN {
+	INPUTS { 
+		stax;
+		eincx;
+		pred__yprev_LT_y_;
+		bin_y1;
+		bin_y0;
+		pred__y_LT_yprev_;
+		bin_st_0
+	}
+	OUTPUTS { 
+		incy;
+		decy
+	}
+	ASSUMPTIONS {
+		(G(F(pred__yprev_LT_y_)) -> G(F((pred__y_LT_yprev_ || (bin_y0 && !bin_y1)))));
+
+		(G(F(pred__y_LT_yprev_)) -> G(F((pred__yprev_LT_y_ || (!bin_y0 && !bin_y1)))));
+
+		(!bin_st_0 && !pred__yprev_LT_y_ && !pred__y_LT_yprev_ && !bin_y0 && bin_y1);
+
+		((incy && !decy && stax && !X(bin_st_0) && !X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && !X(bin_y0) && X(bin_y1)) || (incy && !decy && !stax && !eincx && !X(bin_st_0) && !X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && !X(bin_y0) && X(bin_y1)) || (!incy && decy && !stax && eincx && !X(bin_st_0) && !X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && !X(bin_y0) && X(bin_y1)) || ((incy <-> decy) && stax && !X(bin_st_0) && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && !X(bin_y0) && X(bin_y1)) || (incy && !decy && !stax && eincx && !X(bin_st_0) && !X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && !X(bin_y0) && X(bin_y1)) || ((incy <-> decy) && !stax && eincx && !X(bin_st_0) && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && !X(bin_y0) && X(bin_y1)) || ((incy <-> decy) && !stax && !eincx && !X(bin_st_0) && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && !X(bin_y0) && X(bin_y1)) || (!incy && decy && stax && !X(bin_st_0) && !X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && !X(bin_y0) && X(bin_y1)) || (!incy && decy && !stax && !eincx && !X(bin_st_0) && !X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && !X(bin_y0) && X(bin_y1)));
+
+		G((!bin_st_0 -> ((!incy && decy && !stax && !eincx && (!X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && ((bin_y0 && !bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))) || (!bin_y0 && !bin_y1 && !X(bin_y0) && !X(bin_y1)))) && !X(bin_st_0)) || (!incy && decy && !stax && !eincx && (!X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && ((bin_y0 && !bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))) || (!bin_y0 && !bin_y1 && !X(bin_y0) && !X(bin_y1)))) && !X(bin_st_0)) || (incy && !decy && !stax && eincx && (!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && ((bin_y0 && !bin_y1 && X(bin_y0) && !X(bin_y1)) || (!bin_y0 && bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && !bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))))) && !X(bin_st_0)) || (incy && !decy && !stax && eincx && (!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && ((bin_y0 && !bin_y1 && X(bin_y0) && !X(bin_y1)) || (!bin_y0 && bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && !bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))))) && !X(bin_st_0)) || (incy && !decy && stax && (!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && ((bin_y0 && !bin_y1 && X(bin_y0) && !X(bin_y1)) || (!bin_y0 && bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && !bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))))) && !X(bin_st_0)) || (incy && !decy && stax && (!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && ((bin_y0 && !bin_y1 && X(bin_y0) && !X(bin_y1)) || (!bin_y0 && bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && !bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))))) && !X(bin_st_0)) || (!incy && decy && stax && (!X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && ((bin_y0 && !bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))) || (!bin_y0 && !bin_y1 && !X(bin_y0) && !X(bin_y1)))) && !X(bin_st_0)) || (!incy && decy && stax && (!X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && ((bin_y0 && !bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))) || (!bin_y0 && !bin_y1 && !X(bin_y0) && !X(bin_y1)))) && !X(bin_st_0)) || (incy && !decy && !stax && !eincx && (!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && ((bin_y0 && !bin_y1 && X(bin_y0) && !X(bin_y1)) || (!bin_y0 && bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && !bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))))) && !X(bin_st_0)) || (incy && !decy && !stax && !eincx && (!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && ((bin_y0 && !bin_y1 && X(bin_y0) && !X(bin_y1)) || (!bin_y0 && bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && !bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))))) && !X(bin_st_0)) || ((incy <-> decy) && !stax && !eincx && (!X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && (bin_y0 <-> X(bin_y0)) && (bin_y1 <-> X(bin_y1))) && !X(bin_st_0)) || ((incy <-> decy) && !stax && !eincx && (!X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && (bin_y0 <-> X(bin_y0)) && (bin_y1 <-> X(bin_y1))) && !X(bin_st_0)) || ((incy <-> decy) && !stax && eincx && (!X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && (bin_y0 <-> X(bin_y0)) && (bin_y1 <-> X(bin_y1))) && !X(bin_st_0)) || ((incy <-> decy) && !stax && eincx && (!X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && (bin_y0 <-> X(bin_y0)) && (bin_y1 <-> X(bin_y1))) && !X(bin_st_0)) || ((incy <-> decy) && stax && (!X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && (bin_y0 <-> X(bin_y0)) && (bin_y1 <-> X(bin_y1))) && !X(bin_st_0)) || ((incy <-> decy) && stax && (!X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && (bin_y0 <-> X(bin_y0)) && (bin_y1 <-> X(bin_y1))) && !X(bin_st_0)) || (!incy && decy && !stax && eincx && (!X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && ((bin_y0 && !bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))) || (!bin_y0 && !bin_y1 && !X(bin_y0) && !X(bin_y1)))) && !X(bin_st_0)) || (!incy && decy && !stax && eincx && (!X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && ((bin_y0 && !bin_y1 && ((X(bin_y0) && !X(bin_y1)) || (!X(bin_y0) && X(bin_y1)))) || (!bin_y0 && bin_y1 && ((!X(bin_y0) && X(bin_y1)) || (!X(bin_y0) && !X(bin_y1)))) || (!bin_y0 && !bin_y1 && !X(bin_y0) && !X(bin_y1)))) && !X(bin_st_0)))));
+
+		true
+	}
+	GUARANTEES { 
+		G((!(!bin_y0 && !bin_y1) && ((!bin_y0 && bin_y1) || (!bin_y0 && !bin_y1))))
+	}
+}

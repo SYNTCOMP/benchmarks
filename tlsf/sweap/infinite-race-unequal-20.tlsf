@@ -1,0 +1,41 @@
+INFO {
+	TITLE:       ""
+	DESCRIPTION: ""
+	SEMANTICS:   Mealy
+	TARGET:      Mealy
+}
+MAIN {
+	INPUTS { 
+		ince;
+		bin_st_0;
+		pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__;
+		pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__;
+		bin_c_sub_e0;
+		bin_st_1
+	}
+	OUTPUTS { 
+		incc
+	}
+	ASSUMPTIONS {
+		(G(F(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__)) -> G(F((pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__ || bin_c_sub_e0))));
+
+		(G(F(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__)) -> G(F((pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__ || !bin_c_sub_e0))));
+
+		(bin_st_0 && !bin_st_1 && !pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__ && !pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__ && !bin_c_sub_e0);
+
+		((ince && X(bin_st_0) && !X(bin_st_1) && !X(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__) && X(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__) && !X(bin_c_sub_e0)) || (!ince && !X(bin_st_0) && !X(bin_st_1) && !X(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__) && !X(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__) && !X(bin_c_sub_e0)));
+
+		G(((bin_st_0 && !bin_st_1) -> ((ince && (!X(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__) && X(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__) && ((bin_c_sub_e0 && (X(bin_c_sub_e0) || !X(bin_c_sub_e0))) || (!bin_c_sub_e0 && !X(bin_c_sub_e0)))) && X(bin_st_0) && !X(bin_st_1)) || (ince && (!X(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__) && X(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__) && ((bin_c_sub_e0 && (X(bin_c_sub_e0) || !X(bin_c_sub_e0))) || (!bin_c_sub_e0 && !X(bin_c_sub_e0)))) && X(bin_st_0) && !X(bin_st_1)) || (!ince && (!X(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__) && !X(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__) && (bin_c_sub_e0 <-> X(bin_c_sub_e0))) && !X(bin_st_0) && !X(bin_st_1)) || (!ince && (!X(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__) && !X(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__) && (bin_c_sub_e0 <-> X(bin_c_sub_e0))) && !X(bin_st_0) && !X(bin_st_1)))));
+
+		G(((!bin_st_0 && !bin_st_1) -> ((incc && ince && (!X(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__) && X(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__) && ((bin_c_sub_e0 && (X(bin_c_sub_e0) || !X(bin_c_sub_e0))) || (!bin_c_sub_e0 && !X(bin_c_sub_e0)))) && !X(bin_st_0) && X(bin_st_1)) || (incc && !ince && (!X(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__) && X(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__) && ((bin_c_sub_e0 && X(bin_c_sub_e0)) || (!bin_c_sub_e0 && (X(bin_c_sub_e0) || !X(bin_c_sub_e0))))) && !X(bin_st_0) && !X(bin_st_1)) || (!incc && (!X(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__) && !X(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__) && (bin_c_sub_e0 <-> X(bin_c_sub_e0))) && X(bin_st_0) && !X(bin_st_1)))));
+
+		G(((!bin_st_0 && bin_st_1) -> ((!X(pred___c_ADD__MINUS_e__LT__cprev_ADD__MINUS_eprev__) && X(pred___cprev_ADD__MINUS_eprev__LT__c_ADD__MINUS_e__) && ((bin_c_sub_e0 && X(bin_c_sub_e0)) || (!bin_c_sub_e0 && (X(bin_c_sub_e0) || !X(bin_c_sub_e0))))) && !X(bin_st_0) && !X(bin_st_1))));
+
+		G(F((!bin_st_0 && !bin_st_1)));
+
+		G(F(!ince))
+	}
+	GUARANTEES { 
+		G(F((bin_st_0 && !bin_st_1 && bin_c_sub_e0)))
+	}
+}
