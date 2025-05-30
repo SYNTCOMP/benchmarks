@@ -1,0 +1,41 @@
+INFO {
+	TITLE:       ""
+	DESCRIPTION: ""
+	SEMANTICS:   Mealy
+	TARGET:      Mealy
+}
+MAIN {
+	INPUTS { 
+		request;
+		success;
+		bin_cnt0;
+		pred__cnt_LT_cntprev_;
+		pred__cntprev_LT_cnt_;
+		bin_cnt1;
+		bin_st_0
+	}
+	OUTPUTS { 
+		grant;
+		finished
+	}
+	ASSUMPTIONS {
+		(G(F(pred__cntprev_LT_cnt_)) -> G(F((pred__cnt_LT_cntprev_ || (bin_cnt0 && !bin_cnt1)))));
+
+		(G(F(pred__cnt_LT_cntprev_)) -> G(F((pred__cntprev_LT_cnt_ || (!bin_cnt0 && !bin_cnt1)))));
+
+		(bin_st_0 && !pred__cntprev_LT_cnt_ && !pred__cnt_LT_cntprev_ && !bin_cnt0 && bin_cnt1);
+
+		((request && X(bin_st_0) && !X(pred__cnt_LT_cntprev_) && X(pred__cntprev_LT_cnt_) && X(bin_cnt0) && !X(bin_cnt1)) || (!request && !X(bin_st_0) && !X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && !X(bin_cnt0) && X(bin_cnt1)));
+
+		G((bin_st_0 -> ((!request && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt1 <-> X(bin_cnt1)) && (bin_cnt0 <-> X(bin_cnt0))) && !X(bin_st_0)) || (!request && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt1 <-> X(bin_cnt1)) && (bin_cnt0 <-> X(bin_cnt0))) && !X(bin_st_0)) || (request && (X(bin_cnt0) && !X(bin_cnt1) && !X(pred__cnt_LT_cntprev_) && X(pred__cntprev_LT_cnt_)) && X(bin_st_0)) || (request && (X(bin_cnt0) && !X(bin_cnt1) && !X(pred__cnt_LT_cntprev_) && X(pred__cntprev_LT_cnt_)) && X(bin_st_0)))));
+
+		G((!bin_st_0 -> ((grant && !finished && success && (!X(pred__cntprev_LT_cnt_) && X(pred__cnt_LT_cntprev_) && bin_cnt0 && !bin_cnt1 && ((X(bin_cnt0) && !X(bin_cnt1)) || (!X(bin_cnt0) && X(bin_cnt1)))) && !X(bin_st_0)) || (finished && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt1 <-> X(bin_cnt1)) && (bin_cnt0 <-> X(bin_cnt0))) && X(bin_st_0)) || (!(grant && success) && !finished && (!X(pred__cntprev_LT_cnt_) && !X(pred__cnt_LT_cntprev_) && (bin_cnt1 <-> X(bin_cnt1)) && (bin_cnt0 <-> X(bin_cnt0))) && !X(bin_st_0)))));
+
+		G(F(success))
+	}
+	GUARANTEES { 
+		G(((finished && !bin_st_0) -> (!bin_cnt0 && bin_cnt1)));
+
+		G(F(bin_st_0))
+	}
+}

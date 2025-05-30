@@ -1,0 +1,44 @@
+INFO {
+	TITLE:       ""
+	DESCRIPTION: ""
+	SEMANTICS:   Mealy
+	TARGET:      Mealy
+}
+MAIN {
+	INPUTS { 
+		inc;
+		dooropen;
+		bin_at_floor_sub_target0;
+		bin_at_floor_sub_target1;
+		bin_st_0;
+		pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__;
+		pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__
+	}
+	OUTPUTS { 
+		up;
+		down;
+		notify
+	}
+	ASSUMPTIONS {
+		(G(F(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__)) -> G(F((pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__ || (bin_at_floor_sub_target0 && !bin_at_floor_sub_target1)))));
+
+		(G(F(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__)) -> G(F((pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__ || (!bin_at_floor_sub_target0 && !bin_at_floor_sub_target1)))));
+
+		(bin_st_0 && !pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__ && !pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__ && !bin_at_floor_sub_target0 && bin_at_floor_sub_target1);
+
+		((!dooropen && !X(bin_st_0) && !X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && !X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && !X(bin_at_floor_sub_target0) && X(bin_at_floor_sub_target1)) || (inc && dooropen && X(bin_st_0) && !X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && !X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!inc && dooropen && X(bin_st_0) && !X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)));
+
+		G((bin_st_0 -> ((inc && dooropen && (!X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && ((bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && ((X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!X(bin_at_floor_sub_target0) && X(bin_at_floor_sub_target1)))) || (!bin_at_floor_sub_target0 && bin_at_floor_sub_target1 && !X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && !X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)))) && X(bin_st_0)) || (inc && dooropen && (!X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && ((bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && ((X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!X(bin_at_floor_sub_target0) && X(bin_at_floor_sub_target1)))) || (!bin_at_floor_sub_target0 && bin_at_floor_sub_target1 && !X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && !X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)))) && X(bin_st_0)) || (!inc && dooropen && (!X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && ((bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!bin_at_floor_sub_target0 && bin_at_floor_sub_target1 && X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && ((!X(bin_at_floor_sub_target0) && X(bin_at_floor_sub_target1)) || (!X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)))))) && X(bin_st_0)) || (!inc && dooropen && (!X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && ((bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!bin_at_floor_sub_target0 && bin_at_floor_sub_target1 && X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && ((!X(bin_at_floor_sub_target0) && X(bin_at_floor_sub_target1)) || (!X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)))))) && X(bin_st_0)) || (!dooropen && (!X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && !X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && (bin_at_floor_sub_target0 <-> X(bin_at_floor_sub_target0)) && (bin_at_floor_sub_target1 <-> X(bin_at_floor_sub_target1))) && !X(bin_st_0)) || (!dooropen && (!X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && !X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && (bin_at_floor_sub_target0 <-> X(bin_at_floor_sub_target0)) && (bin_at_floor_sub_target1 <-> X(bin_at_floor_sub_target1))) && !X(bin_st_0)))));
+
+		G((!bin_st_0 -> ((dooropen && !(!bin_at_floor_sub_target0 && !bin_at_floor_sub_target1) && !(bin_at_floor_sub_target0 && !bin_at_floor_sub_target1) && !(up && !down) && !(!up && down) && (!X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && !X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && !X(bin_at_floor_sub_target0) && X(bin_at_floor_sub_target1) && !bin_at_floor_sub_target0 && bin_at_floor_sub_target1) && X(bin_st_0)) || ((up <-> down) && !(dooropen && !(!bin_at_floor_sub_target0 && !bin_at_floor_sub_target1) && !(bin_at_floor_sub_target0 && !bin_at_floor_sub_target1)) && (!X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && !X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && (bin_at_floor_sub_target0 <-> X(bin_at_floor_sub_target0)) && (bin_at_floor_sub_target1 <-> X(bin_at_floor_sub_target1))) && !X(bin_st_0)) || (up && !down && (!X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && ((bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!bin_at_floor_sub_target0 && bin_at_floor_sub_target1 && X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && ((!X(bin_at_floor_sub_target0) && X(bin_at_floor_sub_target1)) || (!X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)))))) && !X(bin_st_0)) || (!up && down && (!X(pred___atfloorprev_ADD__MINUS_targetprev__LT__atfloor_ADD__MINUS_target__) && X(pred___atfloor_ADD__MINUS_target__LT__atfloorprev_ADD__MINUS_targetprev__) && ((bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && ((X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!X(bin_at_floor_sub_target0) && X(bin_at_floor_sub_target1)))) || (!bin_at_floor_sub_target0 && bin_at_floor_sub_target1 && !X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)) || (!bin_at_floor_sub_target0 && !bin_at_floor_sub_target1 && !X(bin_at_floor_sub_target0) && !X(bin_at_floor_sub_target1)))) && !X(bin_st_0)))));
+
+		G(F(dooropen));
+
+		G(F(!dooropen))
+	}
+	GUARANTEES { 
+		G(F((!bin_at_floor_sub_target0 && bin_at_floor_sub_target1)));
+
+		G((dooropen -> (up <-> down)))
+	}
+}

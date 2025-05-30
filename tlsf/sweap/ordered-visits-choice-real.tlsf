@@ -1,0 +1,43 @@
+INFO {
+	TITLE:       ""
+	DESCRIPTION: ""
+	SEMANTICS:   Mealy
+	TARGET:      Mealy
+}
+MAIN {
+	INPUTS { 
+		bin_dX0;
+		bin_x1;
+		bin_dX2;
+		pred__x_LT_xprev_;
+		pred__xprev_LT_x_;
+		bin_dX1;
+		bin_st_0;
+		bin_x0
+	}
+	OUTPUTS { 
+		flipx
+	}
+	ASSUMPTIONS {
+		(G(F(pred__xprev_LT_x_)) -> G(F((pred__x_LT_xprev_ || (bin_x0 && bin_x1)))));
+
+		(G(F(pred__x_LT_xprev_)) -> G(F((pred__xprev_LT_x_ || (!bin_x0 && !bin_x1)))));
+
+		(!bin_st_0 && !pred__xprev_LT_x_ && !pred__x_LT_xprev_ && !bin_x0 && bin_x1 && !bin_dX0 && bin_dX1 && bin_dX2);
+
+		((!flipx && X(bin_st_0) && !X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !X(bin_x0) && X(bin_x1) && !X(bin_dX0) && X(bin_dX1) && X(bin_dX2)) || (flipx && X(bin_st_0) && !X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && !X(bin_x0) && X(bin_x1) && !X(bin_dX0) && !X(bin_dX1) && X(bin_dX2)));
+
+		G((!bin_st_0 -> ((!flipx && (!X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && (bin_dX0 <-> X(bin_dX0)) && (bin_dX2 <-> X(bin_dX2)) && (bin_x1 <-> X(bin_x1)) && (bin_x0 <-> X(bin_x0)) && (bin_dX1 <-> X(bin_dX1))) && X(bin_st_0)) || (!flipx && (!X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && (bin_dX0 <-> X(bin_dX0)) && (bin_dX2 <-> X(bin_dX2)) && (bin_x1 <-> X(bin_x1)) && (bin_x0 <-> X(bin_x0)) && (bin_dX1 <-> X(bin_dX1))) && X(bin_st_0)) || (flipx && (!X(bin_dX0) && !X(bin_dX1) && X(bin_dX2) && !X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && (bin_x0 <-> X(bin_x0)) && (bin_x1 <-> X(bin_x1))) && X(bin_st_0)) || (flipx && (!X(bin_dX0) && !X(bin_dX1) && X(bin_dX2) && !X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_) && (bin_x0 <-> X(bin_x0)) && (bin_x1 <-> X(bin_x1))) && X(bin_st_0)))));
+
+		G((bin_st_0 -> ((!(!bin_x0 && bin_x1) && !(!bin_x0 && !bin_x1) && (!X(bin_dX0) && !X(bin_dX1) && X(bin_dX2) && !X(pred__xprev_LT_x_) && X(pred__x_LT_xprev_) && ((bin_x0 && bin_x1 && ((X(bin_x0) && X(bin_x1)) || (X(bin_x0) && !X(bin_x1)))) || (bin_x0 && !bin_x1 && !X(bin_x0) && X(bin_x1)))) && X(bin_st_0)) || (!bin_x0 && !bin_x1 && (!X(pred__x_LT_xprev_) && X(pred__xprev_LT_x_) && !bin_x0 && !bin_x1 && !X(bin_dX0) && X(bin_dX1) && X(bin_dX2) && ((!X(bin_x0) && X(bin_x1)) || (!X(bin_x0) && !X(bin_x1)))) && X(bin_st_0)) || (!(!bin_x0 && !bin_x1) && !(!(!bin_x0 && bin_x1) && !(!bin_x0 && !bin_x1)) && (!bin_x0 && bin_x1 && (bin_dX0 <-> X(bin_dX0)) && (bin_dX1 <-> X(bin_dX1)) && (bin_dX2 <-> X(bin_dX2)) && ((bin_dX0 && !bin_dX1 && !bin_dX2 && ((X(bin_x0) && X(bin_x1) && !X(pred__x_LT_xprev_) && X(pred__xprev_LT_x_)) || (X(bin_x0) && !X(bin_x1) && !X(pred__x_LT_xprev_) && X(pred__xprev_LT_x_)) || (!X(bin_x0) && X(bin_x1) && !X(pred__x_LT_xprev_) && X(pred__xprev_LT_x_)))) || (!bin_dX0 && bin_dX1 && bin_dX2 && ((X(bin_x0) && !X(bin_x1) && !X(pred__x_LT_xprev_) && X(pred__xprev_LT_x_)) || (!X(bin_x0) && X(bin_x1) && !X(pred__x_LT_xprev_) && X(pred__xprev_LT_x_)))) || (!bin_dX0 && bin_dX1 && !bin_dX2 && !X(bin_x0) && X(bin_x1) && !X(pred__xprev_LT_x_) && !X(pred__x_LT_xprev_)) || (!bin_dX0 && !bin_dX1 && bin_dX2 && ((!X(bin_x0) && X(bin_x1) && !X(pred__xprev_LT_x_) && X(pred__x_LT_xprev_)) || (!X(bin_x0) && !X(bin_x1) && !X(pred__xprev_LT_x_) && X(pred__x_LT_xprev_)))) || (!bin_dX0 && !bin_dX1 && !bin_dX2 && ((!X(bin_x0) && X(bin_x1) && !X(pred__xprev_LT_x_) && X(pred__x_LT_xprev_)) || (!X(bin_x0) && !X(bin_x1) && !X(pred__xprev_LT_x_) && X(pred__x_LT_xprev_)))))) && X(bin_st_0)))));
+
+		true
+	}
+	GUARANTEES { 
+		F((!(!bin_x0 && bin_x1) && !(!bin_x0 && !bin_x1)));
+
+		F(!(bin_x0 && bin_x1));
+
+		(G(!(!bin_x0 && !bin_x1)) || (!(!bin_x0 && !bin_x1) U (!(!bin_x0 && bin_x1) && !(!bin_x0 && !bin_x1))))
+	}
+}

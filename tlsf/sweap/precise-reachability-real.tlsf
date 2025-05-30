@@ -1,0 +1,46 @@
+INFO {
+	TITLE:       ""
+	DESCRIPTION: ""
+	SEMANTICS:   Mealy
+	TARGET:      Mealy
+}
+MAIN {
+	INPUTS { 
+		incy;
+		done;
+		pred___MINUS_x_LT__MINUS_xprev_;
+		pred__y_LT_yprev_;
+		bin__min_x0;
+		bin_y0;
+		pred__yprev_LT_y_;
+		bin_st_0
+	}
+	OUTPUTS { 
+		updatex;
+		updatey
+	}
+	ASSUMPTIONS {
+		(G(F(pred__yprev_LT_y_)) -> G(F((pred__y_LT_yprev_ || bin_y0))));
+
+		(G(F(pred__y_LT_yprev_)) -> G(F((pred__yprev_LT_y_ || !bin_y0))));
+
+		(G(F(pred___MINUS_x_LT__MINUS_xprev_)) -> G(F(!bin__min_x0)));
+
+		(!bin_st_0 && !pred___MINUS_x_LT__MINUS_xprev_ && !bin__min_x0 && !pred__yprev_LT_y_ && !pred__y_LT_yprev_ && !bin_y0);
+
+		((!done && !incy && !X(bin_st_0) && !X(pred___MINUS_x_LT__MINUS_xprev_) && !X(bin__min_x0) && !X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && !X(bin_y0)) || (!done && incy && !X(bin_st_0) && !X(pred___MINUS_x_LT__MINUS_xprev_) && !X(bin__min_x0) && !X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && !X(bin_y0)) || (done && X(bin_st_0) && !X(pred___MINUS_x_LT__MINUS_xprev_) && !X(bin__min_x0) && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && !X(bin_y0)));
+
+		G((!bin_st_0 -> ((!done && !incy && (!X(pred___MINUS_x_LT__MINUS_xprev_) && !X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && (bin__min_x0 <-> X(bin__min_x0)) && ((bin_y0 && (X(bin_y0) || !X(bin_y0))) || (!bin_y0 && !X(bin_y0)))) && !X(bin_st_0)) || (!done && !incy && (!X(pred___MINUS_x_LT__MINUS_xprev_) && !X(pred__yprev_LT_y_) && X(pred__y_LT_yprev_) && (bin__min_x0 <-> X(bin__min_x0)) && ((bin_y0 && (X(bin_y0) || !X(bin_y0))) || (!bin_y0 && !X(bin_y0)))) && !X(bin_st_0)) || (done && (!X(pred___MINUS_x_LT__MINUS_xprev_) && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && (bin__min_x0 <-> X(bin__min_x0)) && (bin_y0 <-> X(bin_y0))) && X(bin_st_0)) || (done && (!X(pred___MINUS_x_LT__MINUS_xprev_) && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && (bin__min_x0 <-> X(bin__min_x0)) && (bin_y0 <-> X(bin_y0))) && X(bin_st_0)) || (!done && incy && (!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && !X(pred___MINUS_x_LT__MINUS_xprev_) && (bin__min_x0 <-> X(bin__min_x0)) && ((bin_y0 && X(bin_y0)) || (!bin_y0 && (X(bin_y0) || !X(bin_y0))))) && !X(bin_st_0)) || (!done && incy && (!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && !X(pred___MINUS_x_LT__MINUS_xprev_) && (bin__min_x0 <-> X(bin__min_x0)) && ((bin_y0 && X(bin_y0)) || (!bin_y0 && (X(bin_y0) || !X(bin_y0))))) && !X(bin_st_0)))));
+
+		G((bin_st_0 -> ((!updatex && !updatey && (!X(pred___MINUS_x_LT__MINUS_xprev_) && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && (bin__min_x0 <-> X(bin__min_x0)) && (bin_y0 <-> X(bin_y0))) && X(bin_st_0)) || (!updatex && updatey && (!X(pred___MINUS_x_LT__MINUS_xprev_) && (bin__min_x0 <-> X(bin__min_x0)) && ((bin_y0 && bin__min_x0 && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && X(bin_y0)) || (bin_y0 && !bin__min_x0 && !X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && X(bin_y0)) || (!bin_y0 && bin__min_x0 && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && !X(bin_y0)) || (!bin_y0 && !bin__min_x0 && ((!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && X(bin_y0)) || (!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && !X(bin_y0)))))) && X(bin_st_0)) || (updatex && !updatey && (!X(bin__min_x0) && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && X(pred___MINUS_x_LT__MINUS_xprev_) && (bin_y0 <-> X(bin_y0))) && X(bin_st_0)) || (updatex && updatey && (!X(bin__min_x0) && X(pred___MINUS_x_LT__MINUS_xprev_) && ((bin_y0 && bin__min_x0 && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && X(bin_y0)) || (bin_y0 && !bin__min_x0 && !X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && X(bin_y0)) || (!bin_y0 && bin__min_x0 && !X(pred__yprev_LT_y_) && !X(pred__y_LT_yprev_) && !X(bin_y0)) || (!bin_y0 && !bin__min_x0 && ((!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && X(bin_y0)) || (!X(pred__y_LT_yprev_) && X(pred__yprev_LT_y_) && !X(bin_y0)))))) && X(bin_st_0)))));
+
+		F(done)
+	}
+	GUARANTEES { 
+		G((bin_st_0 -> updatex));
+
+		G((bin_st_0 -> X(G(updatey))));
+
+		F(bin_y0)
+	}
+}
