@@ -11,12 +11,26 @@ directories.
 
 ## Random
 
-The **Random** datasets are constructed from basic cases taken from LTL synthesis datasets [Lily](https://www.react.uni-saarland.de/tools/unbeast/) and [Load balancer](https://www.react.uni-saarland.de/tools/unbeast/). Formally, a random conjunction formula <img alt="RC(L)" src="https://render.githubusercontent.com/render/math?math=RC%28L%29" style="transform: translateY(20%);" /> has the form:
-<img alt="RC(L) = \bigwedge_{1\leq i\leq L}P_i(v_1,v_2,...,v_k)," src="https://render.githubusercontent.com/render/math?math=RC%28L%29%20%3D%20%5Cbigwedge_%7B1%5Cleq%20i%5Cleq%20L%7DP_i%28v_1%2Cv_2%2C...%2Cv_k%29%2C" style="transform: translateY(20%);" />
-where <img alt="L" src="https://render.githubusercontent.com/render/math?math=L" style="transform: translateY(20%);" /> is the number of conjuncts, or the length of the formula, and <img alt="P_i" src="https://render.githubusercontent.com/render/math?math=P_i" style="transform: translateY(20%);" /> is a randomly selected basic case. Variables <img alt="v_1,v_2,...,v_k" src="https://render.githubusercontent.com/render/math?math=v_1%2Cv_2%2C...%2Cv_k" style="transform: translateY(20%);" /> are chosen randomly from a set of <img alt="m" src="https://render.githubusercontent.com/render/math?math=m" style="transform: translateY(20%);" /> candidate variables. Given <img alt="L" src="https://render.githubusercontent.com/render/math?math=L" style="transform: translateY(20%);" /> and <img alt="m" src="https://render.githubusercontent.com/render/math?math=m" style="transform: translateY(20%);" /> (the size of the candidate variable set), we generate a formula <img alt="RC(L)" src="https://render.githubusercontent.com/render/math?math=RC%28L%29" style="transform: translateY(20%);" /> in the following way:
-* Randomly select <img alt="L" src="https://render.githubusercontent.com/render/math?math=L" style="transform: translateY(20%);" /> basic cases;
-* For each case <img alt="\phi" src="https://render.githubusercontent.com/render/math?math=%5Cphi" style="transform: translateY(20%);" />, substitute every variable <img alt="v" src="https://render.githubusercontent.com/render/math?math=v" style="transform: translateY(20%);" /> with a random new variable <img alt="v'" src="https://render.githubusercontent.com/render/math?math=v%27" style="transform: translateY(20%);" /> chosen from <img alt="m" src="https://render.githubusercontent.com/render/math?math=m" style="transform: translateY(20%);" /> atomic propositions.
-If <img alt="v" src="https://render.githubusercontent.com/render/math?math=v" style="transform: translateY(20%);" /> is an environment-variable in <img alt="\phi" src="https://render.githubusercontent.com/render/math?math=%5Cphi" style="transform: translateY(20%);" />, then <img alt="v'" src="https://render.githubusercontent.com/render/math?math=v%27" style="transform: translateY(20%);" /> is also an environment-variable in <img alt="RC(L)" src="https://render.githubusercontent.com/render/math?math=RC%28L%29" style="transform: translateY(20%);" />. The same applies to the agent-variables.
+The **Random** datasets are constructed from basic cases taken from LTL
+synthesis datasets [Lily](https://www.react.uni-saarland.de/tools/unbeast/)
+and [Load balancer](https://www.react.uni-saarland.de/tools/unbeast/).
+Formally, a random conjunction formula $RC(L)$
+has the form:
+
+$RC(L) = \bigwedge_{1\leq i\leq L}P_i(v_1,v_2,...,v_k)$
+
+where $L$  is the number of conjuncts, or the length of the formula, and $P_i$
+is a randomly selected basic case.
+Variables $v_1,v_2,...,v_k$
+are chosen randomly from a set of $m$
+candidate variables. Given $L$
+and $m$
+(the size of the candidate variable
+set), we generate a formula $RC(L)$
+in the following way:
+* Randomly select $L$ basic cases;
+* For each case $\phi$, substitute every variable $v$ with a random new variable $v$ chosen from $m$ atomic propositions.
+If $v$ is an environment-variable in $\phi$, then $v$ is also an environment-variable in $RC(L)$. The same applies to the agent-variables.
 
 This class of datasets has 1400 instances, from which there are 1000 are from [DF21](http://www.diag.uniroma1.it//degiacom/papers/2021/icaps2021df.pdf), and 400 are from [ZTLPV17](https://arxiv.org/pdf/1705.08426.pdf).
 
@@ -57,8 +71,8 @@ player who removes the last token loses.
 
 ### GF family
 
-$GF(n) = G(p_1) \wedge F(q_2) \wedge F(q_3) \wedge ... \wedge F(q_n))$
+$GF(n) = G(p_1) \wedge F(q_2) \wedge F(q_3) \wedge ... \wedge F(q_n)$
 
 ### U family
 
-![formula](https://render.githubusercontent.com/render/math?math=U(n)%20=%20p_1%20U%20(p_2%20U%20(%20\ldots%20p_{n-1}%20U%20p_n)%20\ldots))
+$U(n)=p_1 U (p_2 U (\dots p_{n-1} U p_n ) \dots))$
