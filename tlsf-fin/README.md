@@ -22,7 +22,15 @@ This class of datasets has 1400 instances, from which there are 1000 are from [D
 
 ### Single-Counter family
 
-This dataset family is a simple example where the behavior of the system is completely determined by the actions of the environment. Therefore, the challenge in this family lies mostly in proving that the specification is realizable. The system stores an <img alt="n" src="https://render.githubusercontent.com/render/math?math=n" style="transform: translateY(20%);" />-bit counter (where <img alt="n" src="https://render.githubusercontent.com/render/math?math=n" style="transform: translateY(20%);" /> is the scaling parameter) which it must increment upon a signal by the environment. The system wins if the counter eventually overflows to <img alt="0" src="https://render.githubusercontent.com/render/math?math=0" style="transform: translateY(20%);" />. To guarantee that the game is winning for the system, the specification assumes that the environment will send the increment signal at least once every two timesteps.
+This dataset family is a simple example where the behavior of the system is
+completely determined by the actions of the environment. Therefore, the
+challenge in this family lies mostly in proving that the specification is
+realizable. The system stores an $n$-bit counter (where $n$
+ is the scaling parameter) which it must
+increment upon a signal by the environment. The system wins if the counter
+eventually overflows to $0$. To guarantee that the game is winning
+for the system, the specification assumes that the environment will send the
+increment signal at least once every two timesteps.
 
 ### Double-Counter family
 
