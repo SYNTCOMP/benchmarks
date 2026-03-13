@@ -90,7 +90,7 @@ def makeBenchmarks(args):
 import re, json
 parRE = re.compile(r"(.*)_pb_(.*)_pe_.*")
 
-def genFam_(path:str) -> None:
+def genFam_(path:str, ftype=".tlsf") -> None:
 
     allFam = dict()
 
@@ -112,7 +112,7 @@ def genFam_(path:str) -> None:
             thisFam.append([pars[-1], inst])
     
     for inst in os.listdir(path):
-        if not inst.endswith(".tlsf"):
+        if not inst.endswith(ftype):
             continue
         inst = inst[:-5]
         store_(inst, allFam)
