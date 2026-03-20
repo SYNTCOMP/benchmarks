@@ -3,7 +3,7 @@
 The datasets for finite-synthesis include three classes:
 * The first one is  from the **Random** family, composed of LTLf formulas formed by random conjunction, generated as described in [ZTLPV17](https://arxiv.org/pdf/1705.08426.pdf). 
 * The second one is from [TV19](https://www.ijcai.org/Proceedings/2019/0777.pdf) and [BLTV20](https://arxiv.org/pdf/1911.08145.pdf), which describes **Two-player games**, split into the *Single-Counter*, *Double-Counters* and *Nim* dataset families.
-* The third one is from [XLZSPV20](https://ojs.aaai.org/index.php/AAAI/article/view/16809/16616), originated from [RV07](https://www.cs.rice.edu/~vardi/papers/spin07rj.pdf) and [GH06](https://www.researchgate.net/publication/221105722_Larger_Automata_and_Less_Work_for_LTL_Model_Checking), which consists of **Pattern formuls**, split into the *GF* and *U* dataset families.
+* The third one is from [XLZSPV20](https://ojs.aaai.org/index.php/AAAI/article/view/16809/16616), originated from [RV07](https://www.cs.rice.edu/~vardi/papers/spin07rj.pdf) and [GH06](https://www.researchgate.net/publication/221105722_Larger_Automata_and_Less_Work_for_LTL_Model_Checking), which consists of **Pattern formulas**, split into the *GF* and *U* dataset families.
 Moreover, for each family, we only consider the version of having the agent as the first player.
 
 For other benchmark classes, see the README files in the corresponding
@@ -32,7 +32,7 @@ in the following way:
 * For each case $\phi$, substitute every variable $v$ with a random new variable $v$ chosen from $m$ atomic propositions.
 If $v$ is an environment-variable in $\phi$, then $v$ is also an environment-variable in $RC(L)$. The same applies to the agent-variables.
 
-This class of datasets has 1400 instances, from which there are 1000 are from [DF21](http://www.diag.uniroma1.it//degiacom/papers/2021/icaps2021df.pdf), and 400 are from [ZTLPV17](https://arxiv.org/pdf/1705.08426.pdf).
+This class of datasets has 1400 instances, from which there are 400 are from [DF21](http://www.diag.uniroma1.it//degiacom/papers/2021/icaps2021df.pdf), and 1000 are from [ZTLPV17](https://arxiv.org/pdf/1705.08426.pdf).
 
 ## Two-player game
 
