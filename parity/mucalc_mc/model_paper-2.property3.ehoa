@@ -2,7 +2,7 @@ HOA: v1
 States: 7918
 Start: 0
 acc-name: parity max even 1
-Acceptance: 1 f
+Acceptance: 1 Inf(0)
 AP: 6 "pl0_0" "pl0_1" "pl0_2" "pl1_0" "pl1_1" "pl1_2"
 controllable-AP: 0 1 2
 properties: deterministic complete colored
