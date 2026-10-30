@@ -67,6 +67,10 @@ tokens each. The environment and the
 system take turns removing any number of tokens from one of the heaps, and the
 player who removes the last token loses.
 
+Nim uses Mealy semantics so that the system can update the heaps in response to the environment's current move; see [#40](https://github.com/SYNTCOMP/benchmarks/issues/40).
+
+The per-instance [realizability results](Two-player-Game/Nim/realizability.csv) record Spot 2.16 (`ltlfsynt --tlsf <file> --realiz`) outcomes, resource limits, and agreement with the rule in #40. New runs are sequential, with a 60-second timeout and a 6,000,000 KiB virtual-memory limit. For each N, M is processed in ascending order: after three consecutive timeouts or memory exhaustion results, larger M are skipped, while any previously solved results are retained. These outcomes all have status `unknown`, with distinct reasons `timeout`, `memout`, and `skipped`. Reused results are marked separately; only definitive results are compared with the rule.
+
 ## Pattern formulas
 
 ### GF family

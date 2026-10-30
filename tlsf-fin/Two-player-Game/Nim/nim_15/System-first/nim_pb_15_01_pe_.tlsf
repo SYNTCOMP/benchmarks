@@ -1,8 +1,8 @@
 INFO {
   TITLE:       "nim_15_01"
   DESCRIPTION: "Two-player-Game/Nim/nim_15/System-first"
-  SEMANTICS:   Finite,Moore
-  TARGET:      Moore
+  SEMANTICS:   Finite,Mealy
+  TARGET:      Mealy
 }
 
 MAIN {
@@ -82,3 +82,6 @@ MAIN {
   }
 
 }
+//#!SYNTCOMP
+//STATUS : unknown
+//#
