@@ -14,3 +14,19 @@ enabled parameter combinations from the status CSVs. The existing `benchdirs`
 list defines the available families. Both `selectBenchmarks.py` and
 `genParametric.py` accept `--manifest PATH`; see the
 [manifest format and examples](../selection/readme.md).
+
+Parametric generation requires Python's existing `pandas` dependency and the
+[`syfco`](https://github.com/reactive-systems/syfco) executable on `PATH`.
+The generator replaces assignments only in `GLOBAL { PARAMETERS { ... } }`,
+handling comments, multiple assignments per line, and multi-line values. CSV
+parameter names must match the template declarations. It retains the existing
+formatting of generated standalone assignments and appends the `//#!SYNTCOMP`
+status/reference-size tags. It checks the generated TLSF with `syfco -in -c`
+before writing it; syfco errors stop generation.
+
+Direct overrides with `syfco -f full -op name=value` were tested with syfco
+1.2.1.2. Although full output retains the high-level structure and comments,
+tabs before parameter assignments can shift the replacement into a comment
+(for example in `arbiters_zoo/parametric/arbiter_with_cancel.tlsf`), producing
+invalid TLSF. Textual substitution avoids this issue without changing the
+generated benchmarks.

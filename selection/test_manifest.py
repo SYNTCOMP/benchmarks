@@ -23,7 +23,10 @@ class ManifestTests(unittest.TestCase):
         self.track = self.root / "tlsf"
         self.template = self.track / "family/parametric/example.tlsf"
         self.template.parent.mkdir(parents=True)
-        self.template.touch()
+        self.template.write_text(
+            'INFO { TITLE: "test" DESCRIPTION: "test" SEMANTICS: Mealy TARGET: Mealy }\n'
+            'GLOBAL { PARAMETERS { n = 1; m = 2; } }\n'
+            'MAIN { INPUTS { a[n]; } OUTPUTS { b; } GUARANTEES { b; } }\n')
         self.template.with_suffix(".csv").write_text(
             "n,m,refsize,status\n1,2,0,unknown\n2,3,4,realizable\n")
         (self.track / "family/plain.tlsf").touch()
@@ -41,7 +44,12 @@ class ManifestTests(unittest.TestCase):
         self.require_pandas()
         repo = Path(__file__).resolve().parent.parent
         with patch.object(sys, "path", [str(repo / "tlsf")] + sys.path):
-            return runpy.run_path(str(repo / "tlsf/selectBenchmarks.py"))
+            selector = runpy.run_path(str(repo / "tlsf/selectBenchmarks.py"))
+        # These tests cover selection; tlsf/test_genParametric.py checks syfco.
+        checker = patch("genParametric.runSyfco", return_value="")
+        checker.start()
+        self.addCleanup(checker.stop)
+        return selector
 
     def test_default_and_last_matching_rule(self):
         manifest = self.manifest(
@@ -234,7 +242,7 @@ class ManifestTests(unittest.TestCase):
 
     def test_parameter_text_is_preserved_with_numeric_generation_order(self):
         generate = self.tlsf_selector()["generateAllParametric"]
-        self.template.write_text("n = 1;\n")
+        self.template.write_text(self.template.read_text().replace(" m = 2;", ""))
         self.template.with_suffix(".csv").write_text(
             "n,refsize,status\n 05 ,0,unknown\n5,1,realizable\n10,2,realizable\n2,3,realizable\n")
         manifest = self.manifest("family/parametric/example.tlsf,n=05,0,exclude\n")
@@ -249,12 +257,13 @@ class ManifestTests(unittest.TestCase):
                             "example_pb_10_pe_.tlsf"]
                 if not exclude:
                     expected.insert(1, "example_pb_05_pe_.tlsf")
-                    self.assertTrue((Path(output) / expected[1]).read_text().startswith("n = 05;\n"))
+                    self.assertIn("n = 05;", (Path(output) / expected[1]).read_text())
                 self.assertEqual(info, expected)
                 self.assertEqual(counts, dict(found=4, selected=len(expected), disabled=int(exclude)))
 
     def test_tlsf_metadata_uses_only_files_written_in_this_run(self):
         selector = self.tlsf_selector()
+        self.template.write_text(self.template.read_text().replace(" m = 2;", ""))
         self.template.with_suffix(".csv").write_text(
             "n,refsize,status\n1,0,unknown\n2,1,realizable\n")
         ordinary = self.track / "ordinary"
