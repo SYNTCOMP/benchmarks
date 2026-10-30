@@ -10,8 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from selection.manifest import Manifest
 
 
-def read_status(template):
-    path = template.with_suffix(".csv")
+def read_status(path, warnings):
     with path.open(newline="", encoding="utf-8") as source:
         reader = csv.DictReader(source, strict=True)
         header = reader.fieldnames or []
@@ -20,11 +19,19 @@ def read_status(template):
                 or "refsize" not in header or "status" not in header):
             raise ValueError(f"{path}: expected parameters...,refsize,status")
         rows = []
+        seen = {}
         for row in reader:
             if None in row or any(value is None for value in row.values()):
                 raise ValueError(f"{path}:{reader.line_num}: malformed status row")
-            rows.append(({name: row[name].strip() for name in params},
-                         row["status"].strip()))
+            values = {name: row[name].strip() for name in params}
+            key = tuple(values.items())
+            if key in seen:
+                assignments = ";".join(f"{name}={value}" for name, value in values.items())
+                warnings.append(f"{path}:{reader.line_num}: duplicate parameter row "
+                                f"[{assignments}]; first at line {seen[key]}")
+            else:
+                seen[key] = reader.line_num
+            rows.append((values, row["status"].strip()))
     return rows
 
 
@@ -35,10 +42,18 @@ def check_manifest(manifest, track_root):
     files = {path.relative_to(track_root).as_posix(): path
              for path in sorted(track_root.rglob("*" + suffix)) if path.is_file()}
     statuses = {}
-    for relpath, path in files.items():
-        if suffix == ".tlsf" and path.parent.name == "parametric":
+    if suffix == ".tlsf":
+        # Include CSVs without a template, and still diagnose missing template CSVs.
+        csv_paths = {path for path in track_root.rglob("*.csv")
+                     if path.parent.name == "parametric" and path.is_file()}
+        csv_paths.update(path.with_suffix(".csv") for path in files.values()
+                         if path.parent.name == "parametric")
+        for path in sorted(csv_paths):
             try:
-                statuses[relpath] = read_status(path)
+                rows = read_status(path, warnings)
+                relpath = path.with_suffix(".tlsf").relative_to(track_root).as_posix()
+                if relpath in files:
+                    statuses[relpath] = rows
             except (OSError, csv.Error, ValueError) as error:
                 errors.append(str(error))
 
@@ -66,6 +81,61 @@ def check_manifest(manifest, track_root):
     return errors, warnings
 
 
+def check_parity_duplicates(manifest, track_root):
+    """Check recorded exclusions without loading or comparing benchmark games."""
+    duplicates = track_root / "duplicates.csv"
+    try:
+        with duplicates.open(newline="", encoding="utf-8") as source:
+            reader = csv.DictReader(source, strict=True)
+            if reader.fieldnames != ["group", "level", "path", "representative"]:
+                raise ValueError("expected header: group,level,path,representative")
+            rows = []
+            for row in reader:
+                if (None in row or any(not value for value in row.values())
+                        or row["level"] not in ("identical", "isomorphic", "suspected")):
+                    raise ValueError(f"line {reader.line_num}: malformed duplicate row")
+                if row["level"] != "suspected" and row["path"] != row["representative"]:
+                    rows.append(row)
+    except (OSError, csv.Error, ValueError) as error:
+        return [f"{duplicates}: {error}"], []
+
+    root = track_root.resolve()
+    benchmarks = {path.relative_to(track_root).as_posix()
+                  for path in track_root.rglob("*.ehoa")
+                  if path.is_file() and path.resolve().is_relative_to(root)}
+
+    def has_enabled_replacement(path):
+        visited = set()
+        while path not in visited and path in benchmarks:
+            visited.add(path)
+            enabled, reason = manifest.is_enabled(path)
+            if enabled:
+                return True
+            if not reason.startswith("duplicate-of:"):
+                return False
+            path = reason[len("duplicate-of:"):]
+        return False
+
+    errors, warnings = [], []
+    representatives = set()
+    for row in rows:
+        enabled, reason = manifest.is_enabled(row["path"])
+        if enabled:
+            errors.append(f"{manifest.path}: confirmed duplicate {row['path']} must be disabled "
+                          f"(representative: {row['representative']})")
+        # A duplicate-of reason may explicitly designate a replacement representative.
+        representative = (reason[len("duplicate-of:"):]
+                          if not enabled and reason.startswith("duplicate-of:")
+                          else row["representative"])
+        representatives.add(representative)
+    for representative in sorted(representatives):
+        if not has_enabled_replacement(representative):
+            _, reason = manifest.is_enabled(representative)
+            warnings.append(f"{manifest.path}: duplicate representative {representative} "
+                            f"has no enabled replacement (reason: {reason!r})")
+    return errors, warnings
+
+
 def main():
     root = Path(__file__).resolve().parent.parent
     error_count = 0
@@ -77,6 +147,10 @@ def main():
             errors, warnings = [str(error)], []
         else:
             errors, warnings = check_manifest(manifest, root / track)
+            if track == "parity":
+                duplicate_errors, duplicate_warnings = check_parity_duplicates(manifest, root / track)
+                errors.extend(duplicate_errors)
+                warnings.extend(duplicate_warnings)
         for error in errors:
             print(f"ERROR: {error}")
         for warning in warnings:
