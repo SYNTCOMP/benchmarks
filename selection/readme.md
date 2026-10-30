@@ -35,9 +35,10 @@ The existing `parametric/*.csv` files remain status records with columns
 provide available parameter combinations, while the manifest determines which
 of those combinations to generate. Unknown status does not disable an instance.
 TLSF's existing `benchdirs` still defines which benchmark families are visited.
-TLSF-fin retains its random sampling after filtering disabled files. All three
-manifests are header-only: this refactor prepares the 2027 selection, while
-the 2026 selection is frozen. Nim exclusions for issue #40 are handled separately.
+TLSF-fin retains its random sampling after filtering disabled files. The TLSF
+and TLSF-fin manifests are header-only; parity disables confirmed duplicate
+non-representatives. These changes prepare the 2027 selection, while the 2026
+selection is frozen. Nim exclusions for issue #40 are handled separately.
 
 From the repository root, use existing, empty output directories:
 
@@ -60,12 +61,30 @@ Selection refuses non-empty output directories before writing any files;
 it never deletes previous output. Use a fresh, empty directory for each run.
 `families.json` and `structure.json` describe files written during that run.
 
-`parity.csv` is currently header-only, ready for duplicate exclusions. The
-parity selection script applies its existing random sampling after filtering.
+The parity selector copies all enabled, available benchmarks by default.
+`--target N --seed S` samples exactly N uniformly without replacement after
+manifest filtering and skipping Git LFS pointers. Its default seed is 2027;
+it writes `selection.json` with counts and selected paths/families. See the
+[parity usage](../parity/readme.md) for details.
 
 Run `python3 selection/checkSelection.py` to validate all three manifests.
 Missing paths, unmatched globs, invalid parameter selections, and malformed
-rows fail validation. Enabled instances with unknown or unrecognized status
+rows fail validation. Confirmed non-representatives in `parity/duplicates.csv`
+must be disabled; a representative with no enabled replacement produces a
+warning. Representatives and every replacement in a `duplicate-of:` chain must
+be existing `.ehoa` benchmarks within the parity track, and the chain must end
+at an effectively enabled benchmark. Suspected groups do not require exclusions.
+Repeated parameter combinations within any `parametric/*.csv` produce warnings
+with the repeated values and line numbers, even for disabled instances or CSVs
+without a template. Only parameter columns are compared, using trimmed text;
+`refsize` and `status` do not distinguish instances. These warnings do not fail
+validation or change generation (repeated rows write the same filename).
+Enabled instances with unknown or unrecognized status
 produce warnings only. Validation inspects parity paths without reading `.ehoa`
 contents, so Git LFS downloads are unnecessary. GitHub Actions runs the same
 check on pushes and pull requests.
+
+Run all regression tests with
+`python3 -B -m unittest selection.test_manifest selection.test_parity_duplicates parity.testSelectBenchmarks parity.testFindDuplicates`.
+The TLSF generation tests require `pandas` (`python3 -m pip install pandas`)
+and skip with an explanation when it is missing; these tests do not use `syfco`.

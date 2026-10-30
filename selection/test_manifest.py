@@ -1,4 +1,5 @@
 import contextlib
+import importlib.util
 import io
 import json
 import runpy
@@ -32,7 +33,12 @@ class ManifestTests(unittest.TestCase):
         path.write_text("pattern,params,enabled,reason\n" + rows)
         return Manifest(path)
 
+    def require_pandas(self):
+        if importlib.util.find_spec("pandas") is None:
+            self.skipTest("TLSF generation tests require pandas; install with: python3 -m pip install pandas")
+
     def tlsf_selector(self):
+        self.require_pandas()
         repo = Path(__file__).resolve().parent.parent
         with patch.object(sys, "path", [str(repo / "tlsf")] + sys.path):
             return runpy.run_path(str(repo / "tlsf/selectBenchmarks.py"))
@@ -106,6 +112,35 @@ class ManifestTests(unittest.TestCase):
         self.assertFalse(errors)
         self.assertEqual(len(warnings), 1)
 
+    def test_duplicate_parameters_warn_regardless_of_tags_or_enabledness(self):
+        self.template.with_suffix(".csv").write_text(
+            "n,m,refsize,status\n 1 ,2,0,realizable\n2,3,4,realizable\n"
+            "1, 2 ,10,unrealizable\n1,2,11,realizable\n")
+        for rules in ("", "family/*,,0,disabled\n"):
+            with self.subTest(rules=rules):
+                errors, warnings = check_manifest(self.manifest(rules), self.track)
+                self.assertEqual(errors, [])
+                self.assertEqual(len(warnings), 2)
+                for line, warning in zip((4, 5), warnings):
+                    self.assertIn(f"{self.template.with_suffix('.csv')}:{line}:", warning)
+                    self.assertIn("duplicate parameter row [n=1;m=2]", warning)
+                    self.assertIn("first at line 2", warning)
+
+    def test_distinct_parameter_text_and_combinations_are_not_duplicates(self):
+        self.template.with_suffix(".csv").write_text(
+            "n,m,refsize,status\n1,2,0,realizable\n1,3,0,realizable\n01,2,0,realizable\n")
+        self.assertEqual(check_manifest(self.manifest(), self.track), ([], []))
+
+    def test_duplicate_parameters_warn_in_csv_without_a_template(self):
+        path = self.track / "unselected/nested/parametric/orphan.csv"
+        path.parent.mkdir(parents=True)
+        path.write_text("n,refsize,status\n2,0,realizable\n2,1,realizable\n")
+        errors, warnings = check_manifest(self.manifest(), self.track)
+        self.assertEqual(errors, [])
+        duplicates = [warning for warning in warnings if "duplicate parameter row" in warning]
+        self.assertEqual(len(duplicates), 1)
+        self.assertIn(f"{path}:3:", duplicates[0])
+
     def test_parity_validation_never_reads_benchmark_contents(self):
         track = self.root / "parity"
         family = track / "keiren"
@@ -134,16 +169,28 @@ class ManifestTests(unittest.TestCase):
                 with patch.object(sys, "argv", args), patch("random.getrandbits", return_value=1) as sample:
                     with contextlib.redirect_stdout(log):
                         runpy.run_path(args[0], run_name="__main__")
-                sample.assert_called_once_with(1)
-                self.assertEqual([file.name for file in output.iterdir()], ["keep" + suffix])
+                if track_name == "parity":
+                    sample.assert_not_called()
+                    self.assertTrue((output / "selection.json").is_file())
+                else:
+                    sample.assert_called_once_with(1)
+                self.assertEqual([file.name for file in output.glob("*" + suffix)], ["keep" + suffix])
                 self.assertEqual((output / ("keep" + suffix)).read_text(), "enabled benchmark\n")
                 self.assertIn("selected 1 / found 2, disabled 1", log.getvalue())
 
     def test_selectors_refuse_nonempty_output_without_modifying_it(self):
+        self.assert_selectors_preserve_nonempty_output(
+            ("tlsf-fin/selectBenchmarks.py", "parity/selectBenchmarks.py"))
+
+    def test_tlsf_selectors_refuse_nonempty_output_without_modifying_it(self):
+        self.require_pandas()
+        self.assert_selectors_preserve_nonempty_output(
+            ("tlsf/selectBenchmarks.py", "tlsf/genParametric.py"))
+
+    def assert_selectors_preserve_nonempty_output(self, scripts):
         repo = Path(__file__).resolve().parent.parent
         manifest = self.manifest()
-        for script in ("tlsf/selectBenchmarks.py", "tlsf-fin/selectBenchmarks.py",
-                       "parity/selectBenchmarks.py", "tlsf/genParametric.py"):
+        for script in scripts:
             for entry in (".previous-output", "previous-directory"):
                 with self.subTest(script=script, entry=entry):
                     with tempfile.TemporaryDirectory(dir=self.root) as directory:
@@ -254,9 +301,17 @@ class ManifestTests(unittest.TestCase):
         for track in ("tlsf", "tlsf-fin", "parity"):
             (self.root / track).mkdir(exist_ok=True)
             (selection / (track + ".csv")).write_text("pattern,params,enabled,reason\n")
+        (self.root / "parity/duplicates.csv").write_text("group,level,path,representative\n")
         with patch("selection.checkSelection.__file__", str(selection / "checkSelection.py")):
             with contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(main(), 0)
+            self.template.with_suffix(".csv").write_text(
+                "n,m,refsize,status\n1,2,0,realizable\n1,2,1,unrealizable\n")
+            with contextlib.redirect_stdout(io.StringIO()) as log:
+                self.assertEqual(main(), 0)
+            self.assertIn("WARNING:", log.getvalue())
+            self.assertIn("duplicate parameter row [n=1;m=2]", log.getvalue())
+            self.assertIn("0 errors, 1 warnings", log.getvalue())
             (selection / "parity.csv").write_text(
                 "pattern,params,enabled,reason\nkeiren/missing.ehoa,,0,missing\n")
             with contextlib.redirect_stdout(io.StringIO()):
