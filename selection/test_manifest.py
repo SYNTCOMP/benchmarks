@@ -174,14 +174,18 @@ class ManifestTests(unittest.TestCase):
                 args = [str(repo / track_name / "selectBenchmarks.py"),
                         str(track), str(output), "--manifest", str(manifest.path)]
                 log = io.StringIO()
-                with patch.object(sys, "argv", args), patch("random.getrandbits", return_value=1) as sample:
+                with patch.object(sys, "argv", args), patch("random.Random") as generator:
+                    sample = generator.return_value.getrandbits
+                    sample.return_value = 1
                     with contextlib.redirect_stdout(log):
                         runpy.run_path(args[0], run_name="__main__")
                 if track_name == "parity":
                     sample.assert_not_called()
                     self.assertTrue((output / "selection.json").is_file())
                 else:
+                    generator.assert_called_once_with(2027)
                     sample.assert_called_once_with(1)
+                    self.assertTrue((output / "selection.json").is_file())
                 self.assertEqual([file.name for file in output.glob("*" + suffix)], ["keep" + suffix])
                 self.assertEqual((output / ("keep" + suffix)).read_text(), "enabled benchmark\n")
                 self.assertIn("selected 1 / found 2, disabled 1", log.getvalue())
