@@ -11,6 +11,12 @@ There are several kinds of benchmarks:
 
 Their folders contain more descriptions.
 
+Benchmark status stays alongside the benchmarks. Competition enabledness is
+recorded separately in the per-track CSV manifests under [selection/](selection/readme.md).
+Everything is enabled by default; manifest rows record exceptions. The TLSF,
+TLSF-fin, and parity selection scripts accept `--manifest PATH`. Run
+`python3 selection/checkSelection.py` to validate the manifests.
+
 ## Submit new benchmarks
 
 To submit a new benchmark

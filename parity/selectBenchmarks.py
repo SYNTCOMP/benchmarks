@@ -4,37 +4,46 @@ import os
 import random
 import shutil
 import sys
+import argparse
 
-# TODO: Make a list of the benchmarks so that we can (un)select them like we
-# do for the TLSF ones?
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from selection.manifest import Manifest, check_output_directory
 
 
-def makeBenchmarks(inputRoot, outputRoot):
+def makeBenchmarks(inputRoot, outputRoot, manifest):
+    check_output_directory(outputRoot)
     found = 0
     selected = 0
+    disabled = 0
     for root, dirs, fnames in os.walk(inputRoot, topdown=True):
         dirs[:] = [d for d in dirs if d != outputRoot]
         for filename in fnames:
             # Random choice of benchmarks
             if filename.endswith(".ehoa"):
                 found += 1
+                fullname = os.path.join(root, filename)
+                enabled, reason = manifest.is_enabled(os.path.relpath(fullname, inputRoot))
+                if not enabled:
+                    disabled += 1
+                    print(f"Skipping disabled benchmark {fullname}: {reason}")
+                    continue
                 if bool(random.getrandbits(1)):
                     selected += 1
-                    fullname = os.path.join(root, filename)
                     print(f"Selecting benchmark {fullname}")
                     shutil.copy(fullname,
                                 os.path.join(outputRoot, filename))
-    print(f"Selected {selected} / {found} benchmarks")
+    print(f"selected {selected} / found {found}, disabled {disabled}")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Two positional arguments expected: \n"
-              "  (1) the path to the benchmark-family directories\n"
-              "  (2) the path where you want the benchmarks\n"
-              "The output folder should exist.",
-              file=sys.stderr)
-        exit(1)
-    else:
-        makeBenchmarks(sys.argv[1], sys.argv[2])
-        exit(0)
+    parser = argparse.ArgumentParser("Select parity benchmarks")
+    parser.add_argument("benchmarkpath", help="Path to the benchmark-family directories")
+    parser.add_argument("outputpath", help="Output folder (must exist and be empty)")
+    parser.add_argument("--manifest", default=os.path.join(os.path.dirname(__file__),
+                        "..", "selection", "parity.csv"),
+                        help="Selection manifest (default: selection/parity.csv)")
+    args = parser.parse_args()
+    try:
+        makeBenchmarks(args.benchmarkpath, args.outputpath, Manifest(args.manifest))
+    except ValueError as error:
+        parser.error(str(error))
