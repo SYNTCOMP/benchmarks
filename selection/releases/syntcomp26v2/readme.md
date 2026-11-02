@@ -1,7 +1,8 @@
 # SYNTCOMP 2026 v2 selections
 
-This is a separate, deduplicated selection release. The original `v2026` and
-`v2025.1` assets are unchanged. TLSF-fin is outside this revision.
+This release removes duplicates from the 2026 TLSF and parity selections. The
+original `v2026` and `v2025.1` assets are unchanged. TLSF-fin is outside this
+revision.
 
 | Track | Original 2026 | v2 | Redundant instances removed |
 | --- | ---: | ---: | ---: |
@@ -10,18 +11,19 @@ This is a separate, deduplicated selection release. The original `v2026` and
 
 The TLSF selector regenerates the current enabled corpus. The parity selection
 preserves the groups represented in the original 2026 panel, using the current
-canonical representative of each confirmed group. It does not sample the full
-eligible pool. There are 27 replacements whose canonical representative was
-outside the original panel. All 484 original games were matched byte-for-byte
-to current repository blobs before grouping; 219 required filename changes.
+canonical representative of each confirmed group. It selects these groups
+directly, without sampling from the full eligible pool. In 27 cases, the canonical
+representative was outside the original panel. All 484 original games were
+matched byte-for-byte to current repository blobs before grouping; 219 required
+filename changes.
 [`parity-v2026.csv`](parity-v2026.csv) records every original filename, current
-path, selected representative and original SHA-256. The release-specific
-[`parity.csv`](parity.csv) is passed to the new parity selector.
+path, selected representative and original SHA-256. The new parity selector uses
+the release-specific [`parity.csv`](parity.csv).
 
 ## TLSF origins and confirmation
 
-The starting point is the recently closed
-[issue #55](https://github.com/SYNTCOMP/benchmarks/issues/55), implemented by
+The audit follows the recently closed
+[issue #55](https://github.com/SYNTCOMP/benchmarks/issues/55) and its implementation in
 [#57](https://github.com/SYNTCOMP/benchmarks/pull/57) and
 [#58](https://github.com/SYNTCOMP/benchmarks/pull/58). The default parity manifest
 already disables its 143 confirmed non-representatives for future selections.
@@ -49,11 +51,12 @@ and every currently listed parameter of `amba_decomposed_lock`. SyFCo 1.2.1.2
 lowers the effective Mealy formula, Spot 2.16 constructs complete deterministic
 parity automata, and the issue's Knor-style residual-game reduction compares
 their label-stripped graphs. Empty acceptance marks are completed with a neutral
-losing priority without changing the language. Exact isomorphism was confirmed
-for every excluded pair, also requiring the initial vertex to map to the initial
-vertex. All 81 regenerated outputs reproduce byte-for-byte on the recorded tools.
+losing priority without changing the language. The audit confirmed exact
+isomorphism for every excluded pair, with the initial vertex mapping to the
+initial vertex. All 81 regenerated outputs reproduce byte-for-byte on the
+recorded tools.
 
-The result is 17 groups / 45 redundant current instances, recorded in
+The audit found 45 redundant current instances across 17 groups, recorded in
 [`tlsf/duplicates.csv`](../../../tlsf/duplicates.csv) and disabled in
 [`selection/tlsf.csv`](../../tlsf.csv). The 45 instances occur in both the
 2025 and 2026 TLSF releases. In particular:

@@ -91,10 +91,10 @@ python3 selection/checkSelection.py
 
 It fails on manifest rows that point at nothing, malformed rows, or confirmed
 parity or TLSF duplicates that are not disabled. TLSF duplicate source paths and
-complete parameter tuples must still exist. It warns (without failing) about enabled
-instances with unknown status and about repeated rows in status CSVs. CI runs
-it on every push and pull request.
+complete parameter tuples must still exist. It warns (without failing) about
+enabled instances with unknown status and about repeated rows in status CSVs.
+CI runs it on every push and pull request.
 
 Tests: `python3 -B -m unittest discover -s selection -p 'test_*.py'` and
 `python3 -B -m unittest tlsf-fin.testSelectBenchmarks parity.testSelectBenchmarks parity.testFindDuplicates`
-(the TLSF tests skip if `pandas` is missing).
+The complete suite requires `pandas`, which CI installs before running tests.
