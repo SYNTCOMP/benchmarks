@@ -31,6 +31,7 @@ Alternatively, you can create a pull request with your benchmarks.
 
 ## Download benchmarks
 
+- year 2026 v2 (deduplicated): [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/syntcomp26v2/tlsf.zip), [parity](https://github.com/SYNTCOMP/benchmarks/releases/download/syntcomp26v2/parity.zip), [audit and reproduction](selection/releases/syntcomp26v2/readme.md). Original 2026 selection: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2026/tlsf.zip), [TLSF-fin](https://github.com/SYNTCOMP/benchmarks/releases/download/v2026/tlsf-fin.zip), [parity](https://github.com/SYNTCOMP/benchmarks/releases/download/v2026/parity.zip).
 - year 2025: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2025.1/selection-ltl-2025v2.zip), [TLSF-fin](https://github.com/SYNTCOMP/benchmarks/releases/download/v2025.1/selection-ltlf-2025.zip), [parity](https://github.com/SYNTCOMP/benchmarks/releases/download/v2025.1/selection-parity-2025.zip)
 - year 2024: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2024.0.1/tlsfSelection2024.zip), [TLSF-fin](https://github.com/SYNTCOMP/benchmarks/releases/download/v2024.0.1/tlsfFinSelection2024.zip), [parity](https://github.com/SYNTCOMP/benchmarks/releases/download/v2024.0.1/paritySelection2024.zip)
 - year 2023: [TLSF](https://github.com/SYNTCOMP/benchmarks/releases/download/v2023.4/TLSF_2023.zip), [TLSF-fin](https://github.com/SYNTCOMP/benchmarks/releases/download/v2023.4/TLSF-fin_2023.zip), [parity](https://github.com/SYNTCOMP/benchmarks/releases/download/v2023.4/Parity_2023.zip)

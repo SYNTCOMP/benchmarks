@@ -77,6 +77,12 @@ ltl2dba/parametric/ltl2dba_E.tlsf,n=5,1,keep this instance
 keeping one representative per group. Groups marked `suspected` (isomorphism
 not confirmed) stay enabled.
 
+`tlsf.csv` also disables the 45 current TLSF instances recorded in
+[`tlsf/duplicates.csv`](../tlsf/duplicates.csv). Parameter exclusions are exact:
+for example, `ltl2dba_C2` is excluded only at `n=1`. The source trace, current
+game reconstruction and 2025/2026 release audit are documented in
+[`releases/syntcomp26v2/`](releases/syntcomp26v2/readme.md).
+
 ## Checking
 
 ```sh
@@ -84,9 +90,11 @@ python3 selection/checkSelection.py
 ```
 
 It fails on manifest rows that point at nothing, malformed rows, or confirmed
-parity duplicates that are not disabled. It warns (without failing) about enabled
+parity or TLSF duplicates that are not disabled. TLSF duplicate source paths and
+complete parameter tuples must still exist. It warns (without failing) about enabled
 instances with unknown status and about repeated rows in status CSVs. CI runs
 it on every push and pull request.
 
-Tests: `python3 -B -m unittest selection.test_manifest selection.test_parity_duplicates tlsf-fin.testSelectBenchmarks parity.testSelectBenchmarks parity.testFindDuplicates`
+Tests: `python3 -B -m unittest discover -s selection -p 'test_*.py'` and
+`python3 -B -m unittest tlsf-fin.testSelectBenchmarks parity.testSelectBenchmarks parity.testFindDuplicates`
 (the TLSF tests skip if `pandas` is missing).

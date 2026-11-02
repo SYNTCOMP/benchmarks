@@ -8,7 +8,9 @@ Relevant references:
 
 ### Preparing the 2027 selection
 
-The 2026 selection is frozen. For 2027, `selectBenchmarks.py` recursively finds
+The original `v2026` selection is frozen. The separate
+[`syntcomp26v2` release](../selection/releases/syntcomp26v2/readme.md) preserves
+its represented groups with one representative each. For 2027, `selectBenchmarks.py` recursively finds
 `.ehoa` files and applies [`selection/parity.csv`](../selection/parity.csv).
 Benchmarks default to enabled; the last matching manifest row wins. Confirmed
 duplicates remain in the repository but their non-representatives are disabled
