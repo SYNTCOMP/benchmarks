@@ -171,6 +171,8 @@ class ParityDuplicateTests(unittest.TestCase):
         for track in ("tlsf", "tlsf-fin"):
             (self.root / track).mkdir()
             (selection / (track + ".csv")).write_text("pattern,params,enabled,reason\n")
+        (self.root / "tlsf/duplicates.csv").write_text(
+            "group,level,path,params,representative,representative_params\n")
         parity_manifest = selection / "parity.csv"
         with patch("selection.checkSelection.__file__", str(selection / "checkSelection.py")):
             parity_manifest.write_text(self.manifest("").path.read_text())

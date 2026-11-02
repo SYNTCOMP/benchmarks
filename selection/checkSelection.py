@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from selection.manifest import Manifest
+from selection.manifest import Manifest, parse_params
 
 
 def read_status(path, warnings):
@@ -136,6 +136,60 @@ def check_parity_duplicates(manifest, track_root):
     return errors, warnings
 
 
+def check_tlsf_duplicates(manifest, track_root):
+    """Keep the confirmed current TLSF game duplicates out of future panels."""
+    duplicates = track_root / "duplicates.csv"
+    errors, warnings = [], []
+    try:
+        with duplicates.open(newline="", encoding="utf-8") as source:
+            reader = csv.DictReader(source, strict=True)
+            if reader.fieldnames != ["group", "level", "path", "params",
+                                    "representative", "representative_params"]:
+                raise ValueError("invalid TLSF duplicate table header")
+            rows = list(reader)
+        seen, groups, instances = set(), {}, set()
+        for row in rows:
+            if (None in row or any(value is None for value in row.values())
+                    or not row["group"] or row["level"] not in ("identical", "isomorphic")):
+                raise ValueError("malformed TLSF duplicate row")
+            pair = []
+            for path_key, params_key in (("path", "params"),
+                                         ("representative", "representative_params")):
+                path, params = row[path_key], parse_params(row[params_key])
+                file = track_root / path
+                if (not path or Path(path).is_absolute() or ".." in Path(path).parts
+                        or not path.endswith(".tlsf") or not file.is_file()
+                        or not file.resolve().is_relative_to(track_root.resolve())):
+                    raise ValueError(f"invalid TLSF duplicate source: {path}")
+                if file.parent.name == "parametric":
+                    status_rows = read_status(file.with_suffix(".csv"), [])
+                    if not any(values == params for values, _ in status_rows):
+                        raise ValueError(f"no exact status CSV row for {path} [{row[params_key]}]")
+                elif params:
+                    raise ValueError(f"parameters on non-parametric duplicate: {path}")
+                pair.append((path, tuple(sorted(params.items()))))
+            instance, representative = pair
+            if instance in seen:
+                raise ValueError(f"repeated TLSF duplicate instance: {instance}")
+            seen.add(instance)
+            instances.add(instance)
+            definition = (row["level"], representative)
+            if groups.setdefault(row["group"], definition) != definition:
+                raise ValueError(f"inconsistent TLSF duplicate group: {row['group']}")
+            if instance != representative and manifest.is_enabled(instance[0], dict(instance[1]))[0]:
+                errors.append(f"{manifest.path}: confirmed TLSF duplicate {instance} must be disabled "
+                              f"(representative: {representative})")
+        for _, representative in groups.values():
+            if representative not in instances:
+                raise ValueError(f"unrecorded TLSF duplicate representative: {representative}")
+            if not manifest.is_enabled(representative[0], dict(representative[1]))[0]:
+                warnings.append(f"{manifest.path}: TLSF duplicate representative {representative} "
+                                "is disabled")
+    except (OSError, csv.Error, ValueError) as error:
+        errors.append(f"{duplicates}: {error}")
+    return errors, warnings
+
+
 def main():
     root = Path(__file__).resolve().parent.parent
     error_count = 0
@@ -147,6 +201,10 @@ def main():
             errors, warnings = [str(error)], []
         else:
             errors, warnings = check_manifest(manifest, root / track)
+            if track == "tlsf":
+                duplicate_errors, duplicate_warnings = check_tlsf_duplicates(manifest, root / track)
+                errors.extend(duplicate_errors)
+                warnings.extend(duplicate_warnings)
             if track == "parity":
                 duplicate_errors, duplicate_warnings = check_parity_duplicates(manifest, root / track)
                 errors.extend(duplicate_errors)
