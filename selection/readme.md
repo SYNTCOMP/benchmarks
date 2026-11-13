@@ -76,6 +76,7 @@ ltl2dba/parametric/ltl2dba_E.tlsf,n=5,1,keep this instance
 `parity.csv` disables the confirmed duplicates in `parity/duplicates.csv`,
 keeping one representative per group. Groups marked `suspected` (isomorphism
 not confirmed) stay enabled.
+It also disables malformed or non-parity files with `invalid-ehoa:` reasons.
 
 `tlsf.csv` also disables the 45 current TLSF instances recorded in
 [`tlsf/duplicates.csv`](../tlsf/duplicates.csv). Parameter exclusions are exact:
