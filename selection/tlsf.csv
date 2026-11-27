@@ -19,6 +19,8 @@ amba/amba_decomposed/parametric/amba_decomposed_lock.tlsf,n=60,0,duplicate-of:am
 amba/amba_decomposed/parametric/amba_decomposed_lock.tlsf,n=7,0,duplicate-of:amba/amba_decomposed/parametric/amba_decomposed_lock.tlsf[n=2]
 amba/amba_decomposed/parametric/amba_decomposed_lock.tlsf,n=8,0,duplicate-of:amba/amba_decomposed/parametric/amba_decomposed_lock.tlsf[n=2]
 amba/amba_decomposed/parametric/amba_decomposed_lock.tlsf,n=9,0,duplicate-of:amba/amba_decomposed/parametric/amba_decomposed_lock.tlsf[n=2]
+des/PS/PS-4.tlsf,,0,duplicate-of:des/PS/PS-2.tlsf
+des/PS/PS-5.tlsf,,0,duplicate-of:des/PS/PS-3.tlsf
 ltl2dba/non_parametric_from_acacia/ltl2dba11.tlsf,,0,duplicate-of:ltl2dba/non_parametric_from_acacia/ltl2dba09.tlsf
 ltl2dba/non_parametric_from_acacia/ltl2dba15.tlsf,,0,duplicate-of:ltl2dba/non_parametric_from_acacia/ltl2dba09.tlsf
 ltl2dba/non_parametric_from_acacia/ltl2dba25.tlsf,,0,duplicate-of:ltl2dba/non_parametric_from_acacia/ltl2dba14.tlsf

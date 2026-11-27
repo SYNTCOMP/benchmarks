@@ -79,9 +79,12 @@ and validates its exact source parameter tuple.
 
 ## Reproduce
 
-Use a complete checkout, Python with pandas, and `syfco` on `PATH`:
+Run the commands below from the repository root at the `syntcomp26v2` tag.
+Use a complete checkout with Git LFS contents, Python with pandas, and `syfco`
+on `PATH`.
 
 ```sh
+git switch --detach refs/tags/syntcomp26v2
 python3 -B selection/checkSelection.py
 python3 -B -m unittest discover -s selection -p 'test_*.py'
 python3 -B -m unittest parity.testSelectBenchmarks parity.testFindDuplicates

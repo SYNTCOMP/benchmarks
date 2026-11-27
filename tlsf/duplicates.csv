@@ -61,3 +61,7 @@ group,level,path,params,representative,representative_params
 16,isomorphic,amba/amba_decomposed/parametric/amba_decomposed_lock.tlsf,n=9,amba/amba_decomposed/parametric/amba_decomposed_lock.tlsf,n=2
 17,identical,prioritized_arbiter_unreal/parametric/prioritized_arbiter_unreal1.tlsf,n=2;u=1,prioritized_arbiter_unreal/parametric/prioritized_arbiter_unreal2.tlsf,n=2
 17,identical,prioritized_arbiter_unreal/parametric/prioritized_arbiter_unreal2.tlsf,n=2,prioritized_arbiter_unreal/parametric/prioritized_arbiter_unreal2.tlsf,n=2
+18,identical,des/PS/PS-2.tlsf,,des/PS/PS-2.tlsf,
+18,identical,des/PS/PS-4.tlsf,,des/PS/PS-2.tlsf,
+19,identical,des/PS/PS-3.tlsf,,des/PS/PS-3.tlsf,
+19,identical,des/PS/PS-5.tlsf,,des/PS/PS-3.tlsf,

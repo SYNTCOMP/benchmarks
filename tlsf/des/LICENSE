@@ -1,6 +1,8 @@
-These specifications derive from the MTSA benchmark suite. Hernán Gagliardi
-translated them to TLSF and contributed them in SYNTCOMP/benchmarks#65.
-They are licensed under CC BY 4.0.
+These TLSF specifications were generated with silas (fsp2tlsf) from FSP models
+in the Modal Transition System Analyser (MTSA) benchmark suite. Hernán Gagliardi
+contributed the TLSF files in SYNTCOMP/benchmarks issue #65. SYNTCOMP appended
+the status and reference-size trailers to the submitted files. The
+specifications are licensed under CC BY 4.0.
 
 Creative Commons Attribution 4.0 International Public License
 
