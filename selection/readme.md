@@ -80,9 +80,9 @@ It also disables malformed or non-parity files with `invalid-ehoa:` reasons.
 
 `tlsf.csv` also disables the 45 current TLSF instances recorded in
 [`tlsf/duplicates.csv`](../tlsf/duplicates.csv). Parameter exclusions are exact:
-for example, `ltl2dba_C2` is excluded only at `n=1`. The source trace, current
-game reconstruction and 2025/2026 release audit are documented in
-[`releases/syntcomp26v2/`](releases/syntcomp26v2/readme.md).
+for example, `ltl2dba_C2` is excluded only at `n=1`. The
+[2025/2026 release audit](https://github.com/SYNTCOMP/benchmarks/tree/syntcomp26v2/selection/releases/syntcomp26v2)
+documents the TLSF sources and how their games were rebuilt.
 
 ## Checking
 

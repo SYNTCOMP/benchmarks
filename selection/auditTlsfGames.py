@@ -21,37 +21,6 @@ from genParametric import substituteParameters
 from selection.manifest import check_output_directory, parse_params
 
 
-def verify(output):
-    """Verify the recorded pairs exactly, requiring vertex 0 to map to 0."""
-    from parity.findDuplicates import read_game, seed_colours, predecessors, isomorphic
-    with (ROOT / "selection/tlsf-game-audit.csv").open(newline="") as source:
-        instances = {(row["path"], row["params"]): row["instance"] for row in csv.DictReader(source)}
-    with (ROOT / "tlsf/duplicates.csv").open(newline="") as source:
-        rows = list(csv.DictReader(source))
-    cache = {}
-
-    def load(key):
-        if key not in cache:
-            game = read_game(output / (instances[key] + ".ehoa"))
-            signatures = [s + (v == 0,) for v, s in enumerate(seed_colours(game, predecessors(game)))]
-            cache[key] = (game, signatures)
-        return cache[key]
-
-    verified = 0
-    for row in rows:
-        key = (row["path"], row["params"])
-        representative = (row["representative"], row["representative_params"])
-        if key == representative:
-            continue
-        a, sa = load(key)
-        b, sb = load(representative)
-        palette = {s: i for i, s in enumerate(sorted(set(sa + sb)))}
-        if isomorphic(a, b, [palette[s] for s in sa], [palette[s] for s in sb], timeout=10) is not True:
-            raise ValueError(f"rooted game equality not confirmed: {key} / {representative}")
-        verified += 1
-    print(f"Verified {verified} duplicate pairs, preserving the initial vertex")
-
-
 def colorize(hoa):
     """Complete max-even colours without changing acceptance of unmarked runs.
 
@@ -97,11 +66,7 @@ def main():
     parser.add_argument("--ltl2tgba", default="ltl2tgba")
     parser.add_argument("--jobs", type=int, default=4)
     parser.add_argument("--timeout", type=float, default=20)
-    parser.add_argument("--verify", action="store_true", help="verify recorded pairs in an existing output")
     args = parser.parse_args()
-    if args.verify:
-        verify(args.output)
-        return
     if args.jobs < 1 or args.timeout <= 0:
         parser.error("jobs and timeout must be positive")
     check_output_directory(args.output)
