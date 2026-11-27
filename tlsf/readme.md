@@ -15,6 +15,10 @@ list defines the available families. Both `selectBenchmarks.py` and
 `genParametric.py` accept `--manifest PATH`; see the
 [manifest format and examples](../selection/readme.md).
 
+If a selected family or its parent directory contains a `LICENSE` file, the
+selector copies it to the same relative path in tree mode or under `LICENSES/`
+in flat mode.
+
 Parametric generation requires Python's existing `pandas` dependency and the
 [`syfco`](https://github.com/reactive-systems/syfco) executable on `PATH`.
 The generator replaces assignments only in `GLOBAL { PARAMETERS { ... } }`,

@@ -265,6 +265,29 @@ class ManifestTests(unittest.TestCase):
                 self.assertEqual(info, expected)
                 self.assertEqual(counts, dict(found=4, selected=len(expected), disabled=int(exclude)))
 
+    def test_tlsf_copies_licenses_for_selected_families_and_their_parents(self):
+        make = self.tlsf_selector()["makeBenchmarks"]
+        families = ["collection/selected", "collection/disabled"]
+        for family in families:
+            directory = self.track / family
+            directory.mkdir(parents=True)
+            (directory / "plain.tlsf").touch()
+            (directory / "LICENSE").write_text(family)
+        (self.track / "collection/LICENSE").write_text("shared")
+        manifest = self.manifest("collection/disabled/*,,0,exclude\n")
+
+        for tree in (False, True):
+            with self.subTest(tree=tree), tempfile.TemporaryDirectory(dir=self.root) as directory:
+                output = Path(directory)
+                args = SimpleNamespace(benchmarkpath=self.track, outputpath=output,
+                                       treeLike=tree, manifest=manifest.path)
+                with patch.dict(make.__globals__, benchdirs=families), contextlib.redirect_stdout(io.StringIO()):
+                    make(args)
+                prefix = Path() if tree else Path("LICENSES")
+                notices = {path.relative_to(output): path.read_text() for path in output.rglob("LICENSE")}
+                self.assertEqual(notices, {prefix / "collection/LICENSE": "shared",
+                                           prefix / "collection/selected/LICENSE": "collection/selected"})
+
     def test_tlsf_metadata_uses_only_files_written_in_this_run(self):
         selector = self.tlsf_selector()
         self.template.write_text(self.template.read_text().replace(" m = 2;", ""))

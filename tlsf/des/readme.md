@@ -25,10 +25,10 @@ for each conjunct.
 Each filename has the form `X-N-K.tlsf` or `X-N.tlsf`, where `X` is the
 family code and the numbers give the parameters in the order shown below.
 
-| Family | Description | Parameters | Instances |
+| Family | Description | Parameters | Submitted files |
 | --- | --- | --- | ---: |
 | AT | Air traffic control tower assigning holding heights and access to a single ramp | N planes, K heights | 6 |
-| BW | Bidding workflow coordinating teams to approve or refuse a document | N teams, at most K evaluation steps per team | 9 |
+| BW | Bidding workflow in which engineering teams evaluate a document and the controller approves or refuses it | N teams, at most K evaluation steps per team | 9 |
 | CM | Mice must reach the center infinitely often and may share a cell with a cat only at the center. | N cats and N mice, corridor of 2K+1 cells | 9 |
 | DP | Dining philosophers sharing forks so that each eats infinitely often | N philosophers | 5 |
 | GR | Gripper robot carrying balls between two rooms, one ball at a time | N balls | 6 |
@@ -37,11 +37,10 @@ family code and the numbers give the parameters in the order shown below.
 | TA | A travel agency must resolve every package request and may report success only after buying every requested amenity. | N amenities, at most K query steps per service | 9 |
 | TL | Wonham's transfer line feeding workpieces through buffers to a test unit | N machines, buffer capacity K | 9 |
 
-The contributors describe `PS-2` through `PS-5` as different protocol
-versions. In the submitted TLSF files, `PS-4` reproduces `PS-2`, and `PS-5`
-reproduces `PS-3`. Only the title and first header comment differ within each
-pair. The selection keeps `PS-1`, `PS-2` and `PS-3`. The discrepancy is being
-raised in [issue #65](https://github.com/SYNTCOMP/benchmarks/issues/65).
+The submission describes five PS protocol versions. `PS-4` duplicates `PS-2`,
+and `PS-5` duplicates `PS-3`. Each pair differs only in the title and first
+header comment. The [selection manifest](../../selection/tlsf.csv) disables
+`PS-4` and `PS-5` as duplicates, leaving `PS-1` through `PS-3` enabled.
 
 ## Status
 
@@ -55,11 +54,11 @@ model-checked controller before minimization.
 
 Acacia-Bonsai and Spot’s `ltlsynt` both reported `AT-1-2` and `AT-1-3` as
 unrealizable. The `ltlsynt` runs used `syfco` to convert the TLSF files. These
-two files are tagged `unrealizable` and have `REF_SIZE` set to `-1`. They have
-one plane each and two and three heights, respectively, so both meet the
-`K >= N` condition that Gagliardi gave for AT realizability. Gagliardi expected
-most instances in the suite to be realizable.
-[Issue #65](https://github.com/SYNTCOMP/benchmarks/issues/65)
+two files are tagged `unrealizable` and have `REF_SIZE` set to `-1`. Gagliardi
+expected most of the suite to be realizable and gave `K >= N` as the criterion
+for AT realizability in [issue #65](https://github.com/SYNTCOMP/benchmarks/issues/65).
+Both instances meet that criterion. Each has one plane, with two heights in
+`AT-1-2` and three in `AT-1-3`.
 
 The other 34 files are tagged `unknown`. Acacia-Bonsai reported `CM-2-1` and
 `TL-2-3` as realizable. The controller check timed out for `CM-2-1` and ended

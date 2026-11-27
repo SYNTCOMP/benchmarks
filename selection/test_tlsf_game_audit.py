@@ -31,6 +31,22 @@ class TlsfGameAuditTests(unittest.TestCase):
         for cycle in itertools.product((None, 0), repeat=3):
             self.assertEqual(0 in cycle, max(1 if p is None else 2 for p in cycle) % 2 == 0)
 
+    def test_skips_unaudited_groups_but_rejects_missing_audited_group_members(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "selection").mkdir()
+            (root / "tlsf").mkdir()
+            (root / "selection/tlsf-game-audit.csv").write_text(
+                "instance,path,params\nknown.tlsf,known.tlsf,\n")
+            (root / "tlsf/duplicates.csv").write_text(
+                "group,level,path,params,representative,representative_params\n"
+                "2,identical,x.tlsf,,x.tlsf,\n2,identical,y.tlsf,,x.tlsf,\n"
+                "1,identical,rep.tlsf,,rep.tlsf,\n1,identical,missing.tlsf,,rep.tlsf,\n"
+                "1,identical,known.tlsf,,rep.tlsf,\n")
+            with patch("selection.auditTlsfGames.ROOT", root):
+                with self.assertRaisesRegex(ValueError, "missing from historical TLSF game audit: .*missing.tlsf"):
+                    verify(root)
+
     def test_unrooted_isomorphism_does_not_justify_a_tlsf_exclusion(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

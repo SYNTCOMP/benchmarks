@@ -22,15 +22,21 @@ from selection.manifest import check_output_directory, parse_params
 
 
 def verify(output):
-    """Verify the recorded pairs exactly, requiring vertex 0 to map to 0."""
+    """Verify pairs in historical audit groups, requiring vertex 0 to map to 0."""
     from parity.findDuplicates import read_game, seed_colours, predecessors, isomorphic
     with (ROOT / "selection/tlsf-game-audit.csv").open(newline="") as source:
         instances = {(row["path"], row["params"]): row["instance"] for row in csv.DictReader(source)}
     with (ROOT / "tlsf/duplicates.csv").open(newline="") as source:
-        rows = list(csv.DictReader(source))
+        pairs = [(row["group"], (row["path"], row["params"]),
+                  (row["representative"], row["representative_params"]))
+                 for row in csv.DictReader(source)]
+    audited_groups = {group for group, key, representative in pairs
+                      if key in instances or representative in instances}
     cache = {}
 
     def load(key):
+        if key not in instances:
+            raise ValueError(f"duplicate endpoint missing from historical TLSF game audit: {key}")
         if key not in cache:
             game = read_game(output / (instances[key] + ".ehoa"))
             signatures = [s + (v == 0,) for v, s in enumerate(seed_colours(game, predecessors(game)))]
@@ -38,10 +44,8 @@ def verify(output):
         return cache[key]
 
     verified = 0
-    for row in rows:
-        key = (row["path"], row["params"])
-        representative = (row["representative"], row["representative_params"])
-        if key == representative:
+    for group, key, representative in pairs:
+        if group not in audited_groups or key == representative:
             continue
         a, sa = load(key)
         b, sb = load(representative)
@@ -97,7 +101,7 @@ def main():
     parser.add_argument("--ltl2tgba", default="ltl2tgba")
     parser.add_argument("--jobs", type=int, default=4)
     parser.add_argument("--timeout", type=float, default=20)
-    parser.add_argument("--verify", action="store_true", help="verify recorded pairs in an existing output")
+    parser.add_argument("--verify", action="store_true", help="verify historical audit pairs in an existing output")
     args = parser.parse_args()
     if args.verify:
         verify(args.output)
