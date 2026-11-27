@@ -9,7 +9,9 @@ Relevant references:
 ### Preparing the 2027 selection
 
 The [`syntcomp26v2` release](https://github.com/SYNTCOMP/benchmarks/tree/syntcomp26v2/selection/releases/syntcomp26v2)
-included one representative per group from the original `v2026` selection.
+used one canonical representative for each group with a game in the original
+`v2026` parity selection. For 27 groups, the representative came from outside
+that selection.
 For 2027, `selectBenchmarks.py`
 recursively finds `.ehoa` files and applies
 [`selection/parity.csv`](../selection/parity.csv).
