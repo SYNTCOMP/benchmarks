@@ -78,12 +78,13 @@ keeping one representative per group. Groups marked `suspected` (isomorphism
 not confirmed) stay enabled.
 It also disables malformed or non-parity files with `invalid-ehoa:` reasons.
 
-`tlsf.csv` also disables the 47 redundant TLSF instances recorded in
-[`tlsf/duplicates.csv`](../tlsf/duplicates.csv). Parameter exclusions are exact.
-For example, the manifest excludes `ltl2dba_C2` only at `n=1`. For the
-source trace and game reconstruction behind the 45 exclusions in the 2025/2026
-release audit, see
-[`releases/syntcomp26v2/`](releases/syntcomp26v2/readme.md).
+`tlsf.csv` also disables the 47 current TLSF instances recorded in
+[`tlsf/duplicates.csv`](../tlsf/duplicates.csv). Parameter exclusions are exact:
+for example, `ltl2dba_C2` is excluded only at `n=1`. The
+[2026 v2 audit](https://github.com/SYNTCOMP/benchmarks/tree/syntcomp26v2/selection/releases/syntcomp26v2)
+traces the earlier parity games to their TLSF sources and explains how to
+rebuild parity games from 81 TLSF instances in the tagged checkout. All 45
+instances excluded by that audit appeared in both the 2025 and 2026 TLSF releases.
 
 ## Checking
 

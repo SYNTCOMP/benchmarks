@@ -21,45 +21,6 @@ from genParametric import substituteParameters
 from selection.manifest import check_output_directory, parse_params
 
 
-def verify(output):
-    """Verify the syntcomp26v2 duplicate pairs, requiring vertex 0 to map to 0."""
-    from parity.findDuplicates import read_game, seed_colours, predecessors, isomorphic
-
-    def endpoint(path, params):
-        return path, tuple(sorted(parse_params(params).items()))
-
-    def read_pairs(path):
-        with path.open(newline="") as source:
-            return {(endpoint(row["path"], row["params"]),
-                     endpoint(row["representative"], row["representative_params"]))
-                    for row in csv.DictReader(source)}
-
-    pairs = read_pairs(ROOT / "selection/releases/syntcomp26v2/tlsf-duplicate-pairs.csv")
-    missing = pairs - read_pairs(ROOT / "tlsf/duplicates.csv")
-    if missing:
-        raise ValueError(f"historical TLSF duplicate pair missing from tlsf/duplicates.csv: {min(missing)}")
-    with (ROOT / "selection/tlsf-game-audit.csv").open(newline="") as source:
-        instances = {endpoint(row["path"], row["params"]): row["instance"] for row in csv.DictReader(source)}
-    cache = {}
-
-    def load(key):
-        if key not in instances:
-            raise ValueError(f"duplicate endpoint missing from historical TLSF game audit: {key}")
-        if key not in cache:
-            game = read_game(output / (instances[key] + ".ehoa"))
-            signatures = [s + (v == 0,) for v, s in enumerate(seed_colours(game, predecessors(game)))]
-            cache[key] = (game, signatures)
-        return cache[key]
-
-    for key, representative in sorted(pairs):
-        a, sa = load(key)
-        b, sb = load(representative)
-        palette = {s: i for i, s in enumerate(sorted(set(sa + sb)))}
-        if isomorphic(a, b, [palette[s] for s in sa], [palette[s] for s in sb], timeout=10) is not True:
-            raise ValueError(f"rooted game equality not confirmed: {key} / {representative}")
-    print(f"Verified {len(pairs)} duplicate pairs, preserving the initial vertex")
-
-
 def colorize(hoa):
     """Complete max-even colours without changing acceptance of unmarked runs.
 
@@ -105,11 +66,7 @@ def main():
     parser.add_argument("--ltl2tgba", default="ltl2tgba")
     parser.add_argument("--jobs", type=int, default=4)
     parser.add_argument("--timeout", type=float, default=20)
-    parser.add_argument("--verify", action="store_true", help="verify historical audit pairs in an existing output")
     args = parser.parse_args()
-    if args.verify:
-        verify(args.output)
-        return
     if args.jobs < 1 or args.timeout <= 0:
         parser.error("jobs and timeout must be positive")
     check_output_directory(args.output)
