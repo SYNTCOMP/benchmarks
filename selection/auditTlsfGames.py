@@ -22,16 +22,24 @@ from selection.manifest import check_output_directory, parse_params
 
 
 def verify(output):
-    """Verify pairs in historical audit groups, requiring vertex 0 to map to 0."""
+    """Verify the syntcomp26v2 duplicate pairs, requiring vertex 0 to map to 0."""
     from parity.findDuplicates import read_game, seed_colours, predecessors, isomorphic
+
+    def endpoint(path, params):
+        return path, tuple(sorted(parse_params(params).items()))
+
+    def read_pairs(path):
+        with path.open(newline="") as source:
+            return {(endpoint(row["path"], row["params"]),
+                     endpoint(row["representative"], row["representative_params"]))
+                    for row in csv.DictReader(source)}
+
+    pairs = read_pairs(ROOT / "selection/releases/syntcomp26v2/tlsf-duplicate-pairs.csv")
+    missing = pairs - read_pairs(ROOT / "tlsf/duplicates.csv")
+    if missing:
+        raise ValueError(f"historical TLSF duplicate pair missing from tlsf/duplicates.csv: {min(missing)}")
     with (ROOT / "selection/tlsf-game-audit.csv").open(newline="") as source:
-        instances = {(row["path"], row["params"]): row["instance"] for row in csv.DictReader(source)}
-    with (ROOT / "tlsf/duplicates.csv").open(newline="") as source:
-        pairs = [(row["group"], (row["path"], row["params"]),
-                  (row["representative"], row["representative_params"]))
-                 for row in csv.DictReader(source)]
-    audited_groups = {group for group, key, representative in pairs
-                      if key in instances or representative in instances}
+        instances = {endpoint(row["path"], row["params"]): row["instance"] for row in csv.DictReader(source)}
     cache = {}
 
     def load(key):
@@ -43,17 +51,13 @@ def verify(output):
             cache[key] = (game, signatures)
         return cache[key]
 
-    verified = 0
-    for group, key, representative in pairs:
-        if group not in audited_groups or key == representative:
-            continue
+    for key, representative in sorted(pairs):
         a, sa = load(key)
         b, sb = load(representative)
         palette = {s: i for i, s in enumerate(sorted(set(sa + sb)))}
         if isomorphic(a, b, [palette[s] for s in sa], [palette[s] for s in sb], timeout=10) is not True:
             raise ValueError(f"rooted game equality not confirmed: {key} / {representative}")
-        verified += 1
-    print(f"Verified {verified} duplicate pairs, preserving the initial vertex")
+    print(f"Verified {len(pairs)} duplicate pairs, preserving the initial vertex")
 
 
 def colorize(hoa):
