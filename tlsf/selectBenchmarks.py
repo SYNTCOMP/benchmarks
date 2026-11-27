@@ -36,6 +36,15 @@ benchdirs = ["amba/amba", # PSC: I suppose?
              "arbiters_zoo",
              "chomp_game",
              "collector",
+             "des/AT",
+             "des/BW",
+             "des/CM",
+             "des/DP",
+             "des/GR",
+             "des/PS",
+             "des/SC",
+             "des/TA",
+             "des/TL",
              "full_arbiter_log",
              "full_arbiter_unreal",
              "generalized_buffer",
@@ -75,8 +84,10 @@ def makeBenchmarks(args):
     written = dict()
     manifest = Manifest(args.manifest)
     counts = dict(found=0, selected=0, disabled=0)
+    license_dirs = set()
 
     for d in benchdirs:
+        selected_before = counts["selected"]
         thisOutputRoot = outputRoot
         if treeLike:
             thisOutputRoot = os.path.join(thisOutputRoot, d)
@@ -109,6 +120,16 @@ def makeBenchmarks(args):
             for filenames in groups:
                 for filename in filenames:
                     written[filename] = None
+        if counts["selected"] > selected_before:
+            license_dirs.update((d, os.path.dirname(d)))
+
+    license_root = outputRoot if treeLike else os.path.join(outputRoot, "LICENSES")
+    for directory in sorted(license_dirs):
+        source = os.path.join(inputRoot, directory, "LICENSE")
+        if os.path.isfile(source):
+            destination = os.path.join(license_root, directory)
+            os.makedirs(destination, exist_ok=True)
+            shutil.copy(source, destination)
     print(f"selected {counts['selected']} / found {counts['found']}, disabled {counts['disabled']}")
     return info, written
 
